@@ -5,15 +5,18 @@
             <h1>BNY Dashboard Login</h1>
             <form role="form">
                 <div class="form-content">
-                    <div class="form-group">
-                        <input type="text" ng-model="name" class="form-control input-underline input-lg" id="" placeholder="{{ 'Email' | translate }}">
+                    <div class="form-group" (submit)=doLogin()>
+                  <!-- <input type="text" ng-model="name" class="form-control input-underline input-lg" id="" placeholder="{{ 'Username' | translate }}"> -->
+                        <input type="text" ng-model="userName" class="form-control input-underline input-lg" id="userName" placeholder="{{ 'Username' | translate }}" (change)="fieldChanged($event)">
                     </div>
 
-                    <div class="form-group">
-                        <input type="password" class="form-control input-underline input-lg" id="" placeholder="{{ 'Password' | translate }}">
+                    <div class="form-group" (submit)=doLogin()>
+                  <!-- <input type="password" class="form-control input-underline input-lg" id="" placeholder="{{ 'Password' | translate }}"> -->
+                        <input type="password" class="form-control input-underline input-lg" id="password" placeholder="{{ 'Password' | translate }}" (change)="fieldChanged($event)">
                     </div>
                 </div>
-                <a class="btn rounded-btn" [routerLink]="['/dashboard']" (click)="onLoggedin()">{{ 'Log in' | translate }}</a>
+                <!-- <a class="btn rounded-btn" [routerLink]="['/dashboard']" (click)="onLoggedin()">{{ 'Log in' | translate }}</a> -->
+                <a class="btn rounded-btn" [routerLink]="['/dashboard']" (click)="attemptLogin()">{{ 'Log in' | translate }}</a>
                 &nbsp;
                 <a class="btn rounded-btn" [routerLink]="['/signup']">{{ 'Register' | translate }}</a>
             </form>

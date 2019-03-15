@@ -10,7 +10,9 @@ import { TranslateService } from '@ngx-translate/core';
 export class HeaderComponent implements OnInit {
     public pushRightClass: string;
 
+    userFullName = '';
     constructor(private translate: TranslateService, public router: Router) {
+
 
         this.router.events.subscribe(val => {
             if (
@@ -23,8 +25,10 @@ export class HeaderComponent implements OnInit {
         });
     }
 
+
     ngOnInit() {
         this.pushRightClass = 'push-right';
+        this.userFullName = localStorage.getItem('userFullName');
     }
 
     isToggled(): boolean {
