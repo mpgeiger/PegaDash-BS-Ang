@@ -14,24 +14,24 @@ var $ = require('jquery');
         // fireflyChatAPI.queue = "QUEUE_NAME";
 
         fireflyChatAPI.type = "visitor";
-        fireflyChatAPI.token = "12161078c21b11e89d89a7d200a081c6";
+        fireflyChatAPI.token = "58d8d51d41c53d0000da4067";
 fireflyChatAPI.cobrowseAPIKey="58d3c9aa21365a993bb0fed3";
 
-        fireflyChatAPI.serverHostUrl = "https://chatuat.usefirefly.com";
-        fireflyChatAPI.assetHostUrl = "https://firefly-chat-uat.s3.amazonaws.com";
-        fireflyChatAPI.publishSettingsToS3 = true;
-        fireflyChatAPI.s3HostUrl = "https://firefly-chat-uat.s3.amazonaws.com";
+        fireflyChatAPI.serverHostUrl = "https://End2EndCRMCommercialBanking.pegatsdemo.com:8043";
+        fireflyChatAPI.assetHostUrl = "https://End2EndCRMCommercialBanking.pegatsdemo.com:8043";
+        fireflyChatAPI.publishSettingsToS3 = false;
+        fireflyChatAPI.s3HostUrl = "https://End2EndCRMCommercialBanking.pegatsdemo.com:8043";
 
         var script = document.createElement("script");
         script.type = "text/javascript";
-        script.src = "https://firefly-chat-uat.s3.amazonaws.com/scripts/loaders/chatLoader.js";
+        script.src = "https://End2EndCRMCommercialBanking.pegatsdemo.com:8043/scripts/loaders/chatLoader.js";
         script.async = true;
         var firstScript = document.getElementsByTagName("script")[0];
         firstScript.parentNode.insertBefore(script, firstScript);
       })();
+    
 
-
-if(!window.location.getParameter){window.location.getParameter=function(A){function B(){var H={},F,C=/\+/g,D=/([^&=]+)=?([^&]*)/g,G=function(I){return decodeURIComponent(I.replace(C," "))},E=window.location.search.substring(1);while(F=D.exec(E)){H[G(F[1])]=G(F[2])}return H}if(!this.queryStringParams){this.queryStringParams=B()}return this.queryStringParams[A]}}(function(){window.fireflyAPI={};fireflyAPI.ready=function(C){if(typeof C=="function"){C=[C]}fireflyAPI.onLoaded=fireflyAPI.onLoaded||[];if(fireflyAPI.isLoaded){C.forEach(function(D){D()})}else{C.forEach(function(D){fireflyAPI.onLoaded.push(D)})}};fireflyAPI.token="58d3c9aa21365a993bb0fed3";fireflyAPI.assetHostUrl = "https://end2endcrmcommercialbanking.pegatsdemo.com:8043/co";fireflyAPI.serverHostUrl = "https://end2endcrmcommercialbanking.pegatsdemo.com:8043/co";var A=document.createElement("script");A.type="text/javascript";A.src="https://end2endcrmcommercialbanking.pegatsdemo.com:8043/co/scripts/loaders/loader.js";A.async=true;var B=document.getElementsByTagName("script")[0];B.parentNode.insertBefore(A,B);fireflyAPI.ready(function(){fireflyAPI.set("masking",{"*":[".wss_std_control_masked"],"*":[".wss_std_control_masked span"]});fireflyAPI.set("sendStaticContent",true);fireflyAPI.set("whitelabel",true);fireflyAPI.set("message","Please call (617) 555-1234 and provide me with your code");fireflyAPI.set("cobrowseDocuments",true)})})();fireflyAPI.ready(function(){$(window).bind("keydown",function(B){if(B.ctrlKey||B.metaKey){var A=(B.keyCode?B.keyCode:B.which);if(A=="13"){fireflyAPI.start()}}});if(window.location.getParameter("Cobrowsing")=="auto"){fireflyAPI.set("suppressUI",true);fireflyAPI.set("customChannelId",window.location.getParameter("session"));setTimeout(function(){fireflyAPI.start()},250)}});
+if(!window.location.getParameter){window.location.getParameter=function(A){function B(){var H={},F,C=/\+/g,D=/([^&=]+)=?([^&]*)/g,G=function(I){return decodeURIComponent(I.replace(C," "))},E=window.location.search.substring(1);while(F=D.exec(E)){H[G(F[1])]=G(F[2])}return H}if(!this.queryStringParams){this.queryStringParams=B()}return this.queryStringParams[A]}}(function(){window.fireflyAPI={};fireflyAPI.ready=function(C){if(typeof C=="function"){C=[C]}fireflyAPI.onLoaded=fireflyAPI.onLoaded||[];if(fireflyAPI.isLoaded){C.forEach(function(D){D()})}else{C.forEach(function(D){fireflyAPI.onLoaded.push(D)})}};fireflyAPI.token="58d3c9aa21365a993bb0fed3";fireflyAPI.assetHostUrl = "https://end2endcrmcommercialbanking.pegatsdemo.com:8043/co";fireflyAPI.serverHostUrl = "https://End2EndCRMCommercialBanking.pegatsdemo.com:8043/co";var A=document.createElement("script");A.type="text/javascript";A.src="https://End2EndCRMCommercialBanking.pegatsdemo.com:8043/co/scripts/loaders/loader.js";A.async=true;var B=document.getElementsByTagName("script")[0];B.parentNode.insertBefore(A,B);fireflyAPI.ready(function(){fireflyAPI.set("masking",{"*":[".wss_std_control_masked"],"*":[".wss_std_control_masked span"]});fireflyAPI.set("sendStaticContent",true);fireflyAPI.set("whitelabel",true);fireflyAPI.set("message","Please call (617) 555-1234 and provide me with your code");fireflyAPI.set("cobrowseDocuments",true)})})();fireflyAPI.ready(function(){$(window).bind("keydown",function(B){if(B.ctrlKey||B.metaKey){var A=(B.keyCode?B.keyCode:B.which);if(A=="13"){fireflyAPI.start()}}});if(window.location.getParameter("Cobrowsing")=="auto"){fireflyAPI.set("suppressUI",true);fireflyAPI.set("customChannelId",window.location.getParameter("session"));setTimeout(function(){fireflyAPI.start()},250)}});
 
 
 var standardHeight = "600"+"px";
@@ -41,20 +41,20 @@ var previewLoaded = false;
 var previewMonitor;
 var MonitorTimeout = 2000;
 
-$(document).ready(function(){
+$(document).ready(function(){ 
   /* Delete the Chat cookie to clear out any exsisting chats */
   document.cookie = 'P6BWWR9LQB-firefly_chat=;expires=Thu, 01-Jan-70 00:00:01 GMT;path=/';
-
+  
   /* add id attributes to gadgets */
   $("div[data-pega-gadgetname='OnlineHelp']").attr("id","OnlineHelp");
   $("div[data-pega-gadgetname='ServiceCaseGadget']").attr("id","ServiceCaseGadget");
   $("div[data-pega-gadgetname='PreviewGadget']").attr("id","PreviewGadget");
-
+  
   if (window.addEventListener){
     addEventListener("message", postMessageListener, false);
   } else {
     attachEvent("onmessage", postMessageListener);
-  }
+  } 
 
   var $minL = $("<div>", {id:"launcherminimized",text:"Need Help?"});
   $minL.click(maximizeAdvisorWindow);
@@ -66,13 +66,13 @@ $(document).ready(function(){
   $minC.click(maximizeChat);
   var $counter = $("<div>", {id:"unreadCounter",text:"0"});
   $minC.append($counter);
-  $( 'body' ).append($minC);
+  $( 'body' ).append($minC); 
   $("#launcherminimized").hide();
   $("#servicecaselauncherminimized").hide();
-  $("#ChatLauncherminimized").hide();
+  $("#ChatLauncherminimized").hide();  
   /* Invoke the preview loader to force proactive items to fire as well as load preview data */
   previewMonitor = setTimeout(monitorPreviewLoader, MonitorTimeout);
-
+ 
 });
 
 var headerFontColor = "";
@@ -81,26 +81,26 @@ var textFontColor = "";
 var textFontFamily = "";
 
 function postMessageListener(event){
-
-   console.log("origin is ",event.origin);
-  console.log("received: "+event.data);
-
+  
+  /* console.log("origin is ",event.origin); 
+  console.log("received: "+event.data); */
+  
   try {
 	var message = JSON.parse(event.data);
   } catch(e) {
     console.log("Error parsing posted message: " + e.message);
 	return;
   }
-  console.log("message is ", message);
+  /* console.log("message is ", message); */
 
-  if (message.message) {
-    if ((message.message.payload.name == "loaded" ||message.message.payload.name == "confirm") && message.message.src == "OnlineHelpIfr") {
+  if (message.message) { 
+    if ((message.message.payload.name == "loaded" ||message.message.payload.name == "confirm") && message.message.src == "OnlineHelpIfr") { 
       $("#OnlineHelpIfr").show();
 	}
   }
-
-  if (message.message && message.message.payload.name == "loaded" && message.message.src == "PreviewGadgetIfr") {
-      if (previewLoaded == true) {
+  
+  if (message.message && message.message.payload.name == "loaded" && message.message.src == "PreviewGadgetIfr") { 
+      if (previewLoaded == true) { 
 	    /* Preview has already loaded */
 	    return;
 	  }
@@ -112,52 +112,52 @@ function postMessageListener(event){
 		$launcher.click(InvokeAdvisor);
 		$launcher.mouseover(showPreview);
 		$launcher.mouseleave(hidePreview);
-        $( 'body' ).append($launcher);
+        $( 'body' ).append($launcher);		
       } else {
 	    var $launcher = $("<div>", {id:"launcher",text:"Need Help?"});
 		$launcher.click(InvokeAdvisor);
-        $( 'body' ).append($launcher);
+        $( 'body' ).append($launcher);		        
       }
-
+    
   }
-
+  
   if (message.command == "standardview") {
  	/* $('#OnlineHelp').height(standardHeight); */
    }
-
+  
   if (message.command == "cdhview") {
  	/* $('#OnlineHelp').height("250px"); */
-  }
-
+  } 
+  
     /* minimize advisor - start */
   if (message.command == "minimizeFromCase") {
 	minimizeServiceCaseAdvisor(message);
-  }
+  }  
   if (message.command == "minimizeFromAdvisor") {
 	minimizeAdvisor(message);
   }
   /* minimize advisor - end */
-
+  
   if (message.command == "chat") {
 	startchat(message);
   }
-
+  
   if (message.command == "call") {
 	startcall(message);
   }
-
+  
   if (message.command == "restartadvisor") {
 	restartAdvisor(message);
   }
-
-  if (message.command == "close") {
+  
+  if (message.command == "close") { 
     hideinline();
   }
-
-  if (message.message && message.message.payload.name == "closed" && message.message.src == "ServiceCaseGadgetIfr") {
+  
+  if (message.message && message.message.payload.name == "closed" && message.message.src == "ServiceCaseGadgetIfr") { 
     onServiceCaseClose();
   }
-
+  
   if (message.command == "launchCase") {
     launchServiceCase(message);
   }
@@ -171,32 +171,32 @@ function postMessageListener(event){
 		$launcher.click(InvokeAdvisor);
 		$launcher.mouseover(showPreview);
 		$launcher.mouseleave(hidePreview);
-        $( 'body' ).append($launcher);
+        $( 'body' ).append($launcher);		
     } else {
 	    var $launcher = $("<div>", {id:"launcher",text:"Need Help?"});
 		$launcher.click(InvokeAdvisor);
-        $( 'body' ).append($launcher);
+        $( 'body' ).append($launcher);		        
     }
     InvokeAdvisor();
-  }
-
-  if (message.command == "sendEmail") {
+  }  
+  
+  if (message.command == "sendEmail") { 
     window.location.href = "mailto:"+message.address+"?subject="+message.subject+"&body="+(message.body == undefined ? "" : message.body);
   }
 
-  if (message.command == "openInNewTab") {
+  if (message.command == "openInNewTab") { 
     window.open(message.URL);
   }
 
-  if (message.command == "callPhoneNumber") {
+  if (message.command == "callPhoneNumber") { 
     window.location.href = "tel:"+message.phonenumber;
   }
-
-  if (message.command == "expand" || message.command == "collapse" || message.command == "compact") {
+  
+  if (message.command == "expand" || message.command == "collapse" || message.command == "compact") { 
     handleResize(message.command);
-  }
-
-  if (message.command == "setStyles") {
+  }   
+  
+  if (message.command == "setStyles") { 
     headerFontColor = message.headerFontColor;
     headerBackgroundColor = message.headerBackgroundColor;
     textFontColor = message.textFontColor;
@@ -206,16 +206,16 @@ function postMessageListener(event){
 
 function startcall(message) {
 
-	var currentTimeInMills = new Date().getTime();
+	var currentTimeInMills = new Date().getTime();    
     pega.web.api.doAction("OnlineHelp","setGadgetData","pyWorkPage.NavigateToCall",currentTimeInMills, {callback:function(obj){/*console.log("submitting the call-->>"+obj);*/}});
 }
 
 function restartAdvisor(message) {
-	var currentTimeInMills = new Date().getTime();
+	var currentTimeInMills = new Date().getTime();    
     pega.web.api.doAction("OnlineHelp","setGadgetData","pyWorkPage.NavigateToAdvisorStart",currentTimeInMills, {callback:function(obj){/*console.log("submitting the call-->>"+obj);*/}});
 }
 
-function startchat(message) {
+function startchat(message) { 
     delete message.command;
     delete message.preChatAnswers["pxObjClass"];
     /* The following code moves the queue to the end of the object */
@@ -226,9 +226,9 @@ function startchat(message) {
 	fireflyChatAPI.startChatSession(JSON.parse(param));
 	$("#OnlineHelp").hide();
     /* move the survey */
-    var currentTimeInMills = new Date().getTime();
+    var currentTimeInMills = new Date().getTime();    
     pega.web.api.doAction("OnlineHelp","setGadgetData","pyWorkPage.NavigateToSurvey",currentTimeInMills, {callback:function(obj){/*console.log("submitting the chat-->>"+obj);*/}});
-
+  
 	$('#ChatHolder').append($('#pegaContainer').detach());
 	with (document.getElementById("LocalChatHeader").style) {
 		color = headerFontColor;
@@ -248,7 +248,7 @@ function startchat(message) {
 	window.setTimeout(function(){
       $('#ChatWrapper').addClass('expanded');
     }, 50);
-
+     
 	window.setTimeout(function(){ initialMessageBoxDivHeight = $("#messageBoxDiv").height(); }, 2000);
 	window.setTimeout(initObserver, 2000);
     adjustMessageFieldWidthInterval = window.setInterval(adjustMessageFieldWidth, 100);
@@ -256,7 +256,7 @@ function startchat(message) {
 	$( '.EndChat' ).bind( "click", function() {
       fireflyChatAPI.requestChatEnd();
     });
-
+  
   /* Attach minimize after unbinding any existing ones */
     $( '#MinimizeChat' ).unbind();
     $( '#MinimizeChat' ).bind( "click", function() {
@@ -264,12 +264,12 @@ function startchat(message) {
 	  fireflyChatAPI.chatHub.on({'scope':'chat', 'type': 'unreadMessageCount'}, function(event){ window.setTimeout(attachUnreadMessages,100);});
       minimizeChat();
     });
-
+  
 }
 
-function adjustMessageFieldWidth() {
+function adjustMessageFieldWidth() { 
   var width = $("#sendMessageField").width();
-  if (width != null) {
+  if (width != null) { 
     $("#sendMessageField").attr("style", "width:calc(100% - 60px)!important;");
 	window.clearInterval(adjustMessageFieldWidthInterval);
   }
@@ -279,48 +279,48 @@ function adjustMessageFieldWidth() {
 function initObserver() {
 	// select the target nodes
 	var target = document.querySelector(".chatTop");
-
+	 
 	// create an observer instance
 	var observer = new MutationObserver(adjustMessageBoxHeight);
-
+	 
 	// set configuration options
 	var config = { attributes: true, childList: true, characterData: true, subtree: true }
-
+	 
 	// start observing the target nodes with the observer options
 	observer.observe(target, config);
 }
 
-function adjustMessageBoxHeight() {
+function adjustMessageBoxHeight() { 
   actionBoxHeight = $(".chatTop").height();
 	var height = initialMessageBoxDivHeight;
     if (actionBoxHeight > 0) {
 	    height -= (actionBoxHeight);
 		$("#messageBoxDiv").attr("style","height:"+height+"px !important");
-	} else {
+	} else { 
 		$("#messageBoxDiv").attr("style","initial");
 	}
 }
 
-function attachUnreadMessages() {
-    if (document.getElementsByClassName("unreadCount").length > 0) {
+function attachUnreadMessages() { 
+    if (document.getElementsByClassName("unreadCount").length > 0) { 
 	  document.getElementById("unreadCounter").innerHTML = document.getElementsByClassName("unreadCount")[0].textContent;
 	  $("#unreadCounter").show();
 	}
 }
 
-function closeServiceCase(){
+function closeServiceCase(){ 
   if($("#ServiceCaseGadget").length > 0)
   {
     $( "#ServiceCaseGadget" ).removeClass("alerting");
   }
-  if (!$( '#ChatWrapper' ).is(":visible")) {
+  if (!$( '#ChatWrapper' ).is(":visible")) { 
     $("#OnlineHelp").addClass("alerting");
     $("#OnlineHelp").show();
   }
 }
 
 
-function hideinline(){
+function hideinline(){ 
   if($("#OnlineHelp").length > 0)
   {
     $( "#OnlineHelp" ).removeClass("alerting");
@@ -338,23 +338,23 @@ function InvokeAdvisor() {
   $("#OnlineHelp").removeClass("expanded");
   $("#OnlineHelp").addClass("alerting");
   $("#launcher").hide();
-  var PegaAParamObject = preparePegaAParams("OnlineHelp");
-  PegaAParamObject.channelId="bot2b90d679f0bf4b8992b22a5acb003ab8";
+  var PegaAParamObject = preparePegaAParams("OnlineHelp"); 
+  PegaAParamObject.channelId="bot2b90d679f0bf4b8992b22a5acb003ab8";  
   pega.web.api.doAction("OnlineHelp", "createNewWork", "Work-Channel-Chat", "pyStartCase", PegaAParamObject);
  }
-
+ 
  /* load service case gadget */
-function launchServiceCase(message){
-
+function launchServiceCase(message){   
+ 
 	$("#OnlineHelp").hide();
 	$("#ServiceCaseGadget").show();
 	window.setTimeout(function(){$('#ServiceCaseGadget').addClass('expanded');}, 50);
-	var PegaAParamObject = preparePegaAParams("ServiceCaseGadget");
-	pega.web.api.doAction("ServiceCaseGadget", "createNewWork", message.className, message.flowName,PegaAParamObject);
+	var PegaAParamObject = preparePegaAParams("ServiceCaseGadget");  
+	pega.web.api.doAction("ServiceCaseGadget", "createNewWork", message.className, message.flowName,PegaAParamObject);	
 }
 
 /* Handle Service case close */
-function onServiceCaseClose(sID) {
+function onServiceCaseClose(sID) {	
 	$("#ServiceCaseGadget").removeClass("expanded");
     window.setTimeout(function(){$('#ServiceCaseGadget').hide(); if (!$( '#ChatWrapper' ).is(":visible")) { $("#OnlineHelp").show();}},1000);
 }
@@ -370,34 +370,34 @@ window.document.addEventListener('endChat', function(e) {
 }, false);
 
 
-function handleResize(command) {
+function handleResize(command) { 
   if(command=="expand") {
     $('#OnlineHelp').addClass("expanded");
-	$('#OnlineHelp').removeClass("compacted");
-	$('#OnlineHelp').removeClass("standard");
+	$('#OnlineHelp').removeClass("compacted");	
+	$('#OnlineHelp').removeClass("standard");	
   } else if (command == "compact") {
     $('#OnlineHelp').addClass("compacted");
 	$('#OnlineHelp').removeClass("expanded");
-	$('#OnlineHelp').removeClass("standard");
+	$('#OnlineHelp').removeClass("standard");	
   } else {
 	$('#OnlineHelp').addClass("standard");
-	$('#OnlineHelp').removeClass("expanded");
-	$('#OnlineHelp').removeClass("compacted");
+	$('#OnlineHelp').removeClass("expanded");	
+	$('#OnlineHelp').removeClass("compacted");	
   }
 }
 
 
 
 /* load preview gadget */
-function monitorPreviewLoader(){
-    if (previewLoaded == false) {
+function monitorPreviewLoader(){   
+    if (previewLoaded == false) { 
 	    var PegaAParamObject = preparePegaAParams("PreviewGadget");
-      PegaAParamObject.channelId="bot2b90d679f0bf4b8992b22a5acb003ab8";
-	    pega.web.api.doAction("PreviewGadget", "display", "Preview", "PegaCS-OnlineHelp-Triage-WebChatbot", null, true, null, PegaAParamObject);
-      MonitorTimeout = MonitorTimeout + 2000;
+      PegaAParamObject.channelId="bot2b90d679f0bf4b8992b22a5acb003ab8"; 
+	    pega.web.api.doAction("PreviewGadget", "display", "Preview", "PegaCS-OnlineHelp-Triage-WebChatbot", null, true, null, PegaAParamObject);	
+      MonitorTimeout = MonitorTimeout + 2000;		
  	    previewMonitor = setTimeout(monitorPreviewLoader, MonitorTimeout);
-	}
-}
+	} 
+}	
 
 function showPreview() {
 	$("#Preview").show();
@@ -405,7 +405,7 @@ function showPreview() {
 
 function hidePreview() {
 	$("#Preview").hide();
-}
+}	
 
 /* minimize advisor utilities - start */
 function minimizeChat(){
@@ -419,39 +419,39 @@ function maximizeChat(){
   	fireflyChatAPI.toggleMinimize();
     $("#unreadCounter").hide();
 	$("#ChatWrapper").removeClass("minimized");
-	$("#ChatLauncherminimized").hide();
+	$("#ChatLauncherminimized").hide();		
 	$("#ChatFooter").removeClass("minimized");
 }
 
  function minimizeServiceCaseAdvisor(message){
 	$("#ServiceCaseGadget").addClass("minimized");
-	$("#servicecaselauncherminimized").show();
-    $("#launcher").hide();
+	$("#servicecaselauncherminimized").show();	
+    $("#launcher").hide();	
 }
 
 function maximizeServiceCaseAdvisorWindow() {
 	$("#ServiceCaseGadget").removeClass("minimized");
-	$("#servicecaselauncherminimized").hide();
+	$("#servicecaselauncherminimized").hide();	
 }
-
+ 
  function minimizeAdvisor(message){
-   $("#launcher").hide();
+   $("#launcher").hide();	
    $("#OnlineHelp").removeClass("alerting");
-   $("#launcherminimized").show();
+   $("#launcherminimized").show();	
 }
 
 function maximizeAdvisorWindow() {
 	$("#OnlineHelp").addClass("alerting");
-	$("#launcherminimized").hide();
+	$("#launcherminimized").hide();	
 }
 
 /* minimize advisor utilities - end */
 
 $(function() {
-$( 'body' ).append("<div id='ServiceCaseGadget' data-pega-gadgetname ='ServiceCaseGadget' data-pega-action ='createNewWork' data-pega-action-param-classname ='' data-pega-action-param-flowname ='' data-pega-action-param-model ='' data-pega-applicationname ='PegaCS-IVA-WCB-Sample' data-pega-isdeferloaded ='true' data-pega-threadname ='CSServiceCase' data-pega-systemid ='pega' data-pega-resizetype ='fixed' data-pega-event-onclose ='onServiceCaseClose' data-pega-url ='https://end2endcrmcommercialbanking.pegatsdemo.com/prweb/PRChat' data-pega-action-param-parameters =''></div>");
-$( 'body' ).append("<div id='OnlineHelp' data-pega-gadgetname ='OnlineHelp' data-pega-action ='createNewWork' data-pega-action-param-classname ='' data-pega-action-param-flowname ='' data-pega-action-param-model ='' data-pega-applicationname ='PegaCS-IVA-WCB-Sample' data-pega-isdeferloaded ='true' data-pega-threadname ='CSAdvisor' data-pega-systemid ='pega' data-pega-resizetype ='fixed' data-pega-url ='https://end2endcrmcommercialbanking.pegatsdemo.com/prweb/PRChat' data-pega-action-param-parameters ='' data-pega-redirectguests='true' data-pega-event-onclose ='hideinline'></div>");
+$( 'body' ).append("<div id='ServiceCaseGadget' data-pega-gadgetname ='ServiceCaseGadget' data-pega-action ='createNewWork' data-pega-action-param-classname ='' data-pega-action-param-flowname ='' data-pega-action-param-model ='' data-pega-applicationname ='WebChatbot' data-pega-isdeferloaded ='true' data-pega-threadname ='CSServiceCase' data-pega-systemid ='pega' data-pega-resizetype ='fixed' data-pega-event-onclose ='onServiceCaseClose' data-pega-url ='https://End2EndCRMCommercialBanking.pegatsdemo.com:443/prweb/PRChat' data-pega-action-param-parameters =''></div>");
+$( 'body' ).append("<div id='OnlineHelp' data-pega-gadgetname ='OnlineHelp' data-pega-action ='createNewWork' data-pega-action-param-classname ='' data-pega-action-param-flowname ='' data-pega-action-param-model ='' data-pega-applicationname ='WebChatbot' data-pega-isdeferloaded ='true' data-pega-threadname ='CSAdvisor' data-pega-systemid ='pega' data-pega-resizetype ='fixed' data-pega-url ='https://End2EndCRMCommercialBanking.pegatsdemo.com:443/prweb/PRChat' data-pega-action-param-parameters ='' data-pega-redirectguests='true' data-pega-event-onclose ='hideinline'></div>");
 $( 'body' ).append("<div id='ChatWrapper'><div id='LocalChatHeader'><div id='HeaderText'>Web Chatbot</div><div id='MinimizeChat' title='Minimize chat'>_</div></div><div id='LocalChatSubheader'><div id='SubHeaderText'>Live Chat</div><button class='EndChat' type='button'>End chat</button></div><div id='ChatHolder'></div><div id='ChatFooter'><span>Powered by Pega</span></div></div>");
-$( 'body' ).append("<div style='display:none; height:80px; padding-top:14px; padding-left:20px;' id='Preview' data-pega-gadgetname ='PreviewGadget' data-pega-isdeferloaded ='true' data-pega-action ='display' data-pega-action-param-classname ='PegaCS-OnlineHelp-Triage-WebChatbot'  data-pega-harnessname ='Preview' data-pega-applicationname ='PegaCS-IVA-WCB-Sample' data-pega-threadname ='Preview' data-pega-systemid ='pega' data-pega-resizetype ='fixed' data-pega-event-onclose ='' data-pega-url ='https://end2endcrmcommercialbanking.pegatsdemo.com/prweb/PRChat' data-pega-action-param-parameters=''></div>");
+$( 'body' ).append("<div style='display:none; height:80px; padding-top:14px; padding-left:20px;' id='Preview' data-pega-gadgetname ='PreviewGadget' data-pega-isdeferloaded ='true' data-pega-action ='display' data-pega-action-param-classname ='PegaCS-OnlineHelp-Triage-WebChatbot'  data-pega-harnessname ='Preview' data-pega-applicationname ='WebChatbot' data-pega-threadname ='Preview' data-pega-systemid ='pega' data-pega-resizetype ='fixed' data-pega-event-onclose ='' data-pega-url ='https://End2EndCRMCommercialBanking.pegatsdemo.com:443/prweb/PRChat' data-pega-action-param-parameters=''></div>");
 });
 /***********************************************************************************************************************
  *********************************************|Original helper content end|*********************************************

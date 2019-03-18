@@ -2,9 +2,9 @@
 function preparePegaAParams(gadgetName) {
 	var pegaAParamObj = {};
   /* Lets not include credentails*/
-   pegaAParamObj.UserIdentifier="SallyJones";
-	pegaAParamObj.Password="install";
-  
+  /* pegaAParamObj.UserIdentifier="";
+	pegaAParamObj.Password="";
+  */
     pegaAParamObj.AppName="WebChatbot";	  
 	  pegaAParamObj.HelpConfigurationName="e2ecb";  
   	pegaAParamObj.ContactId=getCookie("ContactID");
@@ -41,5 +41,5 @@ function getCookie(cname) {
 
 /* Set cookies. To be overwritten locally */
   setCookie("ContactID", "CONT-1", 30);
-  setCookie("AccountNumber","9998765431", 30);
-  setCookie("UserName","SallyJones", 30);
+  setCookie("AccountNumber","123450000", 30);
+  setCookie("UserName","Sara", 30);
