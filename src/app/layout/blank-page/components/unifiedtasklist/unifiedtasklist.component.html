@@ -1,0 +1,56 @@
+<!-- <div>
+  <div *ngFor="let task of tasks">
+    <mat-card class="mat-card">
+      <mat-card-content>
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <div
+            fxFlex="36px"
+            matTooltip="{{ task.pyAssignmentStatus }} -- Ugency-> {{
+              task.pxUrgencyAssign
+            }}"
+          >
+            <i
+              class="material-icons md-18  vertical-align-middle padding-bottom-3"
+              [ngStyle]="{ color: calcColor(task.pxUrgencyAssign) }"
+            >
+              lens
+            </i>
+          </div>
+          <div fxFlex="65" fxLayoutAlign="start center">
+            <div
+              fxLayout="column"
+              matTooltip="{{ task.TaskType }} - {{
+                task.pxRefObjectInsName
+              }} &#10;  Status -- {{ task.pyAssignmentStatus }}"
+            >
+              <div fxFlex class="text-menu">{{ task.pyLabel }}</div>
+              <div fxFlex class="text-caption">{{ task.pxTaskLabel }}</div>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="end">
+            <div fxLayout="column">
+              <div fxFlex class="text-menu">{{ task.pyAssignmentStatus }}</div>
+              <div fxFlex class="caption">
+                <font size="-3"
+                  >Due: {{ task.pxDeadlineTime | date: short }}</font
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div> -->
+
+<div>
+    <div >
+        <!-- items being paged -->
+        <div *ngFor="let task of pagedItems">
+<div> XXX</div>
+
+        </div>
+
+
+    </div>
+</div>

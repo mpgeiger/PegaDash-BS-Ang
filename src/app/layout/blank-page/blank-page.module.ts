@@ -4,10 +4,13 @@ import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { BlankPageRoutingModule } from './blank-page-routing.module';
 import { BlankPageComponent } from './blank-page.component';
+// import { UnifiedtasklistComponent } from '../../shared/pegaComponents/unifiedtasklist/unifiedtasklist.component';
+
 import {
   TimelineComponent,
   NotificationComponent,
-  ChatComponent
+  ChatComponent,
+  UnifiedtasklistComponent
 } from './components';
 
 import { StatModule } from '../../shared';
@@ -23,7 +26,8 @@ import { StatModule } from '../../shared';
       BlankPageComponent,
       TimelineComponent,
       NotificationComponent,
-      ChatComponent
+      ChatComponent,
+      UnifiedtasklistComponent
     ]
 })
 export class BlankPageModule {}
