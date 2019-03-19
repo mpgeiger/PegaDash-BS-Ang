@@ -14,21 +14,21 @@ export class DashboardComponent implements OnInit {
     constructor() {
         this.sliders.push(
             {
-                imagePath: 'assets/images/slider1.jpg',
-                label: 'First slide label',
+                imagePath: 'assets/images/allsucceed.jpg',
+                label: '',
                 text:
-                    'Nulla vitae elit libero, a pharetra augue mollis interdum.'
+                    'We all succeed'
             },
             {
-                imagePath: 'assets/images/slider2.jpg',
-                label: 'Second slide label',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+                imagePath: 'assets/images/extraordinary.jpg',
+                label: '',
+                text: 'Find the extraordinary'
             },
             {
-                imagePath: 'assets/images/slider3.jpg',
-                label: 'Third slide label',
+                imagePath: 'assets/images/PIT.png',
+                label: '',
                 text:
-                    'Praesent commodo cursus magna, vel scelerisque nisl consectetur.'
+                    'We are all BNY'
             }
         );
 
