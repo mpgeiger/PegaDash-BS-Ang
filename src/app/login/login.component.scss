@@ -17,6 +17,9 @@
     // MPG color: #fff;
     color: $login-page-color;
     padding: 3em;
+    input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 500px white inset;
+  }
     .col-lg-4 {
         padding: 0;
     }
@@ -26,7 +29,7 @@
         font-size: 18px;
         line-height: 1.3333333;
         border-radius: 0;
-        background-color: darken($topnav-background-color, 5%); ;
+       // background-color: darken($topnav-background-color, 5%); ;
     }
     .input-underline {
         background: 0 0;
@@ -43,6 +46,12 @@
         border-bottom: 2px solid $login-page-color;
         box-shadow: none;
     }
+    .input-underline:active {
+      // MPG border-bottom: 2px solid #fff;
+      border-bottom: 2px solid $login-page-color;
+      box-shadow: none;
+      background-color: lighten( $login-page-border-colors,50%);
+  }
     .rounded-btn {
         -webkit-border-radius: 50px;
         border-radius: 50px;
@@ -76,6 +85,10 @@
             color: $login-page-h1;
         }
     }
+    .form-content:active{
+      // background-color:green !important;
+    } 
+
 
     .form-group {
         padding: 8px 0;
@@ -100,6 +113,7 @@
              // MPG color: rgba(255, 255, 255, 0.6) !important;
              color: $login-page-form-group !important;
         }
+
     }
     .form-content {
         padding: 40px 0;
@@ -108,6 +122,11 @@
         -webkit-border-radius: 50%;
         border-radius: 50%;
         // MPG border: 2px solid #fff;
-        border: 2px solid $login-page-color;
+        border: 2px solid lighten($login-page-color, 80%);
+
+    }
+
+    img {
+      padding: 10px;
     }
 }

@@ -1,8 +1,8 @@
 <div class="login-page" [@routerTransition]>
     <div class="row justify-content-md-center">
         <div class="col-md-4">
-            <img src="../../assets/images/BNY_Logo_128x128.png" width="150px" class="user-avatar" />
-            <h1>BNY Dashboard Login</h1>
+            <img src="../../assets/images/BNY_Logo_128x128.png" width="200px" class="user-avatar" />
+            <h1>BNY Account Experience</h1>
             <form role="form">
                 <div class="form-content">
                     <div class="form-group" (submit)=doLogin()>
@@ -16,10 +16,13 @@
                     </div>
                 </div>
                 <!-- <a class="btn rounded-btn" [routerLink]="['/dashboard']" (click)="onLoggedin()">{{ 'Log in' | translate }}</a> -->
-                <a class="btn rounded-btn" [routerLink]="['/dashboard']" (click)="attemptLogin()">{{ 'Log in' | translate }}</a>
+                <a class="btn rounded-btn" [routerLink]="['/summary-page']" (click)="attemptLogin()">{{ 'Log in' | translate }}</a>
                 &nbsp;
                 <a class="btn rounded-btn" [routerLink]="['/signup']">{{ 'Register' | translate }}</a>
             </form>
+<br />
+<br />
+            <span class="text-caption">Powered by: <a href='https://www.pega.com/industries/financial-services' target='_blank'><img src="../../assets/images/powered_by_pega.png" width="120px" /></a> </span>
         </div>
     </div>
 </div>
