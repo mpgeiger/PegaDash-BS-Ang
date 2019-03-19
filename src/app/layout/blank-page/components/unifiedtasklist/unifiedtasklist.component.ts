@@ -145,6 +145,7 @@ export class UnifiedtasklistComponent implements OnInit {
   }
 
   openAssignment(row) {
+    console.log(' clicked row -->', row);
     this.oaservice.sendMessage(row.pxRefObjectInsName, row);
   }
 }
