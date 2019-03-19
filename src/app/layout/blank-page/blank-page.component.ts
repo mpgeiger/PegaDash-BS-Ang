@@ -10,20 +10,12 @@ import { routerTransition } from '../../router.animations';
 })
 export class BlankPageComponent implements OnInit {
     constructor() {}
+    numUnifiedTaskList$ = '';
 
     // ngOnInit() {}
     ngOnInit() {
-      // UnifiedtasklistComponent.get;
 
-      // this.subscription = this.rwlservice.getMessage().subscribe(message => {
-      //   this.message = message;
-
-        // if (this.message.unifiedtasklist === 'Work' || this.message.unifiedtasklist === 'unifiedtasklist') {
-        // this.getunifiedtasklist();
-
-        // } else {
-        // this.getWorkBaskets(this.message.unifiedtasklist);
-        // }
+      this.numUnifiedTaskList$ = localStorage.getItem('numUnifiedTaskList');
       }
 
     }

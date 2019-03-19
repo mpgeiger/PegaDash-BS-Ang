@@ -1,6 +1,6 @@
 /* IAC widget sizing and helper classes */
 #OnlineHelp, #ServiceCaseGadget, #ChatWrapper {position:fixed;right:20px;bottom:-2000px;height:600px;
-  width:450px;overflow:auto;z-index:999;background:#fff; border: 1px solid white;
+  width:450px;overflow:hidden;z-index:999;background:#fff; border: 1px solid white;
   border-radius:4px; -moz-box-shadow: 0px 0px 14px rgba(0,0,0,.4);-webkit-box-shadow: 0px 0px 14px rgba(0,0,0,.4);box-shadow: 0px 0px 14px rgba(0,0,0,.4);}
 #OnlineHelp {height:600px;}
 #OnlineHelp, #ChatWrapper, #ServiceCaseGadget, #ChatFooter {-webkit-transition: all .5s ease-in-out;
@@ -36,20 +36,20 @@ div#chatText {padding-top: 11px !important;padding-left: 14px !important;display
 .chatContainer #sendMessageField:focus{box-shadow:none;border:none;color:black;}
 input#fileUploadIcon { height:40px; }
 #chatContainer .sendButton { display:none !important;}
-div#ChatFooter{position:fixed; bottom:20px; background-color:#F1F1F2; width:450px;text-align:center; 
+div#ChatFooter{position:fixed; bottom:20px; background-color:#F1F1F2; width:450px;text-align:center;
     color:929497; font-family:Open Sans, sans-serif; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px;
-    font-size:12px; height:22px; padding-top:8px} 
+    font-size:12px; height:22px; padding-top:8px}
 /* End of styles required to display chat in full guide div */
 #MinimizeChat {font-family:"Times New Roman"; font-size:2.3em;  font-weight:400;  margin-top: -17px;margin-right: 10px; cursor:pointer;}
 #LocalChatSubheader { font-family: Open Sans, sans-serif; font-size: 17px; margin-bottom: 7px; margin-top: 5px; padding-bottom: 8px; border-bottom: 1px solid #CCCCCC; margin-left: 14px; margin-right: 14px;}
 #SubHeaderText {padding-top:4px;}
-.EndChat { float:right; background: white; border: 1px solid #A29060; color:#A29060; border-radius: 3px; padding: 5px 9px; margin-top:-25px;cursor:pointer;} 
-.EndChat:hover {background:#E5F0FF;} 
-#ChatLauncherminimized, #servicecaselauncherminimized, #launcherminimized, #launcher { font-family: Open Sans, sans-serif; background-color: #A29060; text-align: center; 
-  border-radius: 6px; position: fixed; bottom: 30px; right: 20px; padding: 7px; font-size:20px; color:#FFFFFF; 
+.EndChat { float:right; background: white; border: 1px solid #A29060; color:#A29060; border-radius: 3px; padding: 5px 9px; margin-top:-25px;cursor:pointer;}
+.EndChat:hover {background:#E5F0FF;}
+#ChatLauncherminimized, #servicecaselauncherminimized, #launcherminimized, #launcher { font-family: Open Sans, sans-serif; background-color: #A29060; text-align: center;
+  border-radius: 6px; position: fixed; bottom: 30px; right: 20px; padding: 7px; font-size:20px; color:#FFFFFF;
   cursor: pointer;border:1px solid #FFFFFF;}
-#Preview { font-family: Open Sans, sans-serif; background-color: ; text-align: left; 
-  border-radius: 6px; position: fixed; bottom: 75px; right: 5px; padding: 7px; color:#000000; 
+#Preview { font-family: Open Sans, sans-serif; background-color: ; text-align: left;
+  border-radius: 6px; position: fixed; bottom: 75px; right: 5px; padding: 7px; color:#000000;
   -moz-box-shadow: 0px 0px 14px rgba(0,0,0,.4);-webkit-box-shadow: 0px 0px 14px rgba(0,0,0,.4);box-shadow: 0px 0px 14px rgba(0,0,0,.4);
   cursor: pointer;border:none;}
 #unreadCounter { position: absolute; top: -13px; right: -9px; background-color: red;  height: 23px; width: 22px; font-size:16px; border-radius: 14px; color: white; display:none; z-index:1000;}

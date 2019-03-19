@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-stat',
@@ -13,7 +14,8 @@ export class StatComponent implements OnInit {
     @Input() data: number;
     @Output() event: EventEmitter<any> = new EventEmitter();
 
-    constructor() {}
+    constructor( public router: Router) {
+  }
 
     ngOnInit() {}
 }
