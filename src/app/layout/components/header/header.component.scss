@@ -1,14 +1,23 @@
-$topnav-background-color: #222;
+// MPG $topnav-background-color: #222;
+// $topnav-background-color: #FFF;
+@import '../../../Dashboard_Styles.scss';
+
+
 :host {
     .navbar {
         background-color: $topnav-background-color;
         .navbar-brand {
-            color: #fff;
+            // MGP color: #fff;
+            color: $topnav-item-color;
         }
         .nav-item > a {
-            color: #999;
+            // color: #999;
+            color: $topnav-item-color;
             &:hover {
-                color: #fff;
+                // MPG color: #fff;
+                color: darken($topnav-item-color, 80%);
+                // color: #000;
+                background: darken($topnav-background-color, 5%);
             }
         }
     }

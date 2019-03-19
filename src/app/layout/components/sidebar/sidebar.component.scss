@@ -1,4 +1,8 @@
-$topnav-background-color: #222;
+// MPG $topnav-background-color: #222;
+// $topnav-background-color: #FFF;
+@import '../../../Dashboard_Styles.scss';
+
+
 .sidebar {
     border-radius: 0;
     position: fixed;
@@ -27,25 +31,31 @@ $topnav-background-color: #222;
             background: $topnav-background-color;
             border: 0;
             border-radius: 0;
-            color: #999;
+            // MPG color: #999;
+            color: $sidebar-item-a-color;
             text-decoration: none;
             .fa {
                 margin-right: 10px;
             }
         }
         a:hover {
+            // MPG background: darken($topnav-background-color, 5%);
+            // MPG color: #fff;
             background: darken($topnav-background-color, 5%);
-            color: #fff;
+            color: $sidebar-item-hover-color;
         }
         a.router-link-active {
+             // MPG background: darken($topnav-background-color, 5%);
+            // MPG color: #fff;
             background: darken($topnav-background-color, 5%);
-            color: #fff;
+            color: $sidebar-item-hover-color;
         }
         .header-fields {
             padding-top: 10px;
-        
+
             > .list-group-item:first-child {
-                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                // MPG border-top: 1px solid rgba(255, 255, 255, 0.2);
+                border-top: 1px solid rgba(10,10,10, 0.2);
             }
         }
     }
@@ -59,7 +69,7 @@ $topnav-background-color: #222;
             height: 50px;
             margin-bottom: 0;
             a {
-                color: #999;
+                color: $sidebar-dropdown-panel-title;
                 text-decoration: none;
                 font-weight: 400;
                 background: $topnav-background-color;
@@ -72,7 +82,8 @@ $topnav-background-color: #222;
             }
             a:hover,
             a:focus {
-                color: #fff;
+                // MPG color: #fff;
+                color: $sidebar-dropdown-panel-title-focus;
                 outline: none;
                 outline-offset: -2px;
             }
@@ -89,10 +100,14 @@ $topnav-background-color: #222;
                     background-color: $topnav-background-color;
                     border: 0 solid transparent;
                     a {
+                        // MPG color: #999;
                         color: #999;
+
                     }
                     a:hover {
-                        color: #fff;
+                        // MPG color: #fff;
+                         color: darken(#999, 5%);
+                        // color: #222;
                     }
                 }
                 .list-group-item:hover {
@@ -121,7 +136,7 @@ $topnav-background-color: #222;
             height: auto;
             li {
                 a {
-                    color: #fff;
+                    color: $sidebar-nested-menu-a-color;
                     padding: 10px;
                     display: block;
                 }
@@ -166,14 +181,14 @@ $topnav-background-color: #222;
     cursor: pointer;
     padding: 12px;
     bottom: 0;
-    color: #999;
-    background: #212529;
+    color: $sidebar-toggle-button-color;
+    background: $sidebar-toggle-button-background-color;
     i {
         font-size: 23px;
     }
     &:hover {
-        background: darken($topnav-background-color, 5%);
-        color: #fff;
+        background: $sidebar-toggle-button-hover-background-color;
+        color: $sidebar-item-hover-color;
     }
     border-top: 1px solid #999;
     -webkit-transition: all 0.2s ease-in-out;
