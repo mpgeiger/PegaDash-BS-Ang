@@ -1,0 +1,61 @@
+
+<!-- items being paged -->
+<div *ngFor="let task of tasks">
+  <div class="col-12">
+    <!-- CARD -->
+    <div class="card bg-light mb-1">
+      <!-- <div class="card-header">Header</div> -->
+      <div class="card-body">
+        <!-- <div class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's content.</div>
+              -->
+        <div class="row h-100">
+          <div class="col-sm-1 .col-md-8my-auto">
+            <!-- PRIORITY -->
+            <i class="material-icons md-18" [ngStyle]="{ color: calcColor(task.pxUrgencyAssign) }">
+              lens
+            </i>
+            <!-- PRIORITY -->
+          </div>
+
+        <div class="col-sm-11 text-xs-center">
+          <!-- PRIORITY -->
+          <div class="row">
+            <div class="col-sm-9">
+              {{ task.pyLabel }}
+            </div>
+            <div class="col-sm-3 text-xs-right float-right text-right">
+               <!--
+                        MPG Case Statement to swap displayed text
+                       -->
+              <div ngSwitch="{{task.pyAssignmentStatus}}">
+                    <div *ngSwitchCase="'Pending-RequestInitiation'">
+                        <div fxFlex class="text-menu">Pending</div>
+                    </div>
+
+                <div  *ngSwitchDefault>
+                    <div fxFlex class="text-menu">{{ task.pyAssignmentStatus }}</div>
+
+                </div >
+              </div>
+
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-8">
+
+                  {{ task.pxTaskLabel }}
+
+            </div>
+            <div class="col-sm-4 text-xs-right float-right text-right">
+
+                  {{ task.pxDeadlineTime | date }}
+
+            </div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</div>

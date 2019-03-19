@@ -1,8 +1,12 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
     <div class="list-group">
         <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+          <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+          <span>{{ 'Dashboard' | translate }}</span>
+      </a>
+        <a routerLink="/summary-page" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-dashboard"></i>&nbsp;
-            <span>{{ 'Dashboard' | translate }}</span>
+            <span>{{ 'Account Summary' | translate }}</span>
         </a>
         <a [routerLink]="['/opentask-page']" [routerLinkActive]="['router-link-active']" class="list-group-item">
           <i class="fa fa-file-o"></i>&nbsp;

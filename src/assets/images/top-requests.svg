@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 373.271 220.2">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1 {
+        stroke: #c3cde6;
+      }
+
+      .cls-2 {
+        stroke: rgba(195,205,230,0.5);
+      }
+
+      .cls-3 {
+        stroke: rgba(195,205,230,0.25);
+      }
+
+      .cls-4 {
+        fill: #8dc63f;
+      }
+
+      .cls-5 {
+        fill: #295ed9;
+      }
+
+      .cls-5, .cls-6 {
+        font-size: 11px;
+        font-family: OpenSans-Semibold, Open Sans;
+        font-weight: 600;
+      }
+
+      .cls-6 {
+        fill: #939393;
+      }
+    </style>
+  </defs>
+  <g id="Group_3543" data-name="Group 3543" transform="translate(-516 -305.102)">
+    <path id="Path_2445" data-name="Path 2445" class="cls-1" d="M0,235.4H243.767" transform="translate(645.504 274.836)"/>
+    <path id="Path_2446" data-name="Path 2446" class="cls-2" d="M0,0H205.135" transform="translate(840.38 510.236) rotate(-90)"/>
+    <path id="Path_2447" data-name="Path 2447" class="cls-3" d="M0,0H205.135" transform="translate(792.177 510.236) rotate(-90)"/>
+    <path id="Path_2448" data-name="Path 2448" class="cls-2" d="M0,0H205.135" transform="translate(743.286 510.236) rotate(-90)"/>
+    <path id="Path_2449" data-name="Path 2449" class="cls-3" d="M0,0H205.135" transform="translate(694.395 510.236) rotate(-90)"/>
+    <path id="Path_2450" data-name="Path 2450" class="cls-2" d="M0,0H205.135" transform="translate(645.504 510.236) rotate(-90)"/>
+    <path id="Path_2451" data-name="Path 2451" class="cls-4" d="M0,103.113H16.721v106.4H0ZM26.754,147.7H43.476v61.816H26.754ZM53.508,28.922H70.285v180.59H53.563V28.922ZM80.262,44.469H96.984V209.2H80.262Zm26.809,29.722h16.721V209.2H107.071ZM133.826,0h16.721V209.312H133.826ZM160.58,14.861H177.3V209.312H160.58Z" transform="translate(855.115 317.423) rotate(90)"/>
+    <text id="Unable_to_Apply_Funds" data-name="Unable to Apply Funds" class="cls-5" transform="translate(636 464.508)"><tspan x="-119.373" y="0">Unable to Apply Funds</tspan></text>
+    <text id="Payment_Recall" data-name="Payment Recall" class="cls-5" transform="translate(636 410.7)"><tspan x="-81.394" y="0">Payment Recall</tspan></text>
+    <text id="BCNR" class="cls-5" transform="translate(636 384.128)"><tspan x="-29.879" y="0">BCNR</tspan></text>
+    <text id="Payment_Amendment" data-name="Payment Amendment" class="cls-5" transform="translate(636 356.892)"><tspan x="-116.188" y="0">Payment Amendment</tspan></text>
+    <text id="Return_of_Funds" data-name="Return of Funds" class="cls-5" transform="translate(636 491.08)"><tspan x="-84.853" y="0">Return of Funds</tspan></text>
+    <text id="_50" data-name="50" class="cls-6" transform="translate(700.696 522.302)"><tspan x="-12.558" y="0">50</tspan></text>
+    <text id="_100" data-name="100" class="cls-6" transform="translate(751.869 522.302)"><tspan x="-18.836" y="0">100</tspan></text>
+    <text id="_150" data-name="150" class="cls-6" transform="translate(801.027 522.302)"><tspan x="-18.836" y="0">150</tspan></text>
+    <text id="_200" data-name="200" class="cls-6" transform="translate(850.185 522.302)"><tspan x="-18.836" y="0">200</tspan></text>
+    <text id="General_Inquiry" data-name="General Inquiry" class="cls-5" transform="translate(636 437.272)"><tspan x="-82.355" y="0">General Inquiry</tspan></text>
+    <text id="Payment_Status" data-name="Payment Status" class="cls-5" transform="translate(636 330.32)"><tspan x="-83.478" y="0">Payment Status</tspan></text>
+  </g>
+</svg>
