@@ -71,8 +71,9 @@
         // MPG color: rgba(255, 255, 255, 1);
         // MPG border: 2px solid rgba(255, 255, 255, 1);
         color: $login-page-rounded-btn-visited;
-        border: 2px solid $login-page-rounded-btn-visited;
+        border: 3px solid $login-page-rounded-btn-visited;
         outline: none;
+        background-color: lighten($login-page-rounded-btn-visited,95%)
     }
 
     h1 {
