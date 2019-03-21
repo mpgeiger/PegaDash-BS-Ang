@@ -1,0 +1,6 @@
+<div *ngIf="showDetails">
+  <h1>{{detailsName}}</h1>
+  <span *ngIf="detailsName" style="position: unset;">|</span>
+  <app-group [groups]="groups$" [formGroup]="fg"></app-group>
+
+</div>

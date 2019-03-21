@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "sslstart": "ng serve --host 0.0.0.0 --port 8080 --disable-host-check --ssl true --ssl-key /node_modules/browser-sync/lib/server/certs/server.key --ssl-cert /node_modules/browser-sync/lib/server/certs/server.crt",
     "build": "ng build --prod",
     "gitbuild": "ng build --prod --base-href /start-angular/SB-Admin-BS4-Angular-7/master/dist/",
     "test": "ng test",
@@ -30,6 +31,8 @@
     "core-js": "2.5.7",
     "font-awesome": "4.7.0",
     "ng2-charts": "1.6.0",
+    "ngx-pipes": "^2.4.6",
+    "ngx-tabset": "^2.1.0",
     "rxjs": "6.3.3",
     "yarn": "1.12.1",
     "zone.js": "0.8.26"
@@ -39,9 +42,10 @@
     "@angular/cli": "7.0.4",
     "@angular/compiler-cli": "7.0.2",
     "@angular/language-service": "7.0.2",
-    "@types/node": "10.12.2",
     "@types/jasmine": "2.8.9",
     "@types/jasminewd2": "2.0.5",
+    "@types/node": "10.12.2",
+    "browser-sync": "^2.26.3",
     "codelyzer": "4.5.0",
     "jasmine-core": "3.3.0",
     "jasmine-spec-reporter": "4.2.1",

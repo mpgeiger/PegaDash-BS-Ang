@@ -7,6 +7,7 @@ import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
+// import { CreateRCIcaseComponent } from './pega/create-rcicase/create-rcicase.component';
 
 @NgModule({
     imports: [
@@ -15,6 +16,7 @@ import { HeaderComponent } from './components/header/header.component';
         TranslateModule,
         NgbDropdownModule
     ],
-    declarations: [LayoutComponent, SidebarComponent, HeaderComponent]
+    declarations: [LayoutComponent, SidebarComponent, HeaderComponent],
+    exports: []
 })
 export class LayoutModule {}

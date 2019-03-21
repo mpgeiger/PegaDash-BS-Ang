@@ -1,0 +1,72 @@
+
+@media (min-width:992px) {
+    .default-login-jumbotron-container .jumbotron {
+        top: 15%
+    }
+}
+
+.default-login-jumbotron-container .jumbotron .login-box.col-md-4,
+.default-login-jumbotron-container .jumbotron .login-box.col-sm-6 {
+    width: 100%;
+    float: none
+}
+
+@media (min-width:768px) {
+    .default-login-jumbotron-container .jumbotron .login-box.col-sm-push-6 {
+        position: static;
+        left: auto
+    }
+}
+
+@media (min-width:992px) {
+    .default-login-jumbotron-container .jumbotron .login-box.col-md-push-8 {
+        position: static;
+        left: auto
+    }
+}
+
+
+//
+//
+//
+
+.nxn-login-features-container .login-features .nxn-panel {
+  min-height: 371px;
+}
+
+.nxn-login-features-container .login-features .nxn-panel {
+  min-height: 391px;
+}
+
+.nxn-login-features-container .login-features .nxn-panel {
+  min-height: 371px;
+}
+
+.nxn-login-features-container .login-features .nxn-panel {
+  min-height: 391px;
+}
+
+.nxn-login-features-container .login-features .nxn-panel {
+  min-height: 371px;
+}
+
+.nxn-login-features-container .login-features .nxn-panel {
+  min-height: 391px;
+}
+.nxn-info-box, .nxn-panel, .nxn-widget-content, div[nxn-info-extender] {
+  border-color: #cfcfcf;
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+  box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+  padding: 15px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border: 0 solid #cfcfcf;
+}
+.nxn-info-box, .nxn-panel, .nxn-widget-content, .panel, div[nxn-info-extender] {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}

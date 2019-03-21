@@ -7,6 +7,7 @@ import { HttpParams, HttpHeaders } from '@angular/common/http';
 import { OpenAssignmentService } from '../../../../_messages/openassignment.service';
 import { RefreshWorkListService } from '../../../../_messages/refreshworklist.service';
 import { PagerService } from '../../../../_services/pager.service';
+import { CreateRCIcaseComponent } from './../../../pega/create-rcicase/create-rcicase.component';
 // import { groupBy } from 'rxjs/operators';
 
 @Component({
@@ -22,6 +23,10 @@ export class UnifiedtasklistComponent implements OnInit {
   // unifiedtasklist$: MatTableDataSource<any>;
   unifiedtasklistObject$: Array<any> = [];
   tasks: Array<any> = [];
+
+  // currentCase$: Object = {'pxApplication': 'Treasurer', 'pxAssignedOperatorID': 'SallyJones',
+  //  'pxAssignedUserName': 'Sally Jones', 'pxCreateDateTime': '2019-03-11T10:51:25.734Z', 'pxDeadlineTime': '2019-03-11T11:01:25.734Z', 'pxGoalTime': '2019-03-11T10:56:25.733Z', 'pxObjClass': 'Assign-Worklist', 'pxRefObjectClass': 'PegaCPMFS-Work-RequestCheckImage', 'pxRefObjectInsName': 'S-1000487', 'pxRefObjectKey': 'PEGACPMFS-WORK S-1000487', 'pxTaskLabel': 'Enter Check Info', 'pxUrgencyAssign': '100', 'pyAssignmentStatus': 'Open', 'pyLabel': 'Request Check Image', 'pzInsKey': 'ASSIGN-WORKLIST PEGACPMFS-WORK S-1000487!COLLECT_FLOW', 'TaskType': 'Service'};
+
 
   works$: Object;
   headers: any;
@@ -42,10 +47,13 @@ export class UnifiedtasklistComponent implements OnInit {
     private datapage: DatapageService,
     private oaservice: OpenAssignmentService,
     private rwlservice: RefreshWorkListService,
+    // private createCase: CreateRCIcaseComponent,
     private pagerService: PagerService
   ) {}
 
   ngOnInit() {
+    // this.oaservice.sendMessage(this.currentCase$.pxRefObjectInsName, this.currentCase$);
+    // this.oaservice.sendMessage('S-1000487', this.currentCase$);
     this.getunifiedtasklist();
 
     this.subscription = this.rwlservice.getMessage().subscribe(message => {
@@ -145,7 +153,7 @@ export class UnifiedtasklistComponent implements OnInit {
   }
 
   openAssignment(row) {
-    console.log(' clicked row -->', row);
+    console.log(' clicked row -->' + JSON.stringify(row) );
     this.oaservice.sendMessage(row.pxRefObjectInsName, row);
   }
 }

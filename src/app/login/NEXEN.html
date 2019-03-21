@@ -1,0 +1,408 @@
+<!-- class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"  -->
+<!DOCTYPE html>
+<html 
+
+
+lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+<!-- <base href="https://nexen.bnymellon.com/app/" -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEXEN</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="https://nexen.bnymellon.com/app/img/favicon.ico">
+
+<link rel="stylesheet" href="NEXEN_files/nxn-css-default.css">
+
+<link rel="stylesheet" href="NEXEN_files/nxn.css">
+<link rel="stylesheet" href="NEXEN_files/nxn.min.css">
+<link rel="stylesheet" href="NEXEN_files/nxn_002.css">
+
+<!-- <script type="text/javascript" async="" src="NEXEN_files/analytics.js"></script><script async="" src="NEXEN_files/gtm.js"></script><script type="text/javascript">
+    window.agGridLicense =
+        'ABCFG_MultiApp_250Devs26_April_2019__MTU1NjIzMzIwMDAwMA==7ffc7a3739c16c06a0a9965343104d4d';
+
+    // IE 9-11 fix, initializing console
+    if(!window.console) {
+        var console = {
+            assert : function(){},
+            debug: function(){},
+            dir : function(){},
+            error : function(){},
+            group : function(){},
+            info: function(){},
+            log : function(){},
+            profile : function(){},
+            table : function(){},
+            time : function(){},
+            timeEnd : function(){},
+            trace : function(){},
+            warn : function(){}
+        };
+    }
+
+    // console[method].apply() won't work in IE9 with out this polyfill
+    if (console && typeof console.log == "object") {
+        // console.debug is not supported in IE9
+        console.debug = Function.prototype.bind.call(console.log, console);
+        console.error = Function.prototype.bind.call(console.error, console);
+        console.info = Function.prototype.bind.call(console.info, console);
+        console.warn = Function.prototype.bind.call(console.warn, console);
+    }
+
+    // Disable unneeded zone.js features to save on cycles
+    __Zone_disable_blocking = true; // Zone will not patch alert/prompt/confirm
+    __Zone_disable_bluebird = true; // Zone will not patch Error
+    __Zone_disable_Error = true; // Zone will not patch Error
+    __Zone_disable_geolocation = true; // Zone will not patch geolocation API
+    __Zone_disable_IE_check = true;
+    __Zone_disable_mediaQuery = true;
+    __Zone_disable_notification = true;
+    __Zone_disable_PromiseRejectionEvent = true; // Zone will not patch PromiseRejectionEventHandler
+    __Zone_disable_toString = true; // Zone will not patch Function.prototype.toString
+    __Zone_enable_cross_context_check = true;
+
+    /*
+     * NOTE:
+     * For msie, CustomEvent is only available in ie11.   (see https://caniuse.com/#feat=customevent)
+     * The polyfill below resolves this.
+     * Credit to MDN - https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
+     */
+    (function () {
+        // for msie11, window.CustomEvent is an object, which we replace below
+        if (typeof window.CustomEvent === "function") return false;
+
+        function CustomEvent(event, params) {
+            params = params || {
+                bubbles: false,
+                cancelable: false,
+                detail: undefined
+            };
+            var evt = document.createEvent('CustomEvent');
+            evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+            return evt;
+        }
+
+        CustomEvent.prototype = window.Event.prototype;
+
+        window.CustomEvent = CustomEvent;
+    })();
+
+
+
+</script> -->
+<!-- 
+<script type="text/javascript">
+!function(){function t(t){this.message=t}var r="undefined"!=typeof exports?exports:self,e="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";t.prototype=new Error,t.prototype.name="InvalidCharacterError",r.btoa||(r.btoa=function(r){for(var o,n,a=String(r),i=0,c=e,d="";a.charAt(0|i)||(c="=",i%1);d+=c.charAt(63&o>>8-i%1*8)){if(n=a.charCodeAt(i+=.75),n>255)throw new t("'btoa' failed: The string to be encoded contains characters outside of the Latin1 range.");o=o<<8|n}return d}),r.atob||(r.atob=function(r){var o=String(r).replace(/=+$/,"");if(o.length%4==1)throw new t("'atob' failed: The string to be decoded is not correctly encoded.");for(var n,a,i=0,c=0,d="";a=o.charAt(c++);~a&&(n=i%4?64*n+a:a,i++%4)?d+=String.fromCharCode(255&n>>(-2*i&6)):0)a=e.indexOf(a);return d})}();
+
+var wlCssMap = {};
+
+document.domain = "bnymellon.com";
+
+
+</script> -->
+
+<!-- Google Tag Manager -->
+
+<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-57JSGJW');</script> -->
+
+<!-- End Google Tag Manager -->
+
+<style type="text/css"></style><style>.nxn-load-spinner[_ngcontent-c1]{top:50%;left:45%;position:absolute!important}@media (min-width:768px){.nxn-load-spinner[_ngcontent-c1]{left:42%!important}}@media (min-width:992px){.nxn-load-spinner[_ngcontent-c1]{top:30%!important;left:43%!important}}@media (min-width:1200px){.nxn-load-spinner[_ngcontent-c1]{top:50%!important;left:45%!important}}</style><style>.nx-spinner-position{bottom:0;left:0;margin:auto;right:0;top:0;transform:translate(-50%,-50%);z-index:2;-ms-transform:translate(-50% -50%)}.nx-display-none{background-color:transparent;height:100%;pointer-events:none;position:absolute;width:100%;z-index:1000}.nx-spinner-overlay{background-color:rgba(0,0,0,.288);height:100%;pointer-events:unset;position:absolute;width:100%;z-index:1000}.nx-progress-spinner{display:block;position:absolute}.nx-progress-spinner svg{left:0;overflow:visible;position:absolute;top:0;transform:rotate(-90deg);transform-origin:center}.nx-progress-spinner circle{fill:transparent;transform-origin:center;transition:stroke-dashoffset 225ms linear}.nx-progress-spinner.nx-progress-spinner-indeterminate-animation[mode=indeterminate]{animation:nx-progress-spinner-linear-rotate 2s linear infinite}.nx-progress-spinner.nx-progress-spinner-indeterminate-animation[mode=indeterminate] circle{animation-duration:4s;animation-iteration-count:infinite;animation-timing-function:cubic-bezier(.35,0,.25,1);transition-property:stroke}.nx-progress-spinner.nx-progress-spinner-indeterminate-fallback-animation[mode=indeterminate]{animation:nx-progress-spinner-stroke-rotate-fallback 10s cubic-bezier(.87,.03,.33,1) infinite}.nx-progress-spinner.nx-progress-spinner-indeterminate-fallback-animation[mode=indeterminate] circle{transition-property:stroke}@keyframes nx-progress-spinner-linear-rotate{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes nx-progress-spinner-stroke-rotate-100{0%{stroke-dashoffset:268.60617px;transform:rotate(0)}12.5%{stroke-dashoffset:56.54867px;transform:rotate(0)}12.5001%{stroke-dashoffset:56.54867px;transform:rotateX(180deg) rotate(72.5deg)}25%{stroke-dashoffset:268.60617px;transform:rotateX(180deg) rotate(72.5deg)}25.0001%{stroke-dashoffset:268.60617px;transform:rotate(270deg)}37.5%{stroke-dashoffset:56.54867px;transform:rotate(270deg)}37.5001%{stroke-dashoffset:56.54867px;transform:rotateX(180deg) rotate(161.5deg)}50%{stroke-dashoffset:268.60617px;transform:rotateX(180deg) rotate(161.5deg)}50.0001%{stroke-dashoffset:268.60617px;transform:rotate(180deg)}62.5%{stroke-dashoffset:56.54867px;transform:rotate(180deg)}62.5001%{stroke-dashoffset:56.54867px;transform:rotateX(180deg) rotate(251.5deg)}75%{stroke-dashoffset:268.60617px;transform:rotateX(180deg) rotate(251.5deg)}75.0001%{stroke-dashoffset:268.60617px;transform:rotate(90deg)}87.5%{stroke-dashoffset:56.54867px;transform:rotate(90deg)}87.5001%{stroke-dashoffset:56.54867px;transform:rotateX(180deg) rotate(341.5deg)}100%{stroke-dashoffset:268.60617px;transform:rotateX(180deg) rotate(341.5deg)}}@keyframes nx-progress-spinner-stroke-rotate-fallback{0%{transform:rotate(0)}25%{transform:rotate(1170deg)}50%{transform:rotate(2340deg)}75%{transform:rotate(3510deg)}100%{transform:rotate(4680deg)}}</style></head>
+
+<body id="appRootElement" ng-controller="PageContextController" nxn-window-breakpoint="" nxn-keepalive="" class="ng-scope">
+
+<!-- Google Tag Manager (noscript) -->
+
+<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-57JSGJW"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+
+                  <!-- End Google Tag Manager (noscript) -->
+
+<div class="wrapper">
+    <nxn-eu-cookie-warn><!-- ngIf: eu.showEUCookieBar --><div class="container ng-scope" ng-if="eu.showEUCookieBar">
+    <div class="cookie-bar show" id="cookieBar">
+        <div class="well well-sm">
+            <span class="nxn-login-eu-msg">This site uses cookies. By continuing to browse this site you are agreeing to our use of cookies.</span>
+            <!-- ngIf: eu.wlResources.displayCookiePolicyLink -->
+<!--             
+            <a class="nxn-login-eu-findout ng-scope" href="http://www.bnymellon.com/privacy/cookies.html" ng-if="eu.wlResources.displayCookiePolicyLink" target="new">Find out more</a>
+             -->
+            <!-- end ngIf: eu.wlResources.displayCookiePolicyLink --> <span class="hidden-md hidden-lg">| </span>
+            <!-- <a class="nxn-login-eu-close" href="" ng-click="eu.createEUCookie()">Close (Sets Cookie)</a> -->
+        </div>
+    </div>
+</div><!-- end ngIf: eu.showEUCookieBar -->
+</nxn-eu-cookie-warn>
+    <nxn-browser-out-of-date-warning><div class="container">
+    <!-- ngIf: vm.displayMessage -->
+</div>
+</nxn-browser-out-of-date-warning>
+
+    <!-- ngIf: displayWLContent -->
+    <!-- ngIf: !displayWLContent --><div ng-if="!displayWLContent" class="ng-scope">
+        <app-header><!-- ngIf: displayPublicHeader --><div ng-if="displayPublicHeader" class="ng-scope">
+    <div nxn-header="" class="container" id="nxnHeaderId" nxn-header-opts="{
+             showUtilNav: false,
+             showNav: false,
+             showRightIcons: false,
+             showRightSmIcons: false,
+             showStepupNav: false,
+             logoutLabel: wlResources.logoutLabel}"><div class="nexen-header row hidden-xs"><div class="logobar"><div class="col-lg-12 col-md-12 nxn-legacy"><!-- ngIf: header.opts.showUtilNav --><div class="nexen-logo hidden-sm"><div nxn-logo="" class="col-md-4 nxn-no-pad"><a ng-href="#/" href="#/"><div class="nxn-header-logo" title="NEXEN"></div><span nxn-present-entitlement="" nxn-entitlement="FUN" class="icon-lg ng-binding ng-hide">Solar</span></a><br><span class="hidden-sm hidden-xs text-primary ng-binding ng-hide" nxn-present-entitlement="" nxn-entitlement="FUN" ng-bind-html="logo.motto">putting the <b>Solar</b> in Financial Services</span></div></div><div ng-show="header.isEmulationMode &amp;&amp; header.pageContextReady" class="alert nxn-display-inline-block user-emulation ng-binding ng-hide">Emulating:   () <a class="fa fa-close nxn-pad-left-10 nxn-no-underline" id="stopemulation" href="javascript:void(0)" ng-click=" stopEmulation()"></a></div></div></div></div><div id="nxnNavUrlId"><div class="nexen-header"><div class="nexen-nav"><div class="navbar navbar-default"><div class="navbar-header"><!-- ngIf: header.opts.showNav --><div class="nexen-logo navbar-brand visible-sm visible-xs"><div nxn-logo=""><a ng-href="#/" href="#/"><div class="nxn-header-logo" title="NEXEN"></div><span nxn-present-entitlement="" nxn-entitlement="FUN" class="icon-lg ng-binding ng-hide">Solar</span></a><br><span class="hidden-sm hidden-xs text-primary ng-binding ng-hide" nxn-present-entitlement="" nxn-entitlement="FUN" ng-bind-html="logo.motto">putting the <b>Solar</b> in Financial Services</span></div></div><!-- ngIf: header.opts.showRightSmIcons --><!-- ngIf: header.opts.showRightIcons --></div><!-- ngIf: header.opts.showNav --></div></div></div></div></div>
+</div><!-- end ngIf: displayPublicHeader -->
+
+<!-- ngIf: displayPrivateHeader -->
+
+<!-- ngIf: displayTokenHeader -->
+<!-- ngIf: isEmbedded -->
+</app-header>
+        <div class="container" id="nxnUiViewId">
+            <nxn-page-alert ng-version="5.2.3"><!----> </nxn-page-alert>
+            <nxn-persistent-announcements><!-- ngIf: isMainApp && displayPrivateContent -->
+</nxn-persistent-announcements>
+            <!-- ngIf: displayPrivateContent && isUserGuideAvailable -->
+            <nxn-app ng-version="5.2.3"><router-outlet></router-outlet></nxn-app>
+            <nxn-load-spinner [start-spinner]="loginProcessStarted" _nghost-c1="" ng-version="5.2.3">
+        <div _ngcontent-c1="" class="nxn-load-spinner" style="position: relative;">
+            <nx-spinner _ngcontent-c1="" class="nx-display-none"><!----></nx-spinner>
+        </div></nxn-load-spinner>
+            <!-- ngIf: displayUIView --><!-- uiView: undefined --><ui-view ng-if="displayUIView" class="ng-scope"><style class="ng-scope">
+    @media (min-width: 1280px) {
+        .container {
+            width: 1260px !important;
+        }
+    }
+</style>
+<!-- Main Content -->
+<div class="nxn-login-jumbotron-container" role="main">
+    <div class="jumbotron" style="background-image: url('./NEXEN_files/jumbotron_bg_lg.jpg'">
+        <div class="row">
+            <!-- ngIf: !login.isOutageState --><div ng-if="!login.isOutageState" id="loginContainer" class="login-box col-sm-6 col-sm-push-6 col-md-4 col-md-push-8 ng-scope" nxn-login-form="">
+<form id="loginForm" name="loginForm" class="login-form  ng-pristine ng-valid" method="post" autocomplete="off" action="/login/forms/ProcessLogin.fcc?SMQUERYDATA=-SM-AhPv1%2FHIWZ9UXIDAKc2YMPTKrXDP%2FA%2BGtEJ%2Bzw%2FoGAy6XeY3RvbyXLazlGSVQ5DTQSDvRZ56S9bM1T9lIL6vHDfEM1Ag%2BYgH3gsX6utkS91m0OyfeggPANCWG6gn6OurelIK7WMoAxyqqas2IJCHVAK1noSEo%2BFHZg6CuaVsxrrcHsfhUijjJEpW59nvUquhqkpM%2FYQxwdwaCD7lqK2yWG9453J4ic2dkL0XUEMvrTWy27cV6lmsUvZMAkrHgXlio275lxcQLMnx57HlzjuwCbsTvYvRSGhOym%2BBE8IMrzNbghl09gc2lzMmYmH8KLXhoKFNuCswzsPZabO5tdXk29viO8Qc8Funp90zYqQTXxWaxbUedy9M5ZF5DknBZmiX7rgcXxBaOsVWKaqGCDD8H463xXuBDCK4">
+
+    <fieldset>
+        <input type="hidden" name="SMENC" value="UTF-8">
+
+        <div id="userIdFormGroup" class="form-group">
+            <label for="USER">User ID</label>
+            <input type="text" name="USER" id="USER" class="nxn-login-form-control ng-scope ng-pristine ng-valid aa-had-focus" placeholder="Enter User ID" ng-model="vm.USER" nxn-login-required="true" autocomplete="off" nxn-no-space-validator="" nxn-login-fields-validator="" nxn-auto-focus="" aa-label="User" aa-val-msg="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;"><!-- ngRepeat: msg in errorMessages -->
+        </div>
+
+        <div id="passwordFormGroup" class="form-group">
+            <label for="PASSWORD">Password</label>
+            <input type="password" name="PASSWRD" id="PASSWORD" class="nxn-login-form-control ng-scope ng-pristine ng-valid" placeholder="Enter Password" ng-model="vm.password" nxn-login-required="true" autocomplete="off" nxn-no-space-validator="" nxn-login-fields-validator="" aa-label="Password" aa-val-msg="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;"><!-- ngRepeat: msg in errorMessages -->
+        </div>
+
+        <div class="error-container" ng-class="{'show': vm.message}">
+            <div class="error-content">
+                <p class="ng-binding"><span class="fa fa-warning fa-fw"></span> </p>
+            </div>
+        </div>
+
+        <div class="form-group button-container">
+            <button id="signIn" type="submit" class="btn btn-primary" ng-click="vm.submit($event)" nxn-event-metrics-on="click" nxn-event-metrics-user="" ng-disabled="vm.loginStarted || isDisabled" disabled="disabled">Sign In</button>
+            <input type="hidden" name="postpreservationdata">
+            <input type="hidden" name="SUBMIT" value="Login">
+        </div>
+
+        <ul class="links-list">
+            <!-- ngIf: !vm.hideFPSLink --><li ng-if="!vm.hideFPSLink" class="ng-scope"><a href="https://nexen.bnymellon.com/app/fps" ng-click="vm.createFPCookie()">Forgot Password</a></li><!-- end ngIf: !vm.hideFPSLink -->
+            <!-- ngIf: vm.displayRegistrationLink --><li ng-if="vm.displayRegistrationLink" ng-controller="NexenRegisterController" ng-show="isLowerEnv" class="ng-scope ng-hide"><a data-ng-click="showModal()" class="nxn-cursor-pointer">Register</a></li><!-- end ngIf: vm.displayRegistrationLink -->
+            <!-- ngIf: vm.isTestingEnv -->
+        </ul>
+
+    </fieldset>
+
+</form></div><!-- end ngIf: !login.isOutageState -->
+            <!-- ngIf: login.isOutageState --><!--/.login-box-->
+            <div class="hero-text-container col-sm-6 col-sm-pull-6 col-md-8 col-md-pull-4">
+                <div class="heroText">
+                    <div class="nxn-herotext-tagline1 ng-binding" ng-show="login.wlResources.heroText1" ng-bind-html="login.wlResources.heroText1">Simplified, intuitive and power packed.</div>
+                    <div class="nxn-herotext-tagline2 ng-binding" ng-show="login.wlResources.heroText2" ng-bind-html="login.wlResources.heroText2">Experience the power of NEXEN.</div>
+                </div>
+            </div>
+        </div>
+    </div><!--/.jumbotron-->
+</div><!--/.container-->
+<div class="nxn-login-features-container ng-scope">
+
+    <!-- White Label -->
+    <!-- ngIf: !login.isMainApp -->
+
+    <!-- ngIf: login.isMainApp --><div ng-if="login.isMainApp" class="login-features row row-eq-height ng-scope">
+        <!-- NEXEN -->
+            <div class="col-md-5 col-md-push-7">
+                <!-- ngIf: login.wlResources.displayLoginSupport --><div id="login-support" ng-if="login.wlResources.displayLoginSupport" class="nxn-panel ng-scope">
+                    <h2>Support</h2>
+                    <div>
+                        <!-- ngInclude: 'partials/login/nxn-support.html' --><div id="nxnSupport" class="row ng-scope" ng-include="'partials/login/nxn-support.html'"><div class="col-sm-12 ng-scope">
+    <dl class="nexen-contact-list">
+        <dt>Hours of Operation</dt>
+        <dd>
+            <p>
+                Sunday 8:00 p.m. through Friday 8:00 p.m.<br>
+                Eastern Time<br>
+                <a id="bnymSupport" href="mailto:support@bnymellon.com">support@bnymellon.com</a>
+            </p>
+        </dd>
+        <dt>Internal Employees</dt>
+        <dd><a class="text-secondary nxn-cursor-pointer ng-binding" data-ng-click="supportLinkModalCtrl.showSupportInfo()" support-link-modal="Internal Employee Support" support-link-options="{showInternalTab: true}">Internal Employee Support</a></dd>
+    </dl>
+</div>
+<div class="col-sm-12 ng-scope">
+    <dl class="nexen-contact-list">
+        <div class="col-xs-12 col-sm-6 nxn-no-pad">
+            <dt>Americas</dt>
+            <dd>
+                <a href="tel:18552849065" class="phone-call">(855) 284 9065 (Toll Free)</a>
+                <span class="phone-display">(855) 284 9065 (Toll Free)</span>
+                <a href="tel:+161545755895" class="phone-call">+1 615-457-5589</a>
+                <span class="phone-display">+1 615-457-5589</span>
+            </dd>
+            <dt>Asia Pacific</dt>
+            <dd>
+                <a href="tel:+80022656369" class="phone-call">+800 2265 6369 (Toll Free)</a>
+                <span class="phone-display">+800 2265 6369 (Toll Free)</span>
+                <a href="tel:+6564320314" class="phone-call">+65 6432 0314</a>
+                <span class="phone-display">+65 6432 0314</span>
+            </dd>
+            <dt id="canadaRegion">Canada</dt>
+            <dd id="canadaNumber">
+                    <a href="mailto:support@bnymellon.com">support@bnymellon.com</a>
+                    <a href="tel:18884392457" class="phone-call">(888) 439-2457 (Toll Free)</a>
+                    <span class="phone-display">(888) 439-2457 (Toll Free)</span>
+                    <a href="tel:+14166435360" class="phone-call">1-416-643-5360</a>
+                    <span class="phone-display">1-416-643-5360</span>
+            </dd>
+        </div>
+        <div class="col-xs-12 col-sm-6 nxn-no-pad">
+                <dt>Europe, Middle East, Africa</dt>
+                <dd>
+                    <a href="tel:+4402079646161" class="phone-call">+44 (0) 20 7964 6161</a>
+                    <span class="phone-display">+44 (0) 20 7964 6161</span>
+                </dd>
+            <dt id="germanyRegion">Germany</dt>
+            <dd id="germanyNumber">
+                <a href="tel:+49 (0) 69 12014-2014" class="phone-call">+49 (0) 69 12014-2014</a>
+                <span class="phone-display">+49 (0) 69 12014-2014</span>
+            </dd>
+            <dt id="netherlandsRegion">Netherlands</dt>
+            <dd id="netherlandsNumber">
+                <a href="tel:+31 (0) 76 760 2333" class="phone-call">+31 (0) 76 760 2333</a>
+                <span class="phone-display">+31 (0) 76 760 2333</span>
+            </dd>
+        </div>
+    </dl>
+</div></div>
+                    </div>
+                </div><!-- end ngIf: login.wlResources.displayLoginSupport -->
+            </div><!--/.col-->
+
+            <div class="col-md-7 col-md-pull-5">
+                <div class="nxn-panel">
+                    <!-- ngInclude: 'partials/login/nxn-promotional-content.html' --><div class="row ng-scope" ng-include="'partials/login/nxn-promotional-content.html'"><div class="col-xs-12 col-sm-4 ng-scope">
+    <div class="nxn-promotional-img nxn-pad-bot-15" style="background-image: url('./NEXEN_files/nxn_promotional_photo_md.jpg'" ></div>
+</div>
+<div id="marketingContent" class="col-xs-12 col-sm-8 ng-scope">
+    <h2 class="ng-binding">Our Thinking</h2>
+    <div class="ng-binding">BNY Mellon is invested in the power of big 
+ideas. With some of the sharpest minds and most innovative thinkers in 
+financial services, our unique perspectives can have a profound impact 
+on investors' attitudes and actions. Our forward-thinking insights are 
+shaping the future of finance.</div>
+    <ul class="list-unstyled nxn-mar-top-15">
+        <li>
+            <a href="https://www.bnymellon.com/us/en/our-thinking/index.jsp?cid=Nex_INT_gatewayculture#culture-and-society" target="_blank">Culture and Society</a>
+        </li>
+        <li>
+            <a href="https://www.bnymellon.com/us/en/our-thinking/index.jsp?cid=Nex_INT_gatewayinvestment#investment-insight" target="_blank">Investment Insights</a>
+        </li>
+        <li>
+            <a href="https://www.bnymellon.com/us/en/our-thinking/index.jsp?cid=Nex_INT_gatewayrisk#risk-and-regulation" target="_blank">Regulation and Risk</a>
+        </li>
+        <li>
+            <a href="https://www.bnymellon.com/us/en/our-thinking/index.jsp?cid=Nex_INT_gatewaytransformation#transformation" target="_blank">Transformation</a>
+        </li>
+    </ul>
+</div></div>
+                </div>
+            </div><!--/.col-->
+    </div><!-- end ngIf: login.isMainApp --><!--/.login-features row-->
+</div><!--nxn-login-features-container end-->
+<!-- script for video -->
+
+
+</ui-view><!-- end ngIf: displayUIView -->
+        </div>
+        <!-- ngIf: displayStepup -->
+        <app-footer><!-- ngIf: displayFooter --><div ng-if="displayFooter" class="ng-scope">
+    <div nxn-footer="" class="container" id="nxnFooterId" nxn-footer-opts="{
+    	    copyrightPrefix: wlResources.copyrightPrefix,
+    	    copyrightSuffix: wlResources.copyrightSuffix,
+    	    displayPrivacyPolicy: wlResources.displayPrivacyPolicy,
+    	    displaySysRequirements: wlResources.displaySysRequirements,
+    	    displayTermsOfUse: wlResources.displayTermsOfUse,
+            displayCookiePolicyFooter: wlResources.displayCookiePolicyFooter,
+    	    footerLogoAlt: wlResources.footerLogoAlt,
+    	    footerLogoSrc: wlResources.footerLogoSrc,
+    	    linkPrivacyPolicy: wlResources.linkPrivacyPolicy,
+    	    linkSysRequirements: wlResources.linkSysRequirements,
+    	    linkTermsOfUse: wlResources.linkTermsOfUse,
+            linkCookiePolicyFooter: wlResources.linkCookiePolicyFooter,
+            privacyLinkText: wlResources.privacyLinkText,
+    	    showSecuritiesDisclaimer: false}"><footer class="nexen-footer"><div class="row"><!-- ngIf: footer.opts.footerLogoSrc --><div class="col-sm-12 visible-xs ng-scope" ng-if="footer.opts.footerLogoSrc"><div class="footer-logo"><img ng-src="img/logo_nxn_footer.png" alt="BNYM logo" src="NEXEN_files/logo_nxn_footer.png"></div></div><!-- end ngIf: footer.opts.footerLogoSrc --><div class="col-sm-12 col-md-12"><div class="row"><div class="col-sm-6"><ul class="footernav"><!-- ngIf: footer.opts.displayPrivacyPolicy --><li ng-if="footer.opts.displayPrivacyPolicy" class="ng-scope"><a href="https://www.bnymellon.com/us/en/data-privacy.jsp" link-target="" class="ng-binding" target="_blank">Privacy</a></li><!-- end ngIf: footer.opts.displayPrivacyPolicy --><!-- ngIf: footer.opts.displaySysRequirements --><li ng-if="footer.opts.displaySysRequirements" class="ng-scope"><a href="https://nexen.bnymellon.com/app/public/systemRequirements" link-target="">System Requirements</a></li><!-- end ngIf: footer.opts.displaySysRequirements --><!-- ngIf: footer.opts.displayTermsOfUse --><li ng-if="footer.opts.displayTermsOfUse" class="ng-scope"><a href="https://nexen.bnymellon.com/app/public/termsOfUse" link-target="">Terms of Use</a></li><!-- end ngIf: footer.opts.displayTermsOfUse --><!-- ngIf: footer.opts.displayCookiePolicyFooter --><li ng-if="footer.opts.displayCookiePolicyFooter" class="ng-scope"><a href="https://nexen.bnymellon.com/app/public/cookiePolicy" link-target="">Cookie Policies</a></li><!-- end ngIf: footer.opts.displayCookiePolicyFooter --></ul></div><div class="col-sm-6"><!-- ngIf: footer.opts.displayCopyright --><div ng-if="footer.opts.displayCopyright" class="copyright ng-binding ng-scope">© 2019 The Bank of New York Mellon Corporation.</div><!-- end ngIf: footer.opts.displayCopyright --></div></div></div><!-- ngIf: footer.opts.showSecuritiesDisclaimer --><!-- ngIf: footer.opts.showSecuritiesDisclaimer --></div></footer></div>
+</div><!-- end ngIf: displayFooter -->
+</app-footer>
+    </div><!-- end ngIf: !displayWLContent -->
+</div>
+
+<script type="text/javascript" src="NEXEN_files/nxn-lib.js"></script>
+
+<script src="NEXEN_files/nxn-lib-internal.js"></script>
+
+<script src="NEXEN_files/nxn-app.js"></script>
+
+<script type="text/javascript">
+    
+        window.webpackManifest = {"0":"0.bundle.3159040a8811478c3c7c.js","1":"1.bundle.dc883082fb42b4d728b4.js","2":"2.bundle.6c455acd9e175ff0102b.js","3":"3.bundle.a50edf2cfacdbd2eb720.js","4":"4.bundle.026fbac1bfe747c05639.js","5":"5.bundle.69e29f5d8cffe23cc64d.js","startup":"startup.bundle.e81f98c8e391f45d24b2.js","agGrid":"agGrid.bundle.ceadd0f5fe87b39261cc.js","app":"app.bundle.21968fcb3c92b5907c9c.js","asyncCommons":"asyncCommons.bundle.d3eb9670b65438faa647.js","d3":"d3.bundle.4bc4100589e1be0a4523.js","jspdf":"jspdf.bundle.70597d2417f66af0dd36.js","material":"material.bundle.2dc4277e4023248bd60e.js","nxn-test":"nxn-test.bundle.4e6356b088c1987c9b97.js","sqr-admin":"sqr-admin.bundle.eb692ccd7357d1ed7702.js","sqr-summary":"sqr-summary.bundle.d357c535042e15998283.js","sqr-ui":"sqr-ui.bundle.a4526f5d470dcdc0d015.js"};
+        window.systemJsManifest = {"map":{"0":"external/0.bundle.3159040a8811478c3c7c.js","1":"external/1.bundle.dc883082fb42b4d728b4.js","2":"external/2.bundle.6c455acd9e175ff0102b.js","3":"external/3.bundle.a50edf2cfacdbd2eb720.js","4":"external/4.bundle.026fbac1bfe747c05639.js","5":"external/5.bundle.69e29f5d8cffe23cc64d.js","agGrid":"external/agGrid.bundle.ceadd0f5fe87b39261cc.js","ag-grid-angular":"external/agGrid.bundle.ceadd0f5fe87b39261cc.js","ag-grid-community":"external/agGrid.bundle.ceadd0f5fe87b39261cc.js","ag-grid-enterprise":"external/agGrid.bundle.ceadd0f5fe87b39261cc.js","nx-components/nx-ag-grid":"external/agGrid.bundle.ceadd0f5fe87b39261cc.js","app":"external/app.bundle.21968fcb3c92b5907c9c.js","app.module":"external/app.bundle.21968fcb3c92b5907c9c.js","nxn-common":"external/app.bundle.21968fcb3c92b5907c9c.js","nxn-common/core":"external/app.bundle.21968fcb3c92b5907c9c.js","nxn-common/nxn-download":"external/app.bundle.21968fcb3c92b5907c9c.js","nxn-common/nxn-event-metrics":"external/app.bundle.21968fcb3c92b5907c9c.js","nxn-common/nxn-format":"external/app.bundle.21968fcb3c92b5907c9c.js","nxn-common/nxn-http":"external/app.bundle.21968fcb3c92b5907c9c.js","nxn-common/nxn-injectable-resolver":"external/app.bundle.21968fcb3c92b5907c9c.js","nxn-common/nxn-location":"external/app.bundle.21968fcb3c92b5907c9c.js","nxn-common/nxn-stats":"external/app.bundle.21968fcb3c92b5907c9c.js","nxn-common/nxn-stepup":"external/app.bundle.21968fcb3c92b5907c9c.js","nxn-common/nxn-stepup-route-guard":"external/app.bundle.21968fcb3c92b5907c9c.js","nxn-common/nxn-user":"external/app.bundle.21968fcb3c92b5907c9c.js","nxn-common/nxn-validation":"external/app.bundle.21968fcb3c92b5907c9c.js","nxn-common/nxn-white-label":"external/app.bundle.21968fcb3c92b5907c9c.js","nxn-dashboards/portlet":"external/app.bundle.21968fcb3c92b5907c9c.js","nxn-ui":"external/app.bundle.21968fcb3c92b5907c9c.js","asyncCommons":"external/asyncCommons.bundle.d3eb9670b65438faa647.js","d3":"external/d3.bundle.4bc4100589e1be0a4523.js","jspdf":"external/jspdf.bundle.70597d2417f66af0dd36.js","jspdf-autotable":"external/jspdf.bundle.70597d2417f66af0dd36.js","manifest":"external/webpack3-manifest.js","material":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/cdk/a11y":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/cdk/accordion":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/cdk/bidi":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/cdk/coercion":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/cdk/collections":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/cdk/keycodes":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/cdk/layout":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/cdk/observers":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/cdk/overlay":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/cdk/platform":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/cdk/portal":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/cdk/scrolling":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/cdk/stepper":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/cdk/table":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/autocomplete":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/button":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/button-toggle":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/card":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/checkbox":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/chips":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/datepicker":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/dialog":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/divider":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/expansion":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/form-field":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/grid-list":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/icon":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/input":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/list":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/menu":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/paginator":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/progress-bar":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/progress-spinner":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/radio":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/select":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/sidenav":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/slide-toggle":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/slider":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/snack-bar":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/sort":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/stepper":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/table":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/tabs":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/toolbar":"external/material.bundle.2dc4277e4023248bd60e.js","@angular/material/tooltip":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-accumulator":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-alert":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-autocomplete":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-button":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-button-bar":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-button-dropdown":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-button-toggle":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-card":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-checkbox":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-chip":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-core":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-date-range-picker":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-datepicker":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-dialog":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-expansion":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-filter":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-form-field":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-form-message":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-gestures":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-highcharts":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-icon":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-list":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-month-yearpicker":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-monthpicker":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-popover":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-progress-bar":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-radio":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-select":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-slide-toggle":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-slider":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-spinner":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-stepper":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-tabs":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-text-field":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-textarea":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-tooltip":"external/material.bundle.2dc4277e4023248bd60e.js","nx-components/nx-yearpicker":"external/material.bundle.2dc4277e4023248bd60e.js","nxn-test":"external/nxn-test.bundle.4e6356b088c1987c9b97.js","@angular/common/http/testing":"external/nxn-test.bundle.4e6356b088c1987c9b97.js","@angular/common/testing":"external/nxn-test.bundle.4e6356b088c1987c9b97.js","@angular/compiler/testing":"external/nxn-test.bundle.4e6356b088c1987c9b97.js","@angular/core/testing":"external/nxn-test.bundle.4e6356b088c1987c9b97.js","@angular/http/testing":"external/nxn-test.bundle.4e6356b088c1987c9b97.js","@angular/platform-browser-dynamic/testing":"external/nxn-test.bundle.4e6356b088c1987c9b97.js","@angular/platform-browser/testing":"external/nxn-test.bundle.4e6356b088c1987c9b97.js","@angular/router/testing":"external/nxn-test.bundle.4e6356b088c1987c9b97.js","nxn-common/nxn-http-testing":"external/nxn-test.bundle.4e6356b088c1987c9b97.js","sqr-admin":"external/sqr-admin.bundle.eb692ccd7357d1ed7702.js","sqr-ui/admin":"external/sqr-admin.bundle.eb692ccd7357d1ed7702.js","sqr-summary":"external/sqr-summary.bundle.d357c535042e15998283.js","sqr-ui/summary":"external/sqr-summary.bundle.d357c535042e15998283.js","sqr-ui":"external/sqr-ui.bundle.a4526f5d470dcdc0d015.js","sqr-ui/activity":"external/sqr-ui.bundle.a4526f5d470dcdc0d015.js","startup":"external/startup.bundle.e81f98c8e391f45d24b2.js","@angular-redux/store":"external/startup.bundle.e81f98c8e391f45d24b2.js","@angular/animations/browser":"external/startup.bundle.e81f98c8e391f45d24b2.js","@angular/common":"external/startup.bundle.e81f98c8e391f45d24b2.js","@angular/common/http":"external/startup.bundle.e81f98c8e391f45d24b2.js","@angular/core":"external/startup.bundle.e81f98c8e391f45d24b2.js","@angular/forms":"external/startup.bundle.e81f98c8e391f45d24b2.js","@angular/http":"external/startup.bundle.e81f98c8e391f45d24b2.js","@angular/material/core":"external/startup.bundle.e81f98c8e391f45d24b2.js","@angular/platform-browser":"external/startup.bundle.e81f98c8e391f45d24b2.js","@angular/platform-browser-dynamic":"external/startup.bundle.e81f98c8e391f45d24b2.js","@angular/platform-browser/animations":"external/startup.bundle.e81f98c8e391f45d24b2.js","@angular/router":"external/startup.bundle.e81f98c8e391f45d24b2.js","@angular/upgrade/static":"external/startup.bundle.e81f98c8e391f45d24b2.js","css-loader/lib/css-base":"external/startup.bundle.e81f98c8e391f45d24b2.js","redux":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/AsyncSubject":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/BehaviorSubject":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/InnerSubscriber":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/Notification":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/Observable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/Observer":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/Operator":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/OuterSubscriber":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/ReplaySubject":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/Rx":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/Scheduler":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/Subject":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/SubjectSubscription":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/Subscriber":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/Subscription":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/bindCallback":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/bindNodeCallback":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/combineLatest":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/concat":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/defer":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/empty":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/forkJoin":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/from":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/fromEvent":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/fromEventPattern":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/fromPromise":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/generate":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/if":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/interval":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/merge":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/never":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/of":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/onErrorResumeNext":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/pairs":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/race":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/range":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/throw":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/timer":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/using":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/observable/zip":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/audit":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/auditTime":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/buffer":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/bufferCount":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/bufferTime":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/bufferToggle":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/bufferWhen":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/catch":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/combineAll":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/combineLatest":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/concat":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/concatAll":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/concatMap":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/concatMapTo":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/count":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/debounce":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/debounceTime":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/defaultIfEmpty":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/delay":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/delayWhen":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/dematerialize":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/distinct":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/distinctUntilChanged":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/distinctUntilKeyChanged":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/do":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/elementAt":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/every":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/exhaust":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/exhaustMap":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/expand":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/filter":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/finally":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/find":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/findIndex":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/first":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/groupBy":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/ignoreElements":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/isEmpty":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/last":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/let":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/map":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/mapTo":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/materialize":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/max":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/merge":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/mergeAll":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/mergeMap":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/mergeMapTo":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/mergeScan":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/min":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/multicast":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/observeOn":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/onErrorResumeNext":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/pairwise":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/partition":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/pluck":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/publish":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/publishBehavior":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/publishLast":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/publishReplay":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/race":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/reduce":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/repeat":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/repeatWhen":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/retry":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/retryWhen":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/sample":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/sampleTime":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/scan":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/sequenceEqual":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/share":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/shareReplay":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/single":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/skip":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/skipLast":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/skipUntil":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/skipWhile":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/startWith":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/subscribeOn":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/switch":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/switchMap":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/switchMapTo":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/take":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/takeLast":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/takeUntil":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/takeWhile":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/throttle":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/throttleTime":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/timeInterval":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/timeout":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/timeoutWith":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/timestamp":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/toArray":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/toPromise":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/window":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/windowCount":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/windowTime":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/windowToggle":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/windowWhen":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/withLatestFrom":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/zip":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/add/operator/zipAll":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/ajax":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/ArrayLikeObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/ArrayObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/BoundCallbackObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/BoundNodeCallbackObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/ConnectableObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/DeferObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/EmptyObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/ErrorObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/ForkJoinObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/FromEventObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/FromEventPatternObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/FromObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/GenerateObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/IfObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/IntervalObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/IteratorObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/NeverObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/PairsObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/PromiseObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/RangeObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/ScalarObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/SubscribeOnObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/TimerObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/UsingObservable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/bindCallback":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/bindNodeCallback":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/combineLatest":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/concat":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/defer":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/empty":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/forkJoin":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/from":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/fromArray":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/fromEvent":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/fromEventPattern":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/fromIterable":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/fromPromise":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/generate":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/if":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/interval":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/merge":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/never":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/of":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/onErrorResumeNext":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/pairs":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/race":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/range":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/throw":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/timer":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/using":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/observable/zip":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/audit":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/auditTime":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/buffer":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/bufferCount":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/bufferTime":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/bufferToggle":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/bufferWhen":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/catch":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/combineAll":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/combineLatest":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/concat":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/concatAll":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/concatMap":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/concatMapTo":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/count":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/debounce":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/debounceTime":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/defaultIfEmpty":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/delay":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/delayWhen":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/dematerialize":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/distinct":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/distinctUntilChanged":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/distinctUntilKeyChanged":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/do":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/elementAt":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/every":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/exhaust":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/exhaustMap":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/expand":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/filter":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/finally":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/find":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/findIndex":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/first":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/groupBy":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/ignoreElements":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/isEmpty":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/last":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/let":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/map":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/mapTo":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/materialize":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/max":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/merge":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/mergeAll":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/mergeMap":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/mergeMapTo":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/mergeScan":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/min":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/multicast":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/observeOn":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/onErrorResumeNext":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/pairwise":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/partition":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/pluck":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/publish":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/publishBehavior":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/publishLast":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/publishReplay":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/race":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/reduce":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/repeat":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/repeatWhen":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/retry":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/retryWhen":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/sample":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/sampleTime":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/scan":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/sequenceEqual":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/share":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/shareReplay":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/single":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/skip":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/skipLast":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/skipUntil":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/skipWhile":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/startWith":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/subscribeOn":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/switch":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/switchMap":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/switchMapTo":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/take":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/takeLast":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/takeUntil":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/takeWhile":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/throttle":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/throttleTime":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/timeInterval":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/timeout":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/timeoutWith":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/timestamp":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/toArray":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/toPromise":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/window":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/windowCount":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/windowTime":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/windowToggle":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/windowWhen":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/withLatestFrom":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/zip":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operator/zipAll":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/audit":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/auditTime":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/buffer":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/bufferCount":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/bufferTime":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/bufferToggle":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/bufferWhen":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/catchError":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/combineAll":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/combineLatest":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/concat":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/concatAll":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/concatMap":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/concatMapTo":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/count":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/debounce":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/debounceTime":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/defaultIfEmpty":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/delay":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/delayWhen":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/dematerialize":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/distinct":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/distinctUntilChanged":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/distinctUntilKeyChanged":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/elementAt":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/every":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/exhaust":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/exhaustMap":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/expand":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/filter":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/finalize":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/find":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/findIndex":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/first":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/groupBy":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/ignoreElements":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/isEmpty":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/last":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/map":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/mapTo":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/materialize":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/max":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/merge":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/mergeAll":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/mergeMap":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/mergeMapTo":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/mergeScan":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/min":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/multicast":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/observeOn":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/onErrorResumeNext":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/pairwise":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/partition":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/pluck":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/publish":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/publishBehavior":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/publishLast":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/publishReplay":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/race":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/reduce":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/refCount":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/repeat":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/repeatWhen":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/retry":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/retryWhen":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/sample":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/sampleTime":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/scan":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/sequenceEqual":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/share":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/shareReplay":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/single":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/skip":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/skipLast":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/skipUntil":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/skipWhile":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/startWith":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/subscribeOn":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/switchAll":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/switchMap":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/switchMapTo":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/take":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/takeLast":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/takeUntil":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/takeWhile":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/tap":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/throttle":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/throttleTime":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/throwIfEmpty":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/timeInterval":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/timeout":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/timeoutWith":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/timestamp":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/toArray":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/window":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/windowCount":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/windowTime":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/windowToggle":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/windowWhen":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/withLatestFrom":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/zip":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/operators/zipAll":"external/startup.bundle.e81f98c8e391f45d24b2.js","rxjs/webSocket":"external/startup.bundle.e81f98c8e391f45d24b2.js"}};
+    
+</script>
+
+<script type="text/javascript">
+    systemJSSetup();    // Configures SystemJS. Defined in systemjs-setup.js
+</script>
+
+
+<script type="text/javascript" src="NEXEN_files/webpack3-manifest.js"></script>
+<script type="text/javascript" src="NEXEN_files/startup.js"></script>
+<script type="text/javascript" src="NEXEN_files/app.js"></script>
+
+
+<script type="text/javascript">
+
+    // --- Start Angular 1.2 (with Angular)
+    System.import("app.module")
+        .then(function(AppModule) {
+            console.info("Bootstrapping application");
+            AppModule.bootstrapApplication(false);
+        })
+        .catch(function (reason) {
+            // TODO: Find a way to get the Angular version dynamically and print it here
+            console.error("Failed to load angular hybrid environment: reason=", reason);
+        });
+
+</script>
+
+<!-- LiveChat Starts -->
+<!-- <iframe id="samlredirect" border="0" style="display:none;" width="0" height="0"></iframe> -->
+<!-- LiveChat End -->
+
+
+
+</body></html>

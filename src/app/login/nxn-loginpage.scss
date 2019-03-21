@@ -1,0 +1,413 @@
+.nxn-login-jumbotron-container .jumbotron .login-box {
+  padding-left: 15px;
+  padding-right: 15px
+}
+
+
+
+
+
+$breakpoints: (576: 576px,
+600: 600px,
+768: 768px,
+992: 992px,
+1200: 1200px,
+1300: 1300px);
+
+//
+//  RESPOND ABOVE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include respond-above(sm) {}
+@mixin respond-above($breakpoint) {
+
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  }
+
+  @else {
+
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+
+// body {
+//   font-family: Arial,Helvetica,sans-serif !important;
+//   color: #262626!important;
+//   background-color: #fafafa !important;
+// }
+
+.robo {
+  background-image: url("/assets/images/nxn_promotional_photo_md.jpg");
+  height: 100%;
+}
+
+.list-unstyled {
+
+  padding-left: 0;
+  list-style: none
+}
+
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+  margin-left: -5px
+}
+
+.list-inline>li {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px
+}
+
+
+
+.nxn-login-jumbotron-container .jumbotron {
+  background-color: #2d3a51;
+  background-position: left top;
+  background-repeat: no-repeat;
+  /* background-image:url(../../../img/whitelabel/nxn/jumbotron_bg_lg.jpg) */
+}
+
+.nxn-login-jumbotron-container .jumbotron .hero-text-container {
+  overflow: hidden
+}
+
+@include respond-above(768) {
+  .nxn-login-jumbotron-container .jumbotron .hero-text-container {
+    padding-left: 15px;
+    padding-right: 5px;
+    background: 0 0
+  }
+}
+
+.nxn-login-jumbotron-container .jumbotron .heroText {
+  font-size: 1.5em;
+  line-height: 1.2;
+  padding: 0;
+  margin: 0 1em 1.5em 1em;
+  background: #3e3e3e;
+  background: rgba(0, 0, 0, 0);
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px
+}
+
+@include respond-above(600) {
+  .nxn-login-jumbotron-container .jumbotron .heroText {
+    font-size: 2em;
+    margin: 0 1em 1.5em 1em
+  }
+}
+
+// @media (min-width:768px)
+@include respond-above(768) {
+  .nxn-login-jumbotron-container .jumbotron .heroText {
+    font-size: 2em;
+    margin: 50px 0 80px 0
+  }
+
+  .default-login-jumbotron-container .jumbotron .login-box.col-sm-push-6 {
+    position: static;
+    left: auto
+  }
+}
+
+// @media (min-width:992px)
+@include respond-above(992) {
+  .nxn-login-jumbotron-container .jumbotron .heroText {
+    font-size: 2.8em;
+    margin: 80px 10% 80px 30px
+  }
+
+  .default-login-jumbotron-container .jumbotron {
+    top: 15%
+  }
+
+  .default-login-jumbotron-container .jumbotron .login-box.col-md-push-8 {
+    position: static;
+    left: auto
+  }
+
+}
+
+// @media (min-width:1200px)
+@include respond-above(1200) {
+  .nxn-login-jumbotron-container .jumbotron .heroText {
+    font-size: 3.8em;
+    margin: 90px 20% 90px 30px
+  }
+}
+
+// @media (min-width:1300px)
+@include respond-above(1300) {
+  .nxn-login-jumbotron-container .jumbotron .heroText {
+    font-size: 3.8em;
+    margin: 90px 20% 90px 30px
+  }
+}
+
+.default-login-jumbotron-container .jumbotron .login-box.col-md-4,
+.default-login-jumbotron-container .jumbotron .login-box.col-sm-6 {
+  width: 100%;
+  float: none
+}
+
+.nxn-login-features-container .login-features .nxn-panel {
+  min-height: 371px;
+}
+
+.nxn-login-features-container .login-features .nxn-panel {
+  min-height: 391px;
+}
+
+.nxn-login-features-container .login-features .nxn-panel {
+  min-height: 371px;
+}
+
+.nxn-login-features-container .login-features .nxn-panel {
+  min-height: 391px;
+}
+
+.nxn-login-features-container .login-features .nxn-panel {
+  min-height: 371px;
+}
+
+.nxn-login-features-container .login-features .nxn-panel {
+  min-height: 391px;
+}
+
+.nxn-info-box,
+.nxn-panel,
+.nxn-widget-content,
+div[nxn-info-extender] {
+  border-color: #cfcfcf;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+  padding: 15px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border: 0 solid #cfcfcf;
+}
+
+.nxn-info-box,
+.nxn-panel,
+.nxn-widget-content,
+.panel,
+div[nxn-info-extender] {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.nxn-login-jumbotron-container .jumbotron .heroText .nxn-herotext-tagline1 {
+  color: #fff;
+  margin-bottom: 0;
+  font-size: inherit
+}
+
+// @media (min-width:992px)
+
+@include respond-above(992) {
+  .nxn-login-jumbotron-container .jumbotron .heroText .nxn-herotext-tagline1 {
+    margin-bottom: 0
+  }
+}
+
+.nxn-login-jumbotron-container .jumbotron .heroText .nxn-herotext-tagline2 {
+  color: #05c9ce;
+  font-size: inherit
+}
+
+.nxn-login-jumbotron-container .jumbotron .login-form {
+  padding: 20px;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, .65) 0, rgba(0, 0, 0, 0) 100%);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, .65) 0, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, .65) 0, rgba(0, 0, 0, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff000000', endColorstr='#00000000', GradientType=0)
+}
+
+//  @media (min-width:768px)
+@include respond-above(768) {
+  .nxn-login-jumbotron-container .jumbotron .login-form {
+    margin-top: 4px;
+    -moz-border-radius: 0 0 2px 2px;
+    -webkit-border-radius: 0 0 2px 2px;
+    border-radius: 0 0 2px 2px;
+    background: linear-gradient(to bottom,rgba(0,0,0,.65) 0,rgba(0,0,0,0) 100%);
+  }
+}
+
+.nxn-login-jumbotron-container .jumbotron .login-form .form-group label {
+  color: #fff;
+  font-weight: 400
+}
+
+.nxn-login-jumbotron-container .jumbotron .login-form .form-group .help-block {
+  color: #eee;
+  font-size: .9em;
+  line-height: 1;
+  text-transform: lowercase;
+  padding-top: 2px;
+  font-style: italic;
+  margin: 0
+}
+
+.nxn-login-jumbotron-container .jumbotron .login-form .form-group.form-group-static {
+  margin-bottom: 12px
+}
+
+.nxn-login-jumbotron-container .jumbotron .login-form .form-group.form-group-static label {
+  margin: 0
+}
+
+.nxn-login-jumbotron-container .jumbotron .login-form .form-group.form-group-static span {
+  color: #fff;
+  font-size: 1.4em;
+  font-weight: 400;
+  padding: 0
+}
+
+.nxn-login-jumbotron-container .jumbotron .login-form .currently-not-available {
+  padding-top: 5px
+}
+
+.nxn-login-jumbotron-container .jumbotron .login-form .currently-not-available p {
+  text-align: center;
+  color: #fff;
+  font-size: 1.2em
+}
+
+.nxn-login-jumbotron-container .jumbotron .login-form .currently-not-available p img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 162px;
+  height: 160px
+}
+
+.nxn-login-jumbotron-container .jumbotron .login-form .currently-not-available .fa {
+  color: #f4bd0c;
+  font-size: 7em
+}
+
+.nxn-login-jumbotron-container .login-form .links-list {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+.nxn-login-jumbotron-container .login-form .links-list li a {
+  font-size: 12px;
+  color: #fff
+}
+
+.nxn-login-jumbotron-container .login-form .links-list>li {
+  display: inline-block
+}
+
+.nxn-login-jumbotron-container .login-form .links-list>li+li:before {
+  content: "|\00a0";
+  padding: 0 7px;
+  color: #fff
+}
+
+.nxn-large-message h1 {
+  color: #107a83
+}
+
+//
+//
+//
+
+.nxn-login-features-container .login-features .nxn-panel {
+  min-height: 371px;
+}
+
+.nxn-login-features-container .login-features .nxn-panel {
+  min-height: 391px;
+}
+
+.nxn-login-features-container .login-features .nxn-panel {
+  min-height: 371px;
+}
+
+.nxn-login-features-container .login-features .nxn-panel {
+  min-height: 391px;
+}
+
+.nxn-login-features-container .login-features .nxn-panel {
+  min-height: 371px;
+}
+
+.nxn-login-features-container .login-features .nxn-panel {
+  min-height: 391px;
+}
+
+.nxn-info-box,
+.nxn-panel,
+.nxn-widget-content,
+div[nxn-info-extender] {
+  border-color: #cfcfcf;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+  padding: 15px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border: 0 solid #cfcfcf;
+}
+
+.nxn-info-box,
+.nxn-panel,
+.nxn-widget-content,
+.panel,
+div[nxn-info-extender] {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+
+
+.nexen-contact-list dd {
+  font-weight: 400;
+  margin-bottom: .5em
+}
+
+.nexen-contact-list .phone-display {
+  display: none
+}
+
+.nexen-contact-list .phone-call {
+  display: block;
+  padding-top: 3px;
+  padding-bottom: 3px
+}
+
+.nexen-contact-list a.phone-call:active,
+.nexen-contact-list a.phone-call:hover,
+.nexen-contact-list a.phone-call:link,
+.nexen-contact-list a.phone-call:visited {
+  text-decoration: underline
+}

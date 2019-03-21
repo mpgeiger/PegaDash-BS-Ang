@@ -14,7 +14,9 @@ import { interval } from 'rxjs/internal/observable/interval';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  styleUrls: ['./nxn-loginpage.scss',
+  './login.component.scss'
+              ],
   animations: [routerTransition()]
 })
 export class LoginComponent implements OnInit {
@@ -61,7 +63,8 @@ export class LoginComponent implements OnInit {
 
               this.glsservice.sendMessage('LoggedIn');
               console.log('Logged In-->', operator.pyUserName);
-              // this.router.navigate(["maintabs"]);
+              this.router.navigate(['summary-page']);
+
 
             },
             err => {

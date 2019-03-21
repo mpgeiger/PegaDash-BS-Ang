@@ -1,11 +1,27 @@
 // MPG $topnav-background-color: #222;
 // $topnav-background-color: #FFF;
+// @import './NEXEN_files/nxn.css';
+// @import './NEXEN_files/nxn.css';
+// @import './NEXEN_files/nxn.min.css';
+// @import './NEXEN_files/nxn-css-default.css';
+// @import './NEXEN_files/nxn_002.css';
 @import '../Dashboard_Styles.scss';
+
+
+
 
 :host {
     display: block;
 }
+:body {
+  font-family: Arial,Helvetica,sans-serif !important;
+  color: #262626!important;
+  background-color: #fafafa !important;
+}
 .login-page {
+  color: #262626!important;
+  background-color: #fafafa !important;
+
     position: absolute;
     top: 0;
     left: 0;
@@ -20,6 +36,8 @@
     input:-webkit-autofill {
       -webkit-box-shadow: 0 0 0 500px white inset;
   }
+
+
     .col-lg-4 {
         padding: 0;
     }
@@ -52,18 +70,30 @@
       box-shadow: none;
       background-color: lighten( $login-page-border-colors,50%);
   }
+    // .rounded-btn {
+    //     -webkit-border-radius: 50px;
+    //     border-radius: 50px;
+    //     // MPG color: rgba(255, 255, 255, 0.8);
+    //     color: $login-page-rounded-btn;
+    //     background: $topnav-background-color;
+    //     // MPG border: 2px solid rgba(255, 255, 255, 0.8);
+    //     border: 2px solid  $login-page-border-colors;
+    //     font-size: 18px;
+    //     line-height: 40px;
+    //     padding: 0 25px;
+    // }
     .rounded-btn {
-        -webkit-border-radius: 50px;
-        border-radius: 50px;
-        // MPG color: rgba(255, 255, 255, 0.8);
-        color: $login-page-rounded-btn;
-        background: $topnav-background-color;
-        // MPG border: 2px solid rgba(255, 255, 255, 0.8);
-        border: 2px solid  $login-page-border-colors;
-        font-size: 18px;
-        line-height: 40px;
-        padding: 0 25px;
-    }
+      -webkit-border-radius: 50px;
+      border-radius: 50px;
+      // MPG color: rgba(255, 255, 255, 0.8);
+      color: $login-page-rounded-btn;
+      background: $topnav-background-color;
+      // MPG border: 2px solid rgba(255, 255, 255, 0.8);
+      border: 2px solid  $login-page-border-colors;
+      font-size: 14px;
+      line-height: 30px;
+      padding: 0 15px;
+  }
     .rounded-btn:hover,
     .rounded-btn:focus,
     .rounded-btn:active,
@@ -88,7 +118,7 @@
     }
     .form-content:active{
       // background-color:green !important;
-    } 
+    }
 
 
     .form-group {
@@ -130,4 +160,8 @@
     img {
       padding: 10px;
     }
+
+
+
+
 }
