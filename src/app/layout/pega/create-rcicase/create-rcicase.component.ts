@@ -13,7 +13,10 @@ import { CaseService } from '../../../_services/case.service';
   styleUrls: ['./create-rcicase.component.scss']
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
+
+
 @Injectable() // class annotation as Injectable
+
 export class CreateRCIcaseComponent {
 
   currentCaseID$ = 'PegaCPMFS-Work-RequestCheckImage';
@@ -23,6 +26,7 @@ export class CreateRCIcaseComponent {
   isView = false;
   isPage = false;
   isNewPage = false;
+  // Month: Object = new Object();
 
   state: Object = new Object();
   rciObj = 	{content : {
@@ -35,6 +39,8 @@ export class CreateRCIcaseComponent {
 
   myObjStr = JSON.stringify(this.rciObj);
 
+  caseData: any = {};
+  showMsg = false;
   constructor(
     // private fb: FormBuilder,
     private cservice: CaseService
@@ -45,7 +51,8 @@ export class CreateRCIcaseComponent {
 
       // this.isProgress = true;
 console.log(' IN CREATE RCI');
-      this.state = this.rciObj.content;
+      // this.state = this.rciObj.content;
+      this.state = this.caseData;
       console.log('currentCaseID-->' + this.currentCaseID$ );
       console.log('state-->' + JSON.stringify(this.state ));
 
@@ -59,7 +66,7 @@ console.log(' IN CREATE RCI');
           const oAssignment = new Object();
           oAssignment['pxRefObjectInsName'] = caseName;
           oAssignment['pzInsKey'] = response.body['nextAssignmentID'];
-
+          this.showMsg = true;
           // renaming tab
           // MPG this.rtservice.sendMessage("New", caseName);
 
@@ -82,7 +89,9 @@ console.log(' IN CREATE RCI');
 
     }
 
-
+    fieldChanged(e) {
+      this.caseData[e.target.id] = e.target.value;
+    }
 
   // handle the "err" object
   handleErrors(errorResponse: any) {
@@ -111,3 +120,5 @@ console.log(' IN CREATE RCI');
   }
 
 }
+
+

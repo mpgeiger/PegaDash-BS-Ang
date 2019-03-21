@@ -1,6 +1,9 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { CreateRCIcaseComponent } from './../../pega/create-rcicase/create-rcicase.component';
+
+// import { ModalComponent } from '../../pega/modal/modal.component';
 
 @Component({
     selector: 'app-sidebar',
@@ -15,7 +18,11 @@ export class SidebarComponent implements OnInit {
 
     @Output() collapsedEvent = new EventEmitter<boolean>();
 
-    constructor(private translate: TranslateService, public router: Router) {
+    constructor(
+      private translate: TranslateService,
+
+      // private modal: ModalComponent,
+      public router: Router) {
         this.router.events.subscribe(val => {
             if (
                 val instanceof NavigationEnd &&
@@ -34,6 +41,9 @@ export class SidebarComponent implements OnInit {
         this.pushRightClass = 'push-right';
     }
 
+    // open(content: any) {
+    //   this.modal.open(content);
+    // }
 
     eventCalled() {
         this.isActive = !this.isActive;

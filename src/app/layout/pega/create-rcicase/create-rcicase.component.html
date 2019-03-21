@@ -1,26 +1,86 @@
-<p>
-  create-rcicase works!
-</p>
-<button type="button" class="btn btn-lg btn-primary" (click)=createNew()>Create RCI</button>
+
 <div class="col-12">
   <!-- CARD -->
   <div class="card bg-light mb-1">
     <!-- <div class="card-header">Header</div> -->
     <div class="card-body">
       <form role="form">
+          <div class="row">   <!--    first line of check view -->
+            <div class="col-8 text-right"></div>
+            <div class="col-4 ">
+              <fieldset class="form-group">
+                  <label>Month</label>
+                  <select id="Month" class="form-control" (change)="fieldChanged($event)">
+                      <option value="January">January</option>
+                      <option value="February">February</option>
+                      <option value="March">March</option>
+                      <option value="April">April</option>
+                      <option value="May">May</option>
+                      <option value="June">June</option>
+                      <option value="July">July</option>
+                      <option value="August">August</option>
+                      <option value="September">September</option>
+                      <option value="October">October</option>
+                      <option value="November">November</option>
+                      <option value="December">December</option>
+                    </select>
+                  <!-- <input ng-model="Month" id="Month" (change)="fieldChanged($event)" class="form-control" placeholder="Month issued"> -->
+                </fieldset>
+                </div>
+
+          </div>
+          <div class="row">   <!--    second line of check view -->
+            <div class="col-8 float-right">
         <fieldset class="form-group">
-          <label>Text Input with Placeholder</label>
-          <input class="form-control" placeholder="Enter text">
+          <label>Check Recipient</label>
+          <input ng-model="CheckRecepient" id="CheckRecepient" ngModel required  minlength="3" (change)="fieldChanged($event)" class="form-control" placeholder="Enter Recipient">
+          <!-- <div *ngIf="CheckRecepient.invalid && (CheckRecepient.dirty || CheckRecepient.touched)"
+          class="alert alert-danger">
+          <div *ngIf="CheckRecepient.errors.minlength">
+              Name must be at least 3 characters long.
+            </div>
+          </div> -->
         </fieldset>
+      </div>
+      <div class="col-4 float-left">
         <fieldset class="form-group">
-          <label>Text Input with Placeholder</label>
-          <input class="form-control" placeholder="Enter text">
-        </fieldset>
+            <label>Amount</label>
+            <input  ng-model="Amount" id="Amount" type="number" (change)="fieldChanged($event)" class="form-control" placeholder="$ Amount">
+          </fieldset>
+          </div>
+      </div>
+      <div class="row">   <!--    third line of check view -->
+        <div class="col-4 float-left">
         <fieldset class="form-group">
-          <label>Text Input with Placeholder</label>
-          <input class="form-control" placeholder="Enter text">
+            <label>Daytime Phone</label>
+            <input  ng-model="DaytimePhoneNumber" id="DaytimePhoneNumber" type="tel" (change)="fieldChanged($event)" class="form-control" placeholder="Daytime phone #">
+          </fieldset>
+      </div>
+
+      <div class="col-2 text-left"></div>
+      <div class="col-6 float-right">
+        <fieldset class="form-group">
+          <label>Check Sender</label>
+          <input ng-model="CheckSender" id="CheckSender" (change)="fieldChanged($event)" class="form-control" placeholder="Enter Sender">
         </fieldset>
+      </div>
+
+    </div>
+        <div class="form-group button-container float-right">
+            <!-- <a class="btn rounded-btn" (click)="createNew()">{{ 'Submit' }}</a> -->
+            <button type="button" class="btn btn-lg btn-default" (click)="createNew()" >Submit Request</button>
+        </div>
+
+
       </form>
+      <div class="row"  *ngIf="showMsg">
+      <!-- <div class="row"> -->
+          <div class="col-12">
+            <p class="alert alert-success text-center">
+                <strong>Success!  Request was submitted.</strong> <br /> Close window if done making requests.
+            </p>
+          </div>
+        </div>
     </div>
   </div>
 </div>

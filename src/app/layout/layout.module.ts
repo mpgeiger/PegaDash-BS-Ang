@@ -1,3 +1,4 @@
+// import { ModalComponent } from './pega/modal/modal.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
@@ -7,16 +8,31 @@ import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
-// import { CreateRCIcaseComponent } from './pega/create-rcicase/create-rcicase.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbdModalComponent, NgbdModalContent } from './pega/modal/modal.component';
+// import { Mod } from './pega/modal/modal.component';
+import { CreateRCIcaseComponent } from './pega/create-rcicase/create-rcicase.component';
 
 @NgModule({
     imports: [
         CommonModule,
         LayoutRoutingModule,
         TranslateModule,
-        NgbDropdownModule
+        NgbDropdownModule,
+        // CreateRCIcaseComponent.forRoot(,
+        NgbModule.forRoot()
     ],
-    declarations: [LayoutComponent, SidebarComponent, HeaderComponent],
+    declarations: [
+      LayoutComponent
+      , SidebarComponent
+      , HeaderComponent
+      , NgbdModalComponent
+      , CreateRCIcaseComponent
+      , NgbdModalContent],
+    entryComponents: [
+      NgbdModalContent
+         ],
+
     exports: []
 })
 export class LayoutModule {}
