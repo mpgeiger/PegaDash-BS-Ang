@@ -104,25 +104,31 @@
 
         </div>
       </form>
-      <div class="row float-right">
+      <div class="row align-right">
         <!-- <div class="col-12 form-group button-container float-right"> -->
-        <div class="col-12 form-group button-container">
+        <div class="col-12 form-group button-container align-right">
           <!-- <a class="btn rounded-btn" (click)="createNew()">{{ 'Submit' }}</a> -->
           <button type="button" class="btn btn-lg btn-default" (click)="createNew()">Submit Request</button>
         </div>
       </div>
 
-      <div *ngIf="showMsg">
-        <div class="row justify-content-center">
+      <!-- <div *ngIf="showMsg"> -->
+      <div>
+        <div class="row align-center">
           <!-- <div class="row"> -->
-          <div class="col-12">
-            Current status
-            <ul>
-              <li>Bank has recieved check</li>
-              <li>Passed to clearing unit</li>
-              <li>Check scanned for digital archival</li>
-            </ul>
-          </div>
+          <!-- <div class="col-12 align-center"> -->
+
+            <span class="centered">
+              <ul id="breadcrumb">
+                <li><a href="#"><span class="icon icon-home"> </span></a></li>
+                <li><a href="#"><span class="icon icon-beaker"> </span> Received</a></li>
+                <li><a href="#"><span class="icon icon-double-angle-right"></span> Cleared</a></li>
+                <li><a href="#"><span class="icon icon-rocket"> </span> Digitized</a></li>
+                <li class="active"><a href="#"><span class="icon icon-arrow-down"> </span> Complete</a></li>
+              </ul>
+            </span>
+
+          <!-- </div> -->
         </div>
         <div class="row justify-content-center">
           <div class="col-12">
@@ -136,24 +142,16 @@
 
             <a download href="http://localhost:4200/assets/images/sample_check.jpg">
               <img src='../../../../assets/images/sample_check.jpg'
-                style="width: 95%; max-width: 95%;max-height: 95%; object-fit: contain;" />
+                style="height: 350px; max-width: 95%;max-height: 95%; object-fit: contain;" />
               <!-- <img src="../../../../assets/images/BNY_Mellon_logo_logotype.png" height="45px" /> -->
             </a>
-            <p class="alert alert-success text-center">
+            <!-- <p class="alert alert-success text-center">
               <strong>Success! Request was submitted.</strong> <br /> Close window if done making requests.
-            </p>
+            </p> -->
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="row" *ngIf="showMsg">
-    <!-- <div class="row"> -->
-    <div class="col-12">
-      <p class="alert alert-success text-center">
-        <strong>Success! Request was submitted.</strong> <br /> Close window if done making requests.
-      </p>
-    </div>
-  </div>
 </div>

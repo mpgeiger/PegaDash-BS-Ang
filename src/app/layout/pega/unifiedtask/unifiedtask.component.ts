@@ -1,3 +1,4 @@
+
 // import { NgPipesModule, GroupByPipe } from 'ngx-pipes';
 import { Component, OnInit, ViewChild } from '@angular/core';
 // import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
@@ -7,6 +8,7 @@ import { HttpParams, HttpHeaders } from '@angular/common/http';
 import { OpenAssignmentService } from '../../../_messages/openassignment.service';
 import { RefreshWorkListService } from '../../../_messages/refreshworklist.service';
 import { PagerService } from '../../../_services/pager.service';
+import { PaginationComponent } from '../../bs-component/components';
 // import { CreateRCIcaseComponent } from './../../pega/create-rcicase/create-rcicase.component';
 // import { groupBy } from 'rxjs/operators';
 

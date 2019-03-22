@@ -13,6 +13,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalComponent, NgbdModalContent } from './pega/modal/modal.component';
+// import { PaginationComponent } from './../layout/bs-component/components';
 
 // import { Mod } from './pega/modal/modal.component';
 import { CreateRCIcaseComponent } from './pega/index';
@@ -36,6 +37,7 @@ import { CreateRCIcaseComponent } from './pega/index';
       , CreateRCIcaseComponent
       // , DatePickerComponent
       , NgbdModalContent
+      // ,PaginationComponent
       // , UnifiedtaskComponent
   ],
     entryComponents: [

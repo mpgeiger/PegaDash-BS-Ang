@@ -1,61 +1,50 @@
-
 <!-- items being paged -->
-<div *ngFor="let task of tasks">
-  <div class="col-12">
-    <!-- CARD -->
-    <div class="card bg-light mb-1">
-      <!-- <div class="card-header">Header</div> -->
-      <div class="card-body">
-        <!-- <div class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's content.</div>
-              -->
-        <div class="row h-100">
-          <div class="col-sm-1 .col-md-8my-auto">
-            <!-- PRIORITY -->
-            <i class="material-icons md-18" [ngStyle]="{ color: calcColor(task.pxUrgencyAssign) }">
-              lens
-            </i>
-            <!-- PRIORITY -->
-          </div>
+<div class="row">
 
-        <div class="col-sm-11 text-xs-center">
-          <!-- PRIORITY -->
-          <div class="row" (click)="this.openAssignment(task)">
-            <div class="col-sm-9">
-              {{ task.pyLabel }}
-            </div>
-            <div class="col-sm-3 text-xs-right float-right text-right">
-               <!--
-                        MPG Case Statement to swap displayed text
-                       -->
-              <div ngSwitch="{{task.pyAssignmentStatus}}">
-                    <div *ngSwitchCase="'Pending-RequestInitiation'">
-                        <div fxFlex class="text-menu">Pending</div>
-                    </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+      </tr>
+    </thead>
+    <tfoot>
+          <!-- pager -->
 
-                <div  *ngSwitchDefault>
-                    <div fxFlex class="text-menu">{{ task.pyAssignmentStatus }}</div>
+    </tfoot>
+    <tbody>
+      <tr *ngFor="let task of pagedItems">
+        <th scope="row">1</th>
+        <td> {{ task.pyLabel }}</td>
+        <td>{{task.pyAssignmentStatus}}</td>
+        <td>{{task.pxUrgencyAssign}}</td>
+      </tr>
+    </tbody>
 
-                </div >
-              </div>
-
-
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-sm-8">
-
-                  {{ task.pxTaskLabel }}
-
-            </div>
-            <div class="col-sm-4 text-xs-right float-right text-right">
-
-                  {{ task.pxDeadlineTime | date }}
-
-            </div>
-          </div>
-        </div></div>
-      </div>
-    </div>
+  </table>
+  <div class="text-uppercase text-muted fs-12">boundaryLinks = true</div>
+  <ngb-pagination [collectionSize]="70" [(page)]="defaultPagination" [boundaryLinks]="true"></ngb-pagination>
+  <div class="alert alert-info">
+      <b>Current page: </b>{{defaultPagination}}
   </div>
+
+  <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+          <a (click)="setPage(1)">First</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === 1}">
+          <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+      </li>
+      <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+          <a (click)="setPage(page)">{{page}}</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+          <a (click)="setPage(pager.currentPage + 1)">Next</a>
+      </li>
+      <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+          <a (click)="setPage(pager.totalPages)">Last</a>
+      </li>
+  </ul>
 </div>
