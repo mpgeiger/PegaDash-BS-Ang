@@ -6,7 +6,7 @@ import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { BlankPageRoutingModule } from './blank-page-routing.module';
 import { BlankPageComponent } from './blank-page.component';
 import { PWorkItemComponent, WorkListPanelSectionComponent, MaintabsComponent } from '../../layout/pega';
-import { CreateRCIcaseComponent } from './../pega/create-rcicase/create-rcicase.component';
+// import { CreateRCIcaseComponent } from './../pega/create-rcicase/create-rcicase.component';
 
 // import { PWorkItemComponent } from '../../layout/pega/workitem/pworkitem.component';
 // import { UnifiedtasklistComponent } from '../../shared/pegaComponents/unifiedtasklist/unifiedtasklist.component';
@@ -38,8 +38,8 @@ import { StatModule } from '../../shared';
       UnifiedtasklistComponent,
       WorkListPanelSectionComponent,
       MaintabsComponent,
-      PWorkItemComponent,
-      CreateRCIcaseComponent
+      PWorkItemComponent
+      // , CreateRCIcaseComponent
     ]
 })
 export class BlankPageModule {}

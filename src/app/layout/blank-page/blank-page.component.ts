@@ -5,7 +5,7 @@ import { routerTransition } from '../../router.animations';
 import { CaseService } from '../../_services/case.service';
 import { PegaErrors } from '../../_constants/PegaErrors';
 
-// import { CreateRCIcaseComponent } from '../pega/create-rcicase/create-rcicase.component';
+import { CreateRCIcaseComponent } from '../pega/create-rcicase/create-rcicase.component';
 
 @Component({
     selector: 'app-blank-page',
