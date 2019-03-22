@@ -10,7 +10,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-    <div class="modal-body">
+    <div class="modal-body modal-lg">
       <app-create-rcicase></app-create-rcicase>
     </div>
     <div class="modal-footer">
@@ -29,14 +29,13 @@ export class NgbdModalContent {
   selector: 'ngbd-modal-component',
   templateUrl: './modal-component.html',
   // styleUrls: ['./sidebar.component.scss']
-
   styleUrls: ['./modal.component.scss']
 })
 export class NgbdModalComponent {
   constructor(private modalService: NgbModal) {}
 
   open() {
-    const modalRef = this.modalService.open(NgbdModalContent);
+    const modalRef = this.modalService.open(NgbdModalContent,  { windowClass : 'myCustomModalClass'});
     modalRef.componentInstance.name = 'World sdf sdx sdf fsdf';
     modalRef.componentInstance.requestType = 'Request Check Image';
   }

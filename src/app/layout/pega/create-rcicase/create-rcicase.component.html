@@ -1,13 +1,25 @@
 
-<div class="col-12">
+<div class="col-12" width="800px" >
   <!-- CARD -->
   <div class="card bg-light mb-1">
     <!-- <div class="card-header">Header</div> -->
-    <div class="card-body">
-      <form role="form">
+    <div class="card-body "> &nbsp;
+      <form role="form" class="requestCheck">
+        <div class="row">
+        <div class="col-11"></div>
+        <div class="col-1 float-left">
+          <h6>
+              <label>
+                 1025
+                  </label>
+          </h6>
+
+        </div>
+        </div>
           <div class="row">   <!--    first line of check view -->
             <div class="col-8 text-right"></div>
             <div class="col-4 ">
+                <!-- <app-date-picker></app-date-picker> -->
               <fieldset class="form-group">
                   <label>Month</label>
                   <select id="Month" class="form-control" (change)="fieldChanged($event)">
@@ -66,13 +78,30 @@
       </div>
 
     </div>
-        <div class="form-group button-container float-right">
+    <div class="row">
+      <div class="col-8 float-left span">
+       <h5>
+         <label>
+         <i class="fab fa-cloudsmith" style="font-size: .75em;"></i>000000000<i class="fab fa-cloudsmith" style="font-size: .75em;"></i>
+        </label>
+        <label>
+
+         <i class="fab fa-cloudsmith" style="font-size: .75em;"></i>123456789<i class="fab fa-cloudsmith" style="font-size: .75em;"></i>
+        </label>
+      <label>
+         <span style="width: 15px"></span>1025
+        </label>
+       </h5>
+      </div>
+
+    </div>
+          </form>
+      <div class="row">
+        <div class="col-12 form-group button-container float-right">
             <!-- <a class="btn rounded-btn" (click)="createNew()">{{ 'Submit' }}</a> -->
             <button type="button" class="btn btn-lg btn-default" (click)="createNew()" >Submit Request</button>
         </div>
-
-
-      </form>
+      </div>
       <div class="row"  *ngIf="showMsg">
       <!-- <div class="row"> -->
           <div class="col-12">

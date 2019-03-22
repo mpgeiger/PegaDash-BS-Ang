@@ -39,7 +39,9 @@
   margin: $modal-dialog-margin;
   // allow clicks to pass through for custom click handling to close modal
   pointer-events: none;
-
+  // max-width: $modal-lg +300;
+  // min-width: $modal-lg +300;
+  // widows: 95%;
   // When fading in the modal, animate it to slide down
   .modal.fade & {
     @include transition($modal-transition);
@@ -147,7 +149,8 @@
 @include media-breakpoint-up(sm) {
   // Automatically set modal's width for larger viewports
   .modal-dialog {
-    max-width: $modal-md;
+    max-width: $modal-sm + 100;
+    min-width: $modal-sm;
     margin: $modal-dialog-margin-y-sm-up auto;
   }
 
@@ -159,10 +162,48 @@
     @include box-shadow($modal-content-box-shadow-sm-up);
   }
 
-  .modal-sm { max-width: $modal-sm; }
+  .modal-sm { max-width: $modal-sm+ 100; }
+
+}
+
+@include media-breakpoint-up(md) {
+  // Automatically set modal's width for larger viewports
+  .modal-dialog {
+    max-width: $modal-md+150;
+    min-width: $modal-md;
+    margin: $modal-dialog-margin-y-md-up auto;
+  }
+
+  .modal-dialog-centered {
+    min-height: calc(100% - (#{$modal-dialog-margin-y-md-up} * 2));
+  }
+
+  .modal-content {
+    @include box-shadow($modal-content-box-shadow-md-up);
+  }
+
+  .modal-sm { max-width: $modal-md + 150; }
 
 }
 
 @include media-breakpoint-up(lg) {
-  .modal-lg { max-width: $modal-lg; }
+  .modal-dialog {
+    max-width: $modal-lg +150;
+    min-width: $modal-lg ;
+    //widows: 60%;
+    // margin: $modal-dialog-margin-y-lg-up auto;
+  }
+
+  .modal-lg {
+    // max-width: $modal-lg;
+    // max-width: $modal-lg +150;
+    // min-width: $modal-lg ;
+    // widows: 50%;
+  }
+
 }
+// body >.myCustomModalClass > .modal-dialog {
+//   max-width: 1100px !important;
+//   min-width: 600px !important;
+//   widows: 95%;
+// }
