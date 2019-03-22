@@ -15,28 +15,28 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalComponent, NgbdModalContent } from './pega/modal/modal.component';
 
 // import { Mod } from './pega/modal/modal.component';
-import { CreateRCIcaseComponent } from './pega/create-rcicase/create-rcicase.component';
+import { CreateRCIcaseComponent } from './pega/index';
 // import { UnifiedtaskComponent } from './pega/';
 // import { DatePickerComponent } from './bs-component/components/index';
 
 @NgModule({
     imports: [
-        CommonModule,
-        LayoutRoutingModule,
-        TranslateModule,
-        NgbDropdownModule,
+          CommonModule
+        , LayoutRoutingModule
+        , TranslateModule
+        , NgbDropdownModule
         // CreateRCIcaseComponent.forRoot(,
-        NgbModule.forRoot()
+        , NgbModule.forRoot()
     ],
     declarations: [
-      LayoutComponent
+        LayoutComponent
       , SidebarComponent
       , HeaderComponent
       , NgbdModalComponent
       , CreateRCIcaseComponent
       // , DatePickerComponent
       , NgbdModalContent
-    // , UnifiedtaskComponent
+      // , UnifiedtaskComponent
   ],
     entryComponents: [
       NgbdModalContent

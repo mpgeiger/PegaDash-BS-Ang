@@ -7,7 +7,7 @@ import { HttpParams, HttpHeaders } from '@angular/common/http';
 import { OpenAssignmentService } from '../../../_messages/openassignment.service';
 import { RefreshWorkListService } from '../../../_messages/refreshworklist.service';
 import { PagerService } from '../../../_services/pager.service';
-import { CreateRCIcaseComponent } from './../../pega/create-rcicase/create-rcicase.component';
+// import { CreateRCIcaseComponent } from './../../pega/create-rcicase/create-rcicase.component';
 // import { groupBy } from 'rxjs/operators';
 
 @Component({
