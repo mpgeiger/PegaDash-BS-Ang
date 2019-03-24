@@ -26,6 +26,8 @@ export class CreateRCIcaseComponent {
   isView = false;
   isPage = false;
   isNewPage = false;
+  chevronCurrentStage = 'complete';
+  isCollapsed = true;
   // Month: Object = new Object();
 
   state: Object = new Object();

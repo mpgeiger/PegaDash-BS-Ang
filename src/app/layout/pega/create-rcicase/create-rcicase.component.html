@@ -84,8 +84,8 @@
           </div>
 
         </div>
-        <div class="row">
-          <div class="col-8 float-left span">
+        <div id="checkNumberPlaceholder" class="row">
+          <div class="col-10 float-left span">
             <h5>
               <label>
                 <i class="fab fa-cloudsmith" style="font-size: .75em;"></i>000000000<i class="fab fa-cloudsmith"
@@ -108,7 +108,7 @@
         <!-- <div class="col-12 form-group button-container float-right"> -->
         <div class="col-12 form-group button-container align-right">
           <!-- <a class="btn rounded-btn" (click)="createNew()">{{ 'Submit' }}</a> -->
-          <button type="button" class="btn btn-lg btn-default" (click)="createNew()">Submit Request</button>
+          <button type="button" class="btn btn-primary float-right" (click)="createNew()">Submit Request</button>
         </div>
       </div>
 
@@ -118,38 +118,67 @@
           <!-- <div class="row"> -->
           <!-- <div class="col-12 align-center"> -->
 
-            <span class="centered">
-              <ul id="breadcrumb">
-                <li><a href="#"><span class="icon icon-home"> </span></a></li>
-                <li><a href="#"><span class="icon icon-beaker"> </span> Received</a></li>
-                <li><a href="#"><span class="icon icon-double-angle-right"></span> Cleared</a></li>
-                <li><a href="#"><span class="icon icon-rocket"> </span> Digitized</a></li>
-                <li class="active"><a href="#"><span class="icon icon-arrow-down"> </span> Complete</a></li>
-              </ul>
-            </span>
+          <span class="centered">
+            <ul id="breadcrumb">
+              <li class="chevron"><a href=""><span class="fas fa-long-arrow-alt-right"> </span></a></li>
+              <li><a href=""><span class="fas fa-hands"> </span> Received</a></li>
+              <li><a href=""><span class="fas fa-cogs"></span> Processed</a></li>
+              <li><a href=""><span class="fas fa-money-bill-alt"> </span> Credited</a></li>
+              <li style=""><a href=""><span class="fas fa-star"> </span> Complete</a></li>
+            </ul>
+          </span>
 
           <!-- </div> -->
         </div>
-        <div class="row justify-content-center">
-          <div class="col-12">
-            <h4 class="alert alert-warning text-center">
-              Click on the image to download.
-            </h4>
-          </div>
-        </div>
+
         <div class="row justify-content-center">
           <div class="col-12">
 
-            <a download href="http://localhost:4200/assets/images/sample_check.jpg">
-              <img src='../../../../assets/images/sample_check.jpg'
-                style="height: 350px; max-width: 95%;max-height: 95%; object-fit: contain;" />
-              <!-- <img src="../../../../assets/images/BNY_Mellon_logo_logotype.png" height="45px" /> -->
-            </a>
+
+              <p class="text-center">
+                  <button type="button" class="btn btn-sm btn-primary" (click)="isCollapsed = !isCollapsed"
+                      [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                      Click to view check image
+                  </button>
+              </p>
+              <div id="collapseExample" [ngbCollapse]="isCollapsed">
+                  <div class="card">
+                      <div class="card-body text-center">
+                          <a download href="http://localhost:4200/assets/images/check_front_back.png">
+                            <img src='../../../../assets/images/check_front_back.png'
+                              style="max-width: 95%;max-height: 95%; object-fit: contain;" />
+                            <!-- <img src="../../../../assets/images/BNY_Mellon_logo_logotype.png" height="45px" /> -->
+                          </a>
+                          <div class="row justify-content-center">
+                              <div class="col-12">
+                                <h4 class="alert alert-warning text-center">
+                                  Click on the image to download.
+                                </h4>
+                              </div>
+                            </div>
+                      </div>
+                  </div>
+              </div>
+<!--
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+              aria-expanded="true" aria-controls="collapseExample">
+              Click to view check image (click on check to download)
+            </button> -->
+            <!-- <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button"
+              aria-expanded="false" aria-controls="collapseExample">
+              Link with href
+            </a> -->
+            <!-- <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+
+              </div>
+            </div> -->
             <!-- <p class="alert alert-success text-center">
               <strong>Success! Request was submitted.</strong> <br /> Close window if done making requests.
             </p> -->
           </div>
         </div>
+
       </div>
     </div>
   </div>

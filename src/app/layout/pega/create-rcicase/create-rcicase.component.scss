@@ -5,11 +5,15 @@
   // background-repeat: no-repeat;
   background-size: auto;
 
-  background-color: lightcyan;
-  border: 3px;
-  border-color: black;
+  // background-color: lightcyan;
+  background-image: url('/assets/images/vintage-concrete.png' );
+  // background:grey;
+  border: 6px solid #292929;
   border-style: groove;
-  margin: 3px;
+  outline: 4px solid #d1d1d1;
+  border: 4px;
+  // border-color: black;
+  margin: 4px;
   padding: 10px;
 }
 
@@ -51,6 +55,28 @@ h1 {
   padding: 0 10px 0 5px;
   text-align: center;
   margin-right: 23px;
+
+  // #breadcrumb li a:active {
+  //   background-color: #16a085;
+  // }
+  // #breadcrumb li a:active:before {
+  //   border-color: #16a085;
+  //   border-left-color: transparent;
+  // }
+  // #breadcrumb  li a:active:after {
+  //   border-left-color: #16a085;
+  // }
+
+  li a:active {
+    background-color: red;
+  }
+  li a:active:before {
+    border-color: #16a085;
+    border-left-color: transparent;
+  }
+   li a:active:after {
+    border-left-color: #16a085;
+  }
 }
 #breadcrumb li:nth-child(even) a {
   background-color: #AC8544;
@@ -108,23 +134,39 @@ h1 {
 #breadcrumb li a:hover:after {
   border-left-color: #8E9294;
 }
-#breadcrumb li a:active {
+
+
+ #breadcrumb li a:active {
+    background-color: #16a085;
+  }
+  #breadcrumb li a:active:before {
+    border-color: #16a085;
+    border-left-color: transparent;
+  }
+  #breadcrumb  li a:active:after {
+    border-left-color: #16a085;
+  }
+
+  // * > ul.breadcrumb li.active {
+  //   background-color: #16a085;
+  // }
+  // #breadcrumb.li a:active:before {
+  //   border-color: #16a085;
+  //   border-left-color: transparent;
+  // }
+  // #breadcrumb.li a:active:after {
+  //   border-left-color: #16a085;
+  // }
+
+
+
+ #bcActive  a {
   background-color: #16a085;
 }
-#breadcrumb li a:active:before {
+#breadcrumb .bcActive li :before {
   border-color: #16a085;
   border-left-color: transparent;
 }
-#breadcrumb  li a:active:after {
-  border-left-color: #16a085;
-}
-.active #breadcrumb  li a {
-  background-color: #16a085;
-}
-#breadcrumb .active li :before {
-  border-color: #16a085;
-  border-left-color: transparent;
-}
-#breadcrumb .active li a:active:after {
+#breadcrumb .bcActive li a:active:after {
   border-left-color: #16a085;
 }

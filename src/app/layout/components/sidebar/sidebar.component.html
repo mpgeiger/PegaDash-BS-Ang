@@ -25,18 +25,22 @@
       <i class="fas fa-blender-phone"></i>&nbsp;
       <span>{{ 'Communications' | translate }}</span>
     </a>
-    <a [routerLink]="['/components']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+    <!-- DEV TABS -- BEGIN -->
+    <!-- <a [routerLink]="['/components']" [routerLinkActive]="['router-link-active']" class="list-group-item">
       <i class="fa fa-th-list"></i>&nbsp;
       <span>{{ 'Component' | translate }}</span>
     </a>
-
+    <a [routerLink]="['/bs-element']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+      <i class="fa fa-fw fa-desktop"></i>&nbsp;
+      <span>{{ 'Bootstrap Element' | translate }}</span>
+  </a>
 
     <a [routerLink]="['/blank-page']" [routerLinkActive]="['router-link-active']" class="list-group-item">
       <i class="fa fa-file-o"></i>&nbsp;
       <span>{{ 'Unit Test' | translate }}</span>
-    </a>
+    </a> -->
 
-
+<!-- DEV TABS -- END -->
     <div class="header-fields">
       <a (click)="rltAndLtr()" class="list-group-item">
         <span><i class="fa fa-arrows-h"></i>&nbsp; RTL/LTR</span>
