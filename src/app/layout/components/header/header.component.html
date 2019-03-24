@@ -10,21 +10,37 @@
 
             <li class="nav-item dropdown" style="width:200px;" ngbDropdown>
                 <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
-                    <i class="fa fa-user"></i> Request Service <b class="caret"></b>
+                    <i class="fa fa-user"></i> Self Service <b class="caret"></b>
                 </a>
+
                 <div class="dropdown-menu-right" style="width:200px;"  ngbDropdownMenu>
+                  <!-- <a class="dropdown-item" style="background-color: lightgray;">Initiate Request
+                  </a> -->
                     <a class="dropdown-item" href="javascript:void(0)">
-                        <ngbd-modal-component></ngbd-modal-component>
+                        <span><ngbd-modal-component></ngbd-modal-component></span>
                     </a>
                     <a class="dropdown-item" href="javascript:void(0)">
                         <i class="fas fa-thermometer-half"></i>&nbsp;
-                        <span>{{ 'Transatction Status' | translate }}</span>
+                        <span>{{ ' Transatction Status' | translate }}</span>
                     </a>
                     <a class="dropdown-item" href="javascript:void(0)">
                         <i class="fas fa-archway"></i>&nbsp;
-                        <span>{{ 'Manage Entitlements' | translate }}</span>
+                        <span>{{ ' Balance Statement' | translate }}</span>
                     </a>
-
+                    <a class="dropdown-item" style="background-color: lightgray;"><b>Initiate Request</b>
+                      </a>
+                      <a class="dropdown-item" href="javascript:void(0)">
+                          <i class="fas fa-thermometer-half"></i>&nbsp;
+                          <span>{{ ' Manage Entitlements' | translate }}</span>
+                      </a>
+                      <a class="dropdown-item" href="javascript:void(0)">
+                          <i class="fas fa-thermometer-half"></i>&nbsp;
+                          <span>{{ ' Cash Flow' | translate }}</span>
+                      </a>
+                      <a class="dropdown-item" href="javascript:void(0)">
+                          <i class="fas fa-thermometer-half"></i>&nbsp;
+                          <span>{{ ' Capital' | translate }}</span>
+                      </a>
                 </div>
             </li>
             <form class="form-inline my-2 my-lg-0 right">

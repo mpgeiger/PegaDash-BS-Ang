@@ -1,202 +1,222 @@
 <div class="login-page" [@routerTransition]>
-
   <!-- Main Content -->
   <div class="nxn-login-jumbotron-container" role="main">
-    <div class="jumbotron" style="background-image: url('/assets/images/jumbotron_bg_lg.jpg')">
+    <div class="jumbotron" style="background-image: url('/assets/images/jumbotron_bg_lg.jpg'); background-size: 100% auto">
       <div class="row">
         <!-- ngIf: !login.isOutageState -->
         <div class="hero-text-container col-sm-6 col-sm-pull-6 col-md-8 col-md-pull-4">
           <div class="heroText">
-            <div class="nxn-herotext-tagline1 ng-binding" ng-show="login.wlResources.heroText1" ng-bind-html="login.wlResources.heroText1">Simplified,
-              intuitive and power packed.</div>
-            <div class="nxn-herotext-tagline2 ng-binding" ng-show="login.wlResources.heroText2" ng-bind-html="login.wlResources.heroText2">Experience the power of NEXEN with Pega </div>
+            <div class="nxn-herotext-tagline1 ng-binding" ng-show="login.wlResources.heroText1" ng-bind-html="login.wlResources.heroText1">
+              Simplified, intuitive and power packed.
+            </div>
+            <div class="nxn-herotext-tagline2 ng-binding" ng-show="login.wlResources.heroText2" ng-bind-html="login.wlResources.heroText2">
+              Experience the power of NEXEN with Pega
+            </div>
             <!-- <div class="nxn-herotext-tagline2 ng-binding"><br /><br /><img src="../../assets/images/pega_powered_vertical_positive_rgb.png" width="120px"></div> -->
-
           </div>
         </div>
 
-
-        <!-- <div id="loginContainer" class="login-box col-sm-6 col-sm-push-6 col-md-4 col-md-push-8 ng-scope" -->
+         <div id="loginContainer" class="login-box col-sm-6 col-sm-push-6 col-md-4 col-md-push-8 ng-scope"  style="background:-webkit-linear-gradient(top,rgba(0,0,0,.65) 0,rgba(0,0,0,0) 100%);">
         <div class="login-box col-sm-6 col-sm-push-6 col-md-4 col-md-push-8 ng-scope">
+        <!-- <div class="login-box col-10 ng-scope"> -->
           <!-- <form id="loginForm" name="loginForm" class="login-form  ng-pristine ng-valid" method="post" autocomplete="off" action="/login/forms/ProcessLogin.fcc?SMQUERYDATA=-SM-AhPv1%2FHIWZ9UXIDAKc2YMPTKrXDP%2FA%2BGtEJ%2Bzw%2FoGAy6XeY3RvbyXLazlGSVQ5DTQSDvRZ56S9bM1T9lIL6vHDfEM1Ag%2BYgH3gsX6utkS91m0OyfeggPANCWG6gn6OurelIK7WMoAxyqqas2IJCHVAK1noSEo%2BFHZg6CuaVsxrrcHsfhUijjJEpW59nvUquhqkpM%2FYQxwdwaCD7lqK2yWG9453J4ic2dkL0XUEMvrTWy27cV6lmsUvZMAkrHgXlio275lxcQLMnx57HlzjuwCbsTvYvRSGhOym%2BBE8IMrzNbghl09gc2lzMmYmH8KLXhoKFNuCswzsPZabO5tdXk29viO8Qc8Funp90zYqQTXxWaxbUedy9M5ZF5DknBZmiX7rgcXxBaOsVWKaqGCDD8H463xXuBDCK4"> -->
-          <form role="form">
+          <form
+            role="form"
+            id="loginForm"
+            name="loginForm"
+            background="-webkit-linear-gradient(top,rgba(0,0,0,.65) 0,rgba(0,0,0,0) 100%)"
+            >
+            <!-- style="linear-gradient(to bottom,rgba(0,0,0,.65) 0,rgba(0,0,0,0) 100%) !important;" -->
             <fieldset>
               <!-- <input type="hidden" name="SMENC" value="UTF-8"> -->
 
-              <div class="form-group" (submit)=doLogin()>
-                <label for="USER">User ID</label>
+              <div id="userIdFormGroup" class="form-group" class="form-group text-left" (submit)="doLogin()">
+                <label for="USER" style="color: #fff;font-weight: 400;">User ID</label>
                 <!-- <input type="text"  ng-model="name" name="USER" id="USER" class="nxn-login-form-control ng-scope ng-pristine ng-valid aa-had-focus" placeholder="Enter User ID" ng-model="vm.USER" nxn-login-required="true" autocomplete="off" nxn-no-space-validator="" nxn-login-fields-validator="" nxn-auto-focus="" aa-label="User" aa-val-msg="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">ngRepeat: msg in errorMessages -->
-                <input type="text" ng-model="userName" id="userName" (change)="fieldChanged($event)" class="nxn-login-form-control ng-scope ng-pristine ng-valid aa-had-focus"
-                  placeholder="Enter User ID"><!-- ngRepeat: msg in errorMessages -->
+                <input
+                  type="text"
+                  style="font-weight: 400;"
+                  ng-model="userName"
+                  id="userName"
+                  (change)="fieldChanged($event)"
+                  class="nxn-login-form-control ng-scope ng-pristine ng-valid aa-had-focus"
+                  placeholder="Enter User ID"
+                /><!-- ngRepeat: msg in errorMessages -->
               </div>
 
-              <div class="form-group" (submit)=doLogin()>
-                <label for="PASSWORD">Password</label>
+              <div class="form-group text-left" (submit)="doLogin()">
+                <label for="PASSWORD" style="color: #fff;font-weight: 400;">Password</label>
                 <!-- <input type="password" name="PASSWRD" id="PASSWORD" class="nxn-login-form-control ng-scope ng-pristine ng-valid" placeholder="Enter Password" ng-model="vm.password" nxn-login-required="true" autocomplete="off" nxn-no-space-validator="" nxn-login-fields-validator="" aa-label="Password" aa-val-msg="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">ngRepeat: msg in errorMessages -->
-                <input type="password" id="password" (change)="fieldChanged($event)" placeholder="{{ 'Password' | translate }}"><!-- ngRepeat: msg in errorMessages -->
+                <input
+                  type="password"
+                  id="password"
+                  (change)="fieldChanged($event)"
+                  placeholder="{{ 'Password' | translate }}"
+                /><!-- ngRepeat: msg in errorMessages -->
               </div>
 
-              <div class="error-container" ng-class="{'show': vm.message}">
+              <!-- <div class="error-container" ng-class="{'show': vm.message}">
                 <div class="error-content">
-                  <p class="ng-binding"><span class="fa fa-warning fa-fw"></span> </p>
+                  <p class="ng-binding"><span class="fa fa-warning fa-fw"></span></p>
                 </div>
-              </div>
+              </div> -->
 
               <div class="form-group button-container">
                 <a class="btn rounded-btn" (click)="attemptLogin()">{{ 'Log in' | translate }}</a>
-
-                <!-- <button id="signIn" type="submit" class="btn btn-primary"   [routerLink]="['/dashboard']" (click)="onLoggedin()">Sign In</button> -->
-                <!-- <button class="btn btn-primary"  (click)="attemptLogin()">Sign In</button> -->
-                <!-- <input type="hidden" name="postpreservationdata"> -->
-                <!-- <input type="hidden" name="SUBMIT" value="Login"> -->
               </div>
-
+<!--
               <ul class="links-list">
-                <!-- ngIf: !vm.hideFPSLink -->
-                <li ng-if="!vm.hideFPSLink" class="ng-scope"><a href="https://nexen.bnymellon.com/app/fps">Forgot
-                    Password</a></li><!-- end ngIf: !vm.hideFPSLink -->
-                <!-- ngIf: vm.displayRegistrationLink -->
-                <!-- <li ng-if="vm.displayRegistrationLink" ng-show="isLowerEnv" class="ng-scope ng-hide"><a class="nxn-cursor-pointer">Register</a></li>end ngIf: vm.displayRegistrationLink -->
-                <!-- ngIf: vm.isTestingEnv -->
-              </ul>
-
+                <li ng-if="!vm.hideFPSLink" class="ng-scope" style="color: #fff;font-weight: 400;">
+                  <a href="https://nexen.bnymellon.com/app/fps">Forgot Password</a>
+                </li>
+              </ul> -->
             </fieldset>
-
           </form>
-        </div><!-- end ngIf: !login.isOutageState -->
+        </div>
+      </div>
+        <!-- end ngIf: !login.isOutageState -->
 
         <!-- ngIf: login.isOutageState -->
         <!--/.login-box-->
-
       </div>
+
     </div>
     <!--/.jumbotron-->
   </div>
   <!--/.container-->
 
-
   <!-- script for video -->
 
   <!-- bottom -->
+  <div class="row" class="align-bottom">
+    <img src="../../assets/images/pega_powered_horizontal_positive_rgb.png" width="200px" />
+  </div>
   <div class="row">
-
-      <div class="col-md-7 col-md-pull-5">
-          <div class="nxn-panel">
-            <!-- ngInclude: 'partials/login/nxn-promotional-content.html' -->
-            <div class="row ng-scope" >
-              <div class="col-xs-12 col-sm-4 ng-scope">
-                <div class="robo">
-                  &nbsp;
-                  <!-- <img src='../../assets/images/nxn_promotional_photo_md.jpg' /> -->
-                </div>
-              </div>
-              <div id="marketingContent" class="col-xs-12 col-sm-8 ng-scope">
-                <h2 class="ng-binding">Our Thinking</h2>
-                <div class="ng-binding">BNY Mellon is invested in the power of big
-                  ideas. With some of the sharpest minds and most innovative thinkers in
-                  financial services, our unique perspectives can have a profound impact
-                  on investors' attitudes and actions. Our forward-thinking insights are
-                  shaping the future of finance.</div>
-                <ul class="list-unstyled nxn-mar-top-15">
-                  <li>
-                    <a href="https://www.bnymellon.com/us/en/our-thinking/index.jsp?cid=Nex_INT_gatewayculture#culture-and-society"
-                      target="_blank">Culture and Society</a>
-                  </li>
-                  <li>
-                    <a href="https://www.bnymellon.com/us/en/our-thinking/index.jsp?cid=Nex_INT_gatewayinvestment#investment-insight"
-                      target="_blank">Investment Insights</a>
-                  </li>
-                  <li>
-                    <a href="https://www.bnymellon.com/us/en/our-thinking/index.jsp?cid=Nex_INT_gatewayrisk#risk-and-regulation"
-                      target="_blank">Regulation and Risk</a>
-                  </li>
-                  <li>
-                    <a href="https://www.bnymellon.com/us/en/our-thinking/index.jsp?cid=Nex_INT_gatewaytransformation#transformation"
-                      target="_blank">Transformation</a>
-                  </li>
-                </ul>
-              </div>
+    <div class="col-md-7 col-md-pull-5">
+      <div class="nxn-panel">
+        <!-- ngInclude: 'partials/login/nxn-promotional-content.html' -->
+        <div class="row ng-scope">
+          <div class="col-xs-12 col-sm-4 ng-scope">
+            <div class="robo">
+              &nbsp;
+              <!-- <img src='../../assets/images/nxn_promotional_photo_md.jpg' /> -->
             </div>
           </div>
-        </div>
-        <!--/.col-->
-
-  <div class="col-md-5 col-md-push-7">
-    <!-- ngIf: login.wlResources.displayLoginSupport -->
-    <div id="login-support" class="nxn-panel ng-scope">
-      <h2>Support</h2>
-      <div>
-        <!-- ngInclude: 'partials/login/nxn-support.html' -->
-        <div id="nxnSupport" class="row ng-scope" >
-          <div class="col-sm-12 ng-scope">
-            <dl class="nexen-contact-list">
-              <dt>Hours of Operation</dt>
-              <dd>
-                <p>
-                  Sunday 8:00 p.m. through Friday 8:00 p.m.<br>
-                  Eastern Time<br>
-                  <a id="bnymSupport" href="mailto:support@bnymellon.com">support@bnymellon.com</a>
-                </p>
-              </dd>
-              <dt>Internal Employees</dt>
-              <dd><a class="text-secondary nxn-cursor-pointer ng-binding"
-                  >Internal
-                  Employee Support</a></dd>
-            </dl>
-          </div>
-          <div class="col-sm-12 ng-scope">
-            <dl class="nexen-contact-list">
-              <div class="col-xs-12 col-sm-6 nxn-no-pad">
-                <dt>Americas</dt>
-                <dd>
-                  <a href="tel:18552849065" class="phone-call">(855) 284 9065 (Toll Free)</a>
-                  <span class="phone-display">(855) 284 9065 (Toll Free)</span>
-                  <!-- <a href="tel:+161545755895" class="phone-call">+1 615-457-5589</a> -->
-                  <span class="phone-display">+1 615-457-5589</span>
-                </dd>
-                <dt>Asia Pacific</dt>
-                <dd>
-                  <!-- <a href="tel:+80022656369" class="phone-call">+800 2265 6369 (Toll Free)</a> -->
-                  <span class="phone-display">+800 2265 6369 (Toll Free)</span>
-                  <!-- <a href="tel:+6564320314" class="phone-call">+65 6432 0314</a> -->
-                  <span class="phone-display">+65 6432 0314</span>
-                </dd>
-                <dt id="canadaRegion">Canada</dt>
-                <dd id="canadaNumber">
-                  <a href="mailto:support@bnymellon.com">support@bnymellon.com</a>
-                  <!-- <a href="tel:18884392457" class="phone-call">(888) 439-2457 (Toll Free)</a> -->
-                  <span class="phone-display">(888) 439-2457 (Toll Free)</span>
-                  <!-- <a href="tel:+14166435360" class="phone-call">1-416-643-5360</a> -->
-                  <span class="phone-display">1-416-643-5360</span>
-                </dd>
-              </div>
-              <div class="col-xs-12 col-sm-6 nxn-no-pad">
-                <dt>Europe, Middle East, Africa</dt>
-                <dd>
-                  <!-- <a href="tel:+4402079646161" class="phone-call">+44 (0) 20 7964 6161</a> -->
-                  <span class="phone-display">+44 (0) 20 7964 6161</span>
-                </dd>
-                <dt id="germanyRegion">Germany</dt>
-                <dd id="germanyNumber">
-                  <!-- <a href="tel:+49 (0) 69 12014-2014" class="phone-call">+49 (0) 69 12014-2014</a> -->
-                  <span class="phone-display">+49 (0) 69 12014-2014</span>
-                </dd>
-                <dt id="netherlandsRegion">Netherlands</dt>
-                <dd id="netherlandsNumber">
-                  <!-- <a href="tel:+31 (0) 76 760 2333" class="phone-call">+31 (0) 76 760 2333</a> -->
-                  <span class="phone-display">+31 (0) 76 760 2333</span>
-                </dd>
-              </div>
-            </dl>
+          <div id="marketingContent" class="col-xs-12 col-sm-8 ng-scope">
+            <h2 class="ng-binding">Our Thinking</h2>
+            <div class="ng-binding">
+              BNY Mellon is invested in the power of big ideas. With some of the sharpest minds and most innovative thinkers in financial
+              services, our unique perspectives can have a profound impact on investors' attitudes and actions. Our forward-thinking
+              insights are shaping the future of finance.
+            </div>
+            <ul class="list-unstyled nxn-mar-top-15">
+              <li>
+                <a
+                  href="https://www.bnymellon.com/us/en/our-thinking/index.jsp?cid=Nex_INT_gatewayculture#culture-and-society"
+                  target="_blank"
+                  >Culture and Society</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.bnymellon.com/us/en/our-thinking/index.jsp?cid=Nex_INT_gatewayinvestment#investment-insight"
+                  target="_blank"
+                  >Investment Insights</a
+                >
+              </li>
+              <li>
+                <a href="https://www.bnymellon.com/us/en/our-thinking/index.jsp?cid=Nex_INT_gatewayrisk#risk-and-regulation" target="_blank"
+                  >Regulation and Risk</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.bnymellon.com/us/en/our-thinking/index.jsp?cid=Nex_INT_gatewaytransformation#transformation"
+                  target="_blank"
+                  >Transformation</a
+                >
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </div><!-- end ngIf: login.wlResources.displayLoginSupport -->
-  </div>
-  <!--/.col-->
+    </div>
+    <!--/.col-->
 
-</div>
-<div class="row" class="align-bottom">
+    <div class="col-md-5 col-md-push-7">
+      <!-- ngIf: login.wlResources.displayLoginSupport -->
+      <div id="login-support" class="nxn-panel ng-scope">
+        <h2>Support</h2>
+        <div>
+          <!-- ngInclude: 'partials/login/nxn-support.html' -->
+          <div id="nxnSupport" class="row ng-scope">
+            <div class="col-sm-12 ng-scope">
+              <dl class="nexen-contact-list">
+                <dt>Hours of Operation</dt>
+                <dd>
+                  <p>
+                    Sunday 8:00 p.m. through Friday 8:00 p.m.<br />
+                    Eastern Time<br />
+                    <a id="bnymSupport" href="mailto:support@bnymellon.com">support@bnymellon.com</a>
+                  </p>
+                </dd>
+                <dt>Internal Employees</dt>
+                <dd><a class="text-secondary nxn-cursor-pointer ng-binding">Internal Employee Support</a></dd>
+              </dl>
+            </div>
+            <div class="col-sm-12 ng-scope">
+              <img src='../../assets/images/loginPageSupportGeo.png' width=90% >
+              <!-- <dl class="nexen-contact-list">
+                <div class="col-xs-12 col-sm-6 nxn-no-pad">
+                  <dt>Americas</dt>
+                  <dd>
+                    <a href="tel:18552849065" class="phone-call">(855) 284 9065 (Toll Free)</a>
+                    <span class="phone-display">(855) 284 9065 (Toll Free)</span>
+
+                    <span class="phone-display">+1 615-457-5589</span>
+                  </dd>
+                  <dt>Asia Pacific</dt>
+                  <dd>
+
+                    <span class="phone-display">+800 2265 6369 (Toll Free)</span>
+
+                    <span class="phone-display">+65 6432 0314</span>
+                  </dd>
+                  <dt id="canadaRegion">Canada</dt>
+                  <dd id="canadaNumber">
+                    <a href="mailto:support@bnymellon.com">support@bnymellon.com</a>
+
+                    <span class="phone-display">(888) 439-2457 (Toll Free)</span>
+
+                    <span class="phone-display">1-416-643-5360</span>
+                  </dd>
+                </div>
+                <div class="col-xs-12 col-sm-6 nxn-no-pad">
+                  <dt>Europe, Middle East, Africa</dt>
+                  <dd>
+
+                    <span class="phone-display">+44 (0) 20 7964 6161</span>
+                  </dd>
+                  <dt id="germanyRegion">Germany</dt>
+                  <dd id="germanyNumber">
+                    <span class="phone-display">+49 (0) 69 12014-2014</span>
+                  </dd>
+                  <dt id="netherlandsRegion">Netherlands</dt>
+                  <dd id="netherlandsNumber">
+                    <span class="phone-display">+31 (0) 76 760 2333</span>
+                  </dd>
+                </div>
+              </dl> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end ngIf: login.wlResources.displayLoginSupport -->
+    </div>
+    <!--/.col-->
+  </div>
+
+  <!-- <div class="row" class="align-bottom">
   <img src='../../assets/images/pega_powered_horizontal_positive_rgb.png' width="200px" />
-</div>
+</div> -->
 </div>
