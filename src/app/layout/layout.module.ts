@@ -1,22 +1,22 @@
-// import { UnifiedtaskComponent } from './../../../.history/src/app/layout/pega/unifiedtask/unifiedtask.component_20190322131428';
-// import { UnifiedtaskComponent } from './pega/unifiedtask/unifiedtask.component';
-// import { DatePickerComponent } from './bs-component/components/date-picker/date-picker.component';
-// import { ModalComponent } from './pega/modal/modal.component';
+
 import { NgModule } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalComponent, NgbdModalContent } from './pega/modal/modal.component';
-// import { PaginationComponent } from './../layout/bs-component/components';
+// import { NgbdPaginationCustomization } from './pega/ngPaging/pagination-customization';
+
+import { PaginationComponent } from './../layout/bs-component/components';
 
 // import { Mod } from './pega/modal/modal.component';
-import { CreateRCIcaseComponent } from './pega/index';
+import { CreateRCIcaseComponent, NgbdPaginationCustomization } from './pega/index';
 // import { UnifiedtaskComponent } from './pega/';
 // import { DatePickerComponent } from './bs-component/components/index';
 
@@ -25,7 +25,9 @@ import { CreateRCIcaseComponent } from './pega/index';
           CommonModule
         , LayoutRoutingModule
         , TranslateModule
+        //  , NgbPagination
         , NgbDropdownModule
+        // , NgbdPaginationCustomization
         // CreateRCIcaseComponent.forRoot(,
         , NgbModule.forRoot()
     ],
@@ -37,13 +39,17 @@ import { CreateRCIcaseComponent } from './pega/index';
       , CreateRCIcaseComponent
       // , DatePickerComponent
       , NgbdModalContent
-      // ,PaginationComponent
+      // , PaginationComponent
+      // , NgbPagination
+
+      , NgbdPaginationCustomization
       // , UnifiedtaskComponent
   ],
     entryComponents: [
       NgbdModalContent
+      // , NgbdPaginationCustomization
          ],
 
-    exports: []
+    exports: [NgbdPaginationCustomization]
 })
 export class LayoutModule {}

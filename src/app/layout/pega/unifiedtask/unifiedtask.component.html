@@ -24,12 +24,20 @@
     </tbody>
 
   </table>
-  <div class="text-uppercase text-muted fs-12">boundaryLinks = true</div>
-  <ngb-pagination [collectionSize]="70" [(page)]="defaultPagination" [boundaryLinks]="true"></ngb-pagination>
-  <div class="alert alert-info">
-      <b>Current page: </b>{{defaultPagination}}
-  </div>
+  <!-- <ngbd-pagination-customization></ngbd-pagination-customization> -->
+  <!-- <div class="text-uppercase text-muted fs-12">boundaryLinks = true</div> -->
+  <!-- <ngb-pagination [collectionSize]="70" [(page)]="page" aria-label="Custom pagination">
+      <ng-template ngbPaginationPrevious>Prev</ng-template>
+      <ng-template ngbPaginationNext>Next</ng-template>
+      <ng-template ngbPaginationNumber let-p>{{ getPageSymbol(p) }}</ng-template>
+    </ngb-pagination> -->
 
+
+  <!-- <ngb-pagination [collectionSize]="70" [(page)]="defaultPagination" [boundaryLinks]="true"></ngb-pagination> -->
+  <!-- <div class="alert alert-info">
+      <b>Current page: </b>{{defaultPagination}}
+  </div> -->
+<!--
   <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
       <li [ngClass]="{disabled:pager.currentPage === 1}">
           <a (click)="setPage(1)">First</a>
@@ -46,5 +54,5 @@
       <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
           <a (click)="setPage(pager.totalPages)">Last</a>
       </li>
-  </ul>
+  </ul> -->
 </div>

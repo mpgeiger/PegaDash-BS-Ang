@@ -7,4 +7,5 @@ export * from './worklistpanelsection/worklistpanelsection.component';
 export * from './casedetails/casedetails.component';
 export * from './create-rcicase/create-rcicase.component';
 export * from './maintabs/maintabs.component';
+export * from './ngPaging/pagination-customization';
 export * from './unifiedtask/unifiedtask.component';
