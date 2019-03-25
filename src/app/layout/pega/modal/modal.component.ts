@@ -54,9 +54,15 @@ export class NgbdModalComponent {
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-    <div class="modal-body modal-sm">
-    <p> Our BNY AI has noticed a recent number of foreign wire transfers.   Did you know you can send a more secure <b>FX ACH</b> payment instead?   Would you like so see more information on this?  <button>Yes</button>
-    </p>
+    <div class="modal-body modal-sm text-center">
+    <h4> Our BNY AI has noticed a recent number of foreign wire transfers.
+     <br/><br/> Did you know there is a more secure <b>FX ACH</b> payment instead?
+       <br/><br/> Would you like so see more information on this?
+       <br/>
+       <button type="button" class="btn btn-primary" style="margin: 15px;">Yes</button>
+<button type="button" class="btn btn-secondary"  style="margin: 15px;">Later</button>
+<button type="button" class="btn btn-light"  style="margin: 15px;" >Not Interested</button>
+    </h4>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
