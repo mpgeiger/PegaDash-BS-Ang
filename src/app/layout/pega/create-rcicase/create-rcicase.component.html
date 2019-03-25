@@ -113,7 +113,7 @@
       </div>
 
       <!-- <div *ngIf="showMsg" > -->
-      <div *ngIf="showMsg">
+      <div >
       <!-- <div  > -->
         <div class="row align-center">
           <!-- <div class="row"> -->
@@ -122,10 +122,10 @@
           <span class="centered">
             <ul id="breadcrumb">
               <li class="chevron"><a href=""><span class="fas fa-long-arrow-alt-right"> </span></a></li>
-              <li><a href="#"><span class="fas fa-hands"> </span> Received <i class="fas fa-check " style="color: #4f4c4d"></i></a></li>
-              <li><a href="#"><span class="fas fa-cogs"></span> Processed <i class="fas fa-check fa-2x" style="color: #4f4c4d"></i></a></li>
-              <li><a href="#"><span class="fas fa-money-bill-alt"> </span> Cleared <i class="fas fa-check fa-2x" style="color: #4f4c4d"></i></a></li>
-              <li  class="active"><a href="#" class="active"><span class="fas fa-money-bill-alt"> </span> Credited</a></li>
+              <li><a href="#"> Received <i class="fas fa-check " style="color: #4f4c4d"></i></a></li>
+              <li><a href="#"> Processed <i class="fas fa-check" style="color: #4f4c4d"></i></a></li>
+              <li><a href="#"> Cleared <i class="fas fa-check" style="color: #4f4c4d"></i></a></li>
+              <li id="chevronCredit" name="chevronCredit"  ng-class="active"><a href="#"  routerLinkActive="active"><span class="fas fa-money-bill-alt"> </span> Credited</a></li>
               <!-- <li style=""><a href=""><span class="fas fa-star"> </span> Complete</a></li> -->
             </ul>
           </span>
