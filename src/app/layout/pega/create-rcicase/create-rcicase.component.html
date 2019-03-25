@@ -47,7 +47,8 @@
             <fieldset class="form-group">
               <label>Check Recipient</label>
               <input ng-model="CheckRecepient" id="CheckRecepient" ngModel required minlength="3"
-                (change)="fieldChanged($event)" class="form-control" placeholder="Enter Recipient">
+                (change)="fieldChanged($event)" class="form-control" placeholder="Enter Recipient"
+                [ngbTypeahead]="searchCheckRecipient">
               <!-- <div *ngIf="CheckRecepient.invalid && (CheckRecepient.dirty || CheckRecepient.touched)"
           class="alert alert-danger">
           <div *ngIf="CheckRecepient.errors.minlength">
@@ -79,7 +80,7 @@
             <fieldset class="form-group">
               <label>Check Sender</label>
               <input ng-model="CheckSender" id="CheckSender" (change)="fieldChanged($event)" class="form-control"
-                placeholder="Enter Sender">
+                placeholder="Enter Sender" [ngbTypeahead]="searchCheckSender">
             </fieldset>
           </div>
 

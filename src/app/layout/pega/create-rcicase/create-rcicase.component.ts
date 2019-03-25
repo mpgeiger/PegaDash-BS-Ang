@@ -3,9 +3,24 @@ import { Injectable } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { PegaErrors } from '../../../_constants/PegaErrors';
 import { CaseService } from '../../../_services/case.service';
+import {Observable} from 'rxjs';
+import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
 // import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 // import { DatapageService } from '../../../../_services/datapage.service';
+
+const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
+  'Connecticut', 'Delaware', 'District Of Columbia', 'Federated States Of Micronesia', 'Florida', 'Georgia',
+  'Guam', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine',
+  'Marshall Islands', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana',
+  'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+  'Northern Mariana Islands', 'Ohio', 'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico', 'Rhode Island',
+  'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virgin Islands', 'Virginia',
+  'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+
+  const checkRecipientList = ['ACME Trading', 'Apple', 'Doe Enterprise, Inc'];
+  const checkSenderList = ['Sally Jones', 'Siam Industries', 'Singer Foundation', 'New Wave', 'Bank of NY Mellon', 'Chase'];
+
 
 @Component({
   selector: 'app-create-rcicase',
@@ -43,6 +58,7 @@ export class CreateRCIcaseComponent {
 
   caseData: any = {};
   showMsg = false;
+  term = '';
   constructor(
     // private fb: FormBuilder,
     private cservice: CaseService
@@ -94,6 +110,25 @@ console.log(' IN CREATE RCI');
     fieldChanged(e) {
       this.caseData[e.target.id] = e.target.value;
     }
+
+
+
+    searchCheckRecipient = (text$: Observable<string>) =>
+    text$.pipe(
+      debounceTime(100),
+      distinctUntilChanged(),
+      map(term => term.length < 1 ? []
+        : checkRecipientList.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
+    )
+
+    searchCheckSender = (text$: Observable<string>) =>
+    text$.pipe(
+      debounceTime(100),
+      distinctUntilChanged(),
+      map(term => term.length < 1 ? []
+        : checkSenderList.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
+    )
+
 
   // handle the "err" object
   handleErrors(errorResponse: any) {
