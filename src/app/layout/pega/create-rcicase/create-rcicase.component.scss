@@ -158,8 +158,9 @@ h1 {
   border-left-color: #8E9294;
 }
 
-/deep/ #breadcrumb .bcActive li a{
+/deep/ #breadcrumb .bcActive a{
   &{
+    left: 0px;
     background-color: #8E9294 !important;
 
   }
@@ -170,6 +171,12 @@ h1 {
     border-left-color: transparent;
 
   }
+
+}
+/deep/ .bcActive  a:before{
+   // left: -20px;
+   border-color: #8E9294;
+   border-left-color: transparent;
 
 }
 .bcActive a {
