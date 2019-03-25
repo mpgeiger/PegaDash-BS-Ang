@@ -54,14 +54,14 @@ export class NgbdModalComponent {
 
     </div>
     <div class="modal-body text-center">
-    <h4> Our <b>BNY AI</b> has noticed a recent number of <br/> foreign wire transfers.
-     <br/><br/>Did you know there is a  <br/> more secure <b>FX ACH</b> payment instead?
-       <br/><br/><br/>Would you like learn more?
+    <h5> Our <b>BNY AI</b> has noticed a recent number of <br/> foreign wire transfers.
+     <br/><br/>Did you know there is a<br/> more secure <b>foreign-exchange ACH</b> payment method?
+       <br/><br/><br/>Would you like to learn more?
        <br/>
        <button type="button" class="btn btn-primary" style="margin: 15px;" (click)="activeModal.close('Close click')">Yes</button>
 <button type="button" class="btn btn-secondary"  style="margin: 15px;" (click)="activeModal.close('Close click')">Later</button>
 <button type="button" class="btn btn-light"  style="margin: 15px;" (click)="activeModal.close('Close click')">Not Interested</button>
-    </h4>
+    </h5>
     </div>
     </div>
   `

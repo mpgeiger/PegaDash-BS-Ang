@@ -20,7 +20,7 @@ import { CaseService } from '../../../_services/case.service';
 export class CreateRCIcaseComponent {
 
   currentCaseID$ = 'PegaCPMFS-Work-RequestCheckImage';
-
+  getActiveStep = 'Credited';
   isLoaded = false;
   isProgress = true;
   isView = false;
@@ -50,7 +50,7 @@ export class CreateRCIcaseComponent {
 
   createNew() {
     // if (this.tpComp.formValid()) {
-
+      // $('bcActive').active();
       // this.isProgress = true;
 console.log(' IN CREATE RCI');
       // this.state = this.rciObj.content;

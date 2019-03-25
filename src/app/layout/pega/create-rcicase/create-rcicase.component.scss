@@ -1,12 +1,10 @@
-
-
 .requestCheck {
   // background-image: url('/assets/images/blank_check.jpeg');
   // background-repeat: no-repeat;
   background-size: auto;
 
   // background-color: lightcyan;
-  background-image: url('/assets/images/vintage-concrete.png' );
+  background-image: url('/assets/images/vintage-concrete.png');
   // background:grey;
   border: 6px solid #292929;
   border-style: groove;
@@ -27,26 +25,32 @@ label {
 label {
   margin-right: 20px;
 }
+
 h1 {
   font-weight: 100;
   font-size: 32px;
   padding: 40px;
   color: #fff;
 }
+
 .centered {
   margin-left: auto;
   margin-right: auto;
 }
+
 #breadcrumb {
   list-style: none;
   display: inline-block;
 }
+
 #breadcrumb .icon {
   font-size: 14px;
 }
+
 #breadcrumb li {
   float: left;
 }
+
 #breadcrumb li a {
   color: #FFF;
   display: block;
@@ -70,46 +74,57 @@ h1 {
   //   border-left-color: #16a085;
   // }
 
-  li a:active {
-    background-color: red;
-  }
-  li a:active:before {
-    border-color: #16a085;
-    border-left-color: transparent;
-  }
-   li a:active:after {
-    border-left-color: #16a085;
-  }
+  // li a:active {
+  //   background-color: red;
+  // }
+
+  // li a:active:before {
+  //   border-color: #16a085;
+  //   border-left-color: transparent;
+  // }
+
+  // li a:active:after {
+  //   border-left-color: #16a085;
+  // }
 }
+
 #breadcrumb li:nth-child(even) a {
   background-color: #AC8544;
 }
+
 #breadcrumb li:nth-child(even) a:before {
   border-color: #AC8544;
   border-left-color: transparent;
 }
+
 #breadcrumb li:nth-child(even) a:after {
   border-left-color: #AC8544;
 }
+
 #breadcrumb li:first-child a {
   padding-left: 15px;
   -moz-border-radius: 4px 0 0 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px 0 0 4px;
 }
+
 #breadcrumb li:first-child a:before {
   border: none;
 }
+
 #breadcrumb li:last-child a {
   padding-right: 15px;
   -moz-border-radius: 0 4px 4px 0;
   -webkit-border-radius: 0;
   border-radius: 0 4px 4px 0;
 }
+
 #breadcrumb li:last-child a:after {
   border: none;
 }
-#breadcrumb li a:before, #breadcrumb li a:after {
+
+#breadcrumb li a:before,
+#breadcrumb li a:after {
   content: "";
   position: absolute;
   top: 0;
@@ -118,26 +133,61 @@ h1 {
   width: 0;
   height: 0;
 }
+
 #breadcrumb li a:before {
   left: -20px;
   border-left-color: transparent;
 }
+
 #breadcrumb li a:after {
   left: 100%;
   border-color: transparent;
   border-left-color: #AC8538;
 }
+
 #breadcrumb li a:hover {
   background-color: #8E9294;
 }
+
 #breadcrumb li a:hover:before {
   border-color: #8E9294;
   border-left-color: transparent;
 }
+
 #breadcrumb li a:hover:after {
   border-left-color: #8E9294;
 }
 
+/deep/ #breadcrumb > .bcActive li a{
+  &{
+    background-color: #8E9294 !important;
+
+  }
+
+  &:before {
+    // left: -20px;
+    border-color: green ;
+    border-left-color: transparent;
+
+  }
+
+}
+.bcActive a {
+&{
+  background-color: #8E9294;
+
+}}
+
+.bcActive a:before {
+  // left: -20px;
+  border-color: green;
+  border-left-color: transparent;
+
+}
+
+// &:after {
+//   border-left-color: red;
+// }
 
  #breadcrumb li a:active {
     background-color: #16a085;
@@ -150,26 +200,27 @@ h1 {
     border-left-color: #16a085;
   }
 
-  // * > ul.breadcrumb li.active {
-  //   background-color: #16a085;
-  // }
-  // #breadcrumb.li a:active:before {
-  //   border-color: #16a085;
-  //   border-left-color: transparent;
-  // }
-  // #breadcrumb.li a:active:after {
-  //   border-left-color: #16a085;
-  // }
+// * > ul.breadcrumb li.active {
+//   background-color: #16a085;
+// }
+// #breadcrumb.li a:active:before {
+//   border-color: #16a085;
+//   border-left-color: transparent;
+// }
+// #breadcrumb.li a:active:after {
+//   border-left-color: #16a085;
+// }
+
+// /deep/ .bcActive {
+//   background-color: #16a085;
+// }
 
 
 
- #bcActive  a {
-  background-color: #16a085;
-}
-#breadcrumb .bcActive li :before {
-  border-color: #16a085;
-  border-left-color: transparent;
-}
-#breadcrumb .bcActive li a:active:after {
-  border-left-color: #16a085;
-}
+// /deep/ #bcActive li a:before {
+//   border-color: #16a085 !important;
+//   border-left-color: transparent;
+// }
+// /deep/ #bcActive li a:after {
+//   border-left-color: #16a085;
+// }
