@@ -9,6 +9,16 @@ $modal-dialog-margin-y-sm-up: 1.75rem !default;
 $modal-dialog-margin-y-md-up: 1.75rem !default;
 // $modal-content-box-shadow-sm-up: 0 .5rem 1rem rgba(#000, .5) !default;
 
+
+/deep/ .nbaAdviceModalClass {
+  animation-name: example;
+  animation-duration: 0.3s;
+}
+@keyframes example {
+  0%   {transform: scale(0.5)}
+  75%  {transform: scale(1.1)}
+  100% {transform: scale(1)}
+}
 /deep/ .nbaAdviceModalClass > .modal-dialog {
   max-width: $modal-sm + 200;
   min-width: $modal-sm;

@@ -18,7 +18,7 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
     </div>
   `
 })
-export class NgbdModalContent {
+export class modalRCICaseType {
   @Input() name;
   @Input() requestType;
   @Input() modalTemplate;
@@ -37,7 +37,7 @@ export class NgbdModalComponent {
   constructor(private modalService: NgbModal) {}
 
   open() {
-    const modalRef = this.modalService.open(NgbdModalContent,  { windowClass : 'myCustomModalClass'});
+    const modalRef = this.modalService.open(modalRCICaseType,  { windowClass : 'modalRCICaseTypeClass'});
     modalRef.componentInstance.name = 'World sdf sdx sdf fsdf';
     modalRef.componentInstance.requestType = 'Request Check Image';
   }

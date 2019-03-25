@@ -10,7 +10,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbdModalComponent, NgbdModalComponentNBA, NgbdModalContent, NgbdModalContentNBA } from './pega/modal/modal.component';
+import { NgbdModalComponent, NgbdModalComponentNBA, modalRCICaseType, NgbdModalContentNBA } from './pega/modal/modal.component';
 // import { NgbdPaginationCustomization } from './pega/ngPaging/pagination-customization';
 
 import { PaginationComponent } from './../layout/bs-component/components';
@@ -39,7 +39,7 @@ import { CreateRCIcaseComponent, NgbdPaginationCustomization } from './pega/inde
       , NgbdModalComponentNBA
       , CreateRCIcaseComponent
       // , DatePickerComponent
-      , NgbdModalContent
+      , modalRCICaseType
       , NgbdModalContentNBA
       // , PaginationComponent
       // , NgbPagination
@@ -48,7 +48,7 @@ import { CreateRCIcaseComponent, NgbdPaginationCustomization } from './pega/inde
       // , UnifiedtaskComponent
   ],
     entryComponents: [
-      NgbdModalContent
+      modalRCICaseType
       , NgbdModalContentNBA
       // , NgbdPaginationCustomization
          ],
