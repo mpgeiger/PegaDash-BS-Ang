@@ -49,7 +49,7 @@ export class NgbdModalComponent {
   selector: 'ngbd-modal-content',
   template: `
     <div class="modal-header">
-      <h4 class="modal-title">{{modalTitle}}</h4>
+      <h4 class="modal-title modal-sm">{{modalTitle}}</h4>
       <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -57,7 +57,7 @@ export class NgbdModalComponent {
     <div class="modal-body modal-sm text-center">
     <h4> Our BNY AI has noticed a recent number of foreign wire transfers.
      <br/><br/> Did you know there is a more secure <b>FX ACH</b> payment instead?
-       <br/><br/> Would you like so see more information on this?
+       <br/><br/> Would you like learn more?
        <br/>
        <button type="button" class="btn btn-primary" style="margin: 15px;">Yes</button>
 <button type="button" class="btn btn-secondary"  style="margin: 15px;">Later</button>
