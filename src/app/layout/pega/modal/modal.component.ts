@@ -54,9 +54,9 @@ export class NgbdModalComponent {
 
     </div>
     <div class="modal-body text-center">
-    <h4> Our <b>BNY AI</b> has noticed a recent number of foreign wire transfers.
-     <br/><br/> Did you know there is a more secure <b>FX ACH</b> payment instead?
-       <br/><br/> Would you like learn more?
+    <h4> Our <b>BNY AI</b> has noticed a recent number of <br/> foreign wire transfers.
+     <br/><br/>Did you know there is a  <br/> more secure <b>FX ACH</b> payment instead?
+       <br/><br/><br/>Would you like learn more?
        <br/>
        <button type="button" class="btn btn-primary" style="margin: 15px;" (click)="activeModal.close('Close click')">Yes</button>
 <button type="button" class="btn btn-secondary"  style="margin: 15px;" (click)="activeModal.close('Close click')">Later</button>
@@ -83,9 +83,16 @@ export class NgbdModalContentNBA {
 export class NgbdModalComponentNBA {
   @Input() requestType;
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal) { }
   open() {
-    const modalRef = this.modalService.open(NgbdModalContentNBA,  { windowClass : 'nbaAdviceModalClass'});
+    const modalRef = this.modalService.open(NgbdModalContentNBA,  {
+      // ariaDescribedBy : 'nbaAdvice'
+      ariaLabelledBy : 'nbaLabel'
+      , centered : true
+      // , animation : true
+      , windowClass : 'nbaAdviceModalClass'
+      , backdrop  : 'static'
+      , keyboard : false});
     modalRef.componentInstance.name = 'World sdf sdx sdf fsdf';
     modalRef.componentInstance.modalTitle = this.requestType; // 'Request Check Image';
     modalRef.componentInstance.name = 'nbaAdvice'; // 'Request Check Image';
