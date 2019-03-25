@@ -48,24 +48,21 @@ export class NgbdModalComponent {
 @Component({
   selector: 'ngbd-modal-content',
   template: `
+  <div id="modal-{{name}}">
     <div class="modal-header">
-      <h4 class="modal-title modal-sm">{{modalTitle}}</h4>
-      <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
+      <h4 class="modal-title"><b>{{modalTitle}}</b></h4>
+
     </div>
-    <div class="modal-body modal-sm text-center">
-    <h4> Our BNY AI has noticed a recent number of foreign wire transfers.
+    <div class="modal-body text-center">
+    <h4> Our <b>BNY AI</b> has noticed a recent number of foreign wire transfers.
      <br/><br/> Did you know there is a more secure <b>FX ACH</b> payment instead?
        <br/><br/> Would you like learn more?
        <br/>
-       <button type="button" class="btn btn-primary" style="margin: 15px;">Yes</button>
-<button type="button" class="btn btn-secondary"  style="margin: 15px;">Later</button>
-<button type="button" class="btn btn-light"  style="margin: 15px;" >Not Interested</button>
+       <button type="button" class="btn btn-primary" style="margin: 15px;" (click)="activeModal.close('Close click')">Yes</button>
+<button type="button" class="btn btn-secondary"  style="margin: 15px;" (click)="activeModal.close('Close click')">Later</button>
+<button type="button" class="btn btn-light"  style="margin: 15px;" (click)="activeModal.close('Close click')">Not Interested</button>
     </h4>
     </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
     </div>
   `
 })
@@ -80,7 +77,7 @@ export class NgbdModalContentNBA {
   selector: 'ngbd-modal-componentNBA',
   templateUrl: './modal-component-NBA.html',
   // styleUrls: ['./sidebar.component.scss']
-  styleUrls: ['./modal.component.scss']
+  styleUrls: ['./modal.component-NBA.scss']
 })
 
 export class NgbdModalComponentNBA {
@@ -88,8 +85,9 @@ export class NgbdModalComponentNBA {
 
   constructor(private modalService: NgbModal) {}
   open() {
-    const modalRef = this.modalService.open(NgbdModalContentNBA,  { windowClass : 'myCustomModalClass'});
+    const modalRef = this.modalService.open(NgbdModalContentNBA,  { windowClass : 'nbaAdviceModalClass'});
     modalRef.componentInstance.name = 'World sdf sdx sdf fsdf';
     modalRef.componentInstance.modalTitle = this.requestType; // 'Request Check Image';
+    modalRef.componentInstance.name = 'nbaAdvice'; // 'Request Check Image';
   }
 }

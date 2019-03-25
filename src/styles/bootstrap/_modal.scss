@@ -162,7 +162,7 @@
     @include box-shadow($modal-content-box-shadow-sm-up);
   }
 
-  .modal-sm { max-width: $modal-sm+ 100; }
+  .modal-sm { max-width: $modal-sm + 100; }
 
 }
 
@@ -182,14 +182,14 @@
     @include box-shadow($modal-content-box-shadow-md-up);
   }
 
-  .modal-sm { max-width: $modal-md + 150; }
+  .modal-md { max-width: $modal-md + 150; }
 
 }
 
 @include media-breakpoint-up(lg) {
   .modal-dialog {
     max-width: $modal-lg +150;
-    min-width: $modal-lg ;
+    // min-width: $modal-lg ;
     //widows: 60%;
     // margin: $modal-dialog-margin-y-lg-up auto;
   }

@@ -1,0 +1,34 @@
+@import '../../../Dashboard_Styles.scss';
+// @import '../../../../styles/bootstrap/variables';
+
+$modal-lg:                          800px !default;
+$modal-md:                          500px !default;
+$modal-sm:                          300px !default;
+$modal-dialog-margin:         .5rem !default;
+$modal-dialog-margin-y-sm-up: 1.75rem !default;
+$modal-dialog-margin-y-md-up: 1.75rem !default;
+// $modal-content-box-shadow-sm-up: 0 .5rem 1rem rgba(#000, .5) !default;
+
+/deep/ .nbaAdviceModalClass > .modal-dialog {
+  max-width: $modal-sm + 200;
+  min-width: $modal-sm;
+  // margin: $modal-dialog-margin-y-sm-up auto;
+  margin: 20px auto;
+}
+
+/deep/ .nbaAdviceModalClass .modal-content .modal-body {
+  padding: 20px;
+  margin: 20px auto;
+}
+
+
+/deep/ .nbaAdviceModalClass > .modal-dialog-centered {
+  min-height: calc(100% - (#{$modal-dialog-margin-y-sm-up} * 2));
+}
+
+/deep/ .nbaAdviceModalClass > .modal-content {
+  box-shadow: 0 .5rem 1rem rgba(#000, .5);
+  // @include box-shadow($modal-content-box-shadow-sm-up);
+}
+
+// /deep/ .nbaAdviceModalClass > .modal-sm { max-width: $modal-sm + 100; }
