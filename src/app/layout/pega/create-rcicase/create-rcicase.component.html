@@ -5,8 +5,8 @@
     <div class="card-body "> &nbsp;
       <form role="form" class="requestCheck">
         <div class="row">
-          <div class="col-11"></div>
-          <div class="col-1 float-left">
+          <div class="col-10"></div>
+          <div class="col-2 float-right text-right">
             <h6>
               <label>
                 1025
@@ -19,8 +19,21 @@
           <!--    first line of check view -->
           <div class="col-8 text-right"></div>
           <div class="col-4 ">
+              <label>Approx. Check Date</label><br/>
+              <div class="input-group">
+
+                  <input class="form-control" placeholder="yyyy-mm-dd"
+                         name="dp" (ngModel)="model" ngbDatepicker #d="ngbDatepicker">
+                  <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                      <span class="fas fa-calendar-alt"></span>
+                  </button>
+
+                    <!-- <button class="fas fa-calendar-altr" (click)="d.toggle()" type="button"></button> -->
+                  </div>
+                </div>
             <!-- <app-date-picker></app-date-picker> -->
-            <fieldset class="form-group">
+            <!-- <fieldset class="form-group">
               <label>Month</label>
               <select id="Month" class="form-control" (change)="fieldChanged($event)">
                 <option value="January">January</option>
@@ -36,8 +49,8 @@
                 <option value="November">November</option>
                 <option value="December">December</option>
               </select>
-              <!-- <input ng-model="Month" id="Month" (change)="fieldChanged($event)" class="form-control" placeholder="Month issued"> -->
-            </fieldset>
+            </fieldset> -->
+            <!-- <input ng-model="Month" id="Month" (change)="fieldChanged($event)" class="form-control" placeholder="Month issued"> -->
           </div>
 
         </div>
@@ -47,7 +60,7 @@
             <fieldset class="form-group">
               <label>Check Recipient</label>
               <input ng-model="CheckRecepient" id="CheckRecepient" ngModel required minlength="3"
-                (change)="fieldChanged($event)" class="form-control" placeholder="Enter Recipient"
+              typeahead-on-select="fieldChanged($event)" class="form-control" placeholder="Enter Recipient"
                 [ngbTypeahead]="searchCheckRecipient">
               <!-- <div *ngIf="CheckRecepient.invalid && (CheckRecepient.dirty || CheckRecepient.touched)"
           class="alert alert-danger">
@@ -79,7 +92,8 @@
           <div class="col-6 float-right">
             <fieldset class="form-group">
               <label>Check Sender</label>
-              <input ng-model="CheckSender" id="CheckSender" (change)="fieldChanged($event)" class="form-control"
+              <!-- <input ng-model="CheckSender" id="CheckSender" (ng-change)="fieldChanged($event)" class="form-control" -->
+              <input ng-model="CheckSender" id="CheckSender" (ng-change)="fieldChanged($event)"  typeahead-on-select="fieldChanged($event)" class="form-control"
                 placeholder="Enter Sender" [ngbTypeahead]="searchCheckSender">
             </fieldset>
           </div>

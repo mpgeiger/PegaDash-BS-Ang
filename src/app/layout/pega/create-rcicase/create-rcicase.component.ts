@@ -18,8 +18,23 @@ const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'C
   'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virgin Islands', 'Virginia',
   'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
 
-  const checkRecipientList = ['ACME Trading', 'Apple', 'Doe Enterprise, Inc'];
-  const checkSenderList = ['Sally Jones', 'Siam Industries', 'Singer Foundation', 'New Wave', 'Bank of NY Mellon', 'Chase'];
+  const checkRecipientList = ['ACME Trading'
+  , 'Apple'
+  , 'Doe Enterprise, Inc'
+  , 'New Wave Energy Solutions'
+  , 'New Wave Europe Ltd.'
+  , 'New Wave Americas Inc.w'
+  , 'New Wave Equity'
+  , 'New Wave Asia Ltd.'
+];
+  const checkSenderList = ['Sally Jones', 'Siam Industries'
+  , 'Singer Foundation'
+  , 'New Wave'
+  , 'Bank of NY Mellon'
+  , 'Sea Industries Ltd.'
+  , 'Sun Investment Inc.'
+  , 'Stellar Corporation Ltd.'
+];
 
 
 @Component({
@@ -34,6 +49,7 @@ const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'C
 
 export class CreateRCIcaseComponent {
 
+  model;
   currentCaseID$ = 'PegaCPMFS-Work-RequestCheckImage';
   getActiveStep = 'Credited';
   isLoaded = false;
@@ -70,7 +86,9 @@ export class CreateRCIcaseComponent {
       // this.isProgress = true;
 console.log(' IN CREATE RCI');
       // this.state = this.rciObj.content;
+      this.caseData.Month = 'March';
       this.state = this.caseData;
+
       console.log('currentCaseID-->' + this.currentCaseID$ );
       console.log('state-->' + JSON.stringify(this.state ));
 
@@ -110,6 +128,11 @@ console.log(' IN CREATE RCI');
     fieldChanged(e) {
       this.caseData[e.target.id] = e.target.value;
     }
+
+    // fieldChangedTypeAhead(e) {
+    //   this.caseData[e.target.id] = e.target.value;
+    // }
+
 
 
 
