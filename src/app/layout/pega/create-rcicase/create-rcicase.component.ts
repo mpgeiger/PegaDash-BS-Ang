@@ -18,16 +18,17 @@ const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'C
   'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virgin Islands', 'Virginia',
   'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
 
-  const checkRecipientList = ['ACME Trading'
-  , 'Apple'
-  , 'Doe Enterprise, Inc'
-  , 'New Wave Energy Solutions'
+  const checkRecipientList = [
+
+   'New Wave Energy Solutions'
   , 'New Wave Europe Ltd.'
   , 'New Wave Americas Inc.w'
   , 'New Wave Equity'
   , 'New Wave Asia Ltd.'
 ];
-  const checkSenderList = ['Sally Jones', 'Siam Industries'
+  const checkSenderList = [
+    'Sally Jones'
+    , 'Siam Industries'
   , 'Singer Foundation'
   , 'New Wave'
   , 'Bank of NY Mellon'
