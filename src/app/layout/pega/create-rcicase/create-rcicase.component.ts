@@ -22,7 +22,7 @@ const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'C
 
    'New Wave Energy Solutions'
   , 'New Wave Europe Ltd.'
-  , 'New Wave Americas Inc.w'
+  , 'New Wave Americas Inc.'
   , 'New Wave Equity'
   , 'New Wave Asia Ltd.'
 ];
@@ -88,6 +88,9 @@ export class CreateRCIcaseComponent {
 console.log(' IN CREATE RCI');
       // this.state = this.rciObj.content;
       this.caseData.Month = 'March';
+      this.caseData.CheckRecepient = 'New Wave Americas Inc.';
+      this.caseData.CheckSender = 'Sun Investment Inc.';
+
       this.state = this.caseData;
 
       console.log('currentCaseID-->' + this.currentCaseID$ );
