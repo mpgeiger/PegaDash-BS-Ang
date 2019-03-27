@@ -16,6 +16,12 @@
   // border-color: black;
   // margin: 4px;
   // padding: 10px;
+  input.rightAligned {
+    direction:ltr;
+    overflow:hidden;
+    text-align: right;
+  }
+
 }
 
 label {
@@ -37,6 +43,7 @@ h1 {
   margin-left: auto;
   margin-right: auto;
 }
+
 
 #breadcrumb {
   list-style: none;
