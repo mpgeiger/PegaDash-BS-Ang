@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalComponent, NgbdModalComponentNBA, modalRCICaseType, NgbdModalContentNBA } from './pega/modal/modal.component';
+import { NgxCurrencyModule } from 'ngx-currency';
 // import { NgbdPaginationCustomization } from './pega/ngPaging/pagination-customization';
 
 import { PaginationComponent } from './../layout/bs-component/components';
@@ -27,6 +28,7 @@ import { CreateRCIcaseComponent, NgbdPaginationCustomization } from './pega/inde
         , TranslateModule
         //  , NgbPagination
         , NgbDropdownModule
+        , NgxCurrencyModule
         // , NgbdPaginationCustomization
         // CreateRCIcaseComponent.forRoot(,
         , NgbModule.forRoot()
