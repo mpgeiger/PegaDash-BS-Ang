@@ -7,7 +7,8 @@ import { HttpParams, HttpHeaders } from '@angular/common/http';
 import { OpenAssignmentService } from '../../../_messages/openassignment.service';
 import { RefreshWorkListService } from '../../../_messages/refreshworklist.service';
 import { PagerService } from '../../../_services/pager.service';
-import { NgbdPaginationCustomization } from '../ngPaging/pagination-customization';
+
+// import { NgbdPaginationCustomization } from '../ngPaging/pagination-customization';
 // import { PaginationComponent } from '../../bs-component/components';
 // import { CreateRCIcaseComponent } from './../../pega/create-rcicase/create-rcicase.component';
 // import { groupBy } from 'rxjs/operators';
@@ -21,7 +22,7 @@ import { NgbdPaginationCustomization } from '../ngPaging/pagination-customizatio
 export class UnifiedtaskComponent implements OnInit {
   // @ViewChild(MatPaginator) paginator: MatPaginator;
   // @ViewChild(MatSort) sort: MatSort;
-
+  defaultPagination: number;
   // unifiedtask$: MatTableDataSource<any>;
   unifiedtaskObject$: Array<any> = [];
   tasks: Array<any> = [];
@@ -30,6 +31,7 @@ export class UnifiedtaskComponent implements OnInit {
   //  'pxAssignedUserName': 'Sally Jones', 'pxCreateDateTime': '2019-03-11T10:51:25.734Z', 'pxDeadlineTime': '2019-03-11T11:01:25.734Z', 'pxGoalTime': '2019-03-11T10:56:25.733Z', 'pxObjClass': 'Assign-Worklist', 'pxRefObjectClass': 'PegaCPMFS-Work-RequestCheckImage', 'pxRefObjectInsName': 'S-1000487', 'pxRefObjectKey': 'PEGACPMFS-WORK S-1000487', 'pxTaskLabel': 'Enter Check Info', 'pxUrgencyAssign': '100', 'pyAssignmentStatus': 'Open', 'pyLabel': 'Request Check Image', 'pzInsKey': 'ASSIGN-WORKLIST PEGACPMFS-WORK S-1000487!COLLECT_FLOW', 'TaskType': 'Service'};
 
 
+  ut: any;
   works$: Object;
   headers: any;
 
@@ -45,6 +47,13 @@ export class UnifiedtaskComponent implements OnInit {
 
   displayedColumns = ['pxRefObjectInsName', 'pyAssignmentStatus', 'pyLabel', 'pxUrgencyAssign'];
 
+  //   variables for PAGING
+  p_TotalNumberItems: number;
+  p_ItemsPerPage = 5;
+  p_NumPages: number;
+  p_CurrentPage: 1;
+  p_CurrentList: Object;
+
   constructor(
     private datapage: DatapageService,
     private oaservice: OpenAssignmentService,
@@ -52,12 +61,15 @@ export class UnifiedtaskComponent implements OnInit {
     // private createCase: CreateRCIcaseComponent,
     private pagerService: PagerService
 
-  ) {}
+  ) {
+    this.defaultPagination = 1;
+  }
 
   ngOnInit() {
     // this.oaservice.sendMessage(this.currentCase$.pxRefObjectInsName, this.currentCase$);
     // this.oaservice.sendMessage('S-1000487', this.currentCase$);
     this.getunifiedtask();
+    this.ut.totalOpenTasks = this.tasks.length;
 
     this.subscription = this.rwlservice.getMessage().subscribe(message => {
       this.message = message;
@@ -95,9 +107,11 @@ export class UnifiedtaskComponent implements OnInit {
         // this.unifiedtask$.sort = this.sort;
 
         this.allItems = this.tasks;
-
+        // this.p_TotalNumberItems = this.tasks.length;
+        this.initPagingInfo();
+        this.p_CurrentList = this.tasks.slice(0, this.p_ItemsPerPage);
         // initialize to page 1
-        this.setPage(0);
+        // this.setPage(0);
       },
       err => {
         alert('Error form unifiedtask:' + err.errors);
@@ -105,13 +119,26 @@ export class UnifiedtaskComponent implements OnInit {
     );
   }
 
-  setPage(page: number) {
-    // get pager object from service
-    this.pager = this.pagerService.getPager(this.allItems.length, page);
-
-    // get current page of items
-    this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  initPagingInfo() {
+    // initialize to page 1
+    this.p_CurrentPage = 1;
+    this.p_TotalNumberItems = this.tasks.length;
+    this.p_NumPages = this.p_TotalNumberItems / this.p_ItemsPerPage;
   }
+
+  loadNext = () => {
+    const pointer = ( this.p_CurrentPage - 1 ) * this.p_ItemsPerPage;
+    const endPointer = pointer + this.p_ItemsPerPage;
+    this.p_CurrentList = this.tasks.slice( pointer , endPointer );
+  }
+
+  // setPage(page: number) {
+  //   // get pager object from service
+  //   this.pager = this.pagerService.getPager(this.allItems.length, page);
+
+  //   // get current page of items
+  //   this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  // }
 
   calcColor(val) {
     const maxval = 120;

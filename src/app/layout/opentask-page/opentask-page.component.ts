@@ -9,12 +9,15 @@ import { routerTransition } from '../../router.animations';
     animations: [routerTransition()]
 })
 export class OpenTaskPageComponent implements OnInit {
-    constructor() {}
+    constructor() {
+
+    }
     numUnifiedTaskList$ = '';
+    utCount = 44;
 
     // ngOnInit() {}
     ngOnInit() {
-
+this.utCount = 55;
       this.numUnifiedTaskList$ = localStorage.getItem('numUnifiedTaskList');
       }
 

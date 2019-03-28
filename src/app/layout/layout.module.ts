@@ -1,5 +1,5 @@
 
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
@@ -11,14 +11,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalComponent, NgbdModalComponentNBA, modalRCICaseType, NgbdModalContentNBA } from './pega/modal/modal.component';
+// import { NgbPagination } from './pega/index';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { NgbDatePipe } from './pega/_pipes/ngbDatePipe';
-// import { NgbdPaginationCustomization } from './pega/ngPaging/pagination-customization';
+// import { NgbdPaginationCustomization } from './pega/ngPaging/pagination-customization.component';
 
 import { PaginationComponent } from './../layout/bs-component/components';
 
 // import { Mod } from './pega/modal/modal.component';
-import { CreateRCIcaseComponent, NgbdPaginationCustomization } from './pega/index';
+import { CreateRCIcaseComponent } from './pega/index';
 // import { UnifiedtaskComponent } from './pega/';
 // import { DatePickerComponent } from './bs-component/components/index';
 
@@ -29,7 +30,7 @@ import { CreateRCIcaseComponent, NgbdPaginationCustomization } from './pega/inde
         , TranslateModule
         , FormsModule
         , ReactiveFormsModule
-        //  , NgbPagination
+        // , NgbPaginationModule
         , NgbDropdownModule
         , NgxCurrencyModule
         // , NgbdPaginationCustomization
@@ -50,15 +51,21 @@ import { CreateRCIcaseComponent, NgbdPaginationCustomization } from './pega/inde
       // , PaginationComponent
       // , NgbPagination
 
-      , NgbdPaginationCustomization
+      // , NgbdPaginationCustomization
       // , UnifiedtaskComponent
   ],
-    entryComponents: [
-      modalRCICaseType
-      , NgbdModalContentNBA
-      // , NgbdPaginationCustomization
-         ],
 
-    exports: [NgbdPaginationCustomization]
+  entryComponents: [
+    modalRCICaseType
+    , NgbdModalContentNBA
+    //  , NgbdPaginationCustomization
+  ],
+
+  exports: [
+    // NgbdPaginationCustomization
+  ]
+  , schemas: [
+    NO_ERRORS_SCHEMA
+    , CUSTOM_ELEMENTS_SCHEMA]
 })
 export class LayoutModule {}

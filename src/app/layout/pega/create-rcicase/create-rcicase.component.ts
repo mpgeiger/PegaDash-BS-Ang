@@ -207,7 +207,7 @@ console.log(' IN CREATE RCI');
       const myObject = {date: new Date(1, 9, 2016)};
       const myObject2 = {'month': 3, 'day': 23, 'year': 2019};
       console.log(' create-rcicase.ts onChange1-->' + JSON.stringify(dpInput));
-      this.model.dp(myObject2);
+      this.model.dpModel(myObject2);
     }
 
   // handle the "err" object
