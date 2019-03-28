@@ -3,7 +3,7 @@
   <div class="card bg-light mb-1">
     <!-- <div class="card-header">Header</div> -->
     <div class="card-body "> &nbsp;
-      <form role="form" class="requestCheck">
+      <form role="form" name="rciCheck" class="requestCheck">
         <div class="row">
           <div class="col-10"></div>
           <div class="col-2 float-right text-right">
@@ -16,14 +16,20 @@
           </div>
         </div>
         <div class="row">
-          <!--    first line of check view -->
+          <!--    first line of check view  -->
           <div class="col-8 text-right"></div>
           <div class="col-4 ">
-              <label>Approx. Check Date</label><br/>
+              <label>Approx.Check Date</label><br/>
               <div class="input-group">
+                 <input  name="dpModel"
 
-                  <input class="form-control" placeholder="yyyy-mm-dd"
-                         name="dp" (ngModel)="model" ngbDatepicker #d="ngbDatepicker">
+                   class="form-control"
+                   [(ngModel)]="dpModel"
+
+                   id="dp"
+                   ngbDatepicker #d="ngbDatepicker"  >
+                  <!-- <input class="form-control" placeholder="mm-dd-yyyy" id="dp" ngModel]="model.dp"
+                         name="dp" ngbDatepicker #d="ngbDatepicker" (ngModelChange)="onChange1($event)" > -->
                   <div class="input-group-append">
                       <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
                       <span class="fas fa-calendar-alt"></span>
@@ -31,35 +37,17 @@
 
                     <!-- <button class="fas fa-calendar-altr" (click)="d.toggle()" type="button"></button> -->
                   </div>
-                </div>
-            <!-- <app-date-picker></app-date-picker> -->
-            <!-- <fieldset class="form-group">
-              <label>Month</label>
-              <select id="Month" class="form-control" (change)="fieldChanged($event)">
-                <option value="January">January</option>
-                <option value="February">February</option>
-                <option value="March">March</option>
-                <option value="April">April</option>
-                <option value="May">May</option>
-                <option value="June">June</option>
-                <option value="July">July</option>
-                <option value="August">August</option>
-                <option value="September">September</option>
-                <option value="October">October</option>
-                <option value="November">November</option>
-                <option value="December">December</option>
-              </select>
-            </fieldset> -->
-            <!-- <input ng-model="Month" id="Month" (change)="fieldChanged($event)" class="form-control" placeholder="Month issued"> -->
+                  </div>
+                  <br/>
           </div>
 
         </div>
-        <div class="row">
+        <div class="row" style="border: lightslategray;border-width: 3px !important;">
           <!--    second line of check view -->
           <div class="col-8 float-right">
             <fieldset class="form-group">
               <label>Check Recipient</label>
-              <input ng-model="CheckRecepient" id="CheckRecepient" ngModel required minlength="3"
+              <input ng-model="CheckRecepient" id="CheckRecepient" ngModel  name="checkRecipient" required minlength="3"
               typeahead-on-select="fieldChanged($event)" class="form-control" placeholder="Enter Recipient"
                 [ngbTypeahead]="searchCheckRecipient">
               <!-- <div *ngIf="CheckRecepient.invalid && (CheckRecepient.dirty || CheckRecepient.touched)"
@@ -70,10 +58,10 @@
           </div> -->
             </fieldset>
           </div>
-          <div class="col-4 float-left">
+          <div class="col-4">
             <fieldset class="form-group">
-              <label>Amount</label>
-              <input ng-model="Amount" id="Amount"
+              <label style="display: inherit">Amount</label>
+              <input ng-model="Amount" id="Amount" width="100%"
               currencyMask
               (change)="fieldChanged($event)" class="rightAligned"
               [options]="{ prefix: '$ ', thousands: ',', decimal: '.' }"

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -12,6 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalComponent, NgbdModalComponentNBA, modalRCICaseType, NgbdModalContentNBA } from './pega/modal/modal.component';
 import { NgxCurrencyModule } from 'ngx-currency';
+import { NgbDatePipe } from './pega/_pipes/ngbDatePipe';
 // import { NgbdPaginationCustomization } from './pega/ngPaging/pagination-customization';
 
 import { PaginationComponent } from './../layout/bs-component/components';
@@ -26,6 +27,8 @@ import { CreateRCIcaseComponent, NgbdPaginationCustomization } from './pega/inde
           CommonModule
         , LayoutRoutingModule
         , TranslateModule
+        , FormsModule
+        , ReactiveFormsModule
         //  , NgbPagination
         , NgbDropdownModule
         , NgxCurrencyModule
@@ -43,6 +46,7 @@ import { CreateRCIcaseComponent, NgbdPaginationCustomization } from './pega/inde
       // , DatePickerComponent
       , modalRCICaseType
       , NgbdModalContentNBA
+      , NgbDatePipe
       // , PaginationComponent
       // , NgbPagination
 

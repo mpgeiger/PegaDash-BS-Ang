@@ -1,3 +1,4 @@
+// import { OnInit } from '@angular/core';
 // import { CaseService } from './../../../_services/case.service';
 import { Injectable } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
@@ -5,6 +6,10 @@ import { PegaErrors } from '../../../_constants/PegaErrors';
 import { CaseService } from '../../../_services/case.service';
 import {Observable} from 'rxjs';
 import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
+import { diPublic } from '@angular/core/src/render3/di';
+import { JsonPipe } from '@angular/common';
+import { StringDecoder } from 'string_decoder';
+import { stringify } from '@angular/core/src/util';
 // import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 // import { DatapageService } from '../../../../_services/datapage.service';
@@ -22,15 +27,15 @@ const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'C
 
    'New Wave Energy Solutions'
   , 'New Wave Europe Ltd.'
-  , 'New Wave Americas Inc.w'
+  , 'New Wave Americas Inc.'
   , 'New Wave Equity'
   , 'New Wave Asia Ltd.'
 ];
   const checkSenderList = [
     'Sally Jones'
-    , 'Siam Industries'
+  , 'Siam Industries'
   , 'Singer Foundation'
-  , 'New Wave'
+  , 'New Wave Equity'
   , 'Bank of NY Mellon'
   , 'Sea Industries Ltd.'
   , 'Sun Investment Inc.'
@@ -47,10 +52,16 @@ const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'C
 
 
 @Injectable() // class annotation as Injectable
+// const myNbgDateMMddYYYY = {'month': 6, 'day': 23, 'year': 2019};
+export class CreateRCIcaseComponent implements OnInit {
+  constructor(
+    // private fb: FormBuilder,
+    private cservice: CaseService
+  ) { }
 
-export class CreateRCIcaseComponent {
-
-  model;
+  // model;
+  // model: ModalComponentModel=<CreateRCIcaseComponent>{};
+  model: CreateRCIcaseComponent = <CreateRCIcaseComponent>{};
   currentCaseID$ = 'PegaCPMFS-Work-RequestCheckImage';
   getActiveStep = 'Credited';
   isLoaded = false;
@@ -61,6 +72,13 @@ export class CreateRCIcaseComponent {
   chevronCurrentStage = 'complete';
   isCollapsed = true;
   // Month: Object = new Object();
+
+  // dor Approx Date field
+  // myNbgDate: myNbgDateMMddYYYY;
+  myObject2 = {month: 6, day: 23, year: 2019};
+  // dp: {'year': 2019, 'month': 6, 'day': 23};
+  dpModel: any;
+
 
   state: Object = new Object();
   rciObj = 	{content : {
@@ -76,10 +94,39 @@ export class CreateRCIcaseComponent {
   caseData: any = {};
   showMsg = false;
   term = '';
-  constructor(
-    // private fb: FormBuilder,
-    private cservice: CaseService
-  ) { }
+  ngOnInit(): void {
+    this.setDp();
+    // throw new Error('Method not implemented.');
+  }
+  // ngOnInit(): void {
+  //   throw new Error("Method not implemented.");
+  // }
+  OnInit (): void {
+  //  console.log(' create-rcicase.ts onChange1-->' + JSON.stringify(this.myObject2));
+   // this.dp = this.myObject2;
+   // console.log(' create-rcicase.ts onChange1-->' + JSON.stringify(this.dpModel));
+    // this.model.dp(this.myObject2);
+    this.setDp();
+}
+setDp() {
+  const today = Date.now();
+  // const pastOneWeek = new Date((new Date(today)).getTime() - (60 * 60 * 24 * 7 * 1000));
+  const pastOneWeek = new Date(new Date(today));
+  console.log('past one week-->' + pastOneWeek);
+  const day = pastOneWeek.getUTCDate() - 7;
+  const month = pastOneWeek.getUTCMonth() + 1;
+  const year = pastOneWeek.getUTCFullYear();
+  console.log('past one week day-->' + day);
+  this.myObject2.day = day;
+  this.myObject2.month = month;
+  this.myObject2.year = year;
+
+  console.log('past one week myObject2-->' + JSON.stringify(this.myObject2));
+
+  this.dpModel = {'year': year, 'month': month, 'day': day};
+
+}
+
 
   createNew() {
     // if (this.tpComp.formValid()) {
@@ -153,6 +200,12 @@ console.log(' IN CREATE RCI');
         : checkSenderList.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
     )
 
+    onChange1(dpInput: any) {
+      const myObject = {date: new Date(1, 9, 2016)};
+      const myObject2 = {'month': 3, 'day': 23, 'year': 2019};
+      console.log(' create-rcicase.ts onChange1-->' + JSON.stringify(dpInput));
+      this.model.dp(myObject2);
+    }
 
   // handle the "err" object
   handleErrors(errorResponse: any) {
@@ -181,5 +234,7 @@ console.log(' IN CREATE RCI');
   }
 
 }
+
+
 
 
