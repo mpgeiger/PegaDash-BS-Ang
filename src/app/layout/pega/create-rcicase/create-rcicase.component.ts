@@ -135,6 +135,9 @@ setDp() {
 console.log(' IN CREATE RCI');
       // this.state = this.rciObj.content;
       this.caseData.Month = 'March';
+      this.caseData.CheckRecepient = 'New Wave Americas Inc.';
+      this.caseData.CheckSender = 'Sun Investment Inc.';
+
       this.state = this.caseData;
 
       console.log('currentCaseID-->' + this.currentCaseID$ );
