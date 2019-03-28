@@ -7,6 +7,8 @@ import { HttpParams, HttpHeaders } from '@angular/common/http';
 import { OpenAssignmentService } from '../../../_messages/openassignment.service';
 import { RefreshWorkListService } from '../../../_messages/refreshworklist.service';
 import { PagerService } from '../../../_services/pager.service';
+import { SharedPegaDataService } from '../_services/sharedpegadata.service';
+import { stringify } from 'querystring';
 
 // import { NgbdPaginationCustomization } from '../ngPaging/pagination-customization';
 // import { PaginationComponent } from '../../bs-component/components';
@@ -59,17 +61,22 @@ export class UnifiedtaskComponent implements OnInit {
     private oaservice: OpenAssignmentService,
     private rwlservice: RefreshWorkListService,
     // private createCase: CreateRCIcaseComponent,
-    private pagerService: PagerService
+    private pagerService: PagerService,
+    public _pegaDataService: SharedPegaDataService
 
   ) {
+    // _pegaDataService.setOption('UTL', '20');
     this.defaultPagination = 1;
   }
 
   ngOnInit() {
+
+    this._pegaDataService.setOption('openTasks', '66');
+
     // this.oaservice.sendMessage(this.currentCase$.pxRefObjectInsName, this.currentCase$);
     // this.oaservice.sendMessage('S-1000487', this.currentCase$);
     this.getunifiedtask();
-    this.ut.totalOpenTasks = this.tasks.length;
+    // this.ut.totalOpenTasks = this.tasks.length;
 
     this.subscription = this.rwlservice.getMessage().subscribe(message => {
       this.message = message;
@@ -112,6 +119,7 @@ export class UnifiedtaskComponent implements OnInit {
         this.p_CurrentList = this.tasks.slice(0, this.p_ItemsPerPage);
         // initialize to page 1
         // this.setPage(0);
+
       },
       err => {
         alert('Error form unifiedtask:' + err.errors);
@@ -123,7 +131,9 @@ export class UnifiedtaskComponent implements OnInit {
     // initialize to page 1
     this.p_CurrentPage = 1;
     this.p_TotalNumberItems = this.tasks.length;
+    this._pegaDataService.setOption('openTasks', '33');
     this.p_NumPages = this.p_TotalNumberItems / this.p_ItemsPerPage;
+    localStorage.setItem('ls_UTOpen', stringify(this.p_TotalNumberItems) );
   }
 
   loadNext = () => {

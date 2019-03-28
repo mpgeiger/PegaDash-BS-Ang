@@ -9,6 +9,7 @@ import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { OpenTaskPageRoutingModule } from './opentask-page-routing.module';
 import { OpenTaskPageComponent } from './opentask-page.component';
+
 // import { UnifiedtasklistComponent } from '../../shared/pegaComponents/unifiedtasklist/unifiedtasklist.component';
 
 import {

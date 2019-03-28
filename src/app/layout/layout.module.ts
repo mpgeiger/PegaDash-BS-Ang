@@ -1,4 +1,3 @@
-
 import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
@@ -20,6 +19,7 @@ import { PaginationComponent } from './../layout/bs-component/components';
 
 // import { Mod } from './pega/modal/modal.component';
 import { CreateRCIcaseComponent } from './pega/index';
+import { SharedPegaDataService } from './pega/_services/sharedpegadata.service';
 // import { UnifiedtaskComponent } from './pega/';
 // import { DatePickerComponent } from './bs-component/components/index';
 
@@ -36,6 +36,7 @@ import { CreateRCIcaseComponent } from './pega/index';
         // , NgbdPaginationCustomization
         // CreateRCIcaseComponent.forRoot(,
         , NgbModule.forRoot()
+        // , SharedPegaDataService
     ],
     declarations: [
         LayoutComponent
@@ -54,7 +55,9 @@ import { CreateRCIcaseComponent } from './pega/index';
       // , NgbdPaginationCustomization
       // , UnifiedtaskComponent
   ],
-
+  providers: [
+    SharedPegaDataService
+  ],
   entryComponents: [
     modalRCICaseType
     , NgbdModalContentNBA
