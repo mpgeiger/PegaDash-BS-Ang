@@ -25,7 +25,7 @@
         </tr>
       </tfoot>
       <tbody>
-        <tr *ngFor="let task of p_CurrentList">
+        <tr *ngFor="let task of p_CurrentList ">
           <td scope="row">{{task.pxUrgencyAssign}}</td>
           <td> {{ task.pyLabel }}<br/> {{task.pxCreateDateTime | date}}</td>
           <td>{{task.pyAssignmentStatus}}</td>
