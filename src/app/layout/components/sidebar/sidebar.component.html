@@ -1,10 +1,10 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
   <div class="list-group">
-    <a routerLink="/summary-page" [routerLinkActive]="['router-link-active']" class="list-group-item">
+    <a routerLink="/inquiries" [routerLinkActive]="['router-link-active']" class="list-group-item">
       <i class="fas fa-landmark"></i>&nbsp;
       <span>{{ 'Inquiries' | translate }}</span>
     </a>
-    <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+    <a routerLink="/accounts" [routerLinkActive]="['router-link-active']" class="list-group-item">
       <i class="fas fa-tachometer-alt"></i>&nbsp;
       <span>{{ 'Accounts' | translate }}</span>
     </a>
@@ -12,7 +12,7 @@
       <i class="fas fa-fw fa-file-invoice-dollar"></i>&nbsp;
       <span>{{ 'Portfolios' | translate }}</span>
     </a>
-    <a routerLink="/opentask-page" [routerLinkActive]="['router-link-active']" class="list-group-item">
+    <a routerLink="/transactions" [routerLinkActive]="['router-link-active']" class="list-group-item">
       <i class="fab fa-react"></i>&nbsp;
       <span>{{ 'Transactions' | translate }}</span>
     </a>

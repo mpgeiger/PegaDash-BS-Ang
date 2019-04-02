@@ -2,13 +2,50 @@
 // $topnav-background-color: #FFF;
 @import '../../../Dashboard_Styles.scss';
 
-
+// html body app-root app-layout app-header mdb-navbar nav.navbar.navbar-expand-lg.navbar-dark.bg-primary mdb-navbar-brand a.navbar-brand
+// html body app-root app-layout.ng-star-inserted app-header mdb-navbar nav.navbar.navbar-expand-lg.navbar-dark.bg-primary mdb-navbar-brand a.navbar-brand
+// .navbar-expand {
+//   .navbar-expand-lg  {
+//   .navbar-nav {
+//     align-items: center;
+//   }
+// }
+// }
 :host {
+
+  /deep/ .navbar-nav {
+
+      align-items: center;
+
+  }
+
+  // #mdb-navbar
     .navbar {
+
+      .navbar-expand {
+        .navbar-nav {
+          align-items: center;
+        }
+      }
         background-color: $topnav-background-color;
+         .mdb-navbar-brand  {
+            // MGP color: #fff;
+            // color: $topnav-item-color;
+            color: green !important;
+            background-color: red !important;
+            background-image: url('/src/assets/images/BNY_Mellon_logo_logotype.png');
+            background-size: 45px;
+
+        }
         .navbar-brand {
             // MGP color: #fff;
             color: $topnav-item-color;
+            background-color: red !important;
+            background-image: url('/src/assets/images/BNY_Mellon_logo_logotype.png');
+            background-size: 45px;
+        }
+        .navbar-nav {
+          align-items: center;
         }
         .nav-item > a {
             // color: #999;
@@ -19,6 +56,9 @@
                 // color: #000;
                 background: darken($topnav-background-color, 5%);
             }
+        }
+        .dropdown-item {
+          padding: 2px;
         }
     }
     .messages {

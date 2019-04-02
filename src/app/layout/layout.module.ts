@@ -1,12 +1,13 @@
 import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { HeaderComponent } from './components/header/header.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutRoutingModule } from './layout-routing.module';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { LayoutComponent } from './layout.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { HeaderComponent } from './components/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalComponent, NgbdModalComponentNBA, modalRCICaseType, NgbdModalContentNBA } from './pega/modal/modal.component';
@@ -24,17 +25,19 @@ import { SharedPegaDataService } from './pega/_services/sharedpegadata.service';
 // import { DatePickerComponent } from './bs-component/components/index';
 
 @NgModule({
-    imports: [
-          CommonModule
-        , LayoutRoutingModule
-        , TranslateModule
-        , FormsModule
-        , ReactiveFormsModule
+  imports: [
+    CommonModule
+    , LayoutRoutingModule
+    , TranslateModule
+    , FormsModule
+    , ReactiveFormsModule
+    , MDBBootstrapModule.forRoot()
         // , NgbPaginationModule
         , NgbDropdownModule
         , NgxCurrencyModule
         // , NgbdPaginationCustomization
         // CreateRCIcaseComponent.forRoot(,
+
         , NgbModule.forRoot()
         // , SharedPegaDataService
     ],

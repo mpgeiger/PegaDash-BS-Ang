@@ -1,54 +1,25 @@
-<!-- <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark bg-primary" [containerInside]="false"> -->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark" [containerInside]="false">
-
-<!-- <nav class="navbar navbar-expand-lg fixed-top"> -->
-    <!-- <a class="navbar-brand" href="#"> <img src="../../../../assets/images/BNY_Mellon_logo_logotype.png" height="45px" /> </a> -->
-    <mdb-navbar-brand><a class="navbar-brand" href="#"> <img src="../../../../assets/images/BNY_Mellon_logo_logotype.png" height="35px" /> </a></mdb-navbar-brand>
-    <links>
-
-
-        <!-- Links -->
-        <ul class="navbar-nav ml-auto">
-
+<nav class="navbar navbar-expand-lg fixed-top">
+    <a class="navbar-brand" href="#"> <img src="../../../../assets/images/BNY_Mellon_logo_logotype.png" height="45px" /> </a>
     <button class="navbar-toggler" type="button" (click)="toggleSidebar()">
         <!-- <span class="navbar-toggler-icon"></span> -->
-        <i class="fa fa-bars text-muted" aria-hidden="true"></i>
+        <!-- <i class="fa fa-bars text-muted" aria-hidden="true"></i> -->
     </button>
-<!--
     <div class="collapse navbar-collapse">
 
-        <ul class="navbar-nav ml-auto"> -->
+        <ul class="navbar-nav ml-auto">
 
-
-
-            <!-- <div class="btn-group" mdbDropdown>
-                <mdb-icon fas icon="user" classInside="dropdown-toggle" mdbDropdownToggle class="waves-effect" mdbWavesEffect
-                          ></mdb-icon>
-                <div class="dropdown-menu dropdown-primary">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                  <div class="divider dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Separated link</a>
-                </div>
-              </div> -->
-
-            <div class="btn-group"  mdbDropdown>
-<!--
-                <a classInside="dropdown-toggle" mdbDropdownToggle class="waves-effect" mdbWavesEffec>
+            <li class="nav-item dropdown" style="width:190px;" ngbDropdown>
+                <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
                     <i class="fa fa-user"></i> Self Service <b class="caret"></b>
-                </a> -->
-                <div classInside="dropdown-toggle" mdbDropdownToggle class="waves-effect" mdbWavesEffect>
-                   <mdb-icon fas icon="user" classInside="dropdown-toggle" ></mdb-icon>&nbsp; Self Service  &nbsp;
-                </div>
+                </a>
 
-                <div class="dropdown-menu dropdown-primary" style="width:265px;">
+                <div class="dropdown-menu-right" style="width:265px;"  ngbDropdownMenu>
                   <!-- <a class="dropdown-item" style="background-color: lightgray;">Initiate Request
                   </a> -->
-                  <a class="dropdown-header" style="background-color: lightgray;"><b>Quick Feedback</b>
+                  <a class="dropdown-item" style="background-color: lightgray;"><b>Quick Feedback</b>
                   </a>
                     <a class="dropdown-item" href="javascript:void(0)">
-                        <span><ngbd-modal-component></ngbd-modal-component></span>
+                        <!-- <span><ngbd-modal-component></ngbd-modal-component></span> -->
                     </a>
                     <a class="dropdown-item" href="javascript:void(0)">
                         <i class="fas fa-thermometer-half"></i>&nbsp;
@@ -58,7 +29,7 @@
                         <i class="fas fa-archway"></i>&nbsp;
                         <span>{{ ' Balance Statement' | translate }}</span>
                     </a>
-                    <a class="dropdown-header" style="background-color: lightgray;"><b>Initiate Request</b>
+                    <a class="dropdown-item" style="background-color: lightgray;"><b>Initiate Request</b>
                       </a>
                       <a class="dropdown-item" href="javascript:void(0)">
                           <i class="far fa-star"></i>&nbsp;
@@ -78,39 +49,24 @@
                       </a>
 
                 </div>
-            </div>
+            </li>
             <form class="form-inline my-2 my-lg-0 right">
                 <input class="form-control mr-sm-2" type="text" placeholder="{{ 'Search' | translate }}" >
             </form>
-            <!-- <li class="nav-item">
+            <li class="nav-item">
                 <a href="javascript:void(0)" class="nav-link mt-1"
                     style="padding: 0.375rem 1rem !important; border-color: #999;"
                     (click)="rltAndLtr()"
                 >
                     RTL/LTR
                 </a>
-            </li> &nbsp; -->
-
-
-            <!-- <div class="btn-group" mdbDropdown></div> -->
-<!--
-            <div class="btn-group" mdbDropdown>
-                <mdb-icon fas icon="user" classInside="dropdown-toggle" mdbDropdownToggle class="waves-effect" mdbWavesEffect
-                          ></mdb-icon>
-                <div class="dropdown-menu dropdown-primary">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                  <div class="divider dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Separated link</a>
-                </div>
-              </div> -->
-              <div class="btn-group" mdbDropdown>
-                  <mdb-icon fas icon="envelope" classInside="dropdown-toggle" mdbDropdownToggle class="  mr-3 waves-effect" mdbWavesEffect
-                            ></mdb-icon>
-                  <div class="dropdown-menu dropdown-primary">
-                    <a class="dropdown-item" href="#">
-                        <li class="media">
+            </li> &nbsp;
+            <li class="nav-item dropdown" ngbDropdown>
+                <a class="nav-link" href="javascript:void(0)" ngbDropdownToggle>
+                    <i class="fa fa-envelope"></i> <b class="caret"></b><span class="sr-only">(current)</span>
+                </a>
+                <ul class="dropdown-menu-right messages" ngbDropdownMenu>
+                    <li class="media">
                         <img class="d-flex align-self-center mr-3"
                             src="http://i.huffpost.com/gadgets/slideshows/461162/slide_461162_6224974_sq50.jpg" alt="Generic placeholder image"
                         >
@@ -120,9 +76,6 @@
                             <p class="last"> Lorem ipsum dolor sit amet, consectetur...</p>
                         </div>
                     </li>
-                    </a>
-
-                    <a class="dropdown-item" href="#">
                     <li class="media">
                         <img class="d-flex align-self-center mr-3"
                             src="http://i.huffpost.com/gadgets/slideshows/461162/slide_461162_6224974_sq50.jpg"
@@ -134,8 +87,6 @@
                             <p class="last"> Lorem ipsum dolor sit amet, consectetur...</p>
                         </div>
                     </li>
-                    </a>
-                    <a class="dropdown-item" href="#">
                     <li class="media">
                         <img class="d-flex align-self-center mr-3"
                             src="http://i.huffpost.com/gadgets/slideshows/461162/slide_461162_6224974_sq50.jpg"
@@ -147,18 +98,13 @@
                             <p class="last"> Lorem ipsum dolor sit amet, consectetur...</p>
                         </div>
                     </li>
-                    </a>
-                </div>
-            </div>
-            <div class="btn-group" mdbDropdown>
-                <mdb-icon fas icon="bell" classInside="dropdown-toggle" mdbDropdownToggle class="waves-effect" mdbWavesEffect></mdb-icon>
-                <span class="badge badge-danger danger">1</span> <b class="caret  mr-4"></b>
-                <div class="dropdown-menu dropdown-primary">
-            <!-- < class="nav-item dropdown" ngbDropdown>
+                </ul>
+            </li>
+            <li class="nav-item dropdown" ngbDropdown>
                 <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
                     <i class="fa fa-bell"></i><span class="badge badge-danger danger">1</span> <b class="caret"></b><span class="sr-only">(current)</span>
                 </a>
-                <div class="dropdown-menu-right" ngbDropdownMenu> -->
+                <div class="dropdown-menu-right" ngbDropdownMenu>
                   <a href="javascript:void(0)" class="dropdown-item">
                     <span><ngbd-modal-componentNBA requestType="BNY Advice"></ngbd-modal-componentNBA><span class="badge badge-danger danger">1</span></span>
                   </a>
@@ -176,22 +122,12 @@
                         {{ 'View All' | translate }}
                     </a>
                 </div>
-              </div>
-
-            <div class="btn-group" mdbDropdown>
-
-                <span mdbDropdownToggle class="waves-effect" mdbWavesEffect>
-                <mdb-icon fas icon="globe" classInside="dropdown-toggle" class="  mr-3 waves-effect" mdbWavesEffect>
-                </mdb-icon>{{ 'Language' | translate }} <b class="caret"></b>
-              </span>
-                <div class="dropdown-menu dropdown-menu-right">
-
-<!--
-            < class="nav-item dropdown" ngbDropdown>
+            </li>
+            <li class="nav-item dropdown" ngbDropdown>
                 <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
                     <i class="fa fa-language"></i> {{ 'Language' | translate }} <b class="caret"></b>
                 </a>
-                <div class="dropdown-menu-right" ngbDropdownMenu> -->
+                <div class="dropdown-menu-right" ngbDropdownMenu>
                     <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('en')">
                         {{ 'English' | translate }}
                     </a>
@@ -217,18 +153,12 @@
                         {{ 'Simplified Chinese' | translate }}
                     </a>
                 </div>
-              </div>
-
-            <div class="btn-group" mdbDropdown>
-                <mdb-icon fas icon="user" classInside="dropdown-toggle" mdbDropdownToggle class="waves-effect" mdbWavesEffect
-                          ></mdb-icon>
-                <div class="dropdown-menu dropdown-menu-right">
-
-            <!-- < class="nav-item dropdown" ngbDropdown>
+            </li>
+            <li class="nav-item dropdown" ngbDropdown>
                 <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
                     <i class="fa fa-user"></i> {{userFullName}} <b class="caret"></b>
                 </a>
-                <div class="dropdown-menu-right" ngbDropdownMenu> -->
+                <div class="dropdown-menu-right" ngbDropdownMenu>
                     <a class="dropdown-item" href="javascript:void(0)">
                         <i class="fa fa-fw fa-user"></i> {{ 'Profile' | translate }}
                     </a>
@@ -242,9 +172,7 @@
                         <i class="fa fa-fw fa-power-off"></i> {{ 'Log Out' | translate }}
                     </a>
                 </div>
-            </div>
+            </li>
         </ul>
-        </links>
-    <!-- </div> -->
-<!-- </nav> -->
-</mdb-navbar>
+    </div>
+</nav>
