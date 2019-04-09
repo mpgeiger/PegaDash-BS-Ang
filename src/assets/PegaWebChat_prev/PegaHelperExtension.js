@@ -6,10 +6,10 @@ function preparePegaAParams(gadgetName) {
 	pegaAParamObj.Password="";
   */
     pegaAParamObj.AppName="WebChatbot";	  
-	pegaAParamObj.HelpConfigurationName="BNY";  
+	  pegaAParamObj.HelpConfigurationName="e2ecb";  
   	pegaAParamObj.ContactId=getCookie("ContactID");
-	pegaAParamObj.AccountNumber=getCookie("AccountNumber");
-	pegaAParamObj.username=getCookie("UserName");
+	  pegaAParamObj.AccountNumber=getCookie("AccountNumber");
+	  pegaAParamObj.username=getCookie("UserName");
   
 	pegaAParamObj.pzSkinName="OnlineHelp";
 	return pegaAParamObj;
@@ -39,8 +39,7 @@ function getCookie(cname) {
     return "";
 }
 
-
 /* Set cookies. To be overwritten locally */
-  setCookie("ContactID", "7777777773", 30);
-  setCookie("AccountNumber","9999999975", 30);
-  setCookie("UserName","Shea Parker", 30);
+  setCookie("ContactID", "CONT-1", 30);
+  setCookie("AccountNumber","123450000", 30);
+  setCookie("UserName","Sara", 30);
