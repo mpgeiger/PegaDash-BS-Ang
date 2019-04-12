@@ -1,9 +1,15 @@
+
+
+
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
   <div class="list-group">
     <a routerLink="/summary-page" [routerLinkActive]="['router-link-active']" class="list-group-item">
       <i class="fas fa-landmark"></i>&nbsp;
       <span>{{ 'Inquiries' | translate }}</span>
     </a>
+    <a mat-list-item routerLink="/summary-page">
+      <mat-icon>home</mat-icon> <span class="nav-caption">Inquiries</span>
+   </a>
     <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
       <i class="fas fa-tachometer-alt"></i>&nbsp;
       <span>{{ 'Accounts' | translate }}</span>
@@ -151,6 +157,22 @@
       </ul>
     </li>
   </div> -->
+  <mat-nav-list>
+    <a mat-list-item routerLink="/summary-page" (click)="onSidenavClose()">
+      <mat-icon>home</mat-icon> <span class="nav-caption">Owner Actions</span>
+   </a>
+   <a mat-list-item routerLink="/opentask-page" (click)="onSidenavClose()">
+    <mat-icon>home</mat-icon> <span class="nav-caption">Open Tasks</span>
+  </a>
+  <!-- <mat-list-item [matMenuTriggerFor]="menu">
+    <mat-icon>unfold_more</mat-icon>
+    <a matline>Example</a>
+  </mat-list-item>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="onSidenavClose()">View profile</button>
+    <button mat-menu-item (click)="onSidenavClose()">Add contact</button>
+  </mat-menu> -->
+  </mat-nav-list>
 
   <div class='pega-button'>
     <a class="" href='https://www.pega.com/industries/financial-services' target='_blank'>
@@ -162,55 +184,4 @@
     <span>{{ 'Collapse Sidebar' | translate }}</span>
   </div>
 </nav>
-<!-- <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;
-            <span>{{ 'Charts' | translate }}</span>
-        </a>
-        <a [routerLink]="['/tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-table"></i>&nbsp;
-            <span>{{ 'Tables' | translate }}</span>
-        </a>
-        <a [routerLink]="['/forms']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-edit"></i>&nbsp;
-            <span>{{ 'Forms' | translate }}</span>
-        </a>
-        <a [routerLink]="['/bs-element']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-desktop"></i>&nbsp;
-            <span>{{ 'Bootstrap Element' | translate }}</span>
-        </a>
-        <a [routerLink]="['/grid']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-fw fa-wrench"></i>&nbsp;
-            <span>{{ 'Bootstrap Grid' | translate }}</span>
-        </a>
-        <a [routerLink]="['/components']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <i class="fa fa-th-list"></i>&nbsp;
-            <span>{{ 'Component' | translate }}</span>
-        </a>
-        <div class="nested-menu">
-            <a class="list-group-item" (click)="addExpandClass('pages')">
-                <i class="fa fa-plus"></i>&nbsp;
-                <span>{{ 'Menu' | translate }}</span>
-            </a>
-            <li class="nested" [class.expand]="showMenu === 'pages'">
-                <ul class="submenu">
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-monument"></i>&nbsp;
-                            <span>{{ 'Submenu' | translate }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-monument"></i>&nbsp;
-                            <span>{{ 'Submenu' | translate }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="fa fa-monument"></i>&nbsp;
-                            <span>{{ 'Submenu' | translate }}</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        </div> -->
+

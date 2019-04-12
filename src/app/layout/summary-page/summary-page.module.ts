@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
+import { LayoutModule } from './../layout.module';
+
 import { CommonModule } from '@angular/common';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { SummaryPageRoutingModule } from './summary-page-routing.module';
 import { SummaryPageComponent } from './summary-page.component';
+// import { RecentTreasurerCaseListComponent } from '../pega/recentTreasurerCases/recentTreasurerCaseList.component';
 // import { UnifiedtasklistComponent } from '../../shared/pegaComponents/unifiedtasklist/unifiedtasklist.component';
 
 import {
@@ -14,20 +17,30 @@ import {
 } from './components';
 
 import { StatModule } from '../../shared';
+// import { RecentTreasurerCaseListComponent } from '../pega';
 @NgModule({
     imports: [
 
-      CommonModule,
-      NgbCarouselModule,
-      NgbAlertModule,
-      StatModule,
-      SummaryPageRoutingModule],
+      CommonModule
+      , LayoutModule
+      , NgbCarouselModule
+      , NgbAlertModule
+      , StatModule
+      , SummaryPageRoutingModule
+      // , RecentTreasurerCaseListComponent
+    ],
     declarations: [
-      SummaryPageComponent,
-      TimelineComponent,
-      NotificationComponent,
-      ChatComponent,
-      UnifiedtasklistComponent
+      SummaryPageComponent
+      , TimelineComponent
+      , NotificationComponent
+      , ChatComponent
+      , UnifiedtasklistComponent
+      // , RecentTreasurerCaseListComponent
+      // , RecentTreasurerCaseListComponent
+
+    ],
+    exports: [
+       RecentTreasurerCaseListComponent
     ]
 })
 export class SummaryPageModule {}

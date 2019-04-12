@@ -13,14 +13,15 @@ import { NgbdModalComponent, NgbdModalComponentNBA, modalRCICaseType, NgbdModalC
 // import { NgbPagination } from './pega/index';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { NgbDatePipe } from './pega/_pipes/ngbDatePipe';
-import { MatTableModule, MatSortModule  } from '@angular/material';
+import { MatTableModule, MatInputModule, MatPaginatorModule, MatSortModule  } from '@angular/material';
+// import { FlexLayoutModule } from '@angular/fle';
 
 // import { NgbdPaginationCustomization } from './pega/ngPaging/pagination-customization.component';
 
 import { PaginationComponent } from './../layout/bs-component/components';
 
 // import { Mod } from './pega/modal/modal.component';
-import { CreateRCIcaseComponent, CaselistComponent } from './pega/index';
+import { CreateRCIcaseComponent, CaselistComponent, RecentTreasurerCaseListComponent } from './pega/index';
 import { SharedPegaDataService } from './pega/_services/sharedpegadata.service';
 // import { CaselistComponent } from './pega/caselist/caselist.component';
 // import { UnifiedtaskComponent } from './pega/';
@@ -29,8 +30,11 @@ import { SharedPegaDataService } from './pega/_services/sharedpegadata.service';
 @NgModule({
     imports: [
           CommonModule
+          // , FlexLayoutModule
         , LayoutRoutingModule
         , MatTableModule
+        , MatInputModule
+        , MatPaginatorModule
         , MatSortModule
         , TranslateModule
         , FormsModule
@@ -55,6 +59,7 @@ import { SharedPegaDataService } from './pega/_services/sharedpegadata.service';
       , NgbdModalContentNBA
       , NgbDatePipe
       , CaselistComponent
+      , RecentTreasurerCaseListComponent
       // , PaginationComponent
       // , NgbPagination
 
@@ -68,12 +73,17 @@ import { SharedPegaDataService } from './pega/_services/sharedpegadata.service';
     modalRCICaseType
     , NgbdModalContentNBA
     , CaselistComponent
+    , RecentTreasurerCaseListComponent
     //  , NgbdPaginationCustomization
   ],
 
   exports: [
     // NgbdPaginationCustomization
-  CaselistComponent
+    CaselistComponent
+  , RecentTreasurerCaseListComponent
+  , MatTableModule
+  , MatPaginatorModule
+  , MatInputModule
   , MatSortModule
 ]
   , schemas: [

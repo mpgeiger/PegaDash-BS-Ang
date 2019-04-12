@@ -84,4 +84,8 @@ export class SidebarComponent implements OnInit {
     onLoggedout() {
         localStorage.removeItem('isLoggedin');
     }
+    
+  public onSidenavClose = () => {
+    this.collapsedEvent.emit();
+}
 }

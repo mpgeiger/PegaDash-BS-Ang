@@ -13,45 +13,35 @@ import { Sort } from '@angular/material';
 import {MatTableDataSource, MatPaginator, MatSort} from '@angular/material';
 
 
-export interface Cases {
-  caseTypeID: string;
-  ID: string;
-  name: string;
-  stage: string;
-  status: string;
-  createdBy: string;
-  createTime: string;
-  // lastUpdatedBy: string;
+export interface TreasurerCases {
+  CaseStatusImage: string;
+  CaseStatusStyler: string;
+  pxCreateDateTime: string;
   pxObjClass: string;
-  urgency: string;
-  lastUpdateTime: string;
-  lastUpdatedBy: string;
+  pxUpdateDateTime: string;
+  pyID: string;
+  pyLabel: string;
+  pyStatusWork: string;
+  pzInsKey: string;
 }
 
 @Component({
-  selector: 'app-caselist',
-  templateUrl: './caselist.component.html',
-  styleUrls: ['./caselist.component.scss']
+  selector: 'app-recentTreasurerCaseList',
+  templateUrl: './recentTreasurerCaseList.component.html',
+  styleUrls: ['./recentTreasurerCaseList.component.scss']
 })
-export class CaselistComponent implements OnInit, AfterViewInit  {
+export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  {
   message: any;
   subscription: Subscription;
 
   // cases: Array<any> = [];
   // displayedColumns = ['pxRefObjectInsName', 'pyAssignmentStatus', 'pyLabel', 'pxUrgencyAssign'];
   // displayedColumns = ['ID', 'name', 'createTime', 'stage', 'status', 'createdBy'];
-  displayedColumns = ['name', 'createTime', 'ID'];
-  public dataSource = new MatTableDataSource<Cases>();
-  sortedData: Cases[];
+  displayedColumns = ['pyID', 'pyLabel', 'pyStatusWork', 'pxUpdateDateTime'];
+  public dataSource = new MatTableDataSource<TreasurerCases>();
+  sortedData: TreasurerCases[];
   headers: any;
-
-  cases: Cases[] = [
-    { 'caseTypeID': 'PegaCPMFS-Work-RequestCheckImage', 'createdBy': 'Sally Jones', 'createTime': '2019-04-03T10:25:23.049Z', 'ID': 'PEGACPMFS-WORK S-1401', 'lastUpdatedBy': 'Sally Jones', 'lastUpdateTime': '2019-04-03T10:25:53.831Z', 'name': 'Request Check Image', 'pxObjClass': 'Pega-API-CaseManagement-Case', 'stage': 'Resolution', 'status': 'Resolved-Completed', 'urgency': '10' }
-  , { 'caseTypeID': 'PegaCPMFS-Work-BalanceInquiry', 'createdBy': 'Sally Jones', 'createTime': '2019-04-03T10:26:04.571Z', 'ID': 'PEGACPMFS-WORK B-12', 'lastUpdatedBy': 'Sally Jones', 'lastUpdateTime': '2019-04-03T10:26:48.622Z', 'name': 'Balance Inquiry', 'pxObjClass': 'Pega-API-CaseManagement-Case', 'stage': 'Cash Balance', 'status': 'New', 'urgency': '10' }
-  , { 'caseTypeID': 'PegaCPMFS-Work-TransactionDetails', 'createdBy': 'Sally Jones', 'createTime': '2019-04-03T10:29:28.147Z', 'ID': 'PEGACPMFS-WORK T-38', 'lastUpdatedBy': 'Agent(Data-Corr-.Send)', 'lastUpdateTime': '2019-04-03T10:29:55.565Z', 'name': 'Transaction Details', 'pxObjClass': 'Pega-API-CaseManagement-Case', 'stage': 'Send Notification', 'status': 'Resolved-Completed', 'urgency': '10' }
-  // , { 'caseTypeID': 'PegaCPMFS-Work-RequestCheckImage', 'createdBy': 'Sally Jones', 'createTime': '2019-04-10T15:29:46.474Z', 'ID': 'PEGACPMFS-WORK S-1436', 'lastUpdatedBy': 'Sally Jones', 'lastUpdateTime': '2019-04-10T15:29:46.830Z', 'name': 'Request Check Image', 'pxObjClass': 'Pega-API-CaseManagement-Case', 'status': 'New' }
-  // , { 'caseTypeID': 'PegaCPMFS-Work-BalanceInquiry', 'createdBy': 'Sally Jones', 'createTime': '2019-04-10T15:30:36.712Z', 'ID': 'PEGACPMFS-WORK B-13', 'lastUpdatedBy': 'Sally Jones', 'lastUpdateTime': '2019-04-10T15:31:01.456Z', 'name': 'Balance Inquiry', 'pxObjClass': 'Pega-API-CaseManagement-Case', 'stage': 'Cash Balance', 'status': 'New', 'urgency': '10' }
-];
+  cases: TreasurerCases[] = [];
 
 @ViewChild(MatPaginator) paginator: MatPaginator;
 @ViewChild(MatSort) sort: MatSort;
@@ -66,41 +56,47 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
     public _pegaDataService: SharedPegaDataService
   ) {
     // this.getCases();
-    this.sortedData = this.cases.slice();
+   // this.sortedData = this.cases.slice();
   }
 
   ngOnInit() {
     this.getCases();
+
     // this.sortData();
     // this.dataSource = this.cases;
-    this.ngAfterViewInit();
+    // this.ngAfterViewInit();
   }
 
   ngAfterViewInit(): void {
+    this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
+    this.sortedData = this.cases.slice();
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
 
   getCases() {
-    this.cService.cases().subscribe(
+   // const unifiedtaskParams = new HttpParams().set('UserId', 'SallyJones').set('WorkGroup', 'NewWaveWG');
+   const dParams = new HttpParams();
+
+    this.datapage.getDataPage('D_RecentTreasurerCases', dParams).subscribe(
       response => {
 
-        console.log(' get cases SERVICE-->' + JSON.stringify(response.body));
+        console.log(' get D_RecentTreasurerCases -->' + JSON.stringify(response.body));
         const resSTR = JSON.stringify(this.getResults(response.body));
         const resJSON = JSON.parse(resSTR);
-        console.log(' get cases  SERVICE-->', resJSON._body);
+        console.log(' get D_RecentTreasurerCases-->', resJSON._body);
         // this.unifiedtask$ = new MatTableDataSource<any>(this.getResults(response.body));
         this.headers = response.headers;
         // this.unifiedtaskObject$ = JSON.parse(this.getResults(response.body));
         this.cases = Object.keys(this.getResults(response.body)).map(it => this.getResults(response.body)[it]);
         // this.cases = JSON.parse(response.body);
-
-        this.dataSource.data = this.cases as Cases[];
-
+       // this.sortedData = this.cases.slice();
+        this.dataSource.data = this.cases as TreasurerCases[];
+       // this.sortedData = this.cases.slice();
         // this.ngAfterViewInit();
 
 
-        console.log('XXX unifiedtaskObject-->  ', this.cases);
+        console.log('XXX D_RecentTreasurerCases-->  ', this.cases);
 
         // this.unifiedtask$.paginator = this.paginator;
         // this.unifiedtask$.sort = this.sort;
@@ -132,10 +128,12 @@ public doFilter = (value: string) => {
     this.sortedData = data.sort((a, b) => {
       const isAsc = sort.direction === 'asc';
       switch (sort.active) {
-        case 'ID': return compare(a.ID, b.ID, isAsc);
-        case 'name': return compare(a.name, b.name, isAsc);
-        // case 'fat': return compare(a.fat, b.fat, isAsc);
-        // case 'carbs': return compare(a.carbs, b.carbs, isAsc);
+        // displayedColumns = ['pyID', 'pyLabel', 'pyStatusWork', 'pxUpdateDateTime'];
+
+        case 'pyID': return compare(a.pyID, b.pyID, isAsc);
+        case 'pyLabel': return compare(a.pyLabel, b.pyLabel, isAsc);
+        case 'pyStatusWork': return compare(a.pyStatusWork, b.pyStatusWork, isAsc);
+        case 'pxUpdateDateTime': return compare(a.pxUpdateDateTime, b.pxUpdateDateTime, isAsc);
         // case 'protein': return compare(a.protein, b.protein, isAsc);
         default: return 0;
       }
@@ -143,7 +141,7 @@ public doFilter = (value: string) => {
   }
   getResults(data) {
     // localStorage.setItem('numUnifiedTaskList', data.pxResults.length);
-    return data.cases;
+    return data.pxResults;
   }
   // ngOnDestroy() {
   //   this.subscription.unsubscribe();
