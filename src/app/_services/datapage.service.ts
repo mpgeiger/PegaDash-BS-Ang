@@ -1,6 +1,7 @@
 import { Response } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+// import { Observable } from 'rxjs/Observable';
 import { endpoints } from './endpoints';
 
 
@@ -18,24 +19,30 @@ export class DatapageService {
 
   getDataPage(id, dpParams) {
 
-    var dataHeaders = new HttpHeaders();
-    const encodedUser = localStorage.getItem("encodedUser");
-    //let results;
+    let dataHeaders = new HttpHeaders();
+    const encodedUser = localStorage.getItem('encodedUser');
+    // let results;
 
     dataHeaders = dataHeaders.append('Authorization', 'Basic ' + encodedUser);
-    dataHeaders = dataHeaders.append('Content-Type', "application/json");
+    dataHeaders = dataHeaders.append('Content-Type', 'application/json');
 
     // results = this.http.get(this.dataPageUrl + "/" + id, { observe: 'response', params: dpParams, headers: dataHeaders});
 
     //  results.json().then((data) => { console.log(data) });
     // console.log('QQQ',JSON.stringify(results));
-    this.pxResults = this.http.get(this.dataPageUrl + "/" + id,
-    { observe: 'response', params: dpParams, headers: dataHeaders});
-   // console.log('QQQ', JSON.stringify(this.pxResults));
+    this.pxResults = this.http.get(this.dataPageUrl + '/' + id,
+      { observe: 'response', params: dpParams, headers: dataHeaders });
+    console.log('QQQ', JSON.stringify(this.pxResults));
+
+    // this.pxResults = this.http
+    //   .get(this.dataPageUrl + '/' + id, { observe: 'response', params: dpParams, headers: dataHeaders })
+    //  .do(console.log(' in RESULTS-->' + data))
+    //  .map(data => _.values(data));
 
 
-    return this.http.get(this.dataPageUrl + "/" + id,
-      { observe: 'response', params: dpParams, headers: dataHeaders})
+
+    return this.http.get(this.dataPageUrl + '/' + id,
+      { observe: 'response', params: dpParams, headers: dataHeaders })
       // .subscribe((res) => {
       //   let resSTR = JSON.stringify(res);
       //   let resJSON = JSON.parse(resSTR);
@@ -43,11 +50,11 @@ export class DatapageService {
       // })
       ;
 
-     // return this.pxResults;
+    // return this.pxResults;
   }
 
   getResults(response) {
-    console.log('QQQ',response);
+    console.log('QQQ', response);
     return response.pxResults;
   }
 }

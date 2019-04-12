@@ -9,19 +9,12 @@ import { RefreshWorkListService } from '../../../_messages/refreshworklist.servi
 import { PagerService } from '../../../_services/pager.service';
 import { SharedPegaDataService } from '../_services/sharedpegadata.service';
 import { stringify } from 'querystring';
-import {Sort} from '@angular/material';
 
 // import { NgbdPaginationCustomization } from '../ngPaging/pagination-customization';
 // import { PaginationComponent } from '../../bs-component/components';
 // import { CreateRCIcaseComponent } from './../../pega/create-rcicase/create-rcicase.component';
 // import { groupBy } from 'rxjs/operators';
-export interface UTL {
-  pxUrgencyAssign: number;
-  pyLabel: string;
-  pyAssignmentStatus: string;
-  pxRefObjectInsName: string;
 
-}
 @Component({
   selector: 'app-unifiedtask',
   templateUrl: './unifiedtask.component.html',
@@ -29,9 +22,9 @@ export interface UTL {
   providers: []
 })
 
-// export type SortDirection = 'asc' | 'desc' | '';
-// const rotate: {[key: string]: SortDirection} = { 'asc': 'desc', 'desc': '', '': 'asc' };
-// export const compare = (v1, v2) => v1 < v2 ? -1 : v1 > v2 ? 1 : 0;
+export type SortDirection = 'asc' | 'desc' | '';
+const rotate: {[key: string]: SortDirection} = { 'asc': 'desc', 'desc': '', '': 'asc' };
+export const compare = (v1, v2) => v1 < v2 ? -1 : v1 > v2 ? 1 : 0;
 
 
 export class UnifiedtaskComponent implements OnInit {
@@ -68,7 +61,6 @@ export class UnifiedtaskComponent implements OnInit {
   p_NumPages: number;
   p_CurrentPage: 1;
   p_CurrentList: Object;
-  sortedData: UTL[];
 
   constructor(
     private datapage: DatapageService,
@@ -81,7 +73,6 @@ export class UnifiedtaskComponent implements OnInit {
   ) {
     // _pegaDataService.setOption('UTL', '20');
     this.defaultPagination = 1;
-    // this.sortedData = this.tasks.slice();
   }
 
   ngOnInit() {
@@ -140,25 +131,6 @@ export class UnifiedtaskComponent implements OnInit {
         alert('Error form unifiedtask:' + err.errors);
       }
     );
-  }
-  sortData(sort: Sort) {
-    const data = this.tasks.slice();
-    if (!sort.active || sort.direction === '') {
-      this.sortedData = data;
-      return;
-    }
-
-    this.sortedData = data.sort((a, b) => {
-      const isAsc = sort.direction === 'asc';
-      switch (sort.active) {
-        case 'pxUrgencyAssign': return compare(a.pxUrgencyAssign, b.pxUrgencyAssign, isAsc);
-        case 'pyLabel': return compare(a.pyLabel, b.pyLabel, isAsc);
-        // case 'fat': return compare(a.fat, b.fat, isAsc);
-        // case 'carbs': return compare(a.carbs, b.carbs, isAsc);
-        // case 'protein': return compare(a.protein, b.protein, isAsc);
-        default: return 0;
-      }
-    });
   }
 
   initPagingInfo() {
@@ -230,8 +202,4 @@ export class UnifiedtaskComponent implements OnInit {
     console.log(' clicked row -->' + JSON.stringify(row) );
     this.oaservice.sendMessage(row.pxRefObjectInsName, row);
   }
-}
-
-function compare(a: number | string, b: number | string, isAsc: boolean) {
-  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }

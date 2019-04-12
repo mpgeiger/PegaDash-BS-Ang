@@ -13,13 +13,16 @@ import { NgbdModalComponent, NgbdModalComponentNBA, modalRCICaseType, NgbdModalC
 // import { NgbPagination } from './pega/index';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { NgbDatePipe } from './pega/_pipes/ngbDatePipe';
+import { MatTableModule, MatSortModule  } from '@angular/material';
+
 // import { NgbdPaginationCustomization } from './pega/ngPaging/pagination-customization.component';
 
 import { PaginationComponent } from './../layout/bs-component/components';
 
 // import { Mod } from './pega/modal/modal.component';
-import { CreateRCIcaseComponent } from './pega/index';
+import { CreateRCIcaseComponent, CaselistComponent } from './pega/index';
 import { SharedPegaDataService } from './pega/_services/sharedpegadata.service';
+// import { CaselistComponent } from './pega/caselist/caselist.component';
 // import { UnifiedtaskComponent } from './pega/';
 // import { DatePickerComponent } from './bs-component/components/index';
 
@@ -27,6 +30,8 @@ import { SharedPegaDataService } from './pega/_services/sharedpegadata.service';
     imports: [
           CommonModule
         , LayoutRoutingModule
+        , MatTableModule
+        , MatSortModule
         , TranslateModule
         , FormsModule
         , ReactiveFormsModule
@@ -49,6 +54,7 @@ import { SharedPegaDataService } from './pega/_services/sharedpegadata.service';
       , modalRCICaseType
       , NgbdModalContentNBA
       , NgbDatePipe
+      , CaselistComponent
       // , PaginationComponent
       // , NgbPagination
 
@@ -61,12 +67,15 @@ import { SharedPegaDataService } from './pega/_services/sharedpegadata.service';
   entryComponents: [
     modalRCICaseType
     , NgbdModalContentNBA
+    , CaselistComponent
     //  , NgbdPaginationCustomization
   ],
 
   exports: [
     // NgbdPaginationCustomization
-  ]
+  CaselistComponent
+  , MatSortModule
+]
   , schemas: [
     NO_ERRORS_SCHEMA
     , CUSTOM_ELEMENTS_SCHEMA]

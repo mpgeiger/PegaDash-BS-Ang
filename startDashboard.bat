@@ -1,4 +1,4 @@
-set AngularAppDir="D:\NodeApps\Angular\SB-Admin-BS4-Angular-6\"
+set AngularAppDir="D:\NodeApps\Angular\PegaDash-BS-Ang-New"
 
 cd %AngularAppDir%
 

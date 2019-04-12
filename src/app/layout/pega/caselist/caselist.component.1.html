@@ -1,0 +1,45 @@
+<p>
+  caselist works!
+</p>
+<div class="row">
+  <div class="col-12">
+    <table class="table" matSort (matSortChange)="sortData($event)">
+    <!-- <table class="table"  > -->
+
+      <!-- <thead> -->
+        <tr>
+          <!-- <th scope="col"  mat-sort-header="pxUrgencyAssign">Priority</th> -->
+          <th mat-sort-header="ID" >ID</th>
+          <th mat-sort-header="name" >Name</th>
+          <th>Created By</th>
+          <th>Status </th>
+        </tr>
+      <!-- </thead> -->
+      <tfoot>
+        <tr>
+          <th colspan=4>
+           <!-- <ngb-pagination
+           [collectionSize]="p_TotalNumberItems"
+            [pageSize]="p_ItemsPerPage"
+
+             [maxSize]="5" [boundaryLinks]="true"
+                                     [(page)]="p_CurrentPage"
+              (pageChange)="loadNext()"
+              class="d-flex justify-content-center"
+             >
+            </ngb-pagination>
+          -->
+          </th>
+        </tr>
+      </tfoot>
+      <tbody>
+        <tr *ngFor="let task of sortData">
+          <td scope="row">{{task.ID}}</td>
+          <td> {{ task.name }}<br/> {{task.createTime | date}}</td>
+          <td>{{task.createdBy}}</td>
+          <td>{{task.status}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

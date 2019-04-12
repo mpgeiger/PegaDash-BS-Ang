@@ -1,3 +1,5 @@
+import { LayoutModule } from '../layout.module';
+// import { CaselistComponent } from './../pega/caselist/caselist.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 // import { LayoutModule } from './../../../../.history/src/app/layout/layout.module_20190328105706';
 import { NgModule } from '@angular/core';
@@ -21,7 +23,7 @@ import {
 import { UnifiedtaskComponent } from './../pega/unifiedtask/unifiedtask.component';
 
 import { StatModule } from '../../shared';
-// import { NgbdPaginationCustomization } from '../pega';
+// import { NgbdPaginationsCustomization } from '../pega';
 @NgModule({
     imports: [
 
@@ -31,7 +33,7 @@ import { StatModule } from '../../shared';
       , NgbAlertModule
       , StatModule
       , OpenTaskPageRoutingModule
-
+      , LayoutModule
       // , NgbdPaginationCustomization
       // , NgbPagination
       // , LayoutModule
@@ -42,6 +44,7 @@ import { StatModule } from '../../shared';
       , NotificationComponent
       , ChatComponent
       , UnifiedtasklistComponent
+      // , CaselistComponent
       , UnifiedtaskComponent
     ]
 })

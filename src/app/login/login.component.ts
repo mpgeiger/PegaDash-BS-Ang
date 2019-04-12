@@ -69,6 +69,7 @@ export class LoginComponent implements OnInit {
             },
             err => {
               const sError = 'Errors getting data page: ' + err.message;
+              console.log(' Login INSIDE error-->\n' + sError);
               // let snackBarRef = this.snackBar.open(sError, 'Ok');
             }
           );
