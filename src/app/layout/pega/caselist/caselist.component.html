@@ -1,10 +1,9 @@
-<p>
-  caselist works!
-</p>
 
-<div fxLayout fxLayoutAlign="center center">
-  <mat-form-field >
+<div fxLayout fxLayoutAlign="center center" class="fields-container">
+  <mat-form-field>
+      <!-- <ng-template #textarea ngProjectAs="[matInput]"> -->
     <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
+    <!-- </ng-template> -->
   </mat-form-field>
 </div>
 <div class="row">
@@ -28,7 +27,7 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-    <mat-paginator [pageSize]="2" [pageSizeOptions]="[2, 4, 6, 10, 20]"></mat-paginator>
+    <mat-paginator [pageSize]="pageSize" [pageSizeOptions]="[2, 4, 6, 10, 20]"></mat-paginator>
 
   </div>
 </div>

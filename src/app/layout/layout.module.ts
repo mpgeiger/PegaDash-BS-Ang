@@ -1,3 +1,5 @@
+
+// import { OpenTaskPageModule } from './opentask-page/opentask-page.module';
 import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
@@ -23,6 +25,9 @@ import { PaginationComponent } from './../layout/bs-component/components';
 // import { Mod } from './pega/modal/modal.component';
 import { CreateRCIcaseComponent, CaselistComponent, RecentTreasurerCaseListComponent } from './pega/index';
 import { SharedPegaDataService } from './pega/_services/sharedpegadata.service';
+import { OpenTaskPageModule } from './opentask-page/opentask-page.module';
+import { OpenTaskPageComponent } from './opentask-page/opentask-page.component';
+import { SharedPegaModule } from '../shared-pega/shared-pega.module';
 // import { CaselistComponent } from './pega/caselist/caselist.component';
 // import { UnifiedtaskComponent } from './pega/';
 // import { DatePickerComponent } from './bs-component/components/index';
@@ -45,6 +50,8 @@ import { SharedPegaDataService } from './pega/_services/sharedpegadata.service';
         // , NgbdPaginationCustomization
         // CreateRCIcaseComponent.forRoot(,
         , NgbModule.forRoot()
+        , OpenTaskPageModule
+        , SharedPegaModule
         // , SharedPegaDataService
     ],
     declarations: [
@@ -58,8 +65,9 @@ import { SharedPegaDataService } from './pega/_services/sharedpegadata.service';
       , modalRCICaseType
       , NgbdModalContentNBA
       , NgbDatePipe
-      , CaselistComponent
-      , RecentTreasurerCaseListComponent
+      //  , CaselistComponent
+      // , OpenTaskPageComponent
+      // , RecentTreasurerCaseListComponent
       // , PaginationComponent
       // , NgbPagination
 
@@ -72,15 +80,18 @@ import { SharedPegaDataService } from './pega/_services/sharedpegadata.service';
   entryComponents: [
     modalRCICaseType
     , NgbdModalContentNBA
-    , CaselistComponent
+     , CaselistComponent
     , RecentTreasurerCaseListComponent
+    // , OpenTaskPageComponents
     //  , NgbdPaginationCustomization
   ],
 
   exports: [
     // NgbdPaginationCustomization
-    CaselistComponent
+  CaselistComponent
   , RecentTreasurerCaseListComponent
+  // , OpenTaskPageComponent
+  , OpenTaskPageModule
   , MatTableModule
   , MatPaginatorModule
   , MatInputModule

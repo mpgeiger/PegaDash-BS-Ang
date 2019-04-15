@@ -1,4 +1,6 @@
-import { LayoutModule } from '../layout.module';
+// import { SharedPegaModule } from './../../../../.history/src/app/shared-pega/shared-pega.module_20190415090848';
+// import { SharedPegaModule } from './../../../../.history/src/app/shared-pega/shared-pega.module_20190415090219';
+// import { LayoutModule } from '../layout.module';
 // import { CaselistComponent } from './../pega/caselist/caselist.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 // import { LayoutModule } from './../../../../.history/src/app/layout/layout.module_20190328105706';
@@ -21,19 +23,22 @@ import {
   UnifiedtasklistComponent
 } from './components';
 import { UnifiedtaskComponent } from './../pega/unifiedtask/unifiedtask.component';
+import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
 
 import { StatModule } from '../../shared';
-// import { NgbdPaginationsCustomization } from '../pega';
+// import { SharedPegaModule } './SharedPegaModule'
+// import { CaselistComponent } from '../pega/';
 @NgModule({
     imports: [
 
-      CommonModule
+      // LayoutModule
+       CommonModule
+       , SharedPegaModule
       , NgbModule
       , NgbCarouselModule
       , NgbAlertModule
       , StatModule
       , OpenTaskPageRoutingModule
-      , LayoutModule
       // , NgbdPaginationCustomization
       // , NgbPagination
       // , LayoutModule

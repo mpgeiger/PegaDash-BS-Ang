@@ -1,5 +1,5 @@
 
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 // import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { DatapageService } from '../../../_services/datapage.service';
 import { Subscription, Observable } from 'rxjs';
@@ -42,16 +42,19 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
   // displayedColumns = ['ID', 'name', 'createTime', 'stage', 'status', 'createdBy'];
   displayedColumns = ['name', 'createTime', 'ID'];
   public dataSource = new MatTableDataSource<Cases>();
-  sortedData: Cases[];
+  sortedData: Cases[] = [];
+  cases: Cases[] = [];
   headers: any;
+  @Input() lpp: number;
+  public pageSize = 10;
 
-  cases: Cases[] = [
-    { 'caseTypeID': 'PegaCPMFS-Work-RequestCheckImage', 'createdBy': 'Sally Jones', 'createTime': '2019-04-03T10:25:23.049Z', 'ID': 'PEGACPMFS-WORK S-1401', 'lastUpdatedBy': 'Sally Jones', 'lastUpdateTime': '2019-04-03T10:25:53.831Z', 'name': 'Request Check Image', 'pxObjClass': 'Pega-API-CaseManagement-Case', 'stage': 'Resolution', 'status': 'Resolved-Completed', 'urgency': '10' }
-  , { 'caseTypeID': 'PegaCPMFS-Work-BalanceInquiry', 'createdBy': 'Sally Jones', 'createTime': '2019-04-03T10:26:04.571Z', 'ID': 'PEGACPMFS-WORK B-12', 'lastUpdatedBy': 'Sally Jones', 'lastUpdateTime': '2019-04-03T10:26:48.622Z', 'name': 'Balance Inquiry', 'pxObjClass': 'Pega-API-CaseManagement-Case', 'stage': 'Cash Balance', 'status': 'New', 'urgency': '10' }
-  , { 'caseTypeID': 'PegaCPMFS-Work-TransactionDetails', 'createdBy': 'Sally Jones', 'createTime': '2019-04-03T10:29:28.147Z', 'ID': 'PEGACPMFS-WORK T-38', 'lastUpdatedBy': 'Agent(Data-Corr-.Send)', 'lastUpdateTime': '2019-04-03T10:29:55.565Z', 'name': 'Transaction Details', 'pxObjClass': 'Pega-API-CaseManagement-Case', 'stage': 'Send Notification', 'status': 'Resolved-Completed', 'urgency': '10' }
-  // , { 'caseTypeID': 'PegaCPMFS-Work-RequestCheckImage', 'createdBy': 'Sally Jones', 'createTime': '2019-04-10T15:29:46.474Z', 'ID': 'PEGACPMFS-WORK S-1436', 'lastUpdatedBy': 'Sally Jones', 'lastUpdateTime': '2019-04-10T15:29:46.830Z', 'name': 'Request Check Image', 'pxObjClass': 'Pega-API-CaseManagement-Case', 'status': 'New' }
-  // , { 'caseTypeID': 'PegaCPMFS-Work-BalanceInquiry', 'createdBy': 'Sally Jones', 'createTime': '2019-04-10T15:30:36.712Z', 'ID': 'PEGACPMFS-WORK B-13', 'lastUpdatedBy': 'Sally Jones', 'lastUpdateTime': '2019-04-10T15:31:01.456Z', 'name': 'Balance Inquiry', 'pxObjClass': 'Pega-API-CaseManagement-Case', 'stage': 'Cash Balance', 'status': 'New', 'urgency': '10' }
-];
+//   cases: Cases[] = [
+//     { 'caseTypeID': 'PegaCPMFS-Work-RequestCheckImage', 'createdBy': 'Sally Jones', 'createTime': '2019-04-03T10:25:23.049Z', 'ID': 'PEGACPMFS-WORK S-1401', 'lastUpdatedBy': 'Sally Jones', 'lastUpdateTime': '2019-04-03T10:25:53.831Z', 'name': 'Request Check Image', 'pxObjClass': 'Pega-API-CaseManagement-Case', 'stage': 'Resolution', 'status': 'Resolved-Completed', 'urgency': '10' }
+//   , { 'caseTypeID': 'PegaCPMFS-Work-BalanceInquiry', 'createdBy': 'Sally Jones', 'createTime': '2019-04-03T10:26:04.571Z', 'ID': 'PEGACPMFS-WORK B-12', 'lastUpdatedBy': 'Sally Jones', 'lastUpdateTime': '2019-04-03T10:26:48.622Z', 'name': 'Balance Inquiry', 'pxObjClass': 'Pega-API-CaseManagement-Case', 'stage': 'Cash Balance', 'status': 'New', 'urgency': '10' }
+//   , { 'caseTypeID': 'PegaCPMFS-Work-TransactionDetails', 'createdBy': 'Sally Jones', 'createTime': '2019-04-03T10:29:28.147Z', 'ID': 'PEGACPMFS-WORK T-38', 'lastUpdatedBy': 'Agent(Data-Corr-.Send)', 'lastUpdateTime': '2019-04-03T10:29:55.565Z', 'name': 'Transaction Details', 'pxObjClass': 'Pega-API-CaseManagement-Case', 'stage': 'Send Notification', 'status': 'Resolved-Completed', 'urgency': '10' }
+//   // , { 'caseTypeID': 'PegaCPMFS-Work-RequestCheckImage', 'createdBy': 'Sally Jones', 'createTime': '2019-04-10T15:29:46.474Z', 'ID': 'PEGACPMFS-WORK S-1436', 'lastUpdatedBy': 'Sally Jones', 'lastUpdateTime': '2019-04-10T15:29:46.830Z', 'name': 'Request Check Image', 'pxObjClass': 'Pega-API-CaseManagement-Case', 'status': 'New' }
+//   // , { 'caseTypeID': 'PegaCPMFS-Work-BalanceInquiry', 'createdBy': 'Sally Jones', 'createTime': '2019-04-10T15:30:36.712Z', 'ID': 'PEGACPMFS-WORK B-13', 'lastUpdatedBy': 'Sally Jones', 'lastUpdateTime': '2019-04-10T15:31:01.456Z', 'name': 'Balance Inquiry', 'pxObjClass': 'Pega-API-CaseManagement-Case', 'stage': 'Cash Balance', 'status': 'New', 'urgency': '10' }
+// ];
 
 @ViewChild(MatPaginator) paginator: MatPaginator;
 @ViewChild(MatSort) sort: MatSort;
@@ -66,17 +69,28 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
     public _pegaDataService: SharedPegaDataService
   ) {
     // this.getCases();
-    this.sortedData = this.cases.slice();
+    // this.sortedData = this.cases.slice();
   }
 
   ngOnInit() {
     this.getCases();
+    console.log(' LPP -->' + this.lpp);
+    if (this.lpp === null || typeof this.lpp === 'undefined') {
+      // $scope.msg = "pls enter something";
+   } else {
+     this.pageSize = this.lpp;
+    }
     // this.sortData();
     // this.dataSource = this.cases;
-    this.ngAfterViewInit();
+   // this.ngAfterViewInit();
   }
 
   ngAfterViewInit(): void {
+   // this.dataSource.sort = this.sort;
+   // this.dataSource.paginator = this.paginator;
+
+    this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
+    this.sortedData = this.cases.slice();
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
