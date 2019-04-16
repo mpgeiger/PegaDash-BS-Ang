@@ -19,20 +19,20 @@ export class UserService {
 
 
   login(userName: string, password: string) {
-    const encodedUser = btoa(userName + ":" + password);
+    const encodedUser = btoa(userName + ':' + password);
 
-    var authParams = new HttpParams();
-    var authHeaders = new HttpHeaders();
+    const authParams = new HttpParams();
+    let authHeaders = new HttpHeaders();
     authHeaders = authHeaders.append('Authorization', 'Basic ' + encodedUser);
     authHeaders = authHeaders.append('Access-Control-Allow-Origin', '*');
-    authHeaders = authHeaders.append('Access-Control-Allow-Headers', '*');
-    authHeaders = authHeaders.append('Origin', '*');
+    // authHeaders = authHeaders.append('Access-Control-Allow-Headers', '*');
+    // authHeaders = authHeaders.append('Origin', '*');
 
-    localStorage.setItem("userName", userName);
-    localStorage.setItem("encodedUser", encodedUser);
+    localStorage.setItem('userName', userName);
+    localStorage.setItem('encodedUser', encodedUser);
 
 
-    return this.http.get(this.authUrl + "/",
+    return this.http.get(this.authUrl + '/',
       { observe: 'response', params: authParams, headers: authHeaders});
 
 
