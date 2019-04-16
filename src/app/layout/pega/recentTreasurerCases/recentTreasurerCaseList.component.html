@@ -13,12 +13,17 @@
     <!-- <table class="table"  > -->
       <ng-container matColumnDef="pyID">
         <th mat-header-cell *matHeaderCellDef  mat-sort-header> ID </th>
+
         <td mat-cell *matCellDef="let element"> {{element.pyID}} </td>
       </ng-container>
 
       <ng-container matColumnDef="pyLabel">
         <th mat-header-cell *matHeaderCellDef mat-sort-header matSortStart="desc">Label </th>
-        <td mat-cell *matCellDef="let element"> {{element.pyLabel }} </td>
+        <mat-form-field class="filter" floatLabel="never">
+          <mat-label>Search</mat-label>
+          <input matInput [formControl]="pyLabelFilter">
+        </mat-form-field>
+        <!-- <td mat-cell *matCellDef="let element"> {{element.pyLabel }} </td> -->
       </ng-container>
 
       <ng-container matColumnDef="pyStatusWork">

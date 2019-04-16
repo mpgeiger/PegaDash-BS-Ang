@@ -1,3 +1,4 @@
+import { FormControl } from '@angular/forms';
 
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 // import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
@@ -43,6 +44,17 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
   headers: any;
   cases: TreasurerCases[] = [];
 
+  idFilter = new FormControl('');
+  nameFilter = new FormControl('');
+  labelFilter = new FormControl('');
+  statusFilter = new FormControl('');
+  filterValues = {
+    pyID: '',
+    pyLabel: '',
+    pyStatusWork: '',
+    pxUpdateDateTime: ''
+  };
+
 @ViewChild(MatPaginator) paginator: MatPaginator;
 @ViewChild(MatSort) sort: MatSort;
 
@@ -60,6 +72,14 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
   }
 
   ngOnInit() {
+
+    this.idFilter.valueChanges
+    .subscribe(
+      name => {
+        this.filterValues.pyLabel = pyLabel;
+        this.dataSource.filter = JSON.stringify(this.filterValues);
+      }
+    )
     this.getCases();
 
     // this.sortData();
@@ -92,6 +112,7 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
         // this.cases = JSON.parse(response.body);
        // this.sortedData = this.cases.slice();
         this.dataSource.data = this.cases as TreasurerCases[];
+        this.dataSource.filterPredicate = this.createFilter();
        // this.sortedData = this.cases.slice();
         // this.ngAfterViewInit();
 
@@ -113,6 +134,17 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
       }
     );
   }
+  createFilter(): (data: any, filter: string) => boolean {
+    let filterFunction = function(data, filter): boolean {
+      let searchTerms = JSON.parse(filter);
+      return data.pyLabel.toLowerCase().indexOf(searchTerms.pyLabel) !== -1
+        // && data.id.toString().toLowerCase().indexOf(searchTerms.id) !== -1
+        // && data.colour.toLowerCase().indexOf(searchTerms.colour) !== -1
+        // && data.pet.toLowerCase().indexOf(searchTerms.pet) !== -1;
+    }
+    return filterFunction;
+  }
+
 
 public doFilter = (value: string) => {
     this.dataSource.filter = value.trim().toLocaleLowerCase();
