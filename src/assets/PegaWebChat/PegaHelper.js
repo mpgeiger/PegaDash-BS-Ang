@@ -13,7 +13,7 @@ var MonitorTimeout = 2000;
 var missedMessageCounter = 0;
 var minimized = true;
 
-$(document).ready(function(){ 
+$(document).ready(function(){
   /* Load the cobrowse assets */
   window.fireflyAPI = {};
 	var script = document.createElement("script");
@@ -22,8 +22,8 @@ $(document).ready(function(){
 	fireflyAPI.serverHostUrl = "Please enter CobrowseServerURL"
   script.src = "Please enter CobrowseServerURL/cobrowse/loadScripts";
 	script.async = true;
-	document.head.appendChild(script); 
-  
+	document.head.appendChild(script);
+
   /* add id attributes to gadgets */
   $("div[data-pega-gadgetname='OnlineHelp']").attr("id","OnlineHelp");
   $("div[data-pega-gadgetname='PreviewGadget']").attr("id","PreviewGadget");
@@ -32,7 +32,7 @@ $(document).ready(function(){
     addEventListener("message", postMessageListener, false);
   } else {
     attachEvent("onmessage", postMessageListener);
-  } 
+  }
 
   var $minL = $("<div>", {id:"launcherminimized",text:"Need Help?"});
   $minL.click(maximizeAdvisorWindow);
@@ -42,7 +42,7 @@ $(document).ready(function(){
   $("#launcherminimized").hide();
   /* Invoke the preview loader to force proactive items to fire as well as load preview data */
   previewMonitor = setTimeout(monitorPreviewLoader, MonitorTimeout);
- 
+
 });
 
 var headerFontColor = "";
@@ -51,10 +51,10 @@ var textFontColor = "";
 var textFontFamily = "";
 
 function postMessageListener(event){
-  
-  /* console.log("origin is ",event.origin); 
+
+  /* console.log("origin is ",event.origin);
   console.log("received: "+event.data); */
-  
+
   try {
 	var message = JSON.parse(event.data);
   } catch(e) {
@@ -63,14 +63,14 @@ function postMessageListener(event){
   }
   /* console.log("message is ", message); */
 
-  if (message.message) { 
-    if ((message.message.payload.name == "loaded" ||message.message.payload.name == "confirm") && message.message.src == "OnlineHelpIfr") { 
+  if (message.message) {
+    if ((message.message.payload.name == "loaded" ||message.message.payload.name == "confirm") && message.message.src == "OnlineHelpIfr") {
       $("#OnlineHelpIfr").show();
 	}
   }
-  
-  if (message.message && message.message.payload.name == "loaded" && message.message.src == "PreviewGadgetIfr") { 
-    if (previewLoaded == true) { 
+
+  if (message.message && message.message.payload.name == "loaded" && message.message.src == "PreviewGadgetIfr") {
+    if (previewLoaded == true) {
 	    /* Preview has already loaded */
 	    return;
 	  }
@@ -79,31 +79,31 @@ function postMessageListener(event){
  	  /* enable launcher now */
 	  var $launcher = $("<div>", {id:"launcher",text:"Need Help?"});
 		$launcher.click(InvokeAdvisor);
-    $( 'body' ).append($launcher);		         
+    $( 'body' ).append($launcher);
   }
-  
+
   /* minimize advisor - start */
   if (message.command == "minimizeFromCase") {
 	minimizeServiceCaseAdvisor(message);
-  }  
+  }
   if (message.command == "minimizeFromAdvisor") {
 	minimizeAdvisor(message);
   }
   /* minimize advisor - end */
 
-  if (message.command == "CSRMessage" || message.command == "SystemMessage") { 
+  if (message.command == "CSRMessage" || message.command == "SystemMessage") {
     handleMissedMessages();
-  } 
-  
-  if (message.command == "close") { 
+  }
+
+  if (message.command == "close") {
     hideinline();
   }
-  
-  if (message.command == "expand" || message.command == "collapse" || message.command == "compact") { 
+
+  if (message.command == "expand" || message.command == "collapse" || message.command == "compact") {
     handleResize(message.command);
-  }   
-  
-  if (message.command == "setStyles") { 
+  }
+
+  if (message.command == "setStyles") {
     headerFontColor = message.headerFontColor;
     headerBackgroundColor = message.headerBackgroundColor;
     textFontColor = message.textFontColor;
@@ -111,15 +111,15 @@ function postMessageListener(event){
   }
 }
 
-function adjustMessageFieldWidth() { 
+function adjustMessageFieldWidth() {
   var width = $("#sendMessageField").width();
-  if (width != null) { 
+  if (width != null) {
     $("#sendMessageField").attr("style", "width:calc(100% - 60px)!important;");
 	window.clearInterval(adjustMessageFieldWidthInterval);
   }
 }
 
-function hideinline(){ 
+function hideinline(){
   if($("#OnlineHelp").length > 0)
   {
     $( "#OnlineHelp" ).removeClass("alerting");
@@ -137,42 +137,42 @@ function InvokeAdvisor() {
   $("#OnlineHelp").removeClass("expanded");
   $("#OnlineHelp").addClass("alerting");
   $("#launcher").hide();
-  var PegaAParamObject = preparePegaAParams("OnlineHelp"); 
-  PegaAParamObject.channelId="botfdecd19687704c9fbdb5d5034041b30a";  
+  var PegaAParamObject = preparePegaAParams("OnlineHelp");
+  PegaAParamObject.channelId="botfdecd19687704c9fbdb5d5034041b30a";
   pega.web.api.doAction("OnlineHelp", "createNewWork", "Work-Channel-Chat", "pyStartCase", PegaAParamObject);
 }
 
-function handleResize(command) { 
+function handleResize(command) {
   if(command=="expand") {
     $('#OnlineHelp').addClass("expanded");
-	$('#OnlineHelp').removeClass("compacted");	
-	$('#OnlineHelp').removeClass("standard");	
+	$('#OnlineHelp').removeClass("compacted");
+	$('#OnlineHelp').removeClass("standard");
   } else if (command == "compact") {
     $('#OnlineHelp').addClass("compacted");
 	$('#OnlineHelp').removeClass("expanded");
-	$('#OnlineHelp').removeClass("standard");	
+	$('#OnlineHelp').removeClass("standard");
   } else {
 	$('#OnlineHelp').addClass("standard");
-	$('#OnlineHelp').removeClass("expanded");	
-	$('#OnlineHelp').removeClass("compacted");	
+	$('#OnlineHelp').removeClass("expanded");
+	$('#OnlineHelp').removeClass("compacted");
   }
 }
 
 /* load preview gadget */
-function monitorPreviewLoader(){   
-    if (previewLoaded == false) { 
+function monitorPreviewLoader(){
+    if (previewLoaded == false) {
 	    var PegaAParamObject = preparePegaAParams("PreviewGadget");
-      PegaAParamObject.channelId="botfdecd19687704c9fbdb5d5034041b30a"; 
-	    pega.web.api.doAction("PreviewGadget", "display", "Preview", "PegaCS-OnlineHelp-Triage-WebChatbot", null, true, null, PegaAParamObject);	
-      MonitorTimeout = MonitorTimeout + 2000;		
+      PegaAParamObject.channelId="botfdecd19687704c9fbdb5d5034041b30a";
+	    pega.web.api.doAction("PreviewGadget", "display", "Preview", "PegaCS-OnlineHelp-Triage-WebChatbot", null, true, null, PegaAParamObject);
+      MonitorTimeout = MonitorTimeout + 2000;
  	    previewMonitor = setTimeout(monitorPreviewLoader, MonitorTimeout);
-	} 
-}	
+	}
+}
 
 function minimizeAdvisor(message){
-   $("#launcher").hide();	
+   $("#launcher").hide();
    $("#OnlineHelp").removeClass("alerting");
-   $("#launcherminimized").show();	
+   $("#launcherminimized").show();
    $("#unreadCounter").hide();
    minimized = true;
    missedMessageCounter = 0;
@@ -180,12 +180,12 @@ function minimizeAdvisor(message){
 
 function maximizeAdvisorWindow() {
 	$("#OnlineHelp").addClass("alerting");
-	$("#launcherminimized").hide();	
+	$("#launcherminimized").hide();
 	minimized = false;
 }
 
-function handleMissedMessages() { 
-  if (minimized == true) { 
+function handleMissedMessages() {
+  if (minimized == true) {
     missedMessageCounter ++;
     document.getElementById("unreadCounter").innerHTML = missedMessageCounter;
 	  $("#unreadCounter").show();
@@ -195,8 +195,8 @@ function handleMissedMessages() {
 /* minimize advisor utilities - end */
 
 $(function() {
-$( 'body' ).append("<div id='OnlineHelp' data-pega-gadgetname ='OnlineHelp' data-pega-action ='createNewWork' data-pega-action-param-classname ='' data-pega-action-param-flowname ='' data-pega-action-param-model ='' data-pega-applicationname ='BNYService' data-pega-isdeferloaded ='true' data-pega-threadname ='CSAdvisor' data-pega-systemid ='pega' data-pega-resizetype ='fixed' data-pega-url ='https://end2endcrmcommercialbankingnew.pegatsdemo.com/prweb/PRChat' data-pega-action-param-parameters ='' data-pega-redirectguests='true' data-pega-event-onclose ='hideinline'></div>");
-$( 'body' ).append("<div style='display:none; height:80px; padding-top:14px; padding-left:20px;' id='Preview' data-pega-gadgetname ='PreviewGadget' data-pega-isdeferloaded ='true' data-pega-action ='display' data-pega-action-param-classname ='PegaCS-OnlineHelp-Triage-WebChatbot'  data-pega-harnessname ='Preview' data-pega-applicationname ='BNYService' data-pega-threadname ='Preview' data-pega-systemid ='pega' data-pega-resizetype ='fixed' data-pega-event-onclose ='' data-pega-url ='https://end2endcrmcommercialbankingnew.pegatsdemo.com/prweb/PRChat' data-pega-action-param-parameters=''></div>");
+$( 'body' ).append("<div id='OnlineHelp' data-pega-gadgetname ='OnlineHelp' data-pega-action ='createNewWork' data-pega-action-param-classname ='' data-pega-action-param-flowname ='' data-pega-action-param-model ='' data-pega-applicationname ='BNYService' data-pega-isdeferloaded ='true' data-pega-threadname ='CSAdvisor' data-pega-systemid ='pega' data-pega-resizetype ='fixed' data-pega-url ='https://bny.pegatsdemo.com/prweb/PRChat' data-pega-action-param-parameters ='' data-pega-redirectguests='true' data-pega-event-onclose ='hideinline'></div>");
+$( 'body' ).append("<div style='display:none; height:80px; padding-top:14px; padding-left:20px;' id='Preview' data-pega-gadgetname ='PreviewGadget' data-pega-isdeferloaded ='true' data-pega-action ='display' data-pega-action-param-classname ='PegaCS-OnlineHelp-Triage-WebChatbot'  data-pega-harnessname ='Preview' data-pega-applicationname ='BNYService' data-pega-threadname ='Preview' data-pega-systemid ='pega' data-pega-resizetype ='fixed' data-pega-event-onclose ='' data-pega-url ='https://bny.pegatsdemo.com/prweb/PRChat' data-pega-action-param-parameters=''></div>");
 });
 //static-content-hash-trigger-YUI
 /***********************************************************************************************************************
