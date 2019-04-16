@@ -25,6 +25,8 @@ export class DatapageService {
 
     dataHeaders = dataHeaders.append('Authorization', 'Basic ' + encodedUser);
     dataHeaders = dataHeaders.append('Content-Type', 'application/json');
+    dataHeaders = dataHeaders.append('Origin', 'http://end2endcrmcommercialbankingnew.pegatsdemo.com:8080/');
+
     // dataHeaders = dataHeaders.append('Access-Control-Allow-Origin', 'http://localhost:4200');
 
     // results = this.http.get(this.dataPageUrl + "/" + id, { observe: 'response', params: dpParams, headers: dataHeaders});
