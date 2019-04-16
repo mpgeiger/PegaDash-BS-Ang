@@ -44,10 +44,10 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
   headers: any;
   cases: TreasurerCases[] = [];
 
-  idFilter = new FormControl('');
-  nameFilter = new FormControl('');
-  labelFilter = new FormControl('');
-  statusFilter = new FormControl('');
+  pyLabelFilter = new FormControl('');
+  pyIDFilter = new FormControl('');
+  pyStatusWorkFilter = new FormControl('');
+  pxUpdateDateTimeFilter = new FormControl('');
   filterValues = {
     pyID: '',
     pyLabel: '',
@@ -73,13 +73,13 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
 
   ngOnInit() {
 
-    this.idFilter.valueChanges
+    this.pyIDFilter.valueChanges
     .subscribe(
-      name => {
+      pyLabel => {
         this.filterValues.pyLabel = pyLabel;
         this.dataSource.filter = JSON.stringify(this.filterValues);
       }
-    )
+    );
     this.getCases();
 
     // this.sortData();
@@ -135,13 +135,13 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
     );
   }
   createFilter(): (data: any, filter: string) => boolean {
-    let filterFunction = function(data, filter): boolean {
-      let searchTerms = JSON.parse(filter);
-      return data.pyLabel.toLowerCase().indexOf(searchTerms.pyLabel) !== -1
+    const filterFunction = function(data, filter): boolean {
+      const searchTerms = JSON.parse(filter);
+      return data.pyLabel.toLowerCase().indexOf(searchTerms.pyLabel) !== -1;
         // && data.id.toString().toLowerCase().indexOf(searchTerms.id) !== -1
         // && data.colour.toLowerCase().indexOf(searchTerms.colour) !== -1
         // && data.pet.toLowerCase().indexOf(searchTerms.pet) !== -1;
-    }
+    };
     return filterFunction;
   }
 
