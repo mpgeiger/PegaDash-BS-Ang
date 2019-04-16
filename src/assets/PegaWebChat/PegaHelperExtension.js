@@ -6,7 +6,7 @@ function preparePegaAParams(gadgetName) {
 	pegaAParamObj.Password="";
   */
     pegaAParamObj.AppName="WebChatbot";	  
-	pegaAParamObj.HelpConfigurationName="BNY";  
+	pegaAParamObj.HelpConfigurationName="BNY New";  
   	pegaAParamObj.ContactId=getCookie("ContactID");
 	pegaAParamObj.AccountNumber=getCookie("AccountNumber");
 	pegaAParamObj.username=getCookie("UserName");

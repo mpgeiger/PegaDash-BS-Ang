@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientJsonpModule  } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,6 +16,7 @@ import { AuthGuard } from './shared';
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
+        HttpClientJsonpModule,
         LanguageTranslationModule,
         AppRoutingModule,
         // SharedPegaModule

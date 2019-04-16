@@ -22,145 +22,148 @@ export class CaseService {
   // get a case of given id
   getCase(id) {
 
-    var caseParams = new HttpParams();
-    var caseHeaders = new HttpHeaders();
-    const encodedUser = localStorage.getItem("encodedUser");
+    const caseParams = new HttpParams();
+    let caseHeaders = new HttpHeaders();
+    const encodedUser = localStorage.getItem('encodedUser');
 
     caseHeaders = caseHeaders.append('Authorization', 'Basic ' + encodedUser);
-    caseHeaders = caseHeaders.append('Content-Type', "application/json");
-    caseHeaders = caseHeaders.append('Access-Control-Expose-Headers', "etag");
+    caseHeaders = caseHeaders.append('Content-Type', 'application/json');
+    caseHeaders = caseHeaders.append('Access-Control-Expose-Headers', 'etag');
 
-    return this.http.get(this.caseUrl + "/" + id,
-      { observe: 'response', params: caseParams, headers: caseHeaders});   
+    return this.http.get(this.caseUrl + '/' + id,
+      { observe: 'response', params: caseParams, headers: caseHeaders});
   }
 
   // get a list of possible case types to create
   getCaseTypes() {
-    var caseParams = new HttpParams();
-    var caseHeaders = new HttpHeaders();
-    const encodedUser = localStorage.getItem("encodedUser");
+    const caseParams = new HttpParams();
+    let caseHeaders = new HttpHeaders();
+    const encodedUser = localStorage.getItem('encodedUser');
 
     caseHeaders = caseHeaders.append('Authorization', 'Basic ' + encodedUser);
-    caseHeaders = caseHeaders.append('Content-Type', "application/json");
+    caseHeaders = caseHeaders.append('Content-Type', 'application/json');
 
     return this.http.get(this.caseTypeUrl,
-      { observe: 'response', params: caseParams, headers: caseHeaders});   
+      { observe: 'response', params: caseParams, headers: caseHeaders});
   }
 
-  // get a case that is "new" 
+  // get a case that is "new"
   getCaseCreationPage(id) {
-    var caseParams = new HttpParams();
-    var caseHeaders = new HttpHeaders();
-    const encodedUser = localStorage.getItem("encodedUser");
+    const caseParams = new HttpParams();
+    let caseHeaders = new HttpHeaders();
+    const encodedUser = localStorage.getItem('encodedUser');
 
     caseHeaders = caseHeaders.append('Authorization', 'Basic ' + encodedUser);
-    caseHeaders = caseHeaders.append('Content-Type', "application/json");
+    caseHeaders = caseHeaders.append('Content-Type', 'application/json');
 
-    return this.http.get(this.caseTypeUrl + "/" + id,
-      { observe: 'response', params: caseParams, headers: caseHeaders});  
-  
+    return this.http.get(this.caseTypeUrl + '/' + id,
+      { observe: 'response', params: caseParams, headers: caseHeaders});
+
 
   }
 
   // create a case (with new or skip new)
   createCase(id, content) {
-    var caseParams = new HttpParams();
+    const caseParams = new HttpParams();
 
-    var caseBody: any = {};
+    const caseBody: any = {};
     caseBody.caseTypeID = id;
-    caseBody.processID = "pyStartCase",
+    caseBody.processID = 'pyStartCase',
     caseBody.content = content;
-    const encodedUser = localStorage.getItem("encodedUser");
+    const encodedUser = localStorage.getItem('encodedUser');
 
-    var caseHeaders = new HttpHeaders();
+    let caseHeaders = new HttpHeaders();
     caseHeaders = caseHeaders.append('Authorization', 'Basic ' + encodedUser);
-    caseHeaders = caseHeaders.append('Content-Type', "application/json");
+    caseHeaders = caseHeaders.append('Content-Type', 'application/json');
 
     return this.http.post(this.caseUrl, caseBody,
-      { observe: 'response', params: caseParams, headers: caseHeaders});   
+      { observe: 'response', params: caseParams, headers: caseHeaders});
   }
 
   // update a case, save to server
   updateCase(caseID, eTag, actionName, body) {
-    var caseParams = new HttpParams();
-    if (actionName && actionName != "") {
+    let caseParams = new HttpParams();
+    if (actionName && actionName !== '') {
       caseParams = caseParams.append('actionID', actionName);
     }
-    const encodedUser = localStorage.getItem("encodedUser");
+    const encodedUser = localStorage.getItem('encodedUser');
 
-    var caseHeaders = new HttpHeaders();
+    let caseHeaders = new HttpHeaders();
     caseHeaders = caseHeaders.append('Authorization', 'Basic ' + encodedUser);
-    caseHeaders = caseHeaders.append('Content-Type', "application/json");
+    caseHeaders = caseHeaders.append('Content-Type', 'application/json');
     caseHeaders = caseHeaders.append('If-Match', '"' + eTag + '"');
-    
-    let oContent = this.refHelper.getPostContent(body);
 
-    let encodedId = encodeURI(caseID);
+    const oContent = this.refHelper.getPostContent(body);
 
-    return this.http.put(this.caseUrl + "/" + encodedId,
+    const encodedId = encodeURI(caseID);
+
+    return this.http.put(this.caseUrl + '/' + encodedId,
      { 'content' : oContent },
-     { observe: 'response', params: caseParams, headers: caseHeaders});   
+     { observe: 'response', params: caseParams, headers: caseHeaders});
   }
 
   // refresh a case, post data, but no save
   refreshCase(myCase, body) {
-    var caseParams = new HttpParams();
-    const encodedUser = localStorage.getItem("encodedUser");
+    const caseParams = new HttpParams();
+    const encodedUser = localStorage.getItem('encodedUser');
 
-    var caseHeaders = new HttpHeaders();
+    let caseHeaders = new HttpHeaders();
     caseHeaders = caseHeaders.append('Authorization', 'Basic ' + encodedUser);
-    caseHeaders = caseHeaders.append('Content-Type', "application/json");
+    caseHeaders = caseHeaders.append('Content-Type', 'application/json');
     caseHeaders = caseHeaders.append('If-Match', myCase.etag);
 
 
-    let oContent = this.refHelper.getPostContent(body);
-    
-    let encodedId = encodeURI(myCase.ID);
+    const oContent = this.refHelper.getPostContent(body);
 
-    return this.http.put(this.caseUrl + "/" + encodedId + endpoints.REFRESH,
+    const encodedId = encodeURI(myCase.ID);
+
+    return this.http.put(this.caseUrl + '/' + encodedId + endpoints.REFRESH,
      { 'content' : oContent },
-     { observe: 'response', params: caseParams, headers: caseHeaders});     
+     { observe: 'response', params: caseParams, headers: caseHeaders});
   }
 
   // get a case with a given page (new, review, confirm)
   getPage(caseID, pageID) {
 
-    var caseParams = new HttpParams();
-    var caseHeaders = new HttpHeaders();
-    const encodedUser = localStorage.getItem("encodedUser");
+    const caseParams = new HttpParams();
+    let caseHeaders = new HttpHeaders();
+    const encodedUser = localStorage.getItem('encodedUser');
 
     caseHeaders = caseHeaders.append('Authorization', 'Basic ' + encodedUser);
-    caseHeaders = caseHeaders.append('Content-Type', "application/json");
+    caseHeaders = caseHeaders.append('Content-Type', 'application/json');
 
-    return this.http.get(this.caseUrl + "/" + caseID + endpoints.PAGES + "/" + pageID,
-      { observe: 'response', params: caseParams, headers: caseHeaders});   
+    return this.http.get(this.caseUrl + '/' + caseID + endpoints.PAGES + '/' + pageID,
+      { observe: 'response', params: caseParams, headers: caseHeaders});
   }
 
   // get a case and a view layout
   getView(caseID, viewID) {
 
-    var caseParams = new HttpParams();
-    var caseHeaders = new HttpHeaders();
-    const encodedUser = localStorage.getItem("encodedUser");
+    const caseParams = new HttpParams();
+    let caseHeaders = new HttpHeaders();
+    const encodedUser = localStorage.getItem('encodedUser');
 
     caseHeaders = caseHeaders.append('Authorization', 'Basic ' + encodedUser);
-    caseHeaders = caseHeaders.append('Content-Type', "application/json");
+    caseHeaders = caseHeaders.append('Content-Type', 'application/json');
 
-    return this.http.get(this.caseUrl + "/" + caseID + endpoints.VIEWS + "/" + viewID,
-      { observe: 'response', params: caseParams, headers: caseHeaders});   
+    return this.http.get(this.caseUrl + '/' + caseID + endpoints.VIEWS + '/' + viewID,
+      { observe: 'response', params: caseParams, headers: caseHeaders});
   }
 
 
   cases() {
-    var caseParams = new HttpParams();
-    var caseHeaders = new HttpHeaders();
-    const encodedUser = localStorage.getItem("encodedUser");
+    const caseParams = new HttpParams();
+    let caseHeaders = new HttpHeaders();
+    const encodedUser = localStorage.getItem('encodedUser');
 
     caseHeaders = caseHeaders.append('Authorization', 'Basic ' + encodedUser);
-    caseHeaders = caseHeaders.append('Content-Type', "application/json");
-
+    caseHeaders = caseHeaders.append('Content-Type', 'application/json');
+    // caseHeaders = caseHeaders.append('Authorization', 'Basic ' + encodedUser);
+    // caseHeaders = caseHeaders.append('Access-Control-Allow-Origin', '10.2.200.85');
+    // caseHeaders = caseHeaders.append('Access-Control-Allow-Headers', '*');
+    // caseHeaders = caseHeaders.append('Origin', '*');
     return this.http.get(this.caseUrl,
-      { observe: 'response', params: caseParams, headers: caseHeaders});   
+      { observe: 'response', params: caseParams, headers: caseHeaders});
   }
 
 

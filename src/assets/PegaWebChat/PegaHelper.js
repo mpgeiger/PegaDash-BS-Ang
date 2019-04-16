@@ -138,7 +138,7 @@ function InvokeAdvisor() {
   $("#OnlineHelp").addClass("alerting");
   $("#launcher").hide();
   var PegaAParamObject = preparePegaAParams("OnlineHelp"); 
-  PegaAParamObject.channelId="botfaf4e78daa4d40ecb457fbdd0202b47d";  
+  PegaAParamObject.channelId="botfdecd19687704c9fbdb5d5034041b30a";  
   pega.web.api.doAction("OnlineHelp", "createNewWork", "Work-Channel-Chat", "pyStartCase", PegaAParamObject);
 }
 
@@ -162,7 +162,7 @@ function handleResize(command) {
 function monitorPreviewLoader(){   
     if (previewLoaded == false) { 
 	    var PegaAParamObject = preparePegaAParams("PreviewGadget");
-      PegaAParamObject.channelId="botfaf4e78daa4d40ecb457fbdd0202b47d"; 
+      PegaAParamObject.channelId="botfdecd19687704c9fbdb5d5034041b30a"; 
 	    pega.web.api.doAction("PreviewGadget", "display", "Preview", "PegaCS-OnlineHelp-Triage-WebChatbot", null, true, null, PegaAParamObject);	
       MonitorTimeout = MonitorTimeout + 2000;		
  	    previewMonitor = setTimeout(monitorPreviewLoader, MonitorTimeout);
