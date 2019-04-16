@@ -24,9 +24,9 @@ export class UserService {
     var authParams = new HttpParams();
     var authHeaders = new HttpHeaders();
     authHeaders = authHeaders.append('Authorization', 'Basic ' + encodedUser);
-    // authHeaders = authHeaders.append('Access-Control-Allow-Origin', '*');
-    // authHeaders = authHeaders.append('Access-Control-Allow-Headers', '*');
-    // authHeaders = authHeaders.append('Origin', '*');
+    authHeaders = authHeaders.append('Access-Control-Allow-Origin', '*');
+    authHeaders = authHeaders.append('Access-Control-Allow-Headers', '*');
+    authHeaders = authHeaders.append('Origin', '*');
 
     localStorage.setItem("userName", userName);
     localStorage.setItem("encodedUser", encodedUser);
