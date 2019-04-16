@@ -74,13 +74,13 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
 
   ngOnInit() {
 
-    this.pyLabelFilter.valueChanges
-    .subscribe(
-      pyLabel => {
-        this.filterValues.pyLabel = pyLabel;
-        this.dataSource.filter = JSON.stringify(this.filterValues);
-      }
-    );
+    // this.pyLabelFilter.valueChanges
+    // .subscribe(
+    //   pyLabel => {
+    //     this.filterValues.pyLabel = pyLabel;
+    //     this.dataSource.filter = JSON.stringify(this.filterValues);
+    //   }
+    // );
     this.getCases();
 
     // this.sortData();

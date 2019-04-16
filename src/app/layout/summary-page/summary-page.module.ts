@@ -1,11 +1,7 @@
-// import { SharedPegaModule } from './../../../../.history/src/app/shared-pega/shared-pega.module_20190415092211';
-// import { LayoutModule } from '../layout.module';
 
 import { NgModule } from '@angular/core';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { CommonModule } from '@angular/common';
-
 import { SummaryPageRoutingModule } from './summary-page-routing.module';
 import { SummaryPageComponent } from './summary-page.component';
 // import { RecentTreasurerCaseListComponent } from '../pega/recentTreasurerCases/recentTreasurerCaseList.component';

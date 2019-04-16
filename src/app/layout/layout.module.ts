@@ -4,7 +4,6 @@ import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/cor
 
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -15,7 +14,7 @@ import { NgbdModalComponent, NgbdModalComponentNBA, modalRCICaseType, NgbdModalC
 // import { NgbPagination } from './pega/index';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { NgbDatePipe } from './pega/_pipes/ngbDatePipe';
-import { MatTableModule, MatInputModule, MatPaginatorModule, MatSortModule  } from '@angular/material';
+// import { MatTableModule, MatInputModule, MatPaginatorModule, MatSortModule  } from '@angular/material';
 // import { FlexLayoutModule } from '@angular/fle';
 
 // import { NgbdPaginationCustomization } from './pega/ngPaging/pagination-customization.component';
@@ -38,13 +37,13 @@ import { SharedPegaModule } from '../shared-pega/shared-pega.module';
           CommonModule
           // , FlexLayoutModule
         , LayoutRoutingModule
-        , MatTableModule
-        , MatInputModule
-        , MatPaginatorModule
-        , MatSortModule
+        // , MatTableModule
+        // , MatInputModule
+        // , MatPaginatorModule
+        // , MatSortModule
         , TranslateModule
-        , FormsModule
-        , ReactiveFormsModule
+        // , FormsModule
+        // , ReactiveFormsModule
         // , NgbPaginationModule
         , NgbDropdownModule
         , NgxCurrencyModule
@@ -93,10 +92,10 @@ import { SharedPegaModule } from '../shared-pega/shared-pega.module';
   , RecentTreasurerCaseListComponent
   // , OpenTaskPageComponent
   , OpenTaskPageModule
-  , MatTableModule
-  , MatPaginatorModule
-  , MatInputModule
-  , MatSortModule
+  // , MatTableModule
+  // , MatPaginatorModule
+  // , MatInputModule
+  // , MatSortModule
 ]
   , schemas: [
     NO_ERRORS_SCHEMA
