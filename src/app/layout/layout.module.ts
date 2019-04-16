@@ -28,6 +28,7 @@ import { SharedPegaDataService } from './pega/_services/sharedpegadata.service';
 import { OpenTaskPageModule } from './opentask-page/opentask-page.module';
 import { OpenTaskPageComponent } from './opentask-page/opentask-page.component';
 import { SharedPegaModule } from '../shared-pega/shared-pega.module';
+// import { PegaPieChartComponent } from './pega/pega-pie-chart/pega-pie-chart.component';
 // import { CaselistComponent } from './pega/caselist/caselist.component';
 // import { UnifiedtaskComponent } from './pega/';
 // import { DatePickerComponent } from './bs-component/components/index';
