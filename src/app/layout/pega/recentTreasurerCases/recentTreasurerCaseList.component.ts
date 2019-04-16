@@ -1,4 +1,4 @@
-import { FormControl } from '@angular/forms';
+// import { FormControl } from '@angular/forms';
 
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 // import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
@@ -12,6 +12,7 @@ import { PagerService } from '../../../_services/pager.service';
 import { SharedPegaDataService } from '../_services/sharedpegadata.service';
 import { Sort } from '@angular/material';
 import {MatTableDataSource, MatPaginator, MatSort} from '@angular/material';
+import { FormControl } from '@angular/forms';
 
 
 export interface TreasurerCases {
@@ -73,7 +74,7 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
 
   ngOnInit() {
 
-    this.pyIDFilter.valueChanges
+    this.pyLabelFilter.valueChanges
     .subscribe(
       pyLabel => {
         this.filterValues.pyLabel = pyLabel;
