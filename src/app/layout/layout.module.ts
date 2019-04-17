@@ -3,6 +3,8 @@
 import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
@@ -27,6 +29,7 @@ import { SharedPegaDataService } from './pega/_services/sharedpegadata.service';
 import { OpenTaskPageModule } from './opentask-page/opentask-page.module';
 import { OpenTaskPageComponent } from './opentask-page/opentask-page.component';
 import { SharedPegaModule } from '../shared-pega/shared-pega.module';
+import { TransactionSummaryComponent } from './pega/transaction-summary/transaction-summary.component';
 // import { PegaPieChartComponent } from './pega/pega-pie-chart/pega-pie-chart.component';
 // import { CaselistComponent } from './pega/caselist/caselist.component';
 // import { UnifiedtaskComponent } from './pega/';
@@ -42,14 +45,15 @@ import { SharedPegaModule } from '../shared-pega/shared-pega.module';
         // , MatPaginatorModule
         // , MatSortModule
         , TranslateModule
-        // , FormsModule
-        // , ReactiveFormsModule
+         , FormsModule
+         , ReactiveFormsModule
         // , NgbPaginationModule
         , NgbDropdownModule
         , NgxCurrencyModule
         // , NgbdPaginationCustomization
         // CreateRCIcaseComponent.forRoot(,
-        , NgbModule.forRoot()
+        // , NgbModule.forRoot()
+        , NgbModule
         , OpenTaskPageModule
         , SharedPegaModule
         // , SharedPegaDataService
@@ -80,18 +84,21 @@ import { SharedPegaModule } from '../shared-pega/shared-pega.module';
   entryComponents: [
     modalRCICaseType
     , NgbdModalContentNBA
-     , CaselistComponent
-    , RecentTreasurerCaseListComponent
+    //  , CaselistComponent
+    // , RecentTreasurerCaseListComponent
     // , OpenTaskPageComponents
     //  , NgbdPaginationCustomization
   ],
 
   exports: [
     // NgbdPaginationCustomization
-  CaselistComponent
-  , RecentTreasurerCaseListComponent
+  // CaselistComponent
+  // , RecentTreasurerCaseListComponent
   // , OpenTaskPageComponent
-  , OpenTaskPageModule
+   OpenTaskPageModule
+    // , ReactiveFormsModule
+
+
   // , MatTableModule
   // , MatPaginatorModule
   // , MatInputModule

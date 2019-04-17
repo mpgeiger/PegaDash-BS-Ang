@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   MatAutocompleteModule
+  , MatBadgeModule
   , MatButtonModule
   , MatCardModule
   , MatDatepickerModule
   , MatDialogModule
   , MatIconModule
+
   , MatInputModule
   , MatFormFieldModule
   , MatMenuModule
@@ -27,6 +29,7 @@ import {
   imports: [
     CommonModule
     , MatAutocompleteModule
+    , MatBadgeModule
     , MatButtonModule
     , MatCardModule
     , MatDatepickerModule
@@ -48,6 +51,7 @@ import {
   ],
   exports: [
     MatAutocompleteModule
+    , MatBadgeModule
     , MatButtonModule
     , MatCardModule
     , MatDatepickerModule

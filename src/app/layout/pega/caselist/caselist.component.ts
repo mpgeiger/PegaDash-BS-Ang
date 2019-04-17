@@ -99,22 +99,22 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
     this.cService.cases().subscribe(
       response => {
 
-        console.log(' get cases SERVICE-->' + JSON.stringify(response.body));
+       // console.log(' get cases SERVICE-->' + JSON.stringify(response.body));
         const resSTR = JSON.stringify(this.getResults(response.body));
         const resJSON = JSON.parse(resSTR);
-        console.log(' get cases  SERVICE-->', resJSON._body);
+       // console.log(' get cases  SERVICE-->', resJSON._body);
         // this.unifiedtask$ = new MatTableDataSource<any>(this.getResults(response.body));
         this.headers = response.headers;
         // this.unifiedtaskObject$ = JSON.parse(this.getResults(response.body));
         this.cases = Object.keys(this.getResults(response.body)).map(it => this.getResults(response.body)[it]);
         // this.cases = JSON.parse(response.body);
 
+        localStorage.setItem('caselist', this.cases.length.toString());
+        console.log(' IN CASELIST.COMPONENT  # CASES -->' + localStorage.getItem('caselist'));
+
+
+
         this.dataSource.data = this.cases as Cases[];
-
-        // this.ngAfterViewInit();
-
-
-        console.log('XXX unifiedtaskObject-->  ', this.cases);
 
         // this.unifiedtask$.paginator = this.paginator;
         // this.unifiedtask$.sort = this.sort;

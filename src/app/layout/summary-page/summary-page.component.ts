@@ -11,11 +11,15 @@ import { routerTransition } from '../../router.animations';
 export class SummaryPageComponent implements OnInit {
     constructor() {}
     numUnifiedTaskList$ = '';
+    D_RecentTreasurerCases$ = '';
+    cases$ = '';
 
     // ngOnInit() {}
     ngOnInit() {
 
       this.numUnifiedTaskList$ = localStorage.getItem('numUnifiedTaskList');
+      this.D_RecentTreasurerCases$ = localStorage.getItem('D_RecentTreasurerCases');
+      // this.D_RecentTreasurerCases$ = '99';
       }
 
     }

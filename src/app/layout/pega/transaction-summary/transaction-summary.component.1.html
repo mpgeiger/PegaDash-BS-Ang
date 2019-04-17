@@ -1,0 +1,69 @@
+<form formGroupName="filterGroup">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+      <!-- <th class="header" mat-header-cell *matHeaderCellDef>
+        Tenant Name
+        <div>
+<mat-input-container floatPlaceholder="auto">
+    <input matInput formControlName="nameFilter"
+           type="text"
+           required
+           placeholder="">
+</mat-input-container>
+
+        </div>
+      </th> -->
+
+      <th class="header" mat-header-cell *matHeaderCellDef>
+          N ame
+          <!-- <mat-form-field class="filter" floatLabel="never">
+            <mat-label>Search</mat-label>
+          </mat-form-field>
+       -->
+        <mat-form-field floatPlaceholder="auto">
+            <input matInput formControlName="name"
+                   type="text"
+                   required
+                   placeholder="">
+        </mat-form-field >
+      </th>
+
+      <td mat-cell *matCellDef="let person">{{person.name}}</td>
+    </ng-container>
+     <ng-container matColumnDef="id">
+      <th class="header" mat-header-cell *matHeaderCellDef>
+        ID
+        <mat-form-field class="filter" floatLabel="never">
+          <mat-label>Search</mat-label>
+          <input matInput formControlName="id" >
+        </mat-form-field>
+      </th>
+      <td mat-cell *matCellDef="let person">{{person.id}}</td>
+    </ng-container>
+    <ng-container matColumnDef="favouriteColour">
+      <th class="header" mat-header-cell *matHeaderCellDef>
+        Favourite Colour
+        <mat-form-field class="filter" floatLabel="never">
+          <mat-label>Search</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </th>
+      <td mat-cell *matCellDef="let person">{{person.colour}}</td>
+    </ng-container>
+    <ng-container matColumnDef="pet">
+      <th class="header" mat-header-cell *matHeaderCellDef>
+        Pet
+        <mat-form-field class="filter" floatLabel="never">
+          <mat-label>Search</mat-label>
+          <input matInput >
+        </mat-form-field>
+      </th>
+      <td mat-cell *matCellDef="let person">{{person.pet}}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row
+      *matRowDef="let person; columns: columnsToDisplay"></tr>
+  </table>
+</form>
+
+Filter Group: {{filterGroup.value}}

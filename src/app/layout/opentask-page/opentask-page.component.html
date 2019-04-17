@@ -19,7 +19,7 @@
       <div class="col-lg-8">
           <div class="card card-default">
               <div class="card-header">
-                  <i class="fa fa-tasks"></i> Open Tasks  <span class="badge  badge-pill badge-danger">{{utCount}}</span>
+                  <i class="fa fa-tasks"></i> Case List  <span class="badge  badge-pill badge-danger">{{cases$}}</span>
               </div>
               <app-caselist></app-caselist>
               <!-- /.card-header -->
@@ -32,7 +32,7 @@
       <div class="col-lg-4">
           <div class="card card-default">
               <div class="card-header">
-                  <i class="fa fa-tasks"></i> Open Tasks  <span class="badge  badge-pill badge-danger" ngModel="utCount">{{utCount}}</span>
+                  <i class="fa fa-tasks"></i> Recent Treasurer <span class="badge  badge-pill badge-danger" ngModel="utCount">{{D_RecentTreasurerCases$}}</span>
               </div>
               <!-- /.card-header -->
 <app-recentTreasurerCaseList></app-recentTreasurerCaseList>

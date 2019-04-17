@@ -11,4 +11,5 @@ export * from './create-rcicase/create-rcicase.component';
 export * from './maintabs/maintabs.component';
 export * from './recentTreasurerCases/recentTreasurerCaseList.component';
 export * from './ngPaging/pagination.component';
+export * from './transaction-summary/transaction-summary.component';
 export * from './unifiedtask/unifiedtask.component';

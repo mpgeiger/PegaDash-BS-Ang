@@ -2,18 +2,30 @@
   <!-- <h2 class="text-muted">Account Summary for <small>First Lastnam</small></h2> -->
   <div class="row center">
     <div class="col-12">
-        <mat-card class="example-card">
-            <mat-card-header>
-                <mat-card-title> Recent Cases <span class="badge  badge-pill badge-danger"  matTooltip="Currently {{D_RecentTreasurerCases$}} cases open ">{{D_RecentTreasurerCases$}} </span>  </mat-card-title>
-                <!--
-                  <span class="material-label mdl-badge" data-badge="4"> XXX </span>
-                  <mat-card-subtitle>  <span matBadge="4" matBadgeOverlap="false">sdxfsdf </span><span class="badge  badge-pill badge-danger" ngModel="utCount"></span></mat-card-subtitle> -->
-            </mat-card-header>
-            <!-- <div class="badge" data-badge="5"> YYY </div> -->
-            <app-recentTreasurerCaseList></app-recentTreasurerCaseList>
+      <div class="card card-default">
+        <div class="card-header">
+          <h3>Pending Requests   <span class="badge  badge-pill badge-danger" ngModel="utCount">{{D_RecentTreasurerCases$}}</span></h3>
+        </div>
+        <div class="card-body">
+          <!-- <ul>
+            <li class="flex"> -->
+              <div class="row">
+                  <app-recentTreasurerCaseList></app-recentTreasurerCaseList>
 
-            </mat-card>
-
+                <!-- <div class="col-10 col-sm-8">
+                  <span class="font-weight-bolder">
+                  <a href="javascript:;">Fraud investigation</a>
+                  <div class="meta">R-274924 | 1d ago via email | <span class="danger">Urgent</span></div>
+                </span>
+                </div>
+                <div class="col-2 col-sm-4 h4 align-middle text-right">
+                  <span class="badge badge-danger">In progress</span>
+                </div> -->
+              </div>
+            <!-- </li>
+          </ul> -->
+        </div>
+      </div>
     </div>
   </div>
   <!-- <div class="row">
@@ -81,9 +93,8 @@
         </div>
         <div class="card-body">
           <div class="card mb-3">
-            <app-transaction-summary></app-transaction-summary>
               <app-caselist [lpp]="4"></app-caselist>
-              <!-- <app-recentTreasurerCaseList></app-recentTreasurerCaseList> -->
+              <app-recentTreasurerCaseList></app-recentTreasurerCaseList>
 
           </div>
         </div>

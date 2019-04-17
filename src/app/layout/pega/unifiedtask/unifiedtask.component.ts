@@ -114,16 +114,16 @@ export class UnifiedtaskComponent implements OnInit {
 
     this.datapage.getDataPage('D_UnifiedWorkList', unifiedtaskParams).subscribe(
       response => {
-        console.log(' getunifiedtask SERVICE-->', this.getResults(response.body));
+       // console.log(' getunifiedtask SERVICE-->', this.getResults(response.body));
         const resSTR = JSON.stringify(this.getResults(response.body));
         const resJSON = JSON.parse(resSTR);
-        console.log(' getunifiedtask SERVICE-->', resJSON._body);
+      //  console.log(' getunifiedtask SERVICE-->', resJSON._body);
         // this.unifiedtask$ = new MatTableDataSource<any>(this.getResults(response.body));
         this.headers = response.headers;
         // this.unifiedtaskObject$ = JSON.parse(this.getResults(response.body));
         this.tasks = Object.keys(this.getResults(response.body)).map(it => this.getResults(response.body)[it]);
 
-        console.log('XXX unifiedtaskObject-->  ', this.tasks);
+     //   console.log('XXX unifiedtaskObject-->  ', this.tasks);
 
         // this.unifiedtask$.paginator = this.paginator;
         // this.unifiedtask$.sort = this.sort;

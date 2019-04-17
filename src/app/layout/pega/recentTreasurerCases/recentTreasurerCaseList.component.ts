@@ -13,6 +13,7 @@ import { SharedPegaDataService } from '../_services/sharedpegadata.service';
 import { Sort } from '@angular/material';
 import {MatTableDataSource, MatPaginator, MatSort} from '@angular/material';
 import { FormControl } from '@angular/forms';
+import { stringify } from 'querystring';
 
 
 export interface TreasurerCases {
@@ -102,10 +103,10 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
     this.datapage.getDataPage('D_RecentTreasurerCases', dParams).subscribe(
       response => {
 
-        console.log(' get D_RecentTreasurerCases -->' + JSON.stringify(response.body));
+        // console.log(' get D_RecentTreasurerCases -->' + JSON.stringify(response.body));
         const resSTR = JSON.stringify(this.getResults(response.body));
         const resJSON = JSON.parse(resSTR);
-        console.log(' get D_RecentTreasurerCases-->', resJSON._body);
+        // console.log(' get D_RecentTreasurerCases-->', resJSON._body);
         // this.unifiedtask$ = new MatTableDataSource<any>(this.getResults(response.body));
         this.headers = response.headers;
         // this.unifiedtaskObject$ = JSON.parse(this.getResults(response.body));
@@ -113,12 +114,16 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
         // this.cases = JSON.parse(response.body);
        // this.sortedData = this.cases.slice();
         this.dataSource.data = this.cases as TreasurerCases[];
-        this.dataSource.filterPredicate = this.createFilter();
+        // this.dataSource.filterPredicate = this.createFilter();
+
+
+        localStorage.setItem('D_RecentTreasurerCases', this.cases.length.toString());
+
        // this.sortedData = this.cases.slice();
         // this.ngAfterViewInit();
 
 
-        console.log('XXX D_RecentTreasurerCases-->  ', this.cases);
+        console.log('count of D_RecentTreasurerCases-->  ', localStorage.getItem('D_RecentTreasurerCases'));
 
         // this.unifiedtask$.paginator = this.paginator;
         // this.unifiedtask$.sort = this.sort;
@@ -151,27 +156,27 @@ public doFilter = (value: string) => {
     this.dataSource.filter = value.trim().toLocaleLowerCase();
   }
 
-  sortData(sort: Sort) {
-    const data = this.cases.slice();
-    if (!sort.active || sort.direction === '') {
-      this.sortedData = data;
-      return;
-    }
+  // sortData(sort: Sort) {
+  //   const data = this.cases.slice();
+  //   if (!sort.active || sort.direction === '') {
+  //     this.sortedData = data;
+  //     return;
+  //   }
 
-    this.sortedData = data.sort((a, b) => {
-      const isAsc = sort.direction === 'asc';
-      switch (sort.active) {
-        // displayedColumns = ['pyID', 'pyLabel', 'pyStatusWork', 'pxUpdateDateTime'];
+  //   this.sortedData = data.sort((a, b) => {
+  //     const isAsc = sort.direction === 'asc';
+  //     switch (sort.active) {
+  //       // displayedColumns = ['pyID', 'pyLabel', 'pyStatusWork', 'pxUpdateDateTime'];
 
-        case 'pyID': return compare(a.pyID, b.pyID, isAsc);
-        case 'pyLabel': return compare(a.pyLabel, b.pyLabel, isAsc);
-        case 'pyStatusWork': return compare(a.pyStatusWork, b.pyStatusWork, isAsc);
-        case 'pxUpdateDateTime': return compare(a.pxUpdateDateTime, b.pxUpdateDateTime, isAsc);
-        // case 'protein': return compare(a.protein, b.protein, isAsc);
-        default: return 0;
-      }
-    });
-  }
+  //       case 'pyID': return compare(a.pyID, b.pyID, isAsc);
+  //       case 'pyLabel': return compare(a.pyLabel, b.pyLabel, isAsc);
+  //       case 'pyStatusWork': return compare(a.pyStatusWork, b.pyStatusWork, isAsc);
+  //       case 'pxUpdateDateTime': return compare(a.pxUpdateDateTime, b.pxUpdateDateTime, isAsc);
+  //       // case 'protein': return compare(a.protein, b.protein, isAsc);
+  //       default: return 0;
+  //     }
+  //   });
+  // }
   getResults(data) {
     // localStorage.setItem('numUnifiedTaskList', data.pxResults.length);
     return data.pxResults;
@@ -182,6 +187,6 @@ public doFilter = (value: string) => {
 
 }
 
-function compare(a: number | string, b: number | string, isAsc: boolean) {
-  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
-}
+// function compare(a: number | string, b: number | string, isAsc: boolean) {
+//   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+// }

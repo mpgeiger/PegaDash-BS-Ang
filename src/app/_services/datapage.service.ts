@@ -33,9 +33,11 @@ export class DatapageService {
 
     //  results.json().then((data) => { console.log(data) });
     // console.log('QQQ',JSON.stringify(results));
-    this.pxResults = this.http.get(this.dataPageUrl + '/' + id,
-      { observe: 'response', params: dpParams, headers: dataHeaders });
-    console.log('QQQ', JSON.stringify(this.pxResults));
+
+
+    // this.pxResults = this.http.get(this.dataPageUrl + '/' + id,
+    //   { observe: 'response', params: dpParams, headers: dataHeaders });
+    // console.log('QQQ', JSON.stringify(this.pxResults));
 
     // this.pxResults = this.http
     //   .get(this.dataPageUrl + '/' + id, { observe: 'response', params: dpParams, headers: dataHeaders })

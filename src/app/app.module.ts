@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { LanguageTranslationModule } from './shared/modules/language-translation/language-translation.module';
 
@@ -17,7 +18,7 @@ import { AuthGuard } from './shared';
     imports: [
       BrowserModule,
       FormsModule,
-      ReactiveFormsModule,
+       ReactiveFormsModule,
         CommonModule,
         AppMaterialModule,
         BrowserAnimationsModule,
@@ -28,6 +29,7 @@ import { AuthGuard } from './shared';
     ],
     declarations: [AppComponent],
     exports: [
+      // ReactiveFormsModule
       // HttpClientModule,
       // HttpParams
     ],

@@ -13,8 +13,9 @@ export class OpenTaskPageComponent implements OnInit {
     constructor(public _pegaDataService: SharedPegaDataService) {
 
     }
-    numUnifiedTaskList$ = '';
-    utCount = 44;
+    D_RecentTreasurerCases$ = '';
+    cases$ = '';
+    // utCount = 44;
 
     // ngOnInit() {}
     ngOnInit() {
@@ -22,8 +23,11 @@ export class OpenTaskPageComponent implements OnInit {
       const ot = localStorage.getItem('ls_UTOpen');
       console.log(' share OpenTasks -->' + ot);
       // this.utCount = this._pegaDataService.getOption();
-      this.utCount =  parseInt(localStorage.getItem('numUnifiedTaskList'));
-      this.numUnifiedTaskList$ = localStorage.getItem('numUnifiedTaskList');
+      //this.utCount =  parseInt(localStorage.getItem('D_RecentTreasurerCases'));
+      this.D_RecentTreasurerCases$ = localStorage.getItem('D_RecentTreasurerCases');
+      console.log('   # CASES -->' + localStorage.getItem('cases'));
+      this.cases$ = localStorage.getItem('caselist');
+
 
       console.log(' Local Storage test GET-->' + localStorage.getItem('numUnifiedTaskList'));
       }
