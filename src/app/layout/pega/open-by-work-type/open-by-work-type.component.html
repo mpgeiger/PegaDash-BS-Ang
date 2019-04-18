@@ -43,7 +43,7 @@
           <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter" />
         </mat-form-field>
       </div>
-      <table class="table" mat-table [dataSource]="dataSource" matSort>
+      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z1">
         <!-- <table class="table"  > -->
         <ng-container matColumnDef="pyLabel">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Work Type</th>
@@ -62,7 +62,7 @@
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
     </ng-container>
     <!-- <mat-paginator [pageSize]="10" [pageSizeOptions]="[2, 4, 6, 10, 20,200]"></mat-paginator> -->
