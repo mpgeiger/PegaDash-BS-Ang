@@ -9,6 +9,7 @@ export * from './worklistpanelsection/worklistpanelsection.component';
 export * from './casedetails/casedetails.component';
 export * from './create-rcicase/create-rcicase.component';
 export * from './maintabs/maintabs.component';
+export * from './nba-offer/nba-offer.component';
 export * from './recentTreasurerCases/recentTreasurerCaseList.component';
 export * from './ngPaging/pagination.component';
 export * from './transaction-summary/transaction-summary.component';

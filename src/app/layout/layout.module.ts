@@ -5,6 +5,8 @@ import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/cor
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 import { TranslateModule } from '@ngx-translate/core';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
@@ -30,6 +32,7 @@ import { OpenTaskPageModule } from './opentask-page/opentask-page.module';
 import { OpenTaskPageComponent } from './opentask-page/opentask-page.component';
 import { SharedPegaModule } from '../shared-pega/shared-pega.module';
 import { TransactionSummaryComponent } from './pega/transaction-summary/transaction-summary.component';
+// import { NbaOfferComponent } from './pega/nba-offer/nba-offer.component';
 // import { PegaPieChartComponent } from './pega/pega-pie-chart/pega-pie-chart.component';
 // import { CaselistComponent } from './pega/caselist/caselist.component';
 // import { UnifiedtaskComponent } from './pega/';
@@ -38,7 +41,7 @@ import { TransactionSummaryComponent } from './pega/transaction-summary/transact
 @NgModule({
     imports: [
           CommonModule
-          // , FlexLayoutModule
+        , FlexLayoutModule
         , LayoutRoutingModule
         // , MatTableModule
         // , MatInputModule

@@ -1,7 +1,9 @@
 <div [@routerTransition]>
   <!-- <h2 class="text-muted">Account Summary for <small>First Lastnam</small></h2> -->
-  <div class="row center">
-    <div class="col-12">
+  <!-- <div class="row center"> -->
+    <!-- <div class="col-12"> -->
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+            <div fxFlex="75%">
         <mat-card class="example-card">
             <mat-card-header>
                 <mat-card-title> Recent Cases <span class="badge  badge-pill badge-danger"  matTooltip="Currently {{D_RecentTreasurerCases$}} cases open ">{{D_RecentTreasurerCases$}} </span>  </mat-card-title>
@@ -13,9 +15,13 @@
             <app-recentTreasurerCaseList></app-recentTreasurerCaseList>
 
             </mat-card>
-
-    </div>
-  </div>
+            </div>
+            <div fxFlex="25%">
+              <app-nba-offer></app-nba-offer>
+              </div>
+              </div>
+    <!-- </div> -->
+  <!-- </div> -->
   <!-- <div class="row">
       <div class="col-md-12">
           <ngb-carousel>
