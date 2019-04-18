@@ -26,8 +26,15 @@
     background-color: rgb(219, 219, 219);
   }
 
-
-
+  .mat-card-header-text {
+    margin-top: 12px;
+    vertical-align: middle;
+    margin-left: 15px;
+}
+.header-image {
+  margin-top: 8px;
+    margin-left: 8px;
+}
   .badge {
     font-size: 50%;
     vertical-align: super;

@@ -10,7 +10,7 @@ import { NbaService } from '../../../_services/nba.service';
 export class NbaOfferComponent implements OnInit {
   headers: any;
   showLoading = true;
-  nbas: any = {};
+  nbas: any = [];
 
   constructor(
     private nba: NbaService

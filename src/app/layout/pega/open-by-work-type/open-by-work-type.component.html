@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-12">
+      <div class="d-flex justify-content-end">
+    <i class="material-icons" (click)="toggle($event)" id="pie">
+      pie_chart
+    </i>
+    <i class="material-icons" (click)="toggle($event)" id="bar">
+      bar_chart
+    </i>
+    <i class="material-icons" (click)="toggle($event)" id="table">
+      table_chart
+    </i>
+  </div>
+    <!-- <div *ngIf="!showLoading"> -->
+    <ng-container *ngIf="showBarChart">
+        <canvas baseChart
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [plugins]="barChartPlugins"
+        [colors]="pieColors"
+        [legend]="barChartLegend"
+        [chartType]="barChartType">
+      </canvas>
+    </ng-container>
+    <ng-container *ngIf="showPieChart">
+      <canvas
+        baseChart
+        height="150px"
+        [data]="pieChartData"
+        [options]="pieChartOptions"
+        [labels]="pieChartLabels"
+        [chartType]="pieChartType"
+        [colors]="pieColors"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)"
+      >
+      </canvas>
+    </ng-container>
+    <ng-container *ngIf="showTable">
+      <div fxLayout fxLayoutAlign="center center">
+        <mat-form-field>
+          <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter" />
+        </mat-form-field>
+      </div>
+      <table class="table" mat-table [dataSource]="dataSource" matSort>
+        <!-- <table class="table"  > -->
+        <ng-container matColumnDef="pyLabel">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Work Type</th>
+
+          <td mat-cell *matCellDef="let element">{{ element.pyLabel }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="StringVal1">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header matSortStart="desc">Desc</th>
+          <td mat-cell *matCellDef="let element">{{ element.StringVal1 }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="ResultCount1">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header># Entries</th>
+          <td mat-cell *matCellDef="let element">{{ element.ResultCount1 }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </ng-container>
+    <!-- <mat-paginator [pageSize]="10" [pageSizeOptions]="[2, 4, 6, 10, 20,200]"></mat-paginator> -->
+    <!-- </div> -->
+    <mat-spinner *ngIf="showLoading"></mat-spinner>
+  </div>
+</div>

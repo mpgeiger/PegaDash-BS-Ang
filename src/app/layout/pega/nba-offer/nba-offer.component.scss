@@ -1,0 +1,48 @@
+
+
+
+.nba{
+  .header-image {
+    background-image: url('/assets/images/automated-customer-service-icon.png');
+    background-size: cover;
+    padding-bottom: 8px;
+    padding-top: 8px;
+  }
+  // .card-content {
+    // background: linear-gradient(to bottom, #a49668 50%, #a7a5a6 92%);
+    #card-content {
+      height: 100%;
+      background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(164, 150, 104,.5)); /* Standard syntax (must be last) */
+      padding-bottom: 8px;
+      padding-top: 8px;
+    }
+  // }
+
+  .overview-title {
+    text-align: center !important;
+    font-size: 24px;
+    font-weight: 600;
+    // line-height: 64px;
+  }
+  .overview-text{
+    color: black;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: bold;
+  }
+  .benefits-title {
+    text-align: center !important;
+    font-size: 20px;
+    font-weight: 600;
+    // line-height: 64px;
+  }
+
+  .benefits-text {
+    color: black;
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+}

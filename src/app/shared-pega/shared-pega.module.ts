@@ -1,8 +1,16 @@
+import { OpenAssignmentService } from './../_messages/openassignment.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChartsModule as Ng2Charts } from 'ng2-charts';
+// import { ChartDataLabels } from 'chartjs-plugin-datalabels';
+
 import { AppMaterialModule } from '../app-material/app-material.module';
-import { CaselistComponent, NbaOfferComponent, PegaPieChartComponent, RecentTreasurerCaseListComponent, TransactionSummaryComponent } from '../layout/pega';
+import { CaselistComponent
+  , NbaOfferComponent
+  , OpenByWorkTypeComponent
+  , PegaPieChartComponent
+  , RecentTreasurerCaseListComponent
+  , TransactionSummaryComponent } from '../layout/pega';
 
 @NgModule({
   imports: [
@@ -16,14 +24,18 @@ import { CaselistComponent, NbaOfferComponent, PegaPieChartComponent, RecentTrea
   ],
   declarations: [
     CaselistComponent
+    // , ChartDataLabels
     , NbaOfferComponent
+    , OpenByWorkTypeComponent
     , PegaPieChartComponent
     , RecentTreasurerCaseListComponent
     , TransactionSummaryComponent
   ],
   exports: [
       CaselistComponent
+    // , ChartDataLabels
     , NbaOfferComponent
+    , OpenByWorkTypeComponent
     , PegaPieChartComponent
     , RecentTreasurerCaseListComponent
     , TransactionSummaryComponent

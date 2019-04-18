@@ -1,9 +1,9 @@
 <div [@routerTransition]>
   <!-- <h2 class="text-muted">Account Summary for <small>First Lastnam</small></h2> -->
-  <!-- <div class="row center"> -->
-    <!-- <div class="col-12"> -->
-        <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
-            <div fxFlex="75%">
+  <div class="row center">
+    <div class="col-xl-8 col-lg-8">
+        <!-- <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center"> -->
+            <!-- <div fxFlex="75%"> -->
         <mat-card class="example-card">
             <mat-card-header>
                 <mat-card-title> Recent Cases <span class="badge  badge-pill badge-danger"  matTooltip="Currently {{D_RecentTreasurerCases$}} cases open ">{{D_RecentTreasurerCases$}} </span>  </mat-card-title>
@@ -16,7 +16,9 @@
 
             </mat-card>
             </div>
-            <div fxFlex="25%">
+            <div class="col-xl-4 col-lg-4">
+
+            <!-- <div fxFlex="25%"> -->
               <app-nba-offer></app-nba-offer>
               </div>
               </div>
@@ -59,8 +61,9 @@
           <h3>Top requests</h3>
         </div>
         <div class="text-center card-body">
-          <img class="img-fluid mx-auto d-block" src='../../../assets/images/top-requests.svg' width="100%">
-          Unable to apply funds? Increase validation of new client beneficiaries.<a href="">Learn more</a>
+            <app-open-by-work-type></app-open-by-work-type>
+          <!-- <img class="img-fluid mx-auto d-block" src='../../../assets/images/top-requests.svg' width="100%">
+          Unable to apply funds? Increase validation of new client beneficiaries.<a href="">Learn more</a> -->
         </div>
       </div>
 
