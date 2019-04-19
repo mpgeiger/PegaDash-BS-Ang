@@ -60,6 +60,7 @@ export class LoginComponent implements OnInit {
               localStorage.setItem('userAccessGroup', operator.pyAccessGroup);
               localStorage.setItem('userWorkGroup', operator.pyWorkGroup);
               localStorage.setItem('userWorkBaskets', JSON.stringify(operator.pyWorkBasketList));
+              localStorage.setItem('userEmailAddress', operator.pyAddresses.Email.pyEmailAddress);
 
               this.glsservice.sendMessage('LoggedIn');
               console.log('Logged In-->', operator.pyUserName);

@@ -140,8 +140,8 @@ function InvokeAdvisor() {
   var PegaAParamObject = preparePegaAParams("OnlineHelp");
   PegaAParamObject.channelId="botfdecd19687704c9fbdb5d5034041b30a";
   if( window && window.localStorage && window.localStorage.length>0){
-    PegaAParamObject.userEmail= window.localStorage.userEmailAddress;
-    }
+	PegaAParamObject.userEmail= window.localStorage.userEmailAddress;
+  }  
   pega.web.api.doAction("OnlineHelp", "createNewWork", "Work-Channel-Chat", "pyStartCase", PegaAParamObject);
 }
 
