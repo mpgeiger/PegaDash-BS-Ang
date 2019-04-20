@@ -11,6 +11,8 @@
       table_chart
     </i>
   </div>
+  <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar>
+
     <!-- <div *ngIf="!showLoading"> -->
     <ng-container *ngIf="showBarChart">
         <canvas baseChart
@@ -67,6 +69,5 @@
     </ng-container>
     <!-- <mat-paginator [pageSize]="10" [pageSizeOptions]="[2, 4, 6, 10, 20,200]"></mat-paginator> -->
     <!-- </div> -->
-    <mat-spinner *ngIf="showLoading"></mat-spinner>
   </div>
 </div>

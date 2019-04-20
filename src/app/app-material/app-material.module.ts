@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+ import { CommonModule } from '@angular/common';
 import {
   MatAutocompleteModule
   , MatBadgeModule
@@ -12,6 +12,7 @@ import {
   , MatInputModule
   , MatFormFieldModule
   , MatMenuModule
+  , MatNativeDateModule
   , MatPaginatorModule
   , MatProgressBarModule
   , MatProgressSpinnerModule
@@ -27,8 +28,8 @@ import {
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
-    , MatAutocompleteModule
+CommonModule,
+     MatAutocompleteModule
     , MatBadgeModule
     , MatButtonModule
     , MatCardModule
@@ -38,6 +39,7 @@ import {
     , MatInputModule
     , MatFormFieldModule
     , MatMenuModule
+    , MatNativeDateModule
     , MatPaginatorModule
     , MatProgressBarModule
     , MatProgressSpinnerModule
@@ -60,6 +62,7 @@ import {
     , MatInputModule
     , MatFormFieldModule
     , MatMenuModule
+    , MatNativeDateModule
     , MatPaginatorModule
     , MatProgressBarModule
     , MatProgressSpinnerModule
@@ -70,6 +73,13 @@ import {
     , MatToolbarModule
     , MatTooltipModule
   ],
+  providers: [
+    MatDatepickerModule
+    , MatBadgeModule
+    , MatCardModule
+
+    , MatTooltipModule
+   ]
 
 })
 export class AppMaterialModule { }

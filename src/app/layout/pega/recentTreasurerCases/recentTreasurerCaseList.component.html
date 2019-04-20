@@ -1,11 +1,18 @@
+
+
 <div fxLayout fxLayoutAlign="center center">
   <mat-form-field >
     <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
   </mat-form-field>
 </div>
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
 <div class="row">
   <div class="col-12">
-    <table class="table" mat-table [dataSource]="dataSource" matSort>
+    <table class="table" mat-table [dataSource]="dataSource" matSort >
     <!-- <table class="table"  > -->
       <ng-container matColumnDef="pyID">
         <th mat-header-cell *matHeaderCellDef  mat-sort-header> ID </th>
@@ -33,9 +40,14 @@
 
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
+
+
     </table>
+    <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar>
     <mat-paginator [pageSize]="2" [pageSizeOptions]="[2, 4, 6, 10, 20]"></mat-paginator>
 
   </div>
 </div>
+

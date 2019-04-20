@@ -31,7 +31,7 @@ export class NbaOfferComponent implements OnInit {
     //   "CustomerID" : "PEGASAFS-WORK-CONTACT CON-488"
     //   , "ContainerName" :  "BNYServices"
     // }
-    this.showLoading = true;
+
     //  this.nba.getCurrentNba('D_TransactionSummary', dParams).subscribe(
      this.nba.getCurrentNba('PEGASAFS-WORK-CONTACT CON-488', 'BNYServices').subscribe(
        response => {

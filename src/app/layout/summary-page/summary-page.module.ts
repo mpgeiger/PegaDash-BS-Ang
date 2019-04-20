@@ -1,8 +1,10 @@
+// import { AppMaterialModule } from './../../../../.history/src/app/app-material/app-material.module_20190420132206';
+// import { AppMaterialModule } from './../../app-material/app-material.module';
 
 import { NgModule } from '@angular/core';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
-import { AppMaterialModule } from '../../app-material/app-material.module';
+import { AppMaterialModule } from './../../app-material/app-material.module';
 import { SummaryPageRoutingModule } from './summary-page-routing.module';
 import { SummaryPageComponent } from './summary-page.component';
 // import { RecentTreasurerCaseListComponent } from '../pega/recentTreasurerCases/recentTreasurerCaseList.component';
@@ -21,6 +23,7 @@ import { StatModule } from '../../shared';
 // import { RecentTreasurerCaseListComponent } from '../pega';
 //  import { RecentTreasurerCaseListComponent } from '../pega';
 import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
+// import { AppMaterialModule } from './../../app-material/app-material.module';
 
 @NgModule({
     imports: [
@@ -28,7 +31,7 @@ import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
       , FormsModule
        , ReactiveFormsModule
       //  , LayoutModule
-      , AppMaterialModule
+       , AppMaterialModule
       , SharedPegaModule
       , NgbCarouselModule
       , NgbAlertModule
@@ -42,6 +45,7 @@ import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
       , NotificationComponent
       , ChatComponent
       , UnifiedtasklistComponent
+
       //  , RecentTreasurerCaseListComponent
       // , RecentTreasurerCaseListCompo nent
 

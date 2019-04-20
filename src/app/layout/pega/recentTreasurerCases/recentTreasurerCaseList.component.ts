@@ -36,6 +36,7 @@ export interface TreasurerCases {
 export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  {
   message: any;
   subscription: Subscription;
+  showLoading = true;
 
   // cases: Array<any> = [];
   // displayedColumns = ['pxRefObjectInsName', 'pyAssignmentStatus', 'pyLabel', 'pxUrgencyAssign'];
@@ -82,7 +83,7 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
     //     this.dataSource.filter = JSON.stringify(this.filterValues);
     //   }
     // );
-    this.getCases();
+    // this.getCases();
 
     // this.sortData();
     // this.dataSource = this.cases;
@@ -90,10 +91,11 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
   }
 
   ngAfterViewInit(): void {
-    this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
-    this.sortedData = this.cases.slice();
+    // this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
+   // this.sortedData = this.cases.slice();
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+    this.getCases();
   }
 
   getCases() {
@@ -124,7 +126,7 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
 
 
         console.log('count of D_RecentTreasurerCases-->  ', localStorage.getItem('D_RecentTreasurerCases'));
-
+        this.showLoading = false;
         // this.unifiedtask$.paginator = this.paginator;
         // this.unifiedtask$.sort = this.sort;
 

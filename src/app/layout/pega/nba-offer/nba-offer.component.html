@@ -6,6 +6,8 @@
     </mat-card-header>
     <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
     <mat-card-content id="card-content">
+        <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar>
+
         <p class="overview-title" >Overview</p>
       <p  class = "md-title" class="overview-text">
           {{item.ShortDescription}}

@@ -27,6 +27,8 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+    <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar>
+
     <mat-paginator [pageSize]="pageSize" [pageSizeOptions]="[2, 4, 6, 10, 20]"></mat-paginator>
 
   </div>

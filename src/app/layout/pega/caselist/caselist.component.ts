@@ -36,6 +36,7 @@ export interface Cases {
 export class CaselistComponent implements OnInit, AfterViewInit  {
   message: any;
   subscription: Subscription;
+  showLoading = true;
 
   // cases: Array<any> = [];
   // displayedColumns = ['pxRefObjectInsName', 'pyAssignmentStatus', 'pyLabel', 'pxUrgencyAssign'];
@@ -73,7 +74,7 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
   }
 
   ngOnInit() {
-    this.getCases();
+
     console.log(' LPP -->' + this.lpp);
     if (this.lpp === null || typeof this.lpp === 'undefined') {
       // $scope.msg = "pls enter something";
@@ -89,10 +90,11 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
    // this.dataSource.sort = this.sort;
    // this.dataSource.paginator = this.paginator;
 
-    this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
-    this.sortedData = this.cases.slice();
+   // this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
+   // this.sortedData = this.cases.slice();
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+    this.getCases();
   }
 
   getCases() {
@@ -115,7 +117,7 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
 
 
         this.dataSource.data = this.cases as Cases[];
-
+        this.showLoading = false;
         // this.unifiedtask$.paginator = this.paginator;
         // this.unifiedtask$.sort = this.sort;
 
