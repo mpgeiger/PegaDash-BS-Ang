@@ -21,7 +21,7 @@
       </ng-container>
 
       <ng-container matColumnDef="pyLabel">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header matSortStart="desc">Label </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header matSortStart="desc">Description </th>
         <!-- <mat-form-field class="filter" floatLabel="never">
           <mat-label>Search</mat-label>
           <input matInput [formControl]="pyLabelFilter">
@@ -30,12 +30,12 @@
       </ng-container>
 
       <ng-container matColumnDef="pyStatusWork">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header > pyStatusWork </th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header > Status </th>
         <td mat-cell *matCellDef="let element"> {{element.pyStatusWork}} </td>
       </ng-container>
       <ng-container matColumnDef="pxUpdateDateTime">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header >Updated</th>
-        <td mat-cell *matCellDef="let element"> {{element.pxUpdateDateTime | date : 'medium' }} </td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header >Last Updated</th>
+        <td mat-cell *matCellDef="let element"> {{element.pxUpdateDateTime | date : 'short' }} </td>
       </ng-container>
 
 
