@@ -12,6 +12,7 @@ export class SummaryPageComponent implements OnInit {
     constructor() {}
     numUnifiedTaskList$ = '';
     D_RecentTreasurerCases$ = '';
+    D_TransactionSummary$ = '';
     cases$ = '';
 
     // ngOnInit() {}
@@ -19,6 +20,7 @@ export class SummaryPageComponent implements OnInit {
 
       this.numUnifiedTaskList$ = localStorage.getItem('numUnifiedTaskList');
       this.D_RecentTreasurerCases$ = localStorage.getItem('D_RecentTreasurerCases');
+      this.D_TransactionSummary$ = localStorage.getItem('D_TransactionSummary');
       // this.D_RecentTreasurerCases$ = '99';
       }
 

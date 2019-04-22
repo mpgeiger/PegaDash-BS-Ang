@@ -17,10 +17,15 @@
             </mat-card>
             </div>
             <div class="col-xl-4 col-lg-4">
+                <mat-card class="nba">
+              <mat-card-header>
+                <div mat-card-avatar class="header-image"></div>
 
-            <!-- <div fxFlex="25%"> -->
+                <mat-card-title> BNY Advice for Treasury </mat-card-title>
+              </mat-card-header>
+
               <app-nba-offer></app-nba-offer>
-              </div>
+              </mat-card>
               </div>
     <!-- </div> -->
   <!-- </div> -->
@@ -37,6 +42,7 @@
           </ngb-carousel>
       </div>
   </div> -->
+  </div>
   <hr>
 
   <div class="row">
@@ -84,19 +90,26 @@
   <hr />
   <div class="row">
     <div class="col-12">
-      <div class="card card-default">
+
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Transaction History <span class="badge  badge-pill badge-danger"  matTooltip="Currently {{D_TransactionSummary$}} cases open ">{{D_TransactionSummary$}} </span>
+                  </mat-card-title>
+                </mat-card-header>
+
+                  <app-transaction-summary></app-transaction-summary>
+</mat-card>
+
+<!--       <div class="card card-default">
         <div class="card-header">
-          <h3>Service History</h3>
+          <h3>Service History <span class="badge  badge-pill badge-danger"  matTooltip="Currently {{D_TransactionSummary$}} cases open ">{{D_TransactionSummary$}} </span>   </h3>
         </div>
         <div class="card-body">
           <div class="card mb-3">
             <app-transaction-summary></app-transaction-summary>
-              <!-- <app-caselist [lpp]="4"></app-caselist> -->
-              <!-- <app-recentTreasurerCaseList></app-recentTreasurerCaseList> -->
-
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 
