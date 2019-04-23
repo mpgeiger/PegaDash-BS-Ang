@@ -1,3 +1,4 @@
+import { ModalComponent } from './../layout/bs-component/components/modal/modal.component';
 import { OpenAssignmentService } from './../_messages/openassignment.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -7,6 +8,8 @@ import { ChartsModule as Ng2Charts } from 'ng2-charts';
 
 import { AppMaterialModule } from '../app-material/app-material.module';
 import { CaselistComponent
+  , FileNameDialogComponent
+  , ModalContainerComponent
   , NbaOfferComponent
   , OpenByWorkTypeComponent
   , PegaPieChartComponent
@@ -25,6 +28,8 @@ import { CaselistComponent
   ],
   declarations: [
     CaselistComponent
+    , FileNameDialogComponent
+    , ModalContainerComponent
     // , ChartDataLabels
     , NbaOfferComponent
     , OpenByWorkTypeComponent
@@ -34,12 +39,18 @@ import { CaselistComponent
   ],
   exports: [
       CaselistComponent
+      , FileNameDialogComponent
+      , ModalContainerComponent
     // , ChartDataLabels
     , NbaOfferComponent
     , OpenByWorkTypeComponent
     , PegaPieChartComponent
     , RecentTreasurerCaseListComponent
     , TransactionSummaryComponent
+  ],
+  entryComponents: [
+   FileNameDialogComponent
+   , ModalContainerComponent
   ]
 })
 export class SharedPegaModule { }

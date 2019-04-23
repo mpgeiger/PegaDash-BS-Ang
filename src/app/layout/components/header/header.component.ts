@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
@@ -10,8 +9,14 @@ import { TranslateService } from '@ngx-translate/core';
 export class HeaderComponent implements OnInit {
     public pushRightClass: string;
 
+    // fileNameDialogRef: MatDialogRef<FileNameDialogComponent>;
+
     userFullName = '';
-    constructor(private translate: TranslateService, public router: Router) {
+    constructor(
+      private translate: TranslateService
+      , public router: Router
+      // , private dialog: MatDialog
+      ) {
 
 
         this.router.events.subscribe(val => {
@@ -24,6 +29,8 @@ export class HeaderComponent implements OnInit {
             }
         });
     }
+
+
 
 
     ngOnInit() {
@@ -53,4 +60,6 @@ export class HeaderComponent implements OnInit {
     changeLang(language: string) {
         this.translate.use(language);
     }
+
+
 }

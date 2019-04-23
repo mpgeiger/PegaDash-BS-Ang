@@ -3,6 +3,8 @@ export * from './caselist/caselist.component';
 export * from './create-rcicase/create-rcicase.component';
 export * from './maintabs/maintabs.component';
 export * from './modal/modal.component';
+export * from './modal-container/modal-container.component';
+export * from './modal-container/file-name-dialog.component';
 export * from './pega-pie-chart/pega-pie-chart.component';
 export * from './workitem/pworkitem.component';
 export * from './worklistpanelsection/worklistpanelsection.component';

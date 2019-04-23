@@ -1,3 +1,4 @@
+// import { ModalContainerComponent } from './../pega/modal-container/modal-container.component';
 // import { AppMaterialModule } from './../../../../.history/src/app/app-material/app-material.module_20190420132206';
 // import { AppMaterialModule } from './../../app-material/app-material.module';
 
@@ -23,6 +24,7 @@ import { StatModule } from '../../shared';
 // import { RecentTreasurerCaseListComponent } from '../pega';
 //  import { RecentTreasurerCaseListComponent } from '../pega';
 import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
+import { FileNameDialogComponent } from '../pega';
 // import { AppMaterialModule } from './../../app-material/app-material.module';
 
 @NgModule({
@@ -41,6 +43,8 @@ import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
     ],
     declarations: [
       SummaryPageComponent
+      //  , ModalContainerComponent
+      //  , FileNameDialogComponent
       , TimelineComponent
       , NotificationComponent
       , ChatComponent
@@ -51,6 +55,8 @@ import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
 
     ],
     exports: [
+      // ModalContainerComponent,
+      // FileNameDialogComponent
       // ReactiveFormsModule
       // RecentTreasurerCaseListComponent
     ]

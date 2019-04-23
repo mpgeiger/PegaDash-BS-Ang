@@ -32,6 +32,7 @@ import { OpenTaskPageModule } from './opentask-page/opentask-page.module';
 import { OpenTaskPageComponent } from './opentask-page/opentask-page.component';
 import { SharedPegaModule } from '../shared-pega/shared-pega.module';
 import { TransactionSummaryComponent } from './pega/transaction-summary/transaction-summary.component';
+// import { ModalContainerComponent } from './pega/modal-container/modal-container.component';
 // import { OpenByWorkTypeComponent } from './pega/open-by-work-type/open-by-work-type.component';
 // import { NbaOfferComponent } from './pega/nba-offer/nba-offer.component';
 // import { PegaPieChartComponent } from './pega/pega-pie-chart/pega-pie-chart.component';
