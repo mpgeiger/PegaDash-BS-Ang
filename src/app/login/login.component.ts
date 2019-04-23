@@ -55,18 +55,37 @@ export class LoginComponent implements OnInit {
 
           this.dservice.getDataPage('D_OperatorID', operatorParams).subscribe(
             response => {
+              console.log(' begin D_OperatorID');
               const operator: any = response.body;
               localStorage.setItem('userFullName', operator.pyUserName);
               localStorage.setItem('userAccessGroup', operator.pyAccessGroup);
               localStorage.setItem('userWorkGroup', operator.pyWorkGroup);
               localStorage.setItem('userWorkBaskets', JSON.stringify(operator.pyWorkBasketList));
               localStorage.setItem('userEmailAddress', operator.pyAddresses.Email.pyEmailAddress);
+              console.log(' finished D_OperatorID');
+              // this.glsservice.sendMessage('LoggedIn');
+              // console.log('Logged In-->', operator.pyUserName);
+              // this.router.navigate(['summary-page']);
+            },
+            err => {
+              const sError = 'Errors getting data page: ' + err.message;
+              console.log(' Login INSIDE error-->\n' + sError);
+              // let snackBarRef = this.snackBar.open(sError, 'Ok');
+            }
+            );
 
-              this.glsservice.sendMessage('LoggedIn');
-              console.log('Logged In-->', operator.pyUserName);
+            operatorParams.set('EmailID', localStorage.getItem('userEmailAddress'));
+            this.dservice.getDataPage('D_CustomerSummary', operatorParams).subscribe(
+              response => {
+                console.log(' begin D_CustomerSummary');
+                // const customerSummaryResult: any = response.body;
+                const customerSummary: any = this.getResults(response.body);
+                localStorage.setItem('CifNbr', customerSummary.CifNbr);
+
+                this.glsservice.sendMessage('LoggedIn');
+                console.log('end D_CustomerSummary');
+              // console.log('Logged In-->', operator.pyUserName);
               this.router.navigate(['summary-page']);
-
-
             },
             err => {
               const sError = 'Errors getting data page: ' + err.message;
@@ -74,6 +93,7 @@ export class LoginComponent implements OnInit {
               // let snackBarRef = this.snackBar.open(sError, 'Ok');
             }
           );
+
         }
       },
       err => {
@@ -92,4 +112,10 @@ export class LoginComponent implements OnInit {
   onLoggedin() {
     localStorage.setItem('isLoggedin', 'true');
   }
+
+  getResults(data) {
+    // localStorage.setItem('numUnifiedTaskList', data.pxResults.length);
+    return data.pxResults;
+  }
+
 }
