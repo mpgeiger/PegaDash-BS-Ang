@@ -141,8 +141,8 @@ function InvokeAdvisor() {
   PegaAParamObject.channelId="botfdecd19687704c9fbdb5d5034041b30a";
   if( window && window.localStorage && window.localStorage.length>0){
     PegaAParamObject.userEmail= window.localStorage.userEmailAddress;
-    pegaAParamObj.loggedInUser = parent.localStorage.userName;
-    pegaAParamObj. CifNbr = parent.localStorage.CifNbr;
+    // pegaAParamObj.loggedInUser = parent.localStorage.userName;
+    // pegaAParamObj. CifNbr = parent.localStorage.CifNbr;
     }
 
   pega.web.api.doAction("OnlineHelp", "createNewWork", "Work-Channel-Chat", "pyStartCase", PegaAParamObject);
