@@ -11,11 +11,34 @@
   // .card-content {
     // background: linear-gradient(to bottom, #a49668 50%, #a7a5a6 92%);
     #card-content {
-      height: 100%;
-      background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(164, 150, 104,.5)); /* Standard syntax (must be last) */
-      padding-bottom: 8px;
-      padding-top: 8px;
+      // height: 100%;
+      //background-image: linear-gradient(to top, rgba(255,0,0,0), rgba(164, 150, 104,.5)); /* Standard syntax (must be last) */
+      background: url('/assets/images/ACH.jpg');
+  //     -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  //  background-size: cover;
+  // min-height: 250px;
+  // position: absolute;
+// top: 0;
+// left: 0;
+// width: 100%;
+// height: 100%;
+z-index: -2;
+opacity: 0.4;
+// width: auto;
+      border: 2px solid black;
+      border-radius: 5px;
+
     }
+    .transbox {
+      margin: 30px;
+      background-color: lighten(#dbdbdb, 20%);
+      border: 1px solid black;
+      opacity: 0.9;
+      filter: alpha(opacity=60); /* For IE8 and earlier */
+    }
+
     .logo {
       background-image: url('/assets/images/swift.png');
       // imag

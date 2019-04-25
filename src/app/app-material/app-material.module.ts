@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
  import { CommonModule } from '@angular/common';
 import {
-  MatAutocompleteModule
+  MatExpansionModule
+  , MatAutocompleteModule
   , MatBadgeModule
   , MatButtonModule
   , MatCardModule
@@ -12,6 +13,7 @@ import {
   , MatInputModule
   , MatFormFieldModule
   , MatMenuModule
+
   , MatNativeDateModule
   , MatPaginatorModule
   , MatProgressBarModule
@@ -21,15 +23,17 @@ import {
   , MatSortModule
   , MatTableModule
   , MatToolbarModule
-  , MatTooltipModule
+  , MatTooltipModule,
+  MatAccordion
 } from '@angular/material';
 // import { MatTableModule, MatInputModule, MatPaginatorModule, MatSortModule  } from '@angular/material';
-
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 @NgModule({
   declarations: [],
   imports: [
 CommonModule,
-     MatAutocompleteModule
+      MatExpansionModule
+    , MatAutocompleteModule
     , MatBadgeModule
     , MatButtonModule
     , MatCardModule
@@ -49,10 +53,12 @@ CommonModule,
     , MatTableModule
     , MatToolbarModule
     , MatTooltipModule
+    , MatMomentDateModule
 
   ],
   exports: [
-    MatAutocompleteModule
+    MatExpansionModule
+    , MatAutocompleteModule
     , MatBadgeModule
     , MatButtonModule
     , MatCardModule
@@ -72,9 +78,11 @@ CommonModule,
     , MatTableModule
     , MatToolbarModule
     , MatTooltipModule
+    , MatMomentDateModule
   ],
   providers: [
-    MatDatepickerModule
+    MatExpansionModule
+    , MatDatepickerModule
     , MatBadgeModule
     , MatCardModule
 

@@ -1,0 +1,178 @@
+{
+  "pxObjClass": "Code-Pega-List",
+  "pxResultCount": "",
+  "pyObjClass": "PegaFS-Data-Party",
+  "pyObjClassOriginal": "",
+  "pzPageNameHash": "_pa18705655244463pz",
+  "pxResults": [
+      {
+          "AddressUpdateCounter": "0",
+          "AddVisibilityPhone": "true",
+          "AnnualExpenses": "0",
+          "AnnualIncome": "0.00",
+          "AnnualPhilanthropy": "0.00",
+          "CashBalance": "0",
+          "CifNbr": "9999999985",
+          "CountryOfIncorporation": "US",
+          "CustomerStatus": "Active",
+          "CustomerType": "Individual",
+          "CustSubtypeForSearch": ",",
+          "DateOfBirth": "1988-09-11",
+          "FirstName": "Sally",
+          "FullName": "Sally Jones",
+          "Gender": "Female",
+          "LastName": "Jones",
+          "LegalEntity": "Sally Jones",
+          "NetWorth": "0.00",
+          "OpenDate": "2004-05-04T00:00:00.000Z",
+          "ParentCifNumber": "9999999985",
+          "Prefix": "Ms.",
+          "PrimaryEmail": "Sally.JonesNewWave@gmail.com",
+          "pxCreateDateTime": "2019-04-23T14:16:02.454Z",
+          "pxCreateOperator": "SallyJones",
+          "pxCreateOpName": "Sally Jones",
+          "pxCreateSystemID": "pega",
+          "pxObjClass": "PegaFS-Data-Party-Ind",
+          "pyWorkPartyUri": "9999999985",
+          "SelectedPrimaryCommunication": "Home",
+          "ShortName": "Sally Jones",
+          "TaxBracket": "0",
+          "TaxIDNbr": "777399992",
+          "TaxIDType": "0",
+          "Title": "Treasurer",
+          "TotalAssets": "0.00",
+          "TotalExpensePerCust": "0.00",
+          "TotalIncome": "0.00",
+          "TotalLiabilities": "0.00",
+          "Address": {
+              "Home": {
+                  "AddressLine1": "102 Madison Dr",
+                  "AddressType": "Home",
+                  "City": "New York",
+                  "Country": "United States",
+                  "CountryCode": "USA",
+                  "DeleteAddress": "false",
+                  "EditSelected": "false",
+                  "FullAddress": "102 Madison Dr\nNew York, New York 10075\nUnited States",
+                  "FullAddressLine": "102 Madison Dr, New York, New York, 10075, United States",
+                  "Key": "9999999985",
+                  "PrimaryCommunication": "true",
+                  "PrimaryPage": "D_CustomerSummary.pxResults(1)",
+                  "pxObjClass": "PegaFS-Data-Address",
+                  "pxSubscript": "Home",
+                  "State": "New York",
+                  "StateCode": "NY",
+                  "TaxID": "0",
+                  "UpdatedBy": "precious2",
+                  "UpdatedDate": "2019-04-19T12:21:18.245Z",
+                  "ZipCode": "10075"
+              },
+              "Other": {
+                  "AddressType": "Other",
+                  "Country": "United States",
+                  "CountryCode": "US",
+                  "DeleteAddress": "false",
+                  "EditSelected": "false",
+                  "FullAddress": ", Alabama\nUnited States",
+                  "FullAddressLine": ", Alabama, United States",
+                  "Key": "9999999985",
+                  "PrimaryPage": "D_CustomerSummary.pxResults(1)",
+                  "pxObjClass": "PegaFS-Data-Address",
+                  "pxSubscript": "Other",
+                  "State": "Alabama",
+                  "TaxID": "0",
+                  "UpdatedBy": "precious2",
+                  "UpdatedDate": "2019-04-19T12:21:18.256Z"
+              }
+          },
+          "Email": {
+              "Email1": {
+                  "Address": "sallyjones@pegatsdemo.com",
+                  "ContactTypeEmail": "Email1",
+                  "ECEmail": "true",
+                  "PrimaryCommunicationEmail": "false",
+                  "pxObjClass": "PegaFS-Data-ContactChannel-Email",
+                  "pxSubscript": "Email1"
+              },
+              "Work": {
+                  "Address": "Sally.JonesNewWave@gmail.com",
+                  "ContactTypeEmail": "Work",
+                  "ECEmail": "true",
+                  "PrimaryCommunicationEmail": "true",
+                  "pxObjClass": "PegaFS-Data-ContactChannel-Email",
+                  "pxSubscript": "Work"
+              }
+          },
+          "EmploymentHistory": [
+              {
+                  "CurrentWorkPosition": "Treasurer",
+                  "pxObjClass": "PegaFS-Data-EmploymentHistory",
+                  "Title": "Treasurer"
+              },
+              {
+                  "pxObjClass": "PegaFS-Data-EmploymentHistory"
+              },
+              {
+                  "pxObjClass": "PegaFS-Data-EmploymentHistory"
+              }
+          ],
+          "Expenses": {
+              "pxObjClass": "PegaFS-Data-Expenses"
+          },
+          "Income": {
+              "pxObjClass": "PegaFS-Data-Income"
+          },
+          "MilitaryServiceHistory": [
+              {
+                  "pxObjClass": "PegaFS-Data-MilitaryService",
+                  "ServiceEnlistDate": "1970-01-01",
+                  "ServiceEstDischargeDate": "1970-01-01"
+              }
+          ],
+          "Phone": {
+              "Home": {
+                  "ContactType": "Home",
+                  "ECPhone": "false",
+                  "Number": "1231231234",
+                  "PrimaryCommunicationPhone": "true",
+                  "pxObjClass": "PegaFS-Data-ContactChannel-Phone",
+                  "pxSubscript": "Home"
+              },
+              "Mobile": {
+                  "Carrier": "Sprint",
+                  "ContactType": "Mobile",
+                  "ECPhone": "true",
+                  "Number": "1231231235",
+                  "PrimaryCommunicationPhone": "false",
+                  "pxObjClass": "PegaFS-Data-ContactChannel-Phone",
+                  "pxSubscript": "Mobile"
+              },
+              "Work": {
+                  "ContactType": "Work",
+                  "ECPhone": "true",
+                  "Number": "1231231236",
+                  "PrimaryCommunicationPhone": "false",
+                  "pxObjClass": "PegaFS-Data-ContactChannel-Phone",
+                  "pxSubscript": "Work"
+              }
+          },
+          "SecurityQuestions": [
+              {
+                  "pxObjClass": "PegaFS-Data-SecurityQuestion"
+              },
+              {
+                  "pxObjClass": "PegaFS-Data-SecurityQuestion"
+              }
+          ],
+          "UserDefinedAttr": {
+              "FileAs": "Jones, Sally",
+              "IsNew": "false"
+          },
+          "WebSite": [
+              {
+                  "pxObjClass": "PegaFS-Data-ContactChannel-WebSite"
+              }
+          ]
+      }
+  ]
+}

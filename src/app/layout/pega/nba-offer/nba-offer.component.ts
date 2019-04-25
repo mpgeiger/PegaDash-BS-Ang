@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { HttpParams, HttpHeaders } from '@angular/common/http';
 import { NbaService } from '../../../_services/nba.service';
+import stubbedResults from '../../../../assets/json/NBA_REST.json';
 
 @Component({
   selector: 'app-nba-offer',
@@ -17,10 +18,36 @@ export class NbaOfferComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getCases();
+    // this.getCases();
+    if (this.checkIfStubbed()) {
+
+      console.log('STUBBED NBA_Offer');
+      this.getStubbedCases();
+    } else {
+      console.log('LIVE NBA_Offer');
+      this.getCases();
+    }
+  }
+
+  checkIfStubbed() {
+    const useStubStr = localStorage.getItem('useStubbedData');
+
+    let useStub = false;
+    useStub = (useStubStr === 'true');
+    // console.log(' STUBBED DATA-->' + useStub);
+    return useStub;
   }
 
 
+  getStubbedCases() {
+    const stubbed: any = stubbedResults;
+    // this.nbas = Object.keys(this.getNBAResults(stubbed)).map(it => this.getNBAResults(stubbed)[it]);
+    // this.cases = JSON.parse(response.body);
+   // this.sortedData = this.cases.slice();
+   this.nbas = Object.keys(this.getNBAResults(stubbed)).map(it => this.getNBAResults(stubbed)[it]);
+   localStorage.setItem('NBA_Offer', this.nbas.length.toString());
+   this.showLoading = false;
+  }
 
   getCases() {
     // const unifiedtaskParams = new HttpParams().set('UserId', 'SallyJones').set('WorkGroup', 'NewWaveWG');
@@ -36,19 +63,11 @@ export class NbaOfferComponent implements OnInit {
      this.nba.getCurrentNba('PEGASAFS-WORK-CONTACT CON-488', 'BNYServices').subscribe(
        response => {
 
-          console.log(' get NBA_Offer  RESPONSE -->' + JSON.stringify(response.body));
-         const resSTR = JSON.stringify(this.getNBAResults(response.body));
-         const resJSON = JSON.parse(resSTR);
-         // console.log(' get D_RecentTreasurerCases-->', resJSON._body);
-         // this.unifiedtask$ = new MatTableDataSource<any>(this.getResults(response.body));
+          console.log(' get NBA_Offer begin');
          this.headers = response.headers;
-         // this.unifiedtaskObject$ = JSON.parse(this.getResults(response.body));
          this.nbas = Object.keys(this.getNBAResults(response.body)).map(it => this.getNBAResults(response.body)[it]);
-         // this.cases = JSON.parse(response.body);
-        // this.sortedData = this.cases.slice();
-       //  this.dataSource.data = this.nbas as Transactions[];
-         // this.dataSource.filterPredicate = this.createFilter();
-         console.log(' get NBA_Offer JSON-->' + JSON.stringify(this.nbas));
+
+        //  console.log(' get NBA_Offer JSON-->' + JSON.stringify(this.nbas));
          localStorage.setItem('NBA_Offer', this.nbas.length.toString());
 
          this.showLoading = false;

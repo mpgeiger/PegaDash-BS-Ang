@@ -14,6 +14,7 @@ import { DatapageService } from '../../../_services/datapage.service';
 import { ChartType, ChartOptions, ChartDataSets } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
+import stubbedResults from '../../../../assets/json/D_OpenByWorkType.json';
 
 export interface OpenWorkType {
   pxObjClass: string;
@@ -135,7 +136,7 @@ itemTextValue: string;
   }
 
   ngOnInit() {
-    this.getCases();
+    // this.getCases();
     this.dataSource.sort = this.sort;
   }
 
@@ -146,6 +147,22 @@ itemTextValue: string;
     // this.sortedData = this.types.slice();
      this.dataSource.sort = this.sort;
     // this.dataSource.paginator = this.paginator;
+    // this.getCases();
+    this.getStubbedCases();
+  }
+
+  getStubbedCases() {
+    const stubbed: any = stubbedResults;
+    this.types = Object.keys(this.getResults(stubbed)).map(it => this.getResults(stubbed)[it]);
+
+        this.dataSource.data = this.types as OpenWorkType[];
+        localStorage.setItem('D_OpenWorkByType', this.types.length.toString());
+        this.parseDataForPieChart(this.types);
+        this.parseDataForBarChart(this.types);
+        this.pieChartType = 'pie';
+        this.dataSource.sort = this.sort;
+        this.showLoading = false;
+        console.log('count of STUBBED D_OpenWorkByType-->  ', localStorage.getItem('D_OpenWorkByType'));
   }
 
   getCases() {
@@ -154,25 +171,16 @@ itemTextValue: string;
     this.showLoading = true;
     this.datapage.getDataPage('D_OpenWorkByType', dParams).subscribe(
       response => {
-
-        const resSTR = JSON.stringify(this.getResults(response.body));
-        const resJSON = JSON.parse(resSTR);
-
         this.headers = response.headers;
         this.types = Object.keys(this.getResults(response.body)).map(it => this.getResults(response.body)[it]);
-
         this.dataSource.data = this.types as OpenWorkType[];
-
         localStorage.setItem('D_OpenWorkByType', this.types.length.toString());
         this.parseDataForPieChart(this.types);
         this.parseDataForBarChart(this.types);
         this.pieChartType = 'pie';
         this.dataSource.sort = this.sort;
         this.showLoading = false;
-
         console.log('count of D_OpenWorkByType-->  ', localStorage.getItem('D_OpenWorkByType'));
-        console.log('D_OpenWorkByType-->  ' + JSON.stringify(this.types));
-
       },
       err => {
         alert('Error form unifiedtask:' + err.errors);
@@ -206,12 +214,9 @@ let count = 0;
       // this.pieChartData.push(foo);
     }
     stringArray += ']';
-    console.log('  Pie CHART stringArray-->' + stringArray); // Does not return anything
-    console.log('  Pie CHART pieChartData-->' + JSON.stringify(JSON.parse(stringArray))); // Does not return anything
-
     this.pieChartData = JSON.parse(stringArray);
 
-    console.log('  Pie CHART pieChartData-->' + JSON.stringify(this.pieChartData)); // Does not return anything
+    // console.log('  Pie CHART pieChartData-->' + JSON.stringify(this.pieChartData)); // Does not return anything
     // this.pieChartData = [13, 24, 45, 76, 56];
     for (const item of data) {
       this.pieChartLabels.push(item.pyLabel);
@@ -229,17 +234,14 @@ let count = 0;
       barEntry.label = item.pyLabel;
       this.barChartData.push(barEntry);
     }
-    console.log('  BAR CHART barChartData-->' + JSON.stringify(this.barChartData)); // Does not return anything
-   //    for (const item of data) {
-       //  this.barChartLabels.push(item.pyLabel);
-      //  console.log(this.pieChartData); // Does not return anything
-   //  }
+    // console.log('  BAR CHART barChartData-->' + JSON.stringify(this.barChartData)); // Does not return anything
+
   }
 
   toggle(event) {
     this.show = !this.show;
-    console.log(' CLICKED ICON -->' + event.currentTarget.id);
-    const options = ['pie', 'table'];
+    // console.log(' CLICKED ICON -->' + event.currentTarget.id);
+    const options = ['pie', 'bar', 'table'];
 
     if (event.currentTarget.id === 'bar') {
       this.showBarChart = true;

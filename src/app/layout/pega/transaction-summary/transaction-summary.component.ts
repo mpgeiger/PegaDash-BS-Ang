@@ -10,6 +10,8 @@ import {MatTableDataSource, MatPaginator, MatSort} from '@angular/material';
 import { stringify } from 'querystring';
 import { DatapageService } from '../../../_services/datapage.service';
 
+import stubbedResults from '../../../../assets/json/D_TransactionSummary.json';
+
 export interface Transactions {
   AccountNumber: string;
   Appl: number;
@@ -49,7 +51,6 @@ export class TransactionSummaryComponent implements OnInit, AfterViewInit {
   headers: any;
   cases: Transactions[] = [];
   showLoading = true;
-
   nameFilter = new FormControl('');
 
   // columnsToDisplay = ['AccountNumber', 'TransactionDescription', 'TransactionCode',  'TransactionPostDate', 'TransactionAmount'];
@@ -84,10 +85,28 @@ export class TransactionSummaryComponent implements OnInit, AfterViewInit {
    // this.sortedData = this.cases.slice();
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-    this.getCases();
+    // this.getCases();
+    this.getStubbedCases();
 
   }
 
+  getStubbedCases() {
+
+// const word = (<any>data).name;
+// console.log(word); // output 'testing'
+    const stubbed: any = stubbedResults;
+    console.log('STUBBED  get D_TransactionSummary begin');
+
+    const resSTR = JSON.stringify(this.getResults(stubbed));
+
+    this.cases = Object.keys(this.getResults(stubbed)).map(it => this.getResults(stubbed)[it]);
+
+    this.dataSource.data = this.cases as Transactions[];
+    localStorage.setItem('D_TransactionSummary', this.cases.length.toString());
+
+    this.showLoading = false;
+
+  }
 
   getCases() {
     // const unifiedtaskParams = new HttpParams().set('UserId', 'SallyJones').set('WorkGroup', 'NewWaveWG');
@@ -95,38 +114,13 @@ export class TransactionSummaryComponent implements OnInit, AfterViewInit {
     this.showLoading = true;
      this.datapage.getDataPage('D_TransactionSummary', dParams).subscribe(
        response => {
-
-         // console.log(' get D_RecentTreasurerCases -->' + JSON.stringify(response.body));
-         const resSTR = JSON.stringify(this.getResults(response.body));
-         const resJSON = JSON.parse(resSTR);
-         // console.log(' get D_RecentTreasurerCases-->', resJSON._body);
-         // this.unifiedtask$ = new MatTableDataSource<any>(this.getResults(response.body));
          this.headers = response.headers;
-         // this.unifiedtaskObject$ = JSON.parse(this.getResults(response.body));
+
          this.cases = Object.keys(this.getResults(response.body)).map(it => this.getResults(response.body)[it]);
-         // this.cases = JSON.parse(response.body);
-        // this.sortedData = this.cases.slice();
          this.dataSource.data = this.cases as Transactions[];
-         // this.dataSource.filterPredicate = this.createFilter();
-
          localStorage.setItem('D_TransactionSummary', this.cases.length.toString());
-
          this.showLoading = false;
-        // this.sortedData = this.cases.slice();
-         // this.ngAfterViewInit();
-
-
          console.log('count of D_TransactionSummary-->  ', localStorage.getItem('D_TransactionSummary'));
-
-         // this.unifiedtask$.paginator = this.paginator;
-         // this.unifiedtask$.sort = this.sort;
-
-         // this.p_TotalNumberItems = this.cases.length;
-         // this.initPagingInfo();
-         // this.p_CurrentList = this.cases.slice(0, this.p_ItemsPerPage);
-         // initialize to page 1
-         // this.setPage(0);
-
        },
        err => {
          alert('Error form unifiedtask:' + err.errors);

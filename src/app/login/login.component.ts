@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
@@ -74,6 +75,7 @@ export class LoginComponent implements OnInit {
             }
             );
 
+
             operatorParams.set('EmailID', localStorage.getItem('userEmailAddress'));
             this.dservice.getDataPage('D_CustomerSummary', operatorParams).subscribe(
               response => {
@@ -93,6 +95,9 @@ export class LoginComponent implements OnInit {
               // let snackBarRef = this.snackBar.open(sError, 'Ok');
             }
           );
+
+
+
 
         }
       },
@@ -117,5 +122,6 @@ export class LoginComponent implements OnInit {
     // localStorage.setItem('numUnifiedTaskList', data.pxResults.length);
     return data.pxResults;
   }
+
 
 }

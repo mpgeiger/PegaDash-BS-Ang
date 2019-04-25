@@ -24,7 +24,7 @@ import { StatModule } from '../../shared';
 // import { RecentTreasurerCaseListComponent } from '../pega';
 //  import { RecentTreasurerCaseListComponent } from '../pega';
 import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
-import { FileNameDialogComponent } from '../pega';
+// import { FileNameDialogComponent } from '../pega';
 // import { AppMaterialModule } from './../../app-material/app-material.module';
 
 @NgModule({

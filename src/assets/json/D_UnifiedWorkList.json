@@ -1,0 +1,2043 @@
+{
+  "pxMore": "false",
+  "pxObjClass": "Code-Pega-List",
+  "pxPageCount": "0",
+  "pxQueryTimeStamp": "2019-04-22T20:41:15.322Z",
+  "pxResultCount": "5",
+  "pxSQLStatementPost": "SELECT \"PC0\".\"pxurgencyassign\" AS \"pxUrgencyAssign\" , \"PC0\".\"pxrefobjectinsname\" AS \"pxRefObjectInsName\" , \"PC0\".\"pylabel\" AS \"pyLabel\" , \"PC0\".\"pyassignmentstatus\" AS \"pyAssignmentStatus\" , \"PC0\".\"pyinstructions\" AS \"pyInstructions\" , \"PC0\".\"pyassignmentstatus\" AS \"pyAssignmentStatus\" , \"PC0\".\"pxdeadlinetime\" AS \"pxDeadlineTime\" , \"PC0\".\"pxassignedoperatorid\" AS \"pxAssignedOperatorID\" , \"PC0\".\"pxupdateoperator\" AS \"pxUpdateOperator\" , \"PC0\".\"pxupdatedatetime\" AS \"pxUpdateDateTime\" , \"PC0\".\"pxgoaltime\" AS \"pxGoalTime\" , \"PC0\".\"pxcreatedatetime\" AS \"pxCreateDateTime\" , \"PC0\".\"pxtasklabel\" AS \"pxTaskLabel\" , \"PC0\".\"pxassignedusername\" AS \"pxAssignedUserName\" , \"PC0\".\"pxrefobjectclass\" AS \"pxRefObjectClass\" , \"PC0\".\"pxrefobjectkey\" AS \"pxRefObjectKey\" , \"PC0\".\"pxapplication\" AS \"pxApplication\" , \"PC0\".\"pzinskey\" AS \"pzInsKey\" FROM pegadata.pc_assign_worklist \"PC0\" WHERE  ( \"PC0\".\"pxassignedoperatorid\" = ?  AND \"PC0\".\"pxworkgroup\" = ?  )  AND \"PC0\".\"pxobjclass\" = ?  ORDER BY 1 DESC, 7 ASC",
+  "pxSQLStatementPre": "SELECT \"PC0\".\"pxurgencyassign\" AS \"pxUrgencyAssign\" , \"PC0\".\"pxrefobjectinsname\" AS \"pxRefObjectInsName\" , \"PC0\".\"pylabel\" AS \"pyLabel\" , \"PC0\".\"pyassignmentstatus\" AS \"pyAssignmentStatus\" , \"PC0\".\"pyinstructions\" AS \"pyInstructions\" , \"PC0\".\"pyassignmentstatus\" AS \"pyAssignmentStatus\" , \"PC0\".\"pxdeadlinetime\" AS \"pxDeadlineTime\" , \"PC0\".\"pxassignedoperatorid\" AS \"pxAssignedOperatorID\" , \"PC0\".\"pxupdateoperator\" AS \"pxUpdateOperator\" , \"PC0\".\"pxupdatedatetime\" AS \"pxUpdateDateTime\" , \"PC0\".\"pxgoaltime\" AS \"pxGoalTime\" , \"PC0\".\"pxcreatedatetime\" AS \"pxCreateDateTime\" , \"PC0\".\"pxtasklabel\" AS \"pxTaskLabel\" , \"PC0\".\"pxassignedusername\" AS \"pxAssignedUserName\" , \"PC0\".\"pxrefobjectclass\" AS \"pxRefObjectClass\" , \"PC0\".\"pxrefobjectkey\" AS \"pxRefObjectKey\" , \"PC0\".\"pxapplication\" AS \"pxApplication\" , \"PC0\".\"pzinskey\" AS \"pzInsKey\" FROM pegadata.pc_assign_worklist \"PC0\" WHERE  ( \"PC0\".\"pxassignedoperatorid\" = ?  AND \"PC0\".\"pxworkgroup\" = ?  )  AND \"PC0\".\"pxobjclass\" = ?  ORDER BY 1 DESC, 7 ASC",
+  "pxTotalResultCount": "0",
+  "pyMaxRecords": "0",
+  "pyObjClass": "Assign-Worklist",
+  "pyQueryTimeoutInterval": "0",
+  "pyRowCount": "0",
+  "pyStartIndex": "0",
+  "pyUseReportsDatabase": "false",
+  "pzPageNameHash": "_pa24401578904751pz",
+  "pxResults": [
+      {
+          "pxApplication": "Treasurer",
+          "pxAssignedOperatorID": "SallyJones",
+          "pxAssignedUserName": "Sally Jones",
+          "pxCreateDateTime": "2019-04-15T19:05:36.046Z",
+          "pxDeadlineTime": "2019-04-18T19:15:25.284Z",
+          "pxGoalTime": "2019-04-17T19:05:25.283Z",
+          "pxObjClass": "Assign-Worklist",
+          "pxRefObjectClass": "PegaFS-SCM-Work-TransactionInquiry",
+          "pxRefObjectInsName": "S-1461",
+          "pxRefObjectKey": "PEGAFS-SCM-WORK S-1461",
+          "pxTaskLabel": "Transaction code other than Fee",
+          "pxUrgencyAssign": "15",
+          "pyAssignmentStatus": "New",
+          "pyInstructions": "Enter Information",
+          "pyLabel": "Transaction Inquiry",
+          "pzInsKey": "ASSIGN-WORKLIST PEGAFS-SCM-WORK S-1461!CAPTURECASEDETAILS",
+          "TaskType": "Onboarding"
+      },
+      {
+          "pxApplication": "Treasurer",
+          "pxAssignedOperatorID": "SallyJones",
+          "pxAssignedUserName": "Sally Jones",
+          "pxCreateDateTime": "2019-04-15T19:08:00.268Z",
+          "pxObjClass": "Assign-Worklist",
+          "pxRefObjectClass": "PegaFS-SCM-Work-ManageEntitlements",
+          "pxRefObjectInsName": "S-1462",
+          "pxRefObjectKey": "PEGAFS-SCM-WORK S-1462",
+          "pxTaskLabel": "Select Accounts",
+          "pxUrgencyAssign": "15",
+          "pyAssignmentStatus": "New",
+          "pyInstructions": "Select Accounts",
+          "pyLabel": "Manage Entitlements",
+          "pzInsKey": "ASSIGN-WORKLIST PEGAFS-SCM-WORK S-1462!COLLECTCASEDATA",
+          "TaskType": "Onboarding"
+      },
+      {
+          "pxApplication": "Treasurer",
+          "pxAssignedOperatorID": "SallyJones",
+          "pxAssignedUserName": "Sally Jones",
+          "pxCreateDateTime": "2019-04-15T19:05:06.577Z",
+          "pxObjClass": "Assign-Worklist",
+          "pxRefObjectClass": "PegaFS-SCM-Work-ManageEntitlements",
+          "pxRefObjectInsName": "S-1460",
+          "pxRefObjectKey": "PEGAFS-SCM-WORK S-1460",
+          "pxTaskLabel": "Manage Signers",
+          "pxUrgencyAssign": "15",
+          "pyAssignmentStatus": "New",
+          "pyInstructions": "Capture Request Details",
+          "pyLabel": "Manage Entitlements",
+          "pzInsKey": "ASSIGN-WORKLIST PEGAFS-SCM-WORK S-1460!COLLECTCASEDATA",
+          "TaskType": "Onboarding"
+      },
+      {
+          "pxApplication": "Treasurer",
+          "pxAssignedOperatorID": "SallyJones",
+          "pxAssignedUserName": "Sally Jones",
+          "pxCreateDateTime": "2019-04-17T15:11:45.035Z",
+          "pxDeadlineTime": "2019-04-22T15:11:45.033Z",
+          "pxGoalTime": "2019-04-19T15:11:45.033Z",
+          "pxObjClass": "Assign-Worklist",
+          "pxRefObjectClass": "PegaFS-Work-CustomerSearch",
+          "pxRefObjectInsName": "C-371",
+          "pxRefObjectKey": "PEGAFS-WORK C-371",
+          "pxTaskLabel": "Customer Search",
+          "pxUrgencyAssign": "10",
+          "pyAssignmentStatus": "New",
+          "pyLabel": "Customer search",
+          "pzInsKey": "ASSIGN-WORKLIST PEGAFS-WORK C-371!CUSTOMERSEARCH",
+          "TaskType": "Onboarding"
+      },
+      {
+          "pxApplication": "Treasurer",
+          "pxAssignedOperatorID": "SallyJones",
+          "pxAssignedUserName": "Sally Jones",
+          "pxCreateDateTime": "2019-04-15T19:05:47.031Z",
+          "pxObjClass": "Assign-Worklist",
+          "pxRefObjectClass": "PegaCPMFS-Work-BalanceInquiry",
+          "pxRefObjectInsName": "B-14",
+          "pxRefObjectKey": "PEGACPMFS-WORK B-14",
+          "pxTaskLabel": "Question",
+          "pxUrgencyAssign": "10",
+          "pyAssignmentStatus": "New",
+          "pyLabel": "Balance Inquiry",
+          "pzInsKey": "ASSIGN-WORKLIST PEGACPMFS-WORK B-14!PZQUESTIONSHAPE",
+          "TaskType": "Service"
+      }
+  ],
+  "pyMapping": [
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "Assign-Worklist",
+          "pyColumnName": ".pxUrgencyAssign",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "pxUrgencyAssign"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "Assign-Worklist",
+          "pyColumnName": ".pxRefObjectInsName",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "pxRefObjectInsName"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "Assign-Worklist",
+          "pyColumnName": ".pyLabel",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "pyLabel"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "Assign-Worklist",
+          "pyColumnName": ".pyAssignmentStatus",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "pyAssignmentStatus"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "Assign-Worklist",
+          "pyColumnName": ".pyInstructions",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "pyInstructions"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "Assign-Worklist",
+          "pyColumnName": ".pyAssignmentStatus",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "pyAssignmentStatus"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "Assign-Worklist",
+          "pyColumnName": ".pxDeadlineTime",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "pxDeadlineTime"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "Assign-Worklist",
+          "pyColumnName": ".pxAssignedOperatorID",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "pxAssignedOperatorID"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "Assign-Worklist",
+          "pyColumnName": ".pxUpdateOperator",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "pxUpdateOperator"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "Assign-Worklist",
+          "pyColumnName": ".pxUpdateDateTime",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "pxUpdateDateTime"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "Assign-Worklist",
+          "pyColumnName": ".pxGoalTime",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "pxGoalTime"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "Assign-Worklist",
+          "pyColumnName": ".pxCreateDateTime",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "pxCreateDateTime"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "Assign-Worklist",
+          "pyColumnName": ".pxTaskLabel",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "pxTaskLabel"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "Assign-Worklist",
+          "pyColumnName": ".pxAssignedUserName",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "pxAssignedUserName"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "Assign-Worklist",
+          "pyColumnName": ".pxRefObjectClass",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "pxRefObjectClass"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "Assign-Worklist",
+          "pyColumnName": ".pxRefObjectKey",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "pxRefObjectKey"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "Assign-Worklist",
+          "pyColumnName": ".pxApplication",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "pxApplication"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "Assign-Worklist",
+          "pyColumnName": ".pzInsKey",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "pzInsKey"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "Assign-Worklist",
+          "pyPropertyName": "TaskType"
+      }
+  ],
+  "pyPreparedValues": [
+      "SallyJones",
+      "NewWaveWG",
+      "Assign-Worklist"
+  ],
+  "pyReportDefinition": {
+      "pxCommitDateTime": "2019-04-02T10:23:17.700Z",
+      "pxCreateDateTime": "2019-03-05T13:30:18.386Z",
+      "pxCreateOperator": "lekshmi",
+      "pxCreateOpName": "Lekshmi C",
+      "pxCreateSystemID": "pega",
+      "pxHostId": "1924baa93745aec5771b6ab9891f0bd6",
+      "pxInsId": "!UNIFIEDWORKLIST",
+      "pxInsName": "ASSIGN-WORKLIST!UNIFIEDWORKLIST",
+      "pxLimitedAccess": "Dev",
+      "pxMoveFromSystem": "pega",
+      "pxMoveImportDateTime": "2019-04-02T10:23:17.521Z",
+      "pxMoveImportOperId": "precious",
+      "pxMoveImportOperName": "CLMFS CIB SysAdmin",
+      "pxMoveOriginalKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST PYUSERWORKLIST #20180403T063051.330 GMT",
+      "pxMoveOriginalRuleSet": "PegaCLMFS",
+      "pxMoveOriginalRuleSetVersion": "07-31-80",
+      "pxObjClass": "Rule-Obj-Report-Definition",
+      "pxOriginalRuleSet": "PegaCLMFS",
+      "pxReportVersion": "6.2",
+      "pxRuleOpenedInPopUp": "false",
+      "pxSaveDateTime": "2019-03-06T09:49:40.243Z",
+      "pxUpdateDateTime": "2019-03-06T09:49:40.204Z",
+      "pxUpdateOperator": "lekshmi",
+      "pxUpdateOpName": "Lekshmi C",
+      "pxUpdateSystemID": "pega",
+      "pyAccessibilityCount": "0",
+      "pyAccessibilityLevel": "0",
+      "pyBaseRule": "false",
+      "pyBrowserSupportLevel": "0",
+      "pyClassName": "Assign-Worklist",
+      "pyCompact": "false",
+      "pyDeleteMemo": "Valid",
+      "pyDisplayMode": "clone",
+      "pyHistoryObject": "false",
+      "pyJavaClassName": "Rule_Obj_Report_Definition_Assign_Worklist_UnifiedWorkList_Action_20190306T094908_908_GMT",
+      "pyJavaGenerateAPIVersion": "04-02",
+      "pyLabel": "Unified Work List",
+      "pyLabelOld": "Unified Work List",
+      "pyMemo": "ip",
+      "pyPreviousApplicationName": "PegaOBFS",
+      "pyReloadForm": "true",
+      "pyReportTitle": "Work List_ RD",
+      "pyRuleAvailable": "Yes",
+      "pyRuleName": "UnifiedWorkList",
+      "pyRuleSet": "Treasurer",
+      "pyRuleSetVersion": "01-01-01",
+      "pySortDateCircumWithinRSMajor": "true",
+      "pySPRuleSetName": "lekshmi@",
+      "pyStreamName": "UnifiedWorkList",
+      "pyTemplateDisplayText": "No ruleset versions available",
+      "pyValueChanged": "false",
+      "pyXMLSignature": "<methodSignature><pyStepsPageAliases></pyStepsPageAliases></methodSignature>",
+      "pzAvailabilityNotSet": "Set Availability",
+      "pzChecksum": "1069309589",
+      "pzIndexCount": "82",
+      "pzInsKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+      "pzInvalidateCss": "true",
+      "pzOriginalInstanceKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST PYUSERWORKLIST #20180419T141721.913 GMT",
+      "pzRuleSetVersionMajor": "01",
+      "pzRuleSetVersionMinor": "01",
+      "pzRuleSetVersionPatch": "01",
+      "pxAPIMethodReferences": [],
+      "pxCSSSelectors": [],
+      "pxNamedPageReferences": [
+          {
+              "pxObjClass": "Embed-Reference-NamedPage",
+              "pxPageClass": "Data-Admin-Operator-ID",
+              "pxPageName": "OperatorID",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "NamedPageReference": "42"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-NamedPage",
+              "pxPageClass": "PegaCLMFS-Work",
+              "pxPageName": "CLMWork",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "NamedPageReference": "43"
+              }
+          }
+      ],
+      "pxRuleReferences": [
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "Assign-Worklist",
+              "pxRuleFamilyName": "PXGOALTIME",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "pxGoalTime",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "44"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!WORK LIST_ RD",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Work List_ RD",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "45"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!URGENCY",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Urgency",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "46"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "Assign-Worklist",
+              "pxRuleFamilyName": "PXREFOBJECTKEY",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "pxRefObjectKey",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "47"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!OPERATOR ID",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Operator ID",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "48"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!UPDATE OPERATOR",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Update Operator",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "49"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!APPLICATION NAME",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Application Name",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "50"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "Assign-Worklist",
+              "pxRuleFamilyName": "PXREFOBJECTINSNAME",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "pxRefObjectInsName",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "51"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "Assign-Worklist",
+              "pxRuleFamilyName": "PXTASKLABEL",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "pxTaskLabel",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "52"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!SUBJECT",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Subject",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "53"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "Assign-Worklist",
+              "pxRuleFamilyName": "PXUPDATEDATETIME",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "pxUpdateDateTime",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "54"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "Assign-Worklist",
+              "pxRuleFamilyName": "PXAPPLICATION",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "pxApplication",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "55"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "Code-Pega-Thread",
+              "pxRuleFamilyName": "CODE-PEGA-THREAD",
+              "pxRuleObjClass": "Rule-Obj-Class",
+              "pyRuleName": "Code-Pega-Thread",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "56"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "Assign-Worklist",
+              "pxRuleFamilyName": "PXASSIGNEDOPERATORID",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "pxAssignedOperatorID",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "57"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!STATUS OF THE ASSIGNMENT",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Status of the assignment",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "58"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "Assign-Worklist",
+              "pxRuleFamilyName": "PXUPDATEOPERATOR",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "pxUpdateOperator",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "59"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!INSTRUCTIONS",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Instructions",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "60"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!REFERENCED OBJECT PZINSKEY",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Referenced Object pzInsKey",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "61"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!TASK LABEL",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Task Label",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "62"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "Assign-Worklist",
+              "pxRuleFamilyName": "PYLABEL",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "pyLabel",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "63"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "Assign-Worklist",
+              "pxRuleFamilyName": "PXDEADLINETIME",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "pxDeadlineTime",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "64"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "Assign-Worklist",
+              "pxRuleFamilyName": "PXWORKGROUP",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "pxWorkGroup",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "65"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!DEADLINE TIME",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Deadline Time",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "66"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "Assign-Worklist",
+              "pxRuleFamilyName": "PXREFOBJECTCLASS",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "pxRefObjectClass",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "67"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "Assign-Worklist",
+              "pxRuleFamilyName": "PXCREATEDATETIME",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "pxCreateDateTime",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "68"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "PegaCLMFS-Work",
+              "pxRuleFamilyName": "PEGACLMFS-WORK",
+              "pxRuleObjClass": "Rule-Obj-Class",
+              "pyRuleName": "PegaCLMFS-Work",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "69"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "Assign-Worklist",
+              "pxRuleFamilyName": "PYASSIGNMENTSTATUS",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "pyAssignmentStatus",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "70"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "Assign-Worklist",
+              "pxRuleFamilyName": "PXASSIGNEDUSERNAME",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "pxAssignedUserName",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "71"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!GOAL TIME",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Goal time",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "72"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!REFERENCED OBJECT CLASS",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Referenced Object class",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "73"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!ID",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption ID",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "74"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "Assign-Worklist",
+              "pxRuleFamilyName": "PYINSTRUCTIONS",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "pyInstructions",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "75"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "Assign-Worklist",
+              "pxRuleFamilyName": "ASSIGN-WORKLIST",
+              "pxRuleObjClass": "Rule-Obj-Class",
+              "pyRuleName": "Assign-Worklist",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "76"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!OPERATOR USER NAME",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Operator User Name",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "77"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "Data-Admin-Operator-ID",
+              "pxRuleFamilyName": "DATA-ADMIN-OPERATOR-ID",
+              "pxRuleObjClass": "Rule-Obj-Class",
+              "pyRuleName": "Data-Admin-Operator-ID",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "78"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!DATETIME OF CREATION",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Datetime of creation",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "79"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "Assign-Worklist",
+              "pxRuleFamilyName": "PXURGENCYASSIGN",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "pxUrgencyAssign",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "80"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!UPDATE TIME",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Update Time",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "RuleReference": "81"
+              }
+          }
+      ],
+      "pxWarnings": [
+          {
+              "pxObjClass": "Embed-Warning",
+              "pxWarningCreatedTime": "2019-03-05T13:30:54.853Z",
+              "pxWarningCreateOperator": "lekshmi",
+              "pxWarningDetails": "(Rule-Obj-Report-Definition)pxParamReferenceInFilter",
+              "pxWarningMessage": "(Rule-Obj-Report-Definition)pxParamReferenceInFilter",
+              "pxWarningName": "ParamReferenceInFilter",
+              "pxWarningRuleSetType": "PEGA",
+              "pxWarningSeverity": "2",
+              "pxWarningType": "Performance",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pzIndexes": {
+                  "Warnings": "41"
+              }
+          }
+      ],
+      "pyContent": {
+          "pxIsSummary": "false",
+          "pxObjClass": "Embed-ReportContent",
+          "pyClassName": "Assign-Worklist",
+          "pyContentPageName": "pyReportContentPage",
+          "pyDoNotUseSortOrderForGrouping": "false",
+          "pyGetCachedDistinctValues": "false",
+          "pyGetDistinctRows": "false",
+          "pyMaxRecords": "0",
+          "pyQueryTimeoutValue": "0",
+          "pyReportContentPageName": "D_UnifiedWorkList",
+          "pyRowLevelSecurityApplied": "false",
+          "pyUnionNotApplied": "false",
+          "ValidationMap": "{}",
+          "pyAppContextInfo": {
+              "pxObjClass": "Embed-AppContextInfo"
+          },
+          "pyFields": {
+              "pxObjClass": "Embed-ReportFields",
+              "pyAggregate": [],
+              "pyGroupBy": [],
+              "pyListFields": [
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Urgency",
+                      "pyFieldName": ".pxUrgencyAssign",
+                      "pySortOrder": "1",
+                      "pySortType": "DESC"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "ID",
+                      "pyFieldName": ".pxRefObjectInsName",
+                      "pySortOrder": "99999"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Subject",
+                      "pyFieldName": ".pyLabel",
+                      "pySortOrder": "99999"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Status of the assignment",
+                      "pyFieldName": ".pyAssignmentStatus",
+                      "pySortOrder": "99999"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Instructions",
+                      "pyFieldName": ".pyInstructions",
+                      "pySortOrder": "99999"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Status of the assignment",
+                      "pyFieldName": ".pyAssignmentStatus",
+                      "pySortOrder": "99999"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Deadline Time",
+                      "pyFieldName": ".pxDeadlineTime",
+                      "pySortOrder": "2",
+                      "pySortType": "ASC"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Operator ID",
+                      "pyFieldName": ".pxAssignedOperatorID",
+                      "pySortOrder": "99999"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Update Operator",
+                      "pyFieldName": ".pxUpdateOperator",
+                      "pySortOrder": "99999"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Update Time",
+                      "pyFieldName": ".pxUpdateDateTime",
+                      "pySortOrder": "99999"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Goal time",
+                      "pyFieldName": ".pxGoalTime",
+                      "pySortOrder": "99999"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Datetime of creation",
+                      "pyFieldName": ".pxCreateDateTime",
+                      "pySortOrder": "99999"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Task Label",
+                      "pyFieldName": ".pxTaskLabel",
+                      "pySortOrder": "99999"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Operator User Name",
+                      "pyFieldName": ".pxAssignedUserName",
+                      "pySortOrder": "99999"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Referenced Object class",
+                      "pyFieldName": ".pxRefObjectClass",
+                      "pySortOrder": "99999"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Referenced Object pzInsKey",
+                      "pyFieldName": ".pxRefObjectKey",
+                      "pySortOrder": "99999"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Application Name",
+                      "pyFieldName": ".pxApplication",
+                      "pySortOrder": "99999"
+                  }
+              ]
+          },
+          "pyFilters": {
+              "pxObjClass": "Embed-ReportFilters",
+              "pyFilterLogic": "A AND B",
+              "pyGetDistinctRows": "false",
+              "pyShowLabels": "true",
+              "pyAppContextInfo": {
+                  "pxObjClass": "Embed-AppContextInfo"
+              },
+              "pyFilter": [
+                  {
+                      "pxCreateDateTime": "2013-05-23T18:01:58.628Z",
+                      "pxCreateOperator": "trems1",
+                      "pxCreateOpName": "Sam Tremlett",
+                      "pxCreateSystemID": "SLSVTABL",
+                      "pxObjClass": "Embed-ReportFilter",
+                      "pyACIsAssoc": "false",
+                      "pyCaseInsensitive": "false",
+                      "pyDataType": "Text",
+                      "pyFieldLabel": "Operator ID",
+                      "pyFilterName": ".pxAssignedOperatorID",
+                      "pyFilterOperation": "=",
+                      "pyFilterValue": "Param.UserId",
+                      "pyFilterValueUI": "SallyJones",
+                      "pyIsLeftOperandAFunction": "false",
+                      "pyIsRightOperandAFunction": "false",
+                      "pyLogicLabel": "A",
+                      "pyPromptType": "AllAccess",
+                      "pySkipValidation": "false",
+                      "pyUseNullIfEmpty": "false"
+                  },
+                  {
+                      "pxCreateDateTime": "2013-07-15T06:06:27.594Z",
+                      "pxCreateOperator": "kotil",
+                      "pxCreateOpName": "Venkat",
+                      "pxCreateSystemID": "SLSHYD",
+                      "pxObjClass": "Embed-ReportFilter",
+                      "pyCaseInsensitive": "false",
+                      "pyDataType": "Text",
+                      "pyFieldLabel": "Work Group",
+                      "pyFilterName": ".pxWorkGroup",
+                      "pyFilterOperation": "=",
+                      "pyFilterValue": "Param.WorkGroup",
+                      "pyFilterValueUI": "NewWaveWG",
+                      "pyIsLeftOperandAFunction": "false",
+                      "pyIsRightOperandAFunction": "false",
+                      "pyLogicLabel": "B",
+                      "pyPromptType": "AllAccess",
+                      "pySkipValidation": "false",
+                      "pyUseNullIfEmpty": "false"
+                  }
+              ],
+              "pyQueryTokenList": [
+                  "1",
+                  "AND",
+                  "2"
+              ]
+          },
+          "pyHavingFilters": {
+              "pxObjClass": "Embed-ReportFilters-Having",
+              "pyFilter": []
+          },
+          "pyInsertInfo": {
+              "pySecurity": {}
+          },
+          "pyPagesAndClasses": [
+              {
+                  "pxObjClass": "Embed-PagesAndClasses",
+                  "pyPagesAndClassesClass": "Assign-Worklist"
+              },
+              {
+                  "pxObjClass": "Embed-PagesAndClasses",
+                  "pyPagesAndClassesClass": "Data-Admin-Operator-ID",
+                  "pyPagesAndClassesPage": "OperatorID"
+              },
+              {
+                  "pxObjClass": "Embed-PagesAndClasses",
+                  "pyPagesAndClassesClass": "Code-Pega-Thread",
+                  "pyPagesAndClassesPage": "pxThread"
+              },
+              {
+                  "pxObjClass": "Embed-PagesAndClasses",
+                  "pyPagesAndClassesClass": "PegaCLMFS-Work",
+                  "pyPagesAndClassesPage": "CLMWork"
+              }
+          ],
+          "pyPaging": {
+              "pxMorePages": "false",
+              "pxObjClass": "Embed-ReportPaging",
+              "pyAlignment": "Right",
+              "pyPosition": "Top",
+              "pyReturnTotalResultCount": "true",
+              "pySortMode": "dataset",
+              "pyWindowSize": "10"
+          },
+          "pyParameters": [
+              {
+                  "pxObjClass": "Embed-MethodParams",
+                  "pyParametersParamName": "UserId",
+                  "pyParametersParamType": "Text"
+              },
+              {
+                  "pxObjClass": "Embed-MethodParams",
+                  "pyParametersParamName": "WorkGroup",
+                  "pyParametersParamType": "Text"
+              }
+          ],
+          "pyReportRank": {
+              "pxObjClass": "Embed-ReportRank",
+              "pyRankField": {
+                  "pxObjClass": "Embed-ReportListFields"
+              }
+          },
+          "pyReportStatsInfo": {
+              "pxObjClass": "Embed-ReportStatisticsInfo",
+              "pyModeofExecution": "embedded",
+              "pyReportClassName": "Assign-Worklist",
+              "pyReportInsKey": "RULE-OBJ-REPORT-DEFINITION ASSIGN-WORKLIST UNIFIEDWORKLIST #20190305T133018.386 GMT",
+              "pyReportStreamName": "UnifiedWorkList"
+          },
+          "pySecurity": {
+              "pxObjClass": "Embed-ReportSecurity",
+              "pyPrivilegeList": [
+                  {
+                      "pxObjClass": "Embed-Rule-PrivilegeSecurity"
+                  }
+              ]
+          },
+          "pySource": {
+              "pxObjClass": "Embed-ReportSource",
+              "pyAllowApproximation": "false",
+              "pyIncludeAllDescendantclasses": "false",
+              "pyUseImplementationClass": "true",
+              "pyAssociations": [],
+              "pyIndexInfo": [],
+              "pyJoinInfo": [],
+              "pyRowKeyInfo": {
+                  "pxObjClass": "Embed-ReportRowKeyInfo",
+                  "pyGetRowKey": "true",
+                  "pxResults": [
+                      {
+                          "pyLabel": ".pzInsKey"
+                      }
+                  ],
+                  "pyRowKeys": [
+                      ".pzInsKey"
+                  ]
+              },
+              "pySetQueries": {
+                  "pxObjClass": "Embed-ReportSetQueries",
+                  "pySetQueryInfo": []
+              },
+              "pySubReportFrom": {
+                  "pxObjClass": "Embed-SubReportInfo",
+                  "pyColumns": [],
+                  "pyFilters": {
+                      "pxObjClass": "Embed-ReportFilters",
+                      "pyFilter": []
+                  }
+              },
+              "pySubReportInfo": []
+          }
+      },
+      "pyContentSource": {
+          "pxObjClass": "Embed-SummaryParams"
+      },
+      "pyDrillDown": {
+          "pxObjClass": "Embed-ReportDrillDown",
+          "pzDrillDownFilters": {
+              "pxObjClass": "Embed-ReportFilters"
+          }
+      },
+      "pyIndirectIncludes": [
+          {
+              "pxObjClass": "Embed-Alias"
+          }
+      ],
+      "pyPagesAndClasses": [
+          {
+              "pxObjClass": "Embed-PagesAndClasses",
+              "pyPagesAndClassesClass": "Assign-Worklist"
+          },
+          {
+              "pxObjClass": "Embed-PagesAndClasses",
+              "pyPagesAndClassesClass": "Data-Admin-Operator-ID",
+              "pyPagesAndClassesPage": "OperatorID"
+          },
+          {
+              "pxObjClass": "Embed-PagesAndClasses",
+              "pyPagesAndClassesClass": "Code-Pega-Thread",
+              "pyPagesAndClassesPage": "pxThread"
+          },
+          {
+              "pxObjClass": "Embed-PagesAndClasses",
+              "pyPagesAndClassesClass": "PegaCLMFS-Work",
+              "pyPagesAndClassesPage": "CLMWork"
+          }
+      ],
+      "pyParameters": [
+          {
+              "pxObjClass": "Embed-MethodParams",
+              "pyParametersParamName": "UserId",
+              "pyParametersParamType": "Text"
+          },
+          {
+              "pxObjClass": "Embed-MethodParams",
+              "pyParametersParamName": "WorkGroup",
+              "pyParametersParamType": "Text"
+          }
+      ],
+      "pyReportMetaData": {
+          "pxIsSummary": "false",
+          "pxObjClass": "Embed-ReportMetaDataInfo"
+      },
+      "pySource": {},
+      "pyUI": {
+          "pxObjClass": "Embed-ReportUI",
+          "pyCategory": "pyMonitorAssignments",
+          "pyIgnoreFormattingExcelExport": "false",
+          "pyIgnoreFormattingPDFExport": "false",
+          "pyIgnoreSkinPDFExport": "false",
+          "pyIsCertified": "false",
+          "pyReportContentPageName": "pyReportContentPage",
+          "pyShowUnExposedProperties": "false",
+          "pyUseAlternateDb": "false",
+          "pzIsSummary": "false",
+          "pyBody": {
+              "pxObjClass": "Embed-ReportBody",
+              "pyCustomGroupingEnabled": "false",
+              "pyCustomRowEnabled": "false",
+              "pyExportGroupingToExcel": "false",
+              "pyGroupingEnabled": "false",
+              "pyGroupingSortNumber": "1",
+              "pyHeaderDisplay": "Default",
+              "pySpreadSheetStyle": "false",
+              "pyCustomFiltering": {
+                  "pxObjClass": "Embed-ReportCustomPrompt",
+                  "pyEnableCustomFiltering": "false",
+                  "pyPromptPageName": "CustomFilter"
+              },
+              "pyReportRank": {
+                  "pxObjClass": "Embed-ReportRank",
+                  "pyPartitionType": "All",
+                  "pyRankUIField": {
+                      "pxObjClass": "Embed-ReportUIFields"
+                  }
+              },
+              "pyRows": {
+                  "pxObjClass": "Embed-ReportRows",
+                  "pyEvents": {
+                      "pxObjClass": "Embed-ReportEvents",
+                      "pyEventList": [
+                          {
+                              "pxObjClass": "Embed-ReportEvent"
+                          }
+                      ]
+                  }
+              },
+              "pyUIFields": [
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyACIsAssoc": "false",
+                      "pyDataType": "Decimal",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".pxUrgencyAssign",
+                      "pyFieldLabel": "Urgency",
+                      "pyFieldName": ".pxUrgencyAssign",
+                      "pyHide": "false",
+                      "pySelected": "false",
+                      "pySortOrder": "1",
+                      "pySortType": "DESC",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyACIsAssoc": "false",
+                      "pyDataType": "Identifier",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".pxRefObjectInsName",
+                      "pyFieldLabel": "ID",
+                      "pyFieldName": ".pxRefObjectInsName",
+                      "pyHide": "false",
+                      "pySelected": "false",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyDataType": "Text",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".pyLabel",
+                      "pyFieldLabel": "Subject",
+                      "pyFieldName": ".pyLabel",
+                      "pyHide": "false",
+                      "pySelected": "false",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyDataType": "Text",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".pyAssignmentStatus",
+                      "pyFieldLabel": "Status of the assignment",
+                      "pyFieldName": ".pyAssignmentStatus",
+                      "pyHide": "false",
+                      "pySelected": "false",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyDataType": "Text",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".pyInstructions",
+                      "pyFieldLabel": "Instructions",
+                      "pyFieldName": ".pyInstructions",
+                      "pyHide": "false",
+                      "pySelected": "false",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyACIsAssoc": "false",
+                      "pyDataType": "Text",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".pyAssignmentStatus",
+                      "pyFieldLabel": "Status of the assignment",
+                      "pyFieldName": ".pyAssignmentStatus",
+                      "pyHide": "false",
+                      "pySelected": "false",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyACIsAssoc": "false",
+                      "pyDataType": "DateTime",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".pxDeadlineTime",
+                      "pyFieldLabel": "Deadline Time",
+                      "pyFieldName": ".pxDeadlineTime",
+                      "pyHide": "false",
+                      "pySelected": "false",
+                      "pySortOrder": "2",
+                      "pySortType": "ASC",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyDataType": "Text",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".pxAssignedOperatorID",
+                      "pyFieldLabel": "Operator ID",
+                      "pyFieldName": ".pxAssignedOperatorID",
+                      "pySelected": "false",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyDataType": "Text",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".pxUpdateOperator",
+                      "pyFieldLabel": "Update Operator",
+                      "pyFieldName": ".pxUpdateOperator",
+                      "pyHide": "false",
+                      "pySelected": "false",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyDataType": "DateTime",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".pxUpdateDateTime",
+                      "pyFieldLabel": "Update Time",
+                      "pyFieldName": ".pxUpdateDateTime",
+                      "pyHide": "false",
+                      "pySelected": "false",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyDataType": "DateTime",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".pxGoalTime",
+                      "pyFieldLabel": "Goal time",
+                      "pyFieldName": ".pxGoalTime",
+                      "pyHide": "false",
+                      "pySelected": "false",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyDataType": "DateTime",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".pxCreateDateTime",
+                      "pyFieldLabel": "Datetime of creation",
+                      "pyFieldName": ".pxCreateDateTime",
+                      "pySelected": "false",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyACIsAssoc": "false",
+                      "pyDataType": "Text",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".pxTaskLabel",
+                      "pyFieldLabel": "Task Label",
+                      "pyFieldName": ".pxTaskLabel",
+                      "pyHide": "false",
+                      "pySelected": "false",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyACIsAssoc": "false",
+                      "pyDataType": "Text",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".pxAssignedUserName",
+                      "pyFieldLabel": "Operator User Name",
+                      "pyFieldName": ".pxAssignedUserName",
+                      "pyHide": "false",
+                      "pySelected": "false",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyDataType": "Identifier",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".pxRefObjectClass",
+                      "pyFieldLabel": "Referenced Object class",
+                      "pyFieldName": ".pxRefObjectClass",
+                      "pySelected": "false",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyACIsAssoc": "false",
+                      "pyDataType": "Identifier",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".pxRefObjectKey",
+                      "pyFieldLabel": "Referenced Object pzInsKey",
+                      "pyFieldName": ".pxRefObjectKey",
+                      "pySelected": "false",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyACIsAssoc": "false",
+                      "pyDataType": "Text",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".pxApplication",
+                      "pyFieldLabel": "Application Name",
+                      "pyFieldName": ".pxApplication",
+                      "pySelected": "false",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  }
+              ],
+              "pyUIFilters": {
+                  "pxObjClass": "Embed-ReportFilters",
+                  "pyFilterLogic": "A AND B",
+                  "pyGetDistinctRows": "false",
+                  "pyShowLabels": "true",
+                  "pyAppContextInfo": {
+                      "pxObjClass": "Embed-AppContextInfo"
+                  },
+                  "pyFilter": [
+                      {
+                          "pxCreateDateTime": "2013-05-23T18:01:58.628Z",
+                          "pxCreateOperator": "trems1",
+                          "pxCreateOpName": "Sam Tremlett",
+                          "pxCreateSystemID": "SLSVTABL",
+                          "pxObjClass": "Embed-ReportFilter",
+                          "pyACIsAssoc": "false",
+                          "pyCaseInsensitive": "false",
+                          "pyDataType": "Text",
+                          "pyFieldLabel": "Operator ID",
+                          "pyFilterName": ".pxAssignedOperatorID",
+                          "pyFilterOperation": "=",
+                          "pyFilterValue": "Param.UserId",
+                          "pyIsLeftOperandAFunction": "false",
+                          "pyIsRightOperandAFunction": "false",
+                          "pyLogicLabel": "A",
+                          "pyPromptType": "AllAccess",
+                          "pySkipValidation": "false",
+                          "pyUseNullIfEmpty": "false"
+                      },
+                      {
+                          "pxCreateDateTime": "2013-07-15T06:06:27.594Z",
+                          "pxCreateOperator": "kotil",
+                          "pxCreateOpName": "Venkat",
+                          "pxCreateSystemID": "SLSHYD",
+                          "pxObjClass": "Embed-ReportFilter",
+                          "pyCaseInsensitive": "false",
+                          "pyDataType": "Text",
+                          "pyFieldLabel": "Work Group",
+                          "pyFilterName": ".pxWorkGroup",
+                          "pyFilterOperation": "=",
+                          "pyFilterValue": "Param.WorkGroup",
+                          "pyIsLeftOperandAFunction": "false",
+                          "pyIsRightOperandAFunction": "false",
+                          "pyLogicLabel": "B",
+                          "pyPromptType": "AllAccess",
+                          "pySkipValidation": "false",
+                          "pyUseNullIfEmpty": "false"
+                      }
+                  ]
+              },
+              "pyUIHavingFilters": {
+                  "pxObjClass": "Embed-ReportFilters-Having",
+                  "pyFilter": []
+              }
+          },
+          "pyChart": {
+              "pxCreateDateTime": "2012-05-31T06:15:10.661Z",
+              "pxCreateOperator": "uppak",
+              "pxCreateOpName": "Uppalapati Kalyan",
+              "pxCreateSystemID": "sde",
+              "pxObjClass": "Embed-ReportGraph",
+              "pyChartOutputType": "Flash",
+              "pyClassName": "Assign-Worklist",
+              "pyDisableDrillDown": "false",
+              "pyEnable2D3D": "false",
+              "pyEnableChart": "false",
+              "pyGraphType": "Pie",
+              "pyHeight": "300",
+              "pyIs3D": "false",
+              "pyLegendDirection": "horizontal",
+              "pyLegendEnable": "true",
+              "pyLegendPlacement": "bottom",
+              "pyLimitValue": "0",
+              "pyMax": "2",
+              "pyMaxSubTypeIcons": "1",
+              "pyMin": "1",
+              "pyOptionsToEdit": "Format",
+              "pyOutputType": " ",
+              "pyShowAllGridLines": "true",
+              "pyShowAllLabelsMS": "true",
+              "pyShowAllLabelsSS": "false",
+              "pyShowDataTips": "true",
+              "pyShowMaxButton": "true",
+              "pyShowNewWindow": "true",
+              "pyShowSVButton": "true",
+              "pySize": "Large",
+              "pySliderEnabled": "true",
+              "pySliderGroupCount": "0",
+              "pySliderTitle": " ",
+              "pySliderWidth": "200",
+              "pySubChartIndex": "1",
+              "pySubType": "Normal",
+              "pyTimeOut": "0",
+              "pyTitleEnabled": "true",
+              "pyTitleFontSize": "8",
+              "pyTitleFontStyle": "regular",
+              "pyUseFusionChart": "false",
+              "pyUseSolidColorsFor2D": "true",
+              "pyUseV6Chart": "true",
+              "pyValueOfChart": "0",
+              "pyWidth": "400",
+              "pzChartAllowed": "false",
+              "pxResults": [
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Urgency",
+                      "pySelected": "false",
+                      "pyStringType": "Decimal",
+                      "pyTargetProperty": ".pxUrgencyAssign",
+                      "pzIndexCount": "1"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "ID",
+                      "pySelected": "false",
+                      "pyStringType": "Identifier",
+                      "pyTargetProperty": ".pxRefObjectInsName",
+                      "pzIndexCount": "2"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Subject",
+                      "pySelected": "false",
+                      "pyStringType": "Text",
+                      "pyTargetProperty": ".pyLabel",
+                      "pzIndexCount": "3"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Status of the assignment",
+                      "pySelected": "false",
+                      "pyStringType": "Text",
+                      "pyTargetProperty": ".pyAssignmentStatus",
+                      "pzIndexCount": "4"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Instructions",
+                      "pySelected": "false",
+                      "pyStringType": "Text",
+                      "pyTargetProperty": ".pyInstructions",
+                      "pzIndexCount": "5"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Status of the assignment",
+                      "pySelected": "false",
+                      "pyStringType": "Text",
+                      "pyTargetProperty": ".pyAssignmentStatus",
+                      "pzIndexCount": "6"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Deadline Time",
+                      "pySelected": "false",
+                      "pyStringType": "DateTime",
+                      "pyTargetProperty": ".pxDeadlineTime",
+                      "pzIndexCount": "7"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Operator ID",
+                      "pySelected": "false",
+                      "pyStringType": "Text",
+                      "pyTargetProperty": ".pxAssignedOperatorID",
+                      "pzIndexCount": "8"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Update Operator",
+                      "pySelected": "false",
+                      "pyStringType": "Text",
+                      "pyTargetProperty": ".pxUpdateOperator",
+                      "pzIndexCount": "9"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Update Time",
+                      "pySelected": "false",
+                      "pyStringType": "DateTime",
+                      "pyTargetProperty": ".pxUpdateDateTime",
+                      "pzIndexCount": "10"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Goal time",
+                      "pySelected": "false",
+                      "pyStringType": "DateTime",
+                      "pyTargetProperty": ".pxGoalTime",
+                      "pzIndexCount": "11"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Datetime of creation",
+                      "pySelected": "false",
+                      "pyStringType": "DateTime",
+                      "pyTargetProperty": ".pxCreateDateTime",
+                      "pzIndexCount": "12"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Task Label",
+                      "pySelected": "false",
+                      "pyStringType": "Text",
+                      "pyTargetProperty": ".pxTaskLabel",
+                      "pzIndexCount": "13"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Operator User Name",
+                      "pySelected": "false",
+                      "pyStringType": "Text",
+                      "pyTargetProperty": ".pxAssignedUserName",
+                      "pzIndexCount": "14"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Referenced Object class",
+                      "pySelected": "false",
+                      "pyStringType": "Identifier",
+                      "pyTargetProperty": ".pxRefObjectClass",
+                      "pzIndexCount": "15"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Referenced Object pzInsKey",
+                      "pySelected": "false",
+                      "pyStringType": "Identifier",
+                      "pyTargetProperty": ".pxRefObjectKey",
+                      "pzIndexCount": "16"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Application Name",
+                      "pySelected": "false",
+                      "pyStringType": "Text",
+                      "pyTargetProperty": ".pxApplication",
+                      "pzIndexCount": "17"
+                  }
+              ],
+              "pyBackgroundColor": [
+                  {
+                      "pxObjClass": "Embed-ReportGraph-BGColor"
+                  }
+              ],
+              "pyCategoryAxis": [
+                  {
+                      "pxObjClass": "Embed-ReportGraph-Axis"
+                  }
+              ],
+              "pyDataAxis": [
+                  {
+                      "pxObjClass": "Embed-ReportGraph-Axis"
+                  }
+              ],
+              "pyGauge": {
+                  "pxObjClass": "Embed-ReportGraph-Gauge",
+                  "pyBorderAlpha": "1",
+                  "pyBorderColor": " ",
+                  "pyBorderThickness": "1",
+                  "pyCoverAlpha": "1",
+                  "pyCoverBorderColor": " ",
+                  "pyCoverColor": " ",
+                  "pyCoverRadius": "0",
+                  "pyDateTimeCustomFormat": " ",
+                  "pyDateTimeFormat": "dd:hh:mm:ss",
+                  "pyDateTimeInput": "milliseconds",
+                  "pyFieldHTMLProperty": " ",
+                  "pyMajorTickColor": " ",
+                  "pyMajorTickLength": "10",
+                  "pyMajorTicks": "0",
+                  "pyMajorTickThickness": "3",
+                  "pyMaximum": "0.0",
+                  "pyMinimum": "0.0",
+                  "pyMinorTickColor": " ",
+                  "pyMinorTickLength": "5",
+                  "pyMinorTicks": "0",
+                  "pyMinorTickThickness": "1",
+                  "pyNameField": " ",
+                  "pyNameFormat": " ",
+                  "pyNeedleAlpha": "1",
+                  "pyNeedleBaseWidth": "0",
+                  "pyNeedleColor": " ",
+                  "pyNeedleStyle": " ",
+                  "pyNeedleThickness": "3",
+                  "pyNeedleTopWidth": "0",
+                  "pyNumberCurrencySymbol": "$",
+                  "pyNumberFormat": "general",
+                  "pyNumberNegativeSign": "false",
+                  "pyNumberPrecision": "2",
+                  "pyNumberThouSeperator": "true",
+                  "pyShowValue": "true",
+                  "pyTickLocation": "Inside",
+                  "pyValueIndex": "1",
+                  "pyFieldHTMLParams": {
+                      "pyTempPlaceHolder": "TempPlaceHolder"
+                  }
+              },
+              "pyPie": {
+                  "pxObjClass": "Embed-ReportGraph-Pie",
+                  "pyDateTimeCustomFormat": " ",
+                  "pyDateTimeFormat": "dd:hh:mm:ss",
+                  "pyDateTimeInput": "milliseconds",
+                  "pyExplodeRadius": "0.1",
+                  "pyField": " ",
+                  "pyFieldHTMLProperty": " ",
+                  "pyInnerRadius": "0.1",
+                  "pyLabelEnabled": "false",
+                  "pyLabelField": "false",
+                  "pyLabelNameField": "false",
+                  "pyLabelPercent": "false",
+                  "pyLabelPosition": "outside",
+                  "pyNameField": " ",
+                  "pyNameFieldHTMLProperty": " ",
+                  "pyNameFormat": "general",
+                  "pyNumberCurrencySymbol": "$",
+                  "pyNumberNegativeSign": "false",
+                  "pyNumberPrecision": "2",
+                  "pyNumberThouSeperator": "true",
+                  "pyFieldHTMLParams": {
+                      "pyTempPlaceHolder": "TempPlaceHolder"
+                  },
+                  "pyNameFieldHTMLParams": {
+                      "pyTempPlaceHolder": "TempPlaceHolder"
+                  }
+              },
+              "pyXY": {
+                  "pxObjClass": "Embed-ReportGraph-XY",
+                  "pyInterpolateValues": "true",
+                  "pySwapSeries": "false",
+                  "pyTitleFontSize": "8",
+                  "pyTitleFontStyle": "regular",
+                  "pyUniformMinor": "true",
+                  "pyUseColorRanges": "false",
+                  "pyArea": {
+                      "pxObjClass": "Embed-ReportGraph-XY-Area",
+                      "pySeriesEffect": "Interpolate"
+                  },
+                  "pyBar": {
+                      "pxObjClass": "Embed-ReportGraph-XY-Bar",
+                      "pyMaxBarWidth": "0",
+                      "pySeriesEffect": "Interpolate"
+                  },
+                  "pyBubble": {
+                      "pxObjClass": "Embed-ReportGraph-XY-Bubble"
+                  },
+                  "pyColumn": {
+                      "pxObjClass": "Embed-ReportGraph-XY-Column",
+                      "pyMaxColWidth": "0",
+                      "pySeriesEffect": "Interpolate"
+                  },
+                  "pyDataAxis": [
+                      {
+                          "pxObjClass": "Embed-ReportGraph-XY-DataAxis",
+                          "pyAxisCurrencySymbol": "$",
+                          "pyAxisCustomFormat": " ",
+                          "pyAxisDateTimeFormat": "dd:hh:mm:ss",
+                          "pyAxisDateTimeInput": "milliseconds",
+                          "pyAxisDecimalSeperator": "true",
+                          "pyAxisFormat": " ",
+                          "pyAxisHTMLProp": " ",
+                          "pyAxisNegativeSign": "false",
+                          "pyAxisPlacement": " ",
+                          "pyAxisPrecision": "2",
+                          "pyAxisScale": "Linear",
+                          "pyAxisThouSeperator": "true",
+                          "pyMissingsAsZero": "true",
+                          "pyNumberFormat": "general",
+                          "pyShowGridLines": "true",
+                          "pyShowLabels": "true",
+                          "pyTitle": " ",
+                          "pyAxisHTMLParams": {
+                              "pyTempPlaceHolder": "TempPlaceHolder"
+                          },
+                          "pyDataAxisList": [
+                              {
+                                  "pxObjClass": "Embed-ReportGraph-XY-Axis",
+                                  "pyDisplayFieldName": " ",
+                                  "pyFieldIndex": "0",
+                                  "pyFieldName": " "
+                              }
+                          ]
+                      }
+                  ],
+                  "pyGroupAxis": [
+                      {
+                          "pxObjClass": "Embed-ReportGraph-XY-GroupAxis",
+                          "pyAxisHTMLProp": " ",
+                          "pyAxisPlacement": " ",
+                          "pyAxisScale": "Category",
+                          "pyShowGridLines": "true",
+                          "pyShowLabels": "true",
+                          "pySubGrpAxisHTMLProp": " ",
+                          "pyTitle": " ",
+                          "pyAxisHTMLParams": {
+                              "pyTempPlaceHolder": "TempPlaceHolder"
+                          },
+                          "pyGroupAxisList": [
+                              {
+                                  "pxObjClass": "Embed-ReportGraph-XY-Axis",
+                                  "pyDisplayFieldName": " ",
+                                  "pyFieldIndex": "0",
+                                  "pyFieldName": " "
+                              }
+                          ],
+                          "pySubGrpAxisHTMLParams": {
+                              "pyTempPlaceHolder": "TempPlaceHolder"
+                          }
+                      }
+                  ],
+                  "pyLine": {
+                      "pxObjClass": "Embed-ReportGraph-XY-Line",
+                      "pyDropShadow": "true",
+                      "pyLineWeight": "3",
+                      "pySeriesEffect": "Interpolate"
+                  }
+              }
+          },
+          "pyHeader": {
+              "pxObjClass": "Embed-ReportHeader",
+              "pyButtons": {
+                  "pxObjClass": "Embed-ReportButtons",
+                  "pyButtonList": [
+                      {
+                          "pxObjClass": "Embed-ReportButton",
+                          "pyButtonCaption": "Save",
+                          "pyButtonToolTip": "Save",
+                          "pyImage": "report_save",
+                          "pyType": "Icon"
+                      },
+                      {
+                          "pxObjClass": "Embed-ReportButton",
+                          "pyButtonCaption": "Save As",
+                          "pyButtonToolTip": "Save As",
+                          "pyFunction": "\"showSaveAsDialog(this, event);\"",
+                          "pyImage": "report_saveas",
+                          "pyType": "Icon"
+                      },
+                      {
+                          "pxObjClass": "Embed-ReportButton",
+                          "pyButtonCaption": "Print",
+                          "pyButtonToolTip": "Print",
+                          "pyFunction": "window.print()",
+                          "pyImage": "report_print",
+                          "pyType": "Icon"
+                      },
+                      {
+                          "pxObjClass": "Embed-ReportButton",
+                          "pyButtonCaption": "Column Summary",
+                          "pyButtonToolTip": "Edit Columns To Include",
+                          "pyFunction": "columnSummary(this,event)",
+                          "pyImage": "report_colsmry",
+                          "pyType": "Icon"
+                      },
+                      {
+                          "pxObjClass": "Embed-ReportButton",
+                          "pyButtonCaption": "Append Column",
+                          "pyButtonToolTip": "Append Column",
+                          "pyFunction": "AppendColumn(this,event)",
+                          "pyImage": "report_plus",
+                          "pyType": "Icon"
+                      },
+                      {
+                          "pxObjClass": "Embed-ReportButton",
+                          "pyButtonCaption": "RepTtitle",
+                          "pyButtonToolTip": "Edit Report Title",
+                          "pyFunction": "\"changeReportTitle(this,event);\"",
+                          "pyImage": "report_title",
+                          "pyType": "Icon"
+                      },
+                      {
+                          "pxObjClass": "Embed-ReportButton",
+                          "pyButtonCaption": "Chart",
+                          "pyButtonToolTip": "Add Or Edit Chart",
+                          "pyFunction": "\"showChartOptions(this, event);\"",
+                          "pyImage": "report_bar",
+                          "pyLabel": "manager",
+                          "pyType": "Icon"
+                      },
+                      {
+                          "pxObjClass": "Embed-ReportButton",
+                          "pyButtonCaption": "ExpExcel",
+                          "pyButtonToolTip": "Export To Excel",
+                          "pyFunction": "\"exportToExcel(this,event);\"",
+                          "pyImage": "report_excel",
+                          "pyType": "Icon"
+                      },
+                      {
+                          "pxObjClass": "Embed-ReportButton",
+                          "pyButtonCaption": "ExpPDF",
+                          "pyButtonToolTip": "Export To PDF",
+                          "pyFunction": "\"exportToPDF(this,event);\"",
+                          "pyImage": "report_pdf",
+                          "pyType": "Icon"
+                      },
+                      {
+                          "pxObjClass": "Embed-ReportButton",
+                          "pyButtonCaption": "Filtering",
+                          "pyButtonToolTip": "Advanced Filtering",
+                          "pyFunction": "\"advancedFiltering(this,event);\"",
+                          "pyImage": "report_filtering",
+                          "pyType": "Icon"
+                      }
+                  ]
+              }
+          },
+          "pyPromptSectionParams": {
+              "pxObjClass": "Embed-ReportPromptSection",
+              "pzDisplayFilterPrompt": "true"
+          },
+          "pySecurity": {
+              "pxObjClass": "Embed-ReportSecurity",
+              "pyPrivilegeList": [
+                  {
+                      "pxObjClass": "Embed-Rule-PrivilegeSecurity"
+                  }
+              ]
+          },
+          "pySmartInfo": {
+              "pxObjClass": "Embed-ReportSmartInfo",
+              "pySingleClickSInfo": {
+                  "pxObjClass": "Embed-ReportSingleClickInfo",
+                  "pyEnabled": "false",
+                  "pySmartInfoHeader": "Additional Information"
+              }
+          },
+          "pySource": {
+              "pxObjClass": "Embed-ReportSource",
+              "pyAllowApproximation": "false",
+              "pyIncludeAllDescendantclasses": "false",
+              "pyUseImplementationClass": "true",
+              "pyAssociations": [],
+              "pyIndexInfo": [],
+              "pyJoinInfo": [],
+              "pyRowKeyInfo": {
+                  "pxObjClass": "Embed-ReportRowKeyInfo",
+                  "pyGetRowKey": "true",
+                  "pxResults": [
+                      {
+                          "pyLabel": ".pzInsKey"
+                      }
+                  ],
+                  "pyRowKeys": [
+                      ".pzInsKey"
+                  ]
+              },
+              "pySubReportFrom": {
+                  "pxObjClass": "Embed-SubReportInfo"
+              },
+              "pySubReportInfo": []
+          },
+          "pyUserInteractions": {
+              "pxObjClass": "Embed-ReportUserInteractions",
+              "pyDesignModeActualResults": "false",
+              "pyDisableDrillDown": "false",
+              "pyDrillDownReportName": "pyDefaultReport",
+              "pyEnableAddFilters": "true",
+              "pyExpandAllGroupBy": "false",
+              "pyFixedHeader": "false",
+              "pyPromptForFilters": "false",
+              "pyShowDataOnly": "false",
+              "pyPagingParams": {
+                  "pxMorePages": "false",
+                  "pxObjClass": "Embed-ReportPaging",
+                  "pyAlignment": "Right",
+                  "pyPosition": "Top",
+                  "pyReturnTotalResultCount": "true",
+                  "pySortMode": "dataset",
+                  "pyWindowSize": "10"
+              },
+              "pyReportToolbarOptions": {
+                  "pxObjClass": "Embed-ReportViewerCommands",
+                  "pyDisplayCommandMenu": "true",
+                  "pyDisplayCommandRibbon": "true",
+                  "pyDisplayReportHeader": "true",
+                  "pyEnableAdvancedFiltering": "true",
+                  "pyEnableAppendColumn": "true",
+                  "pyEnableConvertToList": "true",
+                  "pyEnableEditChart": "true",
+                  "pyEnableEditColumns": "true",
+                  "pyEnableEditing": "true",
+                  "pyEnableEditReportTitle": "true",
+                  "pyEnableExportToExcel": "true",
+                  "pyEnableExportToPDF": "true",
+                  "pyEnableFilters": "true",
+                  "pyEnablePrint": "true",
+                  "pyEnableSave": "true",
+                  "pyEnableSaveAs": "true",
+                  "pyEnableSummarize": "true"
+              }
+          }
+      }
+  },
+  "pzPerformanceSettings": []
+}

@@ -1,0 +1,75 @@
+{
+  "pxObjClass": "Pega-API-CaseManagement",
+  "caseTypes": [
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-RequestCheckImage",
+          "name": "RequestCheckImage",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create case type for csfs application",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-ManageEntitlements",
+          "name": "ManageEntitlements",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Manage Entitlements",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-TransactionInquiry",
+          "name": "TransactionInquiry",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Transaction Inquiry",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-TransactionDetails",
+          "name": "TransactionDetails",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Transaction Details",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-BalanceInquiry",
+          "name": "BalanceInquiry",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Balance Inquiry",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      }
+  ]
+}

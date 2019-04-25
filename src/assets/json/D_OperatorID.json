@@ -1,0 +1,304 @@
+{
+  "pxCommitDateTime": "2019-04-23T13:59:40.494Z",
+  "pxCreateDateTime": "2019-03-05T04:54:23.347Z",
+  "pxCreateOperator": "CLMFSSysAdmin",
+  "pxCreateOpName": "CLMFS SysAdmin",
+  "pxCreateSystemID": "pega",
+  "pxInsId": "",
+  "pxInsName": "SALLYJONES",
+  "pxLimitedAccess": "Dev",
+  "pxMoveFromSystem": "",
+  "pxMoveImportDateTime": "2019-04-03T06:50:07.382Z",
+  "pxMoveImportOperId": "Administrator@pega.com",
+  "pxMoveImportOperName": "Administrator",
+  "pxObjClass": "Data-Admin-Operator-ID",
+  "pxSaveDateTime": "2019-04-23T14:01:14.151Z",
+  "pxUpdateDateTime": "2019-04-03T07:03:10.206Z",
+  "pxUpdateOperator": "Administrator@pega.com",
+  "pxUpdateOpName": "Administrator",
+  "pxUpdateSystemID": "pega",
+  "pyAccessGroup": "Treasurer:Users",
+  "pyAllowRuleCheckOut": "false",
+  "pyCalendar": "Always Open",
+  "pyChangePasswordOnNextLogin": "false",
+  "pyClassName": "",
+  "pyDecisionTreeName": "",
+  "pyDefaultTimeZone": "America/New_York",
+  "pyDescription": "Sally.JonesNewWave@gmail.com operator id",
+  "pyDisplayMode": "",
+  "pyFirstName": "Sally",
+  "pyFontName": "Arial",
+  "pyFormPost": "",
+  "pyHistoryObject": "false",
+  "pyImageFileName": "",
+  "pyImageInsKey": "",
+  "pyImportedUser": "false",
+  "pyIsPegaSuppliedOperator": "false",
+  "pyIsTagged": "true",
+  "pyLabel": "operator record for Sally Jones Treasurer",
+  "pyLastName": "Jones",
+  "pyLastSignon": "2019-04-23T14:01:14.143Z",
+  "pyLicenseType": "NAMED",
+  "pyMergeWorkbaskets": "false",
+  "pyOpAvailable": "true",
+  "pyOperatorIsDeactivated": "false",
+  "pyOperatorType": "STANDARD",
+  "pyOrganization": "UPFS",
+  "pyOrgDivision": "GM",
+  "pyOrgUnit": "UPFS-GM-AME",
+  "pyPosition": "treasurer",
+  "pyPwdConfirm": "",
+  "pyPwdCurrent": "\t{br}$2a$10$JRVk6Sc7ULmw0tWtl8Ty..5q29gTpnUuap9kUqoD2NC/ynY5Pekwm",
+  "pyPwdNew": "",
+  "pyReloadForm": "true",
+  "pyReportTo": "",
+  "pyRulePrefix": "none",
+  "pyRuleSet": "",
+  "pyRuleSetName": "Treasurer",
+  "pyRuleSetVersion": "",
+  "pySPRuleSetName": "",
+  "pySSLProtocolVersion": "TLSv1",
+  "pyStartingActivity": "Data-Portal.ShowDesktop",
+  "pyStreamName": "",
+  "pySubstituteOperator": "",
+  "pySubstituteType": "Operator",
+  "pyTaskGroup": "",
+  "pyTaskID": "",
+  "pyTelephone": "",
+  "pyTemplateDisplayText": "",
+  "pyTemplateInputBox": "",
+  "pyTemporaryObject": "",
+  "pyTitle": "",
+  "pyUsage": "Sally.JonesNewWave@gmail.com operator id",
+  "pyUseAllWorkbasketsInWorkgroup": "false",
+  "pyUseApplications": "true",
+  "pyUseLocale": "",
+  "pyUseLocaleForDateFormat": "",
+  "pyUseLocaleForNumberFormat": "",
+  "pyUserIdentifier": "SallyJones",
+  "pyUserName": "Sally Jones",
+  "pyWindowTitle": "",
+  "pyWorkbasketFirst": "false",
+  "pyWorkGroup": "NewWaveWG",
+  "pzFailedLoginAttempts": "0",
+  "pzHasOperatorLocked": "false",
+  "pzIndexCount": "147",
+  "pzIndexOwnerKey": "DATA-ADMIN-OPERATOR-ID SALLYJONES",
+  "pzInsKey": "DATA-ADMIN-OPERATOR-ID SALLYJONES",
+  "pzLockedTime": "1970-01-01T00:00:00.000Z",
+  "pzOriginalInstanceKey": "DATA-ADMIN-OPERATOR-ID SALLY JONES TREASURER",
+  "pzPageNameHash": "",
+  "pzRequestorId": "A1F214ICIJEDNAZS9FDMU8HW5AO3D3X6RA",
+  "pxWarnings": [],
+  "pyAccessGroupsAdditional": [
+      "Treasurer:Users",
+      "PegaCS-IVA-WCB-Sample:Administrators"
+  ],
+  "pyAddresses": {
+      "Email": {
+          "pxObjClass": "Data-Address-Email",
+          "pxSubscript": "Email",
+          "pyEmailAddress": "sallyjones@pegatsdemo.com",
+          "pzIndexOwnerKey": "DATA-ADMIN-OPERATOR-ID SALLYJONES",
+          "pzIndexes": {
+              "crmOperEmail": "106"
+          }
+      }
+  },
+  "pyCachingData": {
+      "pxObjClass": "Data-Admin-Operator-ID",
+      "pyAccessGroup": "Treasurer:Users",
+      "pyLastSignon": "1970-01-01T00:00:00.000Z",
+      "pyOrgUnit": "UPFS-GM-AME",
+      "pyPosition": "treasurer",
+      "pyUserIdentifier": "SallyJones",
+      "pyUserName": "Sally Jones",
+      "pyWorkGroup": "NewWaveWG"
+  },
+  "pyCorrPreferences": [
+      "Email"
+  ],
+  "pyPreferences": {
+      "pxObjClass": "Embed-OperatorID-Preferences",
+      "pyCaptionDisplay": "NAME",
+      "pyCurrentClassListType": "Implementation",
+      "pyCurrentProject": "",
+      "pyCurrentTaskGroup": "",
+      "pyDeveloperLevel": "Expert",
+      "pyHierarchyDisplay": "PARENT",
+      "pyClassOptions": [
+          {
+              "pxObjClass": "Embed-OperatorID-ClassOptions",
+              "pyTopLevelClassLabel": "",
+              "pyTopLevelClassName": ""
+          }
+      ],
+      "pyFormPrefs": {
+          "pxObjClass": "Embed-Preferences-Forms",
+          "pyAlwaysExpandHeader": "false",
+          "pyAutoApply": "true",
+          "pyAutoCheckout": "true",
+          "pyCollapseNavPane": "false",
+          "pyFlowStencil": "Standard",
+          "pyGridLines": "true",
+          "pyMaxOpenRules": "20",
+          "pyOrientation": "Landscape",
+          "pyRemoveRuleAfterDelete": "false",
+          "pyShowTabs": "true",
+          "pyWarnBeforeDelete": "true",
+          "pyWarnDeleteCheckout": "true",
+          "pyWarnDVPropertyPanel": "autoapply"
+      },
+      "pyGeneralPrefs": {
+          "pxObjClass": "Embed-Preferences-General",
+          "pyDisableJSCompacting": "false",
+          "pyShowWorkSkin": ""
+      },
+      "pyNavigationPrefs": {
+          "pxObjClass": "Embed-Preferences-Navigation",
+          "pyDefaultAppExplorerDisplay": "ClassGroup",
+          "pyDefaultTab": "AppExplorer",
+          "pyDefaultTabLabel": "Application Explorer",
+          "pyHideNonAppliesToRules": "true",
+          "pyLastOpenSpace": "",
+          "pyLastTopRule": "",
+          "pyRecentRulesLimit": "10",
+          "pyRecentWorkLimit": "10",
+          "pySaveCurrentNavTab": "true",
+          "pySaveFullState": "true",
+          "pySaveLastNavTreeSelection": "false",
+          "pySaveListOpenRules": "true",
+          "pySaveOpenList": "false",
+          "pySelectorSourceString": "",
+          "pyShowAppExplorer": "true",
+          "pyShowClassExplorer": "false",
+          "pyShowFullManageRules": "false",
+          "pyShowMyRules": "true",
+          "pyShowProfileExplorer": "false",
+          "pyShowRulesByType": "true",
+          "pyShowUsedByApp": "false",
+          "pyShowWelcomeScreen": "true",
+          "pyListOpenRules": [
+              ""
+          ],
+          "pyOpenRulesList": [
+              {
+                  "pxObjClass": "Embed-Preferences-Navigation-OpenRuleData",
+                  "pyFullName": "",
+                  "pyLabel": "",
+                  "pyRuleInsKey": "",
+                  "pyRuleObjClass": "",
+                  "pyRuleSet": "",
+                  "pyRuleSourceString": "",
+                  "pyRuleSourceType": "",
+                  "pyVersion": ""
+              }
+          ]
+      },
+      "pySearchPrefs": {
+          "pxObjClass": "Embed-Preferences-Search",
+          "pyMaxDataCount": "5000",
+          "pyMaxReturnCount": "50",
+          "pyMaxRuleCount": "5000",
+          "pySearchType": "MostRecent"
+      },
+      "pySelectedClassList": [
+          ""
+      ],
+      "pyToolsPrefs": {
+          "pxObjClass": "Embed-Preferences-Tools",
+          "pyLaunchClipboard": "true",
+          "pyLaunchImageCatalog": "true",
+          "pyLaunchPerformance": "true",
+          "pyLaunchStyleViewer": "true",
+          "pyPMFUserID": "SallyJones",
+          "pyProjectUserID": "SallyJones",
+          "pyShowFeedbackPin": "true"
+      }
+  },
+  "pySkills": [
+      {
+          "pxObjClass": "Embed-Data-Admin-Skill",
+          "pySkillName": "Java",
+          "pySkillRating": "8",
+          "pzIndexOwnerKey": "DATA-ADMIN-OPERATOR-ID SALLYJONES",
+          "pzIndexes": {
+              "Skills": "140"
+          }
+      },
+      {
+          "pxObjClass": "Embed-Data-Admin-Skill",
+          "pySkillName": "English",
+          "pySkillRating": "10",
+          "pzIndexOwnerKey": "DATA-ADMIN-OPERATOR-ID SALLYJONES",
+          "pzIndexes": {
+              "Skills": "141"
+          }
+      }
+  ],
+  "pySkillsPrimary": [
+      "Designer"
+  ],
+  "pySkillsSecondary": [
+      "User"
+  ],
+  "pyUnavailablePeriod": [
+      {
+          "pxObjClass": "Embed-Data-Admin-UnavailablePeriod",
+          "pyUnavailableFrom": "1970-01-01",
+          "pyUnavailableTo": "1970-01-01"
+      }
+  ],
+  "pyWorkbasket": [
+      "UPFS_GM_AME_RelMgmt_Review"
+  ],
+  "pyWorkBasketList": [
+      {
+          "pxObjClass": "Embed-Data-Admin-WorkBasket",
+          "pyUrgencyThreshold": "",
+          "pyWorkBasketName": "UPFS_GM_AME_RelMgmt_Review",
+          "pzIndexOwnerKey": "DATA-ADMIN-OPERATOR-ID SALLYJONES",
+          "pzIndexes": {
+              "pzOperatorWorkBasketIndex": "144"
+          }
+      }
+  ],
+  "pyWorkGroupList": [
+      {
+          "pxObjClass": "Data-Admin-WorkGroup",
+          "pyRadioButtonAG": "true",
+          "pyWorkGroupName": "NewWaveWG",
+          "pzIndexOwnerKey": "DATA-ADMIN-OPERATOR-ID SALLYJONES",
+          "pzIndexes": {
+              "pzWorkGroupsForOperator": "145"
+          }
+      },
+      {
+          "pxCreateDateTime": "2019-03-12T06:21:48.433Z",
+          "pxCreateOperator": "lekshmi1",
+          "pxCreateOpName": "Precious",
+          "pxCreateSystemID": "pega",
+          "pxObjClass": "Data-Admin-WorkGroup",
+          "pyDefaultWorkBasket": "",
+          "pyDescription": "",
+          "pyIsTagged": "true",
+          "pyLabel": "",
+          "pyManager": "",
+          "pyRadioButtonAG": "",
+          "pyRuleSetName": "Treasurer",
+          "pySSLProtocolVersion": "TLSv1.2",
+          "pyUsage": "",
+          "pyWorkGroupName": "UPFS_GM_AME_RelMgmt",
+          "pzIndexOwnerKey": "DATA-ADMIN-OPERATOR-ID SALLYJONES",
+          "pyContacts": [
+              ""
+          ],
+          "pzIndexes": {
+              "pzWorkGroupsForOperator": "146"
+          }
+      }
+  ],
+  "pzIndexes": {
+      "AdditionalAccessGroup": "142"
+  }
+}

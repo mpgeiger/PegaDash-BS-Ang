@@ -18,6 +18,8 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
     </div>
   `
 })
+
+
 export class modalRCICaseType {
   @Input() name;
   @Input() requestType;

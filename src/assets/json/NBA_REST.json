@@ -1,0 +1,52 @@
+{
+  "Status": "OK",
+  "ContainerList": [
+      {
+          "Status": "OK",
+          "ContainerName": "BNYServices",
+          "RankedResults": [
+              {
+                  "Group": "Treasury",
+                  "Issue": "Sales",
+                  "InteractionID": "7282507405384383464",
+                  "Category": "Treasury",
+                  "FulfillmentMethod": "",
+                  "CustomerCost": 0,
+                  "ContentFormat": "",
+                  "Label": "FXACHPayment",
+                  "Benefits": "Send payments in over 100 currencies and receive payments in more than 35 currencies. Substantially decrease the need to maintain accounts in local markets. Access our dedicated local client services.",
+                  "WhyRelevant": "",
+                  "Direction": "",
+                  "Name": "FXACHPayment",
+                  "ShortDescription": "As international business continues to expand, an efficient and cost effective cross-border payment service is essential. Making foreign exchange payments can be challenging, but let BNY Mellon help you.",
+                  "PaidAudienceName": "",
+                  "Identifier": "/Sales/Treasury/FXACHPayment",
+                  "Placement": "",
+                  "Pricing": "",
+                  "JourneyStage": "",
+                  "JourneyStep": "",
+                  "EligibilityDescription": "",
+                  "Propensity": 0,
+                  "AgentCompensation": 0,
+                  "ClassIdentifier": "Offer",
+                  "Priority": 0,
+                  "Channel": "",
+                  "BundleName": "",
+                  "ImageURL": "http://end2endcrmcommercialbankingnew.pegatsdemo.com/BNYImages/ACH.jpg",
+                  "Rank": 1,
+                  "ProductID": "",
+                  "BundleParent": "false",
+                  "Variant": "",
+                  "Treatment": "",
+                  "LargeImage": "",
+                  "InternalCost": 0,
+                  "CampaignID": "NBA",
+                  "OfferValue": 0,
+                  "ClickThroughURL": "",
+                  "Journey": "",
+                  "DecisionTime": "20190423T121532.519 GMT"
+              }
+          ]
+      }
+  ]
+}

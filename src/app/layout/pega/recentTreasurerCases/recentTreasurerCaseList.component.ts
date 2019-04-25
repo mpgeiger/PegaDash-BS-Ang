@@ -15,6 +15,8 @@ import {MatTableDataSource, MatPaginator, MatSort} from '@angular/material';
 import { FormControl } from '@angular/forms';
 import { stringify } from 'querystring';
 
+import stubbedResults from '../../../../assets/json/D_RecentTreasurerCases.json';
+
 
 export interface TreasurerCases {
   CaseStatusImage: string;
@@ -90,31 +92,56 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
     // this.ngAfterViewInit();
   }
 
-  ngAfterViewInit(): void {
-    // this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
-   // this.sortedData = this.cases.slice();
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    this.getCases();
+  checkIfStubbed() {
+    const useStubStr = localStorage.getItem('useStubbedData');
+
+    let useStub = false;
+    useStub = (useStubStr === 'true');
+    return useStub;
   }
 
+  ngAfterViewInit(): void {
+    // this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
+    // this.sortedData = this.cases.slice();
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+    if (this.checkIfStubbed()) {
+
+      console.log('STUBBED D_RecentTreasurerCases');
+      this.getStubbedCases();
+    } else {
+      console.log('LIVE D_RecentTreasurerCases');
+      this.getCases();
+    }
+  }
+
+
+
+  getStubbedCases() {
+    const stubbed: any = stubbedResults;
+    this.cases = Object.keys(this.getResults(stubbed)).map(it => this.getResults(stubbed)[it]);
+    // this.cases = JSON.parse(response.body);
+   // this.sortedData = this.cases.slice();
+    this.dataSource.data = this.cases as TreasurerCases[];
+    // this.dataSource.filterPredicate = this.createFilter();
+    localStorage.setItem('D_RecentTreasurerCases', this.cases.length.toString());
+    console.log('count of D_RecentTreasurerCases-->  ', localStorage.getItem('D_RecentTreasurerCases'));
+    this.showLoading = false;
+  }
+
+
   getCases() {
+    // cont; foo = useStubbedData;
    // const unifiedtaskParams = new HttpParams().set('UserId', 'SallyJones').set('WorkGroup', 'NewWaveWG');
    const dParams = new HttpParams();
 
     this.datapage.getDataPage('D_RecentTreasurerCases', dParams).subscribe(
       response => {
 
-        // console.log(' get D_RecentTreasurerCases -->' + JSON.stringify(response.body));
-        const resSTR = JSON.stringify(this.getResults(response.body));
-        const resJSON = JSON.parse(resSTR);
-        // console.log(' get D_RecentTreasurerCases-->', resJSON._body);
-        // this.unifiedtask$ = new MatTableDataSource<any>(this.getResults(response.body));
+
         this.headers = response.headers;
-        // this.unifiedtaskObject$ = JSON.parse(this.getResults(response.body));
         this.cases = Object.keys(this.getResults(response.body)).map(it => this.getResults(response.body)[it]);
-        // this.cases = JSON.parse(response.body);
-       // this.sortedData = this.cases.slice();
+
         this.dataSource.data = this.cases as TreasurerCases[];
         // this.dataSource.filterPredicate = this.createFilter();
 
@@ -127,15 +154,6 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
 
         console.log('count of D_RecentTreasurerCases-->  ', localStorage.getItem('D_RecentTreasurerCases'));
         this.showLoading = false;
-        // this.unifiedtask$.paginator = this.paginator;
-        // this.unifiedtask$.sort = this.sort;
-
-        // this.p_TotalNumberItems = this.cases.length;
-        // this.initPagingInfo();
-        // this.p_CurrentList = this.cases.slice(0, this.p_ItemsPerPage);
-        // initialize to page 1
-        // this.setPage(0);
-
       },
       err => {
         alert('Error form unifiedtask:' + err.errors);

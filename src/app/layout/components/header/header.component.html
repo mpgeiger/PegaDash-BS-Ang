@@ -4,6 +4,10 @@
         <!-- <span class="navbar-toggler-icon"></span> -->
         <i class="fa fa-bars text-muted" aria-hidden="true"></i>
     </button>
+
+
+
+
     <div class="collapse navbar-collapse">
 
         <ul class="navbar-nav ml-auto">
@@ -55,6 +59,38 @@
 
                 </div>
             </li>
+            <a mat-button [matMenuTriggerFor]="menu"  layout-align="end center">
+              <!-- pass local reference of mat-menu to be opened on this click -->
+              Self Service (MD)
+            </a>
+
+            <mat-menu #menu="matMenu">
+                <!-- give local reference and tell this is manu by assigning 'matMenu' -->
+
+                <!-- <button mat-menu-item *ngFor="let case of cases" (click)="createCaseType(case)">{{case.name}} -->
+                <button mat-menu-item *ngFor="let case of cases">
+                    <mat-icon>dialpad</mat-icon>
+                    <!-- <span>{{case.name | fromCamelCase }}</span> -->
+                    <!-- <app-modal-container>111</app-modal-container> -->
+                    <app-modal-container-rci-custom [master]="case.name | fromCamelCase"></app-modal-container-rci-custom>
+                    <!-- <mat-divider></mat-divider> -->
+                  </button>
+                  <mat-divider></mat-divider>
+
+                  <mat-menu-divider></mat-menu-divider>
+                <!-- <button mat-menu-item>
+                  <mat-icon>dialpad</mat-icon>
+                  <span>Redial</span>
+                </button>
+                <button mat-menu-item disabled>
+                  <mat-icon>voicemail</mat-icon>
+                  <span>Check voicemail</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>notifications_off</mat-icon>
+                  <span>Disable alerts</span>
+                </button> -->
+              </mat-menu>
             <form class="form-inline my-2 my-lg-0 right">
                 <input class="form-control mr-sm-2" type="text" placeholder="{{ 'Search' | translate }}" >
             </form>

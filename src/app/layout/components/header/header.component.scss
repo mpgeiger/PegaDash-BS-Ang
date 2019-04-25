@@ -20,6 +20,16 @@
                 background: darken($topnav-background-color, 5%);
             }
         }
+
+        .mat-menu-item {
+          height: 32px;
+          padding: 0 8px;
+        }
+
+    }
+    .mat-menu-item {
+      height: 32px;
+      padding: 0 8px;
     }
     .messages {
         width: 300px;

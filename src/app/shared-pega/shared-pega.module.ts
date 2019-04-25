@@ -1,5 +1,5 @@
-import { ModalComponent } from './../layout/bs-component/components/modal/modal.component';
-import { OpenAssignmentService } from './../_messages/openassignment.service';
+// import { ModalComponent } from './../layout/bs-component/components/modal/modal.component';
+// import { OpenAssignmentService } from './../_messages/openassignment.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChartsModule as Ng2Charts } from 'ng2-charts';
@@ -8,14 +8,19 @@ import { ChartsModule as Ng2Charts } from 'ng2-charts';
 
 import { AppMaterialModule } from '../app-material/app-material.module';
 import { CaselistComponent
-  , FileNameDialogComponent
-  , ModalContainerComponent
+  // , FileNameDialogComponent
+  // , ModalContainerComponent
+  , ModalRCIContainerComponent
+  , CreateCustomRCIcaseComponent
   , NbaOfferComponent
   , OpenByWorkTypeComponent
   , PegaPieChartComponent
   , RecentTreasurerCaseListComponent
-  , TransactionSummaryComponent } from '../layout/pega';
+  , TransactionSummaryComponent
+  // , HeroChildComponent
+} from '../layout/pega';
 
+// import { HeroParentComponent } from '../layout/components/header/header.component';
 @NgModule({
   imports: [
    CommonModule
@@ -28,29 +33,41 @@ import { CaselistComponent
   ],
   declarations: [
     CaselistComponent
-    , FileNameDialogComponent
-    , ModalContainerComponent
+    // , FileNameDialogComponent
+    // , ModalContainerComponent
+    , ModalRCIContainerComponent
+    , CreateCustomRCIcaseComponent
     // , ChartDataLabels
     , NbaOfferComponent
     , OpenByWorkTypeComponent
     , PegaPieChartComponent
     , RecentTreasurerCaseListComponent
     , TransactionSummaryComponent
+    // , HeroParentComponent
+    // , HeroChildComponent
   ],
   exports: [
       CaselistComponent
-      , FileNameDialogComponent
-      , ModalContainerComponent
+      // , FileNameDialogComponent
+      // , ModalContainerComponent
+      , ModalRCIContainerComponent
+      , CreateCustomRCIcaseComponent
     // , ChartDataLabels
     , NbaOfferComponent
     , OpenByWorkTypeComponent
     , PegaPieChartComponent
     , RecentTreasurerCaseListComponent
     , TransactionSummaryComponent
+    // , HeroParentComponent
+    // , HeroChildComponent
   ],
   entryComponents: [
-   FileNameDialogComponent
-   , ModalContainerComponent
+  //  FileNameDialogComponent
+  //  , ModalContainerComponent
+    ModalRCIContainerComponent
+   , CreateCustomRCIcaseComponent
+  //  , HeroParentComponent
+    // , HeroChildComponent
   ]
 })
 export class SharedPegaModule { }

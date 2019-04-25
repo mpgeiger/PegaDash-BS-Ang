@@ -1,3 +1,5 @@
+// import { FromCamelCase } from './../../../.history/src/app/layout/pega/_pipes/fromCamelCase_20190424144251';
+// import { AppMaterialModule } from './../app-material/app-material.module';
 
 // import { OpenTaskPageModule } from './opentask-page/opentask-page.module';
 import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -39,7 +41,8 @@ import { TransactionSummaryComponent } from './pega/transaction-summary/transact
 // import { CaselistComponent } from './pega/caselist/caselist.component';
 // import { UnifiedtaskComponent } from './pega/';
 // import { DatePickerComponent } from './bs-component/components/index';
-
+import { AppMaterialModule  } from '../app-material/app-material.module';
+import { FromCamelCase } from './pega/_pipes/fromCamelCase';
 @NgModule({
     imports: [
           CommonModule
@@ -61,6 +64,7 @@ import { TransactionSummaryComponent } from './pega/transaction-summary/transact
         , NgbModule
         , OpenTaskPageModule
         , SharedPegaModule
+        , AppMaterialModule
         // , SharedPegaDataService
     ],
     declarations: [
@@ -74,6 +78,7 @@ import { TransactionSummaryComponent } from './pega/transaction-summary/transact
       , modalRCICaseType
       , NgbdModalContentNBA
       , NgbDatePipe
+      , FromCamelCase
       //  , CaselistComponent
       // , OpenTaskPageComponent
       // , RecentTreasurerCaseListComponent
@@ -100,7 +105,9 @@ import { TransactionSummaryComponent } from './pega/transaction-summary/transact
   // CaselistComponent
   // , RecentTreasurerCaseListComponent
   // , OpenTaskPageComponent
-   OpenTaskPageModule
+   OpenTaskPageModule,
+   ReactiveFormsModule
+
     // , ReactiveFormsModule
 
 

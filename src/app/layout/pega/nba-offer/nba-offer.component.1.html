@@ -1,0 +1,25 @@
+<div class="nba" *ngFor="let item of nbas">
+    <!-- <mat-card-header>
+      <div mat-card-avatar class="header-image"></div>
+      <mat-card-title>BNY Advice for {{item.Category}}</mat-card-title>
+
+    </mat-card-header> -->
+    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+    <mat-card-content id="card-content">
+        <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar>
+        <!-- <img mat-card-image src="../../../../assets/images/swift.png" alt="SWIFT"> -->
+        <p class="overview-title" >Overview</p>
+        <!-- <img src="../../../../assets/images/swift3.gif" alt="SWIFT"> -->
+      <p  class = "md-title" class="overview-text">
+          {{item.ShortDescription}}
+      </p>
+      <p class="benefits-title">Benefits to you</p>
+      <p  class = "md-subhead"  class="benefits-text">
+       {{item.Benefits}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </div>

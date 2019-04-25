@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalRCIContainerComponent } from './modal-container.component';
+import { CreateCustomRCIcaseComponent } from './create-custom-rcicase.component';
 
-describe('ModalRCIContainerComponent', () => {
-  let component: ModalRCIContainerComponent;
-  let fixture: ComponentFixture<ModalRCIContainerComponent>;
+describe('CreateRCIcaseComponent', () => {
+  let component: CreateCustomRCIcaseComponent;
+  let fixture: ComponentFixture<CreateCustomRCIcaseComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalRCIContainerComponent ]
+      declarations: [ CreateCustomRCIcaseComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ModalRCIContainerComponent);
+    fixture = TestBed.createComponent(CreateCustomRCIcaseComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

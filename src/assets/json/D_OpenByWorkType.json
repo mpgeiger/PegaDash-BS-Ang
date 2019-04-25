@@ -1,0 +1,39 @@
+{
+  "pxObjClass": "Code-Pega-List",
+  "pxResultCount": "",
+  "pyObjClass": "Assign-",
+  "pyObjClassOriginal": "",
+  "pzPageNameHash": "",
+  "pxResults": [
+      {
+          "pyLabel": "Request Check Image",
+          "ResultCount1": "177",
+          "StringVal1": "Open"
+      },
+      {
+          "pyLabel": "Balance Inquiry",
+          "ResultCount1": "51",
+          "StringVal1": "New"
+      },
+      {
+          "pyLabel": "Fraud",
+          "ResultCount1": "16",
+          "StringVal1": "Open"
+      },
+      {
+          "pyLabel": "Adjustable rate mortgage",
+          "ResultCount1": "1",
+          "StringVal1": "Open"
+      },
+      {
+          "pyLabel": "Check Account Balance",
+          "ResultCount1": "1",
+          "StringVal1": "New"
+      },
+      {
+          "pyLabel": "Other",
+          "ResultCount1": "3",
+          "StringVal1": "-"
+      }
+  ]
+}
