@@ -43,6 +43,7 @@ import { TransactionSummaryComponent } from './pega/transaction-summary/transact
 // import { DatePickerComponent } from './bs-component/components/index';
 import { AppMaterialModule  } from '../app-material/app-material.module';
 import { FromCamelCase } from './pega/_pipes/fromCamelCase';
+// import { NbaTeaserComponent } from './pega/nba-teaser/nba-teaser.component';
 @NgModule({
     imports: [
           CommonModule
@@ -107,6 +108,7 @@ import { FromCamelCase } from './pega/_pipes/fromCamelCase';
   // , OpenTaskPageComponent
    OpenTaskPageModule,
    ReactiveFormsModule
+
 
     // , ReactiveFormsModule
 

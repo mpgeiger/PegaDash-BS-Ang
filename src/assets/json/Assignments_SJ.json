@@ -1,0 +1,41 @@
+{
+  "pxObjClass": "Pega-API-CaseManagement",
+  "assignments": [
+      {
+          "caseID": "PEGACPMFS-WORK T-42",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK T-42!PROCESSINFORMATION_FLOW",
+          "name": "Transaction Details",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "SallyJones",
+          "type": "Worklist",
+          "urgency": "10"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK B-16",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK B-16!PZQUESTIONSHAPE",
+          "name": "Balance Inquiry",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "SallyJones",
+          "type": "Worklist",
+          "urgency": "10"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK B-15",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK B-15!PZQUESTIONSHAPE",
+          "name": "Balance Inquiry",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "SallyJones",
+          "type": "Worklist",
+          "urgency": "10"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK B-14",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK B-14!PZQUESTIONSHAPE",
+          "name": "Balance Inquiry",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "SallyJones",
+          "type": "Worklist",
+          "urgency": "10"
+      }
+  ]
+}

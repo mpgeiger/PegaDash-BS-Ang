@@ -12,6 +12,6 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit() {
-      localStorage.setItem('useStubbedData',  'false');
+      localStorage.setItem('useStubbedData',  'true');
     }
 }

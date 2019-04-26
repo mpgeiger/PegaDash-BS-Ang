@@ -1,0 +1,1471 @@
+{
+  "pxObjClass": "Pega-API-CaseManagement",
+  "caseTypes": [
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-ForceAndStay",
+          "name": "ForceAndStay",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "ForceAndStay",
+                  "name": "Force and stay flow",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "true"
+              },
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Force And Stay Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-Interaction-Call",
+          "name": "Interaction",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType"
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-Interaction-Chat",
+          "name": "ChatInteractions",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType"
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-Interaction-Social",
+          "name": "InteractionSocial",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType"
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-Interaction-InCorr",
+          "name": "InboundCorrespondenceInteractions",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType"
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-Interaction-Research-Account",
+          "name": "AccountResearch",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType"
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-Interaction-Research-Customer",
+          "name": "CustomerResearch",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType"
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-Interaction-Research-BusinessUnit",
+          "name": "BusinessUnitResearch",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType"
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-Interaction-Outbound-Call",
+          "name": "OutboundInteractionCall",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType"
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-Interaction-Outbound-Email",
+          "name": "OutboundInteractionEmail",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType"
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-Interaction-Outbound-Mail",
+          "name": "OutboundInteractionMail",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType"
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-Interaction-Outbound-SMS",
+          "name": "OutboundInteractionSMS",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType"
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-Outbound",
+          "name": "OutboundWrapper",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType"
+      },
+      {
+          "CanCreate": "true",
+          "ID": "CPM-PegaNPS-Survey-Followup",
+          "name": "Followup",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "NPSSurveyFollowUpQuestions",
+                  "name": "NPS Survey Follow up Questions",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "true"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "CPM-PegaNPS-Survey",
+          "name": "Survey",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType"
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-Collection",
+          "name": "Collection",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create case type for csfs application",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-Work-Requirement",
+          "name": "FSIFRequirement",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Requirement Case Type",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "true"
+              }
+          ]
+      },
+      {
+          "CanCreate": "false",
+          "ID": "PegaCA-Alert",
+          "name": "AlertClass",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType"
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-AddressChange",
+          "name": "AddressChange",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Address Change Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-ActivateCard",
+          "name": "ActivateCard",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Activate Card",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-ACHDuplicatePosting",
+          "name": "ACHDuplicatePosting",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create ACH Duplicate Posting Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-BalanceTransfer",
+          "name": "BalanceTransfer",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Balance Transfer Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Billing",
+          "name": "Billing",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Billing Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-BillPayInquiry",
+          "name": "BillPayInquiry",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Bill Pay Inquiry Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-ChangeAPR",
+          "name": "ChangeAPR",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Change APR Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-ChangeBillingCycleDate",
+          "name": "ChangeBillingCycleDate",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Change Billing Cycle Date Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-ChangeStandingInstructions",
+          "name": "ChangeStandingInstructions",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Change Standing Instructions Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-CloseAccount",
+          "name": "CloseAccount",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Close Account Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-ComplaintorCompliment",
+          "name": "ComplaintorCompliment",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Complaint or Compliment Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-ConfirmationCopy",
+          "name": "ConfirmationCopy",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Confirmation Copy Request Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-ContactUpdate",
+          "name": "ContactUpdate",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Contact Update Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-CreditLineManagement",
+          "name": "CreditLineManagement",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Credit Line Management Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-CustomerCoBrowse",
+          "name": "CustomerCoBrowse",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Co-Browsing Session",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-CustomerAddressChange",
+          "name": "CustomerAddressChange",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Address Change Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-CustomerContactUpdate",
+          "name": "CustomerContactUpdate",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Contact Update Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-DisputeTransaction",
+          "name": "DisputeTransaction",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Dispute Transaction Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-DistributionRequest",
+          "name": "DistributionRequest",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Distribution Request Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-FeeInquiry",
+          "name": "FeeInquiry",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Fee Inquiry Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-FXTranQuery",
+          "name": "FXTranQuery",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Foreign Transaction Query Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work",
+          "name": "GeneralServiceRequest",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Starting flow of current service case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-ResolveCollections",
+          "name": "ResolveCollections",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Resolve Collections service case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-IRARollover",
+          "name": "IRARollover",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "IRA Rollover",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-LBMissingBatch",
+          "name": "LockboxMissingBatch",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Lockbox Missing Batch Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-LBMissingPmtFile",
+          "name": "LockboxMissingPmtFile",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Lockbox Missing Payment File Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-LBProofErr",
+          "name": "LockboxProofErr",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Lockbox Proof Error Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-LostStolen",
+          "name": "LostStolen",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Lost/Stolen Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-MakeaPayment",
+          "name": "MakeaPayment",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType"
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-ManageEntitlements",
+          "name": "ManageEntitlements",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Manage Entitlements Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Mitigation",
+          "name": "Mitigation",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Loan Mitigation",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              },
+              {
+                  "ID": "CreateNewProgram",
+                  "name": "Create new program",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Mitigation-BankCustom",
+          "name": "BankCustom",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Bank Custom Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Mitigation-DeedNLieu",
+          "name": "DeedNLieu",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create DeedNLieu Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Mitigation-FHA2LP",
+          "name": "FHA2LP",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create FHA2LP Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Mitigation-FHASR",
+          "name": "FHASR",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create FHASR Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Mitigation-HAFADeedNLieu",
+          "name": "HAFADeedNLieu",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create HAFA DeedNLieu Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Mitigation-HAFAShortSale",
+          "name": "HAFAShortSale",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create HAFA Short Sale Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Mitigation-HAR",
+          "name": "HAR",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create HAR Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Mitigation-PRA",
+          "name": "PRA",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create PRA Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Mitigation-RepaymentPlan",
+          "name": "RepaymentPlan",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Repayment Plan Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Mitigation-ShortSale",
+          "name": "ShortSale",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Short Sale Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Mitigation-TwoMP",
+          "name": "TwoMP",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Two MP Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Mitigation-UP",
+          "name": "UP",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create UP Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Mitigation-preForeclosure",
+          "name": "PreForeclosure",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Pre-Foreclosure Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Mitigation-HAM",
+          "name": "HAM",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Mitigation HAM Program",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Mitigation-HAM-FHAHAMP",
+          "name": "FHAHAMP",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create FHA HAMP Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Mitigation-HAM-SLS",
+          "name": "SLS",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create SLS Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Mitigation-HAM-VAHAM",
+          "name": "VAHAM",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create VA HAMP Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-ModifyAccountLink",
+          "name": "ModifyAccountLink",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create close account case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-NegotiateOffer",
+          "name": "NegotiateOffer",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Negotiate Offer Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-NewPlastic",
+          "name": "NewPlastic",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create New Plastic Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Opportunity",
+          "name": "Opportunity",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Starting flow of current service case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCA-Work-LocalOfferAdvisor",
+          "name": "OfferAdvisor",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "CSOfferAdvisor",
+                  "name": "CS Offer Advisor",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCA-Work-LocalOfferNegotiator",
+          "name": "OfferNegotiator",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "CSOfferNegotiator",
+                  "name": "CSOfferNegotiator",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-ProcessRequirement",
+          "name": "ProcessRequirement",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Starting flow of current service case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCA-Work-QualityReview",
+          "name": "QualityReviewCase",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "CAQualityReview",
+                  "name": "Quality Review",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "true"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-ReIssueCard",
+          "name": "ReIssueCard",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create ReIssue Card Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-RemovePMI",
+          "name": "RemovePMI",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Remove PMI Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Request1098",
+          "name": "Request1098",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Request 1098 Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-RequestChecks",
+          "name": "RequestChecks",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Request Checks Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-RequestMinimumDistribution",
+          "name": "RequestMinimumDistribution",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Request Minimum Distribution Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-RequestPin",
+          "name": "RequestPin",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Request Pin Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCA-Work-SatSurvey",
+          "name": "SatSurvey",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType"
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-ScheduleActivity",
+          "name": "ScheduleActivity",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "CASchedActivities",
+                  "name": "Schedule an Activity",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "true"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-SendLiterature",
+          "name": "SendLiterature",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Send Literature Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-SettlementOffer",
+          "name": "SettlementOffer",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Settlement Offer Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-SpecialCircumstance",
+          "name": "SpecialCircumstance",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create CaseType for this work type Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-StatementCopy",
+          "name": "StatementCopy",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Statement Copy Request Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-TakeaPayment",
+          "name": "TakeaPayment",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Take a Payment Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-TransactionInquiry",
+          "name": "TransactionInquiry",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Transaction Inquiry Request Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-UpdateCustomerProfile",
+          "name": "UpdateCustomerProfile",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Close Account Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-WaiveFee",
+          "name": "WaiveFee",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create WaiveFee Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-TransferToAgency",
+          "name": "TransferToAgency",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Transfer to Agency",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-GuaranteeInquiry",
+          "name": "GauranteeInquiry",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Guarantee Inquiry",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "true"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-TravelNotification",
+          "name": "TravelNotification",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Travel Notification",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-ManageAutoPay",
+          "name": "ManageAutoPay",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Manage AutoPay",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-ModifyBeneficiary",
+          "name": "ModifyBeneficiaries",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Modify Beneficiary",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "true"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-UpdateContactProfile",
+          "name": "UpdateContactProfile",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create Close Account Case",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-FileAComplaint",
+          "name": "FileAComplaint",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "File a compliant",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-IncomeAndExpenditure",
+          "name": "IncomeAndExpenditure",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Income and Expenditure",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-GDPRCompliance",
+          "name": "GDPR",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "GDPRCompliance",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-Repossession",
+          "name": "Repossession",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Repossession",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaFS-SCM-Work-ManageCollateral",
+          "name": "ManageCollateral",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Manage Collateral",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-BNYTradeStatus",
+          "name": "BNYTradeStatus",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Trade Transaction Inquiry",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-WireTransactionStatus",
+          "name": "WireTransactionStatus",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Wire Transaction Inquiry",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-PaymentTransactionStatus",
+          "name": "PaymentTransactionStatus",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Payment Status Inquiry",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-Fraud",
+          "name": "Fraud",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Fraud Investigation",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-CreditDiscrepancy",
+          "name": "CreditDiscrepancy",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Credit Discrepancy",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-AddAuthorizedUser",
+          "name": "AddAuthorizedUser",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Add Authorized User",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-AlexaBalanceInquiry",
+          "name": "AlexaBalanceInquiry",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Alexa Balance Inquiry",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCA-Work-ChatWithAgent",
+          "name": "ChatWithAgent",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Chat With Agent",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-TravelNotice",
+          "name": "TravelNotificationBot",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create case type for csfs application",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-PushWSSURL",
+          "name": "PushWSSURL",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create case type for csfs application",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-CheckAccount",
+          "name": "CheckAccount",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Create case type for csfs application",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      },
+      {
+          "CanCreate": "true",
+          "ID": "PegaCPMFS-Work-RequestCheckImage",
+          "name": "RequestCheckImage",
+          "pxObjClass": "Pega-API-CaseManagement-CaseType",
+          "startingProcesses": [
+              {
+                  "ID": "pyStartCase",
+                  "name": "Request Check Image",
+                  "pxObjClass": "Pega-API-CaseManagement-Process",
+                  "requiresFieldsToCreate": "false"
+              }
+          ]
+      }
+  ]
+}

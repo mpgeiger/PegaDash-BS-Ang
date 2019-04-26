@@ -1,21 +1,35 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { HttpParams, HttpHeaders } from '@angular/common/http';
 import { NbaService } from '../../../_services/nba.service';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 import stubbedResults from '../../../../assets/json/NBA_REST.json';
 
 @Component({
   selector: 'app-nba-offer',
   templateUrl: './nba-offer.component.html',
-  styleUrls: ['./nba-offer.component.scss']
+  styleUrls: ['./nba-offer.component.scss'],
+  animations: [
+    trigger('flipState', [
+      state('active', style({
+        transform: 'rotateY(179deg)'
+      })),
+      state('inactive', style({
+        transform: 'rotateY(0)'
+      })),
+      transition('active => inactive', animate('500ms ease-out')),
+      transition('inactive => active', animate('500ms ease-in'))
+    ])
+  ]
 })
 export class NbaOfferComponent implements OnInit {
-  headers: any;
-  showLoading = true;
-  nbas: any = [];
 
   constructor(
     private nba: NbaService
   ) { }
+  headers: any;
+  showLoading = true;
+  nbas: any = [];
+  flip = 'inactive';
 
   ngOnInit() {
     // this.getCases();
@@ -85,4 +99,11 @@ export class NbaOfferComponent implements OnInit {
     // localStorage.setItem('numUnifiedTaskList', data.pxResults.length);
     return data.ContainerList[0].RankedResults;
   }
+
+  toggleFlip() {
+    this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
+  }
+
+
 }
+

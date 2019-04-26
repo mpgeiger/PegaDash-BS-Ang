@@ -1,3 +1,4 @@
+import { NbaTeaserComponent } from './../layout/pega/nba-teaser/nba-teaser.component';
 // import { ModalComponent } from './../layout/bs-component/components/modal/modal.component';
 // import { OpenAssignmentService } from './../_messages/openassignment.service';
 import { NgModule } from '@angular/core';
@@ -39,6 +40,7 @@ import { CaselistComponent
     , CreateCustomRCIcaseComponent
     // , ChartDataLabels
     , NbaOfferComponent
+    , NbaTeaserComponent
     , OpenByWorkTypeComponent
     , PegaPieChartComponent
     , RecentTreasurerCaseListComponent
@@ -54,6 +56,7 @@ import { CaselistComponent
       , CreateCustomRCIcaseComponent
     // , ChartDataLabels
     , NbaOfferComponent
+    , NbaTeaserComponent
     , OpenByWorkTypeComponent
     , PegaPieChartComponent
     , RecentTreasurerCaseListComponent

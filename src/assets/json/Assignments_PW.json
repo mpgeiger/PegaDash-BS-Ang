@@ -1,0 +1,274 @@
+{
+  "pxObjClass": "Pega-API-CaseManagement",
+  "assignments": [
+      {
+          "caseID": "PEGACPMFS-WORK C-457",
+          "executedDeadlineTime": "2019-04-25T08:40:27.718Z",
+          "executedGoalTime": "2019-04-25T08:40:27.613Z",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK C-457!CHECKSTATUS_FLOW",
+          "name": "Credit Discrepancy",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "scheduledDeadlineTime": "2019-04-25T08:40:05.868Z",
+          "scheduledGoalTime": "2019-04-25T08:40:05.868Z",
+          "type": "Worklist",
+          "urgency": "100"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK C-455",
+          "executedDeadlineTime": "2019-04-24T15:18:49.241Z",
+          "executedGoalTime": "2019-04-24T15:18:49.180Z",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK C-455!CHECKSTATUS_FLOW",
+          "name": "Credit Discrepancy",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "scheduledDeadlineTime": "2019-04-24T12:51:14.812Z",
+          "scheduledGoalTime": "2019-04-24T12:51:14.812Z",
+          "type": "Worklist",
+          "urgency": "100"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK C-365",
+          "executedDeadlineTime": "2019-04-15T11:03:26.479Z",
+          "executedGoalTime": "2019-04-15T11:03:26.440Z",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK C-365!CHECKCREDITDISCREPANCY_FLOW",
+          "name": "Credit Discrepancy",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "scheduledDeadlineTime": "2019-04-15T11:03:22.137Z",
+          "scheduledGoalTime": "2019-04-15T11:03:22.136Z",
+          "type": "Worklist",
+          "urgency": "90"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK-INTERACTION I-581",
+          "executedDeadlineTime": "2019-04-15T16:25:05.528Z",
+          "executedGoalTime": "2019-04-15T16:25:05.494Z",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK-INTERACTION I-581!APPCONTACTSEARCH",
+          "instructions": "Search for Customer",
+          "name": "Customer interaction",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "scheduledDeadlineTime": "2019-04-15T16:15:02.637Z",
+          "scheduledGoalTime": "2019-04-15T16:10:02.637Z",
+          "type": "Worklist",
+          "urgency": "50"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK C-369",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK C-369!CHECKSTATUS_FLOW",
+          "name": "Credit Discrepancy",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "20"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK C-368",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK C-368!CHECKSTATUS_FLOW",
+          "name": "Credit Discrepancy",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "20"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK C-366",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK C-366!CHECKSTATUS_FLOW",
+          "name": "Credit Discrepancy",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "20"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK C-367",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK C-367!CHECKSTATUS_FLOW",
+          "name": "Credit Discrepancy",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "20"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK-INTERACTION I-814",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK-INTERACTION I-814!APPGETACCOUNTDETAILS",
+          "instructions": "Select an Account",
+          "name": "help adding user",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "10"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK AD-41",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK AD-41!ADDNEWUSER_FLOW",
+          "instructions": "Capture new user details",
+          "name": "Add Authorized User",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "10"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK AD-40",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK AD-40!ADDNEWUSER_FLOW",
+          "instructions": "Capture new user details",
+          "name": "Add Authorized User",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "10"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK AD-39",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK AD-39!ADDNEWUSER_FLOW",
+          "instructions": "Capture new user details",
+          "name": "Add Authorized User",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "10"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK AD-38",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK AD-38!ADDNEWUSER_FLOW",
+          "instructions": "Capture new user details",
+          "name": "Add Authorized User",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "10"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK-INTERACTION I-622",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK-INTERACTION I-622!APPGETACCOUNTDETAILS",
+          "instructions": "Select an Account",
+          "name": "Help - BNY user",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "10"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK-INTERACTION I-575",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK-INTERACTION I-575!CPMINTERACTIONDRIVER",
+          "instructions": "Select initial tasks to perform",
+          "name": "Help - error",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "10"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK-INTERACTION I-530",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK-INTERACTION I-530!CPMINTERACTIONDRIVER",
+          "instructions": "Select initial tasks to perform",
+          "name": "Help adding a new user",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "10"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK AD-37",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK AD-37!ADDNEWUSER_FLOW",
+          "instructions": "Capture new user details",
+          "name": "Add Authorized User",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "10"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK AD-36",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK AD-36!ADDNEWUSER_FLOW",
+          "instructions": "Capture new user details",
+          "name": "Add Authorized User",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "10"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK AD-35",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK AD-35!ADDNEWUSER_FLOW",
+          "instructions": "Capture new user details",
+          "name": "Add Authorized User",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "10"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK AD-34",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK AD-34!ADDNEWUSER_FLOW",
+          "instructions": "Capture new user details",
+          "name": "Add Authorized User",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "10"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK AD-33",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK AD-33!ADDNEWUSER_FLOW",
+          "instructions": "Capture new user details",
+          "name": "Add Authorized User",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "10"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK AD-32",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK AD-32!ADDNEWUSER_FLOW",
+          "instructions": "Capture new user details",
+          "name": "Add Authorized User",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "10"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK AD-31",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK AD-31!ADDNEWUSER_FLOW",
+          "instructions": "Capture new user details",
+          "name": "Add Authorized User",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "10"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK AD-30",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK AD-30!ADDNEWUSER_FLOW",
+          "instructions": "Capture new user details",
+          "name": "Add Authorized User",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "10"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK AD-26",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK AD-26!ADDNEWUSER_FLOW",
+          "instructions": "Capture new user details",
+          "name": "Add Authorized User",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "10"
+      },
+      {
+          "caseID": "PEGACPMFS-WORK AD-25",
+          "ID": "ASSIGN-WORKLIST PEGACPMFS-WORK AD-25!ADDNEWUSER_FLOW",
+          "instructions": "Capture new user details",
+          "name": "Add Authorized User",
+          "pxObjClass": "Pega-API-CaseManagement-Assignment",
+          "routedTo": "Paul.Wagner@bny.com",
+          "type": "Worklist",
+          "urgency": "10"
+      }
+  ]
+}
