@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { CaseService, } from '../../../_services/case.service';
@@ -9,6 +9,8 @@ import stubbedResults from '../../../../assets/json/CaseTypes.json';
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss']
+    // , encapsulation: ViewEncapsulation.None
+
 })
 export class HeaderComponent implements OnInit {
     public pushRightClass: string;

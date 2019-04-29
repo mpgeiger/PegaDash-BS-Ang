@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewEncapsulation } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 
 import { DatapageService } from '../../../_services/datapage.service';
@@ -7,18 +7,18 @@ import stubbedResults from '../../../../assets/json/D_Interaction_Driver_I-826_S
 
 export interface SSCaseTypePxResults {
 Name: string;
-PCAVersion:string;
-pxInsId:string;
-pxInsName:string;
-pxObjClass:string;
-pyClassName:string;
-pyDescription:string;
-pyLabel:string;
-pyLabelOld:string;
-pyRuleName:string;
-pzInsKey:string;
-ShowInList:string;
-TaskClass:string;
+PCAVersion: string;
+pxInsId: string;
+pxInsName: string;
+pxObjClass: string;
+pyClassName: string;
+pyDescription: string;
+pyLabel: string;
+pyLabelOld: string;
+pyRuleName: string;
+pzInsKey: string;
+ShowInList: string;
+TaskClass: string;
 }
 
 export interface SSCaseActions {
@@ -35,7 +35,8 @@ export interface SSCaseActions {
 @Component({
   selector: 'app-mega-menu',
   templateUrl: './mega-menu.component.html',
-  styleUrls: ['./mega-menu.component.scss']
+  styleUrls: ['./mega-menu.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class MegaMenuComponent implements OnInit {
   // public dataSource = new MatTableDataSource<TreasurerCases>();

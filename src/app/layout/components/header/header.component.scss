@@ -2,56 +2,152 @@
 // $topnav-background-color: #FFF;
 @import '../../../Dashboard_Styles.scss';
 
+// ::ng-deep
+
+
+// :host ::ng-deep .megaMenu {
+
+//   color: red;
+//   max-width: none !important;
+//   // width: 80%;
+//   // text-align: left;
+//   // width: 100vw;
+//   // margin-left: -8px;
+//   //  margin-top: 24px;
+//   position: fixed !important;
+//   z-index: -1 !important;
+//   // overflow: visible;
+// }
+
+
+::ng-deep .mat-menu-panel {
+  color: black;
+    max-width: none !important;
+    width: fit-content;
+    // width: 80%;
+    // text-align: left;
+    // width: 100vw;
+    // margin-left: -8px;
+    margin-top: 24px;
+    position: fixed !important;
+    z-index: -1 !important;
+}
+
+// ::ng-deep .cdk-overlay-pane {
+//   justify-content: center !important;
+//   max-width: none !important;
+//   display: flex !important;
+//   // position: inherit !important;
+//   // overflow: auto !important;
+//   margin-top: 10px !important;
+//   border: 2px;
+//   border-color: blue;
+//   z-index: -1 !important;
+
+// }
+// ::ng-deep .cdk-overlay-container .full-width + * > .cdk-overlay-connected-position-bounding-box + * >.cdk-overlay-pane {
+//   width: 100%;
+// }
+// ::ng-deep .cdk-overlay-container{
+//   width: 100% !important;
+// }
+// ::ng-deep .cdk-overlay-connected-position-bounding-box {
+//   width: 100% !important;
+//   // display: grid;
+// }
+// ::ng-deep .cdk-overlay-panex {
+//   width: 100% !important;
+// }
+
+
 
 :host {
-    .navbar {
-        background-color: $topnav-background-color;
-        .navbar-brand {
-            // MGP color: #fff;
-            color: $topnav-item-color;
-        }
-        .nav-item > a {
-            // color: #999;
-            color: $topnav-item-color;
-            &:hover {
-                // MPG color: #fff;
-                color: darken($topnav-item-color, 80%);
-                // color: #000;
-                background: darken($topnav-background-color, 5%);
-            }
-        }
 
-        .mat-menu-item {
-          height: 32px;
-          padding: 0 8px;
-        }
 
+  .navbar {
+
+    background-color: $topnav-background-color;
+
+    .navbar-brand {
+      // MGP color: #fff;
+      color: $topnav-item-color;
     }
+
+    .nav-item>a {
+      // color: #999;
+      color: $topnav-item-color;
+
+      &:hover {
+        // MPG color: #fff;
+        color: darken($topnav-item-color, 80%);
+        // color: #000;
+        background: darken($topnav-background-color, 5%);
+      }
+    }
+
+    // .mat-menu-panel {
+    //   min-width: 112px;
+    //   max-width: none !important;
+    //   overflow: auto;
+    //   -webkit-overflow-scrolling: touch;
+    //   max-height: calc(100vh - 48px);
+    //   border-radius: 4px;
+    //   outline: 0;
+    // }
+
+
     .mat-menu-item {
       height: 32px;
       padding: 0 8px;
     }
-    .messages {
-        width: 300px;
-        .media {
-            border-bottom: 1px solid #ddd;
-            padding: 5px 10px;
-            &:last-child {
-                border-bottom: none;
-            }
-        }
-        .media-body {
-            h5 {
-                font-size: 13px;
-                font-weight: 600;
-            }
-            .small {
-                margin: 0;
-            }
-            .last {
-                font-size: 12px;
-                margin: 0;
-            }
-        }
+
+    .navbar-nav {
+      .megaMenuNav {
+        color: green;
+        max-width: none !important;
+        //   width: 100vw;
+        //   margin-left: -8px;
+        //   margin-top: 24px;
+        //   overflow: visible;
+
+
+      }
     }
+
+
+  }
+
+  .mat-menu-item {
+    height: 32px;
+    padding: 0 8px;
+  }
+
+  .messages {
+    width: 300px;
+
+    .media {
+      border-bottom: 1px solid #ddd;
+      padding: 5px 10px;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .media-body {
+      h5 {
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .small {
+        margin: 0;
+      }
+
+      .last {
+        font-size: 12px;
+        margin: 0;
+      }
+    }
+  }
 }

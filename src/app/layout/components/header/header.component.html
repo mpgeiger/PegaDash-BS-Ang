@@ -58,40 +58,58 @@
 
                 </div>
             </li> -->
-            <a mat-button [matMenuTriggerFor]="menu"  layout-align="end center">
+
+            <!-- Begin
+            Matt Geigers - Menu from calling case types
+            ---
+             -->
+            <a mat-button [matMenuTriggerFor]="mpgMenu"  layout-align="end center" class="megaMenuNav">
               <!-- pass local reference of mat-menu to be opened on this click -->
-              Self Service<i class="material-icons">
+              MPG Service<i class="material-icons">
                   arrow_drop_down
                   </i>
             </a>
-
-            <mat-menu #menu="matMenu">
+            <mat-menu #mpgMenu="matMenu" class="megaMenu"  [class.mat-elevation-z20] overlapTrigger="false">
                 <!-- give local reference and tell this is manu by assigning 'matMenu' -->
-
                 <!-- <button mat-menu-item *ngFor="let case of cases" (click)="createCaseType(case)">{{case.name}} -->
-                <button mat-menu-item *ngFor="let case of cases">
-                    <mat-icon>dialpad</mat-icon>
-                    <!-- <span>{{case.name | fromCamelCase }}</span> -->
-                    <!-- <app-modal-container>111</app-modal-container> -->
-                    <app-modal-container-rci-custom [master]="case.name | fromCamelCase"></app-modal-container-rci-custom>
-                    <!-- <mat-divider></mat-divider> -->
-                  </button>
-                  <mat-divider></mat-divider>
+              <app-mega-menu></app-mega-menu>
 
-                  <mat-menu-divider></mat-menu-divider>
-                <!-- <button mat-menu-item>
-                  <mat-icon>dialpad</mat-icon>
-                  <span>Redial</span>
-                </button>
-                <button mat-menu-item disabled>
-                  <mat-icon>voicemail</mat-icon>
-                  <span>Check voicemail</span>
-                </button>
-                <button mat-menu-item>
-                  <mat-icon>notifications_off</mat-icon>
-                  <span>Disable alerts</span>
-                </button> -->
               </mat-menu>
+            <!--   Matt Geigers - Menu from calling case types
+              END
+              ---  -->
+
+
+                <!-- Begin
+            Matt Geigers - Menu from calling case types
+            ---
+             -->
+            <a mat-button [matMenuTriggerFor]="menu"  layout-align="end center">
+                <!-- pass local reference of mat-menu to be opened on this click -->
+                Self Service<i class="material-icons">
+                    arrow_drop_down
+                    </i>
+              </a>
+              <mat-menu #menu="matMenu">
+                  <!-- give local reference and tell this is manu by assigning 'matMenu' -->
+                  <!-- <button mat-menu-item *ngFor="let case of cases" (click)="createCaseType(case)">{{case.name}} -->
+                  <button mat-menu-item *ngFor="let case of cases">
+                      <mat-icon>dialpad</mat-icon>
+                      <!-- <span>{{case.name | fromCamelCase }}</span> -->
+                      <!-- <app-modal-container>111</app-modal-container> -->
+                      <app-modal-container-rci-custom [master]="case.name | fromCamelCase"></app-modal-container-rci-custom>
+                      <!-- <mat-divider></mat-divider> -->
+                    </button>
+                    <mat-divider></mat-divider>
+                    <mat-menu-divider></mat-menu-divider>
+
+                </mat-menu>
+              <!--   Matt Geigers - Menu from calling case types
+                END
+                ---  -->
+
+
+
             <form class="form-inline my-2 my-lg-0 right">
                 <input class="form-control mr-sm-2" type="text" placeholder="{{ 'Search' | translate }}" >
             </form>
