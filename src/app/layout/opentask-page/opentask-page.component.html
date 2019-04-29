@@ -1,18 +1,19 @@
 <div [@routerTransition]>
   <!-- <h2 class="text-muted">Open Tasks <small>Component Integration</small></h2> -->
-  <div class="row">
-    <!-- <div class="col-xl-3 col-lg-6">
-      <app-stat [bgClass]="'primary'" [icon]="'fa-comments'" [count]="26" [label]="'New Comments!'"></app-stat>
-    </div>
-    <div class="col-xl-3 col-lg-6">
-      <app-stat [bgClass]="'warning'" [icon]="'fa-tasks'" [count]="12" [label]="'New task!'"></app-stat>
-    </div>
-    <div class="col-xl-3 col-lg-6">
-      <app-stat [bgClass]="'success'" [icon]="'fa-shopping-cart'" [count]="124" [label]="'New Orders!'"></app-stat>
-    </div>
-    <div class="col-xl-3 col-lg-6">
-      <app-stat [bgClass]="'danger'" [icon]="'fa-support'" [count]="13" [label]="'New Tickets!'"></app-stat>
-    </div> -->
+  <div class="container">
+      <div class="row">
+          <div class="col">
+              <div class="card card-default">
+                  <div class="card-header">
+                      <i class="fa fa-tasks"></i> Mega Menu
+                  </div>
+                  <app-mega-menu></app-mega-menu>
+                  <!-- /.card-header -->
+                  <!-- <app-unifiedtasklist></app-unifiedtasklist> -->
+                  <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+          </div>
   </div>
 
   <div class="row">
@@ -43,4 +44,5 @@
       </div>
   </div>
 
+</div>
 </div>

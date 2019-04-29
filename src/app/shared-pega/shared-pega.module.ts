@@ -11,6 +11,7 @@ import { AppMaterialModule } from '../app-material/app-material.module';
 import { CaselistComponent
   // , FileNameDialogComponent
   // , ModalContainerComponent
+  , MegaMenuComponent
   , ModalRCIContainerComponent
   , CreateCustomRCIcaseComponent
   , NbaOfferComponent
@@ -36,6 +37,7 @@ import { CaselistComponent
     CaselistComponent
     // , FileNameDialogComponent
     // , ModalContainerComponent
+    , MegaMenuComponent
     , ModalRCIContainerComponent
     , CreateCustomRCIcaseComponent
     // , ChartDataLabels
@@ -52,6 +54,7 @@ import { CaselistComponent
       CaselistComponent
       // , FileNameDialogComponent
       // , ModalContainerComponent
+      , MegaMenuComponent
       , ModalRCIContainerComponent
       , CreateCustomRCIcaseComponent
     // , ChartDataLabels
