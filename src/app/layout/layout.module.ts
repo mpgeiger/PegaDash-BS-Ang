@@ -1,7 +1,4 @@
-// import { FromCamelCase } from './../../../.history/src/app/layout/pega/_pipes/fromCamelCase_20190424144251';
-// import { AppMaterialModule } from './../app-material/app-material.module';
 
-// import { OpenTaskPageModule } from './opentask-page/opentask-page.module';
 import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
@@ -43,6 +40,7 @@ import { TransactionSummaryComponent } from './pega/transaction-summary/transact
 // import { DatePickerComponent } from './bs-component/components/index';
 import { AppMaterialModule  } from '../app-material/app-material.module';
 import { FromCamelCase } from './pega/_pipes/fromCamelCase';
+// import { Workitem1Component } from './pega/workitem1/workitem1.component';
 // import { NbaTeaserComponent } from './pega/nba-teaser/nba-teaser.component';
 @NgModule({
     imports: [
@@ -80,7 +78,6 @@ import { FromCamelCase } from './pega/_pipes/fromCamelCase';
       , NgbdModalContentNBA
       , NgbDatePipe
       , FromCamelCase
-      //  , CaselistComponent
       // , OpenTaskPageComponent
       // , RecentTreasurerCaseListComponent
       // , PaginationComponent
@@ -95,10 +92,7 @@ import { FromCamelCase } from './pega/_pipes/fromCamelCase';
   entryComponents: [
     modalRCICaseType
     , NgbdModalContentNBA
-    //  , CaselistComponent
-    // , RecentTreasurerCaseListComponent
-    // , OpenTaskPageComponents
-    //  , NgbdPaginationCustomization
+
   ],
 
   exports: [
@@ -108,16 +102,6 @@ import { FromCamelCase } from './pega/_pipes/fromCamelCase';
   // , OpenTaskPageComponent
    OpenTaskPageModule,
    ReactiveFormsModule
-
-
-
-    // , ReactiveFormsModule
-
-
-  // , MatTableModule
-  // , MatPaginatorModule
-  // , MatInputModule
-  // , MatSortModule
 ]
   , schemas: [
     NO_ERRORS_SCHEMA

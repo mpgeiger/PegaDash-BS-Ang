@@ -37,7 +37,7 @@ export class AssignmentService {
     return this.http.get(this.assignmentUrl + "/" + id,
       { observe: 'response', params: assignmentParams, headers: assignmentHeaders});
   }
-  
+
 
   getFieldsForAssignment(id, action): Observable<HttpResponse<any>> {
 
@@ -49,9 +49,9 @@ export class AssignmentService {
     assignmentHeaders = assignmentHeaders.append('Authorization', 'Basic ' + encodedUser);
     assignmentHeaders = assignmentHeaders.append('Content-Type', "application/json");
 
-    return this.http.get(this.assignmentUrl + "/" + id + endpoints.ACTIONS +  "/" + action, 
+    return this.http.get(this.assignmentUrl + "/" + id + endpoints.ACTIONS +  "/" + action,
       { observe: 'response', params: assignmentParams, headers: assignmentHeaders});
-    
+
 
   }
 
@@ -68,16 +68,16 @@ export class AssignmentService {
 
     assignmentHeaders = assignmentHeaders.append('Authorization', 'Basic ' + encodedUser);
     assignmentHeaders = assignmentHeaders.append('Content-Type', "application/json");
-    
+
     let encodedId = encodeURI(id);
     let oContent = this.refHelper.getPostContent(body);
 
-    return this.http.put(this.assignmentUrl + "/" + encodedId + endpoints.ACTIONS + "/" + action + endpoints.REFRESH, 
+    return this.http.put(this.assignmentUrl + "/" + encodedId + endpoints.ACTIONS + "/" + action + endpoints.REFRESH,
       { 'content' : oContent },
-      { observe: 'response', params: assignmentParams, headers: assignmentHeaders});    
-  
+      { observe: 'response', params: assignmentParams, headers: assignmentHeaders});
+
   }
-  
+
 
   performActionOnAssignment(id, action, body) {
 
@@ -88,11 +88,11 @@ export class AssignmentService {
     var assignmentHeaders = new HttpHeaders();
     assignmentHeaders = assignmentHeaders.append('Authorization', 'Basic ' + encodedUser);
     assignmentHeaders = assignmentHeaders.append('Content-Type', "application/json");
-    
+
     let encodedId = encodeURI(id);
     let oContent = this.refHelper.getPostContent(body);
 
-  
+
     return this.http.post(this.assignmentUrl + "/" + encodedId, { 'content' : oContent },
       { observe: 'response', params: assignmentParams, headers: assignmentHeaders});
   }
@@ -111,7 +111,7 @@ export class AssignmentService {
   }
 
 
-  
+
 
 }
 

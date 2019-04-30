@@ -19,6 +19,8 @@ import { CaselistComponent
   , PegaPieChartComponent
   , RecentTreasurerCaseListComponent
   , TransactionSummaryComponent
+  , PWorkItemComponent
+  , Workitem1Component
   // , HeroChildComponent
 } from '../layout/pega';
 
@@ -47,6 +49,8 @@ import { CaselistComponent
     , PegaPieChartComponent
     , RecentTreasurerCaseListComponent
     , TransactionSummaryComponent
+    , PWorkItemComponent
+    , Workitem1Component
     // , HeroParentComponent
     // , HeroChildComponent
   ],
@@ -64,6 +68,8 @@ import { CaselistComponent
     , PegaPieChartComponent
     , RecentTreasurerCaseListComponent
     , TransactionSummaryComponent
+    , PWorkItemComponent
+    , Workitem1Component
     // , HeroParentComponent
     // , HeroChildComponent
   ],

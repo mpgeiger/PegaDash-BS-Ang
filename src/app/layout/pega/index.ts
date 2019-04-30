@@ -20,6 +20,8 @@ export * from './recentTreasurerCases/recentTreasurerCaseList.component';
 export * from './ngPaging/pagination.component';
 export * from './transaction-summary/transaction-summary.component';
 export * from './unifiedtask/unifiedtask.component';
+export * from './workitem/pworkitem.component';
+export * from './workitem1/workitem1.component';
 // export * from '../../work'
 
 export * from './_pipes/fromCamelCase';

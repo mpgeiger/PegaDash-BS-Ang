@@ -6,45 +6,44 @@
     </mat-card-header> -->
   <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
   <div class="tp-wrapper">
-  <div class="tp-box" [@flipState]="flip" >
+    <div class="tp-box" [@flipState]="flip">
       <div class="tp-box__side tp-box__front">
-  <mat-card-content id="card-content">
-    <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar>
-    <div  class="containerX">
-      <app-nba-teaser></app-nba-teaser>
-      <!-- <div class="container" style="height: 320px"> -->
+        <mat-card-content id="card-content">
+          <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar>
+          <div class="containerX">
+            <app-nba-teaser></app-nba-teaser>
+            <!-- <div class="container" style="height: 320px"> -->
 
-          <div class="row nbaButtons" style="justify-content: center">
+            <div class="row nbaButtons" style="justify-content: center">
               <!-- <div class="col-md-4"> -->
-                <!-- <div class="col-spaced"> -->
-                    <button mat-button class="btn btn-primary" (click)="toggleFlip()" >More Info</button>
-                <!-- </div> -->
-          </div>
-      <!-- <div fxLayout="row">
+              <!-- <div class="col-spaced"> -->
+              <button mat-button class="btn btn-primary" (click)="toggleFlip()">More Info</button>
+              <!-- </div> -->
+            </div>
+            <!-- <div fxLayout="row">
 
       </div> -->
-      <!-- <div fxLayout="row" fxFlex="100%" fxFlexAlign="space-evenly  end" fxLayoutAlign="space-evenly end" >
+            <!-- <div fxLayout="row" fxFlex="100%" fxFlexAlign="space-evenly  end" fxLayoutAlign="space-evenly end" >
           <button mat-button class="btn btn-primary">Yes</button>
           <button mat-button class="btn btn-secondary" aria-setsize="small">Later</button>
           <button mat-button class="btn btn-light">Not Interested</button> -->
-          <!-- <div fxFlex="20"><button mat-button class="btn btn-primary">Yes</button></div>
+            <!-- <div fxFlex="20"><button mat-button class="btn btn-primary">Yes</button></div>
           <div fxFlex="30"><button mat-button class="btn btn-secondary" aria-setsize="small">Later</button></div>
           <div fxFlex="20"><button mat-button class="btn btn-light">Not Interested</button></div> -->
-      <!-- </div> -->
-          <!-- <button mat-button class="btn btn-primary">Yes</button>
+            <!-- </div> -->
+            <!-- <button mat-button class="btn btn-primary">Yes</button>
           <button mat-button class="btn btn-secondary" aria-setsize="small">Later</button>
           <button mat-button class="btn btn-light">Not Interested</button> -->
 
+            <!-- </div> -->
+          </div>
+          <!-- <img mat-card-image src="../../../../assets/images/NBA_Image.jpg" alt="ACH"> -->
 
-      <!-- </div> -->
-    </div>
-    <!-- <img mat-card-image src="../../../../assets/images/NBA_Image.jpg" alt="ACH"> -->
-
-    <!-- <img mat-card-image src="../../../../assets/images/swift.png" alt="SWIFT"> -->
-    <!-- <img mat-card-image src="{{item.ImageURL}}" alt="SWIFT"> -->
-    <!-- <p class="overview-title" >Overview</p> -->
-    <!-- <img src="../../../../assets/images/swift3.gif" alt="SWIFT"> -->
-    <!-- <div class="transbox">
+          <!-- <img mat-card-image src="../../../../assets/images/swift.png" alt="SWIFT"> -->
+          <!-- <img mat-card-image src="{{item.ImageURL}}" alt="SWIFT"> -->
+          <!-- <p class="overview-title" >Overview</p> -->
+          <!-- <img src="../../../../assets/images/swift3.gif" alt="SWIFT"> -->
+          <!-- <div class="transbox">
 
         <p class="benefits-title">
 
@@ -72,53 +71,53 @@ Would you like to learn more?
         </mat-card-actions>
     </div>
   -->
-    <!-- <p class="benefits-title">Benefits to you</p>
+          <!-- <p class="benefits-title">Benefits to you</p>
       <p  class = "md-subhead"  class="benefits-text">
        {{item.Benefits}}
       </p> -->
-    <!-- <mat-card-actions style="margin: 10px;">
+          <!-- <mat-card-actions style="margin: 10px;">
         <button mat-button></button>
        <button mat-button>SHARE</button> -->
 
-    <!-- </mat-card-actions> -->
-  </mat-card-content>
-</div>
-<div >
-<div class="tp-box__side tp-box__back">
-    <mat-card-content   id="card-content" >
-      <div  class="nbaTeaser" >
-        <!-- <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar> -->
-        <!-- <img mat-card-image src="../../../../assets/images/swift.png" alt="SWIFT"> -->
-        <p class="overview-title" >Overview</p>
-        <!-- <img src="../../../../assets/images/swift3.gif" alt="SWIFT"> -->
-      <p  class = "md-title" class="overview-text">
-          {{item.ShortDescription}}
-      </p>
-      <p class="benefits-title">Benefits to you</p>
-      <p  class = "md-subhead"  class="benefits-text">
-       {{item.Benefits}}
-      </p>
+          <!-- </mat-card-actions> -->
+        </mat-card-content>
+      </div>
+      <div>
+        <div class="tp-box__side tp-box__back">
+          <mat-card-content id="card-content">
+            <div class="nbaTeaser">
+              <!-- <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar> -->
+              <!-- <img mat-card-image src="../../../../assets/images/swift.png" alt="SWIFT"> -->
+              <p class="overview-title">Overview</p>
+              <!-- <img src="../../../../assets/images/swift3.gif" alt="SWIFT"> -->
+              <p class="md-title" class="overview-text">
+                {{ item.ShortDescription }}
+              </p>
+              <p class="benefits-title">Benefits to you</p>
+              <p class="md-subhead" class="benefits-text">
+                {{ item.Benefits }}
+              </p>
+            </div>
+            <div class="row nbaButtons">
+              <!-- <div class="col-md-4"> -->
+              <div class="col-spaced">
+                <button mat-button class="btn btn-primary" (click)="nbaOnClick()">Yes</button>
+              </div>
+              <!-- </div> -->
+              <!-- <div class="col-md-4"> -->
+              <div class="col-spaced">
+                <button mat-button class="btn btn-secondary" (click)="toggleFlip()" aria-setsize="small">Later</button>
+              </div>
+              <!-- </div> -->
+              <!-- <div class="col-md-4"> -->
+              <div class="col-spaced">
+                <button mat-button class="btn btn-light" (click)="toggleFlip()">Not Interested</button>
+              </div>
+              <!-- </div> -->
+            </div>
+          </mat-card-content>
+        </div>
+      </div>
     </div>
-    <div class="row nbaButtons">
-        <!-- <div class="col-md-4"> -->
-          <div class="col-spaced">
-              <button mat-button class="btn btn-primary" (click)="nbaOnClick()" >Yes</button>
-          </div>
-        <!-- </div> -->
-        <!-- <div class="col-md-4"> -->
-          <div class="col-spaced">
-              <button mat-button class="btn btn-secondary" (click)="toggleFlip()" aria-setsize="small">Later</button>
-          </div>
-        <!-- </div> -->
-        <!-- <div class="col-md-4"> -->
-           <div class="col-spaced">
-              <button mat-button class="btn btn-light" (click)="toggleFlip()">Not Interested</button>
-          </div>
-       <!-- </div> -->
-    </div>
-    </mat-card-content>
-</div>
-</div>
-</div>
-</div>
+  </div>
 </div>
