@@ -10,7 +10,7 @@
               <app-modal-container-rci-custom [master]="case.name | fromCamelCase"></app-modal-container-rci-custom>
             </button> -->
 
-        <a  *ngFor="let action of cat.pxResults" mat-button  (click)="(action.pyLabel === 'Request Check Image'?clickedRCI():clickedOther())">
+        <a  *ngFor="let action of cat.pxResults" mat-button  (click)="(action.pyLabel === 'Request Check Image'?testMe():clickedOther())">
         <li>
           {{ action.pyLabel }}
         </li>

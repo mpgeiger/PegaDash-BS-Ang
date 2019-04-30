@@ -5,6 +5,7 @@ import { DatapageService } from '../../../_services/datapage.service';
 import { PagerService } from '../../../_services/pager.service';
 // import stubbedResults from '../../../../assets/json/D_Interaction_Driver_I-826_SJ.json';
 import stubbedResults from '../../../../assets/json/D_Interaction_Driver_I-901__PW.json';
+import { ModalRCIContainerComponent } from '../modal-container/modal-container.component';
 
 export interface SSCaseTypePxResults {
 Name: string;
@@ -34,6 +35,7 @@ export interface SSCaseActions {
   pxResults: SSCaseTypePxResults;
 }
 @Component({
+  providers: [ModalRCIContainerComponent],
   selector: 'app-mega-menu',
   templateUrl: './mega-menu.component.html',
   styleUrls: ['./mega-menu.component.scss'],
@@ -53,18 +55,11 @@ export class MegaMenuComponent implements OnInit {
   actions: SSCaseActions[] = [];
   constructor(
     private datapage: DatapageService,
-    private pagerService: PagerService
-
+    private pagerService: PagerService,
+    private mc: ModalRCIContainerComponent
   ) { }
 
   ngOnInit() {
-
-  }
-  ngAfterViewInit(): void {
-    // this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
-    // this.sortedData = this.cases.slice();
-    // this.dataSource.sort = this.sort;
-    // this.dataSource.paginator = this.paginator;
     if (this.checkIfStubbed()) {
 
       console.log('STUBBED D_RecentTreasurerCases');
@@ -73,6 +68,13 @@ export class MegaMenuComponent implements OnInit {
       console.log('LIVE D_RecentTreasurerCases');
       this.getStubbedCases();
     }
+  }
+  ngAfterViewInit(): void {
+    // this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
+    // this.sortedData = this.cases.slice();
+    // this.dataSource.sort = this.sort;
+    // this.dataSource.paginator = this.paginator;
+
   }
   checkIfStubbed() {
     const useStubStr = localStorage.getItem('useStubbedData');
@@ -108,12 +110,15 @@ export class MegaMenuComponent implements OnInit {
     console.log('count of D_getDriverCategories-->  ', localStorage.getItem('D_getDriverCategories'));
     this.showLoading = false;
   }
+
+  public testMe(): void {
+    this.mc.openCreateRciCaseDialog();
+  }
   clickedRCI() {
     console.log('RCI Clicked Create ');
 
   }
   clickedOther() {
     console.log('OTHER Clicked Create ');
-
   }
 }

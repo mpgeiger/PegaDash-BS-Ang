@@ -11,7 +11,7 @@
       table_chart
     </i>
   </div>
-  <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar>
+  <mat-progress-bar mode="buffer" *ngIf="showLoading | async"></mat-progress-bar>
 
     <!-- <div *ngIf="!showLoading"> -->
     <ng-container *ngIf="showBarChart">
