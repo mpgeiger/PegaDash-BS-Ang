@@ -3,9 +3,14 @@
     <div class="col-xl-2 col-lg-3 col-md-4" *ngFor="let cat of actions">
       <h4>{{ cat.CategoryName }}</h4>
       <ul>
-        <li *ngFor="let action of cat.pxResults">
+          <!-- <button (click)="createCaseType(caseType)"
+          mat-button>{{caseType.name}}</button> -->
+        <a  *ngFor="let action of cat.pxResults"
+        mat-button>
+        <li>
           {{ action.pyLabel }}
         </li>
+        </a>
       </ul>
     </div>
   </div>

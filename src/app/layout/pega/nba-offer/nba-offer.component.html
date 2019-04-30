@@ -14,22 +14,11 @@
       <app-nba-teaser></app-nba-teaser>
       <!-- <div class="container" style="height: 320px"> -->
 
-          <div class="row nbaButtons">
+          <div class="row nbaButtons" style="justify-content: center">
               <!-- <div class="col-md-4"> -->
-                <div class="col-spaced">
-                    <button mat-button class="btn btn-primary" (click)="toggleFlip()" >Yes</button>
-                </div>
-              <!-- </div> -->
-              <!-- <div class="col-md-4"> -->
-                <div class="col-spaced">
-                    <button mat-button class="btn btn-secondary" aria-setsize="small">Later</button>
-                </div>
-              <!-- </div> -->
-              <!-- <div class="col-md-4"> -->
-                 <div class="col-spaced">
-                    <button mat-button class="btn btn-light">Not Interested</button>
-                </div>
-             <!-- </div> -->
+                <!-- <div class="col-spaced"> -->
+                    <button mat-button class="btn btn-primary" (click)="toggleFlip()" >More Info</button>
+                <!-- </div> -->
           </div>
       <!-- <div fxLayout="row">
 
@@ -96,7 +85,7 @@ Would you like to learn more?
 </div>
 <div >
 <div class="tp-box__side tp-box__back">
-    <mat-card-content   id="card-content"(click)="toggleFlip()">
+    <mat-card-content   id="card-content" >
       <div  class="nbaTeaser" >
         <!-- <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar> -->
         <!-- <img mat-card-image src="../../../../assets/images/swift.png" alt="SWIFT"> -->
@@ -109,6 +98,23 @@ Would you like to learn more?
       <p  class = "md-subhead"  class="benefits-text">
        {{item.Benefits}}
       </p>
+    </div>
+    <div class="row nbaButtons">
+        <!-- <div class="col-md-4"> -->
+          <div class="col-spaced">
+              <button mat-button class="btn btn-primary" (click)="nbaOnClick()" >Yes</button>
+          </div>
+        <!-- </div> -->
+        <!-- <div class="col-md-4"> -->
+          <div class="col-spaced">
+              <button mat-button class="btn btn-secondary" (click)="toggleFlip()" aria-setsize="small">Later</button>
+          </div>
+        <!-- </div> -->
+        <!-- <div class="col-md-4"> -->
+           <div class="col-spaced">
+              <button mat-button class="btn btn-light" (click)="toggleFlip()">Not Interested</button>
+          </div>
+       <!-- </div> -->
     </div>
     </mat-card-content>
 </div>

@@ -104,6 +104,10 @@ export class NbaOfferComponent implements OnInit {
     this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
   }
 
+  nbaOnClick() {
+    window.open("https://www.bnymellon.com/us/en/what-we-do/investment-services/treasury-services/index.jsp", "_blank");
+  }
+
 
 }
 
