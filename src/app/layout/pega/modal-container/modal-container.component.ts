@@ -65,7 +65,7 @@ export class ModalRCIContainerComponent implements OnInit {
     console.log( ' ## ModalRCIContainerComponent-->' + this.masterName);
   }
 
-  openAddFileDialog() {
+  public openCreateRciCaseDialog() {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = false;
@@ -75,11 +75,11 @@ export class ModalRCIContainerComponent implements OnInit {
     dialogConfig.minWidth = '650px';
     dialogConfig.minHeight = '400px';
 
-    dialogConfig.data = {
-      id: 1,
-      title: 'Angular For Beginners',
-      masterName: 'FOOBAR'
-    };
+    // dialogConfig.data = {
+    //   id: 1,
+    //   title: 'Angular For Beginners',
+    //   masterName: 'FOOBAR'
+    // };
 
     this.rciDialogRef = this.dialog.open(CreateCustomRCIcaseComponent, dialogConfig);
   }

@@ -22,6 +22,7 @@ import { interval } from 'rxjs/internal/observable/interval';
 })
 export class LoginComponent implements OnInit {
   loginData: any = {};
+  loggingInLoading = false;
 
   constructor(
     private uservice: UserService,
@@ -40,14 +41,15 @@ export class LoginComponent implements OnInit {
 
   doLogin() {
     // delay, so on change for password value can get in
-
-    const timer = interval(100).subscribe(() => {
+    this.loggingInLoading = true;
+    const timer = interval(2000).subscribe(() => {
       this.attemptLogin();
       timer.unsubscribe();
     });
   }
 
   attemptLogin() {
+
     this.uservice.login(this.loginData.userName, this.loginData.password).subscribe(
       response => {
         if (response.status === 200) {
@@ -98,16 +100,16 @@ export class LoginComponent implements OnInit {
 
 
 
-
         }
       },
       err => {
-       // const snackBarRef = this.snackBar.open(err.message, 'Ok');
-       // this.glsservice.sendMessage('LoggedOut');
+        // const snackBarRef = this.snackBar.open(err.message, 'Ok');
+        // this.glsservice.sendMessage('LoggedOut');
         localStorage.clear();
       }
-    );
-    localStorage.setItem('isLoggedin', 'true');
+      );
+      localStorage.setItem('isLoggedin', 'true');
+      this.loggingInLoading = false;
   }
 
   fieldChanged(e) {

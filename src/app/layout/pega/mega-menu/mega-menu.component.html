@@ -5,8 +5,12 @@
       <ul>
           <!-- <button (click)="createCaseType(caseType)"
           mat-button>{{caseType.name}}</button> -->
-        <a  *ngFor="let action of cat.pxResults"
-        mat-button>
+<!--      <button mat-menu-item *ngFor="let case of cases">
+              <mat-icon>dialpad</mat-icon>
+              <app-modal-container-rci-custom [master]="case.name | fromCamelCase"></app-modal-container-rci-custom>
+            </button> -->
+
+        <a  *ngFor="let action of cat.pxResults" mat-button  (click)="(action.pyLabel === 'Request Check Image'?clickedRCI():clickedOther())">
         <li>
           {{ action.pyLabel }}
         </li>

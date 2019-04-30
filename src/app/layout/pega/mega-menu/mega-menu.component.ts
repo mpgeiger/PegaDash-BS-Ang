@@ -3,7 +3,8 @@ import { Subscription, Observable } from 'rxjs';
 
 import { DatapageService } from '../../../_services/datapage.service';
 import { PagerService } from '../../../_services/pager.service';
-import stubbedResults from '../../../../assets/json/D_Interaction_Driver_I-826_SJ.json';
+// import stubbedResults from '../../../../assets/json/D_Interaction_Driver_I-826_SJ.json';
+import stubbedResults from '../../../../assets/json/D_Interaction_Driver_I-901__PW.json';
 
 export interface SSCaseTypePxResults {
 Name: string;
@@ -106,5 +107,13 @@ export class MegaMenuComponent implements OnInit {
     localStorage.setItem('D_getDriverCategories', this.actions.length.toString());
     console.log('count of D_getDriverCategories-->  ', localStorage.getItem('D_getDriverCategories'));
     this.showLoading = false;
+  }
+  clickedRCI() {
+    console.log('RCI Clicked Create ');
+
+  }
+  clickedOther() {
+    console.log('OTHER Clicked Create ');
+
   }
 }
