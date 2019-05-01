@@ -54,15 +54,15 @@ export class ModalRCIContainerComponent implements OnInit {
   ) { }
   @Input('master') masterName: string;
 
-  foobar = '';
+  caseInstanceName = '';
 
   rciDialogRef: MatDialogRef<CreateCustomRCIcaseComponent>;
 
   // @Input()('master') masterName: string;
 
   ngOnInit() {
-    this.foobar = this.masterName;
-    console.log( ' ## ModalRCIContainerComponent-->' + this.masterName);
+    this.caseInstanceName = this.masterName;
+    //console.log( ' ## ModalRCIContainerComponent-->' + this.masterName);
   }
 
   public openCreateRciCaseDialog() {

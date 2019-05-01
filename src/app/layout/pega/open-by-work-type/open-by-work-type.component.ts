@@ -153,7 +153,21 @@ itemTextValue: string;
      this.dataSource.sort = this.sort;
     // this.dataSource.paginator = this.paginator;
     // this.getCases();
-    this.getStubbedCases();
+    if (this.checkIfStubbed()) {
+      console.log('STUBBED D_OpenWorkByType');
+      this.getStubbedCases();
+    } else {
+      console.log('LIVE D_OpenWorkByType');
+      this.getCases();
+    }
+
+  }
+
+  checkIfStubbed() {
+    const useStubStr = localStorage.getItem('useStubbedData');
+    let useStub = false;
+    useStub = (useStubStr === 'true');
+    return useStub;
   }
 
   getStubbedCases() {
@@ -226,7 +240,7 @@ let count = 0;
     for (const item of data) {
       this.pieChartLabels.push(item.pyLabel);
     }
-    console.log('  Pie CHART pieChartLabels-->' + JSON.stringify(this.pieChartLabels)); // Does not return anything
+    //console.log('  Pie CHART pieChartLabels-->' + JSON.stringify(this.pieChartLabels)); // Does not return anything
   }
 
   parseDataForBarChart(data) {

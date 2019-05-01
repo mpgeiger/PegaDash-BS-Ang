@@ -86,8 +86,22 @@ export class TransactionSummaryComponent implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
     // this.getCases();
-    this.getStubbedCases();
 
+    if (this.checkIfStubbed()) {
+    console.log('STUBBED D_TransactionSummary');
+    this.getStubbedCases();
+  } else {
+    console.log('LIVE D_TransactionSummary');
+    this.getCases();
+  }
+  }
+
+  checkIfStubbed() {
+    const useStubStr = localStorage.getItem('useStubbedData');
+
+    let useStub = false;
+    useStub = (useStubStr === 'true');
+    return useStub;
   }
 
   getStubbedCases() {
@@ -95,7 +109,7 @@ export class TransactionSummaryComponent implements OnInit, AfterViewInit {
 // const word = (<any>data).name;
 // console.log(word); // output 'testing'
     const stubbed: any = stubbedResults;
-    console.log('STUBBED  get D_TransactionSummary begin');
+    // console.log('STUBBED  get D_TransactionSummary begin');
 
     const resSTR = JSON.stringify(this.getResults(stubbed));
 
@@ -111,6 +125,8 @@ export class TransactionSummaryComponent implements OnInit, AfterViewInit {
   getCases() {
     // const unifiedtaskParams = new HttpParams().set('UserId', 'SallyJones').set('WorkGroup', 'NewWaveWG');
     const dParams = new HttpParams();
+    // console.log('Live get D_TransactionSummary begin');
+
     this.showLoading = true;
      this.datapage.getDataPage('D_TransactionSummary', dParams).subscribe(
        response => {

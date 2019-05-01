@@ -34,7 +34,6 @@ export class NbaOfferComponent implements OnInit {
   ngOnInit() {
     // this.getCases();
     if (this.checkIfStubbed()) {
-
       console.log('STUBBED NBA_Offer');
       this.getStubbedCases();
     } else {
@@ -76,18 +75,11 @@ export class NbaOfferComponent implements OnInit {
     //  this.nba.getCurrentNba('D_TransactionSummary', dParams).subscribe(
      this.nba.getCurrentNba('PEGASAFS-WORK-CONTACT CON-488', 'BNYServices').subscribe(
        response => {
-
-          console.log(' get NBA_Offer begin');
          this.headers = response.headers;
          this.nbas = Object.keys(this.getNBAResults(response.body)).map(it => this.getNBAResults(response.body)[it]);
-
-        //  console.log(' get NBA_Offer JSON-->' + JSON.stringify(this.nbas));
          localStorage.setItem('NBA_Offer', this.nbas.length.toString());
-
          this.showLoading = false;
-
-         console.log('count of NBA_Offer-->  ', localStorage.getItem('NBA_Offer'));
-
+        //  console.log('count of NBA_Offer-->  ', localStorage.getItem('NBA_Offer'));
        },
        err => {
          alert('Error form unifiedtask:' + err.errors);

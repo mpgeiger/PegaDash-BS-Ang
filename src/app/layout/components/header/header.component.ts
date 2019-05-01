@@ -1,18 +1,21 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+
+import { Component, OnInit, ViewEncapsulation, AfterViewInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { CaseService, } from '../../../_services/case.service';
 import { OpenNewCaseService } from '../../../_messages/opennewcase.service';
 import stubbedResults from '../../../../assets/json/CaseTypes.json';
+import { LoginComponent } from '../../../login/login.component';
 
 @Component({
+    providers: [LoginComponent],
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss']
     // , encapsulation: ViewEncapsulation.None
 
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, AfterViewInit {
     public pushRightClass: string;
     cases: any = [];
 
@@ -28,6 +31,7 @@ export class HeaderComponent implements OnInit {
       , public router: Router
       , private cservice: CaseService
       , private oncservice: OpenNewCaseService
+      , private loginservice: LoginComponent
 
       // , private dialog: MatDialog
       ) {
@@ -52,7 +56,6 @@ export class HeaderComponent implements OnInit {
         this.userFullName = localStorage.getItem('userFullName');
         this.getCaseTypes();
         if (this.checkIfStubbed()) {
-
           console.log('STUBBED CaseTypes');
           this.getStubbedCaseTypes();
         } else {
@@ -60,6 +63,9 @@ export class HeaderComponent implements OnInit {
           this.getCaseTypes();
         }
 
+    }
+    ngAfterViewInit() {
+      this.loginservice.loginLoadingStop();
     }
 
 checkIfStubbed() {
@@ -85,13 +91,8 @@ checkIfStubbed() {
     getCaseTypes() {
       this.cservice.getCaseTypes().subscribe(
         response => {
-          console.log(' begin D_getCaseTypes');
-          // const customerSummaryResult: any = response.body;
-          // const caseTypes: any = this.getCaseTypeResults(response.body);
           this.cases = Object.keys(this.getCaseTypeResults(response.body)).map(it => this.getCaseTypeResults(response.body)[it]);
-
           this.cases = this.cases.sort((a, b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
-
           localStorage.setItem('CaseTypes', this.cases.length.toString());
       },
       err => {

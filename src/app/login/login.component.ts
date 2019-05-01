@@ -15,8 +15,9 @@ import { interval } from 'rxjs/internal/observable/interval';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./nxn-loginpage.scss',
-  './login.component.scss'
+  styleUrls: [
+    './nxn-loginpage.scss',
+    './login.component.scss'
               ],
   animations: [routerTransition()]
 })
@@ -42,7 +43,7 @@ export class LoginComponent implements OnInit {
   doLogin() {
     // delay, so on change for password value can get in
     this.loggingInLoading = true;
-    const timer = interval(2000).subscribe(() => {
+    const timer = interval(500).subscribe(() => {
       this.attemptLogin();
       timer.unsubscribe();
     });
@@ -55,7 +56,7 @@ export class LoginComponent implements OnInit {
         if (response.status === 200) {
           // tslint:disable-next-line:prefer-const
           let operatorParams = new HttpParams();
-
+          console.log(' begin attemptLogin');
           this.dservice.getDataPage('D_OperatorID', operatorParams).subscribe(
             response => {
               console.log(' begin D_OperatorID');
@@ -108,8 +109,9 @@ export class LoginComponent implements OnInit {
         localStorage.clear();
       }
       );
+      console.log(' end attemptLogin');
       localStorage.setItem('isLoggedin', 'true');
-      this.loggingInLoading = false;
+
   }
 
   fieldChanged(e) {
@@ -123,6 +125,10 @@ export class LoginComponent implements OnInit {
   getResults(data) {
     // localStorage.setItem('numUnifiedTaskList', data.pxResults.length);
     return data.pxResults;
+  }
+
+  public loginLoadingStop()  {
+    this.loggingInLoading = false;
   }
 
 
