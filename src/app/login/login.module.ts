@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { CommonModule } from '@angular/common';
 
 import { TranslateModule } from '@ngx-translate/core';
@@ -11,6 +13,8 @@ import { LoginComponent } from './login.component';
 @NgModule({
     declarations: [LoginComponent],
     imports: [
+      FormsModule,
+    ReactiveFormsModule,
         CommonModule,
         TranslateModule,
         LoginRoutingModule

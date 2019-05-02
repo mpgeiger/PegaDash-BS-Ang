@@ -1,6 +1,9 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { NbaTeaserComponent } from './../layout/pega/nba-teaser/nba-teaser.component';
 // import { ModalComponent } from './../layout/bs-component/components/modal/modal.component';
 // import { OpenAssignmentService } from './../_messages/openassignment.service';
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChartsModule as Ng2Charts } from 'ng2-charts';
@@ -8,7 +11,9 @@ import { ChartsModule as Ng2Charts } from 'ng2-charts';
 // import { ChartDataLabels } from 'chartjs-plugin-datalabels';
 
 import { AppMaterialModule } from '../app-material/app-material.module';
-import { CaselistComponent
+import {
+
+  , CaselistComponent
   // , FileNameDialogComponent
   // , ModalContainerComponent
   , MegaMenuComponent
@@ -27,7 +32,9 @@ import { CaselistComponent
 // import { HeroParentComponent } from '../layout/components/header/header.component';
 @NgModule({
   imports: [
-   CommonModule
+    FormsModule
+   , ReactiveFormsModule
+   , CommonModule
    , AppMaterialModule
    , Ng2Charts
 

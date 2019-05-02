@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClientJsonpModule  } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+// import {  ReactiveFormsModule } from '@angular/forms';
+// import {  } from '@angular/forms';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,17 +20,20 @@ import { AppRoutingModule } from './app-routing.module';
     imports: [
       BrowserModule,
       FormsModule,
-       ReactiveFormsModule,
-        CommonModule,
-        AppMaterialModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        LanguageTranslationModule,
-        AppRoutingModule,
-        // SharedPegaModule
+    ReactiveFormsModule,
+      CommonModule,
+      AppMaterialModule,
+      BrowserAnimationsModule,
+      HttpClientModule,
+      LanguageTranslationModule,
+      AppRoutingModule,
+      // SharedPegaModule
     ],
-    declarations: [AppComponent],
+    declarations: [
+      AppComponent
+    ],
     exports: [
+      // FormControl
       // ReactiveFormsModule
       // HttpClientModule,
       // HttpParams

@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
 import { OpenTaskPageComponent } from './opentask-page/opentask-page.component';
@@ -25,7 +27,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
+    imports: [
+      // FormsModule,
+      //  ReactiveFormsModule
+    RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
 export class LayoutRoutingModule {}

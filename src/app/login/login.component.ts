@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { HttpParams } from '@angular/common/http';
 
 import { routerTransition } from '../router.animations';
@@ -33,7 +33,10 @@ export class LoginComponent implements OnInit {
     public router: Router
   ) {}
 
+  name = new FormControl('');
   pxTextInputControl = new FormControl('', null);
+//  regiForm = new FormGroup();
+
   ngOnInit() {
     // userName = "tech.cableco";
     // userPassword = "pega";

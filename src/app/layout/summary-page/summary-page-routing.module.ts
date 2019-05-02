@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+
 import { Routes, RouterModule } from '@angular/router';
 import { SummaryPageComponent } from './summary-page.component';
 
@@ -10,7 +11,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
+    imports: [
+
+      RouterModule.forChild(routes)
+  ],
     exports: [RouterModule]
 })
 export class SummaryPageRoutingModule {}

@@ -38,6 +38,7 @@
               role="form"
               id="loginForm"
               name="loginForm"
+
               background="-webkit-linear-gradient(top,rgba(0,0,0,.65) 0,rgba(0,0,0,0) 100%)"
             >
               <!-- style="linear-gradient(to bottom,rgba(0,0,0,.65) 0,rgba(0,0,0,0) 100%) !important;" -->
@@ -74,7 +75,10 @@
                   <p class="ng-binding"><span class="fa fa-warning fa-fw"></span></p>
                 </div>
               </div> -->
-
+              <label>
+                Name:
+                <input type="text" [formControl]="name">
+              </label>
                 <div class="form-group button-container">
                   <!-- <a class="btn rounded-btn" (click)="attemptLogin()">{{ 'Log in' | translate }}</a> -->
                   <a class="btn rounded-btn" (click)="doLogin()">{{ 'Log in' | translate }}</a>

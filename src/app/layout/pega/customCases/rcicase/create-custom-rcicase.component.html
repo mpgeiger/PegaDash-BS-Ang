@@ -1,10 +1,19 @@
+<!-- <label>
+  Name: Ks
+  <input type="text" [formControl]="name">
+</label> -->
+<label>
+  Name:
+  <input type="text" [formControl]="name">
+</label>
 <div class="col-12" width="800px">
   <!-- CARD -->
+  <form ></form>
   <div class="card bg-light mb-1">
     <!-- <div class="card-header">Header</div> -->
-    <div class="card-body ">
+    <div class="card-body">
       &nbsp;
-      <form role="form" name="rciCheck" class="requestCheck">
+      <form  name="rciCheck" class="requestCheck"   novalidate>
         <div class="row">
           <div class="col-10"></div>
           <div class="col-2 float-right text-right">
@@ -22,7 +31,7 @@
             <!-- <label>Approx.Check Date</label><br /> -->
             <mat-form-field>
               <input matInput [matDatepicker]="picker" placeholder="Approx. Check Date" />
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
             <br />
@@ -34,23 +43,30 @@
             <fieldset class="form-group">
               <!-- <label>Check Recipient</label> -->
               <!-- [formControl]="checkRecepient" -->
-              <!-- formControlName="checkRecepient" -->
-              <!-- [formControl] = "checkRecepient" -->
+
+              <!-- [formControl] = "checkRecepient"
+                 [matAutocomplete]="auto"
+                 -->
 
               <mat-form-field style="width: 100%">
+                <input
+                  type="text"
+                  placeholder="Enter Recipient"
+                  aria-label="checkRecepient"
+                  matInput
+                  width="300px"
+                  name="checkRecepient"
 
-                    <input type="text" placeholder="Enter Recipient"
-                    aria-label="checkRecepient"
-                    matInput
-                    formControlName="checkRecepient"
-                    width="300px"
-                    name="checkRecepient"
-                    required
-                    [matAutocomplete]="auto">
-              <mat-autocomplete #auto="matAutocomplete">
-                  <mat-option *ngFor="let option of filteredOptions | async" [value]="option">{{option}}</mat-option>
+                  required
+
+                />
+                <mat-autocomplete #auto="matAutocomplete">
+                  <mat-option *ngFor="let option of filteredOptions | async" [value]="option">{{ option }}</mat-option>
                 </mat-autocomplete>
               </mat-form-field>
+              <p>
+                {{checkR}}
+              </p>
               <!-- <input
                 ng-model="CheckRecepient"
                 id="CheckRecepient"
@@ -71,17 +87,16 @@
           </div>
           <div class="col-4">
             <fieldset class="form-group">
-                <mat-form-field style="width: 100%">
-
-                    <input matInput formControlName="Amount"
-
-                    width="100%"
-                    name="Amount"
-                    currencyMask
-                           type="number"
-                           required
-                           placeholder="Amount">
-
+              <mat-form-field style="width: 100%">
+                <input
+                  matInput
+                  width="100%"
+                  name="Amount"
+                  currencyMask
+                  type="number"
+                  required
+                  placeholder="Amount"
+                />
               </mat-form-field>
 
               <!-- <label style="display: inherit">Amount</label>
@@ -95,18 +110,10 @@
           <!--    third line of check view -->
           <div class="col-4 float-left">
             <fieldset class="form-group">
-                <mat-form-field style="width: 100%">
-
-                    <input matInput formControlName="DaytimePhoneNumber"
-                    width="100%"
-                    name="DaytimePhoneNumber"
-
-                           type="text"
-
-                           placeholder="DaytimePhoneNumber">
-
+              <mat-form-field style="width: 100%">
+                <input matInput  width="100%" name="Memo" type="text" placeholder="Memo" />
               </mat-form-field>
-<!--
+              <!--
               <label>Daytime Phone</label>
               <input
                 ng-model="DaytimePhoneNumber"
@@ -122,14 +129,8 @@
           <div class="col-2 text-left"></div>
           <div class="col-6 float-right">
             <fieldset class="form-group">
-                <mat-form-field style="width: 100%">
-
-                    <input matInput formControlName="CheckSender"
-                    width="100%"
-                    name="CheckSender"
-                           type="text"
-                                                      placeholder="CheckSender">
-
+              <mat-form-field style="width: 100%">
+                <input matInput  width="100%" name="CheckSender" type="text" placeholder="Check Sender" />
               </mat-form-field>
 
               <!-- <label>Check Sender</label> -->

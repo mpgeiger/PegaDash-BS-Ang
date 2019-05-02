@@ -2,8 +2,8 @@
 import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { TranslateModule } from '@ngx-translate/core';
@@ -45,6 +45,8 @@ import { FromCamelCase } from './pega/_pipes/fromCamelCase';
 @NgModule({
     imports: [
           CommonModule
+          , FormsModule
+        , ReactiveFormsModule
         , FlexLayoutModule
         , LayoutRoutingModule
         // , MatTableModule
@@ -52,8 +54,6 @@ import { FromCamelCase } from './pega/_pipes/fromCamelCase';
         // , MatPaginatorModule
         // , MatSortModule
         , TranslateModule
-         , FormsModule
-         , ReactiveFormsModule
         // , NgbPaginationModule
         , NgbDropdownModule
         , NgxCurrencyModule
@@ -91,6 +91,7 @@ import { FromCamelCase } from './pega/_pipes/fromCamelCase';
   ],
   entryComponents: [
     modalRCICaseType
+
     , NgbdModalContentNBA
 
   ],
@@ -100,8 +101,10 @@ import { FromCamelCase } from './pega/_pipes/fromCamelCase';
   // CaselistComponent
   // , RecentTreasurerCaseListComponent
   // , OpenTaskPageComponent
-   OpenTaskPageModule,
-   ReactiveFormsModule
+  FormsModule
+  , ReactiveFormsModule
+  , OpenTaskPageModule
+  //  ReactiveFormsModule
 ]
   , schemas: [
     NO_ERRORS_SCHEMA

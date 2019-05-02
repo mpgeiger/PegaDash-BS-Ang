@@ -2,4 +2,9 @@
 <app-sidebar (collapsedEvent)="receiveCollapsed($event)"></app-sidebar>
 <section class="main-container" [ngClass]="{collapsed: collapedSideBar}">
     <router-outlet></router-outlet>
+
+    <label>
+      nameLayout:
+      <input type="text" [formControl]="nameLayout">
+    </label>
 </section>

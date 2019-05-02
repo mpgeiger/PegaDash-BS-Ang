@@ -62,8 +62,27 @@ export class CaseService {
 
   }
 
+  createCasePW(id,content) {
+
+    const encodedUser = 'cGF1bC53YWduZXJAYm55LmNvbTppbnN0YWxsMTIzNDUh';
+    const caseParams = new HttpParams();
+
+    const caseBody: any = {};
+    caseBody.caseTypeID = id;
+    caseBody.processID = 'pyStartCase',
+    caseBody.content = content;
+
+    let caseHeaders = new HttpHeaders();
+    caseHeaders = caseHeaders.append('Authorization', 'Basic ' + encodedUser);
+    caseHeaders = caseHeaders.append('Content-Type', 'application/json');
+
+    return this.http.post(this.caseUrl, caseBody,
+      { observe: 'response', params: caseParams, headers: caseHeaders});
+  }
+
   // create a case (with new or skip new)
   createCase(id, content) {
+    const pwEncodedUser = 'cGF1bC53YWduZXJAYm55LmNvbTppbnN0YWxsMTIzNDUh'
     const caseParams = new HttpParams();
 
     const caseBody: any = {};

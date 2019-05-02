@@ -1,6 +1,6 @@
-// import { UnifiedtasklistComponent } from './../../../../.history/src/app/layout/summary-page/components/unifiedtasklist/unifiedtasklist.component_20190318090940';
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
     selector: 'app-summary-page',
@@ -14,7 +14,7 @@ export class SummaryPageComponent implements OnInit {
     D_RecentTreasurerCases$ = '';
     D_TransactionSummary$ = '';
     cases$ = '';
-
+    nameSummaryPage = new FormControl('');
     // ngOnInit() {}
     ngOnInit() {
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
     selector: 'app-layout',
@@ -10,7 +11,7 @@ export class LayoutComponent implements OnInit {
     collapedSideBar: boolean;
 
     constructor() {}
-
+    nameLayout = new FormControl('');
     ngOnInit() {}
 
     receiveCollapsed($event) {

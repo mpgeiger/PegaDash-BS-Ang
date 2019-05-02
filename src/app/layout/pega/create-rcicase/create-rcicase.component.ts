@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { PegaErrors } from '../../../_constants/PegaErrors';
 import { CaseService } from '../../../_services/case.service';
 import {Observable} from 'rxjs';
-import {debounceTime, distinctUntilChanged, map} from 'rxjs/operators';
+import {debounceTime, distinctUntilChanged, map, isEmpty} from 'rxjs/operators';
 // import { diPublic } from '@angular/core/src/render3/di';
 import { JsonPipe } from '@angular/common';
 import { StringDecoder } from 'string_decoder';
@@ -134,9 +134,15 @@ setDp() {
       // this.isProgress = true;
 console.log(' IN CREATE RCI');
       // this.state = this.rciObj.content;
-      this.caseData.Month = 'March';
-      this.caseData.CheckRecepient = 'New Wave Americas Inc.';
-      this.caseData.CheckSender = 'Sun Investment Inc.';
+      // this.caseData.Month = 'March';
+      // this.caseData.CheckRecepient = 'New Wave Americas Inc.';
+      // this.caseData.CheckSender = 'Sun Investment Inc.';
+
+      if (this.isEmptyEntry(this.caseData.CheckRecepient)) {this.caseData.CheckRecepient = 'Mr. Jones'; }
+      if (this.isEmptyEntry(this.caseData.CheckSender)) {this.caseData.CheckRecepient = 'Henry Winkler'; }
+      if (this.isEmptyEntry(this.caseData.Date)) {this.caseData.Date = '02/02/2019'; }
+      if (this.isEmptyEntry(this.caseData.Amount)) {this.caseData.CheckRecepient = 8675309.00; }
+      if (this.isEmptyEntry(this.caseData.Memo)) {this.caseData.Memo = 'Clear Trqade'; }
 
       this.state = this.caseData;
 
@@ -170,12 +176,20 @@ console.log(' IN CREATE RCI');
         },
         err => {
           this.isProgress = false;
-          this.handleErrors(err);
+          // this.handleErrors(err);
         }
       );
 
     }
 
+    private isEmptyEntry(entry) {
+      if (entry === undefined ) {
+        return true;
+      } else {
+        return false;
+      }
+
+    }
     fieldChanged(e) {
       this.caseData[e.target.id] = e.target.value;
     }
@@ -183,9 +197,6 @@ console.log(' IN CREATE RCI');
     // fieldChangedTypeAhead(e) {
     //   this.caseData[e.target.id] = e.target.value;
     // }
-
-
-
 
     searchCheckRecipient = (text$: Observable<string>) =>
     text$.pipe(

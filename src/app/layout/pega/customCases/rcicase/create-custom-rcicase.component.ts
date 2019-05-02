@@ -1,10 +1,10 @@
-import { ReactiveFormsModule } from '@angular/forms';
+// import { ReactiveFormsModule } from '@angular/forms';
 // import { OnInit } from '@angular/core';
 // import { CaseService } from './../../../_services/case.service';
-import { Injectable } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
+  import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import { PegaErrors } from '../../../../_constants/PegaErrors';
 import { CaseService } from '../../../../_services/case.service';
@@ -36,7 +36,13 @@ import { stringify } from '@angular/core/src/util';
   , 'Stellar Corporation Ltd.'
 ];
 
-
+export interface RciInstance {
+  CheckDate: Date; // required with minimum 5 chracters
+  CheckSender: string;
+  CheckRecipient: string;
+  Amount: number;
+  Memo: string;
+}
 @Component({
   selector: 'app-create-custom-rcicase',
   templateUrl: './create-custom-rcicase.component.html',
@@ -48,7 +54,11 @@ import { stringify } from '@angular/core/src/util';
 @Injectable() // class annotation as Injectable
 // const myNbgDateMMddYYYY = {'month': 6, 'day': 23, 'year': 2019};
 export class CreateCustomRCIcaseComponent implements OnInit {
-
+  // public myForm: FormGroup; // our model driven form
+  public submitted: boolean; // keep track on whether form is submitted
+  public events: any[] = []; // use later to display form changes
+  name = new FormControl('');
+  checkRecepient = new FormControl('');
   // model;
   // model: ModalComponentModel=<CreateRCIcaseComponent>{};
   model: CreateCustomRCIcaseComponent = <CreateCustomRCIcaseComponent>{};
@@ -63,7 +73,7 @@ export class CreateCustomRCIcaseComponent implements OnInit {
   isCollapsed = true;
 
   //   For LIVE filtering
-  checkRecepient = new FormControl('');
+  // checkRecepient = new FormControl('');
   options: string[] = ['One', 'Two', 'Three'];
   filteredOptions: Observable<string[]>;
   mycheckRecipientList: string[] = [
@@ -83,15 +93,15 @@ export class CreateCustomRCIcaseComponent implements OnInit {
 
 
   state: Object = new Object();
-  rciObj = 	{content : {
-    Amount : '321.12',
-		CheckRecepient : 'ACME Fin',
-		CheckSender : 'Sally Jones',
-		DaytimePhoneNumber : '555-867-5309',
-		Month : 'August'
-  }};
+  // rciObj = 	{content : {
+  //   Amount : '321.12',
+	// 	CheckRecepient : 'ACME Fin',
+	// 	CheckSender : 'Sally Jones',
+	// 	DaytimePhoneNumber : '555-867-5309',
+	// 	Month : 'August'
+  // }};
 
-  myObjStr = JSON.stringify(this.rciObj);
+  // myObjStr = JSON.stringify(this.rciObj);
 
   caseData: any = {};
   showMsg = false;
@@ -99,6 +109,8 @@ export class CreateCustomRCIcaseComponent implements OnInit {
   constructor(
     // private fb: FormBuilder,
     private cservice: CaseService
+    // , private formControl: FormControl
+    // , private formGroup: FormGroup
   ) { }
   ngOnInit() {
     // this.setDp();
@@ -156,16 +168,26 @@ export class CreateCustomRCIcaseComponent implements OnInit {
       // this.isProgress = true;
 console.log(' IN CREATE RCI');
       // this.state = this.rciObj.content;
-      this.caseData.Month = 'March';
-      this.caseData.CheckRecepient = 'New Wave Americas Inc.';
-      this.caseData.CheckSender = 'Sun Investment Inc.';
+      // this.caseData.Month = 'March';
+      // this.caseData.CheckRecepient = 'New Wave Americas Inc.';
+      // this.caseData.CheckSender = 'Sun Investment Inc.';
+      const today: number = Date.now();
+      console.log(' CHECK DATE -->' + this.caseData.CheckDate );
+
+      console.log('CASE_DATA-->' + JSON.stringify(this.caseData));
+
+      if (this.isEmptyEntry(this.caseData.CheckRecepient)) {this.caseData.CheckRecepient = 'Mr. Jones'; }
+      if (this.isEmptyEntry(this.caseData.CheckSender)) {this.caseData.CheckRecepient = 'Henry Winkler'; }
+      if (this.isEmptyEntry(this.caseData.CheckDate)) {this.caseData.CheckDate = '02/02/2019'; }
+      if (this.isEmptyEntry(this.caseData.Amount)) {this.caseData.Amount = 8675309.00; }
+      if (this.isEmptyEntry(this.caseData.Memo)) {this.caseData.Memo = 'Default Clear Trade'; }
 
       this.state = this.caseData;
 
       console.log('currentCaseID-->' + this.currentCaseID$ );
       console.log('state-->' + JSON.stringify(this.state ));
 
-      this.cservice.createCase(this.currentCaseID$, this.state).subscribe(
+      this.cservice.createCasePW(this.currentCaseID$, this.state).subscribe(
         response => {
 
 
@@ -198,8 +220,18 @@ console.log(' IN CREATE RCI');
 
     }
 
+    private isEmptyEntry(entry) {
+      if (entry === undefined ) {
+        return true;
+      } else {
+        return false;
+      }
+
+    }
+
     fieldChanged(e) {
       this.caseData[e.target.id] = e.target.value;
+      console.log('fieldChanged-->\n' + JSON.stringify(this.caseData));
     }
 
     // fieldChangedTypeAhead(e) {

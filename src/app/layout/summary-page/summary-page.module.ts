@@ -3,6 +3,7 @@
 // import { AppMaterialModule } from './../../app-material/app-material.module';
 
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { AppMaterialModule } from './../../app-material/app-material.module';
@@ -10,8 +11,7 @@ import { SummaryPageRoutingModule } from './summary-page-routing.module';
 import { SummaryPageComponent } from './summary-page.component';
 // import { RecentTreasurerCaseListComponent } from '../pega/recentTreasurerCases/recentTreasurerCaseList.component';
 // import { UnifiedtasklistComponent } from '../../shared/pegaComponents/unifiedtasklist/unifiedtasklist.component';
-import { FormsModule } from '@angular/forms';
- import { ReactiveFormsModule } from '@angular/forms';
+//  import { ReactiveFormsModule } from '@angular/forms';
 import {
   TimelineComponent,
   NotificationComponent,
@@ -31,7 +31,9 @@ import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
     imports: [
       CommonModule
       , FormsModule
-       , ReactiveFormsModule
+     , ReactiveFormsModule
+      // , FormsModule
+      //  , ReactiveFormsModule
       //  , LayoutModule
        , AppMaterialModule
       , SharedPegaModule
@@ -55,6 +57,8 @@ import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
 
     ],
     exports: [
+      FormsModule
+     , ReactiveFormsModule
       // ModalContainerComponent,
       // FileNameDialogComponent
       // ReactiveFormsModule
