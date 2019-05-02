@@ -51,9 +51,18 @@ export interface RciInstance {
 })
 
 
+
 @Injectable() // class annotation as Injectable
 // const myNbgDateMMddYYYY = {'month': 6, 'day': 23, 'year': 2019};
 export class CreateCustomRCIcaseComponent implements OnInit {
+
+  rciCaseForm = new FormGroup({
+    CheckDate: new FormControl(''),
+    CheckRecepient: new FormControl(''),
+    Amount: new FormControl(''),
+    CheckSender: new FormControl(''),
+    Memo: new FormControl('')
+  });
   // public myForm: FormGroup; // our model driven form
   public submitted: boolean; // keep track on whether form is submitted
   public events: any[] = []; // use later to display form changes
@@ -74,7 +83,8 @@ export class CreateCustomRCIcaseComponent implements OnInit {
 
   //   For LIVE filtering
   // checkRecepient = new FormControl('');
-  options: string[] = ['One', 'Two', 'Three'];
+  // options: string[] = ['One', 'Two', 'Three'];
+  options: string[] = checkRecipientList;
   filteredOptions: Observable<string[]>;
   mycheckRecipientList: string[] = [
     'New Wave Energy Solutions'
@@ -114,7 +124,7 @@ export class CreateCustomRCIcaseComponent implements OnInit {
   ) { }
   ngOnInit() {
     // this.setDp();
-    this.filteredOptions = this.checkRecepient.valueChanges
+    this.filteredOptions = this.rciCaseForm.controls['CheckRecepient'].valueChanges
     .pipe(
       startWith(''),
       map(value => this._filter(value))
@@ -172,24 +182,29 @@ console.log(' IN CREATE RCI');
       // this.caseData.CheckRecepient = 'New Wave Americas Inc.';
       // this.caseData.CheckSender = 'Sun Investment Inc.';
       const today: number = Date.now();
-      console.log(' CHECK DATE -->' + this.caseData.CheckDate );
 
-      console.log('CASE_DATA-->' + JSON.stringify(this.caseData));
+      this.caseData = this.rciCaseForm.value;
+      // console.log(' CHECK DATE -->' + this.caseData.CheckDate );
 
-      if (this.isEmptyEntry(this.caseData.CheckRecepient)) {this.caseData.CheckRecepient = 'Mr. Jones'; }
-      if (this.isEmptyEntry(this.caseData.CheckSender)) {this.caseData.CheckRecepient = 'Henry Winkler'; }
-      if (this.isEmptyEntry(this.caseData.CheckDate)) {this.caseData.CheckDate = '02/02/2019'; }
-      if (this.isEmptyEntry(this.caseData.Amount)) {this.caseData.Amount = 8675309.00; }
-      if (this.isEmptyEntry(this.caseData.Memo)) {this.caseData.Memo = 'Default Clear Trade'; }
+      // this.onSubmit();
+      // console.log('CASE_DATA-->' + JSON.stringify(this.caseData));
+
+      // if (this.isEmptyEntry(this.caseData.CheckRecepient)) {this.caseData.CheckRecepient = 'Mr. Jones'; }
+      // if (this.isEmptyEntry(this.caseData.CheckSender)) {this.caseData.CheckRecepient = 'Henry Winkler'; }
+      // if (this.isEmptyEntry(this.caseData.CheckDate)) {this.caseData.CheckDate = '02/02/2019'; }
+      // if (this.isEmptyEntry(this.caseData.Amount)) {this.caseData.Amount = 8675309.00; }
+      // if (this.isEmptyEntry(this.caseData.Memo)) {this.caseData.Memo = 'Default Clear Trade'; }
+
+      // console.log('Post Parse CASE_DATA CASE -->' + JSON.stringify(this.caseData));
 
       this.state = this.caseData;
 
-      console.log('currentCaseID-->' + this.currentCaseID$ );
-      console.log('state-->' + JSON.stringify(this.state ));
+      // console.log('currentCaseID-->' + this.currentCaseID$ );
+      // console.log('state-->' + JSON.stringify(this.state ));
 
-      this.cservice.createCasePW(this.currentCaseID$, this.state).subscribe(
+      this.cservice.createCase(this.currentCaseID$, this.caseData).subscribe(
         response => {
-
+          const casePrefix = 'PEGACPMFS-WORK ';
 
           const caseID = response.body['ID'];
           const caseName = caseID.split(' ')[1];
@@ -197,8 +212,12 @@ console.log(' IN CREATE RCI');
           const oAssignment = new Object();
           oAssignment['pxRefObjectInsName'] = caseName;
           oAssignment['pzInsKey'] = response.body['nextAssignmentID'];
+
           this.showMsg = true;
+
+          console.log(' FULL RCI_Create response-->' + JSON.stringify(response));
           // renaming tab
+
           // MPG this.rtservice.sendMessage("New", caseName);
 
           // so renaming the tab, causes the tab to reload
@@ -208,6 +227,8 @@ console.log(' IN CREATE RCI');
 
           // new item created, update worklist
          // MPG  this.rwlservice.sendMessage('Work');
+
+
 
 
 
@@ -238,7 +259,10 @@ console.log(' IN CREATE RCI');
     //   this.caseData[e.target.id] = e.target.value;
     // }
 
-
+    onSubmit() {
+      // TODO: Use EventEmitter with form value
+      console.log('RCI CASE -->' + JSON.stringify(this.rciCaseForm.value));
+    }
 
 
     searchCheckRecipient = (text$: Observable<string>) =>

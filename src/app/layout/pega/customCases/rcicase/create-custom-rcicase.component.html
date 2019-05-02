@@ -2,10 +2,10 @@
   Name: Ks
   <input type="text" [formControl]="name">
 </label> -->
-<label>
+<!-- <label>
   Name:
   <input type="text" [formControl]="name">
-</label>
+</label> -->
 <div class="col-12" width="800px">
   <!-- CARD -->
   <form ></form>
@@ -13,7 +13,7 @@
     <!-- <div class="card-header">Header</div> -->
     <div class="card-body">
       &nbsp;
-      <form  name="rciCheck" class="requestCheck"   novalidate>
+      <form  name="rciCheck" class="requestCheck"  [formGroup]="rciCaseForm"  (ngSubmit)="createNew()"  novalidate>
         <div class="row">
           <div class="col-10"></div>
           <div class="col-2 float-right text-right">
@@ -30,7 +30,10 @@
           <div class="col-4 ">
             <!-- <label>Approx.Check Date</label><br /> -->
             <mat-form-field>
-              <input matInput [matDatepicker]="picker" placeholder="Approx. Check Date" />
+              <input matInput
+              formControlName="CheckDate"
+               [matDatepicker]="picker"
+                placeholder="Approx. Check Date" />
                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
@@ -56,16 +59,17 @@
                   matInput
                   width="300px"
                   name="checkRecepient"
-
+                  formControlName="CheckRecepient"
+                  [matAutocomplete]="auto"
                   required
 
                 />
                 <mat-autocomplete #auto="matAutocomplete">
-                  <mat-option *ngFor="let option of filteredOptions | async" [value]="option">{{ option }}</mat-option>
+                  <mat-option *ngFor="let option of filteredOptions | async" [value]="option"  >{{ option }}</mat-option>
                 </mat-autocomplete>
               </mat-form-field>
               <p>
-                {{checkR}}
+
               </p>
               <!-- <input
                 ng-model="CheckRecepient"
@@ -96,6 +100,7 @@
                   type="number"
                   required
                   placeholder="Amount"
+                  formControlName="Amount"
                 />
               </mat-form-field>
 
@@ -111,7 +116,12 @@
           <div class="col-4 float-left">
             <fieldset class="form-group">
               <mat-form-field style="width: 100%">
-                <input matInput  width="100%" name="Memo" type="text" placeholder="Memo" />
+                <input
+                matInput
+                width="100%"
+                name="Memo" type="text"
+                placeholder="Memo"
+                formControlName="Memo" />
               </mat-form-field>
               <!--
               <label>Daytime Phone</label>
@@ -130,7 +140,8 @@
           <div class="col-6 float-right">
             <fieldset class="form-group">
               <mat-form-field style="width: 100%">
-                <input matInput  width="100%" name="CheckSender" type="text" placeholder="Check Sender" />
+                <input matInput  width="100%" name="CheckSender" type="text" placeholder="Check Sender"
+                formControlName="CheckSender" />
               </mat-form-field>
 
               <!-- <label>Check Sender</label> -->
@@ -162,13 +173,16 @@
       <div class="row align-right">
         <!-- <div class="col-12 form-group button-container float-right"> -->
         <div class="col-12 form-group button-container align-right">
-          <!-- <a class="btn rounded-btn" (click)="createNew()">{{ 'Submit' }}</a> -->
+
+          <!-- MPG Real Submit -->
+          <!-- <button type="button" class="btn btn-primary float-right" (click)="createNew()">Submit Request</button> -->
           <button type="button" class="btn btn-primary float-right" (click)="createNew()">Submit Request</button>
+
         </div>
       </div>
 
-      <!-- <div *ngIf="showMsg" > -->
-      <div>
+      <div *ngIf="showMsg" >
+      <!-- <div> -->
         <!-- <div  > -->
         <div class="row align-center">
           <!-- <div class="row"> -->

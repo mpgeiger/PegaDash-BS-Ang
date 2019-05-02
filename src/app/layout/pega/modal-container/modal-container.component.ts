@@ -62,7 +62,7 @@ export class ModalRCIContainerComponent implements OnInit {
 
   ngOnInit() {
     this.caseInstanceName = this.masterName;
-    //console.log( ' ## ModalRCIContainerComponent-->' + this.masterName);
+    // console.log( ' ## ModalRCIContainerComponent-->' + this.masterName);
   }
 
   public openCreateRciCaseDialog() {
@@ -74,6 +74,7 @@ export class ModalRCIContainerComponent implements OnInit {
     dialogConfig.width = '70%';
     dialogConfig.minWidth = '650px';
     dialogConfig.minHeight = '400px';
+    dialogConfig.maxWidth = '1000px';
 
     // dialogConfig.data = {
     //   id: 1,
