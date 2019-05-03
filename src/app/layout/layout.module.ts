@@ -40,6 +40,7 @@ import { TransactionSummaryComponent } from './pega/transaction-summary/transact
 // import { DatePickerComponent } from './bs-component/components/index';
 import { AppMaterialModule  } from '../app-material/app-material.module';
 import { FromCamelCase } from './pega/_pipes/fromCamelCase';
+// import { RecentInteractionsComponent } from './pega/recent-interactions/recent-interactions.component';
 // import { Workitem1Component } from './pega/workitem1/workitem1.component';
 // import { NbaTeaserComponent } from './pega/nba-teaser/nba-teaser.component';
 @NgModule({

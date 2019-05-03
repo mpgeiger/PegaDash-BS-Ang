@@ -60,8 +60,16 @@
 // }
 
 
-
+::ng-deep .cdk-overlay-connected-position-bounding-box {
+  top: 55.5px;
+  left: 20% !important;
+  // height: 876.5px;
+  // width: 988.65px;
+  align-items: first baseline !important;
+  // justify-content: flex-start;
+}
 :host {
+
 
 
   .navbar {
@@ -104,7 +112,8 @@
     .navbar-nav {
       .megaMenuNav {
         color: green;
-        max-width: none !important;
+        // max-width: none !important;
+        max-width: 80vw;
         //   width: 100vw;
         //   margin-left: -8px;
         //   margin-top: 24px;
@@ -112,6 +121,14 @@
 
 
       }
+      // div.cdk-overlay-connected-position-bounding-box {
+      //   align-items: center;
+      //   left: 20%;
+      //   right: 20%;
+      //   top: 15px;
+      // }
+
+
     }
 
 

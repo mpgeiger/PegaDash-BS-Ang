@@ -16,6 +16,7 @@ export * from './maintabs/maintabs.component';
 export * from './nba-offer/nba-offer.component';
 export * from './nba-teaser/nba-teaser.component';
 export * from './open-by-work-type/open-by-work-type.component';
+export * from './recent-interactions/recent-interactions.component';
 export * from './recentTreasurerCases/recentTreasurerCaseList.component';
 export * from './ngPaging/pagination.component';
 export * from './transaction-summary/transaction-summary.component';

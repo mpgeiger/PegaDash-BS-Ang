@@ -1,3 +1,4 @@
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NbaTeaserComponent } from './../layout/pega/nba-teaser/nba-teaser.component';
@@ -12,8 +13,7 @@ import { ChartsModule as Ng2Charts } from 'ng2-charts';
 
 import { AppMaterialModule } from '../app-material/app-material.module';
 import {
-
-  , CaselistComponent
+   CaselistComponent
   // , FileNameDialogComponent
   // , ModalContainerComponent
   , MegaMenuComponent
@@ -22,6 +22,7 @@ import {
   , NbaOfferComponent
   , OpenByWorkTypeComponent
   , PegaPieChartComponent
+  , RecentInteractionsComponent
   , RecentTreasurerCaseListComponent
   , TransactionSummaryComponent
   , PWorkItemComponent
@@ -54,6 +55,7 @@ import {
     , NbaTeaserComponent
     , OpenByWorkTypeComponent
     , PegaPieChartComponent
+    , RecentInteractionsComponent
     , RecentTreasurerCaseListComponent
     , TransactionSummaryComponent
     , PWorkItemComponent
@@ -73,6 +75,7 @@ import {
     , NbaTeaserComponent
     , OpenByWorkTypeComponent
     , PegaPieChartComponent
+    , RecentInteractionsComponent
     , RecentTreasurerCaseListComponent
     , TransactionSummaryComponent
     , PWorkItemComponent

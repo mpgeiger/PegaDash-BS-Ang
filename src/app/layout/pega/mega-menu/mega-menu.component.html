@@ -1,21 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col-xl-2 col-lg-3 col-md-4" *ngFor="let cat of actions">
+    <div class="col-xl-4 col-lg-5 col-md-6" *ngFor="let cat of actions">
+      <!-- <div class="row"> -->
       <h4>{{ cat.CategoryName }}</h4>
       <ul>
-          <!-- <button (click)="createCaseType(caseType)"
-          mat-button>{{caseType.name}}</button> -->
-<!--      <button mat-menu-item *ngFor="let case of cases">
-              <mat-icon>dialpad</mat-icon>
-              <app-modal-container-rci-custom [master]="case.name | fromCamelCase"></app-modal-container-rci-custom>
-            </button> -->
-
-        <a  *ngFor="let action of cat.pxResults" mat-button  (click)="(action.pyLabel === 'Request Check Image'?testMe():clickedOther())">
-        <li>
-          {{ action.pyLabel }}
-        </li>
+        <a *ngFor="let action of cat.pxResults" mat-button (click)="action.pyLabel === 'Request Check Image' ? testMe() : clickedOther()">
+          <li>
+            {{ action.pyLabel }}
+          </li>
         </a>
       </ul>
+      <!-- </div> -->
     </div>
   </div>
 </div>
