@@ -60,8 +60,8 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
     pxUpdateDateTime: ''
   };
 
-@ViewChild(MatPaginator) paginator: MatPaginator;
-@ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(
     public cService: CaseService,
