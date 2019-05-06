@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 import { HttpParams, HttpHeaders } from '@angular/common/http';
 
@@ -7,6 +7,7 @@ import { PagerService } from '../../../_services/pager.service';
 // import stubbedResults from '../../../../assets/json/D_Interaction_Driver_I-826_SJ.json';
 import stubbedResults from '../../../../assets/json/D_Interaction_Driver_I-901__PW.json';
 import { ModalRCIContainerComponent } from '../modal-container/modal-container.component';
+import {MatTableDataSource, MatSort} from '@angular/material';
 
 export interface SSCaseTypePxResults {
 Name: string;
@@ -44,6 +45,7 @@ export interface SSCaseActions {
 })
 export class MegaMenuComponent implements OnInit {
   // public dataSource = new MatTableDataSource<TreasurerCases>();
+  @ViewChild(MatSort) sort: MatSort;
 
   message: any;
   subscription: Subscription;

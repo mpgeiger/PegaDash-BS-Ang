@@ -1,0 +1,882 @@
+{
+    "pxMore": "false",
+    "pxObjClass": "Code-Pega-List",
+    "pxPageCount": "0",
+    "pxQueryTimeStamp": "2019-05-06T15:55:56.952Z",
+    "pxResultCount": "2",
+    "pxSQLStatementPost": "SELECT \"PC0\".\"isstp\" AS \"IsSTP\" , \"PC0\".\"pzinskey\" AS \"pzInsKey\" FROM pegadata.pc_work \"PC0\" WHERE \"PC0\".\"pxobjclass\" = ?  ORDER BY 2 ASC",
+    "pxSQLStatementPre": "SELECT \"PC0\".\"isstp\" AS \"IsSTP\" , \"PC0\".\"pzinskey\" AS \"pzInsKey\" FROM pegadata.pc_work \"PC0\" WHERE \"PC0\".\"pxobjclass\" = ?  ORDER BY 2 ASC",
+    "pxTotalResultCount": "0",
+    "pyMaxRecords": "0",
+    "pyObjClass": "Work-Channel-Triage-Email",
+    "pyQueryTimeoutInterval": "0",
+    "pyRowCount": "0",
+    "pyStartIndex": "0",
+    "pyUseReportsDatabase": "false",
+    "pzPageNameHash": "",
+    "pxResults": [
+        {
+            "CaseCount": "112",
+            "pxObjClass": "Work-Channel-Triage-Email",
+            "TypeOfProcess": "STP"
+        },
+        {
+            "CaseCount": "111",
+            "pxObjClass": "Work-Channel-Triage-Email",
+            "TypeOfProcess": "Triage"
+        }
+    ],
+    "pyMapping": [
+        {
+            "pxObjClass": "Embed-ReportMapping",
+            "pyClassName": "Work-Channel-Triage-Email",
+            "pyColumnName": ".IsSTP",
+            "pyDoNotIgnoreRelatedClassInGroup": "true",
+            "pyIsMetaData": "false",
+            "pyPropertyName": "IsSTP"
+        },
+        {
+            "pxObjClass": "Embed-ReportMapping",
+            "pyClassName": "Work-Channel-Triage-Email",
+            "pyColumnName": ".pzInsKey",
+            "pyDoNotIgnoreRelatedClassInGroup": "true",
+            "pyIsMetaData": "false",
+            "pyPropertyName": "pzInsKey"
+        },
+        {
+            "pxObjClass": "Embed-ReportMapping",
+            "pyClassName": "Work-Channel-Triage-Email",
+            "pyPropertyName": "TypeOfProcess"
+        }
+    ],
+    "pyPreparedValues": [
+        "Work-Channel-Triage-Email"
+    ],
+    "pyReportDefinition": {
+        "pxCommitDateTime": "2019-04-24T06:08:03.912Z",
+        "pxCreateDateTime": "2019-04-24T06:08:02.325Z",
+        "pxCreateOperator": "prathibha",
+        "pxCreateOpName": "Prathibha",
+        "pxCreateSystemID": "pega",
+        "pxHostId": "46121e0e7b2612907c4dfdd5954e937d",
+        "pxInsId": "!GETTRIAGEVSCASESCOUNT",
+        "pxInsName": "WORK-CHANNEL-TRIAGE-EMAIL!GETTRIAGEVSCASESCOUNT",
+        "pxLimitedAccess": "Dev",
+        "pxObjClass": "Rule-Obj-Report-Definition",
+        "pxOriginalRuleSet": "BNY",
+        "pxReportVersion": "6.2",
+        "pxSaveDateTime": "2019-04-24T06:08:03.432Z",
+        "pxUpdateDateTime": "2019-04-24T06:08:02.325Z",
+        "pxUpdateOperator": "prathibha",
+        "pxUpdateOpName": "Prathibha",
+        "pxUpdateSystemID": "pega",
+        "pyAccessibilityCount": "0",
+        "pyAccessibilityLevel": "0",
+        "pyBaseRule": "false",
+        "pyBrowserSupportLevel": "0",
+        "pyClassName": "Work-Channel-Triage-Email",
+        "pyCompact": "false",
+        "pyDeleteMemo": "a",
+        "pyDisplayMode": "clone",
+        "pyHistoryObject": "false",
+        "pyJavaClassName": "Rule_Obj_Report_Definition_Work_Channel_Triage_Email_GetTriageVsCasesCount_Action_20190424T060802_325_GMT",
+        "pyJavaGenerateAPIVersion": "04-02",
+        "pyLabel": "Get TriageVsCases count",
+        "pyLabelOld": "Get TriageVsCases count",
+        "pyMemo": "a",
+        "pyPreviousApplicationName": "BNYService",
+        "pyReportTitle": "Get TraigeVsCases count",
+        "pyRuleAvailable": "Yes",
+        "pyRuleName": "GetTriageVsCasesCount",
+        "pyRuleSet": "BNY",
+        "pyRuleSetVersion": "01-01-01",
+        "pySortDateCircumWithinRSMajor": "true",
+        "pySPRuleSetName": "BNY",
+        "pyStreamName": "GetTriageVsCasesCount",
+        "pyTemplateDisplayText": "No ruleset versions available",
+        "pyValueChanged": "true",
+        "pyXMLSignature": "<methodSignature><pyStepsPageAliases></pyStepsPageAliases></methodSignature>",
+        "pzChecksum": "1900652256",
+        "pzIndexCount": "16",
+        "pzInsKey": "RULE-OBJ-REPORT-DEFINITION WORK-CHANNEL-TRIAGE-EMAIL GETTRIAGEVSCASESCOUNT #20190424T060802.325 GMT",
+        "pzInvalidateCss": "true",
+        "pzOriginalInstanceKey": "RULE-OBJ-REPORT-DEFINITION WORK-CHANNEL-TRIAGE-EMAIL GETTRAIGEVSCASESCOUNT #20190405T103443.447 GMT",
+        "pzRuleSetVersionMajor": "01",
+        "pzRuleSetVersionMinor": "01",
+        "pzRuleSetVersionPatch": "01",
+        "pxAPIMethodReferences": [],
+        "pxCSSSelectors": [],
+        "pxNamedPageReferences": [
+            {
+                "pxObjClass": "Embed-Reference-NamedPage",
+                "pxPageClass": "Link-Association-RelatedWork",
+                "pxPageName": "RelatedCase",
+                "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION WORK-CHANNEL-TRIAGE-EMAIL GETTRIAGEVSCASESCOUNT #20190424T060802.325 GMT",
+                "pzIndexes": {
+                    "NamedPageReference": "15"
+                }
+            }
+        ],
+        "pxRuleReferences": [
+            {
+                "pxObjClass": "Embed-Reference-Rule",
+                "pxRuleClassName": "@baseclass",
+                "pxRuleFamilyName": "PYCAPTION!ISSTP",
+                "pxRuleObjClass": "Rule-Obj-FieldValue",
+                "pyRuleName": "pyCaption IsSTP",
+                "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION WORK-CHANNEL-TRIAGE-EMAIL GETTRIAGEVSCASESCOUNT #20190424T060802.325 GMT",
+                "pzIndexes": {
+                    "RuleReference": "8"
+                }
+            },
+            {
+                "pxObjClass": "Embed-Reference-Rule",
+                "pxRuleClassName": "Work-Channel-Triage-Email",
+                "pxRuleFamilyName": "WORK-CHANNEL-TRIAGE-EMAIL",
+                "pxRuleObjClass": "Rule-Obj-Class",
+                "pyRuleName": "Work-Channel-Triage-Email",
+                "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION WORK-CHANNEL-TRIAGE-EMAIL GETTRIAGEVSCASESCOUNT #20190424T060802.325 GMT",
+                "pzIndexes": {
+                    "RuleReference": "9"
+                }
+            },
+            {
+                "pxObjClass": "Embed-Reference-Rule",
+                "pxRuleClassName": "Work-Channel-Triage-Email",
+                "pxRuleFamilyName": "ISSTP",
+                "pxRuleObjClass": "Rule-Obj-Property",
+                "pyRuleName": "IsSTP",
+                "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION WORK-CHANNEL-TRIAGE-EMAIL GETTRIAGEVSCASESCOUNT #20190424T060802.325 GMT",
+                "pzIndexes": {
+                    "RuleReference": "10"
+                }
+            },
+            {
+                "pxObjClass": "Embed-Reference-Rule",
+                "pxRuleClassName": "@baseclass",
+                "pxRuleFamilyName": "PYCAPTION!INSTANCE HANDLE KEY",
+                "pxRuleObjClass": "Rule-Obj-FieldValue",
+                "pyRuleName": "pyCaption Instance Handle Key",
+                "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION WORK-CHANNEL-TRIAGE-EMAIL GETTRIAGEVSCASESCOUNT #20190424T060802.325 GMT",
+                "pzIndexes": {
+                    "RuleReference": "11"
+                }
+            },
+            {
+                "pxObjClass": "Embed-Reference-Rule",
+                "pxRuleClassName": "Work-Channel-Triage-Email",
+                "pxRuleFamilyName": "PZINSKEY",
+                "pxRuleObjClass": "Rule-Obj-Property",
+                "pyRuleName": "pzInsKey",
+                "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION WORK-CHANNEL-TRIAGE-EMAIL GETTRIAGEVSCASESCOUNT #20190424T060802.325 GMT",
+                "pzIndexes": {
+                    "RuleReference": "12"
+                }
+            },
+            {
+                "pxObjClass": "Embed-Reference-Rule",
+                "pxRuleClassName": "@baseclass",
+                "pxRuleFamilyName": "PYCAPTION!GET TRAIGEVSCASES COUNT",
+                "pxRuleObjClass": "Rule-Obj-FieldValue",
+                "pyRuleName": "pyCaption Get TraigeVsCases count",
+                "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION WORK-CHANNEL-TRIAGE-EMAIL GETTRIAGEVSCASESCOUNT #20190424T060802.325 GMT",
+                "pzIndexes": {
+                    "RuleReference": "13"
+                }
+            },
+            {
+                "pxObjClass": "Embed-Reference-Rule",
+                "pxRuleClassName": "Link-Association-RelatedWork",
+                "pxRuleFamilyName": "LINK-ASSOCIATION-RELATEDWORK",
+                "pxRuleObjClass": "Rule-Obj-Class",
+                "pyRuleName": "Link-Association-RelatedWork",
+                "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION WORK-CHANNEL-TRIAGE-EMAIL GETTRIAGEVSCASESCOUNT #20190424T060802.325 GMT",
+                "pzIndexes": {
+                    "RuleReference": "14"
+                }
+            }
+        ],
+        "pxWarnings": [],
+        "pyContent": {
+            "pxIsSummary": "false",
+            "pxObjClass": "Embed-ReportContent",
+            "pyClassName": "Work-Channel-Triage-Email",
+            "pyContentPageName": "pyReportContentPage",
+            "pyDoNotUseSortOrderForGrouping": "false",
+            "pyGetCachedDistinctValues": "false",
+            "pyGetDistinctRows": "false",
+            "pyMaxRecords": "0",
+            "pyQueryTimeoutValue": "0",
+            "pyReportContentPageName": "D_CasesVsTriaged",
+            "pyRowLevelSecurityApplied": "false",
+            "pyUnionNotApplied": "false",
+            "ValidationMap": "{}",
+            "pyAppContextInfo": {
+                "pxObjClass": "Embed-AppContextInfo"
+            },
+            "pyFields": {
+                "pxObjClass": "Embed-ReportFields",
+                "pyAggregate": [],
+                "pyGroupBy": [],
+                "pyListFields": [
+                    {
+                        "pxObjClass": "Embed-ReportListFields",
+                        "pyFieldLabel": "IsSTP",
+                        "pyFieldName": ".IsSTP",
+                        "pySortOrder": "99999"
+                    },
+                    {
+                        "pxObjClass": "Embed-ReportListFields",
+                        "pyFieldLabel": "Instance Handle Key",
+                        "pyFieldName": ".pzInsKey",
+                        "pySortOrder": "1",
+                        "pySortType": "ASC"
+                    }
+                ]
+            },
+            "pyFilters": {
+                "pxObjClass": "Embed-ReportFilters",
+                "pyFilter": [],
+                "pyQueryTokenList": []
+            },
+            "pyHavingFilters": {
+                "pxObjClass": "Embed-ReportFilters-Having",
+                "pyFilter": []
+            },
+            "pyInsertInfo": {
+                "pySecurity": {}
+            },
+            "pyPagesAndClasses": [
+                {
+                    "pxObjClass": "Embed-PagesAndClasses",
+                    "pyPagesAndClassesClass": "Link-Association-RelatedWork",
+                    "pyPagesAndClassesPage": "RelatedCase"
+                },
+                {
+                    "pxObjClass": "Embed-PagesAndClasses",
+                    "pyPagesAndClassesClass": "Work-Channel-Triage-Email"
+                }
+            ],
+            "pyPaging": {
+                "pxMorePages": "false",
+                "pxObjClass": "Embed-ReportPaging",
+                "pyAlignment": "Right",
+                "pyPosition": "Top",
+                "pyReturnTotalResultCount": "true",
+                "pySortMode": "dataset",
+                "pyWindowSize": "10"
+            },
+            "pyParameters": [
+                {
+                    "pxObjClass": "Embed-MethodParams"
+                }
+            ],
+            "pyReportRank": {
+                "pxObjClass": "Embed-ReportRank",
+                "pyRankField": {
+                    "pxObjClass": "Embed-ReportListFields"
+                }
+            },
+            "pyReportStatsInfo": {
+                "pxObjClass": "Embed-ReportStatisticsInfo",
+                "pyModeofExecution": "embedded",
+                "pyReportClassName": "Work-Channel-Triage-Email",
+                "pyReportInsKey": "RULE-OBJ-REPORT-DEFINITION WORK-CHANNEL-TRIAGE-EMAIL GETTRIAGEVSCASESCOUNT #20190424T060802.325 GMT",
+                "pyReportStreamName": "GetTriageVsCasesCount"
+            },
+            "pySecurity": {
+                "pxObjClass": "Embed-ReportSecurity",
+                "pyPrivilegeList": [
+                    {
+                        "pxObjClass": "Embed-Rule-PrivilegeSecurity"
+                    }
+                ]
+            },
+            "pySource": {
+                "pxObjClass": "Embed-ReportSource",
+                "pyAllowApproximation": "false",
+                "pyIncludeAllDescendantclasses": "true",
+                "pyUseImplementationClass": "true",
+                "pyAssociations": [],
+                "pyIndexInfo": [],
+                "pyJoinInfo": [],
+                "pyRowKeyInfo": {
+                    "pxObjClass": "Embed-ReportRowKeyInfo",
+                    "pyGetRowKey": "true",
+                    "pxResults": [
+                        {
+                            "pyLabel": ".pzInsKey"
+                        }
+                    ],
+                    "pyRowKeys": [
+                        ".pzInsKey"
+                    ]
+                },
+                "pySetQueries": {
+                    "pxObjClass": "Embed-ReportSetQueries",
+                    "pySetQueryInfo": []
+                },
+                "pySubReportFrom": {
+                    "pxObjClass": "Embed-SubReportInfo",
+                    "pyColumns": [],
+                    "pyFilters": {
+                        "pxObjClass": "Embed-ReportFilters",
+                        "pyFilter": []
+                    }
+                },
+                "pySubReportInfo": []
+            }
+        },
+        "pyContentSource": {
+            "pxObjClass": "Embed-SummaryParams"
+        },
+        "pyCustomFields": {
+            "empty": {
+                "pxObjClass": "Embed-CustomFieldsList",
+                "pxSubscript": "empty"
+            }
+        },
+        "pyDrillDown": {
+            "pxObjClass": "Embed-ReportDrillDown",
+            "pzDrillDownFilters": {
+                "pxObjClass": "Embed-ReportFilters"
+            }
+        },
+        "pyIndirectIncludes": [
+            {
+                "pxObjClass": "Embed-Alias"
+            }
+        ],
+        "pyPagesAndClasses": [
+            {
+                "pxObjClass": "Embed-PagesAndClasses",
+                "pyPagesAndClassesClass": "Link-Association-RelatedWork",
+                "pyPagesAndClassesPage": "RelatedCase"
+            },
+            {
+                "pxObjClass": "Embed-PagesAndClasses",
+                "pyPagesAndClassesClass": "Work-Channel-Triage-Email"
+            }
+        ],
+        "pyParameters": [
+            {
+                "pxObjClass": "Embed-MethodParams"
+            }
+        ],
+        "pyReportMetaData": {
+            "pxIsSummary": "false",
+            "pxObjClass": "Embed-ReportMetaDataInfo"
+        },
+        "pySource": {},
+        "pyToolBarSettings": {
+            "pxCanJustifyWarnings": "true",
+            "pxObjClass": "Embed-WBSettings-ToolBar",
+            "pyAvailability": "false",
+            "pyBack": "true",
+            "pyBranchOut": "true",
+            "pyCheckIn": "false",
+            "pyCheckOut": "true",
+            "pyCurrentlyOpen": "true",
+            "pyDelegates": "true",
+            "pyDelete": "true",
+            "pyFavorites": "true",
+            "pyForward": "true",
+            "pyHasQualifiers": "false",
+            "pyHelpURI": "https://end2endcrmcommercialbankingnew.pegatsdemo.com/prhelp/rule-/rule-obj-/rule-obj-report-/rule-obj-report-definition/main.htm",
+            "pyLaunch": "true",
+            "pyNew": "true",
+            "pyPreview": "false",
+            "pyPropertyPane": "false",
+            "pyRecover": "false",
+            "pyRefresh": "true",
+            "pyRequiresCheckOut": "true",
+            "pyRestore": "false",
+            "pyRuleData": "true",
+            "pyRuleResolution": "true",
+            "pyRun": "true",
+            "pySave": "false",
+            "pySaveAs": "true",
+            "pyShowJava": "true",
+            "pySiblings": "true",
+            "pyUsesInheritance": "true",
+            "pyVersionSecure": "false"
+        },
+        "pyUI": {
+            "pxObjClass": "Embed-ReportUI",
+            "pyCategory": "crmAccContReports",
+            "pyIgnoreFormattingExcelExport": "false",
+            "pyIgnoreFormattingPDFExport": "false",
+            "pyIgnoreSkinPDFExport": "true",
+            "pyIsCertified": "false",
+            "pyReportContentPageName": "pyReportContentPage",
+            "pyShowUnExposedProperties": "false",
+            "pyUseAlternateDb": "false",
+            "pzIsSummary": "false",
+            "pyBody": {
+                "pxObjClass": "Embed-ReportBody",
+                "pyCustomGroupingEnabled": "false",
+                "pyCustomRowEnabled": "false",
+                "pyExportGroupingToExcel": "false",
+                "pyGroupingEnabled": "false",
+                "pyGroupingSortNumber": "1",
+                "pyHeaderDisplay": "Default",
+                "pySpreadSheetStyle": "false",
+                "pyCustomFiltering": {
+                    "pxObjClass": "Embed-ReportCustomPrompt",
+                    "pyEnableCustomFiltering": "false",
+                    "pyPromptPageName": "CustomFilter"
+                },
+                "pyReportRank": {
+                    "pxObjClass": "Embed-ReportRank",
+                    "pyPartitionType": "All",
+                    "pyRankUIField": {
+                        "pxObjClass": "Embed-ReportUIFields"
+                    }
+                },
+                "pyRows": {
+                    "pxObjClass": "Embed-ReportRows",
+                    "pyEvents": {
+                        "pxObjClass": "Embed-ReportEvents",
+                        "pyEventList": [
+                            {
+                                "pxObjClass": "Embed-ReportEvent"
+                            }
+                        ]
+                    }
+                },
+                "pyUIFields": [
+                    {
+                        "pxObjClass": "Embed-ReportUIFields",
+                        "pyDataType": "Text",
+                        "pyDisplayValues": "false",
+                        "pyEchoFieldName": ".IsSTP",
+                        "pyFieldLabel": "IsSTP",
+                        "pyFieldName": ".IsSTP",
+                        "pyHide": "false",
+                        "pySelected": "false",
+                        "pyFieldFormat": {
+                            "pxObjClass": "Embed-ReportHtmlProp"
+                        },
+                        "pySQLFunction": {
+                            "pxObjClass": "Embed-UserFunction"
+                        }
+                    },
+                    {
+                        "pxObjClass": "Embed-ReportUIFields",
+                        "pyDataType": "Identifier",
+                        "pyDisplayValues": "false",
+                        "pyEchoFieldName": ".pzInsKey",
+                        "pyFieldLabel": "Instance Handle Key",
+                        "pyFieldName": ".pzInsKey",
+                        "pyHide": "false",
+                        "pySelected": "false",
+                        "pySortOrder": "1",
+                        "pySortType": "ASC",
+                        "pyFieldFormat": {
+                            "pxObjClass": "Embed-ReportHtmlProp"
+                        },
+                        "pySQLFunction": {
+                            "pxObjClass": "Embed-UserFunction"
+                        }
+                    }
+                ],
+                "pyUIFilters": {
+                    "pxObjClass": "Embed-ReportFilters",
+                    "pyGetDistinctRows": "false",
+                    "pyShowLabels": "true",
+                    "pyAppContextInfo": {
+                        "pxObjClass": "Embed-AppContextInfo"
+                    },
+                    "pyFilter": [
+                        {
+                            "pxObjClass": "Embed-ReportFilter",
+                            "pyIsLeftOperandAFunction": "false"
+                        }
+                    ]
+                },
+                "pyUIHavingFilters": {
+                    "pxObjClass": "Embed-ReportFilters-Having",
+                    "pyFilter": []
+                }
+            },
+            "pyChart": {
+                "pxCreateDateTime": "2019-04-05T10:34:43.449Z",
+                "pxCreateOperator": "prathibha",
+                "pxCreateOpName": "CPMFS Sysadmin",
+                "pxCreateSystemID": "pega",
+                "pxObjClass": "Embed-ReportGraph",
+                "pyChartOutputType": "Flash",
+                "pyClassName": "Work-Channel-Triage-Email",
+                "pyDisableDrillDown": "false",
+                "pyEnable2D3D": "false",
+                "pyEnableChart": "false",
+                "pyGraphType": "Column",
+                "pyHeight": "300",
+                "pyIs3D": "false",
+                "pyLegendDirection": "horizontal",
+                "pyLegendEnable": "true",
+                "pyLegendPlacement": "bottom",
+                "pyMax": "2",
+                "pyMaxSubTypeIcons": "1",
+                "pyMin": "1",
+                "pyOptionsToEdit": "Format",
+                "pyShowAllGridLines": "true",
+                "pyShowAllLabelsMS": "true",
+                "pyShowAllLabelsSS": "false",
+                "pyShowDataTips": "true",
+                "pyShowMaxButton": "true",
+                "pyShowNewWindow": "true",
+                "pyShowSVButton": "true",
+                "pySize": "Large",
+                "pySliderEnabled": "false",
+                "pySliderGroupCount": "0",
+                "pySliderWidth": "200",
+                "pySubChartIndex": "1",
+                "pySubType": "clustered",
+                "pyTimeOut": "0",
+                "pyTitleEnabled": "true",
+                "pyTitleFontSize": "14",
+                "pyTitleFontStyle": "regular",
+                "pyUseFusionChart": "true",
+                "pyUseJavaScript": "true",
+                "pyUseSolidColorsFor2D": "true",
+                "pyUseV6Chart": "true",
+                "pyValueOfChart": "0",
+                "pyWidth": "400",
+                "pzChartAllowed": "true",
+                "pxResults": [
+                    {
+                        "pxObjClass": "Rule-Obj-Property",
+                        "pyLabel": "IsSTP",
+                        "pySelected": "false",
+                        "pyStringType": "Text",
+                        "pyTargetProperty": ".IsSTP",
+                        "pzIndexCount": "1"
+                    },
+                    {
+                        "pxObjClass": "Rule-Obj-Property",
+                        "pyLabel": "Instance Handle Key",
+                        "pySelected": "false",
+                        "pyStringType": "Identifier",
+                        "pyTargetProperty": ".pzInsKey",
+                        "pzIndexCount": "2"
+                    }
+                ],
+                "pyBackgroundColor": [
+                    {
+                        "pxObjClass": "Embed-ReportGraph-BGColor"
+                    }
+                ],
+                "pyCategoryAxis": [
+                    {
+                        "pxObjClass": "Embed-ReportGraph-Axis"
+                    }
+                ],
+                "pyDataAxis": [
+                    {
+                        "pxObjClass": "Embed-ReportGraph-Axis"
+                    }
+                ],
+                "pyGauge": {
+                    "pxObjClass": "Embed-ReportGraph-Gauge",
+                    "pyBorderAlpha": "1",
+                    "pyBorderThickness": "1",
+                    "pyCoverAlpha": "1",
+                    "pyCoverRadius": "0",
+                    "pyDateTimeFormat": "dd:hh:mm:ss",
+                    "pyDateTimeInput": "milliseconds",
+                    "pyMajorTickLength": "10",
+                    "pyMajorTicks": "0",
+                    "pyMajorTickThickness": "3",
+                    "pyMinorTickLength": "5",
+                    "pyMinorTicks": "0",
+                    "pyMinorTickThickness": "1",
+                    "pyNeedleAlpha": "1",
+                    "pyNeedleBaseWidth": "0",
+                    "pyNeedleThickness": "3",
+                    "pyNeedleTopWidth": "0",
+                    "pyNumberCurrencySymbol": "$",
+                    "pyNumberFormat": "general",
+                    "pyNumberNegativeSign": "false",
+                    "pyNumberPrecision": "2",
+                    "pyNumberThouSeperator": "true",
+                    "pyShowValue": "true",
+                    "pyTickLocation": "Inside",
+                    "pyValueIndex": "1",
+                    "pyFieldHTMLParams": {
+                        "pyTempPlaceHolder": "TempPlaceHolder"
+                    }
+                },
+                "pyPie": {
+                    "pxObjClass": "Embed-ReportGraph-Pie",
+                    "pyDateTimeFormat": "dd:hh:mm:ss",
+                    "pyDateTimeInput": "milliseconds",
+                    "pyExplodeRadius": "0.1",
+                    "pyInnerRadius": "0.1",
+                    "pyLabelEnabled": "false",
+                    "pyLabelField": "false",
+                    "pyLabelNameField": "false",
+                    "pyLabelPercent": "false",
+                    "pyNumberCurrencySymbol": "$",
+                    "pyNumberNegativeSign": "false",
+                    "pyNumberPrecision": "2",
+                    "pyNumberThouSeperator": "true",
+                    "pyFieldHTMLParams": {
+                        "pyTempPlaceHolder": "TempPlaceHolder"
+                    },
+                    "pyNameFieldHTMLParams": {
+                        "pyTempPlaceHolder": "TempPlaceHolder"
+                    }
+                },
+                "pyXY": {
+                    "pxObjClass": "Embed-ReportGraph-XY",
+                    "pyInterpolateValues": "true",
+                    "pySwapSeries": "false",
+                    "pyTitleFontSize": "8",
+                    "pyTitleFontStyle": "regular",
+                    "pyUniformMinor": "true",
+                    "pyUseColorRanges": "false",
+                    "pyArea": {
+                        "pxObjClass": "Embed-ReportGraph-XY-Area"
+                    },
+                    "pyBar": {
+                        "pxObjClass": "Embed-ReportGraph-XY-Bar",
+                        "pyMaxBarWidth": "0"
+                    },
+                    "pyBubble": {
+                        "pxObjClass": "Embed-ReportGraph-XY-Bubble"
+                    },
+                    "pyColumn": {
+                        "pxObjClass": "Embed-ReportGraph-XY-Column",
+                        "pyMaxColWidth": "0"
+                    },
+                    "pyDataAxis": [
+                        {
+                            "pxObjClass": "Embed-ReportGraph-XY-DataAxis",
+                            "pyAxisCurrencySymbol": "$",
+                            "pyAxisDateTimeFormat": "dd:hh:mm:ss",
+                            "pyAxisDateTimeInput": "milliseconds",
+                            "pyAxisDecimalSeperator": "true",
+                            "pyAxisNegativeSign": "false",
+                            "pyAxisPrecision": "2",
+                            "pyAxisScale": "Linear",
+                            "pyAxisThouSeperator": "true",
+                            "pyMissingsAsZero": "true",
+                            "pyNumberFormat": "general",
+                            "pyShowGridLines": "true",
+                            "pyShowLabels": "true",
+                            "pyAxisHTMLParams": {
+                                "pyTempPlaceHolder": "TempPlaceHolder"
+                            },
+                            "pyDataAxisList": [
+                                {
+                                    "pxObjClass": "Embed-ReportGraph-XY-Axis",
+                                    "pyFieldIndex": "0"
+                                }
+                            ]
+                        }
+                    ],
+                    "pyGroupAxis": [
+                        {
+                            "pxObjClass": "Embed-ReportGraph-XY-GroupAxis",
+                            "pyAxisScale": "Category",
+                            "pyShowGridLines": "true",
+                            "pyShowLabels": "true",
+                            "pyAxisHTMLParams": {
+                                "pyTempPlaceHolder": "TempPlaceHolder"
+                            },
+                            "pyGroupAxisList": [
+                                {
+                                    "pxObjClass": "Embed-ReportGraph-XY-Axis",
+                                    "pyFieldIndex": "0"
+                                }
+                            ],
+                            "pySubGrpAxisHTMLParams": {
+                                "pyTempPlaceHolder": "TempPlaceHolder"
+                            }
+                        }
+                    ],
+                    "pyLine": {
+                        "pxObjClass": "Embed-ReportGraph-XY-Line",
+                        "pyDropShadow": "true",
+                        "pyLineWeight": "3"
+                    }
+                }
+            },
+            "pyHeader": {
+                "pxObjClass": "Embed-ReportHeader",
+                "pyButtons": {
+                    "pxObjClass": "Embed-ReportButtons",
+                    "pyButtonList": [
+                        {
+                            "pxObjClass": "Embed-ReportButton",
+                            "pyButtonCaption": "Save",
+                            "pyButtonToolTip": "Save",
+                            "pyImage": "report_save",
+                            "pyType": "Icon"
+                        },
+                        {
+                            "pxObjClass": "Embed-ReportButton",
+                            "pyButtonCaption": "Save As",
+                            "pyButtonToolTip": "Save As",
+                            "pyFunction": "\"showSaveAsDialog(this, event);\"",
+                            "pyImage": "report_saveas",
+                            "pyType": "Icon"
+                        },
+                        {
+                            "pxObjClass": "Embed-ReportButton",
+                            "pyButtonCaption": "Print",
+                            "pyButtonToolTip": "Print",
+                            "pyFunction": "window.print()",
+                            "pyImage": "report_print",
+                            "pyType": "Icon"
+                        },
+                        {
+                            "pxObjClass": "Embed-ReportButton",
+                            "pyButtonCaption": "Column Summary",
+                            "pyButtonToolTip": "Edit Columns To Include",
+                            "pyFunction": "columnSummary(this,event)",
+                            "pyImage": "report_colsmry",
+                            "pyType": "Icon"
+                        },
+                        {
+                            "pxObjClass": "Embed-ReportButton",
+                            "pyButtonCaption": "Append Column",
+                            "pyButtonToolTip": "Append Column",
+                            "pyFunction": "AppendColumn(this,event)",
+                            "pyImage": "report_plus",
+                            "pyType": "Icon"
+                        },
+                        {
+                            "pxObjClass": "Embed-ReportButton",
+                            "pyButtonCaption": "RepTtitle",
+                            "pyButtonToolTip": "Edit Report Title",
+                            "pyFunction": "\"changeReportTitle(this,event);\"",
+                            "pyImage": "report_title",
+                            "pyType": "Icon"
+                        },
+                        {
+                            "pxObjClass": "Embed-ReportButton",
+                            "pyButtonCaption": "Chart",
+                            "pyButtonToolTip": "Add Or Edit Chart",
+                            "pyFunction": "\"showChartOptions(this, event);\"",
+                            "pyImage": "report_bar",
+                            "pyLabel": "manager",
+                            "pyType": "Icon"
+                        },
+                        {
+                            "pxObjClass": "Embed-ReportButton",
+                            "pyButtonCaption": "ExpExcel",
+                            "pyButtonToolTip": "Export To Excel",
+                            "pyFunction": "\"exportToExcel(this,event);\"",
+                            "pyImage": "report_excel",
+                            "pyType": "Icon"
+                        },
+                        {
+                            "pxObjClass": "Embed-ReportButton",
+                            "pyButtonCaption": "ExpPDF",
+                            "pyButtonToolTip": "Export To PDF",
+                            "pyFunction": "\"exportToPDF(this,event);\"",
+                            "pyImage": "report_pdf",
+                            "pyType": "Icon"
+                        },
+                        {
+                            "pxObjClass": "Embed-ReportButton",
+                            "pyButtonCaption": "Filtering",
+                            "pyButtonToolTip": "Advanced Filtering",
+                            "pyFunction": "\"advancedFiltering(this,event);\"",
+                            "pyImage": "report_filtering",
+                            "pyType": "Icon"
+                        }
+                    ]
+                }
+            },
+            "pyPromptSectionParams": {
+                "pxObjClass": "Embed-ReportPromptSection",
+                "pzDisplayFilterPrompt": "true"
+            },
+            "pySecurity": {
+                "pxObjClass": "Embed-ReportSecurity",
+                "pyPrivilegeList": [
+                    {
+                        "pxObjClass": "Embed-Rule-PrivilegeSecurity"
+                    }
+                ]
+            },
+            "pySmartInfo": {
+                "pxObjClass": "Embed-ReportSmartInfo",
+                "pySingleClickSInfo": {
+                    "pxObjClass": "Embed-ReportSingleClickInfo",
+                    "pyEnabled": "false",
+                    "pySmartInfoHeader": "Additional Information"
+                }
+            },
+            "pySource": {
+                "pxObjClass": "Embed-ReportSource",
+                "pyAllowApproximation": "false",
+                "pyIncludeAllDescendantclasses": "true",
+                "pyUseImplementationClass": "true",
+                "pyAssociations": [],
+                "pyIndexInfo": [],
+                "pyJoinInfo": [],
+                "pyRowKeyInfo": {
+                    "pxObjClass": "Embed-ReportRowKeyInfo",
+                    "pyGetRowKey": "true",
+                    "pxResults": [
+                        {
+                            "pyLabel": ".pzInsKey"
+                        }
+                    ],
+                    "pyRowKeys": [
+                        ".pzInsKey"
+                    ]
+                },
+                "pySubReportFrom": {
+                    "pxObjClass": "Embed-SubReportInfo"
+                },
+                "pySubReportInfo": []
+            },
+            "pyUserInteractions": {
+                "pxObjClass": "Embed-ReportUserInteractions",
+                "pyDesignModeActualResults": "true",
+                "pyDisableDrillDown": "false",
+                "pyDrillDownReportName": "pyDefaultReport",
+                "pyEnableAddFilters": "true",
+                "pyExpandAllGroupBy": "true",
+                "pyFixedHeader": "false",
+                "pyPromptForFilters": "false",
+                "pyShowDataOnly": "false",
+                "pyPagingParams": {
+                    "pxMorePages": "false",
+                    "pxObjClass": "Embed-ReportPaging",
+                    "pyAlignment": "Right",
+                    "pyPosition": "Top",
+                    "pyReturnTotalResultCount": "true",
+                    "pySortMode": "dataset",
+                    "pyWindowSize": "10"
+                },
+                "pyReportToolbarOptions": {
+                    "pxObjClass": "Embed-ReportViewerCommands",
+                    "pyDisplayCommandMenu": "true",
+                    "pyDisplayCommandRibbon": "true",
+                    "pyDisplayReportHeader": "true",
+                    "pyEnableAdvancedFiltering": "true",
+                    "pyEnableAppendColumn": "true",
+                    "pyEnableConvertToList": "true",
+                    "pyEnableEditChart": "true",
+                    "pyEnableEditColumns": "true",
+                    "pyEnableEditing": "true",
+                    "pyEnableEditReportTitle": "true",
+                    "pyEnableExportToExcel": "true",
+                    "pyEnableExportToPDF": "true",
+                    "pyEnableFilters": "true",
+                    "pyEnablePrint": "true",
+                    "pyEnableSave": "true",
+                    "pyEnableSaveAs": "true",
+                    "pyEnableSummarize": "true"
+                }
+            }
+        }
+    },
+    "pzPerformanceSettings": []
+}

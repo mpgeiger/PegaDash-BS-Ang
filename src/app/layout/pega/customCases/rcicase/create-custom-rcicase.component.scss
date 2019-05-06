@@ -23,6 +23,19 @@
     width: 100%;
   }
 
+
+}
+
+.mpgClass {
+  left: 33% !important;
+}
+
+:host /deep/ .cdk-overlay-page, ::ng-deep .mat-datepicker-popup {
+  left: 30% !important;
+}
+
+:host /deep/  #cdk-overlay-2 {
+  left: 33% !important;
 }
 :host /deep/  .mat-datepicker-content .mat-calendar
 {
