@@ -6,7 +6,7 @@ import { HandleActions } from '../../_actions/handleactions';
 import { GetActionsService } from '../../_messages/getactions.service';
 import { ReferenceHelper } from '../../_helpers/reference-helper';
 
-import * as moment from 'moment';
+import moment from 'moment';
 
 @Component({
   selector: 'app-date',

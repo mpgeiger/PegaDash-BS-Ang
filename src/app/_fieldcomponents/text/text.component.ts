@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ModuleWithComponentFactories } from '@angular/core';
 
-import * as moment from "moment";
+import moment from 'moment';
+
 import { TransformVisitor } from '@angular/compiler/src/render3/r3_ast';
 import { SELECT_VALUE_ACCESSOR } from '@angular/forms/src/directives/select_control_value_accessor';
 
@@ -12,15 +13,15 @@ import { SELECT_VALUE_ACCESSOR } from '@angular/forms/src/directives/select_cont
 export class TextComponent implements OnInit {
 
   formattedValue$: string;
-  format$: string = "text";
-  formattedUrl$: string = "";
+  format$ = 'text';
+  formattedUrl$ = '';
 
   @Input() fieldComp: any;
   @Input() noLabel: boolean;
   @Input() CaseID: string;
 
-  showLabel$: boolean = false;
- 
+  showLabel$ = false;
+
 
   constructor() { }
 
@@ -28,19 +29,17 @@ export class TextComponent implements OnInit {
     this.formattedValue$ = this.fieldComp.value;
 
     if (this.noLabel) {
-      this.fieldComp.label = "";
+      this.fieldComp.label = '';
       this.showLabel$ = false;
-    }
-    else {
-      if (this.fieldComp.label != "") {
+    } else {
+      if (this.fieldComp.label !== '') {
         this.showLabel$ = true;
-      }
-      else if (this.fieldComp.label == "" && this.fieldComp.labelReserveSpace) {
+      } else if (this.fieldComp.label === '' && this.fieldComp.labelReserveSpace) {
         this.showLabel$ = true;
       }
     }
 
-  
+
 /*
     switch(this.fieldComp.type) {
       case "Date Time":
@@ -52,43 +51,43 @@ export class TextComponent implements OnInit {
     */
 
     if (this.fieldComp.readOnly === true) {
-      let modes1 = this.fieldComp.control.modes[1];
-      let formatType = modes1.formatType;
-      let sVal = this.fieldComp.value;
+      const modes1 = this.fieldComp.control.modes[1];
+      const formatType = modes1.formatType;
+      const sVal = this.fieldComp.value;
 
       this.format$ = formatType;
 
-      if (formatType != undefined) {
+      if (formatType !== undefined) {
 
         switch (formatType.toLowerCase()) {
-          case "none" :
+          case 'none' :
             break;
-          case "date" :
+          case 'date' :
             this.formattedValue$ = this.generateDate(sVal, modes1.dateFormat);
             break;
-          case "datetime" :
+          case 'datetime' :
             this.formattedValue$ = this.generateDateTime(sVal, modes1.dateTimeFormat);
             break;
-          case "email" :
+          case 'email' :
             break;
-          case "number" :
+          case 'number' :
             this.formattedValue$ = this.generateNumber(sVal, modes1);
             break;
-          case "tel" :
+          case 'tel' :
             this.formattedValue$ = this.generatePhoneNumber(sVal);
             break;
-          case "text" :
+          case 'text' :
             this.formattedValue$ = this.generateText(sVal, modes1);
             break;
-          case "truefalse" :
+          case 'truefalse' :
             this.formattedValue$ = this.generateTrueFalse(sVal, modes1);
             break;
-          case "url" :
+          case 'url' :
             this.formattedUrl$ = this.generateUrl(sVal);
             break;
-          case "advancedtext" :
+          case 'advancedtext' :
             break;
-          
+
         }
       }
     }
@@ -98,22 +97,21 @@ export class TextComponent implements OnInit {
 
   generateUrl(sVal) {
 
-    if (sVal.indexOf("https://") == 0 || sVal.indexOf("http://") == 0) {
+    if (sVal.indexOf('https://') === 0 || sVal.indexOf('http://') === 0) {
 
-    }
-    else {
+    } else {
       // assume no http
-      sVal = "http://" + sVal;
+      sVal = 'http://' + sVal;
     }
 
     return sVal;
   }
 
   generateText(sText, modes) {
-    if (modes.autoPrepend != "") {
+    if (modes.autoPrepend !== '') {
       sText = modes.autoPrepend + sText;
     }
-    if (modes.autoAppend != "") {
+    if (modes.autoAppend !== '') {
       sText = sText + modes.autoAppend;
     }
 
@@ -121,21 +119,21 @@ export class TextComponent implements OnInit {
   }
 
   generatePhoneNumber(sNum) {
-    let locale = navigator.language;
+    const locale = navigator.language;
 
     switch (locale) {
-      case "en-US" :
-      case "es-US" :
-      case "en-CA" :
-      case "es-MX" :
-        let formattedNum = "";
-        let phoneLen = sNum.length;
-        if (phoneLen == 11) {
-          formattedNum = sNum.substring(0,1) + "-"
+      case 'en-US' :
+      case 'es-US' :
+      case 'en-CA' :
+      case 'es-MX' :
+        let formattedNum = '';
+        const phoneLen = sNum.length;
+        if (phoneLen === 11) {
+          formattedNum = sNum.substring(0, 1) + '-';
           sNum = sNum.substring(1);
         }
-        if (sNum.length == 10) {
-          formattedNum += sNum.substring(0, 3) + "-" + sNum.substring(3, 6) + "-" + sNum.substring(6);
+        if (sNum.length === 10) {
+          formattedNum += sNum.substring(0, 3) + '-' + sNum.substring(3, 6) + '-' + sNum.substring(6);
           sNum = formattedNum;
         }
         break;
@@ -146,11 +144,11 @@ export class TextComponent implements OnInit {
 
   generateNumber(sNum, modes) {
     switch (modes.numberSymbol) {
-      case "currency" :
+      case 'currency' :
         return this.generateCurrency(sNum, modes);
-      case "none" :
-        let locale = navigator.language;
-        let sDecimal = modes.decimalPlaces;
+      case 'none' :
+        const locale = navigator.language;
+        const sDecimal = modes.decimalPlaces;
         return new Intl.NumberFormat(locale, { minimumFractionDigits: sDecimal }).format(sNum);
     }
 
@@ -161,50 +159,50 @@ export class TextComponent implements OnInit {
 
     // ignoring most of the settings, but you get the idea
 
-    let locale = navigator.language;
+    const locale = navigator.language;
 
-    let sCurrency = "USD";
+    let sCurrency = 'USD';
     switch (locale) {
-      case "en-US" :
-      case "es-US" :
-        sCurrency = "USD";
+      case 'en-US' :
+      case 'es-US' :
+        sCurrency = 'USD';
         break;
-      case "en-CA" :
-      case "fr-CA" :
-        sCurrency = "CAD";
+      case 'en-CA' :
+      case 'fr-CA' :
+        sCurrency = 'CAD';
         break;
-      case "fr-FR":
-      case "es-ES":
-      case "de-DE":
-        sCurrency = "EUR";
+      case 'fr-FR':
+      case 'es-ES':
+      case 'de-DE':
+        sCurrency = 'EUR';
         break;
-      case "en-GB":
-        sCurrency = "GBP";
+      case 'en-GB':
+        sCurrency = 'GBP';
         break;
     }
 
-    let sDecimal = modes.decimalPlaces;
+    const sDecimal = modes.decimalPlaces;
     let sDisplay = modes.currencySymbol;
     switch (sDisplay) {
-        case "currencySymbol":
-          sDisplay = "symbol";
+        case 'currencySymbol':
+          sDisplay = 'symbol';
           break;
-        case "currencyCode":
-          sDisplay = "code";
+        case 'currencyCode':
+          sDisplay = 'code';
           break;
-        case "currencyName":
-          sDisplay = "name";
+        case 'currencyName':
+          sDisplay = 'name';
           break;
     }
 
-    let props = {
-      style: "currency",
+    const props = {
+      style: 'currency',
       currency: sCurrency,
       currencyDisplay: sDisplay,
       minimumFractionDigits: sDecimal
-    }
+    };
 
-    let formatter = new Intl.NumberFormat(locale, props);
+    const formatter = new Intl.NumberFormat(locale, props);
 
     return formatter.format(sNum);
 
@@ -215,10 +213,9 @@ export class TextComponent implements OnInit {
 
 
   generateTrueFalse(tfVal, modes) {
-    if (tfVal === "true") {
+    if (tfVal === 'true') {
       return modes.trueLabel;
-    }
-    else return modes.falseLabel;
+    } else { return modes.falseLabel; }
   }
 
   generateDate(dateVal, dateFormat) {
@@ -226,67 +223,67 @@ export class TextComponent implements OnInit {
 
 
     // if date has a ".", then of the format YYYMMDD[T]HHmmss[.]SSS Z, need to change to YYYYMMDD
-    if (dateVal.indexOf(".") >= 0) {
-      dateVal = moment(dateVal.replace("GMT", "+0000"), "YYYYMMDD[T]HHmmss[.]SSS Z").format("YYYYMMDD");
+    if (dateVal.indexOf('.') >= 0) {
+      dateVal = moment(dateVal.replace('GMT', '+0000'), 'YYYYMMDD[T]HHmmss[.]SSS Z').format('YYYYMMDD');
       sReturnDate = dateVal;
     }
 
 
     switch (dateFormat) {
-      case "Date-Short" :
+      case 'Date-Short' :
         // 1/1/01
-        sReturnDate = moment(dateVal).format("M/D/YY");
+        sReturnDate = moment(dateVal).format('M/D/YY');
         break;
-      case "Date-Short-YYYY":
+      case 'Date-Short-YYYY':
         // 1/1/2001
-        sReturnDate = moment(dateVal).format("M/D/YYYY");
+        sReturnDate = moment(dateVal).format('M/D/YYYY');
         break;
-      case "Date-Short-Custom":
+      case 'Date-Short-Custom':
         // 01/01/01
-        sReturnDate = moment(dateVal).format("MM/DD/YY");
+        sReturnDate = moment(dateVal).format('MM/DD/YY');
         break;
-      case "Date-Short-Custom-YYYY":
+      case 'Date-Short-Custom-YYYY':
         // 01/01/2001
-        sReturnDate = moment(dateVal).format("L");
+        sReturnDate = moment(dateVal).format('L');
         break;
-      case "Date-Medium":
+      case 'Date-Medium':
         // Jan 1, 2001
-        sReturnDate = moment(dateVal).format("ll");
+        sReturnDate = moment(dateVal).format('ll');
         break;
-      case "Date-DayMonthYear-Custom":
+      case 'Date-DayMonthYear-Custom':
         // 01-Jan-2001
-        sReturnDate = moment(dateVal).format("DD-MMM-YYYY");
+        sReturnDate = moment(dateVal).format('DD-MMM-YYYY');
         break;
-      case "Date-Full":
+      case 'Date-Full':
         // Monday, January 1, 2001
-        sReturnDate = moment(dateVal).format("dddd, MMMM D, YYYY");
+        sReturnDate = moment(dateVal).format('dddd, MMMM D, YYYY');
         break;
-      case "DateTime-Frame":
-      case "DateTime-Frame-Short":
+      case 'DateTime-Frame':
+      case 'DateTime-Frame-Short':
         // 2 days, 5 hours ago
-        sReturnDate = moment(dateVal.replace("GMT", "+0000"), "YYYYMMDD[T]HHmmss[.]SSS Z").fromNow();
+        sReturnDate = moment(dateVal.replace('GMT', '+0000'), 'YYYYMMDD[T]HHmmss[.]SSS Z').fromNow();
         break;
-      case "Date-Long":
+      case 'Date-Long':
         // January 1, 2001
-        sReturnDate = moment(dateVal).format("MMMM D, YYYY");
+        sReturnDate = moment(dateVal).format('MMMM D, YYYY');
         break;
-      case "Date-ISO-8601":
+      case 'Date-ISO-8601':
         // 2001/01/01 y/m/d
-        sReturnDate = moment(dateVal).format("YYYY/MM/DD");
+        sReturnDate = moment(dateVal).format('YYYY/MM/DD');
         break;
-      case "Date-Gregorian-1":
-        // 01 January, 2001
-        sReturnDate = moment(dateVal).format("DD MMMM, YYYY");
+      case 'Date-Gregorian-1':
+        //  01 January, 2001
+        sReturnDate = moment(dateVal).format('DD MMMM, YYYY');
         break;
-      case "Date-Gregorian-2":
+      case 'Date-Gregorian-2':
         // January 01, 2001
-        sReturnDate = moment(dateVal).format("MMMM DD, YYYY");
+        sReturnDate = moment(dateVal).format('MMMM DD, YYYY');
         break;
-      case "Date-Gregorian-3":
+      case 'Date-Gregorian-3':
         // 2001, January 01
-        sReturnDate = moment(dateVal).format("YYYY, MMMM DD");
+        sReturnDate = moment(dateVal).format('YYYY, MMMM DD');
         break;
-      case "DateTime-Custom":
+      case 'DateTime-Custom':
         break;
     }
 
@@ -297,64 +294,64 @@ export class TextComponent implements OnInit {
     let sReturnDate = dateTimeVal;
 
 
-    dateTimeVal = dateTimeVal.replace("GMT", "+0000")
+    dateTimeVal = dateTimeVal.replace('GMT', '+0000');
 
     switch (dateFormat) {
-      case "DateTime-Short" :
+      case 'DateTime-Short' :
         // 1/1/01 1:00 AM
-        //sReturnDate = moment(dateTimeVal, moment.ISO_8601, true).format("M/D/YY h:mm a");
-        sReturnDate = moment(dateTimeVal, "YYYYMMDD[T]HHmmss[.]SSS Z").format("M/D/YY h:mm A");
+        // sReturnDate = moment(dateTimeVal, moment.ISO_8601, true).format("M/D/YY h:mm a");
+        sReturnDate = moment(dateTimeVal, 'YYYYMMDD[T]HHmmss[.]SSS Z').format('M/D/YY h:mm A');
         break;
-      case "DateTime-Short-Custom":
+      case 'DateTime-Short-Custom':
         // 01/01/01 01:00 AM
-        sReturnDate = moment(dateTimeVal, "YYYYMMDD[T]HHmmss[.]SSS Z").format("MM/DD/YY hh:mm A");
+        sReturnDate = moment(dateTimeVal, 'YYYYMMDD[T]HHmmss[.]SSS Z').format('MM/DD/YY hh:mm A');
         break;
-      case "DateTime-Short-YYYY-Custom":
+      case 'DateTime-Short-YYYY-Custom':
         // 01/01/2001 01:00 AM
-        sReturnDate = moment(dateTimeVal, "YYYYMMDD[T]HHmmss[.]SSS Z").format("M/D/YYYY hh:mm A");
+        sReturnDate = moment(dateTimeVal, 'YYYYMMDD[T]HHmmss[.]SSS Z').format('M/D/YYYY hh:mm A');
         break;
-      case "DateTime-Short-YYYY":
+      case 'DateTime-Short-YYYY':
         // 1/1/2001 1:00 AM
-        sReturnDate = moment(dateTimeVal, "YYYYMMDD[T]HHmmss[.]SSS Z").format("M/D/YYYY h:mm A");
+        sReturnDate = moment(dateTimeVal, 'YYYYMMDD[T]HHmmss[.]SSS Z').format('M/D/YYYY h:mm A');
         break;
-      case "DateTime-Medium":
+      case 'DateTime-Medium':
         // Jan 1, 2001 1:00:00 AM
-        sReturnDate = moment(dateTimeVal, "YYYYMMDD[T]HHmmss[.]SSS Z").format("MMM D, YYYY h:mm:ss A");
+        sReturnDate = moment(dateTimeVal, 'YYYYMMDD[T]HHmmss[.]SSS Z').format('MMM D, YYYY h:mm:ss A');
         break;
-      case "DateTime-Long":
+      case 'DateTime-Long':
         // January 1, 2001 1:00:00 AM
-        sReturnDate = moment(dateTimeVal, "YYYYMMDD[T]HHmmss[.]SSS Z").format("MMMM D, YYYY h:mm:ss A");
+        sReturnDate = moment(dateTimeVal, 'YYYYMMDD[T]HHmmss[.]SSS Z').format('MMMM D, YYYY h:mm:ss A');
         break;
-      case "DateTime-DayMonthYear-Custom":
+      case 'DateTime-DayMonthYear-Custom':
         // 01-Jan-2001 1:00:00 AM
-        sReturnDate = moment(dateTimeVal, "YYYYMMDD[T]HHmmss[.]SSS Z").format("DD-MMM-YYYY h:mm:ss A");
+        sReturnDate = moment(dateTimeVal, 'YYYYMMDD[T]HHmmss[.]SSS Z').format('DD-MMM-YYYY h:mm:ss A');
         break;
-      case "DateTime-Full":
+      case 'DateTime-Full':
         // Monday, January 1, 2001 1:00 AM EDT
-        sReturnDate = moment(dateTimeVal, "YYYYMMDD[T]HHmmss[.]SSS Z").format("dddd, MMMM D, YYYY h:mm A Z");
+        sReturnDate = moment(dateTimeVal, 'YYYYMMDD[T]HHmmss[.]SSS Z').format('dddd, MMMM D, YYYY h:mm A Z');
         break;
-      case "DateTime-Frame":
-      case "DateTime-Frame-Short":
+      case 'DateTime-Frame':
+      case 'DateTime-Frame-Short':
         // 2 days, 5 hours ago
-        sReturnDate = moment(dateTimeVal, "YYYYMMDD[T]HHmmss[.]SSS Z").fromNow();
+        sReturnDate = moment(dateTimeVal, 'YYYYMMDD[T]HHmmss[.]SSS Z').fromNow();
         break;
-      case "DateTime-ISO-8601":
+      case 'DateTime-ISO-8601':
         // 2001/01/01 1:00:00 AM     y/m/d
-        sReturnDate = moment(dateTimeVal, "YYYYMMDD[T]HHmmss[.]SSS Z").format("YYYY/MM/DD h:mm:ss a");
+        sReturnDate = moment(dateTimeVal, 'YYYYMMDD[T]HHmmss[.]SSS Z').format('YYYY/MM/DD h:mm:ss a');
         break;
-      case "DateTime-Gregorian-1":
-        // 01 January, 2001 1:00:00 AM 
-        sReturnDate = moment(dateTimeVal, "YYYYMMDD[T]HHmmss[.]SSS Z").format("DD MMMM, YYYY h:mm:ss a");
+      case 'DateTime-Gregorian-1':
+        //  01 January, 2001 1:00:00 AM
+        sReturnDate = moment(dateTimeVal, 'YYYYMMDD[T]HHmmss[.]SSS Z').format('DD MMMM, YYYY h:mm:ss a');
         break;
-      case "DateTime-Gregorian-2":
-        // January 01, 2001 1:00:00 AM 
-        sReturnDate = moment(dateTimeVal, "YYYYMMDD[T]HHmmss[.]SSS Z").format("MMMM DD, YYYY h:mm:ss a");
+      case 'DateTime-Gregorian-2':
+        // January 01, 2001 1:00:00 AM
+        sReturnDate = moment(dateTimeVal, 'YYYYMMDD[T]HHmmss[.]SSS Z').format('MMMM DD, YYYY h:mm:ss a');
         break;
-      case "DateTime-Gregorian-3":
-        // 2001, January 01 1:00:00 AM 
-        sReturnDate = moment(dateTimeVal, "YYYYMMDD[T]HHmmss[.]SSS Z").format("YYYY, MMMM DD h:mm:ss a");
+      case 'DateTime-Gregorian-3':
+        // 2001, January 01 1:00:00 AM
+        sReturnDate = moment(dateTimeVal, 'YYYYMMDD[T]HHmmss[.]SSS Z').format('YYYY, MMMM DD h:mm:ss a');
         break;
-      case "DateTime-Custom":
+      case 'DateTime-Custom':
         break;
     }
 

@@ -1,7 +1,11 @@
 
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AppMaterialModule  } from '../app-material/app-material.module';
+import * as moment from 'moment';
 
 // import { BreadcrumbComponent } from 'src/app/_subcomponents/breadcrumb/breadcrumb.component';
 // import { CreatecaselistComponent } from '../subcomponents/createcaselist/createcaselist.component';
@@ -40,10 +44,16 @@ import {
   , UnitdaysComponent
 } from 'src/app/_fieldcomponents';
 
+import {
+  SafeHtmlPipe
+} from 'src/app/_pipe/safehtml.pipe';
+
 
 @NgModule({
   imports: [
     CommonModule
+    , FormsModule
+    , ReactiveFormsModule
     , AppMaterialModule
     // BreadcrumbComponent
   ],
@@ -79,6 +89,8 @@ import {
     , TextComponent
     , TextinputComponent
     , UnitdaysComponent
+
+    , SafeHtmlPipe
 
   ],
   exports: [

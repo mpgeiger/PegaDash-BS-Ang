@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-layout',
+  selector: 'app-pega-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss']
 })

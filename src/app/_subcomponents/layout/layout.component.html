@@ -9,41 +9,41 @@
 
   <div *ngIf="layoutComp.groupFormat == 'Inline grid double'" class="pega-row" >
     <div class="pega-column" >
-      <app-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+      <app-pega-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-pega-layout>
     </div>
     <div class="pega-column" >
-      <app-layout [layoutComp]="layoutComp.groups[1].layout"  [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+      <app-pega-layout [layoutComp]="layoutComp.groups[1].layout"  [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-pega-layout>
     </div>
   </div>
 
-  
+
   <div *ngIf="layoutComp.groupFormat == 'Inline grid 70 30'" class="pega-rowBox pega-row" >
     <div class="pega-column70" >
-      <app-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+      <app-pega-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-pega-layout>
     </div>
     <div class="pega-column30" >
-      <app-layout [layoutComp]="layoutComp.groups[1].layout"  [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+      <app-pega-layout [layoutComp]="layoutComp.groups[1].layout"  [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-pega-layout>
     </div>
   </div>
 
   <div *ngIf="layoutComp.groupFormat == 'Inline grid 30 70'" class="pega-rowBox pega-row" >
     <div class="pega-column30" >
-      <app-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+      <app-pega-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-pega-layout>
     </div>
     <div class="pega-column70" >
-      <app-layout [layoutComp]="layoutComp.groups[1].layout"  [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+      <app-pega-layout [layoutComp]="layoutComp.groups[1].layout"  [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-pega-layout>
     </div>
   </div>
 
   <div *ngIf="layoutComp.groupFormat == 'Inline grid triple'" class="pega-row" >
     <div class="pega-column33" >
-      <app-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+      <app-pega-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-pega-layout>
     </div>
     <div class="pega-column33" >
-      <app-layout [layoutComp]="layoutComp.groups[1].layout"  [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+      <app-pega-layout [layoutComp]="layoutComp.groups[1].layout"  [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-pega-layout>
     </div>
     <div class="pega-column33" >
-      <app-layout [layoutComp]="layoutComp.groups[2].layout"  [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+      <app-pega-layout [layoutComp]="layoutComp.groups[2].layout"  [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-pega-layout>
     </div>
   </div>
 
@@ -68,7 +68,7 @@
   <div *ngIf="layoutComp.groupFormat == 'Inline middle'" class="pega-inline-middle" >
     <app-group [groups]="layoutComp.groups" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-group>
   </div>
- 
+
 
 
   <!-- repeating grid layout -->
@@ -92,28 +92,28 @@
    <!-- screen layouts-->
    <div *ngIf="layoutComp.layoutFormat == 'SCREENLAYOUT'"  >
     <div *ngIf="layoutComp.groupFormat == 'content_only'" class="pega-screen-layout">
-      <app-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+      <app-pega-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-pega-layout>
     </div>
 
     <div *ngIf="layoutComp.groupFormat == 'header'" class="pega-screen-layout">
         <div class="pega-header" >
-            <app-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+            <app-pega-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-pega-layout>
         </div>
         <div class="pega-content">
-            <app-layout [layoutComp]="layoutComp.groups[1].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+            <app-pega-layout [layoutComp]="layoutComp.groups[1].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-pega-layout>
         </div>
     </div>
   </div>
 
   <div *ngIf="layoutComp.groupFormat == 'header_footer'" class="pega-screen-layout">
     <div class="pega-header" >
-        <app-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+        <app-pega-layout [layoutComp]="layoutComp.groups[0].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-pega-layout>
     </div>
     <div class="pega-content">
-        <app-layout [layoutComp]="layoutComp.groups[2].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+        <app-pega-layout [layoutComp]="layoutComp.groups[2].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-pega-layout>
     </div>
     <div class="pega-footer">
-      <app-layout [layoutComp]="layoutComp.groups[1].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-layout>
+      <app-pega-layout [layoutComp]="layoutComp.groups[1].layout" [formGroup]="formGroup" [noLabel]="noLabel" [CaseID]="CaseID"></app-pega-layout>
     </div>
   </div>
 
@@ -131,6 +131,6 @@
   </div>
 
 
-  
+
 </div>
 

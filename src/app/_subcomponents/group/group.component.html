@@ -1,5 +1,5 @@
 <div *ngFor="let groupComp of groups" >
-  <app-layout *ngIf="groupComp.layout" [layoutComp]="groupComp.layout" [formGroup]="formGroup" [CaseID]="CaseID"></app-layout>
+  <app-pega-layout *ngIf="groupComp.layout" [layoutComp]="groupComp.layout" [formGroup]="formGroup" [CaseID]="CaseID"></app-pega-layout>
   <app-field *ngIf="groupComp.field" [fieldComp]="groupComp.field"  [formGroup]="formGroup" [CaseID]="CaseID"></app-field>
   <app-caption *ngIf="groupComp.caption" [captionComp]="groupComp.caption" [formGroup]="formGroup"></app-caption>
   <app-view *ngIf="groupComp.view" [viewComp]="groupComp.view"  [formGroup]="formGroup" [CaseID]="CaseID"></app-view>

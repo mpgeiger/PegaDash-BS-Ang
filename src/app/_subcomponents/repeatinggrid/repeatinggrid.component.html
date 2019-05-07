@@ -7,7 +7,7 @@
   </tr>
   <tr *ngFor="let rowsComp of repeatRows$">
     <td *ngFor="let rowComp of rowsComp.groups">
-        <app-layout *ngIf="rowComp.layout" [layoutComp]="rowComp.layout" [formGroup]="formGroup" [CaseID]="CaseID"></app-layout>
+        <app-pega-layout *ngIf="rowComp.layout" [layoutComp]="rowComp.layout" [formGroup]="formGroup" [CaseID]="CaseID"></app-pega-layout>
         <app-field *ngIf="rowComp.field" [fieldComp]="rowComp.field"  [formGroup]="formGroup" [noLabel]="true" [CaseID]="CaseID"></app-field>
         <app-caption *ngIf="rowComp.caption" [captionComp]="rowComp.caption" [formGroup]="formGroup"></app-caption>
         <app-view *ngIf="rowComp.view" [viewComp]="rowComp.view"  [formGroup]="formGroup" [CaseID]="CaseID"></app-view>
