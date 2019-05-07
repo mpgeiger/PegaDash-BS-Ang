@@ -2,12 +2,12 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormControl, Validators} from '@angular/forms';
 import { GetChangesService } from '../../_messages/getchanges.service';
-import { interval } from "rxjs/internal/observable/interval";
-import { HandleActions } from "../../_actions/handleactions";
+import { interval } from 'rxjs/internal/observable/interval';
+import { HandleActions } from '../../_actions/handleactions';
 import { GetActionsService } from '../../_messages/getactions.service';
 import { DatapageService } from '../../_services/datapage.service';
-import { ReferenceHelper } from "../../_helpers/reference-helper";
-import { GetCaseService } from "../../_messages/getcase.service";
+import { ReferenceHelper } from '../../_helpers/reference-helper';
+import { GetCaseService } from '../../_messages/getcase.service';
 import { Subscription, Observable, of } from 'rxjs';
 
 @Component({
@@ -29,7 +29,7 @@ export class DropdownComponent implements OnInit {
 
   reference: string;
   valueReadonly$: string;
-  showLabel$: boolean = false;
+  showLabel$ = false;
 
   actionsHandler: HandleActions;
 
@@ -37,7 +37,7 @@ export class DropdownComponent implements OnInit {
               private gaservice: GetActionsService,
               private dpservice: DatapageService,
               private refHelper: ReferenceHelper,
-              private gcservice: GetCaseService) { 
+              private gcservice: GetCaseService) {
 
     this.actionsHandler = new HandleActions(gaservice);
 
@@ -51,40 +51,37 @@ export class DropdownComponent implements OnInit {
     this.fieldComp.controlName = this.refHelper.getControlNameFromReference(this.fieldComp.reference);
 
     if (this.noLabel) {
-      this.fieldComp.label = "";
+      this.fieldComp.label = '';
       this.showLabel$ = false;
-    }
-    else {
-      if (this.fieldComp.label != "") {
+    } else {
+      if (this.fieldComp.label !== '') {
         this.showLabel$ = true;
-      }
-      else if (this.fieldComp.label == "" && this.fieldComp.labelReserveSpace) {
+      } else if (this.fieldComp.label === '' && this.fieldComp.labelReserveSpace) {
         this.showLabel$ = true;
       }
     }
 
-    if (this.fieldComp.control.modes[0].listSource === "datapage") {
+    if (this.fieldComp.control.modes[0].listSource === 'datapage') {
       // handle data page
-      let dataPageName = this.fieldComp.control.modes[0].dataPageID || this.fieldComp.control.modes[0].dataPage;
+      const dataPageName = this.fieldComp.control.modes[0].dataPageID || this.fieldComp.control.modes[0].dataPage;
       this.dpservice.getDataPage(dataPageName, null).subscribe(
         response => {
           try {
-            let results: any = response.body["pxResults"];
-            let entryValue = this.fieldComp.control.modes[0].dataPagePrompt;
-            let entryKey = this.fieldComp.control.modes[0].dataPageValue;
+            const results: any = response.body['pxResults'];
+            const entryValue = this.fieldComp.control.modes[0].dataPagePrompt;
+            const entryKey = this.fieldComp.control.modes[0].dataPageValue;
 
             this.options = new Array();
-            for (let result of results) {
-              let option = new Object;
-              option["key"] = result[entryKey];
-              option["value"] = result[entryValue];
+            for (const result of results) {
+              const option = new Object;
+              option['key'] = result[entryKey];
+              option['value'] = result[entryValue];
               this.options.push(option);
             }
-            
+
             this.valueReadonly$ = this.getOptionValue(this.fieldComp.value);
 
-          }
-          catch (ex) {
+          } catch (ex) {
 
           }
         },
@@ -93,29 +90,28 @@ export class DropdownComponent implements OnInit {
         }
       );
 
-      
-    }
-    else if (this.fieldComp.control.modes[0].listSource === "pageList") {
-      let clipboardPageName = this.fieldComp.control.modes[0].clipboardPageID;
-      let entryValue = this.fieldComp.control.modes[0].clipboardPagePrompt;
-      let entryKey = this.fieldComp.control.modes[0].clipboardPageValue;
-      let entryTooltip = this.fieldComp.control.modes[0].clipboardPageTooltip;
 
-      this.getCaseSubscription = this.gcservice.getMessage().subscribe(message => { 
+    } else if (this.fieldComp.control.modes[0].listSource === 'pageList') {
+      const clipboardPageName = this.fieldComp.control.modes[0].clipboardPageID;
+      const entryValue = this.fieldComp.control.modes[0].clipboardPagePrompt;
+      const entryKey = this.fieldComp.control.modes[0].clipboardPageValue;
+      const entryTooltip = this.fieldComp.control.modes[0].clipboardPageTooltip;
+
+      this.getCaseSubscription = this.gcservice.getMessage().subscribe(message => {
         this.getCaseMessage = message;
-        
+
         if (message) {
-          let workPage = message.case.content;
+          const workPage = message.case.content;
 
           if (workPage) {
-            let cPage = workPage[clipboardPageName];
+            const cPage = workPage[clipboardPageName];
             if (cPage) {
 
               this.options = new Array();
-              for (let result of cPage) {
-                let option = new Object;
-                option["key"] = result[entryKey];
-                option["value"] = result[entryValue];
+              for (const result of cPage) {
+                const option = new Object;
+                option['key'] = result[entryKey];
+                option['value'] = result[entryValue];
                 this.options.push(option);
               }
 
@@ -126,12 +122,11 @@ export class DropdownComponent implements OnInit {
 
 
       });
-      
 
 
-      
-    }
-    else if (this.fieldComp.control.modes[0].listSource === "locallist") {
+
+
+    } else if (this.fieldComp.control.modes[0].listSource === 'locallist') {
       this.options = this.fieldComp.control.modes[0].options;
 
       this.valueReadonly$ = this.getOptionValue(this.fieldComp.value);
@@ -149,16 +144,16 @@ export class DropdownComponent implements OnInit {
     this.formGroup.addControl(this.fieldComp.controlName, this.fieldControl);
     this.fieldControl.setValue(this.fieldComp.value);
 
-    if (this.fieldComp.validationMessages != "") {
-      var timer = interval(100).subscribe(() => {
+    if (this.fieldComp.validationMessages !== '') {
+      const timer = interval(100).subscribe(() => {
         this.fieldControl.setErrors({'message': true});
         this.fieldControl.markAsTouched();
 
         timer.unsubscribe();
         });
-    
+
     }
-   
+
 
   }
 
@@ -174,18 +169,18 @@ export class DropdownComponent implements OnInit {
   }
 
   getOptionValue(value: string): string {
-      for (let obj of this.options) {
-        if (obj["key"] === value) {
-          return obj["value"];
+      for (const obj of this.options) {
+        if (obj['key'] === value) {
+          return obj['value'];
         }
       }
 
-      return "";
+      return '';
   }
 
   compareDropdown(value1: any, value2: any): boolean {
-    const val1 = determineValues(value1);
-    const val2 = determineValues(value2);
+    const val1 = ddDetermineValues(value1);
+    const val2 = ddDetermineValues(value2);
 
     return val1 === val2;
   }
@@ -194,25 +189,23 @@ export class DropdownComponent implements OnInit {
 
     this.gchservice.sendMessage(this.reference, e.value, this.CaseID);
 
-    this.actionsHandler.generateActions("change", this.fieldComp.control.actionSets, this.CaseID);
+    this.actionsHandler.generateActions('change', this.fieldComp.control.actionSets, this.CaseID);
   }
 
   getErrorMessage() {
-    let errMessage : string = "";
+    let errMessage = '';
 
 
     // look for validation messages for json, pre-defined or just an error pushed from workitem (400)
     if (this.fieldControl.hasError('message')) {
       errMessage = this.fieldComp.validationMessages;
-    }
-    else if (this.fieldControl.hasError('required')) {
+    } else if (this.fieldControl.hasError('required')) {
       errMessage = 'You must select a value';
-    }
-    else if (this.fieldControl.errors) {
+    } else if (this.fieldControl.errors) {
       errMessage = this.fieldControl.errors.toString();
 
     }
- 
+
 
     return errMessage;
   }
@@ -220,7 +213,7 @@ export class DropdownComponent implements OnInit {
 }
 
 
-export function determineValues(val: any): string {
+export function ddDetermineValues(val: any): string {
   if (val.constructor.name === 'array' && val.length > 0) {
      return '' + val[0];
   }

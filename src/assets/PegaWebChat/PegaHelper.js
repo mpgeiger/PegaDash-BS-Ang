@@ -63,7 +63,7 @@ $(document).ready(function(){
 
   script.type = "text/javascript";
   fireflyAPI.token = "58d8d51d41c53d0000da4067";
-	fireflyAPI.serverHostUrl = "https://bny.pegatsdemo.com:8043"
+	fireflyAPI.serverHostUrl = "https://bny.pegatsdemo.com:8043";
   script.src = "https://bny.pegatsdemo.com:8043/scripts/loaders/chatLoader.js";
   script.async = true;
 

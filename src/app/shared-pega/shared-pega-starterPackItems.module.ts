@@ -95,7 +95,20 @@ import {
   ],
   exports: [
 
-    // BreadcrumbComponent
+    BreadcrumbComponent
+    , CaptionComponent
+    , CreatecaselistComponent
+    , FieldComponent
+    , GroupComponent
+    , LayoutComponent
+    , PageComponent
+    , ParagraphComponent
+    , RecentlistComponent
+    , RepeatinggridComponent
+    , RepeatinglayoutComponent
+    , ToppageComponent
+    , TopviewComponent
+    , ViewComponent
     // , CreatecaselistComponent
     // , FieldComponent
     // , GroupComponent
