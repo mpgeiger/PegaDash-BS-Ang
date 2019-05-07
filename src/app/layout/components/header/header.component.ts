@@ -6,6 +6,7 @@ import { CaseService, } from '../../../_services/case.service';
 import { OpenNewCaseService } from '../../../_messages/opennewcase.service';
 import stubbedResults from '../../../../assets/json/CaseTypes.json';
 import { LoginComponent } from '../../../login/login.component';
+// import { MegaMenuComponent } from '../../pega/mega-menu/mega-menu.component';
 
 @Component({
     providers: [LoginComponent],

@@ -1,11 +1,11 @@
 import { GroupByPipe } from 'ngx-pipes';
 
-import { LayoutComponent } from './../../layout.component';
+import { LayoutComponent } from '../../layout.component';
 // import { GroupComponent } from './../../../_subcomponents/group/group.component';
 // import { FieldComponent } from './../../../_subcomponents/field/field.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CasedetailsComponent} from './../casedetails/casedetails.component';
+import { CasedetailsComponent} from '../casedetails/casedetails.component';
 // import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 // import { PWorkItemRoutingModule } from './pworkitem-routing.module';
 // import { PWorkItemComponent } from './pworkitem.component';

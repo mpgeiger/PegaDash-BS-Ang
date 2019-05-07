@@ -24,6 +24,7 @@ import {
   , PegaPieChartComponent
   , RecentInteractionsComponent
   , RecentTreasurerCaseListComponent
+  , StatusRecentTreasurerComponent
   , TransactionSummaryComponent
   , PWorkItemComponent
   , Workitem1Component
@@ -57,6 +58,7 @@ import {
     , PegaPieChartComponent
     , RecentInteractionsComponent
     , RecentTreasurerCaseListComponent
+    , StatusRecentTreasurerComponent
     , TransactionSummaryComponent
     , PWorkItemComponent
     , Workitem1Component
@@ -77,6 +79,7 @@ import {
     , PegaPieChartComponent
     , RecentInteractionsComponent
     , RecentTreasurerCaseListComponent
+    , StatusRecentTreasurerComponent
     , TransactionSummaryComponent
     , PWorkItemComponent
     , Workitem1Component

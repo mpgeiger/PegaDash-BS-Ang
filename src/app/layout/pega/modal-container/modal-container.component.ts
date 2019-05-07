@@ -69,7 +69,7 @@ export class ModalRCIContainerComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = false;
-    dialogConfig.autoFocus = true;
+    dialogConfig.autoFocus = false;
 
     dialogConfig.width = '70%';
     dialogConfig.minWidth = '650px';

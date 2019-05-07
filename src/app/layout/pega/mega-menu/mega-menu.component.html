@@ -1,7 +1,20 @@
+<!-- <a mat-button [matMenuTriggerFor]="mpgMenu"  layout-align="end center" class="megaMenuNav" (click)="$event.stopPropagation();">
+              MPG Service<i class="material-icons">
+                  arrow_drop_down
+                  </i>
+            </a> -->
+
+  <!-- <mat-menu #mpgMenu="matMenu" class="megaMenu"  [class.mat-elevation-z20] overlapTrigger="false" (click)="$event.stopPropagation();"> -->
 <div class="container">
+  <!-- <div class="row">
+      <mat-form-field floatLabel=never >
+          <input matInput  type="text"  placeholder="Search"   >
+        </mat-form-field>
+  </div> -->
   <div class="row">
+
     <div class="col-xl-4 col-lg-5 col-md-6" *ngFor="let cat of actions">
-      <!-- <div class="row"> -->
+      <div class="row">
       <h4>{{ cat.CategoryName }}</h4>
       <ul>
         <a *ngFor="let action of cat.pxResults" mat-button (click)="action.pyLabel === 'Request Check Image' ? testMe() : clickedOther()">
@@ -10,7 +23,8 @@
           </li>
         </a>
       </ul>
-      <!-- </div>   -->
+      </div>
     </div>
   </div>
 </div>
+<!-- </mat-menu> -->

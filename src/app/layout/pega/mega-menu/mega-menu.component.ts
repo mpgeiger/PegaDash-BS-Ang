@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ViewEncapsulation, Output } from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 import { HttpParams, HttpHeaders } from '@angular/common/http';
 
@@ -7,7 +7,7 @@ import { PagerService } from '../../../_services/pager.service';
 // import stubbedResults from '../../../../assets/json/D_Interaction_Driver_I-826_SJ.json';
 import stubbedResults from '../../../../assets/json/D_Interaction_Driver_I-901__PW.json';
 import { ModalRCIContainerComponent } from '../modal-container/modal-container.component';
-import {MatTableDataSource, MatSort} from '@angular/material';
+import {MatTableDataSource, MatSort, MatMenu} from '@angular/material';
 
 export interface SSCaseTypePxResults {
 Name: string;
@@ -46,6 +46,7 @@ export interface SSCaseActions {
 export class MegaMenuComponent implements OnInit {
   // public dataSource = new MatTableDataSource<TreasurerCases>();
   @ViewChild(MatSort) sort: MatSort;
+  // @Output() mpgMenu = new MatMenu;
 
   message: any;
   subscription: Subscription;
@@ -53,6 +54,7 @@ export class MegaMenuComponent implements OnInit {
 
   sortedDataCategory: SSCaseActions[];
   sortedDataActions: SSCaseActions[];
+  searchedList: any;
 
   headers: any;
   actions: SSCaseActions[] = [];
@@ -76,7 +78,9 @@ export class MegaMenuComponent implements OnInit {
       this.getStubbedCases();
     } else {
       console.log('LIVE D_RecentTreasurerCases');
-      this.getCases();
+      // this.getCases();
+      this.getStubbedCases();
+
     }
   }
   checkIfStubbed() {
@@ -145,6 +149,16 @@ console.log('begin D_CustomerIntentTasks-->');
     );
 
   }
+
+   // This function will be called on every key press for input text box
+   search(value) {
+     this.searchedList = this.actions.filter(
+       (val) => val['pyLabel'].includes(value));
+     // Searched Data
+     console.log(this.searchedList);
+   }
+
+
   public testMe(): void {
     this.mc.openCreateRciCaseDialog();
   }
