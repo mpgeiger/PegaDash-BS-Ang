@@ -207,6 +207,33 @@ export class WorkitemComponent implements OnInit {
 
   }
 
+  // ngAfterViewChecked() {
+  //   // called after the tab has been created
+  //   // then we want to send the appropriate message (usally to app-workitem) to populate
+
+  //   if (this.message) {
+
+  //     if (!this.isNewCase) {
+  //       this.gaService.sendMessage(this.message.assignment.pxRefObjectInsName, this.message.assignment);
+
+  //       this.message = null;
+  //     }
+  //   }
+  //   else if (this.openNewCaseMessage) {
+  //     if (this.isNewCase) {
+  //       this.isNewCase = false;
+
+  //       this.gncService.sendMessage(this.openNewCaseMessage.caseID);
+  //     }
+  //   }
+  //   else if (this.openRecentMessage) {
+  //     if (!this.isNewCase) {
+  //       this.grService.sendMessage(this.openRecentMessage.caseID);
+  //     }
+  //   }
+  // }
+
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
     this.changeSubscription.unsubscribe();
@@ -386,12 +413,12 @@ export class WorkitemComponent implements OnInit {
       // check if have query params
       let sQuery = this.getQueryParams(oData.queryParams);
 
-      if (sQuery != "") {
+      if (sQuery != '') {
         url += sQuery;
       }
 
       // if doesn't begin with http, add it
-      if (url.indexOf("http") != 0) {
+      if (url.indexOf('http') != 0) {
         url = "http://" + url;
       }
       window.open(url, oData.windowName, oData.windowOptions);
@@ -405,23 +432,21 @@ export class WorkitemComponent implements OnInit {
   getQueryParams(arQueryParams): string {
     let sReturn = "";
 
-    let bFirst: boolean = true;
+    let bFirst = true;
     if (arQueryParams.length > 0) {
-      for (let qParam of arQueryParams) {
+      for (const qParam of arQueryParams) {
         if (bFirst) {
-          sReturn += "?";
+          sReturn += '?';
           bFirst = false;
-        }
-        else {
-          sReturn += "&";
+        } else {
+          sReturn += '&';
         }
         sReturn += qParam.name + "=";
 
         let sVal = "";
         if (qParam.value != undefined) {
           sVal = this.determineParam(qParam.value);
-        }
-        else if (qParam.valueReference != undefined) {
+        } else if (qParam.valueReference != undefined) {
           sVal = this.determineParamRef(qParam.valueReference);
         }
         if (sVal.indexOf('"') == 0) {
@@ -454,7 +479,7 @@ export class WorkitemComponent implements OnInit {
 
     let sReturn: string = oAction.actionProcess.functionName + "(";
     let bFirst = true;
-    for (let param of oAction.actionProcess.functionParameters) {
+    for (const param of oAction.actionProcess.functionParameters) {
       if (!bFirst) {
         sReturn += ",";
       }
@@ -462,8 +487,7 @@ export class WorkitemComponent implements OnInit {
 
       if (param.value != undefined) {
         sReturn += this.determineParam(param.value);
-      }
-      else if (param.valueReference != undefined) {
+      } else if (param.valueReference != undefined) {
         sReturn += this.determineParamRef(param.valueReference);
       }
     }
@@ -476,16 +500,13 @@ export class WorkitemComponent implements OnInit {
   determineParam(param: any) {
     if (typeof(param) == "boolean") {
       return param;
-    }
-    else if (param.indexOf('"') == 0) {
+    } else if (param.indexOf('"') == 0) {
         return param;
-    }
-    else if (param.indexOf(".") >= 0) {
+    } else if (param.indexOf('.') >= 0) {
       // look up
       return '"' + this.lookUpParam(param, false) + '"';
 
-    }
-    else {
+    } else {
       return '"' + param + '"';
     }
   }
@@ -503,20 +524,18 @@ export class WorkitemComponent implements OnInit {
   }
 
   lookUpParam(param: any, bReturnUndefined : boolean): string {
-    let arNodes: Array<string> = param.split(".");
+    const arNodes: Array<string> = param.split('.');
     let returnString: string;
 
     let stateNode = this.state;
     // first try in state
-    for (let nodeEl of arNodes) {
-      if (nodeEl != "" && stateNode != undefined ) {
-        if (typeof(stateNode[nodeEl]) == "object") {
+    for (const nodeEl of arNodes) {
+      if (nodeEl != '' && stateNode != undefined ) {
+        if (typeof(stateNode[nodeEl]) == 'object') {
           stateNode = stateNode[nodeEl];
-        }
-        else if ( stateNode[nodeEl] === undefined) {
+        } else if ( stateNode[nodeEl] === undefined) {
           break;
-        }
-        else {
+        } else {
           returnString = stateNode[nodeEl];
         }
 
@@ -526,17 +545,15 @@ export class WorkitemComponent implements OnInit {
     if (returnString === undefined) {
 
       // try "content" (pyWorkPage)
-      let currNode = this.currentCase$["content"];
+      let currNode = this.currentCase$['content'];
 
-      for (let nodeEl of arNodes) {
-        if (nodeEl != "" && currNode != undefined ) {
-          if (typeof(currNode[nodeEl]) == "object") {
+      for (const nodeEl of arNodes) {
+        if (nodeEl != '' && currNode != undefined ) {
+          if (typeof(currNode[nodeEl]) == 'object') {
             currNode = currNode[nodeEl];
-          }
-          else if (currNode[nodeEl] === undefined) {
+          } else if (currNode[nodeEl] === undefined) {
             break;
-          }
-          else {
+          } else {
             returnString = currNode[nodeEl];
           }
 
@@ -546,7 +563,7 @@ export class WorkitemComponent implements OnInit {
     }
 
     if (returnString === undefined && !bReturnUndefined) {
-      returnString = "";
+      returnString = '';
     }
 
     return returnString;
@@ -560,39 +577,37 @@ export class WorkitemComponent implements OnInit {
       assignmentResponse => {
         this.currentAssignment$ = assignmentResponse.body;
 
-        let nextAssignment : any = this.currentAssignment$;
+        const nextAssignment : any = this.currentAssignment$;
 
 
         if (nextAssignment.actions.length > 0) {
           // get first flow action
-          let nextAction = nextAssignment.actions[0].ID;
+          const nextAction = nextAssignment.actions[0].ID;
 
           this.currentCaseID$ = nextAssignment.caseID;
 
-          let arCase = nextAssignment.caseID.split(" ");
+          const arCase = nextAssignment.caseID.split(' ');
 
           // now
-          //this.aservice.getFieldsForAssignment(action.nextAssignmentID, nextAction).subscribe()
+          // this.aservice.getFieldsForAssignment(action.nextAssignmentID, nextAction).subscribe()
 
           this.getNextAssignment(nextAssignment.ID, nextAction, nextAssignment.caseID);
-        }
-        else {
-          let assignmentID = "No assigment";
-          let caseName = "";
+        } else {
+          let assignmentID = 'No assigment';
+          let caseName = '';
           try {
             assignmentID = nextAssignment.ID;
-            let arCase = nextAssignment.caseID.split(" ");
+            const arCase = nextAssignment.caseID.split(' ');
             if (arCase.length > 1) {
               caseName = arCase[1];
               this.currentCaseName = caseName;
             }
-          }
-          catch {
+          } catch {
           }
 
-          let sError = "Assignment " + assignmentID + " can not be opened.";
+          const sError = 'Assignment ' + assignmentID + ' can not be opened.';
 
-          let snackBarRef = this.snackBar.open(sError, "Ok");
+          const snackBarRef = this.snackBar.open(sError, 'Ok');
 
           this.closeWork();
         }
@@ -600,7 +615,7 @@ export class WorkitemComponent implements OnInit {
 
       },
       assignmentError => {
-        let snackBarRef = this.snackBar.open("Errors from get assignment:" + assignmentError.errors, "Ok");
+        const snackBarRef = this.snackBar.open('Errors from get assignment:' + assignmentError.errors, 'Ok');
       }
     );
 
@@ -629,11 +644,11 @@ export class WorkitemComponent implements OnInit {
 
       },
       err => {
-        let snackBarRef = this.snackBar.open("Errors from assignment:" + err.message, "Ok");
+        const snackBarRef = this.snackBar.open('Errors from assignment:' + err.message, 'Ok');
 
       }
 
-    )
+    );
 
 
     // go get the case (needed for etag)
@@ -647,8 +662,8 @@ export class WorkitemComponent implements OnInit {
 
 
         // add etag to the data
-        //this.updateState("etag", response.headers.get("etag").replace(/\"/gi, ''));
-        this.etag = response.headers.get("etag").replace(/\"/gi, '');
+        // this.updateState("etag", response.headers.get("etag").replace(/\"/gi, ''));
+        this.etag = response.headers.get('etag').replace(/\"/gi, '');
 
         this.gcservice.sendMessage(this.currentCase$);
 
@@ -656,7 +671,7 @@ export class WorkitemComponent implements OnInit {
 
       },
       err => {
-        let snackBarRef = this.snackBar.open("Errors from case:" + err.message, "Ok");
+        const snackBarRef = this.snackBar.open('Errors from case:' + err.message, 'Ok');
       }
 
     );
@@ -678,8 +693,8 @@ export class WorkitemComponent implements OnInit {
         this.currentCaseLoaded$ = true;
 
         // add etag to the data
-        //this.updateState("etag", response.headers.get("etag").replace(/\"/gi, ''));
-        this.etag = response.headers.get("etag").replace(/\"/gi, '');
+        // this.updateState("etag", response.headers.get("etag").replace(/\"/gi, ''));
+        this.etag = response.headers.get('etag').replace(/\"/gi, '');
 
         this.cdref.detectChanges();
 
@@ -690,7 +705,7 @@ export class WorkitemComponent implements OnInit {
 
       },
       err => {
-        let snackBarRef = this.snackBar.open("Errors from case:" + err.message, "Ok");
+        const snackBarRef = this.snackBar.open('Errors from case:' + err.message, 'Ok');
       }
     );
   }
@@ -712,19 +727,19 @@ export class WorkitemComponent implements OnInit {
 
         this.currentCaseLoaded$ = true;
 
-        this.currentCaseID$ = response.body["caseTypeID"];
-        this.currentPage$= response.body["creation_page"];
-        this.currentPageID$ = this.currentPage$["pageID"];
+        this.currentCaseID$ = response.body['caseTypeID'];
+        this.currentPage$ = response.body['creation_page'];
+        this.currentPageID$ = this.currentPage$['pageID'];
         this.cheaders = response.headers;
         this.currentCaseLoaded$ = true;
 
         // add etag to the data
-        //this.updateState("etag", response.headers.get("etag").replace(/\"/gi, ''));
-        //this.etag = response.headers.get("etag").replace(/\"/gi, '');
+        // this.updateState("etag", response.headers.get("etag").replace(/\"/gi, ''));
+        // this.etag = response.headers.get("etag").replace(/\"/gi, '');
 
         this.cdref.detectChanges();
 
-        //this.getCase(this.currentCaseID$);
+        // this.getCase(this.currentCaseID$);
         this.getPage(this.currentPage$);
 
         // need to fake a case - look at what a real case looks like and fake it, add in a single breadcrumb (right now bc off)
@@ -734,7 +749,7 @@ export class WorkitemComponent implements OnInit {
 
       },
       err => {
-        let snackBarRef = this.snackBar.open("Errors from create case:" + err.message, "Ok");
+        const snackBarRef = this.snackBar.open('Errors from create case:' + err.message, 'Ok');
       }
 
     );
@@ -749,15 +764,15 @@ export class WorkitemComponent implements OnInit {
 
     this.currentCaseID$ = oAssignment.caseID;
 
-    var timer = interval(10).subscribe(() => {
-      this.gvservice.sendMessage(this.topName$, this.currentCaseID$, this.currentView$);timer.unsubscribe();
+    const timer = interval(10).subscribe(() => {
+      this.gvservice.sendMessage(this.topName$, this.currentCaseID$, this.currentView$); timer.unsubscribe();
       });
 
     this.state = this.refHelper.getInitialValuesFromView(this.currentView$);
 
     // handle top view validation messages
-    if (this.currentView$["validationMessages"] != "") {
-      let snackBarRef = this.snackBar.open(this.currentView$["validationMessages"], "Ok");
+    if (this.currentView$['validationMessages'] !== '') {
+      const snackBarRef = this.snackBar.open(this.currentView$['validationMessages'], 'Ok');
     }
 
 
@@ -766,8 +781,8 @@ export class WorkitemComponent implements OnInit {
   getPage(oPage: any) {
 
 
-    var timer = interval(10).subscribe(() => {
-      this.gpservice.sendMessage(oPage.name, oPage.pageID, oPage);timer.unsubscribe();
+    const timer = interval(10).subscribe(() => {
+      this.gpservice.sendMessage(oPage.name, oPage.pageID, oPage); timer.unsubscribe();
       });
 
     this.state = this.refHelper.getInitialValuesFromView(oPage);
@@ -781,10 +796,10 @@ export class WorkitemComponent implements OnInit {
 
         this.currentCase$ = response.body;
 
-        let firstAssignment = this.currentCase$["assignments"][0];
-        let assignmentID = firstAssignment.ID;
-        let firstAction = firstAssignment["actions"][0];
-        let actionID = firstAction.ID;
+        const firstAssignment = this.currentCase$['assignments'][0];
+        const assignmentID = firstAssignment.ID;
+        const firstAction = firstAssignment['actions'][0];
+        const actionID = firstAction.ID;
 
         this.getNextAssignment(assignmentID, actionID, caseID);
 
@@ -792,7 +807,7 @@ export class WorkitemComponent implements OnInit {
 
       },
       err => {
-        let snackBarRef = this.snackBar.open("Errors from case:" + err.message, "Ok");
+        const snackBarRef = this.snackBar.open('Errors from case:' + err.message, 'Ok');
       }
 
     );
@@ -809,7 +824,7 @@ export class WorkitemComponent implements OnInit {
   updateAssignmentView(sRef, sValue) {
 
     if (this.currentAssignmentFields$) {
-      let fieldNode = this.refHelper.customUpdateJSON(this.currentAssignmentFields$, "reference", sRef);
+      const fieldNode = this.refHelper.customUpdateJSON(this.currentAssignmentFields$, 'reference', sRef);
       if (fieldNode) {
         fieldNode.value = sValue;
       }
@@ -822,7 +837,7 @@ export class WorkitemComponent implements OnInit {
 
   refreshView(stateData: any, oAction: any) {
 
-    let sRefreshFor = "";
+    let sRefreshFor = '';
     if (stateData == null) {
       stateData = {};
     }
@@ -837,9 +852,9 @@ export class WorkitemComponent implements OnInit {
       response => {
         this.currentAssignmentFields$ = response.body;
         this.aheaders = response.headers;
-        //alert(JSON.stringify(this.currentAssignmentFields$));
-        //this.currentAction = this.currentAction;
-        //this.currentAssignmentID = assignmentID;
+        // alert(JSON.stringify(this.currentAssignmentFields$));
+        // this.currentAction = this.currentAction;
+        // this.currentAssignmentID = assignmentID;
 
         this.getView(this.currentAssignmentFields$);
 
@@ -873,7 +888,7 @@ export class WorkitemComponent implements OnInit {
 
       this.aservice.performActionOnAssignment(this.currentAssignmentID, this.currentAction, this.state ).subscribe(
         response => {
-          let action: any = response.body;
+          const action: any = response.body;
           if (action && action.nextAssignmentID) {
             this.isPage = false;
             this.isView = true;
@@ -883,8 +898,7 @@ export class WorkitemComponent implements OnInit {
 
             this.rcservice.sendMessage(this.currentCaseID$);
 
-          }
-          else if (action && action.nextPageID) {
+          } else if (action && action.nextPageID) {
             // have a page (Confirm/Review)
             this.currentPageID$ = action.nextPageID;
 
@@ -898,10 +912,9 @@ export class WorkitemComponent implements OnInit {
 
             this.rcservice.sendMessage(this.currentCaseID$);
 
-          }
-          else {
+          } else {
             this.isProgress = false;
-            alert("something else:" + JSON.stringify(action));
+            alert('something else:' + JSON.stringify(action));
           }
 
         },
@@ -949,23 +962,24 @@ export class WorkitemComponent implements OnInit {
   }
 
   createNew() {
+    console.log(' createNew enter ');
     if (this.tpComp.formValid()) {
-
+console.log('in createNew() -->');
       this.isProgress = true;
 
       this.cservice.createCase(this.currentCaseID$, this.state).subscribe(
         response => {
 
 
-          let caseID = response.body["ID"];
-          let caseName = caseID.split(" ")[1];
+          const caseID = response.body['ID'];
+          const caseName = caseID.split(' ')[1];
 
-          let oAssignment = new Object();
-          oAssignment["pxRefObjectInsName"] = caseName;
-          oAssignment["pzInsKey"] = response.body["nextAssignmentID"];
+          const oAssignment = new Object();
+          oAssignment['pxRefObjectInsName'] = caseName;
+          oAssignment['pzInsKey'] = response.body['nextAssignmentID'];
 
           // renaming tab
-          this.rtservice.sendMessage("New", caseName);
+          this.rtservice.sendMessage('New', caseName);
 
           // so renaming the tab, causes the tab to reload
           // so we need to send it a message to open the assigment, because
@@ -989,14 +1003,14 @@ export class WorkitemComponent implements OnInit {
   }
 
   updateActionDropDown(currentAction: string ) {
-    let actions = this.currentAssignment$["actions"];
+    const actions = this.currentAssignment$['actions'];
 
     this.localActions$ = new Array();
     this.assignmentActions$ = new Array();
 
     for (const action of actions) {
-      if (action.type === "Assignment") {
-        if (action.ID != currentAction) {
+      if (action.type === 'Assignment') {
+        if (action.ID !== currentAction) {
           this.assignmentActions$.push(action);
         }
       } else {
@@ -1009,7 +1023,7 @@ export class WorkitemComponent implements OnInit {
   // handle local action
   // we don't support them right now
   handleLocalAction(sAction: string) {
-    const snackBarRef = this.snackBar.open("Unsupported Action: " + sAction, "Ok");
+    const snackBarRef = this.snackBar.open('Unsupported Action: ' + sAction, 'Ok');
   }
 
 
@@ -1023,7 +1037,7 @@ export class WorkitemComponent implements OnInit {
 
     if (errorResponse.error) {
       let error: any;
-      let sErrors = "";
+      let sErrors = '';
       for (error of errorResponse.error.errors) {
         if (error.ID === PegaErrors.VALIDATION_ERROR) {
           this.handleValidationErrors(error.ValidationMessages);
@@ -1033,7 +1047,7 @@ export class WorkitemComponent implements OnInit {
 
       }
 
-      if (sErrors != '') {
+      if (sErrors !== '') {
         const snackBarRef = this.snackBar.open(sErrors, 'Ok');
       }
     } else {

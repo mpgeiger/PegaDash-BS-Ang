@@ -30,6 +30,7 @@ import {
   , WorkitemComponent
   , PWorkItemComponent
   , Workitem1Component
+  , ModalWorkItemComponent
   // , HeroChildComponent
 } from '../layout/pega';
 
@@ -55,6 +56,7 @@ import {
     , ModalRCIContainerComponent
     , CreateCustomRCIcaseComponent
     // , ChartDataLabels
+    , ModalWorkItemComponent
     , NbaOfferComponent
     , NbaTeaserComponent
     , OpenByWorkTypeComponent
@@ -76,6 +78,7 @@ import {
       , MegaMenuComponent
       , ModalRCIContainerComponent
       , CreateCustomRCIcaseComponent
+
     // , ChartDataLabels
     , NbaOfferComponent
     , NbaTeaserComponent
@@ -88,6 +91,7 @@ import {
     , WorkitemComponent
     , PWorkItemComponent
     , Workitem1Component
+    , ModalWorkItemComponent
     // , HeroParentComponent
     // , HeroChildComponent
   ],
@@ -96,6 +100,8 @@ import {
   //  , ModalContainerComponent
     ModalRCIContainerComponent
    , CreateCustomRCIcaseComponent
+   , WorkitemComponent
+   , ModalWorkItemComponent
   //  , HeroParentComponent
     // , HeroChildComponent
   ]

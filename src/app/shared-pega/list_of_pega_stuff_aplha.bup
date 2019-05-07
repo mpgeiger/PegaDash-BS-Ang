@@ -29,3 +29,38 @@ TextareaComponent
 TextComponent
 TextinputComponent
 UnitdaysComponent
+
+
+
+
+BreadcrumbComponent
+, CaptionComponent
+, CreatecaselistComponent
+, FieldComponent
+, GroupComponent
+, LayoutComponent
+, PageComponent
+, ParagraphComponent
+, RecentlistComponent
+, RepeatinggridComponent
+, RepeatinglayoutComponent
+, ToppageComponent
+, TopviewComponent
+, ViewComponent
+
+
+AutocompleteComponent
+, ButtonComponent
+, CheckboxComponent
+, DateComponent
+, DropdownComponent
+, EmailComponent
+, IconComponent
+, LinkComponent
+, NosupportComponent
+, NumberComponent
+, RadioComponent
+, TextareaComponent
+, TextComponent
+, TextinputComponent
+, UnitdaysComponent

@@ -23,6 +23,7 @@ import {
   , MatProgressSpinnerModule
   , MatRadioModule
   , MatSelectModule
+  , MatSnackBarModule
   , MatSortModule
   , MatTableModule
   , MatToolbarModule
@@ -56,6 +57,7 @@ CommonModule,
     , MatProgressSpinnerModule
     , MatRadioModule
     , MatSelectModule
+    , MatSnackBarModule
     , MatSortModule
     , MatTableModule
     , MatToolbarModule
@@ -85,6 +87,7 @@ CommonModule,
     , MatProgressSpinnerModule
     , MatRadioModule
     , MatSelectModule
+    , MatSnackBarModule
     , MatSortModule
     , MatTableModule
     , MatToolbarModule
