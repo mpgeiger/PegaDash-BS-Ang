@@ -90,6 +90,43 @@ export class ModalRCIContainerComponent implements OnInit {
 }
 
 
+/*
+export class ModalWorkItemComponent implements OnInit {
+
+  constructor(
+    private dialog: MatDialog
+  ) { }
+  @Input('master') masterName: string;
+
+  caseInstanceName = '';
+
+  rciDialogRef: MatDialogRef<CreateWorkItemComponent>;
+
+
+  ngOnInit() {
+    this.caseInstanceName = this.masterName;
+  }
+
+  public openCreateRciCaseDialog() {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = false;
+
+    dialogConfig.width = '70%';
+    dialogConfig.minWidth = '650px';
+    dialogConfig.minHeight = '400px';
+    dialogConfig.maxWidth = '1000px';
+
+
+
+    this.rciDialogRef = this.dialog.open(CreateCustomRCIcaseComponent, dialogConfig);
+  }
+  onNoClick(): void {
+    this.dialog.closeAll();
+  }
+} */
+
 // export class HeroChildComponent {
 //   // @Input() hero: Hero;
 //   @Input('master') masterName: string;

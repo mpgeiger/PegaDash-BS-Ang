@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+
 @Component({
   selector: 'app-breadcrumb',
   templateUrl: './breadcrumb.component.html',
@@ -8,10 +9,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class BreadcrumbComponent implements OnInit {
 
   @Input() CurrentCase: any;
-  
+
   stages$: Array<any>;
 
-  constructor() { 
+  constructor() {
 
   }
 
@@ -39,7 +40,7 @@ export class BreadcrumbComponent implements OnInit {
       else {
         oStage["last"] = true;
       }
-     } 
+     }
   }
 
 

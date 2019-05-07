@@ -14,6 +14,7 @@ import { LanguageTranslationModule } from './shared/modules/language-translation
 import { AuthGuard } from './shared';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+
 // import { SharedPegaModule } from './shared-pega/shared-pega.module';
 
 @NgModule({
@@ -33,6 +34,7 @@ import { AppRoutingModule } from './app-routing.module';
       AppComponent
     ],
     exports: [
+      AppMaterialModule
       // FormControl
       // ReactiveFormsModule
       // HttpClientModule,

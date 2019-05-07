@@ -8,10 +8,12 @@ import {
   , MatCardModule
   , MatDatepickerModule
   , MatDialogModule
-  , MatIconModule
-
-  , MatInputModule
+  , MatDividerModule
   , MatFormFieldModule
+  , MatGridListModule
+  , MatIconModule
+  , MatInputModule
+  , MatListModule
   , MatMenuModule
 
   , MatNativeDateModule
@@ -39,9 +41,12 @@ CommonModule,
     , MatCardModule
     , MatDatepickerModule
     , MatDialogModule
+    , MatDividerModule
+    , MatFormFieldModule
+    , MatGridListModule
     , MatIconModule
     , MatInputModule
-    , MatFormFieldModule
+    , MatListModule
     , MatMenuModule
     , MatNativeDateModule
     , MatPaginatorModule
@@ -64,9 +69,12 @@ CommonModule,
     , MatCardModule
     , MatDatepickerModule
     , MatDialogModule
+    , MatDividerModule
+    , MatFormFieldModule
+    , MatGridListModule
     , MatIconModule
     , MatInputModule
-    , MatFormFieldModule
+    , MatListModule
     , MatMenuModule
     , MatNativeDateModule
     , MatPaginatorModule

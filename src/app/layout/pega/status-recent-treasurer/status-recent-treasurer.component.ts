@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbRating };
+// import { NgbRating };
 
 @Component({
   selector: 'app-status-recent-treasurer',

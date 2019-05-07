@@ -12,6 +12,7 @@ import { ChartsModule as Ng2Charts } from 'ng2-charts';
 // import { ChartDataLabels } from 'chartjs-plugin-datalabels';
 
 import { AppMaterialModule } from '../app-material/app-material.module';
+import { SharedPegaStarterPackModule } from './shared-pega-starterPackItems.module';
 import {
    CaselistComponent
   // , FileNameDialogComponent
@@ -26,6 +27,7 @@ import {
   , RecentTreasurerCaseListComponent
   , StatusRecentTreasurerComponent
   , TransactionSummaryComponent
+  , WorkitemComponent
   , PWorkItemComponent
   , Workitem1Component
   // , HeroChildComponent
@@ -38,6 +40,7 @@ import {
    , ReactiveFormsModule
    , CommonModule
    , AppMaterialModule
+   , SharedPegaStarterPackModule
    , Ng2Charts
 
   ],
@@ -60,6 +63,7 @@ import {
     , RecentTreasurerCaseListComponent
     , StatusRecentTreasurerComponent
     , TransactionSummaryComponent
+    , WorkitemComponent
     , PWorkItemComponent
     , Workitem1Component
     // , HeroParentComponent
@@ -81,6 +85,7 @@ import {
     , RecentTreasurerCaseListComponent
     , StatusRecentTreasurerComponent
     , TransactionSummaryComponent
+    , WorkitemComponent
     , PWorkItemComponent
     , Workitem1Component
     // , HeroParentComponent

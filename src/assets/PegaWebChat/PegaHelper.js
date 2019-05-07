@@ -17,11 +17,19 @@ $(document).ready(function(){
   /* Load the cobrowse assets */
   window.fireflyAPI = {};
 	var script = document.createElement("script");
-	script.type = "text/javascript";
-	fireflyAPI.token = "Please enter CobrowseToken";
-	fireflyAPI.serverHostUrl = "Please enter CobrowseServerURL"
-  script.src = "Please enter CobrowseServerURL/cobrowse/loadScripts";
-	script.async = true;
+	// script.type = "text/javascript";
+	// fireflyAPI.token = "Please enter CobrowseToken";
+	// fireflyAPI.serverHostUrl = "Please enter CobrowseServerURL"
+  // script.src = "Please enter CobrowseServerURL/cobrowse/loadScripts";
+  // script.async = true;
+
+
+  fireflyAPI.token = "58d8d51d41c53d0000da4067";
+	fireflyAPI.serverHostUrl = "https://bny.pegatsdemo.com:8043"
+  script.src = "https://bny.pegatsdemo.com:8043/scripts/loaders/chatLoader.js";
+  script.async = true;
+
+
 	document.head.appendChild(script);
 
   /* add id attributes to gadgets */
