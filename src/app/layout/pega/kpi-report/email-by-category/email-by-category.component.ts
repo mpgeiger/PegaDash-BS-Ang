@@ -17,14 +17,11 @@ import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsToolt
 import stubbedResults from '../../../../../assets/json/D_GetEmailsByCategory.json';
 
 
-export interface EmailByCategory {
-  Name: string;
-  pxIndexCount: number;
-  pxObjClass: string;
-}
+
 
 @Component({
   selector: 'app-email-by-category',
+  // templateUrl: './email-by-category.component.html',
   templateUrl: './email-by-category.component.html',
   styleUrls: ['./email-by-category.component.scss'],
   animations: [routerTransition()]
@@ -33,22 +30,22 @@ export class EmailByCategoryComponent implements OnInit {
 
   constructor(
     private datapage: DatapageService
-    ) {
-   }
+  ) {
+  }
 
-   message: any;
-   // subscription: Subscription;
-   displayedColumns = ['Name', 'pxIndexCount'];
+  message: any;
+  // subscription: Subscription;
+  displayedColumns = ['Name', 'pxIndexCount'];
 
-   public dataSource = new MatTableDataSource<EmailByCategory>();
-   sortedData: EmailByCategory[];
-   headers: any;
-   types: EmailByCategory[] = [];
-   showLoading = true;
-   filterValues = {
-     Name: '',
-     pxIndexCount: ''
-   };
+  public dataSource = new MatTableDataSource<EmailByCategory>();
+  sortedData: EmailByCategory[];
+  headers: any;
+  types: EmailByCategory[] = [];
+  showLoading = false;
+  filterValues = {
+    Name: '',
+    pxIndexCount: ''
+  };
 
 
   // PIE Chart Settings
@@ -104,9 +101,10 @@ export class EmailByCategoryComponent implements OnInit {
     },
     legend: {
       position: 'right',
-    labels: {
-      fontSize: 10
-    }}
+      labels: {
+        fontSize: 10
+      }
+    }
   };
   public barChartLabels: Label[] = [];
   // public barChartLabels: Label[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
@@ -140,12 +138,16 @@ export class EmailByCategoryComponent implements OnInit {
 
 
   ngOnInit() {
+    this.showLoading = true;
     this.dataSource.sort = this.sort;
+    // this.sort.disableClear = true;
+
   }
 
-  ngAfterViewInit(): void {
+  ngAfterViewInit() {
 
-     this.dataSource.sort = this.sort;
+    // this.dataSource.sort = this.sort;
+    // this.sort.disableClear = true;
     if (this.checkIfStubbed()) {
       console.log('STUBBED D_GetEmailsByCategory');
       this.getStubbedCases();
@@ -165,20 +167,25 @@ export class EmailByCategoryComponent implements OnInit {
 
 
   getStubbedCases() {
+    console.log('entered STUBBED D_GetEmailsByCategory-->  ');
     const stubbed: any = stubbedResults;
     this.types = Object.keys(this.getResults(stubbed)).map(it => this.getResults(stubbed)[it]);
 
-        this.dataSource.data = this.types as EmailByCategory[];
-        localStorage.setItem('D_GetEmailsByCategory', this.types.length.toString());
-        this.parseDataForPieChart(this.types);
-        this.parseDataForBarChart(this.types);
-        this.pieChartType = 'pie';
-        this.dataSource.sort = this.sort;
-        this.showLoading = false;
-        console.log('count of STUBBED D_GetEmailsByCategory-->  ', localStorage.getItem('D_GetEmailsByCategory'));
+    this.dataSource.data = this.types as EmailByCategory[];
+    localStorage.setItem('D_GetEmailsByCategory', this.types.length.toString());
+    this.parseDataForPieChart(this.types);
+    this.parseDataForBarChart(this.types);
+    this.pieChartType = 'pie';
+    this.dataSource.sort = this.sort;
+    this.showLoading = false;
+    console.log('count of STUBBED D_GetEmailsByCategory-->  ', localStorage.getItem('D_GetEmailsByCategory'));
+
   }
 
+
+
   getCases() {
+    console.log('entered live D_GetEmailsByCategory-->  ');
     // const unifiedtaskParams = new HttpParams().set('UserId', 'SallyJones').set('WorkGroup', 'NewWaveWG');
     const dParams = new HttpParams();
     this.showLoading = true;
@@ -212,10 +219,10 @@ export class EmailByCategoryComponent implements OnInit {
 
   parseDataForPieChart(data) {
     // tslint:disable-next-line:prefer-const
-    let  stringArray = '[';
-let count = 0;
+    let stringArray = '[';
+    let count = 0;
     for (const item of data) {
-      if (count !== 0 ) {
+      if (count !== 0) {
         stringArray = stringArray + ',';
       }
       // const itemValue: number = item.ResultCount1;
@@ -281,4 +288,9 @@ let count = 0;
   }
 
 
+}
+export interface EmailByCategory {
+  Name: string;
+  pxIndexCount: number;
+  pxObjClass: string;
 }

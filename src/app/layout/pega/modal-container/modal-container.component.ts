@@ -177,7 +177,7 @@ export class ModalWorkItemComponent implements OnInit {
     // Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
     // Add 'implements AfterViewInit' to the class.
 
-    this.gncservice.sendMessage(this.openNewCaseMessage.caseID);
+    // this.gncservice.sendMessage(this.openNewCaseMessage.caseID);
   }
   ngAfterViewChecked() {
     // called after the tab has been created

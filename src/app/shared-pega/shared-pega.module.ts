@@ -1,3 +1,4 @@
+// import { EmailByCategoryComponent } from './../layout/pega/kpi-report/email-by-category/email-by-category.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -21,15 +22,19 @@ import {
   , ModalRCIContainerComponent
   , CreateCustomRCIcaseComponent
   , EmailByCategoryComponent
+
+  , InCorrAutoReplyTrendComponent
   , NbaOfferComponent
   , OpenByWorkTypeComponent
   , PegaPieChartComponent
   , RecentInteractionsComponent
   , RecentTreasurerCaseListComponent
+  , RelAccountListComponent
   , StatusRecentTreasurerComponent
   , TransactionSummaryComponent
   , WorkitemComponent
   , PWorkItemComponent
+  , ValueTrendIndicatorArrowComponent
   , Workitem1Component
   , ModalWorkItemComponent
   // , HeroChildComponent
@@ -57,6 +62,7 @@ import {
     , ModalRCIContainerComponent
     , CreateCustomRCIcaseComponent
     , EmailByCategoryComponent
+    , InCorrAutoReplyTrendComponent
     // , ChartDataLabels
     , ModalWorkItemComponent
     , NbaOfferComponent
@@ -65,8 +71,10 @@ import {
     , PegaPieChartComponent
     , RecentInteractionsComponent
     , RecentTreasurerCaseListComponent
+    , RelAccountListComponent
     , StatusRecentTreasurerComponent
     , TransactionSummaryComponent
+    , ValueTrendIndicatorArrowComponent
     , WorkitemComponent
     , PWorkItemComponent
     , Workitem1Component
@@ -81,6 +89,7 @@ import {
       , ModalRCIContainerComponent
       , CreateCustomRCIcaseComponent
       , EmailByCategoryComponent
+      , InCorrAutoReplyTrendComponent
 
     // , ChartDataLabels
     , NbaOfferComponent
@@ -89,10 +98,12 @@ import {
     , PegaPieChartComponent
     , RecentInteractionsComponent
     , RecentTreasurerCaseListComponent
+    , RelAccountListComponent
     , StatusRecentTreasurerComponent
     , TransactionSummaryComponent
     , WorkitemComponent
     , PWorkItemComponent
+    , ValueTrendIndicatorArrowComponent
     , Workitem1Component
     , ModalWorkItemComponent
     // , HeroParentComponent

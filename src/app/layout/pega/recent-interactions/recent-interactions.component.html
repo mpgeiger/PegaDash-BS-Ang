@@ -1,6 +1,3 @@
-<p>
-  recent-interactions works!
-</p>
 
 <div fxLayout fxLayoutAlign="center center">
     <mat-form-field >
@@ -38,9 +35,11 @@
 
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
-
+<!-- <div  *ngIf="!showLoading"> -->
+    <ng-container *ngIf="!isLoading">
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </ng-container>
+      <!-- </div> -->
 
       </table>
       <!-- <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar> -->

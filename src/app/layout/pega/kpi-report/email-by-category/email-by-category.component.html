@@ -46,7 +46,7 @@
             <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter" />
           </mat-form-field>
         </div> -->
-        <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z1">
+        <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z1" width=100%>
           <!-- <table class="table"  > -->
           <ng-container matColumnDef="Name">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Work Type</th>

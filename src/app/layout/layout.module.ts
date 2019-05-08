@@ -40,7 +40,9 @@ import { TransactionSummaryComponent } from './pega/transaction-summary/transact
 // import { DatePickerComponent } from './bs-component/components/index';
 import { AppMaterialModule  } from '../app-material/app-material.module';
 import { FromCamelCase } from './pega/_pipes/fromCamelCase';
-import { InCorrAutoReplyTrendComponent } from './pega/kpi-report/in-corr-auto-reply-trend/in-corr-auto-reply-trend.component';
+// import { ValueTrendIndicatorArrowComponent } from './pega/kpi-report/value-trend-indicator-arrow/value-trend-indicator-arrow.component';
+// import { RelAccountListComponent } from './pega/rel-account-list/rel-account-list.component';
+// import { InCorrAutoReplyTrendComponent } from './pega/kpi-report/in-corr-auto-reply-trend/in-corr-auto-reply-trend.component';
 // import { EmailByCategoryComponent } from './pega/kpi-report/email-by-category/email-by-category.component';
 // import { RecentInteractionsComponent } from './pega/recent-interactions/recent-interactions.component';
 // import { Workitem1Component } from './pega/workitem1/workitem1.component';
@@ -80,7 +82,7 @@ import { InCorrAutoReplyTrendComponent } from './pega/kpi-report/in-corr-auto-re
       , modalRCICaseType
       , NgbdModalContentNBA
       , NgbDatePipe
-      , FromCamelCase, InCorrAutoReplyTrendComponent
+      , FromCamelCase
       // , OpenTaskPageComponent
       // , RecentTreasurerCaseListComponent
       // , PaginationComponent
@@ -106,7 +108,7 @@ import { InCorrAutoReplyTrendComponent } from './pega/kpi-report/in-corr-auto-re
   // , OpenTaskPageComponent
   FormsModule
   , ReactiveFormsModule
-  , OpenTaskPageModule, InCorrAutoReplyTrendComponent
+  , OpenTaskPageModule
   //  ReactiveFormsModule
 ]
   , schemas: [

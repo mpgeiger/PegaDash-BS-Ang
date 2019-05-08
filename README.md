@@ -17,6 +17,25 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## MPG Notes
 I added ngx-currency [ngx-currency](https://www.npmjs.com/package/ngx-currency)  to help process currency values with commas for thoushands and the currency symbol ***$ 1,234,567.89***
 
+
+Recent Interactions    D_InteractionHistory    app-recent-interactions
+
+| Portlet Title           	| Datapage             	| Selector                	  |  Coponent 	                          |
+|-------------------------	|----------------------	|-------------------------	  |-------------------------------------	|
+| **Case List**           	| cases               	| app-caselist            	  |  /pega/app-caselist  	                |
+| **Email by Category**   	| D_GetEmailsByCategory	| app-email-by-category      	|  /pega/kpi-report/email-by-category  	|
+| **Mega Menu**          	  | D_CustomerIntentTasks	| app-mega-menu           	  |  /pega/mega-menu  	                  |
+| **Recent Cases**         	| D_RecentTreasurerCases| app-recentTreasurerCaseList	|  /pega/recentTreasurerCaseList  	    |
+| **Recent Interactions** 	| D_InteractionHistory 	| app-recent-interactions 	  |  /pega/recent-interactions    	      |
+| **Recent Treasurer**     	| D_TransactionSummary 	| app-transaction-summary  	  |  /pega/transaction-summary  	        |
+| **Top requests**        	| D_OpenWorkByType    	| app-open-by-work-type  	    |  /pega/open-by-work-type  	          |
+| **Unified Task List**   	| D_UnifiedWorkList    	| app-unifiedtasklist      	  |  /pega/unifiedtasklist              	|
+| **Un-named**             	| D_RecentTreasurerCases| app-recentTreasurerCaseList |  /pega/recentTreasurerCaseList       	|
+
+
+
+
+<!-- 
 Useful links/sites;
 
 Badges:
@@ -71,4 +90,4 @@ Before running the tests make sure you are serving the app via `ng serve`.
 
 ### Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md). -->

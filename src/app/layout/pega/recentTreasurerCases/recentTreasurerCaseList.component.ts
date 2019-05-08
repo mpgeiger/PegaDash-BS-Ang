@@ -104,6 +104,8 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
     // this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
     // this.sortedData = this.cases.slice();
     this.dataSource.sort = this.sort;
+    this.sort.disableClear = true;
+
     this.dataSource.paginator = this.paginator;
     if (this.checkIfStubbed()) {
 

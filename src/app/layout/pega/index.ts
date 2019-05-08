@@ -8,6 +8,9 @@ export * from './modal-container/modal-container.component';
 // export * from './modal-container/file-name-dialog.component';
 export * from './customCases/rcicase/create-custom-rcicase.component';
 export * from './kpi-report/email-by-category/email-by-category.component';
+export * from './kpi-report/in-corr-auto-reply-trend/in-corr-auto-reply-trend.component';
+export * from './kpi-report/value-trend-indicator-arrow/value-trend-indicator-arrow.component';
+// export * from './kpi-report/index';
 export * from './pega-pie-chart/pega-pie-chart.component';
 export * from './workitem/workitem.component';
 export * from './pworkitem/pworkitem.component';
@@ -21,11 +24,13 @@ export * from './nba-teaser/nba-teaser.component';
 export * from './open-by-work-type/open-by-work-type.component';
 export * from './recent-interactions/recent-interactions.component';
 export * from './recentTreasurerCases/recentTreasurerCaseList.component';
+export * from './rel-account-list/rel-account-list.component';
 export * from './ngPaging/pagination.component';
 export * from './status-recent-treasurer/status-recent-treasurer.component';
 
 export * from './transaction-summary/transaction-summary.component';
 export * from './unifiedtask/unifiedtask.component';
+export * from './kpi-report/value-trend-indicator-arrow/value-trend-indicator-arrow.component';
 // export * from './pworkitem/pworkitem.componentt';
 export * from './workitem1/workitem1.component';
 // export * from '../../work'
