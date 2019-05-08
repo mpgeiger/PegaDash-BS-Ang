@@ -7,6 +7,7 @@ export * from './modal/modal.component';
 export * from './modal-container/modal-container.component';
 // export * from './modal-container/file-name-dialog.component';
 export * from './customCases/rcicase/create-custom-rcicase.component';
+export * from './kpi-report/email-by-category/email-by-category.component';
 export * from './pega-pie-chart/pega-pie-chart.component';
 export * from './workitem/workitem.component';
 export * from './pworkitem/pworkitem.component';

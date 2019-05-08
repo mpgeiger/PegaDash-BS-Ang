@@ -7,32 +7,31 @@ var $ = require('jquery');
 
 
 // (function() {
-//   window.fireflyAPI = window.fireflyAPI || {};
-//   window.fireflyAPI._log = window.fireflyAPI._log || function(){};
-//   window.fireflyChatAPI = window.fireflyChatAPI || {};
-//   fireflyChatAPI.ready=function(x){if(typeof x=="function")x=[x];fireflyChatAPI.onLoaded=fireflyChatAPI.onLoaded||[];for(var i=0;i<x.length;i++){if(fireflyChatAPI.isLoaded){x[i]();}else{fireflyChatAPI.onLoaded.push(x[i]);}}};
+ //  window.fireflyAPI = window.fireflyAPI || {};
+ //  window.fireflyAPI._log = window.fireflyAPI._log || function(){};
+ //  window.fireflyChatAPI = window.fireflyChatAPI || {};
+ //  fireflyChatAPI.ready=function(x){if(typeof x=="function")x=[x];fireflyChatAPI.onLoaded=fireflyChatAPI.onLoaded||[];for(var i=0;i<x.length;i++){if(fireflyChatAPI.isLoaded){x[i]();}else{fireflyChatAPI.onLoaded.push(x[i]);}}};
 
-//   // fireflyChatAPI.queue = "QUEUE_NAME";
+   // fireflyChatAPI.queue = "QUEUE_NAME";
 
-//   fireflyChatAPI.type = "visitor";
-//   fireflyChatAPI.token = "58d8d51d41c53d0000da4067";
+ //  fireflyChatAPI.type = "visitor";
+  // fireflyChatAPI.token = "58d8d51d41c53d0000da4067";
 // fireflyChatAPI.cobrowseAPIKey="58d3c9aa21365a993bb0fed3";
 
-//   fireflyChatAPI.serverHostUrl = "https://bny.pegatsdemo.com:8043";
-//   fireflyChatAPI.assetHostUrl = "https://bny.pegatsdemo.com:8043";
-//   fireflyChatAPI.publishSettingsToS3 = false;
-//   fireflyChatAPI.s3HostUrl = "https://bny.pegatsdemo.com:8043";
+  // fireflyChatAPI.serverHostUrl = "https://bny.pegatsdemo.com:8043";
+  // fireflyChatAPI.assetHostUrl = "https://bny.pegatsdemo.com:8043";
+  // fireflyChatAPI.publishSettingsToS3 = false;
+  // fireflyChatAPI.s3HostUrl = "https://bny.pegatsdemo.com:8043";
 
-//   var script = document.createElement("script");
-//   script.type = "text/javascript";
-//   script.src = "https://bny.pegatsdemo.com:8043/scripts/loaders/chatLoader.js";
-//   script.async = true;
-//   var firstScript = document.getElementsByTagName("script")[0];
-//   firstScript.parentNode.insertBefore(script, firstScript);
-// })();
+  // var script = document.createElement("script");
+  // script.type = "text/javascript";
+  // script.src = "https://bny.pegatsdemo.com:8043/scripts/loaders/chatLoader.js";/   script.async = true;
+  // var firstScript = document.getElementsByTagName("script")[0];
+  // firstScript.parentNode.insertBefore(script, firstScript);
+ //})();
 
 
-// if(!window.location.getParameter){window.location.getParameter=function(A){function B(){var H={},F,C=/\+/g,D=/([^&=]+)=?([^&]*)/g,G=function(I){return decodeURIComponent(I.replace(C," "))},E=window.location.search.substring(1);while(F=D.exec(E)){H[G(F[1])]=G(F[2])}return H}if(!this.queryStringParams){this.queryStringParams=B()}return this.queryStringParams[A]}}(function(){window.fireflyAPI={};fireflyAPI.ready=function(C){if(typeof C=="function"){C=[C]}fireflyAPI.onLoaded=fireflyAPI.onLoaded||[];if(fireflyAPI.isLoaded){C.forEach(function(D){D()})}else{C.forEach(function(D){fireflyAPI.onLoaded.push(D)})}};fireflyAPI.token="58d3c9aa21365a993bb0fed3";fireflyAPI.assetHostUrl = "https://end2endcrmcommercialbanking.pegatsdemo.com:8043/co";fireflyAPI.serverHostUrl = "https://End2EndCRMCommercialBanking.pegatsdemo.com:8043/co";var A=document.createElement("script");A.type="text/javascript";A.src="https://End2EndCRMCommercialBanking.pegatsdemo.com:8043/co/scripts/loaders/loader.js";A.async=true;var B=document.getElementsByTagName("script")[0];B.parentNode.insertBefore(A,B);fireflyAPI.ready(function(){fireflyAPI.set("masking",{"*":[".wss_std_control_masked"],"*":[".wss_std_control_masked span"]});fireflyAPI.set("sendStaticContent",true);fireflyAPI.set("whitelabel",true);fireflyAPI.set("message","Please call (617) 555-1234 and provide me with your code");fireflyAPI.set("cobrowseDocuments",true)})})();fireflyAPI.ready(function(){$(window).bind("keydown",function(B){if(B.ctrlKey||B.metaKey){var A=(B.keyCode?B.keyCode:B.which);if(A=="13"){fireflyAPI.start()}}});if(window.location.getParameter("Cobrowsing")=="auto"){fireflyAPI.set("suppressUI",true);fireflyAPI.set("customChannelId",window.location.getParameter("session"));setTimeout(function(){fireflyAPI.start()},250)}});
+ //if(!window.location.getParameter){window.location.getParameter=function(A){function B(){var H={},F,C=/\+/g,D=/([^&=]+)=?([^&]*)/g,G=function(I){return decodeURIComponent(I.replace(C," "))},E=window.location.search.substring(1);while(F=D.exec(E)){H[G(F[1])]=G(F[2])}return H}if(!this.queryStringParams){this.queryStringParams=B()}return this.queryStringParams[A]}}(function(){window.fireflyAPI={};fireflyAPI.ready=function(C){if(typeof C=="function"){C=[C]}fireflyAPI.onLoaded=fireflyAPI.onLoaded||[];if(fireflyAPI.isLoaded){C.forEach(function(D){D()})}else{C.forEach(function(D){fireflyAPI.onLoaded.push(D)})}};fireflyAPI.token="58d3c9aa21365a993bb0fed3";fireflyAPI.assetHostUrl = "https://end2endcrmcommercialbanking.pegatsdemo.com:8043/co";fireflyAPI.serverHostUrl = "https://End2EndCRMCommercialBanking.pegatsdemo.com:8043/co";var A=document.createElement("script");A.type="text/javascript";A.src="https://End2EndCRMCommercialBanking.pegatsdemo.com:8043/co/scripts/loaders/loader.js";A.async=true;var B=document.getElementsByTagName("script")[0];B.parentNode.insertBefore(A,B);fireflyAPI.ready(function(){fireflyAPI.set("masking",{"*":[".wss_std_control_masked"],"*":[".wss_std_control_masked span"]});fireflyAPI.set("sendStaticContent",true);fireflyAPI.set("whitelabel",true);fireflyAPI.set("message","Please call (617) 555-1234 and provide me with your code");fireflyAPI.set("cobrowseDocuments",true)})})();fireflyAPI.ready(function(){$(window).bind("keydown",function(B){if(B.ctrlKey||B.metaKey){var A=(B.keyCode?B.keyCode:B.which);if(A=="13"){fireflyAPI.start()}}});if(window.location.getParameter("Cobrowsing")=="auto"){fireflyAPI.set("suppressUI",true);fireflyAPI.set("customChannelId",window.location.getParameter("session"));setTimeout(function(){fireflyAPI.start()},250)}});
 
 
 
@@ -54,19 +53,20 @@ $(document).ready(function(){
 
   /* Load the cobrowse assets */
   window.fireflyAPI = {};
-	var script = document.createElement("script");
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  fireflyAPI.token = "58d3c9aa21365a993bb0fed3";
+	fireflyAPI.serverHostUrl = "https://bny.pegatsdemo.com:8043/co"
+  script.src = "https://bny.pegatsdemo.com:8043/co/cobrowse/loadScripts";
+  script.async = true;
+
 	// script.type = "text/javascript";
 	// fireflyAPI.token = "Please enter CobrowseToken";
 	// fireflyAPI.serverHostUrl = "Please enter CobrowseServerURL"
   // script.src = "Please enter CobrowseServerURL/cobrowse/loadScripts";
   // script.async = true;
 
-  script.type = "text/javascript";
-  fireflyAPI.token = "58d8d51d41c53d0000da4067";
-	fireflyAPI.serverHostUrl = "https://bny.pegatsdemo.com:8043";
-  script.src = "https://bny.pegatsdemo.com:8043/scripts/loaders/chatLoader.js";
-  script.async = true;
-
+ 
 
 	document.head.appendChild(script);
 

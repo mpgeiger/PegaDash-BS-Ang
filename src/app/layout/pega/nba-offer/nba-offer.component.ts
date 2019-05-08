@@ -78,8 +78,10 @@ export class NbaOfferComponent implements OnInit {
          this.headers = response.headers;
          this.nbas = Object.keys(this.getNBAResults(response.body)).map(it => this.getNBAResults(response.body)[it]);
          localStorage.setItem('NBA_Offer', this.nbas.length.toString());
+
          this.showLoading = false;
-        //  console.log('count of NBA_Offer-->  ', localStorage.getItem('NBA_Offer'));
+         console.log('count of NBA_Offer-->  ', localStorage.getItem('NBA_Offer'));
+         console.log(' NBA_Offer results-->  ', JSON.stringify(this.nbas));
        },
        err => {
          alert('Error form unifiedtask:' + err.errors);
@@ -97,7 +99,7 @@ export class NbaOfferComponent implements OnInit {
   }
 
   nbaOnClick() {
-    window.open("https://www.bnymellon.com/us/en/what-we-do/investment-services/treasury-services/index.jsp", "_blank");
+    window.open('https://www.bnymellon.com/us/en/what-we-do/investment-services/treasury-services/index.jsp', '_blank');
   }
 
 

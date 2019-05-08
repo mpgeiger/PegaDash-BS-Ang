@@ -20,6 +20,7 @@ import {
   , MegaMenuComponent
   , ModalRCIContainerComponent
   , CreateCustomRCIcaseComponent
+  , EmailByCategoryComponent
   , NbaOfferComponent
   , OpenByWorkTypeComponent
   , PegaPieChartComponent
@@ -55,6 +56,7 @@ import {
     , MegaMenuComponent
     , ModalRCIContainerComponent
     , CreateCustomRCIcaseComponent
+    , EmailByCategoryComponent
     // , ChartDataLabels
     , ModalWorkItemComponent
     , NbaOfferComponent
@@ -78,6 +80,7 @@ import {
       , MegaMenuComponent
       , ModalRCIContainerComponent
       , CreateCustomRCIcaseComponent
+      , EmailByCategoryComponent
 
     // , ChartDataLabels
     , NbaOfferComponent
