@@ -40,6 +40,7 @@ import { TransactionSummaryComponent } from './pega/transaction-summary/transact
 // import { DatePickerComponent } from './bs-component/components/index';
 import { AppMaterialModule  } from '../app-material/app-material.module';
 import { FromCamelCase } from './pega/_pipes/fromCamelCase';
+import { InCorrAutoReplyTrendComponent } from './pega/kpi-report/in-corr-auto-reply-trend/in-corr-auto-reply-trend.component';
 // import { EmailByCategoryComponent } from './pega/kpi-report/email-by-category/email-by-category.component';
 // import { RecentInteractionsComponent } from './pega/recent-interactions/recent-interactions.component';
 // import { Workitem1Component } from './pega/workitem1/workitem1.component';
@@ -79,7 +80,7 @@ import { FromCamelCase } from './pega/_pipes/fromCamelCase';
       , modalRCICaseType
       , NgbdModalContentNBA
       , NgbDatePipe
-      , FromCamelCase
+      , FromCamelCase, InCorrAutoReplyTrendComponent
       // , OpenTaskPageComponent
       // , RecentTreasurerCaseListComponent
       // , PaginationComponent
@@ -105,7 +106,7 @@ import { FromCamelCase } from './pega/_pipes/fromCamelCase';
   // , OpenTaskPageComponent
   FormsModule
   , ReactiveFormsModule
-  , OpenTaskPageModule
+  , OpenTaskPageModule, InCorrAutoReplyTrendComponent
   //  ReactiveFormsModule
 ]
   , schemas: [

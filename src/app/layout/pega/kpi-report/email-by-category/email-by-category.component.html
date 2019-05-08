@@ -41,11 +41,11 @@
         </canvas>
       </ng-container>
       <ng-container *ngIf="showTable">
-        <div fxLayout fxLayoutAlign="center center">
+        <!-- <div fxLayout fxLayoutAlign="center center">
           <mat-form-field>
             <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter" />
           </mat-form-field>
-        </div>
+        </div> -->
         <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z1">
           <!-- <table class="table"  > -->
           <ng-container matColumnDef="Name">
