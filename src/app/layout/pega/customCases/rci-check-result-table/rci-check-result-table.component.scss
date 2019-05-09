@@ -1,0 +1,20 @@
+// ::ng-deep .mat-header-container-right {
+//   display:flex;
+//   justify-content:flex-end;
+//  }
+::ng-deep .mat-header-cell-right {
+  display:flex;
+  justify-content:flex-end;
+ }
+
+ ::ng-deep .mat-cell-right {
+  // display:flex;
+  // justify-content:flex-end;
+  text-align: end;
+ }
+
+ ::ng-deep .mat-form-field-label-right {
+  // display:flex;
+  // justify-content:flex-end;
+  text-align: end;
+ }

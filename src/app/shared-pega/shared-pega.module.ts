@@ -119,6 +119,7 @@ import {
    , CreateCustomRCIcaseComponent
    , WorkitemComponent
    , ModalWorkItemComponent
+   , RciCheckResultTableComponent
   //  , HeroParentComponent
     // , HeroChildComponent
   ]
