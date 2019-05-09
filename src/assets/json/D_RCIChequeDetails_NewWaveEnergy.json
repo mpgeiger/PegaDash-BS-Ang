@@ -1,0 +1,1406 @@
+{
+  "pxMore": "false",
+  "pxObjClass": "Code-Pega-List",
+  "pxPageCount": "0",
+  "pxQueryTimeStamp": "2019-05-09T13:50:03.800Z",
+  "pxResultCount": "8",
+  "pxSQLStatementPost": "SELECT DISTINCT \"PC0\".\"checkdate\" AS \"CheckDate\" , \"PC0\".\"accountnumber\" AS \"AccountNumber\" , \"PC0\".\"chequeimagepath\" AS \"ChequeImagePath\" , \"PC0\".\"chequenumber\" AS \"ChequeNumber\" , \"PC0\".\"cifnbr\" AS \"CifNbr\" , \"PC0\".\"customername\" AS \"CustomerName\" , \"PC0\".\"depositamount\" AS \"DepositAmount\" FROM pegadata.pr_pegacpmfs_data_rcichequedet \"PC0\" WHERE  ( \"PC0\".\"accountnumber\" IS NULL OR \"PC0\".\"chequenumber\" IS NULL OR \"PC0\".\"cifnbr\" IS NULL OR  \"PC0\".\"customername\" LIKE ?   )",
+  "pxSQLStatementPre": "SELECT DISTINCT \"PC0\".\"checkdate\" AS \"CheckDate\" , \"PC0\".\"accountnumber\" AS \"AccountNumber\" , \"PC0\".\"chequeimagepath\" AS \"ChequeImagePath\" , \"PC0\".\"chequenumber\" AS \"ChequeNumber\" , \"PC0\".\"cifnbr\" AS \"CifNbr\" , \"PC0\".\"customername\" AS \"CustomerName\" , \"PC0\".\"depositamount\" AS \"DepositAmount\" FROM pegadata.pr_pegacpmfs_data_rcichequedet \"PC0\" WHERE  ( \"PC0\".\"accountnumber\" IS NULL OR \"PC0\".\"chequenumber\" IS NULL OR \"PC0\".\"cifnbr\" IS NULL OR  \"PC0\".\"customername\" LIKE ?   )",
+  "pxTotalResultCount": "0",
+  "pyMaxRecords": "0",
+  "pyObjClass": "PegaCPMFS-Data-RCIChequeDetails",
+  "pyQueryTimeoutInterval": "0",
+  "pyRowCount": "0",
+  "pyStartIndex": "0",
+  "pyUseReportsDatabase": "false",
+  "pzPageNameHash": "_pa117616047076222pz",
+  "pxResults": [
+      {
+          "AccountNumber": "9889999998",
+          "CheckDate": "2019-08-28",
+          "ChequeImagePath": "http://end2endcrmcommercialbankingnew.pegatsdemo.com/BNYImages/RCI/Cheque2.jpg",
+          "ChequeNumber": "01000",
+          "CifNbr": "9912345999",
+          "CustomerName": "New Wave Energy Solutions",
+          "DepositAmount": "56.000000000",
+          "pxObjClass": "PegaCPMFS-Data-RCIChequeDetails"
+      },
+      {
+          "AccountNumber": "9998765432",
+          "CheckDate": "2019-08-21",
+          "ChequeImagePath": "http://end2endcrmcommercialbankingnew.pegatsdemo.com/BNYImages/RCI/Cheque1.jpg",
+          "ChequeNumber": "00101",
+          "CifNbr": "9912345999",
+          "CustomerName": "New Wave Energy Solutions",
+          "DepositAmount": "508.000000000",
+          "pxObjClass": "PegaCPMFS-Data-RCIChequeDetails"
+      },
+      {
+          "AccountNumber": "9890000001",
+          "CheckDate": "2019-07-24",
+          "ChequeImagePath": "http://end2endcrmcommercialbankingnew.pegatsdemo.com/BNYImages/RCI/Cheque1.jpg",
+          "ChequeNumber": "00101",
+          "CifNbr": "9912345999",
+          "CustomerName": "New Wave Energy Solutions",
+          "DepositAmount": "300.000000000",
+          "pxObjClass": "PegaCPMFS-Data-RCIChequeDetails"
+      },
+      {
+          "AccountNumber": "9889999997",
+          "CheckDate": "2019-01-07",
+          "ChequeImagePath": "http://end2endcrmcommercialbankingnew.pegatsdemo.com/BNYImages/RCI/Cheque2.jpg",
+          "ChequeNumber": "01000",
+          "CifNbr": "9912345999",
+          "CustomerName": "New Wave Energy Solutions",
+          "DepositAmount": "25.000000000",
+          "pxObjClass": "PegaCPMFS-Data-RCIChequeDetails"
+      },
+      {
+          "AccountNumber": "9998765431",
+          "CheckDate": "2019-09-25",
+          "ChequeImagePath": "http://end2endcrmcommercialbankingnew.pegatsdemo.com/BNYImages/RCI/Cheque4.jpg",
+          "ChequeNumber": "04801",
+          "CifNbr": "9912345999",
+          "CustomerName": "New Wave Energy Solutions",
+          "DepositAmount": "278.000000000",
+          "pxObjClass": "PegaCPMFS-Data-RCIChequeDetails"
+      },
+      {
+          "AccountNumber": "9890000000",
+          "CheckDate": "2017-10-18",
+          "ChequeImagePath": "http://end2endcrmcommercialbankingnew.pegatsdemo.com/BNYImages/RCI/Cheque4.jpg",
+          "ChequeNumber": "04801",
+          "CifNbr": "9912345999",
+          "CustomerName": "New Wave Energy Solutions",
+          "DepositAmount": "100.000000000",
+          "pxObjClass": "PegaCPMFS-Data-RCIChequeDetails"
+      },
+      {
+          "AccountNumber": "9890000012",
+          "CheckDate": "2014-05-20",
+          "ChequeImagePath": "http://end2endcrmcommercialbankingnew.pegatsdemo.com/BNYImages/RCI/Cheque2.jpg",
+          "ChequeNumber": "01000",
+          "CifNbr": "9912345999",
+          "CustomerName": "New Wave Energy Solutions",
+          "DepositAmount": "85.000000000",
+          "pxObjClass": "PegaCPMFS-Data-RCIChequeDetails"
+      },
+      {
+          "AccountNumber": "9889999998",
+          "CheckDate": "2017-10-12",
+          "ChequeImagePath": "http://end2endcrmcommercialbankingnew.pegatsdemo.com/BNYImages/RCI/Cheque3.png",
+          "ChequeNumber": "01025",
+          "CifNbr": "9912345999",
+          "CustomerName": "New Wave Energy Solutions",
+          "DepositAmount": "400.000000000",
+          "pxObjClass": "PegaCPMFS-Data-RCIChequeDetails"
+      }
+  ],
+  "pyMapping": [
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "PegaCPMFS-Data-RCIChequeDetails",
+          "pyColumnName": ".CheckDate",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "CheckDate"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "PegaCPMFS-Data-RCIChequeDetails",
+          "pyColumnName": ".AccountNumber",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "AccountNumber"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "PegaCPMFS-Data-RCIChequeDetails",
+          "pyColumnName": ".ChequeImagePath",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "ChequeImagePath"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "PegaCPMFS-Data-RCIChequeDetails",
+          "pyColumnName": ".ChequeNumber",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "ChequeNumber"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "PegaCPMFS-Data-RCIChequeDetails",
+          "pyColumnName": ".CifNbr",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "CifNbr"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "PegaCPMFS-Data-RCIChequeDetails",
+          "pyColumnName": ".CustomerName",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "CustomerName"
+      },
+      {
+          "pxObjClass": "Embed-ReportMapping",
+          "pyClassName": "PegaCPMFS-Data-RCIChequeDetails",
+          "pyColumnName": ".DepositAmount",
+          "pyDoNotIgnoreRelatedClassInGroup": "true",
+          "pyIsMetaData": "false",
+          "pyPropertyName": "DepositAmount"
+      }
+  ],
+  "pyPreparedValues": [
+      "%New Wave Energy%"
+  ],
+  "pyReportDefinition": {
+      "pxCommitDateTime": "2019-05-09T12:48:41.238Z",
+      "pxCreateDateTime": "2019-05-09T06:36:32.373Z",
+      "pxCreateOperator": "sruthi",
+      "pxCreateOpName": "Sruthi",
+      "pxCreateSystemID": "pega",
+      "pxHostId": "46121e0e7b2612907c4dfdd5954e937d",
+      "pxInsId": "!GETRCICHEQUEDETAILS",
+      "pxInsName": "PEGACPMFS-DATA-RCICHEQUEDETAILS!GETRCICHEQUEDETAILS",
+      "pxLimitedAccess": "Dev",
+      "pxObjClass": "Rule-Obj-Report-Definition",
+      "pxReportVersion": "6.2",
+      "pxSaveDateTime": "2019-05-09T12:48:41.233Z",
+      "pxUpdateDateTime": "2019-05-09T09:29:25.455Z",
+      "pxUpdateOperator": "sruthi",
+      "pxUpdateOpName": "Sruthi",
+      "pxUpdateSystemID": "pega",
+      "pyAccessibilityCount": "0",
+      "pyAccessibilityLevel": "0",
+      "pyBaseRule": "false",
+      "pyBrowserSupportLevel": "0",
+      "pyClassName": "PegaCPMFS-Data-RCIChequeDetails",
+      "pyCompact": "false",
+      "pyDeleteMemo": "wip",
+      "pyDisplayMode": "basic",
+      "pyJavaClassName": "Rule_Obj_Report_Definition_PegaCPMFS_Data_RCIChequeDetails_GetRCIChequeDetails_Action_20190509T092903_866_GMT",
+      "pyJavaGenerateAPIVersion": "04-02",
+      "pyLabel": "GetRCIChequeDetails",
+      "pyLabelOld": "GetRCIChequeDetails",
+      "pyMemo": "wip",
+      "pyPreviousApplicationName": "BNYService",
+      "pyReportTitle": "GetRCIChequeDetails",
+      "pyRuleAvailable": "Yes",
+      "pyRuleName": "GetRCIChequeDetails",
+      "pyRuleSet": "BNY",
+      "pyRuleSetVersion": "01-01-01",
+      "pySortDateCircumWithinRSMajor": "true",
+      "pySPRuleSetName": "sruthi@",
+      "pyStreamName": "GetRCIChequeDetails",
+      "pyTemplateDisplayText": "No ruleset versions available",
+      "pyValueChanged": "false",
+      "pyXMLSignature": "<methodSignature><pyStepsPageAliases></pyStepsPageAliases></methodSignature>",
+      "pzChecksum": "349778840",
+      "pzIndexCount": "17",
+      "pzInsKey": "RULE-OBJ-REPORT-DEFINITION PEGACPMFS-DATA-RCICHEQUEDETAILS GETRCICHEQUEDETAILS #20190509T063632.373 GMT",
+      "pzInvalidateCss": "true",
+      "pzOriginalInstanceKey": "RULE-OBJ-REPORT-DEFINITION PEGACPMFS-DATA-RCICHEQUEDETAILS GETRCICHEQUEDETAILS #20190509T063632.373 GMT",
+      "pzRuleSetVersionMajor": "01",
+      "pzRuleSetVersionMinor": "01",
+      "pzRuleSetVersionPatch": "01",
+      "pxAPIMethodReferences": [],
+      "pxNamedPageReferences": [],
+      "pxRuleReferences": [
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!DEPOSIT AMOUNT",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Deposit amount",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION PEGACPMFS-DATA-RCICHEQUEDETAILS GETRCICHEQUEDETAILS #20190509T063632.373 GMT",
+              "pzIndexes": {
+                  "RuleReference": "1"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!CHEQUE IMAGE PATH",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Cheque image path",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION PEGACPMFS-DATA-RCICHEQUEDETAILS GETRCICHEQUEDETAILS #20190509T063632.373 GMT",
+              "pzIndexes": {
+                  "RuleReference": "2"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!CHECK DATE",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Check date",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION PEGACPMFS-DATA-RCICHEQUEDETAILS GETRCICHEQUEDETAILS #20190509T063632.373 GMT",
+              "pzIndexes": {
+                  "RuleReference": "3"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "PegaCPMFS-Data-RCIChequeDetails",
+              "pxRuleFamilyName": "CHEQUEIMAGEPATH",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "ChequeImagePath",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION PEGACPMFS-DATA-RCICHEQUEDETAILS GETRCICHEQUEDETAILS #20190509T063632.373 GMT",
+              "pzIndexes": {
+                  "RuleReference": "4"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "PegaCPMFS-Data-RCIChequeDetails",
+              "pxRuleFamilyName": "CHEQUENUMBER",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "ChequeNumber",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION PEGACPMFS-DATA-RCICHEQUEDETAILS GETRCICHEQUEDETAILS #20190509T063632.373 GMT",
+              "pzIndexes": {
+                  "RuleReference": "5"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "PegaCPMFS-Data-RCIChequeDetails",
+              "pxRuleFamilyName": "ACCOUNTNUMBER",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "AccountNumber",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION PEGACPMFS-DATA-RCICHEQUEDETAILS GETRCICHEQUEDETAILS #20190509T063632.373 GMT",
+              "pzIndexes": {
+                  "RuleReference": "6"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!CUSTOMER NAME",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Customer name",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION PEGACPMFS-DATA-RCICHEQUEDETAILS GETRCICHEQUEDETAILS #20190509T063632.373 GMT",
+              "pzIndexes": {
+                  "RuleReference": "7"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "PegaCPMFS-Data-RCIChequeDetails",
+              "pxRuleFamilyName": "CUSTOMERNAME",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "CustomerName",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION PEGACPMFS-DATA-RCICHEQUEDETAILS GETRCICHEQUEDETAILS #20190509T063632.373 GMT",
+              "pzIndexes": {
+                  "RuleReference": "8"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "PegaCPMFS-Data-RCIChequeDetails",
+              "pxRuleFamilyName": "CHECKDATE",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "CheckDate",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION PEGACPMFS-DATA-RCICHEQUEDETAILS GETRCICHEQUEDETAILS #20190509T063632.373 GMT",
+              "pzIndexes": {
+                  "RuleReference": "9"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "PegaCPMFS-Data-RCIChequeDetails",
+              "pxRuleFamilyName": "PEGACPMFS-DATA-RCICHEQUEDETAILS",
+              "pxRuleObjClass": "Rule-Obj-Class",
+              "pyRuleName": "PegaCPMFS-Data-RCIChequeDetails",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION PEGACPMFS-DATA-RCICHEQUEDETAILS GETRCICHEQUEDETAILS #20190509T063632.373 GMT",
+              "pzIndexes": {
+                  "RuleReference": "10"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!ACCOUNT NUMBER",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Account number",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION PEGACPMFS-DATA-RCICHEQUEDETAILS GETRCICHEQUEDETAILS #20190509T063632.373 GMT",
+              "pzIndexes": {
+                  "RuleReference": "11"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "PegaCPMFS-Data-RCIChequeDetails",
+              "pxRuleFamilyName": "CIFNBR",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "CifNbr",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION PEGACPMFS-DATA-RCICHEQUEDETAILS GETRCICHEQUEDETAILS #20190509T063632.373 GMT",
+              "pzIndexes": {
+                  "RuleReference": "12"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!GETRCICHEQUEDETAILS",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption GetRCIChequeDetails",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION PEGACPMFS-DATA-RCICHEQUEDETAILS GETRCICHEQUEDETAILS #20190509T063632.373 GMT",
+              "pzIndexes": {
+                  "RuleReference": "13"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!CHEQUE NUMBER",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption Cheque number",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION PEGACPMFS-DATA-RCICHEQUEDETAILS GETRCICHEQUEDETAILS #20190509T063632.373 GMT",
+              "pzIndexes": {
+                  "RuleReference": "14"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "@baseclass",
+              "pxRuleFamilyName": "PYCAPTION!CIF NUMBER",
+              "pxRuleObjClass": "Rule-Obj-FieldValue",
+              "pyRuleName": "pyCaption CIF number",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION PEGACPMFS-DATA-RCICHEQUEDETAILS GETRCICHEQUEDETAILS #20190509T063632.373 GMT",
+              "pzIndexes": {
+                  "RuleReference": "15"
+              }
+          },
+          {
+              "pxObjClass": "Embed-Reference-Rule",
+              "pxRuleClassName": "PegaCPMFS-Data-RCIChequeDetails",
+              "pxRuleFamilyName": "DEPOSITAMOUNT",
+              "pxRuleObjClass": "Rule-Obj-Property",
+              "pyRuleName": "DepositAmount",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION PEGACPMFS-DATA-RCICHEQUEDETAILS GETRCICHEQUEDETAILS #20190509T063632.373 GMT",
+              "pzIndexes": {
+                  "RuleReference": "16"
+              }
+          }
+      ],
+      "pxWarnings": [
+          {
+              "pxIsWarningJustified": "false",
+              "pxObjClass": "Embed-Warning",
+              "pxWarningCreatedTime": "2019-05-09T06:47:55.731Z",
+              "pxWarningCreateOperator": "sruthi",
+              "pxWarningDetails": "(Rule-Obj-Report-Definition)pxFilterConditionsNoIndexes",
+              "pxWarningMessage": "(Rule-Obj-Report-Definition)pxFilterConditionsNoIndexes",
+              "pxWarningName": "Filter conditions do not use database indexes",
+              "pxWarningRuleSetType": "PEGA",
+              "pxWarningSeverity": "3",
+              "pxWarningType": "Performance",
+              "pzIndexOwnerKey": "RULE-OBJ-REPORT-DEFINITION PEGACPMFS-DATA-RCICHEQUEDETAILS GETRCICHEQUEDETAILS #20190509T063632.373 GMT",
+              "pzIndexes": {
+                  "Warnings": "0"
+              }
+          }
+      ],
+      "pyContent": {
+          "pxIsSummary": "false",
+          "pxObjClass": "Embed-ReportContent",
+          "pyClassName": "PegaCPMFS-Data-RCIChequeDetails",
+          "pyContentPageName": "pyReportContentPage",
+          "pyDoNotUseSortOrderForGrouping": "false",
+          "pyGetCachedDistinctValues": "false",
+          "pyGetDistinctRows": "true",
+          "pyMaxRecords": "0",
+          "pyQueryTimeoutValue": "0",
+          "pyReportContentPageName": "D_RCIChequeDetails",
+          "pyRowLevelSecurityApplied": "false",
+          "pyUnionNotApplied": "false",
+          "ValidationMap": "{}",
+          "pyAppContextInfo": {
+              "pxObjClass": "Embed-AppContextInfo"
+          },
+          "pyFields": {
+              "pxObjClass": "Embed-ReportFields",
+              "pyAggregate": [],
+              "pyGroupBy": [],
+              "pyListFields": [
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Check date",
+                      "pyFieldName": ".CheckDate",
+                      "pySortOrder": "99999"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Account number",
+                      "pyFieldName": ".AccountNumber",
+                      "pySortOrder": "99999"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Cheque image path",
+                      "pyFieldName": ".ChequeImagePath",
+                      "pySortOrder": "99999"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Cheque number",
+                      "pyFieldName": ".ChequeNumber",
+                      "pySortOrder": "99999"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "CIF number",
+                      "pyFieldName": ".CifNbr",
+                      "pySortOrder": "99999"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Customer name",
+                      "pyFieldName": ".CustomerName",
+                      "pySortOrder": "99999"
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportListFields",
+                      "pyFieldLabel": "Deposit amount",
+                      "pyFieldName": ".DepositAmount",
+                      "pySortOrder": "99999"
+                  }
+              ]
+          },
+          "pyFilters": {
+              "pxObjClass": "Embed-ReportFilters",
+              "pyFilterLogic": "F1 OR F2 OR F3 OR F4",
+              "pyGetDistinctRows": "true",
+              "pyShowLabels": "true",
+              "pyAppContextInfo": {
+                  "pxObjClass": "Embed-AppContextInfo"
+              },
+              "pyFilter": [
+                  {
+                      "pxObjClass": "Embed-ReportFilter",
+                      "pyACIsAssoc": "false",
+                      "pyCaseInsensitive": "false",
+                      "pyDataType": "Text",
+                      "pyFieldLabel": "Account number",
+                      "pyFilterName": ".AccountNumber",
+                      "pyFilterOperation": "IS NULL",
+                      "pyFilterValue": "Param.AccountNumber",
+                      "pyIsLeftOperandAFunction": "false",
+                      "pyIsRightOperandAFunction": "false",
+                      "pyLogicLabel": "F1",
+                      "pyPromptType": "AllAccess",
+                      "pySkipValidation": "false",
+                      "pyUseNullIfEmpty": "true"
+                  },
+                  {
+                      "pxCreateDateTime": "2019-05-09T06:38:40.576Z",
+                      "pxCreateOperator": "sruthi",
+                      "pxCreateOpName": "Sruthi",
+                      "pxCreateSystemID": "pega",
+                      "pxObjClass": "Embed-ReportFilter",
+                      "pyACIsAssoc": "false",
+                      "pyCaseInsensitive": "false",
+                      "pyDataType": "Text",
+                      "pyFieldLabel": "Cheque number",
+                      "pyFilterName": ".ChequeNumber",
+                      "pyFilterOperation": "IS NULL",
+                      "pyFilterValue": "Param.ChequeNumber",
+                      "pyIsLeftOperandAFunction": "false",
+                      "pyIsRightOperandAFunction": "false",
+                      "pyLogicLabel": "F2",
+                      "pyPromptType": "AllAccess",
+                      "pySkipValidation": "false",
+                      "pyUseNullIfEmpty": "true"
+                  },
+                  {
+                      "pxCreateDateTime": "2019-05-09T06:38:54.491Z",
+                      "pxCreateOperator": "sruthi",
+                      "pxCreateOpName": "Sruthi",
+                      "pxCreateSystemID": "pega",
+                      "pxObjClass": "Embed-ReportFilter",
+                      "pyACIsAssoc": "false",
+                      "pyCaseInsensitive": "false",
+                      "pyDataType": "Text",
+                      "pyFieldLabel": "CIF number",
+                      "pyFilterName": ".CifNbr",
+                      "pyFilterOperation": "IS NULL",
+                      "pyFilterValue": "Param.CifNbr",
+                      "pyIsLeftOperandAFunction": "false",
+                      "pyIsRightOperandAFunction": "false",
+                      "pyLogicLabel": "F3",
+                      "pyPromptType": "AllAccess",
+                      "pySkipValidation": "false",
+                      "pyUseNullIfEmpty": "true"
+                  },
+                  {
+                      "pxCreateDateTime": "2019-05-09T06:39:08.170Z",
+                      "pxCreateOperator": "sruthi",
+                      "pxCreateOpName": "Sruthi",
+                      "pxCreateSystemID": "pega",
+                      "pxObjClass": "Embed-ReportFilter",
+                      "pyACIsAssoc": "false",
+                      "pyCaseInsensitive": "false",
+                      "pyDataType": "Text",
+                      "pyFieldLabel": "Customer name",
+                      "pyFilterName": ".CustomerName",
+                      "pyFilterOperation": "Contains",
+                      "pyFilterValue": "Param.CustomerName",
+                      "pyFilterValueUI": "New Wave Energy",
+                      "pyIsLeftOperandAFunction": "false",
+                      "pyIsRightOperandAFunction": "false",
+                      "pyLogicLabel": "F4",
+                      "pyPromptType": "AllAccess",
+                      "pySkipValidation": "false",
+                      "pyUseNullIfEmpty": "true"
+                  }
+              ],
+              "pyQueryTokenList": [
+                  "1",
+                  "OR",
+                  "2",
+                  "OR",
+                  "3",
+                  "OR",
+                  "4"
+              ]
+          },
+          "pyHavingFilters": {
+              "pxObjClass": "Embed-ReportFilters-Having",
+              "pyFilter": []
+          },
+          "pyInsertInfo": {
+              "pySecurity": {}
+          },
+          "pyPagesAndClasses": [
+              {
+                  "pxObjClass": "Embed-PagesAndClasses",
+                  "pyPagesAndClassesClass": "PegaCPMFS-Data-RCIChequeDetails"
+              }
+          ],
+          "pyPaging": {
+              "pxMorePages": "false",
+              "pxObjClass": "Embed-ReportPaging",
+              "pyAlignment": "Right",
+              "pyPosition": "Top",
+              "pyReturnTotalResultCount": "true",
+              "pySortMode": "dataset",
+              "pyWindowSize": "10"
+          },
+          "pyParameters": [
+              {
+                  "pxObjClass": "Embed-MethodParams",
+                  "pyParametersParamDesc": "Cheque Number",
+                  "pyParametersParamName": "ChequeNumber",
+                  "pyParametersParamType": "Text"
+              },
+              {
+                  "pxCreateDateTime": "2019-05-09T06:37:50.162Z",
+                  "pxCreateOperator": "sruthi",
+                  "pxCreateOpName": "Sruthi",
+                  "pxCreateSystemID": "pega",
+                  "pxObjClass": "Embed-MethodParams",
+                  "pyParametersParamDesc": "Customer Name",
+                  "pyParametersParamName": "CustomerName",
+                  "pyParametersParamType": "Text"
+              },
+              {
+                  "pxCreateDateTime": "2019-05-09T06:37:56.041Z",
+                  "pxCreateOperator": "sruthi",
+                  "pxCreateOpName": "Sruthi",
+                  "pxCreateSystemID": "pega",
+                  "pxObjClass": "Embed-MethodParams",
+                  "pyParametersParamDesc": "Customer ID",
+                  "pyParametersParamName": "CifNbr",
+                  "pyParametersParamType": "Text"
+              },
+              {
+                  "pxCreateDateTime": "2019-05-09T06:38:00.916Z",
+                  "pxCreateOperator": "sruthi",
+                  "pxCreateOpName": "Sruthi",
+                  "pxCreateSystemID": "pega",
+                  "pxObjClass": "Embed-MethodParams",
+                  "pyParametersParamDesc": "Account Number",
+                  "pyParametersParamName": "AccountNumber",
+                  "pyParametersParamType": "Text"
+              }
+          ],
+          "pyReportRank": {
+              "pxObjClass": "Embed-ReportRank",
+              "pyRankField": {
+                  "pxObjClass": "Embed-ReportListFields"
+              }
+          },
+          "pyReportStatsInfo": {
+              "pxObjClass": "Embed-ReportStatisticsInfo",
+              "pyModeofExecution": "embedded",
+              "pyReportClassName": "PegaCPMFS-Data-RCIChequeDetails",
+              "pyReportInsKey": "RULE-OBJ-REPORT-DEFINITION PEGACPMFS-DATA-RCICHEQUEDETAILS GETRCICHEQUEDETAILS #20190509T063632.373 GMT",
+              "pyReportStreamName": "GetRCIChequeDetails"
+          },
+          "pySecurity": {
+              "pxObjClass": "Embed-ReportSecurity",
+              "pyPrivilegeList": [
+                  {
+                      "pxObjClass": "Embed-Rule-PrivilegeSecurity"
+                  }
+              ]
+          },
+          "pySource": {
+              "pxObjClass": "Embed-ReportSource",
+              "pyAllowApproximation": "false",
+              "pyIncludeAllDescendantclasses": "true",
+              "pyUseImplementationClass": "true",
+              "pyAssociations": [],
+              "pyIndexInfo": [],
+              "pyJoinInfo": [],
+              "pyRowKeyInfo": {
+                  "pxObjClass": "Embed-ReportRowKeyInfo",
+                  "pyGetRowKey": "false",
+                  "pxResults": [
+                      {
+                          "pyLabel": ".ChequeNumber"
+                      },
+                      {
+                          "pyLabel": ".CifNbr"
+                      },
+                      {
+                          "pyLabel": ".AccountNumber"
+                      }
+                  ],
+                  "pyRowKeys": [
+                      ".ChequeNumber",
+                      ".CifNbr",
+                      ".AccountNumber"
+                  ]
+              },
+              "pySetQueries": {
+                  "pxObjClass": "Embed-ReportSetQueries",
+                  "pySetQueryInfo": []
+              },
+              "pySubReportFrom": {
+                  "pxObjClass": "Embed-SubReportInfo",
+                  "pyColumns": [],
+                  "pyFilters": {
+                      "pxObjClass": "Embed-ReportFilters",
+                      "pyFilter": []
+                  }
+              },
+              "pySubReportInfo": []
+          }
+      },
+      "pyContentSource": {
+          "pxObjClass": "Embed-SummaryParams"
+      },
+      "pyDrillDown": {
+          "pxObjClass": "Embed-ReportDrillDown",
+          "pzDrillDownFilters": {
+              "pxObjClass": "Embed-ReportFilters"
+          }
+      },
+      "pyIndirectIncludes": [
+          {
+              "pxObjClass": "Embed-Alias"
+          }
+      ],
+      "pyPagesAndClasses": [
+          {
+              "pxObjClass": "Embed-PagesAndClasses",
+              "pyPagesAndClassesClass": "PegaCPMFS-Data-RCIChequeDetails"
+          }
+      ],
+      "pyParameters": [
+          {
+              "pxObjClass": "Embed-MethodParams",
+              "pyParametersParamDesc": "Cheque Number",
+              "pyParametersParamName": "ChequeNumber",
+              "pyParametersParamType": "Text"
+          },
+          {
+              "pxCreateDateTime": "2019-05-09T06:37:50.162Z",
+              "pxCreateOperator": "sruthi",
+              "pxCreateOpName": "Sruthi",
+              "pxCreateSystemID": "pega",
+              "pxObjClass": "Embed-MethodParams",
+              "pyParametersParamDesc": "Customer Name",
+              "pyParametersParamName": "CustomerName",
+              "pyParametersParamType": "Text"
+          },
+          {
+              "pxCreateDateTime": "2019-05-09T06:37:56.041Z",
+              "pxCreateOperator": "sruthi",
+              "pxCreateOpName": "Sruthi",
+              "pxCreateSystemID": "pega",
+              "pxObjClass": "Embed-MethodParams",
+              "pyParametersParamDesc": "Customer ID",
+              "pyParametersParamName": "CifNbr",
+              "pyParametersParamType": "Text"
+          },
+          {
+              "pxCreateDateTime": "2019-05-09T06:38:00.916Z",
+              "pxCreateOperator": "sruthi",
+              "pxCreateOpName": "Sruthi",
+              "pxCreateSystemID": "pega",
+              "pxObjClass": "Embed-MethodParams",
+              "pyParametersParamDesc": "Account Number",
+              "pyParametersParamName": "AccountNumber",
+              "pyParametersParamType": "Text"
+          }
+      ],
+      "pyReportMetaData": {
+          "pxIsSummary": "false",
+          "pxObjClass": "Embed-ReportMetaDataInfo"
+      },
+      "pyRMAction": {
+          "pxObjClass": "Embed-RuleManagement"
+      },
+      "pySource": {},
+      "pyUI": {
+          "pxObjClass": "Embed-ReportUI",
+          "pyCategory": "crmAccContReports",
+          "pyIgnoreFormattingExcelExport": "false",
+          "pyIgnoreFormattingPDFExport": "false",
+          "pyIgnoreSkinPDFExport": "true",
+          "pyIsCertified": "false",
+          "pyReportContentPageName": "pyReportContentPage",
+          "pyShowUnExposedProperties": "false",
+          "pyUseAlternateDb": "false",
+          "pzIsSummary": "false",
+          "pyBody": {
+              "pxObjClass": "Embed-ReportBody",
+              "pyCustomGroupingEnabled": "false",
+              "pyCustomRowEnabled": "false",
+              "pyExportGroupingToExcel": "false",
+              "pyGroupingEnabled": "false",
+              "pyGroupingSortNumber": "1",
+              "pyHeaderDisplay": "Default",
+              "pySpreadSheetStyle": "false",
+              "pyCustomFiltering": {
+                  "pxObjClass": "Embed-ReportCustomPrompt",
+                  "pyEnableCustomFiltering": "false",
+                  "pyPromptPageName": "CustomFilter"
+              },
+              "pyReportRank": {
+                  "pxObjClass": "Embed-ReportRank",
+                  "pyPartitionType": "All",
+                  "pyRankUIField": {
+                      "pxObjClass": "Embed-ReportUIFields"
+                  }
+              },
+              "pyRows": {
+                  "pxObjClass": "Embed-ReportRows",
+                  "pyEvents": {
+                      "pxObjClass": "Embed-ReportEvents",
+                      "pyEventList": [
+                          {
+                              "pxObjClass": "Embed-ReportEvent"
+                          }
+                      ]
+                  }
+              },
+              "pyUIFields": [
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyDataType": "Date",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".CheckDate",
+                      "pyFieldLabel": "Check date",
+                      "pyFieldName": ".CheckDate",
+                      "pyHide": "false",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyDataType": "Text",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".AccountNumber",
+                      "pyFieldLabel": "Account number",
+                      "pyFieldName": ".AccountNumber",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyACIsAssoc": "false",
+                      "pyDataType": "Text",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".ChequeImagePath",
+                      "pyFieldLabel": "Cheque image path",
+                      "pyFieldName": ".ChequeImagePath",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyACIsAssoc": "false",
+                      "pyDataType": "Text",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".ChequeNumber",
+                      "pyFieldLabel": "Cheque number",
+                      "pyFieldName": ".ChequeNumber",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyACIsAssoc": "false",
+                      "pyDataType": "Text",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".CifNbr",
+                      "pyFieldLabel": "CIF number",
+                      "pyFieldName": ".CifNbr",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyACIsAssoc": "false",
+                      "pyDataType": "Text",
+                      "pyDisplayValues": "false",
+                      "pyEchoFieldName": ".CustomerName",
+                      "pyFieldLabel": "Customer name",
+                      "pyFieldName": ".CustomerName",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  },
+                  {
+                      "pxObjClass": "Embed-ReportUIFields",
+                      "pyACIsAssoc": "false",
+                      "pyDataType": "Decimal",
+                      "pyDisplayValues": "false",
+                      "pyFieldLabel": "Deposit amount",
+                      "pyFieldName": ".DepositAmount",
+                      "pyFieldFormat": {
+                          "pxObjClass": "Embed-ReportHtmlProp"
+                      },
+                      "pySQLFunction": {
+                          "pxObjClass": "Embed-UserFunction"
+                      }
+                  }
+              ],
+              "pyUIFilters": {
+                  "pxObjClass": "Embed-ReportFilters",
+                  "pyFilterLogic": "F1 OR F2 OR F3 OR F4",
+                  "pyGetDistinctRows": "true",
+                  "pyShowLabels": "true",
+                  "pyAppContextInfo": {
+                      "pxObjClass": "Embed-AppContextInfo"
+                  },
+                  "pyFilter": [
+                      {
+                          "pxObjClass": "Embed-ReportFilter",
+                          "pyACIsAssoc": "false",
+                          "pyCaseInsensitive": "false",
+                          "pyDataType": "Text",
+                          "pyFieldLabel": "Account number",
+                          "pyFilterName": ".AccountNumber",
+                          "pyFilterOperation": "=",
+                          "pyFilterValue": "Param.AccountNumber",
+                          "pyIsLeftOperandAFunction": "false",
+                          "pyIsRightOperandAFunction": "false",
+                          "pyLogicLabel": "F1",
+                          "pyPromptType": "AllAccess",
+                          "pySkipValidation": "false",
+                          "pyUseNullIfEmpty": "true"
+                      },
+                      {
+                          "pxCreateDateTime": "2019-05-09T06:38:40.576Z",
+                          "pxCreateOperator": "sruthi",
+                          "pxCreateOpName": "Sruthi",
+                          "pxCreateSystemID": "pega",
+                          "pxObjClass": "Embed-ReportFilter",
+                          "pyACIsAssoc": "false",
+                          "pyCaseInsensitive": "false",
+                          "pyDataType": "Text",
+                          "pyFieldLabel": "Cheque number",
+                          "pyFilterName": ".ChequeNumber",
+                          "pyFilterOperation": "=",
+                          "pyFilterValue": "Param.ChequeNumber",
+                          "pyIsLeftOperandAFunction": "false",
+                          "pyIsRightOperandAFunction": "false",
+                          "pyLogicLabel": "F2",
+                          "pyPromptType": "AllAccess",
+                          "pySkipValidation": "false",
+                          "pyUseNullIfEmpty": "true"
+                      },
+                      {
+                          "pxCreateDateTime": "2019-05-09T06:38:54.491Z",
+                          "pxCreateOperator": "sruthi",
+                          "pxCreateOpName": "Sruthi",
+                          "pxCreateSystemID": "pega",
+                          "pxObjClass": "Embed-ReportFilter",
+                          "pyACIsAssoc": "false",
+                          "pyCaseInsensitive": "false",
+                          "pyDataType": "Text",
+                          "pyFieldLabel": "CIF number",
+                          "pyFilterName": ".CifNbr",
+                          "pyFilterOperation": "=",
+                          "pyFilterValue": "Param.CifNbr",
+                          "pyIsLeftOperandAFunction": "false",
+                          "pyIsRightOperandAFunction": "false",
+                          "pyLogicLabel": "F3",
+                          "pyPromptType": "AllAccess",
+                          "pySkipValidation": "false",
+                          "pyUseNullIfEmpty": "true"
+                      },
+                      {
+                          "pxCreateDateTime": "2019-05-09T06:39:08.170Z",
+                          "pxCreateOperator": "sruthi",
+                          "pxCreateOpName": "Sruthi",
+                          "pxCreateSystemID": "pega",
+                          "pxObjClass": "Embed-ReportFilter",
+                          "pyACIsAssoc": "false",
+                          "pyCaseInsensitive": "false",
+                          "pyDataType": "Text",
+                          "pyFieldLabel": "Customer name",
+                          "pyFilterName": ".CustomerName",
+                          "pyFilterOperation": "Contains",
+                          "pyFilterValue": "Param.CustomerName",
+                          "pyIsLeftOperandAFunction": "false",
+                          "pyIsRightOperandAFunction": "false",
+                          "pyLogicLabel": "F4",
+                          "pyPromptType": "AllAccess",
+                          "pySkipValidation": "false",
+                          "pyUseNullIfEmpty": "true"
+                      }
+                  ]
+              },
+              "pyUIHavingFilters": {
+                  "pxObjClass": "Embed-ReportFilters-Having",
+                  "pyFilter": []
+              }
+          },
+          "pyChart": {
+              "pxCreateDateTime": "2019-05-09T06:36:32.377Z",
+              "pxCreateOperator": "sruthi",
+              "pxCreateOpName": "Sruthi",
+              "pxCreateSystemID": "pega",
+              "pxObjClass": "Embed-ReportGraph",
+              "pyChartOutputType": "Flash",
+              "pyEnable2D3D": "false",
+              "pyEnableChart": "false",
+              "pyGraphType": "Column",
+              "pyHeight": "300",
+              "pyIs3D": "false",
+              "pyLegendDirection": "horizontal",
+              "pyLegendEnable": "true",
+              "pyLegendPlacement": "bottom",
+              "pyMax": "2",
+              "pyMaxSubTypeIcons": "1",
+              "pyMin": "1",
+              "pyOptionsToEdit": "Format",
+              "pyShowAllGridLines": "true",
+              "pyShowAllLabelsMS": "true",
+              "pyShowAllLabelsSS": "false",
+              "pyShowDataTips": "true",
+              "pyShowMaxButton": "true",
+              "pyShowNewWindow": "true",
+              "pyShowSVButton": "true",
+              "pySize": "Large",
+              "pySliderEnabled": "false",
+              "pySliderGroupCount": "0",
+              "pySliderWidth": "200",
+              "pySubChartIndex": "1",
+              "pySubType": "clustered",
+              "pyTimeOut": "0",
+              "pyTitleEnabled": "true",
+              "pyTitleFontSize": "14",
+              "pyTitleFontStyle": "regular",
+              "pyUseFusionChart": "true",
+              "pyUseSolidColorsFor2D": "true",
+              "pyUseV6Chart": "true",
+              "pyValueOfChart": "0",
+              "pyWidth": "400",
+              "pxResults": [
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Check date",
+                      "pyStringType": "Date",
+                      "pyTargetProperty": ".CheckDate",
+                      "pzIndexCount": "1"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Account number",
+                      "pyStringType": "Text",
+                      "pyTargetProperty": ".AccountNumber",
+                      "pzIndexCount": "2"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Cheque image path",
+                      "pyStringType": "Text",
+                      "pyTargetProperty": ".ChequeImagePath",
+                      "pzIndexCount": "3"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Cheque number",
+                      "pyStringType": "Text",
+                      "pyTargetProperty": ".ChequeNumber",
+                      "pzIndexCount": "4"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "CIF number",
+                      "pyStringType": "Text",
+                      "pyTargetProperty": ".CifNbr",
+                      "pzIndexCount": "5"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Customer name",
+                      "pyStringType": "Text",
+                      "pyTargetProperty": ".CustomerName",
+                      "pzIndexCount": "6"
+                  },
+                  {
+                      "pxObjClass": "Rule-Obj-Property",
+                      "pyLabel": "Deposit amount",
+                      "pyStringType": "Decimal",
+                      "pyTargetProperty": ".DepositAmount",
+                      "pzIndexCount": "7"
+                  }
+              ],
+              "pyBackgroundColor": [
+                  {
+                      "pxObjClass": "Embed-ReportGraph-BGColor"
+                  }
+              ],
+              "pyCategoryAxis": [],
+              "pyGauge": {
+                  "pxObjClass": "Embed-ReportGraph-Gauge",
+                  "pyBorderAlpha": "1",
+                  "pyBorderThickness": "1",
+                  "pyCoverAlpha": "1",
+                  "pyCoverRadius": "0",
+                  "pyDateTimeFormat": "dd:hh:mm:ss",
+                  "pyDateTimeInput": "milliseconds",
+                  "pyMajorTickLength": "10",
+                  "pyMajorTicks": "0",
+                  "pyMajorTickThickness": "3",
+                  "pyMinorTickLength": "5",
+                  "pyMinorTicks": "0",
+                  "pyMinorTickThickness": "1",
+                  "pyNeedleAlpha": "1",
+                  "pyNeedleBaseWidth": "0",
+                  "pyNeedleThickness": "3",
+                  "pyNeedleTopWidth": "0",
+                  "pyNumberCurrencySymbol": "$",
+                  "pyNumberFormat": "general",
+                  "pyNumberNegativeSign": "false",
+                  "pyNumberPrecision": "2",
+                  "pyNumberThouSeperator": "true",
+                  "pyShowValue": "true",
+                  "pyTickLocation": "Inside",
+                  "pyValueIndex": "1",
+                  "pyFieldHTMLParams": {
+                      "pyTempPlaceHolder": "TempPlaceHolder"
+                  }
+              },
+              "pyPie": {
+                  "pxObjClass": "Embed-ReportGraph-Pie",
+                  "pyDateTimeFormat": "dd:hh:mm:ss",
+                  "pyDateTimeInput": "milliseconds",
+                  "pyExplodeRadius": "0.1",
+                  "pyInnerRadius": "0.1",
+                  "pyLabelEnabled": "false",
+                  "pyLabelField": "false",
+                  "pyLabelNameField": "false",
+                  "pyLabelPercent": "false",
+                  "pyNumberCurrencySymbol": "$",
+                  "pyNumberNegativeSign": "false",
+                  "pyNumberPrecision": "2",
+                  "pyNumberThouSeperator": "true",
+                  "pyFieldHTMLParams": {
+                      "pyTempPlaceHolder": "TempPlaceHolder"
+                  },
+                  "pyNameFieldHTMLParams": {
+                      "pyTempPlaceHolder": "TempPlaceHolder"
+                  }
+              },
+              "pyXY": {
+                  "pxObjClass": "Embed-ReportGraph-XY",
+                  "pyInterpolateValues": "true",
+                  "pySwapSeries": "false",
+                  "pyTitleFontSize": "8",
+                  "pyTitleFontStyle": "regular",
+                  "pyUniformMinor": "true",
+                  "pyUseColorRanges": "false",
+                  "pyArea": {
+                      "pxObjClass": "Embed-ReportGraph-XY-Area"
+                  },
+                  "pyBar": {
+                      "pxObjClass": "Embed-ReportGraph-XY-Bar",
+                      "pyMaxBarWidth": "0"
+                  },
+                  "pyBubble": {
+                      "pxObjClass": "Embed-ReportGraph-XY-Bubble"
+                  },
+                  "pyColumn": {
+                      "pxObjClass": "Embed-ReportGraph-XY-Column",
+                      "pyMaxColWidth": "0"
+                  },
+                  "pyDataAxis": [
+                      {
+                          "pxObjClass": "Embed-ReportGraph-XY-DataAxis",
+                          "pyAxisCurrencySymbol": "$",
+                          "pyAxisDateTimeFormat": "dd:hh:mm:ss",
+                          "pyAxisDateTimeInput": "milliseconds",
+                          "pyAxisDecimalSeperator": "true",
+                          "pyAxisNegativeSign": "false",
+                          "pyAxisPrecision": "2",
+                          "pyAxisScale": "Linear",
+                          "pyAxisThouSeperator": "true",
+                          "pyMissingsAsZero": "true",
+                          "pyNumberFormat": "general",
+                          "pyShowGridLines": "true",
+                          "pyShowLabels": "true",
+                          "pyAxisHTMLParams": {
+                              "pyTempPlaceHolder": "TempPlaceHolder"
+                          },
+                          "pyDataAxisList": [
+                              {
+                                  "pxObjClass": "Embed-ReportGraph-XY-Axis",
+                                  "pyFieldIndex": "0"
+                              }
+                          ]
+                      }
+                  ],
+                  "pyGroupAxis": [
+                      {
+                          "pxObjClass": "Embed-ReportGraph-XY-GroupAxis",
+                          "pyAxisScale": "Category",
+                          "pyShowGridLines": "true",
+                          "pyShowLabels": "true",
+                          "pyAxisHTMLParams": {
+                              "pyTempPlaceHolder": "TempPlaceHolder"
+                          },
+                          "pyGroupAxisList": [
+                              {
+                                  "pxObjClass": "Embed-ReportGraph-XY-Axis",
+                                  "pyFieldIndex": "0"
+                              }
+                          ],
+                          "pySubGrpAxisHTMLParams": {
+                              "pyTempPlaceHolder": "TempPlaceHolder"
+                          }
+                      }
+                  ],
+                  "pyLine": {
+                      "pxObjClass": "Embed-ReportGraph-XY-Line",
+                      "pyDropShadow": "true",
+                      "pyLineWeight": "3"
+                  }
+              }
+          },
+          "pyHeader": {
+              "pxObjClass": "Embed-ReportHeader",
+              "pyButtons": {
+                  "pxObjClass": "Embed-ReportButtons",
+                  "pyButtonList": [
+                      {
+                          "pxObjClass": "Embed-ReportButton",
+                          "pyButtonCaption": "Save",
+                          "pyButtonToolTip": "Save",
+                          "pyImage": "report_save",
+                          "pyType": "Icon"
+                      },
+                      {
+                          "pxObjClass": "Embed-ReportButton",
+                          "pyButtonCaption": "Save As",
+                          "pyButtonToolTip": "Save As",
+                          "pyFunction": "\"showSaveAsDialog(this, event);\"",
+                          "pyImage": "report_saveas",
+                          "pyType": "Icon"
+                      },
+                      {
+                          "pxObjClass": "Embed-ReportButton",
+                          "pyButtonCaption": "Print",
+                          "pyButtonToolTip": "Print",
+                          "pyFunction": "window.print()",
+                          "pyImage": "report_print",
+                          "pyType": "Icon"
+                      },
+                      {
+                          "pxObjClass": "Embed-ReportButton",
+                          "pyButtonCaption": "Column Summary",
+                          "pyButtonToolTip": "Edit Columns To Include",
+                          "pyFunction": "columnSummary(this,event)",
+                          "pyImage": "report_colsmry",
+                          "pyType": "Icon"
+                      },
+                      {
+                          "pxObjClass": "Embed-ReportButton",
+                          "pyButtonCaption": "Append Column",
+                          "pyButtonToolTip": "Append Column",
+                          "pyFunction": "AppendColumn(this,event)",
+                          "pyImage": "report_plus",
+                          "pyType": "Icon"
+                      },
+                      {
+                          "pxObjClass": "Embed-ReportButton",
+                          "pyButtonCaption": "RepTtitle",
+                          "pyButtonToolTip": "Edit Report Title",
+                          "pyFunction": "\"changeReportTitle(this,event);\"",
+                          "pyImage": "report_title",
+                          "pyType": "Icon"
+                      },
+                      {
+                          "pxObjClass": "Embed-ReportButton",
+                          "pyButtonCaption": "Chart",
+                          "pyButtonToolTip": "Add Or Edit Chart",
+                          "pyFunction": "\"showChartOptions(this, event);\"",
+                          "pyImage": "report_bar",
+                          "pyLabel": "manager",
+                          "pyType": "Icon"
+                      },
+                      {
+                          "pxObjClass": "Embed-ReportButton",
+                          "pyButtonCaption": "ExpExcel",
+                          "pyButtonToolTip": "Export To Excel",
+                          "pyFunction": "\"exportToExcel(this,event);\"",
+                          "pyImage": "report_excel",
+                          "pyType": "Icon"
+                      },
+                      {
+                          "pxObjClass": "Embed-ReportButton",
+                          "pyButtonCaption": "ExpPDF",
+                          "pyButtonToolTip": "Export To PDF",
+                          "pyFunction": "\"exportToPDF(this,event);\"",
+                          "pyImage": "report_pdf",
+                          "pyType": "Icon"
+                      },
+                      {
+                          "pxObjClass": "Embed-ReportButton",
+                          "pyButtonCaption": "Filtering",
+                          "pyButtonToolTip": "Advanced Filtering",
+                          "pyFunction": "\"advancedFiltering(this,event);\"",
+                          "pyImage": "report_filtering",
+                          "pyType": "Icon"
+                      }
+                  ]
+              }
+          },
+          "pyPromptSectionParams": {
+              "pxObjClass": "Embed-ReportPromptSection",
+              "pzDisplayFilterPrompt": "true"
+          },
+          "pySecurity": {
+              "pxObjClass": "Embed-ReportSecurity",
+              "pyPrivilegeList": [
+                  {
+                      "pxObjClass": "Embed-Rule-PrivilegeSecurity"
+                  }
+              ]
+          },
+          "pySmartInfo": {
+              "pxObjClass": "Embed-ReportSmartInfo",
+              "pySingleClickSInfo": {
+                  "pxObjClass": "Embed-ReportSingleClickInfo",
+                  "pyEnabled": "false",
+                  "pySmartInfoHeader": "Additional Information"
+              }
+          },
+          "pySource": {
+              "pxObjClass": "Embed-ReportSource",
+              "pyAllowApproximation": "false",
+              "pyIncludeAllDescendantclasses": "true",
+              "pyUseImplementationClass": "true",
+              "pyAssociations": [],
+              "pyIndexInfo": [],
+              "pyJoinInfo": [],
+              "pyRowKeyInfo": {
+                  "pxObjClass": "Embed-ReportRowKeyInfo",
+                  "pyGetRowKey": "false",
+                  "pxResults": [
+                      {
+                          "pyLabel": ".ChequeNumber"
+                      },
+                      {
+                          "pyLabel": ".CifNbr"
+                      },
+                      {
+                          "pyLabel": ".AccountNumber"
+                      }
+                  ],
+                  "pyRowKeys": [
+                      ".ChequeNumber",
+                      ".CifNbr",
+                      ".AccountNumber"
+                  ]
+              },
+              "pySubReportInfo": []
+          },
+          "pyUserInteractions": {
+              "pxObjClass": "Embed-ReportUserInteractions",
+              "pyDesignModeActualResults": "true",
+              "pyDisableDrillDown": "false",
+              "pyDrillDownReportName": "pyDefaultReport",
+              "pyEnableAddFilters": "true",
+              "pyExpandAllGroupBy": "true",
+              "pyFixedHeader": "false",
+              "pyPromptForFilters": "false",
+              "pyShowDataOnly": "false",
+              "pyPagingParams": {
+                  "pxMorePages": "false",
+                  "pxObjClass": "Embed-ReportPaging",
+                  "pyAlignment": "Right",
+                  "pyPosition": "Top",
+                  "pyReturnTotalResultCount": "true",
+                  "pySortMode": "dataset",
+                  "pyWindowSize": "10"
+              },
+              "pyReportToolbarOptions": {
+                  "pxObjClass": "Embed-ReportViewerCommands",
+                  "pyDisplayCommandMenu": "true",
+                  "pyDisplayCommandRibbon": "true",
+                  "pyDisplayReportHeader": "true",
+                  "pyEnableAdvancedFiltering": "true",
+                  "pyEnableAppendColumn": "true",
+                  "pyEnableConvertToList": "true",
+                  "pyEnableEditChart": "true",
+                  "pyEnableEditColumns": "true",
+                  "pyEnableEditing": "true",
+                  "pyEnableEditReportTitle": "true",
+                  "pyEnableExportToExcel": "true",
+                  "pyEnableExportToPDF": "true",
+                  "pyEnableFilters": "true",
+                  "pyEnablePrint": "true",
+                  "pyEnableSave": "true",
+                  "pyEnableSaveAs": "true",
+                  "pyEnableSummarize": "true"
+              }
+          }
+      }
+  },
+  "pzPerformanceSettings": []
+}

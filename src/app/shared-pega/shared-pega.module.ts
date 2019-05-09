@@ -30,6 +30,7 @@ import {
   , RecentInteractionsComponent
   , RecentTreasurerCaseListComponent
   , RelAccountListComponent
+  , RciCheckResultTableComponent
   , StatusRecentTreasurerComponent
   , TransactionSummaryComponent
   , WorkitemComponent
@@ -72,6 +73,7 @@ import {
     , RecentInteractionsComponent
     , RecentTreasurerCaseListComponent
     , RelAccountListComponent
+    , RciCheckResultTableComponent
     , StatusRecentTreasurerComponent
     , TransactionSummaryComponent
     , ValueTrendIndicatorArrowComponent
@@ -99,6 +101,7 @@ import {
     , RecentInteractionsComponent
     , RecentTreasurerCaseListComponent
     , RelAccountListComponent
+    , RciCheckResultTableComponent
     , StatusRecentTreasurerComponent
     , TransactionSummaryComponent
     , WorkitemComponent
