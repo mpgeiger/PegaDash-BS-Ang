@@ -20,6 +20,7 @@ export * from './casedetails/casedetails.component';
 export * from './create-rcicase/create-rcicase.component';
 export * from './maintabs/maintabs.component';
 export { ModalWorkItemComponent } from './modal-container/modal-container.component';
+export * from './nba-capture-response/nba-capture-response.component';
 export * from './nba-offer/nba-offer.component';
 export * from './nba-teaser/nba-teaser.component';
 export * from './open-by-work-type/open-by-work-type.component';

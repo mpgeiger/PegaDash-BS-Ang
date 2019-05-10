@@ -3,6 +3,7 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NbaTeaserComponent } from './../layout/pega/nba-teaser/nba-teaser.component';
+import { NbaCaptureResponseComponent } from './../layout/pega/nba-capture-response/nba-capture-response.component';
 // import { ModalComponent } from './../layout/bs-component/components/modal/modal.component';
 // import { OpenAssignmentService } from './../_messages/openassignment.service';
 
@@ -24,6 +25,7 @@ import {
   , EmailByCategoryComponent
 
   , InCorrAutoReplyTrendComponent
+
   , NbaOfferComponent
   , OpenByWorkTypeComponent
   , PegaPieChartComponent
@@ -66,6 +68,7 @@ import {
     , InCorrAutoReplyTrendComponent
     // , ChartDataLabels
     , ModalWorkItemComponent
+    , NbaCaptureResponseComponent
     , NbaOfferComponent
     , NbaTeaserComponent
     , OpenByWorkTypeComponent
@@ -94,6 +97,7 @@ import {
       , InCorrAutoReplyTrendComponent
 
     // , ChartDataLabels
+    , NbaCaptureResponseComponent
     , NbaOfferComponent
     , NbaTeaserComponent
     , OpenByWorkTypeComponent

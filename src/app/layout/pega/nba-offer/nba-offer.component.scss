@@ -123,6 +123,13 @@
     transform: rotateY(-180deg);
   }
 
+  .tp-box__result {
+    // background: #23262d;
+    -webkit-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+
 
   .nbaButtons {
     padding: 5px;

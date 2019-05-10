@@ -2,13 +2,13 @@
 
   <div class="tp-wrapper">
     <div class="tp-box" [@flipState]="flip">
-      <div class="tp-box__side tp-box__front">
+      <div class="tp-box__side tp-box__front" >
         <mat-card-content id="card-content">
           <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar>
           <div class="containerX">
             <app-nba-teaser [EligibilityDescription]="item.EligibilityDescription" [WebMessage]="item.WebMessage"></app-nba-teaser>
             <div class="row nbaButtons" style="justify-content: center">
-              <button mat-button class="btn btn-primary" (click)="toggleFlip()">Click for more information</button>
+              <button mat-button class="btn btn-primary" (click)="toggleFlip('offer')">Click for more information</button>
             </div>
           </div>
         </mat-card-content>
@@ -29,18 +29,33 @@
             <div class="row nbaButtons">
               <div class="col-spaced">
                 <!-- <button mat-button class="btn btn-primary" (click)="nbaOnClick()">Yes</button> -->
-                <button mat-button class="btn btn-primary" (click)="captureResponse('Accepted','Positive')">Yes</button>
+                <button mat-button class="btn btn-primary" (click)="captureResponseAction('yes')">Yes</button>
               </div>
               <div class="col-spaced">
-                <button mat-button class="btn btn-secondary"  (click)="captureResponse('Later','Neutral')" aria-setsize="small">Later</button>
+                <!-- <button mat-button class="btn btn-secondary"  (click)="captureResponseAction('later')" aria-setsize="small">Later</button> -->
+                <button mat-button class="btn btn-secondary"  (click)="toggleFlip('detail')" aria-setsize="small">Later</button>
               </div>
               <div class="col-spaced">
-                <button mat-button class="btn btn-light" (click)="captureResponse('Rejected','Negative')">Not Interested</button>
+                <button mat-button class="btn btn-light" (click)="captureResponseAction('no')">Not Interested</button>
               </div>
+            </div>
+            <div>
+
             </div>
           </mat-card-content>
         </div>
       </div>
+      <div>
+        <div class="tp-box__side tp-box__result">
+          <mat-card-content id="card-content">
+            XXX results
+              <app-nba-capture-response [Message]="captureResponseResults.Message" [CaseID]="captureResponseResults.CaseID"></app-nba-capture-response>
+            </mat-card-content>
+            </div>
+            </div>
+
+
+
     </div>
   </div>
 </div>

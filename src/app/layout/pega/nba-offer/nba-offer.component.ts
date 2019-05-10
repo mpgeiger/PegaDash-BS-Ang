@@ -4,6 +4,12 @@ import { NbaService } from '../../../_services/nba.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import stubbedResults from '../../../../assets/json/NBA_REST.json';
 
+
+export interface CaptureResponseResults {
+  Status: string;
+  Message: string;
+  CaseID: string;
+}
 @Component({
   selector: 'app-nba-offer',
   templateUrl: './nba-offer.component.html',
@@ -21,7 +27,18 @@ import stubbedResults from '../../../../assets/json/NBA_REST.json';
     ])
   ]
 })
+
+//   {"Status":"OK","Message":"Response captured sucessfully","CaseID":"PR-20348"}
+
+// class CaptureResponseResults {
+//   constructor(public Status: string,
+//               public Message: string,
+//               public CaseID: string){}
+// }
+
 export class NbaOfferComponent implements OnInit {
+
+
   NbaCaptureResponse: any = {
     'CustomerID': 'PEGASAFS-WORK-CONTACT CON-488',
     'ContainerName': 'BNYServices',
@@ -38,6 +55,7 @@ export class NbaOfferComponent implements OnInit {
   };
 
 
+
   constructor(
     private nba: NbaService
   ) { }
@@ -45,6 +63,7 @@ export class NbaOfferComponent implements OnInit {
   showLoading = true;
   nbas: any = [];
   flip = 'inactive';
+  captureResponseResults: any = {'Status': '', 'Message': '', 'CaseID': ''};
 
   ngOnInit() {
     // this.getCases();
@@ -108,18 +127,22 @@ export class NbaOfferComponent implements OnInit {
    }
 
    captureResponse(outcome, behavior) {
+
+     //   Sample response for success
+     //
+
+
      const captureResponse = this.NbaCaptureResponse;
      captureResponse.RankedResults[0].Outcome = outcome;
      captureResponse.RankedResults[0].Behaviour = behavior;
      this.nba.captureNBAResponse(captureResponse).subscribe(
       response => {
         this.headers = response.headers;
-        // this.nbas = Object.keys(this.getNBAResults(response.body)).map(it => this.getNBAResults(response.body)[it]);
-       // localStorage.setItem('NBA_Offer', this.nbas.length.toString());
 
-        // localStorage.setItem('NBA_InteractionID', this.nbas.length.toString());
-
-        const  result = response.body;
+        const result: any = response.body;
+        this.captureResponseResults.Status = result.Status;
+        this.captureResponseResults.Message = result.Message;
+        this.captureResponseResults.CaseID = result.CaseID;
 
         // this.showLoading = false;
         // console.log('count of NBA_Offer-->  ', localStorage.getItem('NBA_Offer'));
@@ -129,16 +152,52 @@ export class NbaOfferComponent implements OnInit {
         alert('Error form unifiedtask:' + err.errors);
       }
     );
-   }
+    }
+
+    captureResponseAction(result) {
+      if (result === 'yes') {
+        this.captureResponse('Accepted', 'Positive');
+      } else if (result === 'no') {
+        this.captureResponse('Rejected', 'Negative');
+      } else if (result === 'later') {
+        this.captureResponse('Later', 'Neutral');
+      } else {
+        this.captureResponse('Later', 'Neutral');
+      }
+    }
 
    getNBAResults(data) {
     // localStorage.setItem('numUnifiedTaskList', data.pxResults.length);
     return data.ContainerList[0].RankedResults;
   }
 
-  toggleFlip() {
-    this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
+  // toggleFlip() {
+  //   this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
+  // }
+  toggleFlip(current) {
+    if (current = 'offer') {
+
+      // this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
+      this.flip = 'active';
+    } else {
+      this.flip = 'inactive';
+    } else if (current = 'detail') {
+      // this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
+      this.flip = 'active';
+    } else {
+      this.flip = 'inactive';
+    } if (current = 'result') {
+      this.flip = 'active';
+      // this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
+    } else {
+      this.flip = 'inactive';
+    }
+    console.log('in detail -->' + this.flip );
+    console.log('in offer -->' + this.flip );
+    console.log('in offer -->' + this.flip );
+
   }
+
 
   nbaOnClick() {
     window.open('https://www.bnymellon.com/us/en/what-we-do/investment-services/treasury-services/index.jsp', '_blank');
