@@ -12,5 +12,8 @@ export const endpoints = {
   PAGES: '/pages',
   DATA: '/data',
   REFRESH: '/refresh',
-  NBA: '/PRRestService/PegaMKTContainer/V2/Container'
+  NBA: '/PRRestService/PegaMKTContainer/V2',
+  NBACONTAINER: '/Container',
+  NBACAPTURERESPONSE: '/CaptureResponse/Initiate'
+
 };

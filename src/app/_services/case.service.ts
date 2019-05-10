@@ -157,6 +157,7 @@ export class CaseService {
 
   // get a case and a view layout
   getView(caseID, viewID) {
+    console.log('viewID-->' + viewID);
 
     const caseParams = new HttpParams();
     let caseHeaders = new HttpHeaders();

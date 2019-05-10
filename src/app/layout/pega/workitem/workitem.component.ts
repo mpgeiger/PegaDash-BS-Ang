@@ -40,8 +40,6 @@ import { GetCaseService } from '../../../_messages/getcase.service';
 // typically, the app-tab component will be created and then send a message
 // to the app-workitem to populate.
 //
-
-
 export class WorkitemComponent implements OnInit {
 
  @ViewChild(TopviewComponent) tvComp: TopviewComponent;

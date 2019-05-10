@@ -4,12 +4,29 @@ import { endpoints } from './endpoints';
 import { ReferenceHelper } from '../_helpers/reference-helper';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class NbaService {
 
   refHelper: ReferenceHelper = new ReferenceHelper();
+
+  NbaCaptureResponse = {
+    'CustomerID': 'PEGASAFS-WORK-CONTACT CON-488',
+    'ContainerName': 'BNYServices',
+    'RankedResults': [{
+      'Name': 'FXACHPayment',
+      'Issue': 'Sales',
+      'Group': 'Treasury',
+      'InteractionID': '5262371569457456502',
+      'Outcome': 'Accepted',
+      'Behaviour': 'Positive',
+      'Direction': 'Inbound',
+      'Channel': 'Web'
+    }]
+  };
 
   constructor(private http: HttpClient) { }
 
@@ -31,7 +48,7 @@ export class NbaService {
     nbaHeaders = nbaHeaders.append('Access-Control-Expose-Headers', 'etag');
 
     return this.http.get(this.nbaUrl + '/' + id,
-      { observe: 'response', params: nbaParams, headers: nbaHeaders});
+      { observe: 'response', params: nbaParams, headers: nbaHeaders });
   }
 
   // get a list of possible nba types to create
@@ -64,7 +81,7 @@ export class NbaService {
 
   // create a nba (with new or skip new)
   // createNba(id, content) {
-getCurrentNba(customerID, containerName) {
+  getCurrentNba(customerID, containerName) {
     const nbaParams = new HttpParams();
 
     const nbaBody: any = {};
@@ -77,10 +94,32 @@ getCurrentNba(customerID, containerName) {
     nbaHeaders = nbaHeaders.append('Authorization', 'Basic ' + encodedUser);
     nbaHeaders = nbaHeaders.append('Content-Type', 'application/json');
 
-    return this.http.post(this.nbaUrl, nbaBody,
-      { observe: 'response', params: nbaParams, headers: nbaHeaders});
+    const getNbaUrl = this.nbaUrl + endpoints.NBACONTAINER;
+    return this.http.post(getNbaUrl, nbaBody,
+      { observe: 'response', params: nbaParams, headers: nbaHeaders });
   }
 
+  // captureNBAResponse(outcome, behavior, interactionId) {
+  captureNBAResponse(captureResponse) {
+    const nbaParams = new HttpParams();
+    // const nbaBody: any = this.NbaCaptureResponse;
+    const nbaBody: any = captureResponse;
+
+    // nbaBody.RankedResults[0].Outcome = outcome;
+    // nbaBody.RankedResults[0].Behaviour = behavior;
+    // nbaBody.RankedResults[0].InteractionID = interactionId;
+    // nbaBody.ContainerName = containerName;
+    // nbaBody.content = content;
+    const encodedUser = localStorage.getItem('encodedUser');
+
+    let nbaHeaders = new HttpHeaders();
+    nbaHeaders = nbaHeaders.append('Authorization', 'Basic ' + encodedUser);
+    nbaHeaders = nbaHeaders.append('Content-Type', 'application/json');
+    const captureNbaUrl = this.nbaUrl + endpoints.NBACAPTURERESPONSE;
+
+    return this.http.post(captureNbaUrl, nbaBody,
+      { observe: 'response', params: nbaParams, headers: nbaHeaders });
+  }
   // update a nba, save to server
   // updateNba(nbaID, eTag, actionName, body) {
   //   let nbaParams = new HttpParams();

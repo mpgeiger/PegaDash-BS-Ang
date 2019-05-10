@@ -70,10 +70,11 @@
                   </i>
             </a>
             <mat-menu #mpgMenu="matMenu" class="megaMenu"  [class.mat-elevation-z20] overlapTrigger="false">
+                <form (click)="stopPropagation($event)">
                 <!-- give local reference and tell this is manu by assigning 'matMenu' -->
                 <!-- <button mat-menu-item *ngFor="let case of cases" (click)="createCaseType(case)">{{case.name}} -->
               <app-mega-menu></app-mega-menu>
-
+              </form>
               </mat-menu>
             <!--   Matt Geigers - Menu from calling case types
               END

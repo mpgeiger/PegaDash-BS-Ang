@@ -167,6 +167,10 @@ checkIfStubbed() {
         this.translate.use(language);
     }
 
+    stopPropagation(event) {
+      event.stopPropagation();
+  }
+
 
  }
 // export class HeroParentComponent {

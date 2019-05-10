@@ -22,6 +22,21 @@ import stubbedResults from '../../../../assets/json/NBA_REST.json';
   ]
 })
 export class NbaOfferComponent implements OnInit {
+  NbaCaptureResponse: any = {
+    'CustomerID': 'PEGASAFS-WORK-CONTACT CON-488',
+    'ContainerName': 'BNYServices',
+    'RankedResults': [{
+      'Name': 'FXACHPayment',
+      'Issue': 'Sales',
+      'Group': 'Treasury',
+      'InteractionID': '5262371569457456502',
+      'Outcome': 'Accepted',
+      'Behaviour': 'Positive',
+      'Direction': 'Inbound',
+      'Channel': 'Web'
+    }]
+  };
+
 
   constructor(
     private nba: NbaService
@@ -79,6 +94,9 @@ export class NbaOfferComponent implements OnInit {
          this.nbas = Object.keys(this.getNBAResults(response.body)).map(it => this.getNBAResults(response.body)[it]);
          localStorage.setItem('NBA_Offer', this.nbas.length.toString());
 
+         // localStorage.setItem('NBA_InteractionID', this.nbas.length.toString());
+
+
          this.showLoading = false;
          console.log('count of NBA_Offer-->  ', localStorage.getItem('NBA_Offer'));
          console.log(' NBA_Offer results-->  ', JSON.stringify(this.nbas));
@@ -87,6 +105,30 @@ export class NbaOfferComponent implements OnInit {
          alert('Error form unifiedtask:' + err.errors);
        }
      );
+   }
+
+   captureResponse(outcome, behavior) {
+     const captureResponse = this.NbaCaptureResponse;
+     captureResponse.RankedResults[0].Outcome = outcome;
+     captureResponse.RankedResults[0].Behaviour = behavior;
+     this.nba.captureNBAResponse(captureResponse).subscribe(
+      response => {
+        this.headers = response.headers;
+        // this.nbas = Object.keys(this.getNBAResults(response.body)).map(it => this.getNBAResults(response.body)[it]);
+       // localStorage.setItem('NBA_Offer', this.nbas.length.toString());
+
+        // localStorage.setItem('NBA_InteractionID', this.nbas.length.toString());
+
+        const  result = response.body;
+
+        // this.showLoading = false;
+        // console.log('count of NBA_Offer-->  ', localStorage.getItem('NBA_Offer'));
+        console.log(' CAPTURE RESPONSE NBA_Offer results-->  ' + JSON.stringify(result));
+      },
+      err => {
+        alert('Error form unifiedtask:' + err.errors);
+      }
+    );
    }
 
    getNBAResults(data) {

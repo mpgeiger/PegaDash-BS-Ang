@@ -28,13 +28,14 @@
             </div>
             <div class="row nbaButtons">
               <div class="col-spaced">
-                <button mat-button class="btn btn-primary" (click)="nbaOnClick()">Yes</button>
+                <!-- <button mat-button class="btn btn-primary" (click)="nbaOnClick()">Yes</button> -->
+                <button mat-button class="btn btn-primary" (click)="captureResponse('Accepted','Positive')">Yes</button>
               </div>
               <div class="col-spaced">
                 <button mat-button class="btn btn-secondary" (click)="toggleFlip()" aria-setsize="small">Later</button>
               </div>
               <div class="col-spaced">
-                <button mat-button class="btn btn-light" (click)="toggleFlip()">Not Interested</button>
+                <button mat-button class="btn btn-light" (click)="captureResponse('Rejected','Negative')">Not Interested</button>
               </div>
             </div>
           </mat-card-content>
