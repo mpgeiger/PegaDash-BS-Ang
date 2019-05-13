@@ -175,23 +175,40 @@ export class NbaOfferComponent implements OnInit {
   //   this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
   // }
   toggleFlip(current) {
-    if (current = 'offer') {
 
-      // this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
+    switch(current){
+      case 'offer':
       this.flip = 'active';
-    } else {
-      this.flip = 'inactive';
-    } else if (current = 'detail') {
-      // this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
+      break;
+
+      case 'result':
       this.flip = 'active';
-    } else {
-      this.flip = 'inactive';
-    } if (current = 'result') {
+      break;
+
+      case 'detail':
       this.flip = 'active';
-      // this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
-    } else {
-      this.flip = 'inactive';
+      default:
+      this.flip = 'active';
+
     }
+
+    // if (current = 'offer') {
+
+    //   // this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
+    //   this.flip = 'active';
+    // } else {
+    //   this.flip = 'inactive';
+    // } else if (current = 'detail') {
+    //   // this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
+    //   this.flip = 'active';
+    // } else {
+    //   this.flip = 'inactive';
+    // } if (current = 'result') {
+    //   this.flip = 'active';
+    //   // this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
+    // } else {
+    //   this.flip = 'inactive';
+    // }
     console.log('in detail -->' + this.flip );
     console.log('in offer -->' + this.flip );
     console.log('in offer -->' + this.flip );

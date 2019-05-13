@@ -93,16 +93,16 @@ export class LoginComponent implements OnInit {
                 this.glsservice.sendMessage('LoggedIn');
                 console.log('end D_CustomerSummary');
               // console.log('Logged In-->', operator.pyUserName);
-              this.router.navigate(['summary-page']);
             },
             err => {
               const sError = 'Errors getting data page: ' + err.message;
               console.log(' Login INSIDE error-->\n' + sError);
               // let snackBarRef = this.snackBar.open(sError, 'Ok');
             }
-          );
+            );
 
 
+            this.router.navigate(['summary-page']);
 
         }
       },
