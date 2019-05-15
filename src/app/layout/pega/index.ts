@@ -1,6 +1,7 @@
 export * from './casedetails/casedetails.component';
 export * from './caselist/caselist.component';
 export * from './create-rcicase/create-rcicase.component';
+export * from './home-page/home-page.component';
 export * from './maintabs/maintabs.component';
 export * from './mega-menu/mega-menu.component';
 export * from './modal/modal.component';

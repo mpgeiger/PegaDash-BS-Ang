@@ -1,3 +1,4 @@
+// import { HomePageComponent } from './../layout/pega/home-page/home-page.component';
 // import { ModalContainerComponent } from './../../../.history/src/app/layout/pega/modal-container/modal-container.component_20190514143918';
 // import { EmailByCategoryComponent } from './../layout/pega/kpi-report/email-by-category/email-by-category.component';
 
@@ -25,6 +26,7 @@ import {
   // , ModalContainerComponent
   , CreateCustomRCIcaseComponent
   , EmailByCategoryComponent
+  , HomePageComponent
 
   , InCorrAutoReplyTrendComponent
   , MegaMenuComponent
@@ -70,6 +72,7 @@ import {
     , ModalRCIContainerComponent
     , CreateCustomRCIcaseComponent
     , EmailByCategoryComponent
+    , HomePageComponent
     , InCorrAutoReplyTrendComponent
     // , ChartDataLabels
     // , ModalContainerComponent
@@ -100,7 +103,11 @@ import {
     // , HeroChildComponent
   ],
   exports: [
-      CaselistComponent
+    CaselistComponent
+      , CreateCustomRCIcaseComponent
+     , EmailByCategoryComponent
+      , HomePageComponent
+      , InCorrAutoReplyTrendComponent
       // , FileNameDialogComponent
       // , ModalContainerComponent
       , MegaMenuComponent
@@ -108,9 +115,6 @@ import {
       , ModalRCIContainerComponent
       , ModalRCIPegaComponent
       , ModalWorkItemComponent
-      , CreateCustomRCIcaseComponent
-      , EmailByCategoryComponent
-      , InCorrAutoReplyTrendComponent
 
 
     // , ChartDataLabels

@@ -14,6 +14,8 @@ import { LanguageTranslationModule } from './shared/modules/language-translation
 import { AuthGuard } from './shared';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+// import { HomeAccountsPageModule } from './layout/pega/home-accounts-page/home-accounts-page.module';
+// import { HomePageModule } from './layout/pega/home-page/home-page.module';
 
 // import { SharedPegaModule } from './shared-pega/shared-pega.module';
 
@@ -27,7 +29,8 @@ import { AppRoutingModule } from './app-routing.module';
       BrowserAnimationsModule,
       HttpClientModule,
       LanguageTranslationModule,
-      AppRoutingModule,
+      AppRoutingModule
+      // HomePageModule,
       // SharedPegaModule
     ],
     declarations: [

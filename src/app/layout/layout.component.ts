@@ -11,6 +11,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class LayoutComponent implements OnInit {
 
     collapedSideBar: boolean;
+    userFullName = localStorage.getItem('userFullName');
 
     constructor() {}
     nameLayout = new FormControl('');
