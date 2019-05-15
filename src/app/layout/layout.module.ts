@@ -40,6 +40,7 @@ import { TransactionSummaryComponent } from './pega/transaction-summary/transact
 // import { DatePickerComponent } from './bs-component/components/index';
 import { AppMaterialModule  } from '../app-material/app-material.module';
 import { FromCamelCase } from './pega/_pipes/fromCamelCase';
+// import { RciMashupComponent } from './pega/mashups/rci-mashup/rci-mashup.component';
 // import { RciCheckResultTableComponent } from './pega/customCases/rci-check-result-table/rci-check-result-table.component';
 // import { ValueTrendIndicatorArrowComponent } from './pega/kpi-report/value-trend-indicator-arrow/value-trend-indicator-arrow.component';
 // import { RelAccountListComponent } from './pega/rel-account-list/rel-account-list.component';

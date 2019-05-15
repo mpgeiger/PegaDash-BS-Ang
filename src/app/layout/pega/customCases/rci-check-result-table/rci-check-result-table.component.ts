@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, Input } from '@angular/core';
 import { DatapageService } from '../../../../_services/datapage.service';
 import { Subscription, Observable } from 'rxjs';
 import { HttpParams, HttpHeaders } from '@angular/common/http';
@@ -25,6 +25,10 @@ export interface ChequeInfo {
   styleUrls: ['./rci-check-result-table.component.scss']
 })
 export class RciCheckResultTableComponent implements OnInit {
+
+  @Input('recName') myRecName:string;
+  @Input('checkAm') myCheckAm:number;
+
   message: any;
   subscription: Subscription;
   showLoading = true;

@@ -1,3 +1,4 @@
+// import { ModalContainerComponent } from './../../../.history/src/app/layout/pega/modal-container/modal-container.component_20190514143918';
 // import { EmailByCategoryComponent } from './../layout/pega/kpi-report/email-by-category/email-by-category.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,17 +16,22 @@ import { ChartsModule as Ng2Charts } from 'ng2-charts';
 
 import { AppMaterialModule } from '../app-material/app-material.module';
 import { SharedPegaStarterPackModule } from './shared-pega-starterPackItems.module';
+import { RciMashupComponent } from '../layout/pega/mashups/rci-mashup/rci-mashup.component';
+import { SafeHtml, SafeStyle, SafeUrl } from '../layout/pega/_pipes/safe';
+
 import {
    CaselistComponent
   // , FileNameDialogComponent
   // , ModalContainerComponent
-  , MegaMenuComponent
-  , ModalRCIContainerComponent
   , CreateCustomRCIcaseComponent
   , EmailByCategoryComponent
 
   , InCorrAutoReplyTrendComponent
-
+  , MegaMenuComponent
+  // , ModalContainerComponent
+  , ModalRCIContainerComponent
+  , ModalRCIPegaComponent
+  , ModalWorkItemComponent
   , NbaOfferComponent
   , OpenByWorkTypeComponent
   , PegaPieChartComponent
@@ -39,7 +45,6 @@ import {
   , PWorkItemComponent
   , ValueTrendIndicatorArrowComponent
   , Workitem1Component
-  , ModalWorkItemComponent
   // , HeroChildComponent
 } from '../layout/pega';
 
@@ -67,6 +72,9 @@ import {
     , EmailByCategoryComponent
     , InCorrAutoReplyTrendComponent
     // , ChartDataLabels
+    // , ModalContainerComponent
+    , ModalRCIContainerComponent
+    , ModalRCIPegaComponent
     , ModalWorkItemComponent
     , NbaCaptureResponseComponent
     , NbaOfferComponent
@@ -75,14 +83,19 @@ import {
     , PegaPieChartComponent
     , RecentInteractionsComponent
     , RecentTreasurerCaseListComponent
-    , RelAccountListComponent
+    , RciMashupComponent
     , RciCheckResultTableComponent
+    , RelAccountListComponent
     , StatusRecentTreasurerComponent
     , TransactionSummaryComponent
     , ValueTrendIndicatorArrowComponent
     , WorkitemComponent
     , PWorkItemComponent
     , Workitem1Component
+
+    , SafeHtml
+    , SafeStyle
+    , SafeUrl
     // , HeroParentComponent
     // , HeroChildComponent
   ],
@@ -91,10 +104,14 @@ import {
       // , FileNameDialogComponent
       // , ModalContainerComponent
       , MegaMenuComponent
+      // , ModalContainerComponent
       , ModalRCIContainerComponent
+      , ModalRCIPegaComponent
+      , ModalWorkItemComponent
       , CreateCustomRCIcaseComponent
       , EmailByCategoryComponent
       , InCorrAutoReplyTrendComponent
+
 
     // , ChartDataLabels
     , NbaCaptureResponseComponent
@@ -104,8 +121,9 @@ import {
     , PegaPieChartComponent
     , RecentInteractionsComponent
     , RecentTreasurerCaseListComponent
-    , RelAccountListComponent
     , RciCheckResultTableComponent
+    , RciMashupComponent
+    , RelAccountListComponent
     , StatusRecentTreasurerComponent
     , TransactionSummaryComponent
     , WorkitemComponent
@@ -113,6 +131,10 @@ import {
     , ValueTrendIndicatorArrowComponent
     , Workitem1Component
     , ModalWorkItemComponent
+
+    , SafeHtml
+    , SafeStyle
+    , SafeUrl
     // , HeroParentComponent
     // , HeroChildComponent
   ],
@@ -120,6 +142,8 @@ import {
   //  FileNameDialogComponent
   //  , ModalContainerComponent
     ModalRCIContainerComponent
+  , RciMashupComponent
+   , ModalRCIPegaComponent
    , CreateCustomRCIcaseComponent
    , WorkitemComponent
    , ModalWorkItemComponent

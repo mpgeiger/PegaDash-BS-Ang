@@ -9,6 +9,9 @@
 <div class="col-12 align-center" width="800px">
   <!-- CARD -->
   <form ></form>
+<p>
+  Amount : xx {{foo.Amount}}
+</p>
   <div class="card bg-light mb-1">
     <!-- <div class="card-header">Header</div> -->
     <div class="card-body">
@@ -19,7 +22,7 @@
           <div class="col-2 float-right text-right">
             <h6>
               <label>
-                1025
+                1027
               </label>
             </h6>
           </div>
@@ -61,11 +64,16 @@
                   name="checkRecepient"
                   formControlName="CheckRecepient"
                   [matAutocomplete]="auto"
+                  (ngModelChange)="updatedVal($event)"
                   required
 
                 />
-                <mat-autocomplete #auto="matAutocomplete">
-                  <mat-option *ngFor="let option of filteredOptions | async" [value]="option"  >{{ option }}</mat-option>
+                <mat-autocomplete
+                  #auto="matAutocomplete"
+                  >
+                  <mat-option
+                     *ngFor="let option of filteredOptions | async" [value]="option"
+                     [ngClass]="{'hide-autocomplete': !showAutocomplete}" >{{ option }}</mat-option>
                 </mat-autocomplete>
               </mat-form-field>
               <p>
@@ -101,6 +109,8 @@
                   required
                   placeholder="Amount"
                   formControlName="Amount"
+                  [value]="rciCaseForm.controls.Amount"
+                  (ngModelChange)="valuechange('Amount',$event)"
                 />
               </mat-form-field>
 
@@ -170,6 +180,9 @@
           </div>
         </div>
       </form>
+      <p>
+        Amount : xx {{foo.Amount}}
+      </p>
       <div class="row align-right">
         <!-- <div class="col-12 form-group button-container float-right"> -->
         <div class="col-12 form-group button-container align-right">
@@ -184,7 +197,7 @@
       <!-- <div *ngIf="showMsg" > -->
       <div>
           <div class="row align-center" style="justify-content: center;padding-bottom: 10px;">
-          <app-rci-check-result-table></app-rci-check-result-table>
+          <app-rci-check-result-table [recName]="foo.CheckRecipient" [checkAm]="foo.Amount"></app-rci-check-result-table>
           </div>
         <!-- <div  > -->
         <div class="row align-center">

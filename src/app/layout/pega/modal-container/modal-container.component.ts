@@ -1,3 +1,4 @@
+// import { RciCheckResultTableComponent } from './../customCases/rci-check-result-table/rci-check-result-table.component';
 
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog, MatDialogRef, MatDialogConfig } from '@angular/material';
@@ -18,6 +19,7 @@ import { OpenNewCaseService } from '../../../_messages/opennewcase.service';
 
 
 import { Subscription } from 'rxjs';
+import { RciMashupComponent } from '../mashups/rci-mashup/rci-mashup.component';
 
 
 
@@ -57,8 +59,6 @@ import { Subscription } from 'rxjs';
   templateUrl: './modal-container.componentMPG.html',
   styleUrls: ['./modal-container.component.scss']
 })
-
-
 
 export class ModalRCIContainerComponent implements OnInit {
 
@@ -263,6 +263,58 @@ export class ModalWorkItemComponent implements OnInit {
 
   }
 
+  onNoClick(): void {
+    this.dialog.closeAll();
+  }
+}
+
+
+
+
+@Component({
+  selector: 'app-modal-rci-pega-mashup',
+  templateUrl: './modal-rciPega-mashup.component.html',
+  // templateUrl: './modal-container.componentMPG.html',
+  styleUrls: ['./modal-container.component.scss']
+})
+
+export class ModalRCIPegaComponent implements OnInit {
+
+  constructor(
+    private dialog: MatDialog
+  ) { }
+  @Input('master') masterName: string;
+
+  caseInstanceName = '';
+
+  rciDialogRef: MatDialogRef<RciMashupComponent>;
+
+  // @Input()('master') masterName: string;
+
+  ngOnInit() {
+    this.caseInstanceName = this.masterName;
+    // console.log( ' ## ModalRCIContainerComponent-->' + this.masterName);
+  }
+
+  public openRciMashupCaseDialog() {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = false;
+
+    dialogConfig.width = '70%';
+    dialogConfig.minWidth = '650px';
+    dialogConfig.minHeight = '400px';
+    dialogConfig.maxWidth = '1000px';
+
+    // dialogConfig.data = {
+    //   id: 1,
+    //   title: 'Angular For Beginners',
+    //   masterName: 'FOOBAR'
+    // };
+
+    this.rciDialogRef = this.dialog.open(RciMashupComponent, dialogConfig);
+  }
   onNoClick(): void {
     this.dialog.closeAll();
   }

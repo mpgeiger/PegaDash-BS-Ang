@@ -4,58 +4,49 @@
     <div class="row">
       <div class="col">
         <div class="card card-default">
-          <div class="card-header"><i class="fa fa-tasks"></i> Mega Menu</div>
-          <!-- <app-pworkitem></app-pworkitem> -->
-<!-- <app-mega-menu></app-mega-menu> -->
-<!-- <app-workitem></app-workitem> -->
-<app-modal-container-work-item></app-modal-container-work-item>
+          <div class="card-header"><i class="fa fa-tasks"></i>Mashup</div>
+          <div style="min-height: 400px;">
+              <app-rci-mashup></app-rci-mashup>
+          </div>
         </div>
       </div>
     </div>
-    <!-- <div class="row">
+    <div class="row">
       <div class="col">
         <div class="card card-default">
           <div class="card-header"><i class="fa fa-tasks"></i> Mega Menu</div>
-          <app-mega-menu></app-mega-menu>
+          <app-modal-container-work-item></app-modal-container-work-item>
         </div>
       </div>
-    </div> -->
+    </div>
     <div class="row">
-        <div class="col-lg-8">
-          <div class="card card-default">
-            <div class="card-header">
-              <i class="fa fa-tasks"></i> Account List <span class="badge  badge-pill badge-danger">{{ cases$ }}</span>
-            </div>
-            <!-- <app-caselist></app-caselist> -->
-            <!-- /.card-header -->
-            <!-- <app-unifiedtasklist></app-unifiedtasklist> -->
-            <!-- /.card-body -->
-            <app-rel-account-list></app-rel-account-list>
+      <div class="col-lg-8">
+        <div class="card card-default">
+          <div class="card-header">
+            <i class="fa fa-tasks"></i> Account List <span class="badge  badge-pill badge-danger">{{ cases$ }}</span>
           </div>
-          <!-- /.card -->
+          <app-rel-account-list></app-rel-account-list>
         </div>
-
-        <div class="col-lg-4">
-          <div class="card card-default">
-            <div class="card-header">
-              <i class="fa fa-tasks"></i> Recent Treasurer
-              <span class="badge  badge-pill badge-danger" ngModel="utCount">{{ D_RecentTreasurerCases$ }}</span>
-            </div>
-            <!-- /.card-header -->
-            <!-- <app-recentTreasurerCaseList></app-recentTreasurerCaseList> -->
-            <!-- <app-unifiedtask></app-unifiedtask> -->
-            <!-- /.card-body -->
-          </div>
-          <!-- /.card -->
-        </div>
+        <!-- /.card -->
       </div>
+
+      <div class="col-lg-4">
+        <div class="card card-default">
+          <div class="card-header">
+            <i class="fa fa-tasks"></i> Recent Treasurer
+            <span class="badge  badge-pill badge-danger" ngModel="utCount">{{ D_RecentTreasurerCases$ }}</span>
+          </div>
+        </div>
+        <!-- /.card -->
+      </div>
+    </div>
     <div class="row">
       <div class="col-lg-8">
         <div class="card card-default">
           <div class="card-header">
             <i class="fa fa-tasks"></i> Case List <span class="badge  badge-pill badge-danger">{{ cases$ }}</span>
           </div>
-           <app-caselist></app-caselist>
+          <app-caselist></app-caselist>
         </div>
         <!-- /.card -->
       </div>

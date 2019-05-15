@@ -25,6 +25,9 @@
 
 
 }
+::ng-deep .hide-autocomplete {
+  display: none;
+}
 
 .mpgClass {
   left: 33% !important;

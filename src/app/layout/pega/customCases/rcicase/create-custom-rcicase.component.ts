@@ -1,14 +1,15 @@
+// import { RciInstance } from './../../../../../../.history/src/app/layout/pega/customCases/rcicase/create-custom-rcicase.component_20190514082924';
 // import { ReactiveFormsModule } from '@angular/forms';
 // import { OnInit } from '@angular/core';
 // import { CaseService } from './../../../_services/case.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
-  import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { PegaErrors } from '../../../../_constants/PegaErrors';
 import { CaseService } from '../../../../_services/case.service';
-import {debounceTime, distinctUntilChanged, map, startWith} from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map, startWith } from 'rxjs/operators';
 // import { diPublic } from '@angular/core/src/render3/di';
 import { JsonPipe } from '@angular/common';
 import { StringDecoder } from 'string_decoder';
@@ -17,16 +18,16 @@ import { stringify } from '@angular/core/src/util';
 
 // import { DatapageService } from '../../../../_services/datapage.service';
 
-  const checkRecipientList = [
+const checkRecipientList = [
 
-   'New Wave Energy Solutions'
+  'New Wave Energy Solutions'
   , 'New Wave Europe Ltd.'
   , 'New Wave Americas Inc.'
   , 'New Wave Equity'
   , 'New Wave Asia Ltd.'
 ];
-  const checkSenderList = [
-    'Sally Jones'
+const checkSenderList = [
+  'Sally Jones'
   , 'Siam Industries'
   , 'Singer Foundation'
   , 'New Wave Equity'
@@ -55,6 +56,16 @@ export interface RciInstance {
 @Injectable() // class annotation as Injectable
 // const myNbgDateMMddYYYY = {'month': 6, 'day': 23, 'year': 2019};
 export class CreateCustomRCIcaseComponent implements OnInit {
+  constructor(
+    // private fb: FormBuilder,
+    private cservice: CaseService
+    // , private formControl: FormControl
+    // , private formGroup: FormGroup
+  ) { }
+
+  showAutocomplete = false;
+
+  foo = {} as RciInstance;
 
   rciCaseForm = new FormGroup({
     CheckDate: new FormControl(''),
@@ -97,7 +108,7 @@ export class CreateCustomRCIcaseComponent implements OnInit {
 
   // dor Approx Date field
   // myNbgDate: myNbgDateMMddYYYY;
-  myObject2 = {month: 6, day: 23, year: 2019};
+  myObject2 = { month: 6, day: 23, year: 2019 };
   // dp: {'year': 2019, 'month': 6, 'day': 23};
   dpModel: any;
 
@@ -105,10 +116,10 @@ export class CreateCustomRCIcaseComponent implements OnInit {
   state: Object = new Object();
   // rciObj = 	{content : {
   //   Amount : '321.12',
-	// 	CheckRecepient : 'ACME Fin',
-	// 	CheckSender : 'Sally Jones',
-	// 	DaytimePhoneNumber : '555-867-5309',
-	// 	Month : 'August'
+  // 	CheckRecepient : 'ACME Fin',
+  // 	CheckSender : 'Sally Jones',
+  // 	DaytimePhoneNumber : '555-867-5309',
+  // 	Month : 'August'
   // }};
 
   // myObjStr = JSON.stringify(this.rciObj);
@@ -116,30 +127,34 @@ export class CreateCustomRCIcaseComponent implements OnInit {
   caseData: any = {};
   showMsg = false;
   term = '';
-  constructor(
-    // private fb: FormBuilder,
-    private cservice: CaseService
-    // , private formControl: FormControl
-    // , private formGroup: FormGroup
-  ) { }
+  // if (this.tpComp.formValid()) {
+  // $('bcActive').active();
+  // this.isProgress = true;
+  // console;  // this.state = this.rciObj.content;
+  // this.caseData.Month = 'March';
+  // this.caseData.CheckRecepient = 'New Wave Americas Inc.';
+  // this.caseData.CheckSender = 'Sun Investment Inc.';
+  // let today: number = Date.now();
+
   ngOnInit() {
     // this.setDp();
     this.filteredOptions = this.rciCaseForm.controls['CheckRecepient'].valueChanges
     .pipe(
+      debounceTime(1000),
       startWith(''),
       map(value => this._filter(value))
-    );
-    // throw new Error('Method not implemented.');
-  }
+      );
+      // throw new Error('Method not implemented.');
+    }
 
-  private _filter(value: string): string[] {
-    const filterValue = value.toLowerCase();
+    private _filter(value: string): string[] {
+      const filterValue = value.toLowerCase();
 
-    return this.options.filter(option => option.toLowerCase().includes(filterValue));
-  }
-  // ngOnInit(): void {
-  //   throw new Error("Method not implemented.");
-  // }
+      return this.options.filter(option => option.toLowerCase().includes(filterValue));
+    }
+// ngOnInit(): void {
+//   throw new Error("Method not implemented.");
+// }
 
 /*
   OnInit (): void {
@@ -172,147 +187,158 @@ export class CreateCustomRCIcaseComponent implements OnInit {
 // }
 
 
-  createNew() {
-    // if (this.tpComp.formValid()) {
-      // $('bcActive').active();
-      // this.isProgress = true;
+createNew() {
 console.log(' IN CREATE RCI');
-      // this.state = this.rciObj.content;
-      // this.caseData.Month = 'March';
-      // this.caseData.CheckRecepient = 'New Wave Americas Inc.';
-      // this.caseData.CheckSender = 'Sun Investment Inc.';
-      const today: number = Date.now();
 
-      this.caseData = this.rciCaseForm.value;
-      // console.log(' CHECK DATE -->' + this.caseData.CheckDate );
+  this.caseData = this.rciCaseForm.value;
+  // console.log(' CHECK DATE -->' + this.caseData.CheckDate );
 
-      // this.onSubmit();
-      // console.log('CASE_DATA-->' + JSON.stringify(this.caseData));
+  // this.onSubmit();
+  // console.log('CASE_DATA-->' + JSON.stringify(this.caseData));
 
-      // if (this.isEmptyEntry(this.caseData.CheckRecepient)) {this.caseData.CheckRecepient = 'Mr. Jones'; }
-      // if (this.isEmptyEntry(this.caseData.CheckSender)) {this.caseData.CheckRecepient = 'Henry Winkler'; }
-      // if (this.isEmptyEntry(this.caseData.CheckDate)) {this.caseData.CheckDate = '02/02/2019'; }
-      // if (this.isEmptyEntry(this.caseData.Amount)) {this.caseData.Amount = 8675309.00; }
-      // if (this.isEmptyEntry(this.caseData.Memo)) {this.caseData.Memo = 'Default Clear Trade'; }
+  // if (this.isEmptyEntry(this.caseData.CheckRecepient)) {this.caseData.CheckRecepient = 'Mr. Jones'; }
+  // if (this.isEmptyEntry(this.caseData.CheckSender)) {this.caseData.CheckRecepient = 'Henry Winkler'; }
+  // if (this.isEmptyEntry(this.caseData.CheckDate)) {this.caseData.CheckDate = '02/02/2019'; }
+  // if (this.isEmptyEntry(this.caseData.Amount)) {this.caseData.Amount = 8675309.00; }
+  // if (this.isEmptyEntry(this.caseData.Memo)) {this.caseData.Memo = 'Default Clear Trade'; }
 
-      // console.log('Post Parse CASE_DATA CASE -->' + JSON.stringify(this.caseData));
+  // console.log('Post Parse CASE_DATA CASE -->' + JSON.stringify(this.caseData));
 
-      this.state = this.caseData;
+  this.state = this.caseData;
 
-      // console.log('currentCaseID-->' + this.currentCaseID$ );
-      // console.log('state-->' + JSON.stringify(this.state ));
+  // console.log('currentCaseID-->' + this.currentCaseID$ );
+  // console.log('state-->' + JSON.stringify(this.state ));
 
-      this.cservice.createCase(this.currentCaseID$, this.caseData).subscribe(
-        response => {
-          const casePrefix = 'PEGACPMFS-WORK ';
+  this.cservice.createCase(this.currentCaseID$, this.caseData).subscribe(
+    response => {
+      const casePrefix = 'PEGACPMFS-WORK ';
 
-          const caseID = response.body['ID'];
-          const caseName = caseID.split(' ')[1];
+      const caseID = response.body['ID'];
+      const caseName = caseID.split(' ')[1];
 
-          const oAssignment = new Object();
-          oAssignment['pxRefObjectInsName'] = caseName;
-          oAssignment['pzInsKey'] = response.body['nextAssignmentID'];
+      const oAssignment = new Object();
+      oAssignment['pxRefObjectInsName'] = caseName;
+      oAssignment['pzInsKey'] = response.body['nextAssignmentID'];
 
-          this.showMsg = true;
+      this.showMsg = true;
 
-          console.log(' FULL RCI_Create response-->' + JSON.stringify(response));
-          // renaming tab
+      console.log(' FULL RCI_Create response-->' + JSON.stringify(response));
+      // renaming tab
 
-          // MPG this.rtservice.sendMessage("New", caseName);
+      // MPG this.rtservice.sendMessage("New", caseName);
 
-          // so renaming the tab, causes the tab to reload
-          // so we need to send it a message to open the assigment, because
-          // it lost it with the reload
-          // MPG this.oaservice.sendMessage(caseName, oAssignment);
+      // so renaming the tab, causes the tab to reload
+      // so we need to send it a message to open the assigment, because
+      // it lost it with the reload
+      // MPG this.oaservice.sendMessage(caseName, oAssignment);
 
-          // new item created, update worklist
-         // MPG  this.rwlservice.sendMessage('Work');
+      // new item created, update worklist
+      // MPG  this.rwlservice.sendMessage('Work');
 
 
 
 
 
-        },
-        err => {
-          this.isProgress = false;
-          this.handleErrors(err);
-        }
-      );
-
+    },
+    err => {
+      this.isProgress = false;
+      this.handleErrors(err);
     }
+  );
+
+}
 
     private isEmptyEntry(entry) {
-      if (entry === undefined ) {
-        return true;
-      } else {
-        return false;
-      }
-
-    }
-
-    fieldChanged(e) {
-      this.caseData[e.target.id] = e.target.value;
-      console.log('fieldChanged-->\n' + JSON.stringify(this.caseData));
-    }
-
-    // fieldChangedTypeAhead(e) {
-    //   this.caseData[e.target.id] = e.target.value;
-    // }
-
-    onSubmit() {
-      // TODO: Use EventEmitter with form value
-      console.log('RCI CASE -->' + JSON.stringify(this.rciCaseForm.value));
-    }
-
-
-    searchCheckRecipient = (text$: Observable<string>) =>
-    text$.pipe(
-      debounceTime(100),
-      distinctUntilChanged(),
-      map(term => term.length < 1 ? []
-        : checkRecipientList.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
-    )
-
-    searchCheckSender = (text$: Observable<string>) =>
-    text$.pipe(
-      debounceTime(100),
-      distinctUntilChanged(),
-      map(term => term.length < 1 ? []
-        : checkSenderList.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
-    )
-
-    onChange1(dpInput: any) {
-      const myObject = {date: new Date(1, 9, 2016)};
-      const myObject2 = {'month': 3, 'day': 23, 'year': 2019};
-      console.log(' create-rcicase.ts onChange1-->' + JSON.stringify(dpInput));
-      this.model.dpModel(myObject2);
-    }
-
-  // handle the "err" object
-  handleErrors(errorResponse: any) {
-
-    if (errorResponse.error) {
-      let error: any;
-      let sErrors = '';
-      for (error of errorResponse.error.errors) {
-        if (error.ID === PegaErrors.VALIDATION_ERROR) {
-          // this.handleValidationErrors(error.ValidationMessages);
-        } else {
-          sErrors += error.ID + ' - ' + error.message + '\n';
-        }
-
-      }
-
-      if (sErrors !== '') {
-        // let snackBarRef = this.snackBar.open(sErrors, "Ok");
-        console.log(sErrors +  '--Ok');
-      }
-    } else {
-      // MPG const generalSnackBarRef = this.snackBar.open(errorResponse.message, 'Ok');
-      console.log(errorResponse.message +  '--Ok');
-    }
-
+  if (entry === undefined) {
+    return true;
+  } else {
+    return false;
   }
+
+}
+
+fieldChanged(e) {
+  this.caseData[e.target.id] = e.target.value;
+  console.log('fieldChanged-->\n' + JSON.stringify(this.caseData));
+}
+
+updatedVal(e) {
+  // console.log(this.stateCtrl);
+  // debugger;
+  if (e && e.length >= 3) {
+    this.showAutocomplete = true;
+  } else {
+    this.showAutocomplete = false;
+  }
+}
+valuechange(name, newValue) {
+
+  let mymodel;
+  mymodel = newValue;
+  this.rciCaseForm.patchValue(name, newValue);
+  this.foo.Amount = newValue;
+  // this.onfocus.
+  console.log(name + '-->' + newValue);
+}
+
+// fieldChangedTypeAhead(e) {
+//   this.caseData[e.target.id] = e.target.value;
+// }
+
+onSubmit() {
+  // TODO: Use EventEmitter with form value
+  console.log('RCI CASE -->' + JSON.stringify(this.rciCaseForm.value));
+}
+
+
+searchCheckRecipient = (text$: Observable<string>) =>
+  text$.pipe(
+    debounceTime(100),
+    distinctUntilChanged(),
+    map(term => term.length < 1 ? []
+      : checkRecipientList.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
+  )
+
+searchCheckSender = (text$: Observable<string>) =>
+  text$.pipe(
+    debounceTime(100),
+    distinctUntilChanged(),
+    map(term => term.length < 1 ? []
+      : checkSenderList.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
+  )
+
+onChange1(dpInput: any) {
+  const myObject = { date: new Date(1, 9, 2016) };
+  const myObject2 = { 'month': 3, 'day': 23, 'year': 2019 };
+  console.log(' create-rcicase.ts onChange1-->' + JSON.stringify(dpInput));
+  this.model.dpModel(myObject2);
+}
+
+// handle the "err" object
+handleErrors(errorResponse: any) {
+
+  if (errorResponse.error) {
+    let error: any;
+    let sErrors = '';
+    for (error of errorResponse.error.errors) {
+      if (error.ID === PegaErrors.VALIDATION_ERROR) {
+        // this.handleValidationErrors(error.ValidationMessages);
+      } else {
+        sErrors += error.ID + ' - ' + error.message + '\n';
+      }
+
+    }
+
+    if (sErrors !== '') {
+      // let snackBarRef = this.snackBar.open(sErrors, "Ok");
+      console.log(sErrors + '--Ok');
+    }
+  } else {
+    // MPG const generalSnackBarRef = this.snackBar.open(errorResponse.message, 'Ok');
+    console.log(errorResponse.message + '--Ok');
+  }
+
+}
 
 }
 
