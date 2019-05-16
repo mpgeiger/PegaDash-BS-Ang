@@ -6,7 +6,7 @@ import { DatapageService } from '../../../_services/datapage.service';
 import { PagerService } from '../../../_services/pager.service';
 // import stubbedResults from '../../../../assets/json/D_Interaction_Driver_I-826_SJ.json';
 import stubbedResults from '../../../../assets/json/D_Interaction_Driver_I-901__PW.json';
-import { ModalRCIContainerComponent } from '../modal-container/modal-container.component';
+import { ModalRCIContainerComponent, ModalRCIPegaComponent } from '../modal-container/modal-container.component';
 import {MatTableDataSource, MatSort, MatMenu} from '@angular/material';
 
 export interface SSCaseTypePxResults {
@@ -37,7 +37,9 @@ export interface SSCaseActions {
   pxResults: SSCaseTypePxResults;
 }
 @Component({
-  providers: [ModalRCIContainerComponent],
+  providers: [
+    ModalRCIContainerComponent
+  , ModalRCIPegaComponent],
   selector: 'app-mega-menu',
   templateUrl: './mega-menu.component.html',
   styleUrls: ['./mega-menu.component.scss'],
@@ -61,7 +63,8 @@ export class MegaMenuComponent implements OnInit {
   constructor(
     private datapage: DatapageService,
     private pagerService: PagerService,
-    private mc: ModalRCIContainerComponent
+    private mc: ModalRCIContainerComponent,
+    private rciMashup: ModalRCIPegaComponent
   ) { }
 
   ngOnInit() {
@@ -160,7 +163,8 @@ console.log('begin D_CustomerIntentTasks-->');
 
 
   public testMe(): void {
-    this.mc.openCreateRciCaseDialog();
+    // this.mc.openCreateRciCaseDialog();
+    this.rciMashup.openRciMashupCaseDialog();
   }
   clickedRCI() {
     console.log('RCI Clicked Create ');
