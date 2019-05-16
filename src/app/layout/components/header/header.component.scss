@@ -20,19 +20,7 @@
 // }
 
 
-::ng-deep .mat-menu-panel {
-  color: black;
-    max-width: none !important;
-    width: fit-content;
-    // width: 80%;
-    // text-align: left;
-    // width: 100vw;
-    // margin-left: -8px;
-    margin-top: 24px;
-    position: fixed !important;
-    z-index: -1 !important;
-    background-color: #f2f2f2;
-}
+
 
 // ::ng-deep .cdk-overlay-pane {
 //   justify-content: center !important;
@@ -60,19 +48,41 @@
 //   width: 100% !important;
 // }
 
+// // MPG overlay is shifted
+// ::ng-deep .cdk-overlay-connected-position-bounding-box {
+//   top: 55.5px;
+//   left: 20% !important;
+//   // height: 876.5px;
+//   // width: 988.65px;
+//   align-items: first baseline !important;
+//   // justify-content: flex-start;
+// }
 
-::ng-deep .cdk-overlay-connected-position-bounding-box {
-  top: 55.5px;
-  left: 20% !important;
-  // height: 876.5px;
-  // width: 988.65px;
-  align-items: first baseline !important;
-  // justify-content: flex-start;
+
+::ng-deep .megaMenu{
+  left: 15% !important;
+  color: black;
+    max-width: none !important;
+    width: fit-content;
+    // width: 80%;
+    // text-align: left;
+    // width: 100vw;
+    // margin-left: -8px;
+    margin-top: 24px;
+    position: fixed !important;
+    z-index: -1 !important;
+    background-color: #f2f2f2;
 }
+
 :host {
 
 
+// #megaMenu {
+//   .mat-menu-panel {
+//     left: 15% !important;
+//   }
 
+// }
   .navbar {
 
     background-color: $topnav-background-color;
@@ -92,6 +102,10 @@
         // color: #000;
         background: darken($topnav-background-color, 5%);
       }
+    }
+
+    .mat-menu-panel {
+      left: 15% !important;
     }
 
     // .mat-menu-panel {

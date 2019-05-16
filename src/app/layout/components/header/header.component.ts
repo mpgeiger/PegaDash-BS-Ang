@@ -167,9 +167,11 @@ checkIfStubbed() {
         this.translate.use(language);
     }
 
-    stopPropagation(event) {
-      event.stopPropagation();
-  }
+    //  MPG Event to prevent closing the MENU
+
+  //   stopPropagation(event) {
+  //     event.stopPropagation();
+  // }
 
 
  }
