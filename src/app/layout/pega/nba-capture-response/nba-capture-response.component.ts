@@ -16,4 +16,5 @@ export class NbaCaptureResponseComponent implements OnInit {
   ngOnInit() {
   }
 
+
 }

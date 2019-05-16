@@ -61,9 +61,15 @@ export class NbaOfferComponent implements OnInit {
   ) { }
   headers: any;
   showLoading = true;
+
+
+  nbaShowOffer = true;
+  nbaShowDetail = false;
+  nbaShowCaptureResponse = false;
+
   nbas: any = [];
   flip = 'inactive';
-  captureResponseResults: any = {'Status': '', 'Message': '', 'CaseID': ''};
+  captureResponseResults: any = {'Status': 'stub', 'Message': 'stub - Response captured sucessfully', 'CaseID': 'stub-1234'};
 
   ngOnInit() {
     // this.getCases();
@@ -171,48 +177,42 @@ export class NbaOfferComponent implements OnInit {
     return data.ContainerList[0].RankedResults;
   }
 
-  // toggleFlip() {
-  //   this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
-  // }
-  toggleFlip(current) {
+  nbaGotoDetail() {
+    this.nbaShowOffer = false;
+    this.nbaShowDetail = true;
+  }
 
-    switch(current){
-      case 'offer':
-      this.flip = 'active';
+  nbaOfferCaptureResult(result) {
+    this.nbaShowOffer = false;
+    this.nbaShowDetail = true;
+
+    switch (result) {
+      case 'yes':
+      this.nbaShowOffer = false;
+      this.nbaShowDetail = false;
+      this.nbaShowCaptureResponse = true;
       break;
 
-      case 'result':
-      this.flip = 'active';
+      case 'later':
+      this.nbaShowDetail = false;
+      this.nbaShowCaptureResponse = false;
+      this.nbaShowOffer = true;
       break;
 
-      case 'detail':
-      this.flip = 'active';
+      case 'no':
+      this.nbaShowCaptureResponse = false;
+      this.nbaShowOffer = true;
       default:
-      this.flip = 'active';
-
+      this.nbaShowDetail = false;
+      this.nbaShowCaptureResponse = false;
+      this.nbaShowOffer = true;
     }
+  }
 
-    // if (current = 'offer') {
-
-    //   // this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
-    //   this.flip = 'active';
-    // } else {
-    //   this.flip = 'inactive';
-    // } else if (current = 'detail') {
-    //   // this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
-    //   this.flip = 'active';
-    // } else {
-    //   this.flip = 'inactive';
-    // } if (current = 'result') {
-    //   this.flip = 'active';
-    //   // this.flip = (this.flip === 'inactive') ? 'active' : 'inactive';
-    // } else {
-    //   this.flip = 'inactive';
-    // }
-    console.log('in detail -->' + this.flip );
-    console.log('in offer -->' + this.flip );
-    console.log('in offer -->' + this.flip );
-
+  nbaCROk() {
+    this.nbaShowOffer = true;
+    this.nbaShowDetail = false;
+    this.nbaShowCaptureResponse = false;
   }
 
 
