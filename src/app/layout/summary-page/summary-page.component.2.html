@@ -1,5 +1,5 @@
 <div [@routerTransition]>
-  <!--
+<!--
     <label>
         nameSummaryPage:
         <input type="text" [formControl]="nameSummaryPage">
@@ -7,51 +7,35 @@
   <!-- <h2 class="text-muted">Account Summary for <small>First Lastnam</small></h2> -->
   <div class="row center">
     <div class="col-xl-8 col-lg-8">
-      <!-- <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center"> -->
-      <!-- <div fxFlex="75%"> -->
-
-      <div class="card card-default">
-        <div class="card-header">
-          <span class="card-title"><h4>Recent Cases</h4></span>
-        </div>
-        <div class="text-center card-body">
-          <app-recentTreasurerCaseList></app-recentTreasurerCaseList>
-        </div>
-      </div>
-
-      <!-- <mat-card class="example-card">
+        <!-- <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center"> -->
+            <!-- <div fxFlex="75%"> -->
+        <mat-card class="example-card">
             <mat-card-header>
-
+                <!-- <mat-card-title> Recent Cases <span class="badge  badge-pill badge-danger"  matTooltip="Currently {{D_RecentTreasurerCases$}} cases open ">{{D_RecentTreasurerCases$}} </span>  </mat-card-title> -->
                 <mat-card-title> Recent Cases </mat-card-title>
-                            </mat-card-header>
-
+                <!--
+                  <span class="material-label mdl-badge" data-badge="4"> XXX </span>
+                  <mat-card-subtitle>  <span matBadge="4" matBadgeOverlap="false">sdxfsdf </span><span class="badge  badge-pill badge-danger" ngModel="utCount"></span></mat-card-subtitle> -->
+            </mat-card-header>
+            <!-- <div class="badge" data-badge="5"> YYY </div> -->
             <app-recentTreasurerCaseList></app-recentTreasurerCaseList>
 
-            </mat-card> -->
-    </div>
-    <div class="col-xl-4 col-lg-4">
-      <div class="card card-default nba">
-        <div class="card-header">
-          <span class="card-title"><h4>BNY Advice</h4></span>
-        </div>
-        <div class="text-center card-body">
-          <app-nba-offer></app-nba-offer>
-        </div>
-      </div>
+            </mat-card>
+            </div>
+            <div class="col-xl-4 col-lg-4">
+                <mat-card class="nba">
+              <mat-card-header>
+                <div mat-card-avatar class="header-image"></div>
 
-     <!--  <mat-card class="nba">
-        <mat-card-header>
-          <div mat-card-avatar class="header-image"></div>
+                <mat-card-title> BNY Advice </mat-card-title>
+              </mat-card-header>
 
-          <mat-card-title> BNY Advice </mat-card-title>
-        </mat-card-header>
-
-        <app-nba-offer></app-nba-offer>
-      </mat-card> -->
-    </div>
+              <app-nba-offer></app-nba-offer>
+              </mat-card>
+              </div>
     <!-- </div> -->
-    <!-- </div> -->
-    <!-- <div class="row">
+  <!-- </div> -->
+  <!-- <div class="row">
       <div class="col-md-12">
           <ngb-carousel>
               <ng-template ngbSlide *ngFor="let slider of sliders">
@@ -65,61 +49,66 @@
       </div>
   </div> -->
   </div>
-  <!-- <hr /> -->
+  <hr>
 
-  <div class="row" style="padding-top: 15px;">
+  <div class="row">
     <div class="col-xl-4 col-lg-6">
       <div class="card card-default">
         <div class="card-header">
-          <span class="card-title"><h4>Email by Category</h4></span>
+          <span class="card-title"><h3>Email by Category</h3></span>
+
         </div>
         <div class="text-center card-body">
           <app-email-by-category></app-email-by-category>
+            <!-- <app-pega-pie-chart></app-pega-pie-chart> -->
+
+          <!-- <img class="img-fluid mx-auto d-block" src='../../../assets/images/requests-by-channel.svg' width="100%"> -->
+          <!-- Reduce servicing time by using self-service! <a href="">Learn more</a> -->
         </div>
       </div>
+
     </div>
     <div class="col-xl-4 col-lg-6">
       <div class="card card-default">
         <div class="card-header">
-          <h4>Top requests</h4>
+          <h3>Top requests</h3>
         </div>
         <div class="text-center card-body">
-          <app-open-by-work-type></app-open-by-work-type>
+            <app-open-by-work-type></app-open-by-work-type>
           <!-- <img class="img-fluid mx-auto d-block" src='../../../assets/images/top-requests.svg' width="100%">
           Unable to apply funds? Increase validation of new client beneficiaries.<a href="">Learn more</a> -->
         </div>
       </div>
+
     </div>
     <div class="col-xl-4 col-lg-6">
       <div class="card card-default">
         <div class="card-header">
-          <h4>Request Interactions</h4>
+          <h3>Request Interactions</h3>
         </div>
         <div class="text-center card-body">
-          <app-recent-interactions></app-recent-interactions>
+<app-recent-interactions></app-recent-interactions>
           <!-- <img class="img-fluid mx-auto d-block" src='../../../assets/images/requests-by-entity.svg' width="100%">
           Did you know you can load share your work across regions? <a href="">Learn more</a> -->
         </div>
       </div>
     </div>
+
   </div>
   <hr />
-  <div class="row" style="padding-top: 15px;">
+  <div class="row">
     <div class="col-12">
-      <mat-card class="example-card">
-        <mat-card-header>
-          <mat-card-title
-            >Transaction History
-            <span class="badge  badge-pill badge-danger" matTooltip="Currently {{ D_TransactionSummary$ }} cases open "
-              >{{ D_TransactionSummary$ }}
-            </span>
-          </mat-card-title>
-        </mat-card-header>
 
-        <app-transaction-summary></app-transaction-summary>
-      </mat-card>
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Transaction History <span class="badge  badge-pill badge-danger"  matTooltip="Currently {{D_TransactionSummary$}} cases open ">{{D_TransactionSummary$}} </span>
+                  </mat-card-title>
+                </mat-card-header>
 
-      <!--       <div class="card card-default">
+                  <app-transaction-summary></app-transaction-summary>
+</mat-card>
+
+<!--       <div class="card card-default">
         <div class="card-header">
           <h3>Service History <span class="badge  badge-pill badge-danger"  matTooltip="Currently {{D_TransactionSummary$}} cases open ">{{D_TransactionSummary$}} </span>   </h3>
         </div>
@@ -131,4 +120,5 @@
       </div> -->
     </div>
   </div>
+
 </div>
