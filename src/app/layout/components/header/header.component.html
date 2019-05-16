@@ -65,7 +65,7 @@
              -->
              <!-- pass local reference of mat-menu to be opened on this click -->
              <a mat-button [matMenuTriggerFor]="mpgMenu"  layout-align="end center" class="megaMenuNav">
-              MPG Service<i class="material-icons">
+              Services<i class="material-icons">
                   arrow_drop_down
                   </i>
             </a>
@@ -83,29 +83,25 @@
 
                 <!-- Begin
             Matt Geigers - Menu from calling case types
+             pass local reference of mat-menu to be opened on this click
             ---
              -->
+             <!--
             <a mat-button [matMenuTriggerFor]="menu"  layout-align="end center">
-                <!-- pass local reference of mat-menu to be opened on this click -->
                 Self Service<i class="material-icons">
                     arrow_drop_down
                     </i>
               </a>
+
               <mat-menu #menu="matMenu">
-                  <!-- give local reference and tell this is manu by assigning 'matMenu' -->
-                  <!-- <button mat-menu-item *ngFor="let case of cases" (click)="createCaseType(case)">{{case.name}} -->
-                  <button mat-menu-item *ngFor="let case of cases">
+                   <button mat-menu-item *ngFor="let case of cases">
                       <mat-icon>dialpad</mat-icon>
-                      <!-- <span>{{case.name | fromCamelCase }}</span> -->
-                      <!-- <app-modal-container>111</app-modal-container> -->
                       <app-modal-container-rci-custom [master]="case.name | fromCamelCase"></app-modal-container-rci-custom>
-                      <!-- <mat-divider></mat-divider> -->
                     </button>
                     <mat-divider></mat-divider>
                     <mat-menu-divider></mat-menu-divider>
-
                 </mat-menu>
-              <!--   Matt Geigers - Menu from calling case types
+              Matt Geigers - Menu from calling case types
                 END
                 ---  -->
 
@@ -114,14 +110,15 @@
             <form class="form-inline my-2 my-lg-0 right">
                 <input class="form-control mr-sm-2" type="text" placeholder="{{ 'Search' | translate }}" >
             </form>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a href="javascript:void(0)" class="nav-link mt-1"
                     style="padding: 0.375rem 1rem !important; border-color: #999;"
                     (click)="rltAndLtr()"
                 >
                     RTL/LTR
                 </a>
-            </li> &nbsp;
+            </li> -->
+             &nbsp;
             <li class="nav-item dropdown" ngbDropdown>
                 <a class="nav-link" href="javascript:void(0)" ngbDropdownToggle>
                     <i class="fa fa-envelope"></i> <b class="caret"></b><span class="sr-only">(current)</span>
@@ -184,7 +181,8 @@
                     </a>
                 </div>
             </li>
-            <li class="nav-item dropdown" ngbDropdown>
+
+      <!--       <li class="nav-item dropdown" ngbDropdown>
                 <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
                     <i class="fa fa-language"></i> {{ 'Language' | translate }} <b class="caret"></b>
                 </a>
@@ -215,6 +213,7 @@
                     </a>
                 </div>
             </li>
+             -->
             <li class="nav-item dropdown" ngbDropdown>
                 <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
                     <i class="fa fa-user"></i> {{userFullName}} <b class="caret"></b>

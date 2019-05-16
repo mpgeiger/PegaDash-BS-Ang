@@ -7,13 +7,9 @@
       <i class="fas fa-landmark"></i>&nbsp;
       <span>{{ 'Inquiries' | translate }}</span>
     </a>
-    <a routerLink="/homepage" [routerLinkActive]="['router-link-active']" class="list-group-item">
-      <i class="fas fa-landmark"></i>&nbsp;
-      <span>{{ 'Matt' }}</span>
-    </a>
     <!-- <a mat-list-item routerLink="/summary-page">
       <mat-icon>home</mat-icon> <span class="nav-caption">Inquiries</span>
-   </a> -->
+    </a> -->
     <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
       <i class="fas fa-tachometer-alt"></i>&nbsp;
       <span>{{ 'Accounts' | translate }}</span>
@@ -34,6 +30,10 @@
     <a [routerLinkActive]="['router-link-active']" class="list-group-item">
       <i class="fas fa-blender-phone"></i>&nbsp;
       <span>{{ 'Communications' | translate }}</span>
+    </a>
+    <a routerLink="/homepage" [routerLinkActive]="['router-link-active']" class="list-group-item">
+      <i class="fas fa-landmark"></i>&nbsp;
+      <span>{{ 'Matt' }}</span>
     </a>
     <!-- DEV TABS -- BEGIN -->
     <!-- <a [routerLink]="['/components']" [routerLinkActive]="['router-link-active']" class="list-group-item">
@@ -178,14 +178,14 @@
   </mat-menu>
   </mat-nav-list> -->
 
-  <div class='pega-button'>
+  <!-- <div class='pega-button'>
     <a class="" href='https://www.pega.com/industries/financial-services' target='_blank'>
       <img src="../../../../assets/images/pega_powered_vertical_positive_rgb.png" />
     </a>
-  </div>
+  </div> -->
   <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
     <i class="fa fa-fw fa-angle-double-{{collapsed?'right':'left'}}"></i>&nbsp;
-    <span>{{ 'Collapse Sidebar' | translate }}</span>
+    <!-- <span>{{ 'Collapse Sidebar' | translate }}</span> -->
   </div>
 </nav>
 
