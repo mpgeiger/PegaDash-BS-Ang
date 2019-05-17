@@ -10,32 +10,31 @@ import { DatapageService } from '../../../../_services/datapage.service';
 import { ChartType, ChartOptions, ChartDataSets } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
-import stubbedResults from '../../../../../assets/json/D_GetEmailsByCategory.json';
-
+import stubbedResults from '../../../../../assets/json/D_RelAccountList.json';
 
 @Component({
-  selector: 'app-email-by-category',
-  // templateUrl: './email-by-category.component.html',
-  templateUrl: './email-by-category.component.html',
-  styleUrls: ['./email-by-category.component.scss'],
+  selector: 'app-account-summary',
+  templateUrl: './account-summary.component.html',
+  styleUrls: ['./account-summary.component.scss'],
   animations: [routerTransition()]
 })
-export class EmailByCategoryComponent implements OnInit {
+export class AccountSummaryComponent implements OnInit {
 
   constructor(
     private datapage: DatapageService
-  ) {
-  }
+  ) { }
 
-  componentName = 'kpi/email-by-category.component';
+  @ViewChild(MatSort) sort: MatSort;
+  componentName = 'kpi/account-summary.component';
   message: any;
   // subscription: Subscription;
-  displayedColumns = ['Name', 'pxIndexCount'];
-
-  public dataSource = new MatTableDataSource<EmailByCategory>();
-  sortedData: EmailByCategory[];
+  // displayedColumns = ['AccountTypeDesc', 'AccountNickname', 'AccountBalance', 'AverageMonthlyBalance', 'ComplianceStatus'];
+  // displayedColumns = ['AccountTypeDesc', 'AccountNickname', 'AccountBalance', 'ComplianceStatus'];
+  displayedColumns = ['AccountTypeDesc', 'AccountNickname', 'AccountBalance' ];
+  public dataSource = new MatTableDataSource<AccountSummary>();
+  sortedData: AccountSummary[];
   headers: any;
-  types: EmailByCategory[] = [];
+  types: AccountSummary[] = [];
   showLoading = false;
   filterValues = {
     Name: '',
@@ -116,12 +115,11 @@ export class EmailByCategoryComponent implements OnInit {
 
 
   public show = false;
-  public showPieChart = true;
+  public showPieChart = false;
   public showBarChart = false;
-  public showTable = false;
+  public showTable = true;
 
   // @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
   // events
   public chartClicked(e: any): void {
     console.log(e);
@@ -135,19 +133,16 @@ export class EmailByCategoryComponent implements OnInit {
   ngOnInit() {
     this.showLoading = true;
     this.dataSource.sort = this.sort;
-    // this.sort.disableClear = true;
-
   }
-
   ngAfterViewInit() {
 
     // this.dataSource.sort = this.sort;
     // this.sort.disableClear = true;
     if (this.checkIfStubbed()) {
-      console.log('STUBBED D_GetEmailsByCategory');
+      console.log('STUBBED D_RelAccountList');
       this.getStubbedCases();
     } else {
-      console.log('LIVE D_GetEmailsByCategory');
+      console.log('LIVE D_RelAccountList');
       this.getCases();
     }
 
@@ -157,60 +152,58 @@ export class EmailByCategoryComponent implements OnInit {
     const useStubStr = localStorage.getItem('useStubbedData');
     let useStub = false;
     useStub = (useStubStr === 'true');
+    useStub = true;
     return useStub;
   }
 
 
+
   getStubbedCases() {
-    console.log('entered STUBBED D_GetEmailsByCategory-->  ');
+    console.log('entered STUBBED D_RelAccountList-->  ');
     const stubbed: any = stubbedResults;
     this.types = Object.keys(this.getResults(stubbed)).map(it => this.getResults(stubbed)[it]);
+console.log (' KPI Account Summary -->' + JSON.stringify(this.types));
 
-    this.dataSource.data = this.types as EmailByCategory[];
-    localStorage.setItem('D_GetEmailsByCategory', this.types.length.toString());
+    this.dataSource.data = this.types as AccountSummary[];
+    localStorage.setItem('D_RelAccountList', this.types.length.toString());
     this.parseDataForPieChart(this.types);
     this.parseDataForBarChart(this.types);
     this.pieChartType = 'pie';
     this.dataSource.sort = this.sort;
     this.showLoading = false;
-    console.log('count of STUBBED D_GetEmailsByCategory-->  ', localStorage.getItem('D_GetEmailsByCategory'));
+    console.log('count of STUBBED D_RelAccountList-->  ', localStorage.getItem('D_RelAccountList'));
 
   }
 
 
 
   getCases() {
-    console.log('entered live D_GetEmailsByCategory-->  ');
+    console.log('entered live D_RelAccountList-->  ');
     // const unifiedtaskParams = new HttpParams().set('UserId', 'SallyJones').set('WorkGroup', 'NewWaveWG');
     const dParams = new HttpParams();
+    dParams.append('CifNbr', '9912345999' );
+    dParams.append('Marketsegmentid', '5' );
+    dParams.append('ReturnNullIfEmpty', 'true' );
+
     this.showLoading = true;
-    this.datapage.getDataPage('D_GetEmailsByCategory', dParams).subscribe(
+    this.datapage.getDataPage('D_RelAccountList', dParams).subscribe(
       response => {
         this.headers = response.headers;
         this.types = Object.keys(this.getResults(response.body)).map(it => this.getResults(response.body)[it]);
-        this.dataSource.data = this.types as EmailByCategory[];
-        localStorage.setItem('D_GetEmailsByCategory', this.types.length.toString());
+        this.dataSource.data = this.types as AccountSummary[];
+        localStorage.setItem('D_RelAccountList', this.types.length.toString());
         this.parseDataForPieChart(this.types);
         this.parseDataForBarChart(this.types);
         this.pieChartType = 'pie';
         this.dataSource.sort = this.sort;
         this.showLoading = false;
-        console.log('count of D_GetEmailsByCategory-->  ', localStorage.getItem('D_GetEmailsByCategory'));
+        console.log('count of D_RelAccountList-->  ', localStorage.getItem('D_RelAccountList'));
       },
       err => {
         alert('Error from ' + this.componentName + ':' + err.errors);
       }
     );
   }
-  getResults(data) {
-    // localStorage.setItem('numUnifiedTaskList', data.pxResults.length);
-    return data.pxResults;
-  }
-  public doFilter = (value: string) => {
-    this.dataSource.filter = value.trim().toLocaleLowerCase();
-    this.dataSource.sort = this.sort;
-  }
-
 
   parseDataForPieChart(data) {
     // tslint:disable-next-line:prefer-const
@@ -281,11 +274,24 @@ export class EmailByCategoryComponent implements OnInit {
     // else
     //   this.buttonName = "Show";
   }
+  getResults(data) {
+    // localStorage.setItem('numUnifiedTaskList', data.pxResults.length);
+    return data.pxResults;
+  }
+  public doFilter = (value: string) => {
+    this.dataSource.filter = value.trim().toLocaleLowerCase();
+    this.dataSource.sort = this.sort;
+  }
 
 
 }
-export interface EmailByCategory {
-  Name: string;
-  pxIndexCount: number;
-  pxObjClass: string;
+
+// displayedColumns = ['AccountTypeDesc', 'AccountNickname', 'AccountBalance', 'AverageMonthlyBalance', 'ComplianceStatus'];
+
+export interface AccountSummary {
+  AccountTypeDesc: string;
+  AccountNickname: string;
+  AccountBalance: number;
+  AverageMonthlyBalance: string;
+  ComplianceStatus: string;
 }

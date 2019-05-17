@@ -9,6 +9,7 @@ export * from './modal-container/modal-container.component';
 // export * from './modal-container/file-name-dialog.component';
 export * from './customCases/rci-check-result-table/rci-check-result-table.component';
 export * from './customCases/rcicase/create-custom-rcicase.component';
+export * from './kpi-report/account-summary/account-summary.component';
 export * from './kpi-report/email-by-category/email-by-category.component';
 export * from './kpi-report/in-corr-auto-reply-trend/in-corr-auto-reply-trend.component';
 export * from './kpi-report/value-trend-indicator-arrow/value-trend-indicator-arrow.component';

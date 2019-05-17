@@ -9,9 +9,12 @@ import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 export class NbaCaptureResponseComponent implements OnInit {
 
   constructor() { }
+  @Input('RMName') rmName: string;
+  @Input('OfferName') offerName: string;
   @Input('Message') message: string;
   @Input('Status') status: string;
   @Input('CaseID') caseID: string;
+
 
   ngOnInit() {
   }

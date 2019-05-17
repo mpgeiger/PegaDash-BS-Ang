@@ -1,69 +1,56 @@
-<div class="nba" *ngFor="let item of nbas">
-
-  <!-- <div class="tp-wrapper"> -->
-    <!-- <div class="tp-box" [@flipState]="flip"> -->
-      <div *ngIf="nbaShowOffer" >
-        <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar>
-        <!-- <mat-card-content id="card-content"> -->
-          <div class="containerX">
-            <app-nba-teaser [EligibilityDescription]="item.EligibilityDescription" [WebMessage]="item.WebMessage"></app-nba-teaser>
-            <div class="row nbaButtons" style="justify-content: center">
-              <button mat-button class="btn btn-primary" (click)="nbaGotoDetail()">Learn More</button>
-              <button mat-button class="btn btn-secondary"  (click)="nbaOfferCaptureResult('later')" aria-setsize="small">Not now</button>
-
-            </div>
-            <!-- <div class="col-spaced">
-              <button mat-button class="btn btn-secondary"  (click)="nbaOfferCaptureResult('later')" aria-setsize="small">Later</button>
-            </div> -->
-          </div>
-        <!-- </mat-card-content> -->
-      </div>
-      <!-- <div> -->
-        <div *ngIf="nbaShowDetail" >
-          <!-- <mat-card-content id="card-content"> -->
-            <div class="nbaTeaser">
-              <p class="overview-title">Overview</p>
-              <p class="md-title" class="overview-text">
-                {{ item.ShortDescription }}
-              </p>
-              <p class="benefits-title">Benefits to you</p>
-              <p class="md-subhead" class="benefits-text">
-                {{ item.Benefits }}
-              </p>
-            </div>
-            <div class="row nbaButtons">
-              <div class="col-spaced">
-                <!-- <button mat-button class="btn btn-primary" (click)="nbaOnClick()">Yes</button> -->
-                <button mat-button class="btn btn-primary" (click)="nbaOfferCaptureResult('yes')">Request a call</button>
-              </div>
-              <!-- <div class="col-spaced">
-                <button mat-button class="btn btn-secondary"  (click)="nbaOfferCaptureResult('later')" aria-setsize="small">Later</button>
-              </div> -->
-              <div class="col-spaced">
-                <button mat-button class="btn btn-light" (click)="nbaOfferCaptureResult('no')">Not interested</button>
-              </div>
-            </div>
-            <div>
-
-            </div>
-          <!-- </mat-card-content> -->
+<div style="height:390px">
+  <div class="nba" *ngFor="let item of nbas">
+  <div *ngIf="nbaShowOffer">
+    <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar>
+    <div class="containerX">
+      <app-nba-teaser [EligibilityDescription]="item.EligibilityDescription" [WebMessage]="item.WebMessage"></app-nba-teaser>
+      <div class="row nbaButtons">
+        <div class="col-spaced">
+          <button mat-button class="btn btn-primary" (click)="nbaGotoDetail()">Learn More</button>
         </div>
-      <!-- </div> -->
-      <!-- <div> -->
-        <div *ngIf="nbaShowCaptureResponse">
-          <!-- <mat-card-content id="card-content"> -->
-            Development -- Service Response
-              <app-nba-capture-response [Message]="captureResponseResults.Message" [CaseID]="captureResponseResults.CaseID"></app-nba-capture-response>
+        <div class="col-spaced">
+          <button mat-button class="btn btn-light" (click)="nbaOfferCaptureResult('later')" aria-setsize="small">Not now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="nbaShowDetail">
+    <!-- <mat-card-content id="card-content"> -->
+    <div class="nbaTeaser">
+      <p class="overview-title">Overview</p>
+      <p class="md-title" class="overview-text">
+        {{ item.ShortDescription }}
+      </p>
+      <p class="benefits-title">Benefits to you</p>
+      <p class="md-subhead" class="benefits-text">
+        {{ item.Benefits }}
+      </p>
+    </div>
+    <div class="row nbaButtons">
+      <div class="col-spaced">
+        <!-- <button mat-button class="btn btn-primary" (click)="nbaOnClick()">Yes</button> -->
+        <button mat-button class="btn btn-primary" (click)="nbaOfferCaptureResult('yes')">Request a call</button>
+      </div>
 
-              <div class="row nbaButtons" style="justify-content: center">
-                  <button mat-button class="btn btn-primary" (click)="nbaCROk()">OK</button>
-                </div>
-            <!-- </mat-card-content> -->
-            </div>
-            <!-- </div> -->
+      <div class="col-spaced">
+        <button mat-button class="btn btn-light" (click)="nbaOfferCaptureResult('no')">Not interested</button>
+      </div>
+    </div>
+    <div></div>
+  </div>
 
+  <div *ngIf="nbaShowCaptureResponse">
 
+    <app-nba-capture-response
+      [Message]="captureResponseResults.Message"
+      [CaseID]="captureResponseResults.CaseID"
+      [RMName]="'Paul Wagner'"
+      [OfferName]="item.Name"
+    ></app-nba-capture-response>
 
-    <!-- </div> -->
-  <!-- </div> -->
+    <div class="row nbaButtons" style="justify-content: center">
+      <button mat-button class="btn btn-primary" (click)="nbaCROk()">OK</button>
+    </div>
+  </div>
+</div>
 </div>

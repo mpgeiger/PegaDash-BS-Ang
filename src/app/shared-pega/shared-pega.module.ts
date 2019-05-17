@@ -1,6 +1,3 @@
-// import { HomePageComponent } from './../layout/pega/home-page/home-page.component';
-// import { ModalContainerComponent } from './../../../.history/src/app/layout/pega/modal-container/modal-container.component_20190514143918';
-// import { EmailByCategoryComponent } from './../layout/pega/kpi-report/email-by-category/email-by-category.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -21,7 +18,8 @@ import { RciMashupComponent } from '../layout/pega/mashups/rci-mashup/rci-mashup
 import { SafeHtml, SafeStyle, SafeUrl } from '../layout/pega/_pipes/safe';
 
 import {
-   CaselistComponent
+     AccountSummaryComponent
+   , CaselistComponent
   // , FileNameDialogComponent
   // , ModalContainerComponent
   , CreateCustomRCIcaseComponent
@@ -65,7 +63,8 @@ import {
     // CaselistComponent
   ],
   declarations: [
-    CaselistComponent
+    AccountSummaryComponent
+   , CaselistComponent
     // , FileNameDialogComponent
     // , ModalContainerComponent
     , MegaMenuComponent
@@ -103,7 +102,8 @@ import {
     // , HeroChildComponent
   ],
   exports: [
-    CaselistComponent
+    AccountSummaryComponent
+   , CaselistComponent
       , CreateCustomRCIcaseComponent
      , EmailByCategoryComponent
       , HomePageComponent

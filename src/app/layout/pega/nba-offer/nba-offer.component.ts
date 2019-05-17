@@ -59,6 +59,9 @@ export class NbaOfferComponent implements OnInit {
   constructor(
     private nba: NbaService
   ) { }
+
+  componentName = 'nba-offer.component';
+
   headers: any;
   showLoading = true;
 
@@ -87,6 +90,7 @@ export class NbaOfferComponent implements OnInit {
 
     let useStub = false;
     useStub = (useStubStr === 'true');
+   // useStub = true;
     // console.log(' STUBBED DATA-->' + useStub);
     return useStub;
   }
@@ -94,34 +98,20 @@ export class NbaOfferComponent implements OnInit {
 
   getStubbedCases() {
     const stubbed: any = stubbedResults;
-    // this.nbas = Object.keys(this.getNBAResults(stubbed)).map(it => this.getNBAResults(stubbed)[it]);
-    // this.cases = JSON.parse(response.body);
-   // this.sortedData = this.cases.slice();
+
    this.nbas = Object.keys(this.getNBAResults(stubbed)).map(it => this.getNBAResults(stubbed)[it]);
    localStorage.setItem('NBA_Offer', this.nbas.length.toString());
    this.showLoading = false;
   }
 
   getCases() {
-    // const unifiedtaskParams = new HttpParams().set('UserId', 'SallyJones').set('WorkGroup', 'NewWaveWG');
     const dParams = new HttpParams();
-    // nbaBody.CustomerID = customerID;
-    // nbaBody.ContainerName = containerName;
-    // {
-    //   "CustomerID" : "PEGASAFS-WORK-CONTACT CON-488"
-    //   , "ContainerName" :  "BNYServices"
-    // }
 
-    //  this.nba.getCurrentNba('D_TransactionSummary', dParams).subscribe(
      this.nba.getCurrentNba('PEGASAFS-WORK-CONTACT CON-488', 'BNYServices').subscribe(
        response => {
          this.headers = response.headers;
          this.nbas = Object.keys(this.getNBAResults(response.body)).map(it => this.getNBAResults(response.body)[it]);
          localStorage.setItem('NBA_Offer', this.nbas.length.toString());
-
-         // localStorage.setItem('NBA_InteractionID', this.nbas.length.toString());
-
-
          this.showLoading = false;
          console.log('count of NBA_Offer-->  ', localStorage.getItem('NBA_Offer'));
          console.log(' NBA_Offer results-->  ', JSON.stringify(this.nbas));
@@ -135,8 +125,7 @@ export class NbaOfferComponent implements OnInit {
    captureResponse(outcome, behavior) {
 
      //   Sample response for success
-     //
-
+     //    {"Status":"OK","Message":"Response captured sucessfully","CaseID":"PR-20348"}
 
      const captureResponse = this.NbaCaptureResponse;
      captureResponse.RankedResults[0].Outcome = outcome;
@@ -155,7 +144,7 @@ export class NbaOfferComponent implements OnInit {
         console.log(' CAPTURE RESPONSE NBA_Offer results-->  ' + JSON.stringify(result));
       },
       err => {
-        alert('Error form unifiedtask:' + err.errors);
+        alert('Error from ' + this.componentName + ':' + err.errors);
       }
     );
     }
@@ -188,21 +177,25 @@ export class NbaOfferComponent implements OnInit {
 
     switch (result) {
       case 'yes':
+        this.captureResponseAction('yes');
       this.nbaShowOffer = false;
       this.nbaShowDetail = false;
       this.nbaShowCaptureResponse = true;
       break;
 
       case 'later':
+          this.captureResponseAction('later');
       this.nbaShowDetail = false;
       this.nbaShowCaptureResponse = false;
       this.nbaShowOffer = true;
       break;
 
       case 'no':
+          this.captureResponseAction('no');
       this.nbaShowCaptureResponse = false;
       this.nbaShowOffer = true;
       default:
+          this.captureResponseAction('later');
       this.nbaShowDetail = false;
       this.nbaShowCaptureResponse = false;
       this.nbaShowOffer = true;

@@ -68,7 +68,7 @@ $(document).ready(function(){
 
 
 //  MPG   CO-BROWSE SUPPORT BUTTON
-//	document.head.appendChild(script);
+	// document.head.appendChild(script);
 
   /* add id attributes to gadgets */
   $("div[data-pega-gadgetname='OnlineHelp']").attr("id","OnlineHelp");
