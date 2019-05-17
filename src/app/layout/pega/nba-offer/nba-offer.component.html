@@ -8,8 +8,13 @@
           <div class="containerX">
             <app-nba-teaser [EligibilityDescription]="item.EligibilityDescription" [WebMessage]="item.WebMessage"></app-nba-teaser>
             <div class="row nbaButtons" style="justify-content: center">
-              <button mat-button class="btn btn-primary" (click)="nbaGotoDetail()">Click for more information</button>
+              <button mat-button class="btn btn-primary" (click)="nbaGotoDetail()">Learn More</button>
+              <button mat-button class="btn btn-secondary"  (click)="nbaOfferCaptureResult('later')" aria-setsize="small">Not now</button>
+
             </div>
+            <!-- <div class="col-spaced">
+              <button mat-button class="btn btn-secondary"  (click)="nbaOfferCaptureResult('later')" aria-setsize="small">Later</button>
+            </div> -->
           </div>
         <!-- </mat-card-content> -->
       </div>
@@ -29,14 +34,13 @@
             <div class="row nbaButtons">
               <div class="col-spaced">
                 <!-- <button mat-button class="btn btn-primary" (click)="nbaOnClick()">Yes</button> -->
-                <button mat-button class="btn btn-primary" (click)="nbaOfferCaptureResult('yes')">Yes</button>
+                <button mat-button class="btn btn-primary" (click)="nbaOfferCaptureResult('yes')">Request a call</button>
               </div>
-              <div class="col-spaced">
-                <!-- <button mat-button class="btn btn-secondary"  (click)="captureResponseAction('later')" aria-setsize="small">Later</button> -->
+              <!-- <div class="col-spaced">
                 <button mat-button class="btn btn-secondary"  (click)="nbaOfferCaptureResult('later')" aria-setsize="small">Later</button>
-              </div>
+              </div> -->
               <div class="col-spaced">
-                <button mat-button class="btn btn-light" (click)="nbaOfferCaptureResult('no')">Not Interested</button>
+                <button mat-button class="btn btn-light" (click)="nbaOfferCaptureResult('no')">Not interested</button>
               </div>
             </div>
             <div>

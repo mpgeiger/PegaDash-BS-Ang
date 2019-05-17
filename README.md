@@ -13,7 +13,7 @@ Powered by [StartAngular](http://startangular.com/) & [StrapUI](http://strapui.c
 ## [SB Admin Material version](https://github.com/start-javascript/sb-admin-material)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
-
+ 
 ## MPG Notes
 I added ngx-currency [ngx-currency](https://www.npmjs.com/package/ngx-currency)  to help process currency values with commas for thoushands and the currency symbol ***$ 1,234,567.89***
 

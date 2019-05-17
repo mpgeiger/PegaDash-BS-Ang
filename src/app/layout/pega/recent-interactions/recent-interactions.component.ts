@@ -25,6 +25,8 @@ export interface RecentInteractions {
   styleUrls: ['./recent-interactions.component.scss']
 })
 export class RecentInteractionsComponent implements OnInit {
+  componentName = 'recent-interactions.component';
+
   message: any;
   subscription: Subscription;
   showLoading = true;
@@ -106,7 +108,7 @@ export class RecentInteractionsComponent implements OnInit {
         this.showLoading = false;
       },
       err => {
-        alert('Error form unifiedtask:' + err.errors);
+        alert('Error from ' + this.componentName + ':' + err.errors);
       }
     );
   }

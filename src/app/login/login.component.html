@@ -10,7 +10,7 @@
               Simplified, intuitive and power packed.
             </div>
             <div class="nxn-herotext-tagline2 ng-binding" ng-show="login.wlResources.heroText2" ng-bind-html="login.wlResources.heroText2">
-              Experience the power of NEXEN with Pega
+              Experience the power of Pega
             </div>
             <!-- <div class="nxn-herotext-tagline2 ng-binding"><br /><br /><img src="../../assets/images/pega_powered_vertical_positive_rgb.png" width="120px"></div> -->
           </div>
@@ -21,16 +21,13 @@
           class="login-box col-sm-6 col-sm-push-6 col-md-4 col-md-push-8 ng-scope"
           style="background:-webkit-linear-gradient(top,rgba(0,0,0,.65) 0,rgba(0,0,0,0) 100%);"
         >
-        <div class="wrapper" *ngIf="loggingInLoading">
-        <!-- <div class="wrapper"> -->
-          <div class="overlay">
-            <div class="spinner-wrapper">
-              <!-- <img src="../../assets/images/pega_powered_horizontal_positive_rgb.png" width="200px" /> -->
-
-              <img src="../../assets/images/fingerprint_bg_3.gif" />
+          <!-- <div class="wrapper" *ngIf="loggingInLoading">
+            <div class="overlay">
+              <div class="spinner-wrapper">
+                <img src="../../assets/images/fingerprint_bg_3.gif" />
+              </div>
             </div>
-          </div>
-        </div>
+          </div> -->
           <div class="login-box col-sm-6 col-sm-push-6 col-md-4 col-md-push-8 ng-scope">
             <!-- <div class="login-box col-10 ng-scope"> -->
             <!-- <form id="loginForm" name="loginForm" class="login-form  ng-pristine ng-valid" method="post" autocomplete="off" action="/login/forms/ProcessLogin.fcc?SMQUERYDATA=-SM-AhPv1%2FHIWZ9UXIDAKc2YMPTKrXDP%2FA%2BGtEJ%2Bzw%2FoGAy6XeY3RvbyXLazlGSVQ5DTQSDvRZ56S9bM1T9lIL6vHDfEM1Ag%2BYgH3gsX6utkS91m0OyfeggPANCWG6gn6OurelIK7WMoAxyqqas2IJCHVAK1noSEo%2BFHZg6CuaVsxrrcHsfhUijjJEpW59nvUquhqkpM%2FYQxwdwaCD7lqK2yWG9453J4ic2dkL0XUEMvrTWy27cV6lmsUvZMAkrHgXlio275lxcQLMnx57HlzjuwCbsTvYvRSGhOym%2BBE8IMrzNbghl09gc2lzMmYmH8KLXhoKFNuCswzsPZabO5tdXk29viO8Qc8Funp90zYqQTXxWaxbUedy9M5ZF5DknBZmiX7rgcXxBaOsVWKaqGCDD8H463xXuBDCK4"> -->
@@ -38,7 +35,6 @@
               role="form"
               id="loginForm"
               name="loginForm"
-
               background="-webkit-linear-gradient(top,rgba(0,0,0,.65) 0,rgba(0,0,0,0) 100%)"
             >
               <!-- style="linear-gradient(to bottom,rgba(0,0,0,.65) 0,rgba(0,0,0,0) 100%) !important;" -->
@@ -75,10 +71,12 @@
                   <p class="ng-binding"><span class="fa fa-warning fa-fw"></span></p>
                 </div>
               </div> -->
-              <!-- <label>
+                <!-- <label>
                 Name:
                 <input type="text" [formControl]="name">
               </label> -->
+              <mat-progress-bar mode="buffer" *ngIf="loggingInLoading"></mat-progress-bar>
+
                 <div class="form-group button-container">
                   <!-- <a class="btn rounded-btn" (click)="attemptLogin()">{{ 'Log in' | translate }}</a> -->
                   <a class="btn rounded-btn" (click)="doLogin()">{{ 'Log in' | translate }}</a>

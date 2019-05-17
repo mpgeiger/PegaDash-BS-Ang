@@ -47,6 +47,8 @@ export interface RelAccount {
   styleUrls: ['./rel-account-list.component.scss']
 })
 export class RelAccountListComponent implements OnInit {
+  componentName = 'rel-account-list.component';
+
   message: any;
   subscription: Subscription;
   showLoading = true;
@@ -122,7 +124,7 @@ export class RelAccountListComponent implements OnInit {
         this.showLoading = false;
       },
       err => {
-        alert('Error form unifiedtask:' + err.errors);
+        alert('Error from ' + this.componentName + ':' + err.errors);
       }
     );
   }

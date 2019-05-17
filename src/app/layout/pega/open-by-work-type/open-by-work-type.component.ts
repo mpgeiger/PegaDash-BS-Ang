@@ -34,6 +34,7 @@ export class OpenByWorkTypeComponent implements OnInit, AfterViewInit {
   constructor(
     private datapage: DatapageService,
   ) { }
+  componentName = 'open-work-by-work-type.component';
   message: any;
   // subscription: Subscription;
   displayedColumns = ['pyLabel', 'StringVal1', 'ResultCount1'];
@@ -202,7 +203,9 @@ itemTextValue: string;
         console.log('count of D_OpenWorkByType-->  ', localStorage.getItem('D_OpenWorkByType'));
       },
       err => {
-        alert('Error form unifiedtask:' + err.errors);
+
+        alert('Error from ' + this.componentName + ':' + err.errors);
+
       }
     );
   }

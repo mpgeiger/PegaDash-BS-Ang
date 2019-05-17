@@ -43,6 +43,7 @@ export interface Transactions {
   styleUrls: ['./transaction-summary.component.scss']
 })
 export class TransactionSummaryComponent implements OnInit, AfterViewInit {
+  componentName = 'transaction-summary.component';
   message: any;
   // subscription: Subscription;
   displayedColumns = ['AccountNumber', 'TransactionDescription', 'TransactionCode', 'TransactionPostDate', 'TransactionAmount'];
@@ -141,7 +142,7 @@ export class TransactionSummaryComponent implements OnInit, AfterViewInit {
          console.log('count of D_TransactionSummary-->  ', localStorage.getItem('D_TransactionSummary'));
        },
        err => {
-         alert('Error form unifiedtask:' + err.errors);
+        alert('Error from ' + this.componentName + ':' + err.errors);
        }
      );
    }

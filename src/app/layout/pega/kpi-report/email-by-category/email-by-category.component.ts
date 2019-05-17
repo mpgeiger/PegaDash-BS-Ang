@@ -33,6 +33,7 @@ export class EmailByCategoryComponent implements OnInit {
   ) {
   }
 
+  componentName = 'email-by-category.component';
   message: any;
   // subscription: Subscription;
   displayedColumns = ['Name', 'pxIndexCount'];
@@ -203,7 +204,7 @@ export class EmailByCategoryComponent implements OnInit {
         console.log('count of D_GetEmailsByCategory-->  ', localStorage.getItem('D_GetEmailsByCategory'));
       },
       err => {
-        alert('Error form unifiedtask:' + err.errors);
+        alert('Error from ' + this.componentName + ':' + err.errors);
       }
     );
   }

@@ -49,6 +49,7 @@ export class MegaMenuComponent implements OnInit {
   // public dataSource = new MatTableDataSource<TreasurerCases>();
   @ViewChild(MatSort) sort: MatSort;
   // @Output() mpgMenu = new MatMenu;
+  componentName = 'mega-menu.component';
 
   message: any;
   subscription: Subscription;
@@ -147,7 +148,7 @@ console.log('begin D_CustomerIntentTasks-->');
         this.showLoading = false;
       },
       err => {
-        alert('Error form unifiedtask:' + err.errors);
+        alert('Error from ' + this.componentName + ':' + err.errors);
       }
     );
 

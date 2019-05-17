@@ -36,6 +36,8 @@ export interface TreasurerCases {
   styleUrls: ['./recentTreasurerCaseList.component.scss']
 })
 export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  {
+  componentName = 'recentTreasurerCaseList.component';
+
   message: any;
   subscription: Subscription;
   showLoading = true;
@@ -158,7 +160,7 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
         this.showLoading = false;
       },
       err => {
-        alert('Error form unifiedtask:' + err.errors);
+        alert('Error from ' + this.componentName + ':' + err.errors);
       }
     );
   }

@@ -35,6 +35,8 @@ export interface UTL {
 
 
 export class UnifiedtaskComponent implements OnInit {
+  componentName = 'unifiedtask.component';
+
   // @ViewChild(MatPaginator) paginator: MatPaginator;
   // @ViewChild(MatSort) sort: MatSort;
   defaultPagination: number;
@@ -137,7 +139,7 @@ export class UnifiedtaskComponent implements OnInit {
 
       },
       err => {
-        alert('Error form unifiedtask:' + err.errors);
+        alert('Error from ' + this.componentName + ':' + err.errors);
       }
     );
   }

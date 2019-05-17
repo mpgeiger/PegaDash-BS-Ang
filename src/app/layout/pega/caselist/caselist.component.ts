@@ -34,6 +34,8 @@ export interface Cases {
   styleUrls: ['./caselist.component.scss']
 })
 export class CaselistComponent implements OnInit, AfterViewInit  {
+  componentName = 'caselist.component';
+
   message: any;
   subscription: Subscription;
   showLoading = true;
@@ -129,7 +131,7 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
 
       },
       err => {
-        alert('Error form unifiedtask:' + err.errors);
+        alert('Error from ' + this.componentName + ':' + err.errors);
       }
     );
   }

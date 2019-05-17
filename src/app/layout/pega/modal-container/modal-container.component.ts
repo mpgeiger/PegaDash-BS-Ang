@@ -109,6 +109,8 @@ export class ModalRCIContainerComponent implements OnInit {
   styleUrls: ['./modal-container.component.scss']
 })
 export class ModalWorkItemComponent implements OnInit {
+  componentName = 'modal-container.component';
+
   message: any;
   subscription: Subscription;
 
@@ -250,7 +252,7 @@ export class ModalWorkItemComponent implements OnInit {
           console.log(' in modal-container.component.ts --> createCase OpenAssignment-->' + myCase.ID);
         },
         err => {
-          alert('Errors from create case:' + err.errors);
+          alert('Error from ' + this.componentName + ':' + err.errors);
         }
 
         );
