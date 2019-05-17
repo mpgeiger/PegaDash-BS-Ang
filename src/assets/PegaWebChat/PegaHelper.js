@@ -66,9 +66,9 @@ $(document).ready(function(){
   // script.src = "Please enter CobrowseServerURL/cobrowse/loadScripts";
   // script.async = true;
 
- 
 
-	document.head.appendChild(script);
+//  MPG   CO-BROWSE SUPPORT BUTTON
+//	document.head.appendChild(script);
 
   /* add id attributes to gadgets */
   $("div[data-pega-gadgetname='OnlineHelp']").attr("id","OnlineHelp");
