@@ -24,6 +24,14 @@
           <td mat-cell *matCellDef="let element"> {{element.TransactionCode }} </td>
         </ng-container>
 
+        <ng-container matColumnDef="TransactionError">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header > Trans Error  </th>
+            <td mat-cell *matCellDef="let element"> {{element.TransactionError }} </td>
+          </ng-container>
+          <ng-container matColumnDef="Currency">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header > Code  </th>
+              <td mat-cell *matCellDef="let element"> {{element.Currency }} </td>
+            </ng-container>
 
         <ng-container matColumnDef="TransactionPostDate">
           <th mat-header-cell *matHeaderCellDef mat-sort-header > Post Date </th>

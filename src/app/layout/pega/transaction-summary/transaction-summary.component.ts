@@ -10,7 +10,7 @@ import {MatTableDataSource, MatPaginator, MatSort} from '@angular/material';
 import { stringify } from 'querystring';
 import { DatapageService } from '../../../_services/datapage.service';
 
-import stubbedResults from '../../../../assets/json/D_TransactionSummary.json';
+import stubbedResults from '../../../../assets/json/D_TransactionSummaryInternational.json';
 
 export interface Transactions {
   AccountNumber: string;
@@ -19,6 +19,9 @@ export interface Transactions {
   CardNumber: number;
   CashPortion: number;
   CentralProcessingDate: string;
+  Currency: string;
+  Country: string;
+  TransactionError: string;
   DepositAccountNumber: number;
   FeeAmount: string;
   FeeTypeDescription: string;
@@ -46,7 +49,7 @@ export class TransactionSummaryComponent implements OnInit, AfterViewInit {
   componentName = 'transaction-summary.component';
   message: any;
   // subscription: Subscription;
-  displayedColumns = ['AccountNumber', 'TransactionDescription', 'TransactionCode', 'TransactionPostDate', 'TransactionAmount'];
+  displayedColumns = ['AccountNumber', 'TransactionDescription', 'TransactionCode', 'TransactionError', 'Currency', 'TransactionPostDate', 'TransactionAmount'];
   public dataSource = new MatTableDataSource<Transactions>();
   sortedData: Transactions[];
   headers: any;
@@ -103,6 +106,7 @@ export class TransactionSummaryComponent implements OnInit, AfterViewInit {
     const useStubStr = localStorage.getItem('useStubbedData');
 
     let useStub = false;
+    useStub = true;
     useStub = (useStubStr === 'true');
     return useStub;
   }
@@ -117,6 +121,8 @@ export class TransactionSummaryComponent implements OnInit, AfterViewInit {
     const resSTR = JSON.stringify(this.getResults(stubbed));
 
     this.cases = Object.keys(this.getResults(stubbed)).map(it => this.getResults(stubbed)[it]);
+
+    this.computeBalanceTrend();
 
     this.dataSource.data = this.cases as Transactions[];
     localStorage.setItem('D_TransactionSummary', this.cases.length.toString());
@@ -145,6 +151,12 @@ export class TransactionSummaryComponent implements OnInit, AfterViewInit {
         alert('Error from ' + this.componentName + ':' + err.errors);
        }
      );
+   }
+
+    computeBalanceTrend() {
+    this.cases.forEach( (element) => {
+      console.log('trans-->' + element.AccountNumber.substring(0, 5));
+  });
    }
 
    public doFilter = (value: string) => {

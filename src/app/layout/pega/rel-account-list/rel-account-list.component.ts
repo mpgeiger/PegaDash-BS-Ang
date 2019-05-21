@@ -26,6 +26,8 @@ export interface RelAccount {
   AccountType: string;
   ApplDesc: string;
   pyDescription: string;
+
+  AccountTrend: number;
   // pyStatusWorkTimestamp: string;
   // pxCreateDateTime: string;
   // pxUpdateDateTime: string;
@@ -56,7 +58,7 @@ export class RelAccountListComponent implements OnInit {
   sortedData: RelAccount[];
   headers: any;
   cases: RelAccount[] = [];
-  displayedColumns = ['AccountNumber',  'AccountTypeDesc', 'AverageMonthlyBalance', 'BI', 'AccountBalance'];
+  displayedColumns = ['AccountNumber',  'AccountTypeDesc', 'AverageMonthlyBalance', 'AccountTrend', 'AccountBalance'];
 
   positionOptions: TooltipPosition[] = ['after', 'before', 'above', 'below', 'left', 'right'];
   position = new FormControl(this.positionOptions[0]);
@@ -90,6 +92,7 @@ export class RelAccountListComponent implements OnInit {
     const useStubStr = localStorage.getItem('useStubbedData');
 
     let useStub = false;
+    useStub = true;
     useStub = (useStubStr === 'true');
     return useStub;
   }
@@ -98,6 +101,7 @@ export class RelAccountListComponent implements OnInit {
     this.cases = Object.keys(this.getResults(stubbed)).map(it => this.getResults(stubbed)[it]);
     // this.cases = JSON.parse(response.body);
    // this.sortedData = this.cases.slice();
+   this.computeBalanceTrend();
     this.dataSource.data = this.cases as RelAccount[];
     // this.dataSource.filterPredicate = this.createFilter();
     localStorage.setItem('D_RelAccountList', this.cases.length.toString());
@@ -128,6 +132,35 @@ export class RelAccountListComponent implements OnInit {
       }
     );
   }
+
+  computeBalanceTrend() {
+    this.cases.forEach( (element) => {
+      let  monthBal = element.AverageMonthlyBalance;
+      const currentBal = element.AccountBalance;
+
+      if (isNaN(monthBal)) {
+        monthBal = 0;
+        element.AverageMonthlyBalance = 0;
+      }
+      // if (isNaN(currentBal)) {
+      //   currentBal = 0;
+      // }
+
+
+      const result = currentBal - monthBal;
+
+      let trend = 0;
+      if (result > 0) {
+        trend = 1;
+      } else if ( result < 0 ) {
+        trend = -1;
+      }
+      element.AccountTrend = trend;
+      console.log('trans -->' + result + ' = ' +  currentBal + ' - ' + monthBal + ' = ' + result + '   trend -->' + element.AccountTrend);
+  });
+   }
+
+
   createFilter(): (data: any, filter: string) => boolean {
     const filterFunction = function(data, filter): boolean {
       const searchTerms = JSON.parse(filter);
