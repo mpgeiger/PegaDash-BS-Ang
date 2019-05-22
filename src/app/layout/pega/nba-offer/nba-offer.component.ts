@@ -126,7 +126,7 @@ export class NbaOfferComponent implements OnInit {
 
      //   Sample response for success
      //    {"Status":"OK","Message":"Response captured sucessfully","CaseID":"PR-20348"}
-
+     this.showLoading = true;
      const captureResponse = this.NbaCaptureResponse;
      captureResponse.RankedResults[0].Outcome = outcome;
      captureResponse.RankedResults[0].Behaviour = behavior;
@@ -138,6 +138,7 @@ export class NbaOfferComponent implements OnInit {
         this.captureResponseResults.Status = result.Status;
         this.captureResponseResults.Message = result.Message;
         this.captureResponseResults.CaseID = result.CaseID;
+        this.showLoading = false;
 
         // this.showLoading = false;
         // console.log('count of NBA_Offer-->  ', localStorage.getItem('NBA_Offer'));
@@ -154,10 +155,13 @@ export class NbaOfferComponent implements OnInit {
         this.captureResponse('Accepted', 'Positive');
       } else if (result === 'no') {
         this.captureResponse('Rejected', 'Negative');
+        // this.getCases();
       } else if (result === 'later') {
         this.captureResponse('Later', 'Neutral');
+        // this.getCases();
       } else {
         this.captureResponse('Later', 'Neutral');
+        // this.getCases();
       }
     }
 
@@ -187,22 +191,26 @@ export class NbaOfferComponent implements OnInit {
           this.captureResponseAction('later');
       this.nbaShowDetail = false;
       this.nbaShowCaptureResponse = false;
+      this.getCases();
       this.nbaShowOffer = true;
       break;
 
       case 'no':
           this.captureResponseAction('no');
       this.nbaShowCaptureResponse = false;
+      this.getCases();
       this.nbaShowOffer = true;
       default:
           this.captureResponseAction('later');
       this.nbaShowDetail = false;
       this.nbaShowCaptureResponse = false;
+      this.getCases();
       this.nbaShowOffer = true;
     }
   }
 
   nbaCROk() {
+    this.getCases();
     this.nbaShowOffer = true;
     this.nbaShowDetail = false;
     this.nbaShowCaptureResponse = false;

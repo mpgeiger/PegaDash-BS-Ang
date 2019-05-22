@@ -10,7 +10,7 @@
       We have notified your BNY Associate <br/><u>{{rmName}}</u> of this request.
     </div>
     <div class="subheadline">
-        You can refer to this reference # {{caseID}}
+        You can refer to this reference # <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar> <div *ngIf="!showLoading">{{caseID}}</div>
     </div>
 
   </div>

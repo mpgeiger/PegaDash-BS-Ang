@@ -14,6 +14,7 @@ export class NbaCaptureResponseComponent implements OnInit {
   @Input('Message') message: string;
   @Input('Status') status: string;
   @Input('CaseID') caseID: string;
+  @Input('showLoading') showLoading: boolean;
 
 
   ngOnInit() {

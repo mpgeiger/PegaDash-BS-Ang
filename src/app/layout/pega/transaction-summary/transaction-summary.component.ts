@@ -10,7 +10,8 @@ import {MatTableDataSource, MatPaginator, MatSort} from '@angular/material';
 import { stringify } from 'querystring';
 import { DatapageService } from '../../../_services/datapage.service';
 
-import stubbedResults from '../../../../assets/json/D_TransactionSummaryInternational.json';
+// import stubbedResults from '../../../../assets/json/D_TransactionSummaryInternational.json';
+import stubbedResults from '../../../../assets/json/D_TransactionSummaryInternational_Error.json';
 
 export interface Transactions {
   AccountNumber: string;
@@ -106,8 +107,8 @@ export class TransactionSummaryComponent implements OnInit, AfterViewInit {
     const useStubStr = localStorage.getItem('useStubbedData');
 
     let useStub = false;
-    useStub = true;
     useStub = (useStubStr === 'true');
+    useStub = true;
     return useStub;
   }
 
@@ -122,7 +123,7 @@ export class TransactionSummaryComponent implements OnInit, AfterViewInit {
 
     this.cases = Object.keys(this.getResults(stubbed)).map(it => this.getResults(stubbed)[it]);
 
-    this.computeBalanceTrend();
+    // this.computeBalanceTrend();
 
     this.dataSource.data = this.cases as Transactions[];
     localStorage.setItem('D_TransactionSummary', this.cases.length.toString());
@@ -153,11 +154,11 @@ export class TransactionSummaryComponent implements OnInit, AfterViewInit {
      );
    }
 
-    computeBalanceTrend() {
-    this.cases.forEach( (element) => {
-      console.log('trans-->' + element.AccountNumber.substring(0, 5));
-  });
-   }
+  //   computeBalanceTrend() {
+  //   this.cases.forEach( (element) => {
+  //     console.log('trans-->' + element.AccountNumber.substring(0, 5));
+  // });
+  //  }
 
    public doFilter = (value: string) => {
     this.dataSource.filter = value.trim().toLocaleLowerCase();

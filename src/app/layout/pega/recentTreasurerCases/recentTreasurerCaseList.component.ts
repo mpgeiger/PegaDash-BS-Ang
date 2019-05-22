@@ -99,6 +99,7 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
 
     let useStub = false;
     useStub = (useStubStr === 'true');
+    useStub = true;
     return useStub;
   }
 
