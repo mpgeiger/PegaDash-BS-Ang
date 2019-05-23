@@ -5,21 +5,7 @@
   "pyObjClassOriginal": "",
   "pzPageNameHash": "_pa46118489233118pz",
   "pxResults": [
-      {
-          "AllAttachmentsofInteraction": "0",
-          "InteractionType": "web",
-          "NpsScoreStyler": "badge-bg-old centered margin-tb-2x",
-          "OfferChannelIcon": "webwb/InteractionDesktop.svg",
-          "pxCommitDateTime": "2019-05-03T13:17:35.014Z",
-          "pxObjClass": "PegaCPMFS-Work-Interaction-Call",
-          "pxSaveDateTime": "2019-05-03T13:17:35.012Z",
-          "pzIndexCount": "1",
-          "pzIndexOwnerKey": "PEGACPMFS-WORK-INTERACTION",
-          "pzInsKey": "PEGACPMFS-WORK-INTERACTION",
-          "pzIndexes": {
-              "CAInteractionsByContact": "0"
-          }
-      },
+
       {
           "AccountNumber": "1029329",
           "AccountOwnerName": "Capital Investments Ltd",

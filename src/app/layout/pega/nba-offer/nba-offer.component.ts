@@ -1,3 +1,4 @@
+import { stringify } from 'querystring';
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { HttpParams, HttpHeaders } from '@angular/common/http';
 import { NbaService } from '../../../_services/nba.service';
@@ -40,7 +41,7 @@ export class NbaOfferComponent implements OnInit {
 
 
   NbaCaptureResponse: any = {
-    'CustomerID': 'PEGASAFS-WORK-CONTACT CON-488',
+    'CustomerID': 'PEGASAFS-WORK-CONTACT CON-913',
     'ContainerName': 'BNYServices',
     'RankedResults': [{
       'Name': 'FXACHPayment',
@@ -61,10 +62,12 @@ export class NbaOfferComponent implements OnInit {
   ) { }
 
   componentName = 'nba-offer.component';
+  nbaCustomerId = '';
 
   headers: any;
   showLoading = true;
 
+  nbaOfferName = '';
 
   nbaShowOffer = true;
   nbaShowDetail = false;
@@ -74,7 +77,33 @@ export class NbaOfferComponent implements OnInit {
   flip = 'inactive';
   captureResponseResults: any = {'Status': 'stub', 'Message': 'stub - Response captured sucessfully', 'CaseID': 'stub-1234'};
 
+  OnInit() {
+    const loginUserName = localStorage.getItem('username');
+    console.log(' in nbs-offer-component username-->' + loginUserName);
+    // loginUserName = localStorage.getItem('username').toLowerCase();
+
+    if (loginUserName === 'sallyjones') {
+      this.nbaCustomerId = 'PEGASAFS-WORK-CONTACT CON-488';
+    } else {
+      this.nbaCustomerId = 'PEGASAFS-WORK-CONTACT CON-913';
+    }
+    console.log(' in nbs-offer-component username-->' + this.nbaCustomerId);
+
+  }
   ngOnInit() {
+
+    const loginUserName = localStorage.getItem('username');
+    console.log(' in nbs-offer-component username-->' + loginUserName);
+    // loginUserName = localStorage.getItem('username').toLowerCase();
+
+    if (loginUserName === 'sallyjones') {
+      this.nbaCustomerId = 'PEGASAFS-WORK-CONTACT CON-488';
+    } else {
+      this.nbaCustomerId = 'PEGASAFS-WORK-CONTACT CON-903';
+    }
+    console.log(' in nbs-offer-component username-->' + this.nbaCustomerId);
+
+
     // this.getCases();
     if (this.checkIfStubbed()) {
       console.log('STUBBED NBA_Offer');
@@ -107,7 +136,8 @@ export class NbaOfferComponent implements OnInit {
   getCases() {
     const dParams = new HttpParams();
 
-     this.nba.getCurrentNba('PEGASAFS-WORK-CONTACT CON-488', 'BNYServices').subscribe(
+    //  this.nba.getCurrentNba('PEGASAFS-WORK-CONTACT CON-488', 'BNYServices').subscribe(
+     this.nba.getCurrentNba(this.nbaCustomerId, 'BNYServices').subscribe(
        response => {
          this.headers = response.headers;
          this.nbas = Object.keys(this.getNBAResults(response.body)).map(it => this.getNBAResults(response.body)[it]);
@@ -115,21 +145,25 @@ export class NbaOfferComponent implements OnInit {
          this.showLoading = false;
          console.log('count of NBA_Offer-->  ', localStorage.getItem('NBA_Offer'));
          console.log(' NBA_Offer results-->  ', JSON.stringify(this.nbas));
+        this.nbaOfferName = this.nbas[0].Name;
        },
        err => {
-         alert('Error form unifiedtask:' + err.errors);
+         alert('Error form nba-offer.components:' + err.errors);
        }
      );
    }
 
-   captureResponse(outcome, behavior) {
+   captureResponse( outcome: string, behavior: string) {
 
      //   Sample response for success
      //    {"Status":"OK","Message":"Response captured sucessfully","CaseID":"PR-20348"}
      this.showLoading = true;
      const captureResponse = this.NbaCaptureResponse;
+    captureResponse.CustomerID =  this.nbaCustomerId;
+    captureResponse.RankedResults[0].Name =  this.nbaOfferName;
      captureResponse.RankedResults[0].Outcome = outcome;
      captureResponse.RankedResults[0].Behaviour = behavior;
+     console.log(' body captureResponse -->' + JSON.stringify(captureResponse));
      this.nba.captureNBAResponse(captureResponse).subscribe(
       response => {
         this.headers = response.headers;

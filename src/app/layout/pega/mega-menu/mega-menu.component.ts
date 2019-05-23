@@ -69,13 +69,6 @@ export class MegaMenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
-  }
-  ngAfterViewInit(): void {
-    // this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
-    // this.sortedData = this.cases.slice();
-    // this.dataSource.sort = this.sort;
-    // this.dataSource.paginator = this.paginator;
     if (this.checkIfStubbed()) {
 
       console.log('STUBBED D_RecentTreasurerCases');
@@ -86,6 +79,12 @@ export class MegaMenuComponent implements OnInit {
       this.getStubbedCases();
 
     }
+  }
+  ngAfterViewInit(): void {
+    // this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
+    // this.sortedData = this.cases.slice();
+    // this.dataSource.sort = this.sort;
+    // this.dataSource.paginator = this.paginator;
   }
   checkIfStubbed() {
     const useStubStr = localStorage.getItem('useStubbedData');

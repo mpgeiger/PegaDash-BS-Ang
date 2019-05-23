@@ -79,6 +79,18 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
   }
 
   ngOnInit() {
+    this.dataSource.sort = this.sort;
+    this.sort.disableClear = true;
+
+    this.dataSource.paginator = this.paginator;
+    if (this.checkIfStubbed()) {
+
+      console.log('STUBBED D_RecentTreasurerCases');
+      this.getStubbedCases();
+    } else {
+      console.log('LIVE D_RecentTreasurerCases');
+      this.getCases();
+    }
 
     // this.pyLabelFilter.valueChanges
     // .subscribe(
@@ -106,18 +118,18 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
   ngAfterViewInit(): void {
     // this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
     // this.sortedData = this.cases.slice();
-    this.dataSource.sort = this.sort;
-    this.sort.disableClear = true;
+    // this.dataSource.sort = this.sort;
+    // this.sort.disableClear = true;
 
-    this.dataSource.paginator = this.paginator;
-    if (this.checkIfStubbed()) {
+    // this.dataSource.paginator = this.paginator;
+    // if (this.checkIfStubbed()) {
 
-      console.log('STUBBED D_RecentTreasurerCases');
-      this.getStubbedCases();
-    } else {
-      console.log('LIVE D_RecentTreasurerCases');
-      this.getCases();
-    }
+    //   console.log('STUBBED D_RecentTreasurerCases');
+    //   this.getStubbedCases();
+    // } else {
+    //   console.log('LIVE D_RecentTreasurerCases');
+    //   this.getCases();
+    // }
   }
 
 

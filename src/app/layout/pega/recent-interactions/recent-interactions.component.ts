@@ -29,7 +29,7 @@ export class RecentInteractionsComponent implements OnInit {
 
   message: any;
   subscription: Subscription;
-  showLoading = true;
+  showLoading = false;
   public dataSource = new MatTableDataSource<RecentInteractions>();
   sortedData: RecentInteractions[];
   headers: any;
@@ -46,15 +46,7 @@ export class RecentInteractionsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.showLoading = true;
-  }
-  ngAfterViewInit(): void {
-    // this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
-    // this.sortedData = this.cases.slice();
-    this.dataSource.sort = this.sort;
-    this.sort.disableClear = true;
-
-    this.dataSource.paginator = this.paginator;
+    // this.showLoading = true;
     if (this.checkIfStubbed()) {
 
       console.log('STUBBED D_RecentTreasurerCases');
@@ -64,20 +56,46 @@ export class RecentInteractionsComponent implements OnInit {
       this.getStubbedCases();
     }
   }
+  ngAfterViewInit(): void {
+    // this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
+    // this.sortedData = this.cases.slice();
+
+    // if (this.checkIfStubbed()) {
+
+      //   console.log('STUBBED D_RecentTreasurerCases');
+      //   this.getStubbedCases();
+      // } else {
+        //   console.log('LIVE D_RecentTreasurerCases');
+        //   this.getStubbedCases();
+        // }
+        // this.dataSource.sort = this.sort;
+        // this.dataSource.data = this.cases as RecentInteractions[];
+
+        // console.log('LIVE D_RecentTreasurerCases ngAfterViewInit--> ' + JSON.stringify(this.dataSource.data));
+        // this.dataSource.paginator = this.paginator;
+    // this.sort.disableClear = true;
+  }
   checkIfStubbed() {
     const useStubStr = localStorage.getItem('useStubbedData');
 
     let useStub = false;
     useStub = (useStubStr === 'true');
+    useStub = true;
     return useStub;
   }
   getStubbedCases() {
     const stubbed: any = stubbedResults;
+    this.showLoading = true;
     this.cases = Object.keys(this.getResults(stubbed)).map(it => this.getResults(stubbed)[it]);
     // this.cases = JSON.parse(response.body);
    // this.sortedData = this.cases.slice();
-    this.dataSource.data = this.cases as RecentInteractions[];
+    // this.dataSource.data = this.cases as RecentInteractions[];
     // this.dataSource.filterPredicate = this.createFilter();
+    this.dataSource.data = this.cases as RecentInteractions[];
+
+        console.log('LIVE D_RecentTreasurerCases ngAfterViewInit--> ' + JSON.stringify(this.dataSource.data));
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
     localStorage.setItem('D_InteractionHistory', this.cases.length.toString());
     console.log('count of D_InteractionHistory-->  ', localStorage.getItem('D_InteractionHistory'));
     this.showLoading = false;
@@ -90,13 +108,13 @@ export class RecentInteractionsComponent implements OnInit {
    let dParams = new HttpParams();
    dParams = dParams.append('Type', 'CONTACT');
    dParams = dParams.append('ID', '7103716305');
-
+   this.showLoading = true;
 
     this.datapage.getDataPage('D_InteractionHistory', dParams).subscribe(
       response => {
         this.headers = response.headers;
         this.cases = Object.keys(this.getResults(response.body)).map(it => this.getResults(response.body)[it]);
-        this.dataSource.data = this.cases as RecentInteractions[];
+        // this.dataSource.data = this.cases as RecentInteractions[];
         // this.dataSource.filterPredicate = this.createFilter();
         localStorage.setItem('D_InteractionHistory', this.cases.length.toString());
 

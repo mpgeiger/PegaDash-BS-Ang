@@ -1,4 +1,8 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+// import { Transactions } from './../../../../../.history/src/app/layout/pega/transaction-summary/transaction-summary.component_20190521164838';
+// import { Transactions } from './../../../../../.history/src/app/layout/pega/transaction-summary/transaction-summary.component_20190521213539';
+import { Component, OnInit, ViewChild, AfterViewInit, ChangeDetectionStrategy  } from '@angular/core';
+import { startWith, tap, delay } from 'rxjs/operators';
+
 import { HttpParams, HttpHeaders } from '@angular/common/http';
 
 // import { MatTableDataSource, MatInput } from '@angular/material';
@@ -42,6 +46,7 @@ export interface Transactions {
 }
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-transaction-summary',
   templateUrl: './transaction-summary.component.html',
   styleUrls: ['./transaction-summary.component.scss']
@@ -55,7 +60,7 @@ export class TransactionSummaryComponent implements OnInit, AfterViewInit {
   sortedData: Transactions[];
   headers: any;
   cases: Transactions[] = [];
-  showLoading = true;
+  showLoading = false;
   nameFilter = new FormControl('');
 
   // columnsToDisplay = ['AccountNumber', 'TransactionDescription', 'TransactionCode',  'TransactionPostDate', 'TransactionAmount'];
@@ -81,34 +86,61 @@ export class TransactionSummaryComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     // this.getCases();
+    if (this.checkIfStubbed()) {
+      console.log('STUBBED D_TransactionSummary');
+      this.getStubbedCases();
+    } else {
+      console.log('LIVE D_TransactionSummary');
+      this.getCases();
+    }
 
+    // this.dataSource.sort = this.sort;
+    // this.sort.disableClear = true;
+
+    // this.dataSource.paginator = this.paginator;
   }
 
 
   ngAfterViewInit(): void {
-    // this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
-   // this.sortedData = this.cases.slice();
     this.dataSource.sort = this.sort;
     this.sort.disableClear = true;
 
     this.dataSource.paginator = this.paginator;
+    // this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
+   // this.sortedData = this.cases.slice();
+
+  //  this.paginator.page
+  //  .pipe(
+  //      startWith(null),
+  //      delay(0),
+  //      tap(() => this.dataSource.cases())
+  //  ).subscribe();
+
     // this.getCases();
 
-    if (this.checkIfStubbed()) {
-    console.log('STUBBED D_TransactionSummary');
-    this.getStubbedCases();
-  } else {
-    console.log('LIVE D_TransactionSummary');
-    this.getCases();
+
+
   }
-  }
+
+  //   mpgGetCases () {
+  //     let foo: Transactions[];
+  //   const stubbed: any = stubbedResults;
+  //   // console.log('STUBBED  get D_TransactionSummary begin');
+
+  //   const resSTR = JSON.stringify(this.getResults(stubbed));
+
+  //   this.cases = Object.keys(this.getResults(stubbed)).map(it => this.getResults(stubbed)[it]);
+  //   foo  = this.cases;
+  //   return foo;
+
+  // }
 
   checkIfStubbed() {
     const useStubStr = localStorage.getItem('useStubbedData');
 
     let useStub = false;
     useStub = (useStubStr === 'true');
-    useStub = true;
+    // useStub = true;
     return useStub;
   }
 
@@ -119,6 +151,7 @@ export class TransactionSummaryComponent implements OnInit, AfterViewInit {
     const stubbed: any = stubbedResults;
     // console.log('STUBBED  get D_TransactionSummary begin');
 
+    this.showLoading = true;
     const resSTR = JSON.stringify(this.getResults(stubbed));
 
     this.cases = Object.keys(this.getResults(stubbed)).map(it => this.getResults(stubbed)[it]);

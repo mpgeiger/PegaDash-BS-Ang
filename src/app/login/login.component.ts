@@ -64,6 +64,9 @@ export class LoginComponent implements OnInit {
             response => {
               console.log(' begin D_OperatorID');
               const operator: any = response.body;
+              localStorage.setItem('username', this.loginData.userName);
+              console.log(' in nbs-offer-component username-->' + this.loginData.userName);
+
               localStorage.setItem('userFullName', operator.pyUserName);
               localStorage.setItem('userAccessGroup', operator.pyAccessGroup);
               localStorage.setItem('userWorkGroup', operator.pyWorkGroup);

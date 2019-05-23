@@ -25,6 +25,7 @@ export interface RelAccount {
   FeeStructure: string;
   AccountType: string;
   ApplDesc: string;
+  ApplDescType: string;
   pyDescription: string;
 
   AccountTrend: number;
@@ -101,7 +102,7 @@ export class RelAccountListComponent implements OnInit {
     this.cases = Object.keys(this.getResults(stubbed)).map(it => this.getResults(stubbed)[it]);
     // this.cases = JSON.parse(response.body);
    // this.sortedData = this.cases.slice();
-   this.computeBalanceTrend();
+   this.parseRelAccountList();
     this.dataSource.data = this.cases as RelAccount[];
     // this.dataSource.filterPredicate = this.createFilter();
     localStorage.setItem('D_RelAccountList', this.cases.length.toString());
@@ -121,7 +122,9 @@ export class RelAccountListComponent implements OnInit {
       response => {
         this.headers = response.headers;
         this.cases = Object.keys(this.getResults(response.body)).map(it => this.getResults(response.body)[it]);
+        this.parseRelAccountList();
         this.dataSource.data = this.cases as RelAccount[];
+
         // this.dataSource.filterPredicate = this.createFilter();
         localStorage.setItem('D_RelAccountList', this.cases.length.toString());
         console.log('count of D_RelAccountList-->  ', localStorage.getItem('D_RelAccountList'));
@@ -133,10 +136,18 @@ export class RelAccountListComponent implements OnInit {
     );
   }
 
-  computeBalanceTrend() {
+  parseRelAccountList() {
     this.cases.forEach( (element) => {
       let  monthBal = element.AverageMonthlyBalance;
       const currentBal = element.AccountBalance;
+
+      if (element.ApplDesc === 'Card' || element.ApplDesc === 'Loan') {
+        element.ApplDescType = 'Liability';
+        element.AccountBalance = 0 - element.AccountBalance;
+        element.AverageMonthlyBalance = 0 - element.AverageMonthlyBalance;
+      } else {
+        element.ApplDescType = 'Asset';
+      }
 
       if (isNaN(monthBal)) {
         monthBal = 0;
@@ -147,17 +158,35 @@ export class RelAccountListComponent implements OnInit {
       // }
 
 
-      const result = currentBal - monthBal;
+      // const result = currentBal - monthBal;
 
-      let trend = 0;
-      if (result > 0) {
-        trend = 1;
-      } else if ( result < 0 ) {
-        trend = -1;
-      }
+      const trend = this.computeTrend(currentBal, monthBal, element.ApplDescType);
+      // if (result > 0) {
+      //   trend = 1;
+      // } else if ( result < 0 ) {
+      //   trend = -1;
+      // }
       element.AccountTrend = trend;
-      console.log('trans -->' + result + ' = ' +  currentBal + ' - ' + monthBal + ' = ' + result + '   trend -->' + element.AccountTrend);
+      // console.log('trans -->' + result + ' = ' +  currentBal + ' - ' + monthBal + ' = ' + result + '   trend -->' + element.AccountTrend);
   });
+   }
+
+   computeTrend(currentBal, monthBal, type): number {
+    const result = currentBal - monthBal;
+
+
+    let trend = 0;
+    if (result > 0) {
+      trend = 1;
+    } else if ( result < 0 ) {
+      trend = -1;
+    }
+    if (type === 'Liability') {
+      // trend = 0 - trend;
+    }
+
+    return trend;
+
    }
 
 

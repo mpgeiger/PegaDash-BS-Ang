@@ -131,13 +131,6 @@ export class AccountSummaryComponent implements OnInit {
 
 
   ngOnInit() {
-    this.showLoading = true;
-    this.dataSource.sort = this.sort;
-  }
-  ngAfterViewInit() {
-
-    // this.dataSource.sort = this.sort;
-    // this.sort.disableClear = true;
     if (this.checkIfStubbed()) {
       console.log('STUBBED D_RelAccountList');
       this.getStubbedCases();
@@ -145,6 +138,20 @@ export class AccountSummaryComponent implements OnInit {
       console.log('LIVE D_RelAccountList');
       this.getCases();
     }
+    // this.showLoading = true;
+    // this.dataSource.sort = this.sort;
+  }
+  ngAfterViewInit() {
+
+    // this.dataSource.sort = this.sort;
+    // this.sort.disableClear = true;
+    // if (this.checkIfStubbed()) {
+    //   console.log('STUBBED D_RelAccountList');
+    //   this.getStubbedCases();
+    // } else {
+    //   console.log('LIVE D_RelAccountList');
+    //   this.getCases();
+    // }
 
   }
 
@@ -152,7 +159,7 @@ export class AccountSummaryComponent implements OnInit {
     const useStubStr = localStorage.getItem('useStubbedData');
     let useStub = false;
     useStub = (useStubStr === 'true');
-    useStub = true;
+   useStub = true;
     return useStub;
   }
 
@@ -162,12 +169,12 @@ export class AccountSummaryComponent implements OnInit {
     console.log('entered STUBBED D_RelAccountList-->  ');
     const stubbed: any = stubbedResults;
     this.types = Object.keys(this.getResults(stubbed)).map(it => this.getResults(stubbed)[it]);
-console.log (' KPI Account Summary -->' + JSON.stringify(this.types));
+  //  console.log (' KPI Account Summary -->' + JSON.stringify(this.types));
 
     this.dataSource.data = this.types as AccountSummary[];
     localStorage.setItem('D_RelAccountList', this.types.length.toString());
-    this.parseDataForPieChart(this.types);
-    this.parseDataForBarChart(this.types);
+    // this.parseDataForPieChart(this.types);
+    // this.parseDataForBarChart(this.types);
     this.pieChartType = 'pie';
     this.dataSource.sort = this.sort;
     this.showLoading = false;
@@ -192,8 +199,8 @@ console.log (' KPI Account Summary -->' + JSON.stringify(this.types));
         this.types = Object.keys(this.getResults(response.body)).map(it => this.getResults(response.body)[it]);
         this.dataSource.data = this.types as AccountSummary[];
         localStorage.setItem('D_RelAccountList', this.types.length.toString());
-        this.parseDataForPieChart(this.types);
-        this.parseDataForBarChart(this.types);
+        // this.parseDataForPieChart(this.types);
+        // this.parseDataForBarChart(this.types);
         this.pieChartType = 'pie';
         this.dataSource.sort = this.sort;
         this.showLoading = false;
@@ -233,7 +240,6 @@ console.log (' KPI Account Summary -->' + JSON.stringify(this.types));
   }
 
   parseDataForBarChart(data) {
-    // let barEntry = { "data": [], "label":""};
 
 
     for (const item of data) {
@@ -242,6 +248,7 @@ console.log (' KPI Account Summary -->' + JSON.stringify(this.types));
       barEntry.label = item.Name;
       this.barChartData.push(barEntry);
     }
+
     // console.log('  BAR CHART barChartData-->' + JSON.stringify(this.barChartData)); // Does not return anything
 
   }
