@@ -3,7 +3,7 @@ import { DatapageService } from '../../../_services/datapage.service';
 import { Subscription, Observable } from 'rxjs';
 import { HttpParams, HttpHeaders } from '@angular/common/http';
 import { FormControl } from '@angular/forms';
-import {MatTableDataSource, MatPaginator, MatSort} from '@angular/material';
+import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import stubbedResults from '../../../../assets/json/D_InteractionHistory.json';
 
 export interface RecentInteractions {
@@ -26,6 +26,8 @@ export interface RecentInteractions {
 })
 export class RecentInteractionsComponent implements OnInit {
   componentName = 'recent-interactions.component';
+  pegaService = 'D_InteractionHistory';
+
 
   message: any;
   subscription: Subscription;
@@ -48,13 +50,15 @@ export class RecentInteractionsComponent implements OnInit {
   ngOnInit() {
     // this.showLoading = true;
     if (this.checkIfStubbed()) {
-
-      console.log('STUBBED D_RecentTreasurerCases');
+      console.log(this.componentName + ' -- STUBBED ' + this.pegaService);
       this.getStubbedCases();
     } else {
-      console.log('LIVE D_RecentTreasurerCases');
-      this.getStubbedCases();
+      console.log(this.componentName + ' -- LIVE ' + this.pegaService);
+      // this.getCases();
+      this.getCases();
     }
+    console.log('count of ' + this.pegaService + '-->' + localStorage.getItem(this.pegaService));
+
   }
   ngAfterViewInit(): void {
     // this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
@@ -62,17 +66,17 @@ export class RecentInteractionsComponent implements OnInit {
 
     // if (this.checkIfStubbed()) {
 
-      //   console.log('STUBBED D_RecentTreasurerCases');
-      //   this.getStubbedCases();
-      // } else {
-        //   console.log('LIVE D_RecentTreasurerCases');
-        //   this.getStubbedCases();
-        // }
-        // this.dataSource.sort = this.sort;
-        // this.dataSource.data = this.cases as RecentInteractions[];
+    //   console.log('STUBBED D_RecentTreasurerCases');
+    //   this.getStubbedCases();
+    // } else {
+    //   console.log('LIVE D_RecentTreasurerCases');
+    //   this.getStubbedCases();
+    // }
+    // this.dataSource.sort = this.sort;
+    // this.dataSource.data = this.cases as RecentInteractions[];
 
-        // console.log('LIVE D_RecentTreasurerCases ngAfterViewInit--> ' + JSON.stringify(this.dataSource.data));
-        // this.dataSource.paginator = this.paginator;
+    // console.log('LIVE D_RecentTreasurerCases ngAfterViewInit--> ' + JSON.stringify(this.dataSource.data));
+    // this.dataSource.paginator = this.paginator;
     // this.sort.disableClear = true;
   }
   checkIfStubbed() {
@@ -87,42 +91,28 @@ export class RecentInteractionsComponent implements OnInit {
     const stubbed: any = stubbedResults;
     this.showLoading = true;
     this.cases = Object.keys(this.getResults(stubbed)).map(it => this.getResults(stubbed)[it]);
-    // this.cases = JSON.parse(response.body);
-   // this.sortedData = this.cases.slice();
-    // this.dataSource.data = this.cases as RecentInteractions[];
-    // this.dataSource.filterPredicate = this.createFilter();
     this.dataSource.data = this.cases as RecentInteractions[];
-
-        console.log('LIVE D_RecentTreasurerCases ngAfterViewInit--> ' + JSON.stringify(this.dataSource.data));
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-    localStorage.setItem('D_InteractionHistory', this.cases.length.toString());
-    console.log('count of D_InteractionHistory-->  ', localStorage.getItem('D_InteractionHistory'));
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+    localStorage.setItem(this.pegaService, this.cases.length.toString());
+    //  console.log('count of ' + this.pegaService + '-->' + localStorage.getItem(this.pegaService));
     this.showLoading = false;
 
   }
 
   getCases() {
-    // cont; foo = useStubbedData;
-   // const unifiedtaskParams = new HttpParams().set('UserId', 'SallyJones').set('WorkGroup', 'NewWaveWG');
-   let dParams = new HttpParams();
-   dParams = dParams.append('Type', 'CONTACT');
-   dParams = dParams.append('ID', '7103716305');
-   this.showLoading = true;
+    let dParams = new HttpParams();
+    dParams = dParams.append('Type', 'CONTACT');
+    dParams = dParams.append('ID', '7103716305');
+    this.showLoading = true;
 
-    this.datapage.getDataPage('D_InteractionHistory', dParams).subscribe(
+    this.datapage.getDataPage(this.pegaService, dParams).subscribe(
       response => {
         this.headers = response.headers;
         this.cases = Object.keys(this.getResults(response.body)).map(it => this.getResults(response.body)[it]);
         // this.dataSource.data = this.cases as RecentInteractions[];
         // this.dataSource.filterPredicate = this.createFilter();
-        localStorage.setItem('D_InteractionHistory', this.cases.length.toString());
-
-       // this.sortedData = this.cases.slice();
-        // this.ngAfterViewInit();
-
-
-        console.log('count of D_InteractionHistory-->  ', localStorage.getItem('D_InteractionHistory'));
+        localStorage.setItem(this.pegaService, this.cases.length.toString());
         this.showLoading = false;
       },
       err => {
@@ -131,12 +121,12 @@ export class RecentInteractionsComponent implements OnInit {
     );
   }
   createFilter(): (data: any, filter: string) => boolean {
-    const filterFunction = function(data, filter): boolean {
+    const filterFunction = function (data, filter): boolean {
       const searchTerms = JSON.parse(filter);
       return data.pyLabel.toLowerCase().indexOf(searchTerms.pyLabel) !== -1;
-        // && data.id.toString().toLowerCase().indexOf(searchTerms.id) !== -1
-        // && data.colour.toLowerCase().indexOf(searchTerms.colour) !== -1
-        // && data.pet.toLowerCase().indexOf(searchTerms.pet) !== -1;
+      // && data.id.toString().toLowerCase().indexOf(searchTerms.id) !== -1
+      // && data.colour.toLowerCase().indexOf(searchTerms.colour) !== -1
+      // && data.pet.toLowerCase().indexOf(searchTerms.pet) !== -1;
     };
     return filterFunction;
   }

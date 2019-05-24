@@ -50,6 +50,7 @@ export class MegaMenuComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   // @Output() mpgMenu = new MatMenu;
   componentName = 'mega-menu.component';
+  pegaService = 'D_CustomerIntentTasks';
 
   message: any;
   subscription: Subscription;
@@ -70,21 +71,18 @@ export class MegaMenuComponent implements OnInit {
 
   ngOnInit() {
     if (this.checkIfStubbed()) {
-
-      console.log('STUBBED D_RecentTreasurerCases');
+      console.log(this.componentName + ' -- STUBBED ' + this.pegaService);
       this.getStubbedCases();
     } else {
-      console.log('LIVE D_RecentTreasurerCases');
+      console.log(this.componentName + ' -- LIVE ' + this.pegaService);
       // this.getCases();
-      this.getStubbedCases();
-
+      this.getCases();
     }
+    // console.log('count of ' + this.pegaService + '-->', localStorage.getItem(this.pegaService));
+
   }
   ngAfterViewInit(): void {
-    // this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
-    // this.sortedData = this.cases.slice();
-    // this.dataSource.sort = this.sort;
-    // this.dataSource.paginator = this.paginator;
+
   }
   checkIfStubbed() {
     const useStubStr = localStorage.getItem('useStubbedData');
@@ -116,34 +114,19 @@ export class MegaMenuComponent implements OnInit {
    // this.sortedData = this.cases.slice();
     // this.dataSource.data = this.cases as TreasurerCases[];
     // this.dataSource.filterPredicate = this.createFilter();
-    localStorage.setItem('D_getDriverCategories', this.actions.length.toString());
-    console.log('count of D_getDriverCategories-->  ', localStorage.getItem('D_getDriverCategories'));
+    localStorage.setItem(this.pegaService, this.actions.length.toString());
     this.showLoading = false;
   }
   getCases() {
     let dParams = new HttpParams();
-console.log('begin D_CustomerIntentTasks-->');
+    console.log('begin ' + this.pegaService + '-->');
      dParams = dParams.append('ContactId', '7103716305');
 
-    this.datapage.getDataPage('D_CustomerIntentTasks', dParams).subscribe(
+    this.datapage.getDataPage(this.pegaService, dParams).subscribe(
       response => {
-        // console.log('inD_CustomerIntentTasks --> ' + JSON.stringify(response.body));
-
-
         this.headers = response.headers;
         this.actions = Object.keys(this.getDriverCategories(response.body)).map(it => this.getDriverCategories(response.body)[it]);
-// console.log('D_CustomerIntentTasks--> ' + JSON.stringify(this.actions));
-        // this.dataSource.data = this.cases as TreasurerCases[];
-        // this.dataSource.filterPredicate = this.createFilter();
-
-
-        localStorage.setItem('D_CustomerIntentTasks', this.actions.length.toString());
-
-       // this.sortedData = this.cases.slice();
-        // this.ngAfterViewInit();
-
-
-        console.log('count of D_CustomerIntentTasks-->  ', localStorage.getItem('D_RecentTreasurerCases'));
+        localStorage.setItem(this.pegaService, this.actions.length.toString());
         this.showLoading = false;
       },
       err => {

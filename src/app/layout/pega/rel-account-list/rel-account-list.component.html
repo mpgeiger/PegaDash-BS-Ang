@@ -1,4 +1,8 @@
 <div fxLayout fxLayoutAlign="center center">
+    <h2> Total Assets -->   {{totalCurrentAssets | currency }} </h2>
+    <h2> TotalMOnthly Assets -->   {{ totalAvgMonthAssets | currency}} </h2>
+    <h2> Total Liabilities -->   {{ totalCurrentLiabilities | currency}} </h2>
+    <h2> Total Monthly Liabilities -->   {{ totalAvgMonthLiabilities | currency}} </h2>
     <mat-form-field >
       <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>

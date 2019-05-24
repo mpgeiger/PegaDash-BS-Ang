@@ -16,6 +16,7 @@ import { AppMaterialModule } from '../app-material/app-material.module';
 import { SharedPegaStarterPackModule } from './shared-pega-starterPackItems.module';
 import { RciMashupComponent } from '../layout/pega/mashups/rci-mashup/rci-mashup.component';
 import { SafeHtml, SafeStyle, SafeUrl } from '../layout/pega/_pipes/safe';
+import { WelcomeComponent } from '../layout/pega/customer-info/welcome/welcome.component';
 
 import {
      AccountSummaryComponent
@@ -93,6 +94,7 @@ import {
     , ValueTrendIndicatorArrowComponent
     , WorkitemComponent
     , PWorkItemComponent
+    , WelcomeComponent
     , Workitem1Component
 
     , SafeHtml
@@ -133,6 +135,8 @@ import {
     , WorkitemComponent
     , PWorkItemComponent
     , ValueTrendIndicatorArrowComponent
+    , WelcomeComponent
+
     , Workitem1Component
     , ModalWorkItemComponent
 
@@ -152,6 +156,7 @@ import {
    , WorkitemComponent
    , ModalWorkItemComponent
    , RciCheckResultTableComponent
+   , WelcomeComponent
   //  , HeroParentComponent
     // , HeroChildComponent
   ]

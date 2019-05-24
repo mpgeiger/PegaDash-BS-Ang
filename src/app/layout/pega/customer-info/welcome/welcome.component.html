@@ -1,0 +1,11 @@
+<div class="welcome mat-elevation-z10">
+  <h2>Good afternoon {{fullName}} </h2>
+  <p>You last access to this site was: {{lastAccess | date:'medium'}}</p>
+</div>
+
+<div class="welcome mat-elevation-z10">
+    <h2> Total Assets -->   {{ totalCurrentAssets | currency }} </h2>
+    <h2> TotalMOnthly Assets -->   {{ totalAvgMonthAssets | currency}} </h2>
+    <h2> Total Liabilities -->   {{ totalCurrentLiabilities | currency}} </h2>
+    <h2> Total Monthly Liabilities -->   {{ totalAvgMonthLiabilities | currency }} </h2>
+  </div>

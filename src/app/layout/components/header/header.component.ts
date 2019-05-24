@@ -1,11 +1,12 @@
 
-import { Component, OnInit, ViewEncapsulation, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, AfterViewInit, Input } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { CaseService, } from '../../../_services/case.service';
 import { OpenNewCaseService } from '../../../_messages/opennewcase.service';
 import stubbedResults from '../../../../assets/json/CaseTypes.json';
 import { LoginComponent } from '../../../login/login.component';
+import { stringToKeyValue } from '@angular/flex-layout/extended/typings/style/style-transforms';
 // import { MegaMenuComponent } from '../../pega/mega-menu/mega-menu.component';
 
 @Component({
@@ -17,6 +18,10 @@ import { LoginComponent } from '../../../login/login.component';
 
 })
 export class HeaderComponent implements OnInit, AfterViewInit {
+  componentName = 'header.component';
+  pegaService = 'NA';
+  @Input() displayUserName: string;
+
     public pushRightClass: string;
     cases: any = [];
 
@@ -26,7 +31,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     master = 'Master';
     // fileNameDialogRef: MatDialogRef<FileNameDialogComponent>;
 
-    userFullName = '';
+    // userName = '';
     constructor(
       private translate: TranslateService
       , public router: Router
@@ -54,15 +59,15 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
     ngOnInit() {
         this.pushRightClass = 'push-right';
-        this.userFullName = localStorage.getItem('userFullName');
-        this.getCaseTypes();
-        if (this.checkIfStubbed()) {
-          console.log('STUBBED CaseTypes');
-          this.getStubbedCaseTypes();
-        } else {
-          console.log('LIVE CaseTypes');
-          this.getCaseTypes();
-        }
+        // this.userName = localStorage.getItem('s');
+        // this.getCaseTypes();
+        // if (this.checkIfStubbed()) {
+        //   console.log('STUBBED CaseTypes');
+        //   this.getStubbedCaseTypes();
+        // } else {
+        //   console.log('LIVE CaseTypes');
+        //   this.getCaseTypes();
+        // }
 
     }
     ngAfterViewInit() {

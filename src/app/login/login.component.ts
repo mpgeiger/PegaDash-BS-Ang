@@ -22,6 +22,8 @@ import { interval } from 'rxjs/internal/observable/interval';
   animations: [routerTransition()]
 })
 export class LoginComponent implements OnInit {
+  componentName = 'login.component';
+  pegaService = 'D_OperatorID';
   loginData: any = {};
   loggingInLoading = false;
 
@@ -62,17 +64,22 @@ export class LoginComponent implements OnInit {
           console.log(' begin attemptLogin');
           this.dservice.getDataPage('D_OperatorID', operatorParams).subscribe(
             response => {
-              console.log(' begin D_OperatorID');
+              // console.log(' begin D_OperatorID');
               const operator: any = response.body;
-              localStorage.setItem('username', this.loginData.userName);
-              console.log(' in nbs-offer-component username-->' + this.loginData.userName);
+              // localStorage.setItem('username', this.loginData.userName);
+              // console.log(' in nbs-offer-component username-->' + this.loginData.userName);
 
+              localStorage.setItem('displayUserName', operator.pyUserName);
+              localStorage.setItem('lastAccess', operator.pyLastSignon);
               localStorage.setItem('userFullName', operator.pyUserName);
               localStorage.setItem('userAccessGroup', operator.pyAccessGroup);
               localStorage.setItem('userWorkGroup', operator.pyWorkGroup);
               localStorage.setItem('userWorkBaskets', JSON.stringify(operator.pyWorkBasketList));
               localStorage.setItem('userEmailAddress', operator.pyAddresses.Email.pyEmailAddress);
-              console.log(' finished D_OperatorID');
+              console.log( this.componentName + ' LS --> userName -->' + localStorage.getItem('userName'));
+              console.log( this.componentName + ' LS --> displayUserName -->' + localStorage.getItem('displayUserName'));
+              console.log( this.componentName + ' LS -- lastAccess-->' + localStorage.getItem('lastAccess'));
+
               // this.glsservice.sendMessage('LoggedIn');
               // console.log('Logged In-->', operator.pyUserName);
               // this.router.navigate(['summary-page']);

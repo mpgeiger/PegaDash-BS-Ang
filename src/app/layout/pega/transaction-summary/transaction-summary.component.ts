@@ -140,7 +140,7 @@ export class TransactionSummaryComponent implements OnInit, AfterViewInit {
 
     let useStub = false;
     useStub = (useStubStr === 'true');
-    // useStub = true;
+    useStub = true;
     return useStub;
   }
 

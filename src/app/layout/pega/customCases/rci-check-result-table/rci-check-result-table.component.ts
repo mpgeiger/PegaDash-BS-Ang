@@ -25,6 +25,7 @@ export interface ChequeInfo {
   styleUrls: ['./rci-check-result-table.component.scss']
 })
 export class RciCheckResultTableComponent implements OnInit {
+  componentName = 'rci-check-result-table.component';
 
   @Input('recName') myRecName:string;
   @Input('checkAm') myCheckAm:number;
@@ -148,10 +149,10 @@ filterValues = {
     // this.dataSource.paginator = this.paginator;
     if (this.checkIfStubbed()) {
 
-      console.log('STUBBED D_RecentTreasurerCases');
+      console.log('STUBBED D_RCIChequeDetails');
       this.getStubbedCases();
     } else {
-      console.log('LIVE D_RecentTreasurerCases');
+      console.log('LIVE D_RCIChequeDetails');
       this.getStubbedCases();
     }
   }
@@ -193,7 +194,7 @@ filterValues = {
         this.showLoading = false;
       },
       err => {
-        alert('Error form unifiedtask:' + err.errors);
+        alert('Error form ' + this.componentName + ':' + err.errors);
       }
     );
   }

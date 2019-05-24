@@ -4,20 +4,25 @@ import { FormGroup, FormControl } from '@angular/forms';
 // import { MegaMenuComponent } from './pega/mega-menu/mega-menu.component';
 
 @Component({
-    selector: 'app-layout',
-    templateUrl: './layout.component.html',
-    styleUrls: ['./layout.component.scss']
+  selector: 'app-layout',
+  templateUrl: './layout.component.html',
+  styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
+  componentName = 'layout.component';
+  collapedSideBar: boolean;
+  displayUserName = localStorage.getItem('displayUserName');
 
-    collapedSideBar: boolean;
-    userFullName = localStorage.getItem('userFullName');
+  constructor() { }
+  nameLayout = new FormControl('');
+  ngOnInit() {
+    console.log(this.componentName + ' LS --> userName -->' + localStorage.getItem('userName'));
+    console.log(this.componentName + ' LS --> displayUserName -->' + localStorage.getItem('displayUserName'));
+    console.log(this.componentName + ' LS -- lastAccess-->' + localStorage.getItem('lastAccess'));
 
-    constructor() {}
-    nameLayout = new FormControl('');
-    ngOnInit() {}
+  }
 
-    receiveCollapsed($event) {
-        this.collapedSideBar = $event;
-    }
+  receiveCollapsed($event) {
+    this.collapedSideBar = $event;
+  }
 }

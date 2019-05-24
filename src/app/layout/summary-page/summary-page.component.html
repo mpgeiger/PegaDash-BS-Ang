@@ -6,6 +6,17 @@
       </label> -->
   <!-- <h2 class="text-muted">Account Summary for <small>First Lastnam</small></h2> -->
   <div class="row center">
+      <div class="col-12 center">
+    <app-welcome [FullName]="userName" [LastAccess]="lastAccess"
+    [totalCurrentAssets]="totalCurrentAssets"
+    [totalCurrentLiabilities]="totalCurrentLiabilities"
+    [totalAvgMonthAssets]="totalAvgMonthAssets"
+    [totalAvgMonthLiabilities]="totalAvgMonthLiabilities"
+
+    ></app-welcome>
+    </div>
+  </div>
+  <div class="row center">
     <div class="col-xl-8 col-lg-8">
       <!-- <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center"> -->
       <!-- <div fxFlex="75%"> -->
@@ -35,7 +46,7 @@
           <span class="card-title"><h4>BNY Advice</h4></span>
         </div>
         <div class="text-center align-middle card-body nba">
-          <app-nba-offer></app-nba-offer>
+          <!-- <app-nba-offer></app-nba-offer> -->
         </div>
       </div>
 

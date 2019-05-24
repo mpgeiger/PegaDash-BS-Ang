@@ -3,9 +3,9 @@ import { DatapageService } from '../../../_services/datapage.service';
 import { Subscription, Observable } from 'rxjs';
 import { HttpParams, HttpHeaders } from '@angular/common/http';
 import { FormControl } from '@angular/forms';
-import {MatTableDataSource, MatPaginator, MatSort} from '@angular/material';
+import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import stubbedResults from '../../../../assets/json/D_RelAccountList.json';
-import {TooltipPosition} from '@angular/material';
+import { TooltipPosition } from '@angular/material';
 
 export interface RelAccount {
   AccountBalance: number;
@@ -51,7 +51,7 @@ export interface RelAccount {
 })
 export class RelAccountListComponent implements OnInit {
   componentName = 'rel-account-list.component';
-
+  pegaService = 'D_RelAccountList';
   message: any;
   subscription: Subscription;
   showLoading = true;
@@ -59,10 +59,14 @@ export class RelAccountListComponent implements OnInit {
   sortedData: RelAccount[];
   headers: any;
   cases: RelAccount[] = [];
-  displayedColumns = ['AccountNumber',  'AccountTypeDesc', 'AverageMonthlyBalance', 'AccountTrend', 'AccountBalance'];
+  displayedColumns = ['AccountNumber', 'AccountTypeDesc', 'AverageMonthlyBalance', 'AccountTrend', 'AccountBalance'];
 
   positionOptions: TooltipPosition[] = ['after', 'before', 'above', 'below', 'left', 'right'];
   position = new FormControl(this.positionOptions[0]);
+  totalCurrentAssets = 0;
+  totalAvgMonthAssets = 0;
+  totalCurrentLiabilities = 0;
+  totalAvgMonthLiabilities = 0;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -71,6 +75,15 @@ export class RelAccountListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if (this.checkIfStubbed()) {
+      console.log(this.componentName + ' -- STUBBED ' + this.pegaService);
+      this.getStubbedCases();
+    } else {
+      console.log(this.componentName + ' -- LIVE ' + this.pegaService);
+      // this.getCases();
+      this.getCases();
+    }
+    // console.log('count of ' + this.pegaService + '-->' + localStorage.getItem(this.pegaService));
 
   }
 
@@ -80,20 +93,13 @@ export class RelAccountListComponent implements OnInit {
     this.dataSource.sort = this.sort;
     // this.sort.disableClear = true;
     this.dataSource.paginator = this.paginator;
-    if (this.checkIfStubbed()) {
 
-      console.log('STUBBED D_RecentTreasurerCases');
-      this.getStubbedCases();
-    } else {
-      console.log('LIVE D_RecentTreasurerCases');
-      this.getStubbedCases();
-    }
   }
   checkIfStubbed() {
     const useStubStr = localStorage.getItem('useStubbedData');
 
     let useStub = false;
-    useStub = true;
+    // useStub = true;
     useStub = (useStubStr === 'true');
     return useStub;
   }
@@ -101,33 +107,29 @@ export class RelAccountListComponent implements OnInit {
     const stubbed: any = stubbedResults;
     this.cases = Object.keys(this.getResults(stubbed)).map(it => this.getResults(stubbed)[it]);
     // this.cases = JSON.parse(response.body);
-   // this.sortedData = this.cases.slice();
-   this.parseRelAccountList();
+    // this.sortedData = this.cases.slice();
+    this.parseRelAccountList();
     this.dataSource.data = this.cases as RelAccount[];
     // this.dataSource.filterPredicate = this.createFilter();
-    localStorage.setItem('D_RelAccountList', this.cases.length.toString());
-    console.log('count of D_RelAccountList-->  ', localStorage.getItem('D_RelAccountList'));
+    localStorage.setItem(this.pegaService, this.cases.length.toString());
     this.showLoading = false;
-
   }
 
   getCases() {
-   let dParams = new HttpParams();
-   dParams = dParams.append('CifNbr', '9912345999');
-   dParams = dParams.append('Marketsegmentid', '5');
-   dParams = dParams.append('ReturnNullIfEmpty', 'true');
+    let dParams = new HttpParams();
+    dParams = dParams.append('CifNbr', '9912345999');
+    dParams = dParams.append('Marketsegmentid', '5');
+    dParams = dParams.append('ReturnNullIfEmpty', 'true');
 
 
-    this.datapage.getDataPage('D_RelAccountList', dParams).subscribe(
+    this.datapage.getDataPage(this.pegaService, dParams).subscribe(
       response => {
         this.headers = response.headers;
         this.cases = Object.keys(this.getResults(response.body)).map(it => this.getResults(response.body)[it]);
         this.parseRelAccountList();
         this.dataSource.data = this.cases as RelAccount[];
-
         // this.dataSource.filterPredicate = this.createFilter();
-        localStorage.setItem('D_RelAccountList', this.cases.length.toString());
-        console.log('count of D_RelAccountList-->  ', localStorage.getItem('D_RelAccountList'));
+        localStorage.setItem(this.pegaService, this.cases.length.toString());
         this.showLoading = false;
       },
       err => {
@@ -137,30 +139,60 @@ export class RelAccountListComponent implements OnInit {
   }
 
   parseRelAccountList() {
-    this.cases.forEach( (element) => {
-      let  monthBal = element.AverageMonthlyBalance;
-      const currentBal = element.AccountBalance;
+    let totCurrAsset = this.totalCurrentAssets * 1;
+    let totAvgMonthAsset = this.totalAvgMonthAssets * 1;
+
+    let totCurrLiab = this.totalCurrentLiabilities * 1;
+    let totAvgMonthLiab = this.totalAvgMonthLiabilities * 1;
+
+    this.cases.forEach((element) => {
+      // let  acctBal = element.AccountBalance * 1;
+      const currentBal = element.AccountBalance * 1;
+      let avgMonthBal = 0;
+
+      // element.AverageMonthlyBalance * 1;
+
+      // let acctBal = +element.AccountBalance;
+
+      if (isNaN(element.AverageMonthlyBalance)) {
+        avgMonthBal = 0;
+        element.AverageMonthlyBalance = 0;
+      } else {
+        avgMonthBal = element.AverageMonthlyBalance * 1;
+      }
+
 
       if (element.ApplDesc === 'Card' || element.ApplDesc === 'Loan') {
         element.ApplDescType = 'Liability';
-        element.AccountBalance = 0 - element.AccountBalance;
-        element.AverageMonthlyBalance = 0 - element.AverageMonthlyBalance;
+        const cb = 0 - currentBal;
+        const ab = 0 - avgMonthBal;
+
+        element.AccountBalance = cb;
+        element.AverageMonthlyBalance = ab;
+
+        totCurrLiab = totCurrLiab + cb;
+        totAvgMonthLiab = totAvgMonthLiab + ab;
+
       } else {
+        // const cb = 0 - currentBal;
+        // const ab = 0 - avgMonthBal;
         element.ApplDescType = 'Asset';
+        totCurrAsset = totCurrAsset + currentBal;
+        totAvgMonthAsset = totAvgMonthAsset + avgMonthBal;
+
       }
 
-      if (isNaN(monthBal)) {
-        monthBal = 0;
-        element.AverageMonthlyBalance = 0;
-      }
+
       // if (isNaN(currentBal)) {
       //   currentBal = 0;
       // }
 
 
+
+
       // const result = currentBal - monthBal;
 
-      const trend = this.computeTrend(currentBal, monthBal, element.ApplDescType);
+      const trend = this.computeTrend(currentBal, avgMonthBal, element.ApplDescType);
       // if (result > 0) {
       //   trend = 1;
       // } else if ( result < 0 ) {
@@ -168,17 +200,28 @@ export class RelAccountListComponent implements OnInit {
       // }
       element.AccountTrend = trend;
       // console.log('trans -->' + result + ' = ' +  currentBal + ' - ' + monthBal + ' = ' + result + '   trend -->' + element.AccountTrend);
-  });
-   }
+    });
+    console.log('total assets -->' + totCurrAsset);
+    console.log('total liab   -->' + totCurrLiab);
+    console.log('total avg assets -->' + totAvgMonthAsset);
+    console.log('total avgt liab  -->' + totAvgMonthLiab);
+    this.totalCurrentAssets = totCurrAsset;
+    this.totalAvgMonthAssets = totAvgMonthAsset;
+    this.totalCurrentLiabilities = totCurrLiab;
+    this.totalAvgMonthLiabilities = totAvgMonthLiab;
 
-   computeTrend(currentBal, monthBal, type): number {
+    localStorage.setItem('totalCurrentLiabilities', totCurrLiab.toString());
+    localStorage.setItem('totalAvgMonthLiabilities', totAvgMonthLiab.toString());
+    localStorage.setItem('totalCurrentAssets', totCurrAsset.toString());
+    localStorage.setItem('totalAvgMonthAssets', totAvgMonthAsset.toString());
+  }
+
+  computeTrend(currentBal, monthBal, type): number {
     const result = currentBal - monthBal;
-
-
     let trend = 0;
     if (result > 0) {
       trend = 1;
-    } else if ( result < 0 ) {
+    } else if (result < 0) {
       trend = -1;
     }
     if (type === 'Liability') {
@@ -187,16 +230,18 @@ export class RelAccountListComponent implements OnInit {
 
     return trend;
 
-   }
+  }
+
+
 
 
   createFilter(): (data: any, filter: string) => boolean {
-    const filterFunction = function(data, filter): boolean {
+    const filterFunction = function (data, filter): boolean {
       const searchTerms = JSON.parse(filter);
       return data.pyLabel.toLowerCase().indexOf(searchTerms.AccountTypeDesc) !== -1;
-        // && data.id.toString().toLowerCase().indexOf(searchTerms.id) !== -1
-        // && data.colour.toLowerCase().indexOf(searchTerms.colour) !== -1
-        // && data.pet.toLowerCase().indexOf(searchTerms.pet) !== -1;
+      // && data.id.toString().toLowerCase().indexOf(searchTerms.id) !== -1
+      // && data.colour.toLowerCase().indexOf(searchTerms.colour) !== -1
+      // && data.pet.toLowerCase().indexOf(searchTerms.pet) !== -1;
     };
     return filterFunction;
   }

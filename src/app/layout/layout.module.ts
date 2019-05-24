@@ -25,6 +25,7 @@ import { SharedPegaModule } from '../shared-pega/shared-pega.module';
 import { AppMaterialModule  } from '../app-material/app-material.module';
 import { FromCamelCase } from './pega/_pipes/fromCamelCase';
 
+
 @NgModule({
     imports: [
           CommonModule
