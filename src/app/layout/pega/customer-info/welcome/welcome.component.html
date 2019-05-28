@@ -1,11 +1,89 @@
 <div class="welcome mat-elevation-z10">
-  <h2>Good afternoon {{fullName}} </h2>
-  <p>You last access to this site was: {{lastAccess | date:'medium'}}</p>
+  <h2 class="display-4">Good afternoon, {{ fullName }}</h2>
+  <p>You last access to this site was: {{ lastAccess | date: 'medium' }}</p>
 </div>
 
 <div class="welcome mat-elevation-z10">
-    <h2> Total Assets -->   {{ totalCurrentAssets | currency }} </h2>
-    <h2> TotalMOnthly Assets -->   {{ totalAvgMonthAssets | currency}} </h2>
-    <h2> Total Liabilities -->   {{ totalCurrentLiabilities | currency}} </h2>
-    <h2> Total Monthly Liabilities -->   {{ totalAvgMonthLiabilities | currency }} </h2>
+  <div class="row d-flex justify-content-center">
+    <div class="col-xl-3 col-lg-3">
+      <app-pstat [bgClass]="'success'"
+      [icon]="'fa-comments'"
+      [amount]="totalCurrentAssets"
+      [label]="'Total Assets'"
+      [type]="'asset'"></app-pstat>
+    </div>
+    <div class="col-xl-3 col-lg-3">
+      <div class="my-fancy-container">
+        <i class="material-icons md-64" style="transform: rotate(0deg); color: red;">
+          arrow_drop_down_circle
+        </i>
+
+        <span class="my-text">Decrease from Average</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-6">
+      <app-pstat [bgClass]="'success'"
+       [icon]="'fa-tasks'"
+       [amount]="totalAvgMonthAssets"
+       [label]="'Avg Assets/Month'"
+       [type]="'asset'"></app-pstat>
+    </div>
   </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-xl-3 col-lg-6">
+      <app-pstat [bgClass]="'warning'" [icon]="'fa-tasks'" [amount]="totalCurrentLiabilities" [label]="'Total Liabilities'"
+      [type]="'liability'"> </app-pstat>
+    </div>
+    <div class="col-xl-3 col-lg-6">
+      <div class="my-fancy-container">
+        <i class="material-icons md-64" style="transform: rotate(180deg); color: green;">
+          arrow_drop_down_circle
+        </i>
+
+        <span class="my-text">Increase from Average</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-lg-6">
+      <app-pstat
+        [bgClass]="'warning'"
+        [icon]="'fa-shopping-cart'"
+        [amount]="totalAvgMonthLiabilities"
+        [label]="'Avg Liabilites/Month'"
+        [type]="'liability'"
+      ></app-pstat>
+    </div>
+    <!-- <div class="col-xl-3 col-lg-6">
+            <app-pstat [bgClass]="'danger'" [icon]="'fa-support'" [count]="13" [label]="'New Tickets!!!'"></app-pstat>
+        </div> -->
+  </div>
+  <!-- <mat-grid-list cols = "2" rowHeight = "60px">
+        <mat-grid-tile
+        [colspan] = "1"
+        [rowspan] = "1">
+        <h3> Total Assets</h3><br/>
+        <h4>{{ totalCurrentAssets | currency }}</h4>
+        </mat-grid-tile>
+        <mat-grid-tile
+
+        >
+        <h3>Average Monthly Assets</h3><br/>
+        <br><h4>{{ totalAvgMonthAssets | currency}}</h4>
+        </mat-grid-tile>
+        <mat-grid-tile
+        [colspan] = "1"
+        [rowspan] = "1">
+        <h3>Total Liabilities</h3><br/>
+        <h4>{{ totalCurrentLiabilities | currency}}</h4>
+        </mat-grid-tile>
+        <mat-grid-tile
+        [colspan] = "1"
+        [rowspan] = "1"><h3>Total Monthly Liabilities</h3><br/>
+        <h4>{{ totalAvgMonthLiabilities | currency }}</h4>
+        </mat-grid-tile>
+      </mat-grid-list> -->
+  <!-- <h3> Total Assets   {{ totalCurrentAssets | currency }} </h3>
+    <h3> TotalMOnthly Assets   {{ totalAvgMonthAssets | currency}} </h3>
+    <h3> Total Liabilities    {{ totalCurrentLiabilities | currency}} </h3>
+    <h3> Total Monthly Liabilities  {{ totalAvgMonthLiabilities | currency }} </h3>
+   -->
+</div>

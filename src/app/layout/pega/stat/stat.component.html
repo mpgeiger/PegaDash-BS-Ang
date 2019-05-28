@@ -1,0 +1,35 @@
+<div class="card text-white bg-{{bgClass}}">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-3 col-xs-2">
+                <!-- <i class="fa {{icon}} fa-2x"></i> -->
+                <!-- <i class="asset"></i> -->
+                <button mat-icon-button disabled >
+                    <!-- <img class="logo-image logo-asset"  > -->
+                    <img  *ngIf="type=='asset'" class="logo-image logo-asset" src="/assets/images/asset_icon.png" >
+                    <img  *ngIf="type=='liability'" class="logo-image logo-asset" src="/assets/images/liability2_red.png" >
+                    <!-- <img class="logo-image" src="/assets/images/asset_icon.png"> -->
+                    <!-- <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon> -->
+                  </button>
+                <!-- <mat-button class="md-icon-button logo"> -->
+                    <!-- <img class="logo-image" src="path/to/your/file.png"> -->
+                  <!-- </mat-button> -->
+            </div>
+            <div class="col-9 col-xs-10 text-right">
+                <!-- <div class="d-block huge">{{count}}</div> -->
+                <h4 class="pstat-display-title">{{label}}</h4>
+                <!-- <div class="d-block huge" ><h4 class="mat-display-1">{{label}}</h4></div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="card-footer" >
+        <!-- <a [routerLink]="['/opentask-page']"> -->
+        <span class=" pstat-display-value float-right">{{amount | currency }}</span>
+        <!-- <a href="javascript:void(0)" class="float-right card-inverse">
+            <span ><i class="fa fa-arrow-circle-right"></i></span>
+        </a> -->
+      <!-- </a> -->
+      </div>
+
+</div>

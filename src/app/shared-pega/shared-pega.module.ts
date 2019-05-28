@@ -17,6 +17,7 @@ import { SharedPegaStarterPackModule } from './shared-pega-starterPackItems.modu
 import { RciMashupComponent } from '../layout/pega/mashups/rci-mashup/rci-mashup.component';
 import { SafeHtml, SafeStyle, SafeUrl } from '../layout/pega/_pipes/safe';
 import { WelcomeComponent } from '../layout/pega/customer-info/welcome/welcome.component';
+// import { PStatModule } from '../layout/pega/stat/stat.module';
 
 import {
      AccountSummaryComponent
@@ -36,6 +37,8 @@ import {
   , NbaOfferComponent
   , OpenByWorkTypeComponent
   , PegaPieChartComponent
+  , PStatComponent
+  // , PStatModule
   , RecentInteractionsComponent
   , RecentTreasurerCaseListComponent
   , RelAccountListComponent
@@ -56,6 +59,7 @@ import {
    , ReactiveFormsModule
    , CommonModule
    , AppMaterialModule
+  //  , PStatModule
    , SharedPegaStarterPackModule
    , Ng2Charts
 
@@ -84,6 +88,7 @@ import {
     , NbaTeaserComponent
     , OpenByWorkTypeComponent
     , PegaPieChartComponent
+    , PStatComponent
     , RecentInteractionsComponent
     , RecentTreasurerCaseListComponent
     , RciMashupComponent
@@ -125,6 +130,7 @@ import {
     , NbaTeaserComponent
     , OpenByWorkTypeComponent
     , PegaPieChartComponent
+    , PStatComponent
     , RecentInteractionsComponent
     , RecentTreasurerCaseListComponent
     , RciCheckResultTableComponent

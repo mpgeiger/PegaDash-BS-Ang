@@ -10,6 +10,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class SummaryPageComponent implements OnInit {
   userName = '';
+  displayUserName = '';
   lastAccess = '';
 
 
@@ -34,6 +35,8 @@ export class SummaryPageComponent implements OnInit {
     // ngOnInit() {}
     ngOnInit() {
       this.userName = localStorage.getItem('userName');
+      this.userName = localStorage.getItem('userName');
+      this.displayUserName = localStorage.getItem('displayUserName');
       this.lastAccess = localStorage.getItem('lastAccess');
       this.numUnifiedTaskList$ = localStorage.getItem('numUnifiedTaskList');
       this.D_RecentTreasurerCases$ = localStorage.getItem('D_RecentTreasurerCases');

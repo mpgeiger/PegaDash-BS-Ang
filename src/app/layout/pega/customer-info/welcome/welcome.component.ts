@@ -1,4 +1,6 @@
+// import { StatComponent } from './../../../../shared/modules/stat/stat.component';
 import { Component, OnInit, Input } from '@angular/core';
+import { StatComponent } from './../../../../shared/modules/stat/stat.component';
 
 @Component({
   selector: 'app-welcome',

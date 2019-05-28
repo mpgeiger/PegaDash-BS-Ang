@@ -19,11 +19,13 @@ import {
   UnifiedtasklistComponent
 } from './components';
 
-import { StatModule } from '../../shared';
+// import { StatModule } from '../../shared';
+// import { StatComponent } from './../../shared/modules/stat/stat.component';
 // import { LayoutModule } from './../layout.module';
 // import { RecentTreasurerCaseListComponent } from '../pega';
 //  import { RecentTreasurerCaseListComponent } from '../pega';
 import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
+
 // import { FileNameDialogComponent } from '../pega';
 // import { AppMaterialModule } from './../../app-material/app-material.module';
 
@@ -39,7 +41,7 @@ import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
       , SharedPegaModule
       , NgbCarouselModule
       , NgbAlertModule
-      , StatModule
+      // , StatModule
       , SummaryPageRoutingModule
       // , RecentTreasurerCaseListComponent
     ],
@@ -47,6 +49,7 @@ import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
       SummaryPageComponent
       //  , ModalContainerComponent
       //  , FileNameDialogComponent
+      // , StatComponent
       , TimelineComponent
       , NotificationComponent
       , ChatComponent
@@ -59,6 +62,8 @@ import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
     exports: [
       FormsModule
      , ReactiveFormsModule
+    //  , StatModule
+    //  , StatComponent
       // ModalContainerComponent,
       // FileNameDialogComponent
       // ReactiveFormsModule

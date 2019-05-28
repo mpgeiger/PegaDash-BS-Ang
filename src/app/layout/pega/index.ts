@@ -31,6 +31,8 @@ export * from './recent-interactions/recent-interactions.component';
 export * from './recentTreasurerCases/recentTreasurerCaseList.component';
 export * from './rel-account-list/rel-account-list.component';
 export * from './ngPaging/pagination.component';
+export * from './stat/stat.component';
+
 export * from './status-recent-treasurer/status-recent-treasurer.component';
 
 export * from './transaction-summary/transaction-summary.component';
