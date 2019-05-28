@@ -14,7 +14,7 @@
     </div>
     <div class="col-xl-3 col-lg-3">
       <div class="my-fancy-container"
-      matTooltip="Your current assets have decreased by:<br/> {{totalCurrentAssets -totalAvgMonthAssets | currency }}">
+      matTooltip="Your current assets have decreased by: {{totalCurrentAssets -totalAvgMonthAssets | currency }}">
           <div class="my-text">{{totalCurrentAssets -totalAvgMonthAssets | currency }}</div>
         <i class="material-icons md-48" style="transform: rotate(0deg); color: red;">
           arrow_drop_down_circle
@@ -38,7 +38,7 @@
     </div>
     <div class="col-xl-3 col-lg-6">
       <div class="my-fancy-container"
-      matTooltip="Your current liabilities increased by:<br/> {{0 - totalCurrentLiabilities - totalAvgMonthLiabilities | currency }}">
+      matTooltip="Your current liabilities increased by: {{0 - totalCurrentLiabilities - totalAvgMonthLiabilities | currency }}">
 
           <div class="my-text">{{0 - totalCurrentLiabilities - totalAvgMonthLiabilities | currency }}</div>
         <i class="material-icons md-48" style="transform: rotate(180deg); color: green;">
