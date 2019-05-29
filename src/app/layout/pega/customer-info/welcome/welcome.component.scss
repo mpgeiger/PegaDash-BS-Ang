@@ -4,7 +4,7 @@
 
 .welcome {
   text-align: center;
-  margin: 5px;
+  margin-bottom: 15px;
   padding: 8px;
   width: 100%;
   background-color: #9C906F;
@@ -29,6 +29,20 @@
   display: block;
   font-family: "Courier-new";
   font-weight: bolder;
+}
+
+.account-text-desc {
+  display: block;
+  font-family: "Courier-new";
+  // font-weight: bolder;
+  font-size: 1.3rem;
+}
+
+.account-text-desc, .account-text-value {
+  display: block;
+  font-family: "Courier-new";
+   font-weight: bold;
+    font-size: 1.4rem;
 }
 
 .my-icon {

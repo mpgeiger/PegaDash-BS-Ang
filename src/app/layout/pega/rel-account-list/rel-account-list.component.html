@@ -1,8 +1,4 @@
 <div fxLayout fxLayoutAlign="center center">
-    <h2> Total Assets -->   {{totalCurrentAssets | currency }} </h2>
-    <h2> TotalMOnthly Assets -->   {{ totalAvgMonthAssets | currency}} </h2>
-    <h2> Total Liabilities -->   {{ totalCurrentLiabilities | currency}} </h2>
-    <h2> Total Monthly Liabilities -->   {{ totalAvgMonthLiabilities | currency}} </h2>
     <mat-form-field >
       <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
     </mat-form-field>
@@ -62,7 +58,7 @@
 
       </table>
       <!-- <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar> -->
-      <mat-paginator [pageSize]="20" [pageSizeOptions]="[2, 4, 6, 10, 20]"></mat-paginator>
+      <mat-paginator [pageSize]="5" [pageSizeOptions]="[2, 5, 10, 20, 20]"></mat-paginator>
 
     </div>
   </div>

@@ -15,12 +15,12 @@
     <div class="col-xl-3 col-lg-3">
       <div class="my-fancy-container"
       matTooltip="Your current assets have decreased by: {{totalCurrentAssets -totalAvgMonthAssets | currency }}">
-          <div class="my-text">{{totalCurrentAssets -totalAvgMonthAssets | currency }}</div>
+          <div class="account-text-value">{{totalCurrentAssets -totalAvgMonthAssets | currency }}</div>
         <i class="material-icons md-48" style="transform: rotate(0deg); color: red;">
           arrow_drop_down_circle
         </i>
 
-        <span class="my-text">Decrease from Average</span>
+        <span class="account-text-desc">Decrease from Average</span>
       </div>
     </div>
     <div class="col-xl-3 col-lg-6">
@@ -40,12 +40,12 @@
       <div class="my-fancy-container"
       matTooltip="Your current liabilities increased by: {{0 - totalCurrentLiabilities - totalAvgMonthLiabilities | currency }}">
 
-          <div class="my-text">{{0 - totalCurrentLiabilities - totalAvgMonthLiabilities | currency }}</div>
+          <div class="account-text-value">{{0 - totalCurrentLiabilities - totalAvgMonthLiabilities | currency }}</div>
         <i class="material-icons md-48" style="transform: rotate(180deg); color: green;">
           arrow_drop_down_circle
         </i>
 
-        <span class="my-text">Increase from Average</span>
+        <span class="account-text-desc">Increase from Average</span>
       </div>
     </div>
     <div class="col-xl-3 col-lg-6">
@@ -57,38 +57,5 @@
         [type]="'liability'"
       ></app-pstat>
     </div>
-    <!-- <div class="col-xl-3 col-lg-6">
-            <app-pstat [bgClass]="'danger'" [icon]="'fa-support'" [count]="13" [label]="'New Tickets!!!'"></app-pstat>
-        </div> -->
   </div>
-  <!-- <mat-grid-list cols = "2" rowHeight = "60px">
-        <mat-grid-tile
-        [colspan] = "1"
-        [rowspan] = "1">
-        <h3> Total Assets</h3><br/>
-        <h4>{{ totalCurrentAssets | currency }}</h4>
-        </mat-grid-tile>
-        <mat-grid-tile
-
-        >
-        <h3>Average Monthly Assets</h3><br/>
-        <br><h4>{{ totalAvgMonthAssets | currency}}</h4>
-        </mat-grid-tile>
-        <mat-grid-tile
-        [colspan] = "1"
-        [rowspan] = "1">
-        <h3>Total Liabilities</h3><br/>
-        <h4>{{ totalCurrentLiabilities | currency}}</h4>
-        </mat-grid-tile>
-        <mat-grid-tile
-        [colspan] = "1"
-        [rowspan] = "1"><h3>Total Monthly Liabilities</h3><br/>
-        <h4>{{ totalAvgMonthLiabilities | currency }}</h4>
-        </mat-grid-tile>
-      </mat-grid-list> -->
-  <!-- <h3> Total Assets   {{ totalCurrentAssets | currency }} </h3>
-    <h3> TotalMOnthly Assets   {{ totalAvgMonthAssets | currency}} </h3>
-    <h3> Total Liabilities    {{ totalCurrentLiabilities | currency}} </h3>
-    <h3> Total Monthly Liabilities  {{ totalAvgMonthLiabilities | currency }} </h3>
-   -->
 </div>
