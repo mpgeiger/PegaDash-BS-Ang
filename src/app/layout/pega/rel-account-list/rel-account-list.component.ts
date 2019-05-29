@@ -4,7 +4,7 @@ import { Subscription, Observable } from 'rxjs';
 import { HttpParams, HttpHeaders } from '@angular/common/http';
 import { FormControl } from '@angular/forms';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
-import stubbedResults from '../../../../assets/json/D_RelAccountList.json';
+import stubbedResults from '@ss/json/D_RelAccountList.json';
 import { TooltipPosition } from '@angular/material';
 
 export interface RelAccount {

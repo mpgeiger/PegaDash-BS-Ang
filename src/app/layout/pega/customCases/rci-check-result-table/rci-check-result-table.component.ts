@@ -4,7 +4,7 @@ import { Subscription, Observable } from 'rxjs';
 import { HttpParams, HttpHeaders } from '@angular/common/http';
 import { FormControl } from '@angular/forms';
 import {MatTableDataSource, MatPaginator, MatSort} from '@angular/material';
-import stubbedResults from '../../../../../assets/json/D_RCIChequeDetails_NewWaveEnergy.json';
+import stubbedResults from '@ss/json/D_RCIChequeDetails_NewWaveEnergy.json';
 import {TooltipPosition} from '@angular/material';
 
 export interface ChequeInfo {

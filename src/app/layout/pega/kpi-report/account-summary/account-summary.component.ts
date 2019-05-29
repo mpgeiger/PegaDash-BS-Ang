@@ -10,7 +10,11 @@ import { DatapageService } from '../../../../_services/datapage.service';
 import { ChartType, ChartOptions, ChartDataSets } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
-import stubbedResults from '../../../../../assets/json/D_RelAccountList.json';
+import stubbedResults from '@ss/json/D_RelAccountList.json';
+
+
+// import foo from '@ss/json/D_RelAccountList.json';
+// import stubbedResults from '@ss/json/D_RelAccountList.json';
 
 @Component({
   selector: 'app-account-summary',

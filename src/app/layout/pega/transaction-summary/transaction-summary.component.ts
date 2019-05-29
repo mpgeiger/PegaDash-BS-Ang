@@ -14,8 +14,8 @@ import {MatTableDataSource, MatPaginator, MatSort} from '@angular/material';
 import { stringify } from 'querystring';
 import { DatapageService } from '../../../_services/datapage.service';
 
-// import stubbedResults from '../../../../assets/json/D_TransactionSummaryInternational.json';
-import stubbedResults from '../../../../assets/json/D_TransactionSummaryInternational_Error.json';
+// import stubbedResults from '@ss/json/D_TransactionSummaryInternational.json';
+import stubbedResults from '@ss/json/D_TransactionSummaryInternational_Error.json';
 
 export interface Transactions {
   AccountNumber: string;

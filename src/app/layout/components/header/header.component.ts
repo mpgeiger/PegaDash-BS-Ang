@@ -4,7 +4,7 @@ import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { CaseService, } from '../../../_services/case.service';
 import { OpenNewCaseService } from '../../../_messages/opennewcase.service';
-import stubbedResults from '../../../../assets/json/CaseTypes.json';
+import stubbedResults from '@ss/json/CaseTypes.json';
 import { LoginComponent } from '../../../login/login.component';
 import { stringToKeyValue } from '@angular/flex-layout/extended/typings/style/style-transforms';
 // import { MegaMenuComponent } from '../../pega/mega-menu/mega-menu.component';

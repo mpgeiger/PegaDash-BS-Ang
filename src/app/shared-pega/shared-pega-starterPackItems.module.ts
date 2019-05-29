@@ -24,7 +24,7 @@ import {
 , ToppageComponent
 , TopviewComponent
 , ViewComponent
- } from 'src/app/_subcomponents';
+ } from '@ss/app/_subcomponents';
 
 import {
   AutocompleteComponent
@@ -42,11 +42,12 @@ import {
   , TextComponent
   , TextinputComponent
   , UnitdaysComponent
-} from 'src/app/_fieldcomponents';
+} from '@ss/app/_fieldcomponents';
+// } from '/src/app/_fieldcomponents';
 
 import {
   SafeHtmlPipe
-} from 'src/app/_pipe/safehtml.pipe';
+} from '@ss/app/_pipe/safehtml.pipe';
 
 
 @NgModule({

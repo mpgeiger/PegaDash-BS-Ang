@@ -4,8 +4,8 @@ import { HttpParams, HttpHeaders } from '@angular/common/http';
 
 import { DatapageService } from '../../../_services/datapage.service';
 import { PagerService } from '../../../_services/pager.service';
-// import stubbedResults from '../../../../assets/json/D_Interaction_Driver_I-826_SJ.json';
-import stubbedResults from '../../../../assets/json/D_Interaction_Driver_I-901__PW.json';
+// import stubbedResults from '@ss/json/D_Interaction_Driver_I-826_SJ.json';
+import stubbedResults from '@ss/json/D_Interaction_Driver_I-901__PW.json';
 import { ModalRCIContainerComponent, ModalRCIPegaComponent } from '../modal-container/modal-container.component';
 import {MatTableDataSource, MatSort, MatMenu} from '@angular/material';
 

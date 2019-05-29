@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { HttpParams, HttpHeaders } from '@angular/common/http';
 import { NbaService } from '../../../_services/nba.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import stubbedResults from '../../../../assets/json/NBA_REST.json';
+import stubbedResults from '@ss/json/NBA_REST.json';
 
 
 export interface CaptureResponseResults {

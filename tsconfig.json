@@ -21,8 +21,11 @@
     "paths": {
       "@angular/*": [
         "node_modules/@angular/*"
-      ]
-    },
+      ],
+      "@ss/assets/*": ["src/app/assets/*"],
+      "@ss/app/*": ["src/app/*"],
+      "@ss/json/*": ["src/assets/json/*"],
+        },
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true

@@ -15,7 +15,7 @@ import {MatTableDataSource, MatPaginator, MatSort} from '@angular/material';
 import { FormControl } from '@angular/forms';
 import { stringify } from 'querystring';
 
-import stubbedResults from '../../../../assets/json/D_RecentTreasurerCases.json';
+import stubbedResults from '@ss/json/D_RecentTreasurerCases.json';
 
 
 export interface TreasurerCases {
