@@ -1,6 +1,7 @@
+
 <div style="height:390px">
   <div class="nba" *ngFor="let item of nbas">
-  <div *ngIf="nbaShowOffer">
+  <div *ngIf="nbaShowOffer" layout-fill layout="column" layout-align="center">
     <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar>
     <div class="containerX">
       <app-nba-teaser [EligibilityDescription]="item.EligibilityDescription" [WebMessage]="item.WebMessage"></app-nba-teaser>

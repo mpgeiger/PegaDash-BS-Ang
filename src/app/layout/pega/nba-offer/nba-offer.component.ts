@@ -79,7 +79,7 @@ export class NbaOfferComponent implements OnInit {
 
   OnInit() {
     const loginUserName = localStorage.getItem('username');
-    console.log(' in nbs-offer-component username-->' + loginUserName);
+    console.log(' in nba-offer.component username-->' + loginUserName);
     // loginUserName = localStorage.getItem('username').toLowerCase();
 
     if (loginUserName === 'sallyjones') {
@@ -87,13 +87,13 @@ export class NbaOfferComponent implements OnInit {
     } else {
       this.nbaCustomerId = 'PEGASAFS-WORK-CONTACT CON-913';
     }
-    console.log(' in nbs-offer-component username-->' + this.nbaCustomerId);
+    console.log(' in nba-offer.component username-->' + this.nbaCustomerId);
 
   }
   ngOnInit() {
 
     const loginUserName = localStorage.getItem('username');
-    console.log(' in nbs-offer-component username-->' + loginUserName);
+    console.log(' in nba-offer.component username-->' + loginUserName);
     // loginUserName = localStorage.getItem('username').toLowerCase();
 
     if (loginUserName === 'sallyjones') {
@@ -101,7 +101,7 @@ export class NbaOfferComponent implements OnInit {
     } else {
       this.nbaCustomerId = 'PEGASAFS-WORK-CONTACT CON-903';
     }
-    console.log(' in nbs-offer-component username-->' + this.nbaCustomerId);
+    console.log(' in nba-offer.component username-->' + this.nbaCustomerId);
 
 
     // this.getCases();
@@ -135,12 +135,21 @@ export class NbaOfferComponent implements OnInit {
 
   getCases() {
     const dParams = new HttpParams();
-
+    const stubbed: any = stubbedResults;
+    let result: any;
     //  this.nba.getCurrentNba('PEGASAFS-WORK-CONTACT CON-488', 'BNYServices').subscribe(
      this.nba.getCurrentNba(this.nbaCustomerId, 'BNYServices').subscribe(
        response => {
          this.headers = response.headers;
+
+         result = response.body;
+         if ( result.ContainerList[0].Message === 'No offers available') {
+           console.log(' in ' + this.componentName + ' in LIVE cases but using STUBBED results because service is returning []');
+          this.nbas = Object.keys(this.getNBAResults(stubbed)).map(it => this.getNBAResults(stubbed)[it]);
+
+         } else {
          this.nbas = Object.keys(this.getNBAResults(response.body)).map(it => this.getNBAResults(response.body)[it]);
+         }
          localStorage.setItem('NBA_Offer', this.nbas.length.toString());
          this.showLoading = false;
          console.log('count of NBA_Offer-->  ', localStorage.getItem('NBA_Offer'));
@@ -148,7 +157,7 @@ export class NbaOfferComponent implements OnInit {
         this.nbaOfferName = this.nbas[0].Name;
        },
        err => {
-         alert('Error form nba-offer.components:' + err.errors);
+         alert('Error from' + this.componentName + ': ' + err.errors);
        }
      );
    }
