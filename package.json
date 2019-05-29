@@ -6,6 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "sslstart": "ng serve --host 0.0.0.0 --port 8080 --disable-host-check --ssl true --ssl-key /node_modules/browser-sync/lib/server/certs/server.key --ssl-cert /node_modules/browser-sync/lib/server/certs/server.crt",
+
+    "buildDev": "ng build",
     "build": "ng build --prod",
     "gitbuild": "ng build --prod --base-href /start-angular/SB-Admin-BS4-Angular-7/master/dist/",
     "test": "ng test",
