@@ -153,15 +153,16 @@ export class MegaMenuComponent implements OnInit {
    }
 
 
-  public testMe(): void {
+  public openModalDialogForService(): void {
     // this.mc.openCreateRciCaseDialog();
     this.rciMashup.openRciMashupCaseDialog();
+    console.log('RCI Clicked Create ');
   }
   clickedRCI() {
     console.log('RCI Clicked Create ');
 
   }
-  clickedOther() {
+  nonFunctioningService() {
     console.log('OTHER Clicked Create ');
 
   }

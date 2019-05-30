@@ -17,7 +17,7 @@
       <div class="row"  *ngIf="cat.CategoryName != 'Sales and Offers'" >
       <h4>{{ cat.CategoryName }}</h4>
       <ul>
-        <a *ngFor="let action of cat.pxResults" mat-button (click)="action.pyLabel === 'Request Check Image' ? testMe() : clickedOther()">
+        <a *ngFor="let action of cat.pxResults" mat-button (click)="action.pyLabel === 'Request Cheque Image' || 'Request Check Image' ? openModalDialogForService() : nonFunctioningService($event)">
           <li>
             {{ action.pyLabel }}
           </li>
