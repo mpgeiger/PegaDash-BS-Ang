@@ -141,7 +141,11 @@ checkIfStubbed() {
 
 
     }
-
+    openDemoConfig() {
+      // this.router.navigateByUrl("https://www.google.com");
+      // window.location.href="http://bny.pegatsdemo.com:8800/config";
+      window.open('http://admin:pegasys@bny.pegatsdemo.com:8800/config', '_blank');
+  }
 
 
     getCaseTypeResults(data) {

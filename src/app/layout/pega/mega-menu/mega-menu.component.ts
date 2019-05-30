@@ -100,7 +100,7 @@ export class MegaMenuComponent implements OnInit {
   }
   getDriverCategories(data) {
     // localStorage.setItem('numUnifiedTaskList', data.pxResults.length);
-    console.log( 'in ' + this.componentName + ' mega-menu-results-->' + JSON.stringify(data.DriverCategories));
+    // console.log( 'in ' + this.componentName + ' mega-menu-results-->' + JSON.stringify(data.DriverCategories));
     return data.DriverCategories;
   }
   getActionsInDriverCategory(data) {
@@ -123,16 +123,26 @@ export class MegaMenuComponent implements OnInit {
     let dParams = new HttpParams();
     console.log('begin ' + this.pegaService + '-->');
      dParams = dParams.append('ContactId', '7103716305');
+     let keyToRemove = '';
 
     this.datapage.getDataPage(this.pegaService, dParams).subscribe(
       response => {
         this.headers = response.headers;
         this.actions = Object.keys(this.getDriverCategories(response.body)).map(it => this.getDriverCategories(response.body)[it]);
         for (const [key, value] of Object.entries(this.actions)) {
+          // if (value.CategoryName === 'Sales and Offers') {
+          console.log(this.componentName + '  key --->' + JSON.stringify(key) + '_______ value-->' + JSON.stringify(value));
+          console.log('    CategoryName=' + value.CategoryName + '___________ key:' + JSON.stringify(key));
           if (value.CategoryName === 'Sales and Offers') {
-          console.log(JSON.stringify(key) + ':' + JSON.stringify(value));
+            keyToRemove = JSON.stringify(key);
+            console.log('keyToRemove-->' + keyToRemove);
+
           }
+          // }
         }
+        console.log('Length before removal:' + this.actions.length   );
+        this.actions.splice(1, 1);
+        console.log('Length after removal:' + this.actions.length   );
         // this.actions = this.getDriverCategories(response.body).json();
         localStorage.setItem(this.pegaService, this.actions.length.toString());
         this.showLoading = false;

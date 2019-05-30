@@ -228,9 +228,12 @@
                     <a class="dropdown-item" href="javascript:void(0)">
                         <i class="fa fa-fw fa-envelope"></i> {{ 'Inbox' | translate }}
                     </a>
-                    <a class="dropdown-item" href="javascript:void(0)">
+                    <button class="dropdown-item" (click)="openDemoConfig()">
                         <i class="fa fa-fw fa-gear"></i> {{ 'Settings' | translate }}
-                    </a>
+                    </button>
+                    <!-- <a class="dropdown-item" href="javascript:void(0)">
+                        <i class="fa fa-fw fa-gear"></i> {{ 'Settings' | translate }}
+                    </a> -->
                     <a class="dropdown-item" [routerLink]="['/login']" (click)="onLoggedout()">
                         <i class="fa fa-fw fa-power-off"></i> {{ 'Log Out' | translate }}
                     </a>
