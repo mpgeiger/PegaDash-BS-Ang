@@ -100,6 +100,7 @@ export class MegaMenuComponent implements OnInit {
   }
   getDriverCategories(data) {
     // localStorage.setItem('numUnifiedTaskList', data.pxResults.length);
+    console.log( 'in ' + this.componentName + ' mega-menu-results-->' + JSON.stringify(data.DriverCategories));
     return data.DriverCategories;
   }
   getActionsInDriverCategory(data) {
@@ -110,6 +111,7 @@ export class MegaMenuComponent implements OnInit {
   getStubbedCases() {
     const stubbed: any = stubbedResults;
     this.actions = Object.keys(this.getDriverCategories(stubbed)).map(it => this.getDriverCategories(stubbed)[it]);
+
     // this.cases = JSON.parse(response.body);
    // this.sortedData = this.cases.slice();
     // this.dataSource.data = this.cases as TreasurerCases[];
@@ -126,6 +128,12 @@ export class MegaMenuComponent implements OnInit {
       response => {
         this.headers = response.headers;
         this.actions = Object.keys(this.getDriverCategories(response.body)).map(it => this.getDriverCategories(response.body)[it]);
+        for (const [key, value] of Object.entries(this.actions)) {
+          if (value.CategoryName === 'Sales and Offers') {
+          console.log(JSON.stringify(key) + ':' + JSON.stringify(value));
+          }
+        }
+        // this.actions = this.getDriverCategories(response.body).json();
         localStorage.setItem(this.pegaService, this.actions.length.toString());
         this.showLoading = false;
       },

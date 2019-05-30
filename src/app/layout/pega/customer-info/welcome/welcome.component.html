@@ -20,7 +20,7 @@
           arrow_drop_down_circle
         </i>
 
-        <span class="account-text-desc">Decrease from Average</span>
+        <span class="account-text-desc">Assets from Average</span>
       </div>
     </div>
     <div class="col-xl-3 col-lg-6">
@@ -33,7 +33,7 @@
   </div>
   <div class="row d-flex justify-content-center">
     <div class="col-xl-3 col-lg-6">
-      <app-pstat [bgClass]="'warning'" [icon]="'fa-tasks'" [amount]="totalCurrentLiabilities" [label]="'Total Liabilities'"
+      <app-pstat [bgClass]="'warning'" [icon]="'fa-tasks'" [amount]="0 - totalCurrentLiabilities" [label]="'Total Liabilities'"
       [type]="'liability'"> </app-pstat>
     </div>
     <div class="col-xl-3 col-lg-6">
@@ -45,14 +45,14 @@
           arrow_drop_down_circle
         </i>
 
-        <span class="account-text-desc">Increase from Average</span>
+        <span class="account-text-desc">Liabilities from Average</span>
       </div>
     </div>
     <div class="col-xl-3 col-lg-6">
       <app-pstat
         [bgClass]="'warning'"
         [icon]="'fa-shopping-cart'"
-        [amount]="totalAvgMonthLiabilities"
+        [amount]="0 - totalAvgMonthLiabilities"
         [label]="'Avg Liabilites/Month'"
         [type]="'liability'"
       ></app-pstat>
