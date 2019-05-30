@@ -13,17 +13,20 @@
   </div>
   <div class="row">
 
-    <div class="col-xl-4 col-lg-5 col-md-6" *ngFor="let cat of actions">
-      <div class="row"  *ngIf="cat.CategoryName != 'Sales and Offers'" >
-      <h4>{{ cat.CategoryName }}</h4>
-      <ul>
-        <a *ngFor="let action of cat.pxResults" mat-button (click)="action.pyLabel === 'Request Cheque Image' || 'Request Check Image' ? openModalDialogForService() : nonFunctioningService($event)">
-          <li>
-            {{ action.pyLabel }}
-          </li>
-        </a>
-      </ul>
-      </div>
+    <div class="col-xl-3 col-lg-5 col-md-6" *ngFor="let cat of actions">
+      <!-- <div class="row" > -->
+          <div class="card card-default">
+              <div class="card-header">
+                <span class="card-title">{{ cat.CategoryName }}</span>
+              </div>
+              <div class="text-left card-body">
+                  <mat-action-list dense>
+                      <button *ngFor="let action of cat.pxResults"  mat-list-item (click)="action.pyLabel === 'Request Cheque Image' || 'Request Check Image' ? openModalDialogForService() : nonFunctioningService()"> {{ action.pyLabel }} </button>
+
+                    </mat-action-list>
+              </div>
+            </div>
+      <!-- </div> -->
     </div>
   </div>
 </div>
