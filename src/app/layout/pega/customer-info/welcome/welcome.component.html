@@ -36,7 +36,7 @@
       <app-pstat [bgClass]="'warning'" [icon]="'fa-tasks'" [amount]="0 - totalCurrentLiabilities" [label]="'Total Liabilities'"
       [type]="'liability'"> </app-pstat>
     </div>
-    <div class="col-xl-3 col-lg-6">
+    <div class="col-xl-3 col-lg-3">
       <div class="my-fancy-container"
       matTooltip="Your current liabilities increased by: {{0 - totalCurrentLiabilities - totalAvgMonthLiabilities | currency }}">
 
@@ -48,7 +48,7 @@
         <span class="account-text-desc">Liabilities from Average</span>
       </div>
     </div>
-    <div class="col-xl-3 col-lg-6">
+    <div class="col-xl-3 col-lg-3">
       <app-pstat
         [bgClass]="'warning'"
         [icon]="'fa-shopping-cart'"
