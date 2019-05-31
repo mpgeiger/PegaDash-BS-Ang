@@ -43,4 +43,5 @@ export * from './workitem1/workitem1.component';
 // export * from '../../work'
 
 export * from './_pipes/fromCamelCase';
+export * from './_pipes/searchFilterPipe';
 

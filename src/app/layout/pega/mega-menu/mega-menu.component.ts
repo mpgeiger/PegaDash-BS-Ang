@@ -8,6 +8,7 @@ import { PagerService } from '../../../_services/pager.service';
 import stubbedResults from '@ss/json/D_Interaction_Driver_I-901__PW.json';
 import { ModalRCIContainerComponent, ModalRCIPegaComponent } from '../modal-container/modal-container.component';
 import {MatTableDataSource, MatSort, MatMenu} from '@angular/material';
+import { FilterPipe } from './../_pipes/searchFilterPipe';
 
 export interface SSCaseTypePxResults {
 Name: string;
@@ -36,6 +37,13 @@ export interface SSCaseActions {
   RequiredTaskName: string;
   pxResults: SSCaseTypePxResults;
 }
+
+export interface CategoryVis {
+  categoryName: string;
+  indexCategory: number;
+  countItems: number;
+  visibility: boolean;
+}
 @Component({
   providers: [
     ModalRCIContainerComponent
@@ -59,6 +67,7 @@ export class MegaMenuComponent implements OnInit {
   sortedDataCategory: SSCaseActions[];
   sortedDataActions: SSCaseActions[];
   searchedList: any;
+  categoryVis: CategoryVis[];
 
   headers: any;
   actions: SSCaseActions[] = [];
@@ -89,6 +98,7 @@ export class MegaMenuComponent implements OnInit {
 
     let useStub = false;
     useStub = (useStubStr === 'true');
+    // useStub = true;
     return useStub;
   }
 
@@ -109,9 +119,35 @@ export class MegaMenuComponent implements OnInit {
   }
 
   getStubbedCases() {
+    let myVis: CategoryVis;
+    let keyToRemove = '';
     const stubbed: any = stubbedResults;
     this.actions = Object.keys(this.getDriverCategories(stubbed)).map(it => this.getDriverCategories(stubbed)[it]);
+    for (const [key, value] of Object.entries(this.actions)) {
+      // if (value.CategoryName === 'Sales and Offers') {
+        console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
+      const pxResults: any = value.pxResults;
+      console.log(this.componentName + '  key --->' + JSON.stringify(key) + '_______ value-->' + JSON.stringify(value.CategoryName));
+      // console.log('    CategoryName=' + value.CategoryName + '___________ key:' + JSON.stringify(key));
+      if (value.CategoryName === 'Sales and Offers') {
+        keyToRemove = JSON.stringify(key);
+        console.log('keyToRemove-->' + keyToRemove);
+      }
+      console.log(' cat->' + value.CategoryName + '__index->' + JSON.stringify(key) + '___count->' + pxResults.length + '___visibility->' + true);
+      // myVis.indexCategory = parseInt(JSON.stringify(key));
 
+      // myVis.countItems = pxResults.length;
+      // myVis.visibility = true;
+      // myVis.indexCategory = parseInt(JSON.stringify(key));
+
+      // myVis.countItems = pxResults.length;
+      // myVis.visibility = true;
+
+      // console.log('   visCategory My Vis -->' + JSON.stringify(myVis));
+      // this.categoryVis.pop(myVis);
+      // this.categoryVis.pop(myVis);
+    }
+    console.log('   visCategory -->' + JSON.stringify(this.categoryVis));
     // this.cases = JSON.parse(response.body);
    // this.sortedData = this.cases.slice();
     // this.dataSource.data = this.cases as TreasurerCases[];
@@ -129,15 +165,20 @@ export class MegaMenuComponent implements OnInit {
       response => {
         this.headers = response.headers;
         this.actions = Object.keys(this.getDriverCategories(response.body)).map(it => this.getDriverCategories(response.body)[it]);
+
+        let i = 0;
         for (const [key, value] of Object.entries(this.actions)) {
           // if (value.CategoryName === 'Sales and Offers') {
-          console.log(this.componentName + '  key --->' + JSON.stringify(key) + '_______ value-->' + JSON.stringify(value));
-          console.log('    CategoryName=' + value.CategoryName + '___________ key:' + JSON.stringify(key));
+          console.log(this.componentName + '  key --->' + JSON.stringify(key) + '_______ value-->' + JSON.stringify(value.CategoryName));
+          // console.log('    CategoryName=' + value.CategoryName + '___________ key:' + JSON.stringify(key));
           if (value.CategoryName === 'Sales and Offers') {
             keyToRemove = JSON.stringify(key);
             console.log('keyToRemove-->' + keyToRemove);
 
           }
+          i++;
+
+
           // }
         }
         console.log('Length before removal:' + this.actions.length   );
@@ -160,6 +201,16 @@ export class MegaMenuComponent implements OnInit {
        (val) => val['pyLabel'].includes(value));
      // Searched Data
      console.log(this.searchedList);
+   }
+
+   showCategoryVis(category: number , count: number): boolean {
+
+    let show = true;
+    if (count < 0) {
+      show = false;
+    }
+
+    return show;
    }
 
 

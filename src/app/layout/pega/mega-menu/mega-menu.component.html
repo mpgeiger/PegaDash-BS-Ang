@@ -4,30 +4,45 @@
                   </i>
             </a> -->
 
-  <!-- <mat-menu #mpgMenu="matMenu" class="megaMenu"  [class.mat-elevation-z20] overlapTrigger="false" (click)="$event.stopPropagation();"> -->
+<!-- <mat-menu #mpgMenu="matMenu" class="megaMenu"  [class.mat-elevation-z20] overlapTrigger="false" (click)="$event.stopPropagation();"> -->
 <div class="container">
-  <div class="row">
-      <mat-form-field floatLabel=never >
-          <input matInput  type="text"  placeholder="Search"   >
-        </mat-form-field>
+  <div layout="row"  fxLayout fxLayoutAlign="center center">
+    <mat-form-field floatLabel="never" fxLayoutAlign="center center">
+      <input matInput type="text" [(ngModel)]="queryString" id="search" placeholder="Filter available Services"/>
+    </mat-form-field>
   </div>
   <div class="row">
-
-    <div class="col-xl-3 col-lg-5 col-md-6" *ngFor="let cat of actions">
+    <div class="col-xl-3 col-lg-5 col-md-6" *ngFor="let cat of actions;index as i">
       <!-- <div class="row" > -->
-          <div class="card card-default">
-              <div class="card-header">
-                <span class="card-title">{{ cat.CategoryName }}</span>
-              </div>
-              <div class="text-left card-body">
-                  <mat-action-list dense>
-                      <button *ngFor="let action of cat.pxResults"  mat-list-item (click)="action.pyLabel === 'Request Cheque Image' || 'Request Check Image' ? openModalDialogForService() : nonFunctioningService()"> {{ action.pyLabel }} </button>
+      <!-- <div class="card megaMenu-card card-default"  > -->
+      <div class="card megaMenu-card card-default">
+        <div class="card-header">
+        -- {{i}}--
+          <span class="card-title">{{ cat.CategoryName }}</span>
+        </div>
+        <div class="text-left card-body megaMenu-card-body">
+          <mat-action-list dense class="megaMenu-List">
+            <button
+              *ngFor="let action of cat.pxResults | FilterPipe: queryString; index as j;"
+              mat-list-item
+              class="megaMenu-List-Item"
+              (click)="
+                action.pyLabel === 'Request Cheque Image' || 'Request Check Image' ? openModalDialogForService() : nonFunctioningService()
+              "
 
-                    </mat-action-list>
-              </div>
-            </div>
+            >
+              {{ action.pyLabel }}__{{i}}-{{j}}
+            </button>
+          </mat-action-list>
+        </div>
+      </div>
       <!-- </div> -->
     </div>
   </div>
 </div>
 <!-- </mat-menu> -->
+<!-- (click)="action.pyLabel === 'Request Cheque Image' || 'Request Check Image' ? openModalDialogForService() : nonFunctioningService()" -->
+
+<!-- <button *ngFor="let action of cat.pxResults | searchFilter:'pyLabel':query" -->
+<!-- <button *ngFor="let action of cat.pxResults | searchFilter : query" -->
+<!-- <button *ngFor="let action of cat.pxResults" -->

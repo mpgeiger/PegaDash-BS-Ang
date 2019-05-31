@@ -9,7 +9,8 @@ import { Component, OnInit, ViewChild, Renderer2, ElementRef } from '@angular/co
 
 export class RciMashupComponent implements OnInit {
 
-  url = 'http://bny.pegatsdemo.com/BNYImages/mpgMashup.html';
+  // url = 'http://bny.pegatsdemo.com/BNYImages/mpgMashup.html';
+  url = 'http://bny.pegatsdemo.com/assets/mashup/mpgMashup.html';
 
   constructor(
 

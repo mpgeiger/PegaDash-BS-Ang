@@ -18,6 +18,7 @@ import { RciMashupComponent } from '../layout/pega/mashups/rci-mashup/rci-mashup
 import { SafeHtml, SafeStyle, SafeUrl } from '../layout/pega/_pipes/safe';
 import { WelcomeComponent } from '../layout/pega/customer-info/welcome/welcome.component';
 // import { PStatModule } from '../layout/pega/stat/stat.module';
+import { FilterPipe } from '../layout/pega/_pipes/searchFilterPipe';
 
 import {
      AccountSummaryComponent
@@ -76,6 +77,7 @@ import {
     , ModalRCIContainerComponent
     , CreateCustomRCIcaseComponent
     , EmailByCategoryComponent
+    , FilterPipe
     , HomePageComponent
     , InCorrAutoReplyTrendComponent
     // , ChartDataLabels
