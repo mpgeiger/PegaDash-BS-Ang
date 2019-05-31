@@ -25,6 +25,8 @@ import {
 // import { RecentTreasurerCaseListComponent } from '../pega';
 //  import { RecentTreasurerCaseListComponent } from '../pega';
 import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
+// import { PegaVariablesPropertiesComponent } from './../../shared-pega/pega-variables-properties/pega-variables-properties.component';
+
 
 // import { FileNameDialogComponent } from '../pega';
 // import { AppMaterialModule } from './../../app-material/app-material.module';
@@ -47,6 +49,7 @@ import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
     ],
     declarations: [
       SummaryPageComponent
+      // , PegaVariablesPropertiesComponent
       //  , ModalContainerComponent
       //  , FileNameDialogComponent
       // , StatComponent
@@ -61,6 +64,7 @@ import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
     ],
     exports: [
       FormsModule
+      // , PegaVariablesPropertiesComponent
      , ReactiveFormsModule
     //  , StatModule
     //  , StatComponent

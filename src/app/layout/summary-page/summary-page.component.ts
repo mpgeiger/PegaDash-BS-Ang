@@ -1,6 +1,8 @@
+
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { FormGroup, FormControl } from '@angular/forms';
+import { PegaVariablesPropertiesComponent } from './../../shared-pega/pega-variables-properties/pega-variables-properties.component';
 
 @Component({
     selector: 'app-summary-page',
@@ -25,7 +27,18 @@ export class SummaryPageComponent implements OnInit {
   // localStorage.setItem('totalCurrentAssets', totCurrAsset.toString());
   // localStorage.setItem('totalAvgMonthAssets', totAvgMonthAsset.toString());
 
-    constructor() {}
+    constructor(
+      private pega: PegaVariablesPropertiesComponent
+    ) {}
+
+
+     /*
+  *
+  */
+ pega_NBA_Header = '';
+ customer_Abbreviation = '';
+
+
     numUnifiedTaskList$ = '';
     D_RecentTreasurerCases$ = '';
     D_TransactionSummary$ = '';
@@ -34,6 +47,7 @@ export class SummaryPageComponent implements OnInit {
 
     // ngOnInit() {}
     ngOnInit() {
+      this.customer_Abbreviation = this.pega.pega_Customer_Abbreviation;
       this.userName = localStorage.getItem('userName');
       this.userName = localStorage.getItem('userName');
       this.displayUserName = localStorage.getItem('displayUserName');

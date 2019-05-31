@@ -9,7 +9,10 @@ export class PegaVariablesPropertiesComponent implements OnInit {
 
   constructor() { }
 
-  pega_NBA_Advice_Header = 'MPG Advice';
+  // Enter customer abbreviation to display on Headers or Card Titles
+  pega_Customer_Abbreviation = 'BNYM';
+  pega_NBA_Advice_Header = '';
+
 
   ngOnInit() {
   }

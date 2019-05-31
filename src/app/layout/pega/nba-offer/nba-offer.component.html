@@ -4,7 +4,7 @@
   <div *ngIf="nbaShowOffer" layout-fill layout="column" layout-align="center">
     <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar>
     <div class="containerX">
-      <app-nba-teaser [EligibilityDescription]="item.EligibilityDescription" [WebMessage]="item.WebMessage"></app-nba-teaser>
+      <app-nba-teaser [EligibilityDescription]="item.EligibilityDescription" [WebMessage]="item.WebMessage" [pega_NBA_Header]="pega_NBA_Header"></app-nba-teaser>
       <div class="row nbaButtons">
         <div class="col-spaced">
           <button mat-button class="btn btn-primary" (click)="nbaGotoDetail()">Learn More</button>
@@ -48,6 +48,7 @@
       [RMName]="'Paul Wagner'"
       [OfferName]="item.Name"
       [showLoading]="showLoading"
+      [pega_NBA_Header]="pega_NBA_Header"
     ></app-nba-capture-response>
 
     <div class="row nbaButtons" style="justify-content: center">

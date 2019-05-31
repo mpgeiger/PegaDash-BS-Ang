@@ -161,6 +161,7 @@ import {
   //  FileNameDialogComponent
   //  , ModalContainerComponent
     ModalRCIContainerComponent
+    // , PegaVariablesPropertiesComponent
   , RciMashupComponent
    , ModalRCIPegaComponent
    , CreateCustomRCIcaseComponent

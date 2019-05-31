@@ -66,10 +66,16 @@ export class NbaOfferComponent implements OnInit {
   componentName = 'nba-offer.component';
   nbaCustomerId = '';
 
-  advice_NBA_Header:string = this.pega.pega_NBA_Advice_Header;
+  /*
+  *
+  */
+ pega_NBA_Header = '';
+ pega_Customer_Abbreviation = '';
+
 
   headers: any;
   showLoading = true;
+
 
   nbaOfferName = '';
 
@@ -96,7 +102,12 @@ export class NbaOfferComponent implements OnInit {
   }
   ngOnInit() {
 
+    this.pega_Customer_Abbreviation = this.pega.pega_Customer_Abbreviation;
+    this.pega_NBA_Header = this.pega.pega_NBA_Advice_Header;
+
     const loginUserName = localStorage.getItem('username');
+
+
     console.log(' in nba-offer.component username-->' + loginUserName);
     // loginUserName = localStorage.getItem('username').toLowerCase();
 
