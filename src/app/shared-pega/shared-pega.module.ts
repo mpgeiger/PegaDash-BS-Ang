@@ -1,4 +1,3 @@
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NbaTeaserComponent } from './../layout/pega/nba-teaser/nba-teaser.component';
@@ -19,6 +18,7 @@ import { SafeHtml, SafeStyle, SafeUrl } from '../layout/pega/_pipes/safe';
 import { WelcomeComponent } from '../layout/pega/customer-info/welcome/welcome.component';
 // import { PStatModule } from '../layout/pega/stat/stat.module';
 import { FilterPipe } from '../layout/pega/_pipes/searchFilterPipe';
+import { PegaVariablesPropertiesComponent } from './pega-variables-properties/pega-variables-properties.component';
 
 import {
      AccountSummaryComponent
@@ -67,6 +67,7 @@ import {
   ],
   providers: [
     // CaselistComponent
+    PegaVariablesPropertiesComponent
   ],
   declarations: [
     AccountSummaryComponent
@@ -90,6 +91,7 @@ import {
     , NbaTeaserComponent
     , OpenByWorkTypeComponent
     , PegaPieChartComponent
+    , PegaVariablesPropertiesComponent
     , PStatComponent
     , RecentInteractionsComponent
     , RecentTreasurerCaseListComponent
@@ -132,6 +134,7 @@ import {
     , NbaTeaserComponent
     , OpenByWorkTypeComponent
     , PegaPieChartComponent
+    , PegaVariablesPropertiesComponent
     , PStatComponent
     , RecentInteractionsComponent
     , RecentTreasurerCaseListComponent

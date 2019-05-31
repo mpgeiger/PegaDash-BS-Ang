@@ -8,6 +8,7 @@ import { PagerService } from '../../../_services/pager.service';
 import stubbedResults from '@ss/json/D_Interaction_Driver_I-901__PW.json';
 import { ModalRCIContainerComponent, ModalRCIPegaComponent } from '../modal-container/modal-container.component';
 import {MatTableDataSource, MatSort, MatMenu} from '@angular/material';
+import { PegaVariablesPropertiesComponent } from '../../../shared-pega/pega-variables-properties/pega-variables-properties.component';
 import { FilterPipe } from './../_pipes/searchFilterPipe';
 
 export interface SSCaseTypePxResults {
@@ -75,10 +76,12 @@ export class MegaMenuComponent implements OnInit {
     private datapage: DatapageService,
     private pagerService: PagerService,
     private mc: ModalRCIContainerComponent,
-    private rciMashup: ModalRCIPegaComponent
+    private rciMashup: ModalRCIPegaComponent,
+    private pega: PegaVariablesPropertiesComponent
   ) { }
 
   ngOnInit() {
+
     if (this.checkIfStubbed()) {
       console.log(this.componentName + ' -- STUBBED ' + this.pegaService);
       this.getStubbedCases();
@@ -121,6 +124,7 @@ export class MegaMenuComponent implements OnInit {
   getStubbedCases() {
     let myVis: CategoryVis;
     let keyToRemove = '';
+
     const stubbed: any = stubbedResults;
     this.actions = Object.keys(this.getDriverCategories(stubbed)).map(it => this.getDriverCategories(stubbed)[it]);
     for (const [key, value] of Object.entries(this.actions)) {

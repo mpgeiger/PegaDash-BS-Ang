@@ -4,6 +4,7 @@ import { HttpParams, HttpHeaders } from '@angular/common/http';
 import { NbaService } from '../../../_services/nba.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import stubbedResults from '@ss/json/NBA_REST.json';
+import { PegaVariablesPropertiesComponent } from '../../../shared-pega/pega-variables-properties/pega-variables-properties.component';
 
 
 export interface CaptureResponseResults {
@@ -58,11 +59,14 @@ export class NbaOfferComponent implements OnInit {
 
 
   constructor(
-    private nba: NbaService
+    private nba: NbaService,
+    private pega: PegaVariablesPropertiesComponent
   ) { }
 
   componentName = 'nba-offer.component';
   nbaCustomerId = '';
+
+  advice_NBA_Header:string = this.pega.pega_NBA_Advice_Header;
 
   headers: any;
   showLoading = true;
