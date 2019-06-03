@@ -199,6 +199,14 @@ export class MegaMenuComponent implements OnInit {
 
   }
 
+  testVis(index): boolean {
+    if (index === 4) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
    // This function will be called on every key press for input text box
    search(value) {
      this.searchedList = this.actions.filter(
