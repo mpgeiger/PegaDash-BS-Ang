@@ -1,5 +1,23 @@
-$topnav-background-color: #FFF;
-$topnav-item-color: #83744c;
+$topnav-background-color: #2D3B4F;
+// $topnav-background-color: #FFF;
+// $topnav-item-color: #83744c;
+$topnav-item-color: #fff;
+
+
+
+  //
+  //  MPG BNY COLORS VALS
+
+  $bnyPrimary:   #1A7383 !important !default;
+  $bnyDarkGray:  #4f4c4d !default;
+  $bnyLightGray: #a7a5a6 !default;
+  $bnyBronze:    #b07e25 !default;
+  $bnyGold:      #a49668 !default;
+  // $bnyPrimary:   #9C906F !default;
+  // $bnyDarkGray:  #4f4c4d !default;
+  // $bnyLightGray: #a7a5a6 !default;
+  // $bnyBronze:    #b07e25 !default;
+  // $bnyGold:      #a49668 !default;
 
 $login-page-color: #222;
 $login-page-h1: rgba(10,10,10, 0.7);
@@ -27,10 +45,10 @@ $sidebar-item-hover-color: #222;
 
 .card-title {
   font-size: 18px;
-  
+
 }
 
 .card-subtitle {
   font-size: 1rem;
-  
+
 }

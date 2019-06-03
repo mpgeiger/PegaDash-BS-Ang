@@ -1,13 +1,13 @@
 // @import "../../../../../styles/bootstrap/_variables.scss";
 // @import "../../../../../styles/bootstrap/variables";
-
+@import "./../../../../Dashboard_Styles";
 
 .welcome {
   text-align: center;
   margin-bottom: 15px;
   padding: 8px;
   width: 100%;
-  background-color: #9C906F;
+  background-color: $bnyBackground;
 }
 
 .material-icons.md-48 { font-size: 48px; }

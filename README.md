@@ -18,6 +18,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 I added ngx-currency [ngx-currency](https://www.npmjs.com/package/ngx-currency)  to help process currency values with commas for thoushands and the currency symbol ***$ 1,234,567.89***
 
 
+
 Recent Interactions    D_InteractionHistory    app-recent-interactions
 
 | Portlet Title           	| Datapage             	| Selector                	  |  Coponent 	                          |
@@ -33,6 +34,17 @@ Recent Interactions    D_InteractionHistory    app-recent-interactions
 | **Un-named**             	| D_RecentTreasurerCases| app-recentTreasurerCaseList |  /pega/recentTreasurerCaseList       	|
 
 
+NEXEN Colors
+|Color Ref                | Color RGB  |
+|-------------------------|-----------|
+|  $bnymNexenPrimary:     |#1A7383|
+|  $bnymNexenGreenGradTop |#167A82|
+|  GreenGradBottom        |#1F7E81|
+|  $bnymNexenBlue:        |#2D3B4F|
+|  $bnymNexenBlue:        |#1A7383|
+
+|  $bnyDarkBlue:  |#2F3952 |
+
 |Color Ref         | Color RGB  |
 |------------------|-----------|
 |  $bnyPrimary:     |#9C906F|
@@ -40,6 +52,8 @@ Recent Interactions    D_InteractionHistory    app-recent-interactions
 |  $bnyLightGray: |#a7a5a6 |
 |  $bnyBronze:    |#b07e25 |
 |  $bnyGold:      |#a49668 |
+
+
 
 <!-- 
 Useful links/sites;

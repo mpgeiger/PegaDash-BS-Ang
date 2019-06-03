@@ -1,0 +1,99 @@
+@import "./../styles/bootstrap/variables";
+// $topnav-background-color: red;
+$topnav-background-color: #2D3B4F;
+// $topnav-background-color: #FFF;
+// $topnav-item-color: #83744c;
+$topnav-item-color: #fff;
+
+
+
+  //
+  //  MPG BNY COLORS VALS
+
+  $bnyPrimary:   #1A7383 !important !default;
+  $bnyDarkGray:  #4f4c4d !default;
+  $bnyLightGray: #a7a5a6 !default;
+  $bnyBronze:    #b07e25 !default;
+  $bnyGold:      #a49668 !default;
+  $bnyBackground: #a7a5a6 !default;
+  // $bnyPrimary:   #9C906F !default;
+  // $bnyDarkGray:  #4f4c4d !default;
+  // $bnyLightGray: #a7a5a6 !default;
+  // $bnyBronze:    #b07e25 !default;
+  // $bnyGold:      #a49668 !default;
+  // $primary:       $bnyPrimary !default;
+  // $secondary:     $bnyBronze !default;
+  // $tertiary:      $bnyGold !default;
+  // $success:       $green !default;
+  // $info:          $cyan !default;
+  // $warning:       $yellow !default;
+  // $danger:        $red !default;
+  // $light:         $bnyLightGray !default;
+  // $dark:          $bnyDarkGray!default;
+
+  $primary:       $bnyPrimary !default;
+  $secondary:     $bnyBronze !default;
+  $tertiary:      $bnyGold !default;
+  // $success:       $green !default;
+  // $info:          $cyan !default;
+  // $warning:       $yellow !default;
+  // $danger:        $red !default;
+  // $light:         $bnyLightGray !default;
+  // $dark:          $bnyDarkGray!default;
+  // $primary:       $blue !default;
+  // $secondary:     $gray-600 !default;
+  // $success:       $green !default;
+  // $info:          $cyan !default;
+  // $warning:       $yellow !default;
+  // $danger:        $red !default;
+  // $light:         $gray-100 !default;
+  // $dark:          $gray-800 !default;
+
+  $theme-colors: () !default;
+  $theme-colors: map-merge((
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "tertiary":   $tertiary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+  ), $theme-colors);
+
+
+
+$login-page-color: #222;
+$login-page-h1: rgba(10,10,10, 0.7);
+$login-page-rounded-btn: rgba(0,0,0, 0.8);
+$login-page-rounded-btn-visited: rgba(0,0,0,1);
+
+$login-page-border-colors: rgba(10,10,10, 0.5);
+$login-page-form-group: rgba(10,10,10, 0.6);
+
+
+$sidebar-item-a-color: $topnav-item-color;
+$sidebar-item-hover-color: #222;
+$sidebar-dropdown-panel-title: #999;
+$sidebar-dropdown-panel-title-focus: darken($sidebar-dropdown-panel-title,80%);
+
+$sidebar-nested-menu-a-color: #222;
+$sidebar-toggle-button-color: #999;
+$sidebar-toggle-button-background-color: darken($topnav-background-color, 5%);
+$sidebar-toggle-button-hover-color: $sidebar-item-hover-color;
+$sidebar-toggle-button-hover-background-color: darken($topnav-background-color, 15%);
+
+$sidebar-item-hover-color: #222;
+$sidebar-item-hover-color: #222;
+
+
+.card-title {
+  font-size: 18px;
+
+}
+
+.card-subtitle {
+  font-size: 1rem;
+
+}

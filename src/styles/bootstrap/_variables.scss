@@ -52,11 +52,11 @@ $grays: map-merge((
   //
   //  MPG BNY COLORS VALS
 
-  $bnyPrimary:   #9C906F !default;
-  $bnyDarkGray:  #4f4c4d !default;
-  $bnyLightGray: #a7a5a6 !default;
-  $bnyBronze:    #b07e25 !default;
-  $bnyGold:      #a49668 !default;
+  // $bnyPrimary:   #9C906F !default;
+  // $bnyDarkGray:  #4f4c4d !default;
+  // $bnyLightGray: #a7a5a6 !default;
+  // $bnyBronze:    #b07e25 !default;
+  // $bnyGold:      #a49668 !default;
 
 $colors: () !default;
 $colors: map-merge((
@@ -74,11 +74,11 @@ $colors: map-merge((
   "gray":       $gray-600,
   "gray-dark":  $gray-800,
 
-  "bnyPrimary": $bnyPrimary,
-  "bnyDarkGray": $bnyDarkGray,
-  "bnyLightGray": $bnyLightGray,
-  "bnyBronze": $bnyBronze,
-  "bnyGold": $bnyGold
+  // "bnyPrimary": $bnyPrimary,
+  // "bnyDarkGray": $bnyDarkGray,
+  // "bnyLightGray": $bnyLightGray,
+  // "bnyBronze": $bnyBronze,
+  // "bnyGold": $bnyGold
 
 ), $colors);
 
