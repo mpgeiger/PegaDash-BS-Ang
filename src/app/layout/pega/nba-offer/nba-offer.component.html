@@ -18,7 +18,7 @@
   <div *ngIf="nbaShowDetail">
     <!-- <mat-card-content id="card-content"> -->
     <div class="nbaTeaser">
-      <p class="overview-title">Overview</p>
+      <p class="overview-title" *ngIf="item.ShortDescription!=''" >Overview</p>
       <p class="md-title" class="overview-text">
         {{ item.ShortDescription }}
       </p>

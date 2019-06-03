@@ -41,13 +41,16 @@
         a:hover {
             // MPG background: darken($topnav-background-color, 5%);
             // MPG color: #fff;
-            background: darken($topnav-background-color, 5%);
+            // background: darken($topnav-background-color, 5%);
+            background: lighten($topnav-background-color, 5%);
             color: $sidebar-item-hover-color;
         }
         a.router-link-active {
              // MPG background: darken($topnav-background-color, 5%);
             // MPG color: #fff;
-            background: darken($topnav-background-color, 5%);
+            // background: darken($topnav-background-color, 5%);
+            background: $topnav-item-color;
+
             color: $sidebar-item-hover-color;
         }
         .header-fields {
@@ -180,12 +183,12 @@
   cursor: pointer;
   // padding: 12px;
   bottom: 50px;
- 
+
   // &:hover {
   //     background: $sidebar-toggle-button-hover-background-color;
   //     color: $sidebar-item-hover-color;
   // }
- 
+
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;

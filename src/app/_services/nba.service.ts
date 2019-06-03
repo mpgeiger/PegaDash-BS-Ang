@@ -14,7 +14,7 @@ export class NbaService {
   refHelper: ReferenceHelper = new ReferenceHelper();
 
   NbaCaptureResponse = {
-    'CustomerID': 'PEGASAFS-WORK-CONTACT CON-488',
+    'CustomerID': 'PEGASAFS-WORK-CONTACT CON-913',
     'ContainerName': 'BNYServices',
     'RankedResults': [{
       'Name': 'FXACHPayment',

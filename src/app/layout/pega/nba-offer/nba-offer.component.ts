@@ -114,7 +114,7 @@ export class NbaOfferComponent implements OnInit {
     if (loginUserName === 'sallyjones') {
       this.nbaCustomerId = 'PEGASAFS-WORK-CONTACT CON-488';
     } else {
-      this.nbaCustomerId = 'PEGASAFS-WORK-CONTACT CON-903';
+      this.nbaCustomerId = 'PEGASAFS-WORK-CONTACT CON-913';
     }
     console.log(' in nba-offer.component username-->' + this.nbaCustomerId);
 
