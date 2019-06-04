@@ -71,10 +71,12 @@ itemTextValue: string;
   public pieChartLegend = true;
   public pieChartOptions: ChartOptions = {
     responsive: true,
+
     legend: {
       position: 'right'
     }
-  };
+
+    };
   public pieColors = [
     {
       pointBorderColor: 'black',
