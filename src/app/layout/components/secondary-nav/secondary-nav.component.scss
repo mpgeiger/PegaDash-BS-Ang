@@ -1,5 +1,7 @@
 @import '../../../Dashboard_Styles.scss';
-
+.fixed-top {
+  margin-top: 50px;
+}
 .secondary-navbar {
   justify-content: flex-start;
   background-color: $bnyPrimary;
