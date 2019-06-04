@@ -1,3 +1,8 @@
 RewriteRule ^/summary-page(.*)$    /index.html [L]
 RewriteRule ^/dashboard(.*)$    /index.html [L]
 RewriteRule ^/opentask-page(.*)$ /index.html [L]
+
+
+
+RewriteCond %{REQUEST_PATH} !-f
+RewriteRule ^/dashboard/(.*) /dashboard/index.html
