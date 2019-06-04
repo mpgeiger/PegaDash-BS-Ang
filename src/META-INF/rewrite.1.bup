@@ -1,0 +1,3 @@
+RewriteRule ^/summary-page(.*)$    /index.html [L]
+RewriteRule ^/dashboard(.*)$    /index.html [L]
+RewriteRule ^/opentask-page(.*)$ /index.html [L]
