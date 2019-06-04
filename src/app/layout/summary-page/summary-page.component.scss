@@ -120,3 +120,17 @@ div.text-center.card-body.nba {
 //   color: #ffffff;
 //   text-align: center;
 // }
+
+
+.th-left {
+
+}
+.th-right {
+  direction: rtl;
+}
+.td-left {
+  text-align: -webkit-left;
+}
+.td-right {
+  text-align: -webkit-right;
+}

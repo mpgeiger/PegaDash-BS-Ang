@@ -11,26 +11,27 @@
         <ng-container matColumnDef="AccountNumber">
           <th mat-header-cell *matHeaderCellDef  mat-sort-header> Account # </th>
 
-          <td mat-cell *matCellDef="let element"> {{element.AccountNumber}} </td>
+          <td mat-cell *matCellDef="let element" class="td-left"> {{element.AccountNumber}} </td>
         </ng-container>
 
 
         <ng-container matColumnDef="AccountTypeDesc">
           <th mat-header-cell *matHeaderCellDef mat-sort-header > Type </th>
-          <td mat-cell *matCellDef="let element"> {{element.AccountTypeDesc }} </td>
+          <td mat-cell *matCellDef="let element"  style="text-align: left;"> {{element.AccountTypeDesc }} </td>
         </ng-container>
                 <ng-container matColumnDef="AverageMonthlyBalance">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header matSortStart="AverageMonthlyBalance" style="direction: rtl">Avg Monthly Bal</th>
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header matSortStart="AverageMonthlyBalance" class="th-right">Avg Monthly Bal</th>
                   <td mat-cell *matCellDef="let element" style="text-align: end;"
                   matTooltip="The balance delta is: {{element.AverageMonthlyBalance - element.AccountBalance | currency}}"
                   matTooltipPosition="left"
                   [ngStyle]="{ 'color' : (element.ApplDescType !== 'Asset') ? 'red' : 'black' }"
+                  class="td-right"
                   >
                     {{element.AverageMonthlyBalance | currency  }}
                   </td>
                 </ng-container>
                 <ng-container matColumnDef="AccountTrend">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header matSortStart="AccountTrend" style="direction: rtl">Trend</th>
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header matSortStart="AccountTrend" class="th-right">Trend</th>
                   <td mat-cell *matCellDef="let element" style="text-align: end;"
                   matTooltip="The balance delta is: {{ element.AccountBalance - element.AverageMonthlyBalance }}"
                   matTooltipPosition="left"
@@ -42,7 +43,7 @@
                   </ng-container>
 
         <ng-container matColumnDef="AccountBalance" class="right">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header style="direction: rtl" >Balance</th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="th-right" >Balance</th>
           <td mat-cell *matCellDef="let element" style="text-align: end;"
           [ngStyle]="{ 'color' : (element.ApplDescType !== 'Asset') ? 'red' : 'black' }"
           > {{element.AccountBalance | currency }} </td>

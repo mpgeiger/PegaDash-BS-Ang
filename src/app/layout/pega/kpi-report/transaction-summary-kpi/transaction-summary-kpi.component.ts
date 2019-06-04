@@ -152,8 +152,8 @@ export class TransactionSummaryKpiComponent implements OnInit {
 
   public show = false;
   public showPieChart = false;
-  public showBarChart = false;
-  public showTable = true;
+  public showBarChart = true;
+  public showTable = false;
 
   constructor(
     private datapage: DatapageService

@@ -58,7 +58,10 @@
 //   // justify-content: flex-start;
 // }
 
-
+.navbar-expand-lg {
+  flex-flow: row;
+  justify-content: flex;
+}
 ::ng-deep .megaMenu{
   left: 15% !important;
   color: black;
