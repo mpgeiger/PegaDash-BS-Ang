@@ -1,18 +1,9 @@
 {
   "pxResults": [
+
     {
       "TotalTrxnAmount": 170398,
-      "TransactionAmount": 170398,
-      "TransactionCode": "ES8S",
-      "TransactionDate": "2019-03-28",
-      "Currency": "CAD",
-      "Country": "Canada",
-      "TransactionError": "",
-      "TransactionPostDate": "2019-03-28"
-    },
-    {
-      "TotalTrxnAmount": 170398,
-      "TransactionAmount": 170398,
+      "TransactionAmount": 230398,
       "TransactionCode": "ES8S",
       "TransactionDate": "2019-03-28",
       "Currency": "CNY",
@@ -22,27 +13,17 @@
     },
     {
       "TotalTrxnAmount": 170398,
-      "TransactionAmount": 170398,
-      "TransactionCode": "ES8S",
-      "TransactionDate": "2019-03-28",
-      "Currency": "JPY",
-      "Country": "Japan",
-      "TransactionError": "",
-      "TransactionPostDate": "2019-03-28"
-    },
-    {
-      "TotalTrxnAmount": 170398,
-      "TransactionAmount": 170398,
+      "TransactionAmount": 670398,
       "TransactionCode": "ES8S",
       "TransactionDate": "2019-03-28",
       "Currency": "HKD",
-      "Country": "HongKonk",
+      "Country": "Hong Kong",
       "TransactionError": "",
       "TransactionPostDate": "2019-03-28"
     },
     {
       "TotalTrxnAmount": 170398,
-      "TransactionAmount": 170398,
+      "TransactionAmount": 654398,
       "TransactionCode": "ES8S",
       "TransactionDate": "2019-03-28",
       "Currency": "SGD",
@@ -62,7 +43,7 @@
     },
     {
       "TotalTrxnAmount": 170398,
-      "TransactionAmount": 170398,
+      "TransactionAmount": 1990398,
       "TransactionCode": "ES8S",
       "TransactionDate": "2019-03-28",
       "Currency": "USD",

@@ -58,9 +58,9 @@ export class TransactionSummaryKpiComponent implements OnInit {
   //     '# Entries'
   // ];
   // public pieChartLabels: Label[] = [];
-  public pieChartLabels: Label[] =  ['Canada', 'China', 'France', 'HongKong', 'Japan', 'Singapore', 'Switzerland', 'UAE', 'USA'];
+  public pieChartLabels: Label[] =  [ 'China', 'Hong Kong', 'Singapore', 'UAE', 'USA'];
   // public pieChartData: SingleDataSet = [];
-  public pieChartData: SingleDataSet = [2234, 534539, 834540, 334551, 5634553, 534535, 43453540, 2434233, 32332323];
+  public pieChartData: SingleDataSet = [ 5634553, 534535, 43453540, 2434233, 32332323];
   public pieChartPlugins = [];
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = true;
@@ -69,7 +69,7 @@ export class TransactionSummaryKpiComponent implements OnInit {
     responsive: true,
     legend: {
       position: 'right',
-      display: false
+      display: true
     }
   };
   public pieColors = [
@@ -118,7 +118,7 @@ export class TransactionSummaryKpiComponent implements OnInit {
     }
   };
   // public barChartLabels: Label[] = [];
-  public barChartLabels: Label[] = ['Canada', 'China', 'France', 'HongKong', 'Japan', 'Singapore', 'Switzerland', 'UAE', 'USA'];
+  public barChartLabels: Label[] = [ 'China',  'Hong Kong',  'Singapore', 'Switzerland',  'USA'];
   // public barChartLabels: Label[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
 
   // public barChartData: SingleDataSet = [];
@@ -128,16 +128,16 @@ export class TransactionSummaryKpiComponent implements OnInit {
   // public barChartPlugins = [pluginDataLabels];
 
   public barChartData: ChartDataSets[] = [
-     { data: [2234, 534539, 834540, 334551, 5634553, 534535, 434535, 2434233, 3233232], label: 'Assets' },
-     { data: [345553, 345345, 345345, 5343381, 3453456, 5534535, 4345340, 234234, 1717177], label: 'Liabilities' }
+     { data: [ 5634553, 534535, 434535, 2434233, 3233232], label: 'Assets' },
+     { data: [  3453456, 5534535, 4345340, 234234, 1717177], label: 'Liabilities' }
 
   ];
 
 
-  public doughnutChartLabels: Label[] = ['Canada', 'China', 'France', 'HongKong', 'Japan', 'Singapore', 'Switzerland', 'UAE', 'USA'];
+  public doughnutChartLabels: Label[] = ['China', 'HongKong', 'Singapore', 'UAE', 'USA'];
   public doughnutChartData: MultiDataSet = [
-    [2234, 534539, 834540, 334551, 5634553, 534535, 43453540, 2434233, 32332323],
-    [345553, 345345, 345345, 5343381, 3453456, 5534535, 4345340, 234234, 1717177]
+    [ 5634553, 534535, 434535, 2434233, 3233232],
+    [  3453456, 5534535, 4345340, 234234, 1717177]
   ];
   public doughnutChartType: ChartType = 'doughnut';
   public doughnutChartOptions: ChartOptions = {
