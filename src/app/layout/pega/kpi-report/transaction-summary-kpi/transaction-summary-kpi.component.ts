@@ -108,10 +108,11 @@ export class TransactionSummaryKpiComponent implements OnInit {
       datalabels: {
         anchor: 'end',
         align: 'end',
+        display: false
       }
     },
     legend: {
-      position: 'right',
+      position: 'bottom',
       labels: {
         fontSize: 10
       }

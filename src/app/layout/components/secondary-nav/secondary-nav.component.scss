@@ -1,0 +1,58 @@
+@import '../../../Dashboard_Styles.scss';
+
+.secondary-navbar {
+  justify-content: flex-start;
+  background-color: $bnyPrimary;
+
+  .navbar-nav {
+    background-color: $bnyPrimary;
+  }
+  .list-group-item {
+    background-color: $bnyPrimary;
+    color: $topnav-item-color;
+  }
+
+}
+    .mat-menu-panel {
+      left: 15% !important;
+    }
+
+    // .mat-menu-panel {
+    //   min-width: 112px;
+    //   max-width: none !important;
+    //   overflow: auto;
+    //   -webkit-overflow-scrolling: touch;
+    //   max-height: calc(100vh - 48px);
+    //   border-radius: 4px;
+    //   outline: 0;
+    // }
+
+
+    .mat-menu-item {
+      height: 32px;
+      padding: 0 8px;
+    }
+
+    .navbar-nav {
+      .megaMenuNav {
+        color: green;
+        // max-width: none !important;
+        max-width: 80vw;
+        //   width: 100vw;
+        //   margin-left: -8px;
+        //   margin-top: 24px;
+        //   overflow: visible;
+
+
+      }
+      // div.cdk-overlay-connected-position-bounding-box {
+      //   align-items: center;
+      //   left: 20%;
+      //   right: 20%;
+      //   top: 15px;
+      // }
+
+
+    }
+
+

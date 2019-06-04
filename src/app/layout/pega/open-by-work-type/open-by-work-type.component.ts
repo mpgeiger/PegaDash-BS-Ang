@@ -148,7 +148,7 @@ itemTextValue: string;
   ngOnInit() {
     // this.getCases();
     this.dataSource.sort = this.sort;
-    this.sort.disableClear = true;
+    // this.sort.disableClear = true;
   }
 
   ngAfterViewInit(): void {
