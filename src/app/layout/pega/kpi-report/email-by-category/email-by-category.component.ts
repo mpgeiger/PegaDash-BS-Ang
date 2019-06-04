@@ -33,6 +33,10 @@ export class EmailByCategoryComponent implements OnInit {
   displayedColumns = ['Name', 'pxIndexCount'];
 
   public dataSource = new MatTableDataSource<EmailByCategory>();
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatSort) set content(sort: MatSort) {
+    this.dataSource.sort = sort;
+}
   sortedData: EmailByCategory[];
   headers: any;
   types: EmailByCategory[] = [];
@@ -121,7 +125,7 @@ export class EmailByCategoryComponent implements OnInit {
   public showTable = false;
 
   // @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  // @ViewChild(MatSort) sort: MatSort;
   // events
   public chartClicked(e: any): void {
     console.log(e);
@@ -135,14 +139,12 @@ export class EmailByCategoryComponent implements OnInit {
   ngOnInit() {
     this.showLoading = true;
     this.dataSource.sort = this.sort;
-    // this.sort.disableClear = true;
+    this.sort.disableClear = true;
 
   }
 
   ngAfterViewInit() {
 
-    // this.dataSource.sort = this.sort;
-    // this.sort.disableClear = true;
     if (this.checkIfStubbed()) {
       console.log('STUBBED D_GetEmailsByCategory');
       this.getStubbedCases();

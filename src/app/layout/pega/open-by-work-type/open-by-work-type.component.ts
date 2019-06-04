@@ -40,6 +40,10 @@ export class OpenByWorkTypeComponent implements OnInit, AfterViewInit {
   displayedColumns = ['pyLabel', 'StringVal1', 'ResultCount1'];
 
   public dataSource = new MatTableDataSource<OpenWorkType>();
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatSort) set content(sort: MatSort) {
+    this.dataSource.sort = sort;
+}
   sortedData: OpenWorkType[];
   headers: any;
   types: OpenWorkType[] = [];
@@ -131,7 +135,7 @@ itemTextValue: string;
   public showTable = false;
 
   // @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  // @ViewChild(MatSort) sort: MatSort;
   // events
   public chartClicked(e: any): void {
     console.log(e);
@@ -144,6 +148,7 @@ itemTextValue: string;
   ngOnInit() {
     // this.getCases();
     this.dataSource.sort = this.sort;
+    this.sort.disableClear = true;
   }
 
   ngAfterViewInit(): void {
@@ -243,7 +248,7 @@ let count = 0;
     for (const item of data) {
       this.pieChartLabels.push(item.pyLabel);
     }
-    //console.log('  Pie CHART pieChartLabels-->' + JSON.stringify(this.pieChartLabels)); // Does not return anything
+    // console.log('  Pie CHART pieChartLabels-->' + JSON.stringify(this.pieChartLabels)); // Does not return anything
   }
 
   parseDataForBarChart(data) {

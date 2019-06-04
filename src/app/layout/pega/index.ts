@@ -13,6 +13,7 @@ export * from './customCases/rcicase/create-custom-rcicase.component';
 export * from './kpi-report/account-summary/account-summary.component';
 export * from './kpi-report/email-by-category/email-by-category.component';
 export * from './kpi-report/in-corr-auto-reply-trend/in-corr-auto-reply-trend.component';
+export * from './kpi-report/transaction-summary-kpi/transaction-summary-kpi.component';
 export * from './kpi-report/value-trend-indicator-arrow/value-trend-indicator-arrow.component';
 // export * from './kpi-report/index';
 export * from './pega-pie-chart/pega-pie-chart.component';

@@ -46,6 +46,7 @@ import {
   , RciCheckResultTableComponent
   , StatusRecentTreasurerComponent
   , TransactionSummaryComponent
+  , TransactionSummaryKpiComponent
   , WorkitemComponent
   , PWorkItemComponent
   , ValueTrendIndicatorArrowComponent
@@ -100,6 +101,7 @@ import {
     , RelAccountListComponent
     , StatusRecentTreasurerComponent
     , TransactionSummaryComponent
+    , TransactionSummaryKpiComponent
     , ValueTrendIndicatorArrowComponent
     , WorkitemComponent
     , PWorkItemComponent
@@ -143,6 +145,7 @@ import {
     , RelAccountListComponent
     , StatusRecentTreasurerComponent
     , TransactionSummaryComponent
+    , TransactionSummaryKpiComponent
     , WorkitemComponent
     , PWorkItemComponent
     , ValueTrendIndicatorArrowComponent

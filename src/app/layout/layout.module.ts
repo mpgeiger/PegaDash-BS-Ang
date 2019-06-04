@@ -24,6 +24,7 @@ import { SharedPegaModule } from '../shared-pega/shared-pega.module';
 
 import { AppMaterialModule  } from '../app-material/app-material.module';
 import { FromCamelCase } from './pega/_pipes/fromCamelCase';
+// import { TransactionSummaryKpiComponent } from './pega/kpi-report/transaction-summary-kpi/transaction-summary-kpi.component';
 // import { FilterPipe } from './pega/_pipes/searchFilterPipe';
 
 
