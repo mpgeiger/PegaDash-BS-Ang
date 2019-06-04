@@ -46,10 +46,10 @@ export class HeaderComponent implements OnInit, AfterViewInit {
         this.router.events.subscribe(val => {
             if (
                 val instanceof NavigationEnd &&
-                window.innerWidth <= 992 &&
+                window.innerWidth <= 4992 &&
                 this.isToggled()
             ) {
-                this.toggleSidebar();
+                // this.toggleSidebar();
             }
         });
     }

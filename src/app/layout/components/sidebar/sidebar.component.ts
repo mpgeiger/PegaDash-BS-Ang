@@ -24,19 +24,19 @@ export class SidebarComponent implements OnInit {
       // private modal: ModalComponent,
       public router: Router) {
         this.router.events.subscribe(val => {
-            if (
-                val instanceof NavigationEnd &&
-                window.innerWidth <= 992 &&
-                this.isToggled()
-            ) {
-                this.toggleSidebar();
-            }
+            // if (
+            //     val instanceof NavigationEnd &&
+            //     window.innerWidth <= 992 &&
+            //     // this.isToggled()
+            // ) {
+            //     // this.toggleSidebar();
+            // }
         });
     }
 
     ngOnInit() {
-        this.isActive = false;
-        this.collapsed = false;
+        this.isActive = true;
+        this.collapsed = true;
         this.showMenu = '';
         this.pushRightClass = 'push-right';
     }
@@ -84,7 +84,7 @@ export class SidebarComponent implements OnInit {
     onLoggedout() {
         localStorage.removeItem('isLoggedin');
     }
-    
+
   public onSidenavClose = () => {
     this.collapsedEvent.emit();
 }

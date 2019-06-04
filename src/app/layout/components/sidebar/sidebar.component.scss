@@ -149,7 +149,9 @@
 }
 @media screen and (max-width: 992px) {
     .sidebar {
-        top: 54px;
+        // Pushing up menu because secondary nav is not longer there
+        // top: 54px;
+        top: 20px;
         left: 0px;
     }
 }
