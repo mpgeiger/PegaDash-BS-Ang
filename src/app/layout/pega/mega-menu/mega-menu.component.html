@@ -27,7 +27,7 @@
               mat-list-item
               class="megaMenu-List-Item"
               (click)="
-                action.pyLabel === 'Request Cheque Image' || 'Request Check Image' ? openModalDialogForService() : nonFunctioningService()
+                action.pyLabel === 'Request Cheque Image' || 'Request Check Image' ? openModalDialogForService($event, action.pyLabel) : nonFunctioningService($event, action.pyLabel)
               "
 
             >

@@ -13,7 +13,7 @@ import { ChartsModule as Ng2Charts } from 'ng2-charts';
 
 import { AppMaterialModule } from '../app-material/app-material.module';
 import { SharedPegaStarterPackModule } from './shared-pega-starterPackItems.module';
-import { RciMashupComponent } from '../layout/pega/mashups/rci-mashup/rci-mashup.component';
+import { RciMashupComponent, WireRecallMashupComponent } from '../layout/pega/mashups/rci-mashup/rci-mashup.component';
 import { SafeHtml, SafeStyle, SafeUrl } from '../layout/pega/_pipes/safe';
 import { WelcomeComponent } from '../layout/pega/customer-info/welcome/welcome.component';
 // import { PStatModule } from '../layout/pega/stat/stat.module';
@@ -106,6 +106,7 @@ import {
     , WorkitemComponent
     , PWorkItemComponent
     , WelcomeComponent
+    , WireRecallMashupComponent
     , Workitem1Component
 
     , SafeHtml
@@ -130,6 +131,7 @@ import {
       , ModalWorkItemComponent
 
 
+
     // , ChartDataLabels
     , NbaCaptureResponseComponent
     , NbaOfferComponent
@@ -151,6 +153,7 @@ import {
     , ValueTrendIndicatorArrowComponent
     , WelcomeComponent
 
+    , WireRecallMashupComponent
     , Workitem1Component
     , ModalWorkItemComponent
 
@@ -165,13 +168,14 @@ import {
   //  , ModalContainerComponent
     ModalRCIContainerComponent
     // , PegaVariablesPropertiesComponent
-  , RciMashupComponent
+   , RciMashupComponent
    , ModalRCIPegaComponent
    , CreateCustomRCIcaseComponent
    , WorkitemComponent
    , ModalWorkItemComponent
    , RciCheckResultTableComponent
    , WelcomeComponent
+   , WireRecallMashupComponent
   //  , HeroParentComponent
     // , HeroChildComponent
   ]

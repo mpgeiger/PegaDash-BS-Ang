@@ -19,7 +19,7 @@ import { OpenNewCaseService } from '../../../_messages/opennewcase.service';
 
 
 import { Subscription } from 'rxjs';
-import { RciMashupComponent } from '../mashups/rci-mashup/rci-mashup.component';
+import { RciMashupComponent, WireRecallMashupComponent } from '../mashups/rci-mashup/rci-mashup.component';
 
 
 
@@ -317,10 +317,82 @@ export class ModalRCIPegaComponent implements OnInit {
 
     this.rciDialogRef = this.dialog.open(RciMashupComponent, dialogConfig);
   }
+
+
+  public openWireRecalMashupCaseDialog() {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = false;
+
+    dialogConfig.width = '70%';
+    dialogConfig.minWidth = '650px';
+    dialogConfig.minHeight = '400px';
+    dialogConfig.maxWidth = '1000px';
+
+    // dialogConfig.data = {
+    //   id: 1,
+    //   title: 'Angular For Beginners',
+    //   masterName: 'FOOBAR'
+    // };
+
+    this.rciDialogRef = this.dialog.open(WireRecallMashupComponent, dialogConfig);
+  }
+
+
   onNoClick(): void {
     this.dialog.closeAll();
   }
 }
+
+// @Component({
+//   selector: 'app-modal-wire-recall-pega-mashup',
+//   templateUrl: './modal-wireRecall-mashup.component.html',
+//   // templateUrl: './modal-container.componentMPG.html',
+//   styleUrls: ['./modal-container.component.scss']
+// })
+
+// export class ModalWireRecallComponent implements OnInit {
+
+//   constructor(
+//     private dialog: MatDialog
+//   ) { }
+//   @Input('master') masterName: string;
+
+//   caseInstanceName = '';
+
+//   rciDialogRef: MatDialogRef<WireRecallMashupComponent>;
+
+//   // @Input()('master') masterName: string;
+
+//   ngOnInit() {
+//     this.caseInstanceName = this.masterName;
+//     // console.log( ' ## ModalRCIContainerComponent-->' + this.masterName);
+//   }
+
+//   public openWireRecalMashupCaseDialog() {
+//     const dialogConfig = new MatDialogConfig();
+
+//     dialogConfig.disableClose = false;
+//     dialogConfig.autoFocus = false;
+
+//     dialogConfig.width = '70%';
+//     dialogConfig.minWidth = '650px';
+//     dialogConfig.minHeight = '400px';
+//     dialogConfig.maxWidth = '1000px';
+
+//     // dialogConfig.data = {
+//     //   id: 1,
+//     //   title: 'Angular For Beginners',
+//     //   masterName: 'FOOBAR'
+//     // };
+
+//     this.rciDialogRef = this.dialog.open(WireRecallMashupComponent, dialogConfig);
+//   }
+//   onNoClick(): void {
+//     this.dialog.closeAll();
+//   }
+// }
 
 // export class HeroChildComponent {
 //   // @Input() hero: Hero;

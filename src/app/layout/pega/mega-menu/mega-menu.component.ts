@@ -226,17 +226,25 @@ export class MegaMenuComponent implements OnInit {
    }
 
 
-  public openModalDialogForService(): void {
+  public openModalDialogForService(ev, action): void {
     // this.mc.openCreateRciCaseDialog();
-    this.rciMashup.openRciMashupCaseDialog();
-    console.log('RCI Clicked Create ');
+    console.log(this.componentName + 'RCI Clicked Create event-->' + action + '___caught-->' + JSON.stringify(ev) );
+    if (action === 'Request Cheque Image') {
+      this.rciMashup.openRciMashupCaseDialog();
+    }
+    if (action === 'Wire Recall') {
+      this.rciMashup.openWireRecalMashupCaseDialog();
+    }
+
   }
+
   clickedRCI() {
     console.log('RCI Clicked Create ');
 
   }
-  nonFunctioningService() {
-    console.log('OTHER Clicked Create ');
+  nonFunctioningService(ev, action) {
+    console.log(this.componentName + 'RCI Clicked Create event caught-->' + JSON.stringify(ev));
+
 
   }
 }
