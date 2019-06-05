@@ -18,6 +18,18 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 I added ngx-currency [ngx-currency](https://www.npmjs.com/package/ngx-currency)  to help process currency values with commas for thoushands and the currency symbol ***$ 1,234,567.89***
 
 
+# Installation:
+Download the package:
+
+###  1. **npm install**
+
+###  2. **npm start**
+
+## ng2-charts needs to be specifically v2.2.3 for the current time
+  * [ng2-chart run errors Injectable, ɵɵdefineInjectable](https://github.com/valor-software/ng2-charts/issues/1115)
+
+  * [export 'ɵɵdefineInjectable' was not found in '@angular/core'](https://stackoverflow.com/questions/56371427/warning-in-node-modules-ng2-charts-fesm5-ng2-charts-js-23054-72-export-%C9%B5%C9%B5de)
+
 
 Recent Interactions    D_InteractionHistory    app-recent-interactions
 
@@ -33,21 +45,24 @@ Recent Interactions    D_InteractionHistory    app-recent-interactions
 | **Unified Task List**   	| D_UnifiedWorkList    	| app-unifiedtasklist      	  |  /pega/unifiedtasklist              	|
 | **Un-named**             	| D_RecentTreasurerCases| app-recentTreasurerCaseList |  /pega/recentTreasurerCaseList       	|
 
+<hr>
 
-NEXEN Colors
-|Color Ref                | Color RGB  |
-|-------------------------|-----------|
-|  $bnymNexenPrimary:     |#1A7383|
+**NEXEN Colors**
+
+| Color Ref               | Color RGB  |
+|-------------------------|------------|
+|  $bnymNexenPrimary:     |#1A7383   |
 |  $bnymNexenGreenGradTop |#167A82|
 |  GreenGradBottom        |#1F7E81|
 |  $bnymNexenBlue:        |#2D3B4F|
 |  $bnymNexenBlue:        |#1A7383|
-
 |  $bnyDarkBlue:  |#2F3952 |
 
-|Color Ref         | Color RGB  |
-|------------------|-----------|
-|  $bnyPrimary:     |#9C906F|
+**BNYM Colors**
+
+|Color Ref                | Color RGB  |
+|-------------------------|-----------|
+|  $bnyPrimary:    |  9C906F|
 |  $bnyDarkGray:  |#4f4c4d |
 |  $bnyLightGray: |#a7a5a6 |
 |  $bnyBronze:    |#b07e25 |

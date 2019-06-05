@@ -3,6 +3,7 @@
 .fixed-top {
   margin-top: 50px;
 }
+
 .secondary-navbar {
   justify-content: flex-start;
   background-color: $bnyPrimary;
@@ -11,109 +12,128 @@
   .navbar-nav {
     background-color: $bnyPrimary;
   }
+
   .list-group-item {
     background-color: $bnyPrimary;
     color: $topnav-item-color;
   }
 
+
 }
-    .mat-menu-panel {
-      left: 15% !important;
-    }
 
-    // .mat-menu-panel {
-    //   min-width: 112px;
-    //   max-width: none !important;
-    //   overflow: auto;
-    //   -webkit-overflow-scrolling: touch;
-    //   max-height: calc(100vh - 48px);
-    //   border-radius: 4px;
-    //   outline: 0;
-    // }
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 0 !important;
+  align-items: center;
+}
 
-
-    .mat-menu-item {
-      height: 32px;
-      padding: 0 8px;
-    }
-
-    .navbar-nav {
-      .megaMenuNav {
-        color: green;
-        // max-width: none !important;
-        max-width: 80vw;
-        //   width: 100vw;
-        //   margin-left: -8px;
-        //   margin-top: 24px;
-        //   overflow: visible;
+.navbar-expand-lg {
+  justify-content: flex-start !important;
+  display: flow-root !important;
+  flex-basis: auto !important;
+}
 
 
-      }
-      // div.cdk-overlay-connected-position-bounding-box {
-      //   align-items: center;
-      //   left: 20%;
-      //   right: 20%;
-      //   top: 15px;
-      // }
+.mat-menu-panel {
+  left: 15% !important;
+}
+
+// .mat-menu-panel {
+//   min-width: 112px;
+//   max-width: none !important;
+//   overflow: auto;
+//   -webkit-overflow-scrolling: touch;
+//   max-height: calc(100vh - 48px);
+//   border-radius: 4px;
+//   outline: 0;
+// }
 
 
-    }
+.mat-menu-item {
+  height: 32px;
+  padding: 0 8px;
+}
+
+.navbar-nav {
+  .megaMenuNav {
+    color: green;
+    // max-width: none !important;
+    max-width: 80vw;
+    //   width: 100vw;
+    //   margin-left: -8px;
+    //   margin-top: 24px;
+    //   overflow: visible;
 
 
+  }
 
-  //   .nested-menu {
-  //     .list-group-item {
-  //         cursor: pointer;
-  //     }
-  //     .nested {
-  //         list-style-type: none;
-  //     }
-  //     ul.submenu {
-  //         display: none;
-  //         height: 0;
-  //     }
-  //     & .expand {
-  //         ul.submenu {
-  //             display: block;
-  //             list-style-type: none;
-  //             height: auto;
-  //             li {
-  //                 a {
-  //                     color: $sidebar-nested-menu-a-color;
-  //                     padding: 10px;
-  //                     display: block;
-  //                 }
-  //             }
-  //         }
-  //     }
+  // div.cdk-overlay-connected-position-bounding-box {
+  //   align-items: center;
+  //   left: 20%;
+  //   right: 20%;
+  //   top: 15px;
   // }
-  @media screen and (max-width: 992px) {
-      .sidebar {
-          top: 54px;
-          left: 0px;
-      }
-  }
-  @media print {
-      .sidebar {
-          display: none !important;
-      }
-  }
-  @media (min-width: 992px) {
-      .header-fields {
-          display: none;
-      }
-  }
 
-  ::-webkit-scrollbar {
-      width: 8px;
-  }
 
-  ::-webkit-scrollbar-track {
-      -webkit-box-shadow: inset 0 0 0px rgba(255, 255, 255, 1);
-      border-radius: 3px;
-  }
+}
 
-  ::-webkit-scrollbar-thumb {
-      border-radius: 3px;
-      -webkit-box-shadow: inset 0 0 3px rgba(255, 255, 255, 1);
+
+
+//   .nested-menu {
+//     .list-group-item {
+//         cursor: pointer;
+//     }
+//     .nested {
+//         list-style-type: none;
+//     }
+//     ul.submenu {
+//         display: none;
+//         height: 0;
+//     }
+//     & .expand {
+//         ul.submenu {
+//             display: block;
+//             list-style-type: none;
+//             height: auto;
+//             li {
+//                 a {
+//                     color: $sidebar-nested-menu-a-color;
+//                     padding: 10px;
+//                     display: block;
+//                 }
+//             }
+//         }
+//     }
+// }
+@media screen and (max-width: 992px) {
+  .sidebar {
+    top: 54px;
+    left: 0px;
   }
+}
+
+@media print {
+  .sidebar {
+    display: none !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .header-fields {
+    display: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 0px rgba(255, 255, 255, 1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 3px rgba(255, 255, 255, 1);
+}
