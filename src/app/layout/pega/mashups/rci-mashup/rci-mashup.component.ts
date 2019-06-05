@@ -10,7 +10,7 @@ import { Component, OnInit, ViewChild, Renderer2, ElementRef } from '@angular/co
 export class RciMashupComponent implements OnInit {
 
   // url = 'http://bny.pegatsdemo.com/BNYImages/mpgMashup.html';
-  url = 'http://bny.pegatsdemo.com/assets/mashup/mpgMashup.html';
+  url = 'http://bny.pegatsdemo.com/assets/mashup/mashupRequestCheckImage.html';
 
   constructor(
 
@@ -19,8 +19,25 @@ export class RciMashupComponent implements OnInit {
   ngOnInit() {
 
   }
-  ngAfterViewInit() {
 
+}
+
+
+@Component({
+  selector: 'app-wire-recall-mashup',
+  templateUrl: './rci-mashup.component.html',
+  styleUrls: ['./rci-mashup.component.scss']
+})
+
+export class WireRecallMashupComponent implements OnInit {
+
+  // url = 'http://bny.pegatsdemo.com/BNYImages/mpgMashup.html';
+  url = 'http://bny.pegatsdemo.com/assets/mashup/mashupWireRecall.html';
+
+  constructor(
+
+    ) { }
+
+  ngOnInit() {
   }
-
 }
