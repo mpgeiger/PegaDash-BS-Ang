@@ -1,3 +1,4 @@
+import { AccountSummary } from './../kpi-report/account-summary/account-summary.component';
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { DatapageService } from '../../../_services/datapage.service';
 import { Subscription, Observable } from 'rxjs';
@@ -6,6 +7,7 @@ import { FormControl } from '@angular/forms';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import stubbedResults from '@ss/json/D_RelAccountList.json';
 import { TooltipPosition } from '@angular/material';
+import { AccountListService } from '@ss/app/layout/pega/_services/index';
 
 export interface RelAccount {
   AccountBalance: number;
@@ -41,8 +43,12 @@ export interface RelAccount {
 }
 
 
-
-
+export interface AccountsSummary {
+  totalCurrentAssets: number;
+  totalAvgMonthAssets: number;
+  totalCurrentLiabilities: number;
+  totalAvgMonthLiabilities: number;
+}
 
 @Component({
   selector: 'app-rel-account-list',
@@ -63,6 +69,9 @@ export class RelAccountListComponent implements OnInit {
 
   positionOptions: TooltipPosition[] = ['after', 'before', 'above', 'below', 'left', 'right'];
   position = new FormControl(this.positionOptions[0]);
+
+  accountSummary:  AccountsSummary = <AccountsSummary>{};
+
   totalCurrentAssets = 0;
   totalAvgMonthAssets = 0;
   totalCurrentLiabilities = 0;
@@ -71,7 +80,8 @@ export class RelAccountListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   constructor(
-    private datapage: DatapageService
+    private datapage: DatapageService,
+    private as: AccountListService
   ) { }
 
   ngOnInit() {
@@ -83,6 +93,7 @@ export class RelAccountListComponent implements OnInit {
       // this.getCases();
       this.getCases();
     }
+
     // console.log('count of ' + this.pegaService + '-->' + localStorage.getItem(this.pegaService));
 
   }
@@ -114,7 +125,15 @@ export class RelAccountListComponent implements OnInit {
     localStorage.setItem(this.pegaService, this.cases.length.toString());
     this.showLoading = false;
   }
+  sendMessage(): void {
+    // send message to subscribers via observable subject
+    this.as.sendMessage('Message from Home Component to App Component!');
+}
 
+clearMessages(): void {
+    // clear messages
+    this.as.clearMessages();
+}
   getCases() {
     let dParams = new HttpParams();
     dParams = dParams.append('CifNbr', '9912345999');
@@ -205,6 +224,14 @@ export class RelAccountListComponent implements OnInit {
     console.log('total liab   -->' + totCurrLiab);
     console.log('total avg assets -->' + totAvgMonthAsset);
     console.log('total avgt liab  -->' + totAvgMonthLiab);
+
+    this.accountSummary.totalCurrentAssets = totCurrAsset;
+    this.accountSummary.totalCurrentLiabilities = totCurrLiab;
+    this.accountSummary.totalAvgMonthAssets = totAvgMonthAsset;
+    this.accountSummary.totalAvgMonthLiabilities = totAvgMonthLiab;
+
+    this.as.setAccountList(this.accountSummary);
+
     this.totalCurrentAssets = totCurrAsset;
     this.totalAvgMonthAssets = totAvgMonthAsset;
     this.totalCurrentLiabilities = totCurrLiab;

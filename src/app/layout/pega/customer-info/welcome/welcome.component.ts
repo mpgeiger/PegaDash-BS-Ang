@@ -1,15 +1,18 @@
 // import { RelAccountListComponent } from './../../rel-account-list/rel-account-list.component';
 // import { StatComponent } from './../../../../shared/modules/stat/stat.component';
-import { Component, OnInit, Input, OnChanges, AfterViewInit, SimpleChanges, SimpleChange } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy, OnChanges, AfterViewInit, SimpleChanges, SimpleChange } from '@angular/core';
+import { Subscription, Observable } from 'rxjs';
 // import { RelAccountListComponent } from '@ss/app/shared-pega/shared-pega.module';
 import { StatComponent } from './../../../../shared/modules/stat/stat.component';
+import { AccountListService } from '@ss/app/layout/pega/_services/index';
 
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.scss']
 })
-export class WelcomeComponent implements OnInit, AfterViewInit  {
+export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy  {
+  subscription: Subscription;
 
   // totalCurrentLiabilities: number = Number(localStorage.getItem('totalCurrentLiabilities'));
   // totalAvgMonthLiabilities = Number(localStorage.getItem('totalAvgMonthLiabilities'));
@@ -27,12 +30,37 @@ export class WelcomeComponent implements OnInit, AfterViewInit  {
 
   private _totalCurrentAssets: number;
 
+  messages: any[] = [];
+
   constructor(
     // private al: RelAccountListComponent
-  ) { }
+    private as: AccountListService
+  ) {
+    this.subscription = this.as.getMessage().subscribe(message => {
+      if (message) {
+        this.messages.push(message);
+        console.log(this.componentName + ' GETTING message-->' + JSON.stringify(message));
+
+      } else {
+        // clear messages when empty message received
+        this.messages = [];
+      }
+    });
+    this.subscription = this.as.getAccountList().subscribe(message => {
+      if (message) {
+        this.messages.push(message);
+        console.log(this.componentName + ' GETTING ACCOUNT SUMMARY message-->' + JSON.stringify(message));
+
+      } else {
+        // clear messages when empty message received
+        this.messages = [];
+      }
+    });
+
+  }
 
  displayUserName = '';
-
+mpgTest = {};
 
 
   ngOnInit() {
@@ -54,16 +82,21 @@ export class WelcomeComponent implements OnInit, AfterViewInit  {
       }
          }
 
-         const sc_totalCurrentAssets: SimpleChange = changes.totalCurrentAssets;
+        //  const sc_totalCurrentAssets: SimpleChange = changes.totalCurrentAssets;
 
-         console.log(' Simple Change ' + sc_totalCurrentAssets.currentValue + '-->' + this._totalCurrentAssets );
-         this._totalCurrentAssets = sc_totalCurrentAssets.currentValue;
+        //  console.log(' Simple Change ' + sc_totalCurrentAssets.currentValue + '-->' + this._totalCurrentAssets );
+        //  this._totalCurrentAssets = sc_totalCurrentAssets.currentValue;
 
 
 
     // if (changes.currentValue) {
     //     this.totalCurrentAssets = chang;
     // }
+}
+
+ngOnDestroy() {
+  // unsubscribe to ensure no memory leaks
+  this.subscription.unsubscribe();
 }
 
 }
