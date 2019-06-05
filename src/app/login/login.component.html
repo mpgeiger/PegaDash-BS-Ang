@@ -36,6 +36,7 @@
               id="loginForm"
               name="loginForm"
               background="-webkit-linear-gradient(top,rgba(0,0,0,.65) 0,rgba(0,0,0,0) 100%)"
+              (submit)="doLogin()"
             >
               <!-- style="linear-gradient(to bottom,rgba(0,0,0,.65) 0,rgba(0,0,0,0) 100%) !important;" -->
               <fieldset>
@@ -79,7 +80,7 @@
 
                 <div class="form-group button-container">
                   <!-- <a class="btn rounded-btn" (click)="attemptLogin()">{{ 'Log in' | translate }}</a> -->
-                  <a class="btn rounded-btn" (click)="doLogin()">{{ 'Log in' | translate }}</a>
+                  <a class="btn rounded-btn" type="submit" (keyup.enter)="doLogin()" (click)="doLogin()">{{ 'Log in' | translate }}</a>
                 </div>
                 <!--
               <ul class="links-list">
