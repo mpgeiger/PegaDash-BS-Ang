@@ -134,26 +134,21 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
   private filterByDate(days: number): any {
     const currentDate = new Date();
     const currentMonth = currentDate.getMonth() - 12;
+    const currentDay = currentDate.getDay();
     const currentYear = currentDate.getFullYear() + 1;
-    const twoMonthPrior = new Date(currentYear, currentMonth - 1 , 22);
+    const twoMonthPrior = new Date(currentYear, currentMonth - 1 , currentDay);
     const today = new Date();
-    // var threeMonthsAgo = moment().subtract(3, 'months');
 
-    // console.log()
-
-
-    const d = new Date();
-    d.setMonth(d.getMonth() - 3);
 
     this.cases = this.cases.filter((item: any) => {
       const sDate = new Date(item.createTime);
       let test = false;
 
-      // if (sDate.getDate() >= twoMonthPrior.getDate()) {
+
       if (sDate.valueOf() >= twoMonthPrior.valueOf()) {
         test = true;
       }
-      console.log(' pega -->' + sDate.toDateString() + ' -- ' + test + ' -- ' + twoMonthPrior.toDateString());
+      // console.log(' pega -->' + sDate.toDateString() + ' -- ' + test + ' -- ' + twoMonthPrior.toDateString());
 
       // return sDate.valueOf() >= twoMonthPrior.valueOf() &&  sDate.getDate() <= today.getDate();
       return sDate.valueOf() >= twoMonthPrior.valueOf();
@@ -166,15 +161,8 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
     let pillStyle = 'badge badge-pill badge-';
 
     let style = 'danger';
-    console.log ( 'testing urgency-' + slaValue + '__color-->' + style);
+    // console.log ( 'testing urgency-' + slaValue + '__color-->' + style);
 
-   // pillStyle = pillStyle + 'danger';
-    // const styles = {
-    //   'background': '#ff0000'
-    // };
-
-
-    // let style = {backgroundco}
     if ( !slaValue ) {
       style = 'gray-300';
       // console.log ('  testing color-' + slaValue + '__color-->' + color);
