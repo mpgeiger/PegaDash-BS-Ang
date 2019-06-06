@@ -8,16 +8,21 @@
   justify-content: flex-start;
   background-color: $bnyPrimary;
   z-index: 1029;
-
+  margin-top: 61px;			   
   .navbar-nav {
     background-color: $bnyPrimary;
   }
 
   .list-group-item {
-    background-color: $bnyPrimary;
+   // TW background-color: $bnyPrimary;
     color: $topnav-item-color;
   }
 
+  // TW invert active menu item
+  .list-group-item.router-link-active {
+    background-color: white;
+    color:  $bnyPrimary;
+  }			   
 
 }
 

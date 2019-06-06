@@ -1,8 +1,12 @@
 // :host-context(.megaMenu) {
+ @import '../../../Dashboard_Styles.scss';										   
 
 .megaMenu-card {
+  border: 2px solid $bnyPrimary;            /* TW set the border to the secondary nav background */
+  background-color:$bnyPrimary;             /* TW set the megaMenu-card background to secondary nav bg */
   .megaMenu-card-body {
     padding: 0.5rem 1.2rem !important;
+	 background-color: $white;               /* TW body background to white */																		 
 
     .megaMenu-List {
       .megaMenu-List-Item {
@@ -21,6 +25,14 @@
     //   padding: 0.5rem;
     // }
   }
+
+    // TW added styles for mega menu card titles
+    div.card-header span.card-title, div.card-header {
+      font-size: 14px;
+      font-weight: 600;
+      color: $white;
+      background-color:$bnyPrimary;
+    } 
 }
 
 .megaMenu-card-body {

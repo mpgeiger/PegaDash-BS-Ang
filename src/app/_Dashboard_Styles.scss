@@ -17,7 +17,8 @@ $topnav-item-color: #fff;
   $bnyLightGray: #a7a5a6 !default;
   $bnyBronze:    #b07e25 !default;
   $bnyGold:      #a49668 !default;
-  $bnyBackground: #a7a5a6 !default;
+  $bnyBackground: #f2f2f2 !default;
+  // TW $bnyBackground: #a7a5a6 !default;
 
   $light:         $bnyLightGray !default;
   $dark:          $bnyDarkGray!default;
@@ -65,4 +66,10 @@ $sidebar-toggle-button-hover-background-color: darken($topnav-background-color, 
 .card-subtitle {
   font-size: 1rem;
 
+}
+
+
+// TW added td.mat-cell
+td.mat-cell {
+  line-height: 48px;
 }
