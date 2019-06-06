@@ -19,7 +19,10 @@
 }
 .mat-chip {
   max-width: 100px;
-}
+  width: 50px;
+  align-items: center;
+  text-align: center;
+  }
 
 .mat-chip-list-wrapper {
   display: flex;
@@ -28,4 +31,9 @@
   align-items: center;
   margin: -4px;
   justify-content: center;
+}
+.align-right{
+  display: flex;
+  padding: 21px 0;
+  justify-content: flex-end;
 }

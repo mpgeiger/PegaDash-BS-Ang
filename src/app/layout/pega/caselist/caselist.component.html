@@ -31,11 +31,11 @@
       </ng-container>
 
       <ng-container matColumnDef="urgency">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header  class="">Urgency</th>
-        <td mat-cell *matCellDef="let element" class="td-center">
-            <mat-chip-list class="td-right">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header  class="th-right">Urgency</th>
+        <td mat-cell *matCellDef="let element" class="align-right">
+            <mat-chip-list >
                 <mat-chip
-                [color]="'#FF0000'"
+                color="accent" selected
                 >{{element.urgency}}</mat-chip>
             </mat-chip-list>
           </td>
