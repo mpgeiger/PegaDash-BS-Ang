@@ -19,10 +19,10 @@
 
       <ng-container matColumnDef="pyLabel">
         <th mat-header-cell *matHeaderCellDef mat-sort-header matSortStart="desc">Description </th>
-        <!-- <mat-form-field class="filter" floatLabel="never">
+        <mat-form-field class="filter" floatLabel="never">
           <mat-label>Search</mat-label>
           <input matInput [formControl]="pyLabelFilter">
-        </mat-form-field> -->
+        </mat-form-field>
         <td mat-cell *matCellDef="let element"> {{element.pyLabel }} </td>
       </ng-container>
 

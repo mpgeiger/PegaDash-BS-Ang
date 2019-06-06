@@ -1,3 +1,4 @@
+import { slideInAnimation } from './../../../animations';
 
 import { Component, Input, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 // import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
@@ -105,6 +106,8 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
         this.cases = Object.keys(this.getResults(response.body)).map(it => this.getResults(response.body)[it]);
         // this.cases = JSON.parse(response.body);
 
+        this.filterByDate(10);
+
         localStorage.setItem('caselist', this.cases.length.toString());
         console.log(' IN CASELIST.COMPONENT  # CASES -->' + localStorage.getItem('caselist'));
 
@@ -126,6 +129,80 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
         alert('Error from ' + this.componentName + ':' + err.errors);
       }
     );
+  }
+
+  private filterByDate(days: number): any {
+    const currentDate = new Date();
+    const currentMonth = currentDate.getMonth() - 12;
+    const currentYear = currentDate.getFullYear() + 1;
+    const twoMonthPrior = new Date(currentYear, currentMonth - 1 , 22);
+    const today = new Date();
+    // var threeMonthsAgo = moment().subtract(3, 'months');
+
+    // console.log()
+
+
+    const d = new Date();
+    d.setMonth(d.getMonth() - 3);
+
+    this.cases = this.cases.filter((item: any) => {
+      const sDate = new Date(item.createTime);
+      let test = false;
+
+      // if (sDate.getDate() >= twoMonthPrior.getDate()) {
+      if (sDate.valueOf() >= twoMonthPrior.valueOf()) {
+        test = true;
+      }
+      console.log(' pega -->' + sDate.toDateString() + ' -- ' + test + ' -- ' + twoMonthPrior.toDateString());
+
+      // return sDate.valueOf() >= twoMonthPrior.valueOf() &&  sDate.getDate() <= today.getDate();
+      return sDate.valueOf() >= twoMonthPrior.valueOf();
+  });
+
+
+  }
+
+  private getColor(slaValue) {
+    let pillStyle = 'badge badge-pill badge-';
+
+    let style = 'danger';
+    console.log ( 'testing urgency-' + slaValue + '__color-->' + style);
+
+   // pillStyle = pillStyle + 'danger';
+    // const styles = {
+    //   'background': '#ff0000'
+    // };
+
+
+    // let style = {backgroundco}
+    if ( !slaValue ) {
+      style = 'gray-300';
+      // console.log ('  testing color-' + slaValue + '__color-->' + color);
+      pillStyle = pillStyle + style;
+      return pillStyle;
+    }
+    if (slaValue >= 80 ) {
+      // color = 'primary';
+      style = 'red';
+      pillStyle = pillStyle + style;
+      return pillStyle;
+    } else if (slaValue >= 70 )  {
+      style = 'orange';
+      pillStyle = pillStyle + style;
+      return pillStyle;
+    } else if (slaValue >= 50 )  {
+      style = 'yellow';
+      pillStyle = pillStyle + style;
+      return pillStyle;
+    } else if (slaValue >= 20) {
+      style = 'teal';
+      pillStyle = pillStyle + style;
+      return pillStyle;
+    } else {
+      style = 'green';
+      pillStyle = pillStyle + style;
+      return pillStyle;
+    }
   }
 
 public doFilter = (value: string) => {
