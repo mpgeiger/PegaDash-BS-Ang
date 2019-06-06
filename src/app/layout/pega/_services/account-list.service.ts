@@ -1,6 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 
+
+export interface UserInfo {
+  loginName: string;
+  displayName: string;
+  laseAccess: string;
+}
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -8,6 +16,9 @@ export class AccountListService {
 serviceName = 'AccountListService';
 private subject = new Subject<any>();
 private accountsSummary = new Subject<any>();
+private userInfo = new Subject<UserInfo>();
+
+private displayName = new Subject<any>();
 
 
 sendMessage(message: string) {
@@ -24,6 +35,8 @@ getMessage(): Observable<any> {
   return this.subject.asObservable();
 }
 
+
+
 setAccountList(accList: object) {
     console.log('__' + this.serviceName + ' SET setAccountList --> ' + JSON.stringify(accList));
     this.accountsSummary.next(accList);
@@ -32,12 +45,24 @@ setAccountList(accList: object) {
     // this.data = option + '---' + value;
    }
 
-   getAccountList() {
+   getAccountList(): Observable<any> {
       console.log('__' + this.serviceName + ' GET getAccountList--> ' + JSON.stringify(this.accountsSummary));
 
        return this.accountsSummary;
      }
 
+
+     setUserDisplayName(name) {
+       this.displayName.next({displayName: name});
+       console.log('__' + this.serviceName + ' SET displayName--> ' + this.displayName);
+
+      }
+
+      getUserDisplayName(): Observable<any> {
+        console.log('__' + this.serviceName + ' GET displayName--> ' + this.displayName.asObservable());
+
+        return this.displayName.asObservable();
+     }
   // constructor() { }
   //  data = {'foo': 'bar',
   // 'ding': 'dat'};

@@ -14,6 +14,7 @@ export class PStatComponent implements OnInit {
     @Input() type: string;
     @Input() data: number;
     @Input() amount: number;
+    @Input() showLoading: boolean;
     @Output() event: EventEmitter<any> = new EventEmitter();
 
     constructor( public router: Router) {

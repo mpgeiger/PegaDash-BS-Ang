@@ -1,5 +1,5 @@
 <div class="welcome mat-elevation-z10">
-  <h2 class="display-4">Good afternoon, {{ displayUserName }}</h2>
+  <h2 class="display-4">Good afternoon, {{ userInfo.displayName }}</h2>
   <p>You last access to this site was: {{ lastAccess | date: 'medium' }}</p>
 </div>
 
@@ -8,14 +8,14 @@
     <div class="col-xl-3 col-lg-3">
       <app-pstat [bgClass]="'success'"
       [icon]="'fa-comments'"
-      [amount]="_totalCurrentAssets"
+      [amount]="acctsSummary.totalCurrentAssets"
       [label]="'Total Assets'"
-      [type]="'asset'"></app-pstat>
+      [type]="'asset'"><mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar></app-pstat>
     </div>
     <div class="col-xl-3 col-lg-3">
       <div class="my-fancy-container"
-      matTooltip="Your current assets have decreased by: {{_totalCurrentAssets -totalAvgMonthAssets | currency }}">
-          <div class="account-text-value">{{_totalCurrentAssets -totalAvgMonthAssets | currency }}</div>
+      matTooltip="Your current assets have decreased by: {{acctsSummary.totalCurrentAssets - acctsSummary.totalAvgMonthAssets | currency }}">
+          <div class="account-text-value">{{acctsSummary.totalCurrentAssets - acctsSummary.totalAvgMonthAssets | currency }}</div>
         <i class="material-icons md-48" style="transform: rotate(0deg); color: red;">
           arrow_drop_down_circle
         </i>
@@ -26,21 +26,22 @@
     <div class="col-xl-3 col-lg-6">
       <app-pstat [bgClass]="'success'"
        [icon]="'fa-tasks'"
-       [amount]="totalAvgMonthAssets"
+       [amount]="acctsSummary.totalAvgMonthAssets"
        [label]="'Avg Assets/Month'"
-       [type]="'asset'"></app-pstat>
+       [showLoading]="showLoading"
+       [type]="'asset'"><mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar></app-pstat>
     </div>
   </div>
   <div class="row d-flex justify-content-center">
     <div class="col-xl-3 col-lg-6">
-      <app-pstat [bgClass]="'warning'" [icon]="'fa-tasks'" [amount]="0 - totalCurrentLiabilities" [label]="'Total Liabilities'"
+      <app-pstat [bgClass]="'warning'" [icon]="'fa-tasks'" [amount]="0 - acctsSummary.totalCurrentLiabilities" [label]="'Total Liabilities'"
       [type]="'liability'"> </app-pstat>
     </div>
     <div class="col-xl-3 col-lg-3">
       <div class="my-fancy-container"
-      matTooltip="Your current liabilities increased by: {{0 - totalCurrentLiabilities - totalAvgMonthLiabilities | currency }}">
+      matTooltip="Your current liabilities increased by: {{0 - acctsSummary.totalCurrentLiabilities - acctsSummary.totalAvgMonthLiabilities | currency }}">
 
-          <div class="account-text-value">{{0 - totalCurrentLiabilities - totalAvgMonthLiabilities | currency }}</div>
+          <div class="account-text-value">{{0 - acctsSummary.totalCurrentLiabilities - acctsSummary.totalAvgMonthLiabilities | currency }}</div>
         <i class="material-icons md-48" style="transform: rotate(180deg); color: green;">
           arrow_drop_down_circle
         </i>
@@ -52,7 +53,7 @@
       <app-pstat
         [bgClass]="'warning'"
         [icon]="'fa-shopping-cart'"
-        [amount]="0 - totalAvgMonthLiabilities"
+        [amount]="0 - acctsSummary.totalAvgMonthLiabilities"
         [label]="'Avg Liabilites/Month'"
         [type]="'liability'"
       ></app-pstat>

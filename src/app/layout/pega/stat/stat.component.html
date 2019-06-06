@@ -26,6 +26,8 @@
     <div class="card-footer" >
         <!-- <a [routerLink]="['/opentask-page']"> -->
         <span class=" pstat-display-value float-right">{{amount | currency }}</span>
+        <span class=" pstat-display-value float-right"><mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar></span>
+
         <!-- <a href="javascript:void(0)" class="float-right card-inverse">
             <span ><i class="fa fa-arrow-circle-right"></i></span>
         </a> -->

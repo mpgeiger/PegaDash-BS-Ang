@@ -13,6 +13,7 @@ import { AccountListService } from '@ss/app/layout/pega/_services/index';
 })
 export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy  {
   subscription: Subscription;
+  subscriptionDisplayName: Subscription;
 
   // totalCurrentLiabilities: number = Number(localStorage.getItem('totalCurrentLiabilities'));
   // totalAvgMonthLiabilities = Number(localStorage.getItem('totalAvgMonthLiabilities'));
@@ -31,6 +32,9 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy  {
   private _totalCurrentAssets: number;
 
   messages: any[] = [];
+  acctsSummary = {};
+  userInfo = {};
+  showLoading = true;
 
   constructor(
     // private al: RelAccountListComponent
@@ -50,12 +54,27 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy  {
       if (message) {
         this.messages.push(message);
         console.log(this.componentName + ' GETTING ACCOUNT SUMMARY message-->' + JSON.stringify(message));
-
+this.acctsSummary = message;
+this.showLoading = false;
       } else {
         // clear messages when empty message received
         this.messages = [];
       }
     });
+
+    this.subscriptionDisplayName = this.as.getUserDisplayName().subscribe( message => {
+      if (message) {
+        this.messages.push(message);
+
+        this.userInfo = message;
+
+        console.log(this.componentName + ' GETTING ACCOUNT SUMMARY _displayName -->' + JSON.stringify(this.userInfo));
+      } else {
+        // clear messages when empty message received
+        this.messages = [];
+      }
+    });
+
 
   }
 
@@ -65,6 +84,7 @@ mpgTest = {};
 
   ngOnInit() {
     console.log(' welcome.component lastAccess-->' + this.lastAccess);
+    this.showLoading = true;
   }
   ngAfterViewInit(): void {
     this.displayUserName =  localStorage.getItem('displayUserName');
