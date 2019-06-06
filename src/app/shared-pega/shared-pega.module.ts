@@ -19,6 +19,7 @@ import { WelcomeComponent } from '../layout/pega/customer-info/welcome/welcome.c
 // import { PStatModule } from '../layout/pega/stat/stat.module';
 import { FilterPipe } from '../layout/pega/_pipes/searchFilterPipe';
 import { PegaVariablesPropertiesComponent } from './pega-variables-properties/pega-variables-properties.component';
+import { ParseIdFromCase } from '@ss/app/layout/pega';
 
 import {
      AccountSummaryComponent
@@ -91,6 +92,7 @@ import {
     , NbaOfferComponent
     , NbaTeaserComponent
     , OpenByWorkTypeComponent
+    , ParseIdFromCase
     , PegaPieChartComponent
     , PegaVariablesPropertiesComponent
     , PStatComponent
@@ -137,6 +139,7 @@ import {
     , NbaOfferComponent
     , NbaTeaserComponent
     , OpenByWorkTypeComponent
+    , ParseIdFromCase
     , PegaPieChartComponent
     , PegaVariablesPropertiesComponent
     , PStatComponent

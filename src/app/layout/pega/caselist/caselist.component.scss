@@ -1,0 +1,31 @@
+.th-left {
+
+}
+.th-right {
+  direction: rtl;
+}
+.th-center {
+  // direction: rtl;
+}
+
+.td-left {
+  text-align: left;
+}
+.td-right {
+  text-align: right;
+}
+.td-center {
+  text-align: center;
+}
+.mat-chip {
+  max-width: 100px;
+}
+
+.mat-chip-list-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: -4px;
+  justify-content: center;
+}

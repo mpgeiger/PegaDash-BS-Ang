@@ -19,7 +19,9 @@
             "assets": [
               "src/assets",
               "src/favicon.ico",
-              "src/META-INF"
+              "src/META-INF",
+              "src/WEB-INF"
+
             ],
             "styles": [
               "node_modules/font-awesome/css/font-awesome.css",

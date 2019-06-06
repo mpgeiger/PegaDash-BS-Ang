@@ -11,19 +11,36 @@
     <table class="table" mat-table [dataSource]="dataSource" matSort>
     <!-- <table class="table"  > -->
       <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef  mat-sort-header> Name </th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        <th mat-header-cell *matHeaderCellDef  mat-sort-header class="th-left">Name</th>
+        <td mat-cell *matCellDef="let element" class="td-left"> {{element.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header matSortStart="status" class="th-left">Status</th>
+        <td mat-cell *matCellDef="let element" class="td-left"> {{element.status}} </td>
       </ng-container>
 
       <ng-container matColumnDef="createTime">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header matSortStart="desc">Created </th>
-        <td mat-cell *matCellDef="let element"> {{element.createTime | date}} </td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header matSortStart="desc" class="th-right">Created</th>
+        <td mat-cell *matCellDef="let element" class="td-right"> {{element.createTime | date:'MM/dd/yyyy'}} </td>
       </ng-container>
 
       <ng-container matColumnDef="ID">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header > ID </th>
-        <td mat-cell *matCellDef="let element"> {{element.ID}} </td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header  class="th-right">ID</th>
+        <td mat-cell *matCellDef="let element" class="td-right"> {{element.ID | parseIdFromCase}} </td>
       </ng-container>
+
+      <ng-container matColumnDef="urgency">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header  class="">Urgency</th>
+        <td mat-cell *matCellDef="let element" class="td-center">
+            <mat-chip-list class="td-right">
+                <mat-chip
+                [color]="'#FF0000'"
+                >{{element.urgency}}</mat-chip>
+            </mat-chip-list>
+          </td>
+      </ng-container>
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>

@@ -1,1 +1,0 @@
-<Valve className="org.apache.catalina.valves.rewrite.RewriteValve" asyncSupported="true"/>

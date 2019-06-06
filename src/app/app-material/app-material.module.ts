@@ -7,6 +7,7 @@ import {
   , MatButtonModule
   , MatCardModule
   , MatCheckboxModule
+  , MatChipsModule
   , MatDatepickerModule
   , MatDialogModule
   , MatDividerModule
@@ -42,6 +43,7 @@ CommonModule,
     , MatButtonModule
     , MatCardModule
     , MatCheckboxModule
+    , MatChipsModule
     , MatDatepickerModule
     , MatDialogModule
     , MatDividerModule
@@ -72,6 +74,7 @@ CommonModule,
     , MatButtonModule
     , MatCardModule
     , MatCheckboxModule
+    , MatChipsModule
     , MatDatepickerModule
     , MatDialogModule
     , MatDividerModule

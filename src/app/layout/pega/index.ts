@@ -45,4 +45,5 @@ export * from './workitem1/workitem1.component';
 
 export * from './_pipes/fromCamelCase';
 export * from './_pipes/searchFilterPipe';
+export * from './_pipes/parse-id-from-case';
 
