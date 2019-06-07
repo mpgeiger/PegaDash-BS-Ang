@@ -76,7 +76,7 @@ export class MegaMenuComponent implements OnInit {
   sortedDataActions: SSCaseActions[];
   searchedList: any;
   categoryVis: CategoryVis[];
-  changeCount: number = 0;
+  changeCount = 0;
   headers: any;
   actions: SSCaseActions[] = [];
   constructor(
@@ -158,7 +158,7 @@ export class MegaMenuComponent implements OnInit {
 
     let useStub = false;
     useStub = (useStubStr === 'true');
-    useStub = true;
+    // useStub = true;
     return useStub;
   }
 

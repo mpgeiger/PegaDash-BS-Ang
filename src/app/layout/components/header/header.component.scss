@@ -90,7 +90,7 @@
 
     background-color: $topnav-background-color;
     height:51px;        // TW force the header nav to 51px
-											  
+
 
     .navbar-brand {
       // MGP color: #fff;
@@ -131,7 +131,7 @@
 
     .navbar-nav {
       .megaMenuNav {
-        color: green;
+        color: $topnav-item-color;
         // max-width: none !important;
         max-width: 80vw;
         //   width: 100vw;
