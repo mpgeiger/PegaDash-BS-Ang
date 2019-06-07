@@ -5,7 +5,8 @@ import { HttpParams, HttpHeaders } from '@angular/common/http';
 import { DatapageService } from '../../../_services/datapage.service';
 import { PagerService } from '../../../_services/pager.service';
 // import stubbedResults from '@ss/json/D_Interaction_Driver_I-826_SJ.json';
-import stubbedResults from '@ss/json/D_Interaction_Driver_I-901__PW.json';
+// import stubbedResults from '@ss/json/D_Interaction_Driver_I-901__PW.json';
+import stubbedResults from '@ss/json/D_CustomerIntentTasks_min.json';
 import { ModalRCIContainerComponent, ModalRCIPegaComponent } from '../modal-container/modal-container.component';
 import {MatTableDataSource, MatSort, MatMenu} from '@angular/material';
 import { PegaVariablesPropertiesComponent } from '../../../shared-pega/pega-variables-properties/pega-variables-properties.component';
@@ -158,7 +159,7 @@ export class MegaMenuComponent implements OnInit {
 
     let useStub = false;
     useStub = (useStubStr === 'true');
-    // useStub = true;
+    useStub = true;
     return useStub;
   }
 
@@ -257,11 +258,12 @@ export class MegaMenuComponent implements OnInit {
   }
 
   testVis(index): boolean {
-    if (index === 1) {
-      return false;
-    } else {
-      return true;
-    }
+    // if (index === 1) {
+    //   return false;
+    // } else {
+    //   return true;
+    // }
+  return true;
   }
 
    // This function will be called on every key press for input text box
