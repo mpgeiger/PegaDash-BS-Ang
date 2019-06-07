@@ -13,16 +13,12 @@
       [type]="'asset'"><mat-progress-bar mode="buffer" ></mat-progress-bar></app-pstat>
     </div>
     <div class="col-xl-3 col-lg-3">
-      <div class="my-fancy-container"
-      matTooltip="Your current assets have decreased by: {{acctsSummary.totalCurrentAssets - acctsSummary.totalAvgMonthAssets | currency }}">
-          <div class="account-text-value">{{acctsSummary.totalCurrentAssets - acctsSummary.totalAvgMonthAssets | currency }}</div>
-        <i class="material-icons md-48" style="transform: rotate(0deg); color: red;">
-          arrow_drop_down_circle
-        </i>
-
-        <span class="account-text-desc">Assets from Average</span>
+        <app-pstat [bgClass]="'gray-500'"
+        [icon]="'arrow_drop_down_circle'"
+        [amount]="acctsSummary.totalCurrentAssets - acctsSummary.totalAvgMonthAssets"
+        [label]="'Assets Trend/Months'"
+        [type]="'trend'"><mat-progress-bar mode="buffer" ></mat-progress-bar></app-pstat>
       </div>
-    </div>
     <div class="col-xl-3 col-lg-6">
       <app-pstat [bgClass]="'success'"
        [icon]="'fa-tasks'"
@@ -31,6 +27,16 @@
        [showLoading]="showLoading"
        [type]="'asset'"><mat-progress-bar mode="buffer"></mat-progress-bar></app-pstat>
     </div>
+
+      <!-- <div class="my-fancy-container"
+      matTooltip="Your current assets have decreased by: {{acctsSummary.totalCurrentAssets - acctsSummary.totalAvgMonthAssets | currency }}">
+          <div class="account-text-value">{{acctsSummary.totalCurrentAssets - acctsSummary.totalAvgMonthAssets | currency }}</div>
+        <i class="material-icons md-48" style="transform: rotate(0deg); color: red;">
+          arrow_drop_down_circle
+        </i>
+        <span class="account-text-desc">Assets from Average</span>
+      </div> -->
+    <!-- </div> -->
   </div>
   <div class="row d-flex justify-content-center">
     <div class="col-xl-3 col-lg-6">
@@ -38,7 +44,14 @@
       [type]="'liability'"> </app-pstat>
     </div>
     <div class="col-xl-3 col-lg-3">
-      <div class="my-fancy-container"
+
+        <app-pstat [bgClass]="'gray-500'"
+        [icon]="'arrow_drop_down_circle'"
+        [amount]="0 - acctsSummary.totalCurrentLiabilities - acctsSummary.totalAvgMonthLiabilities"
+        [label]="'Liabilites Trend/Month'"
+        [type]="'trend'"><mat-progress-bar mode="buffer" ></mat-progress-bar></app-pstat>
+      <!-- </div> -->
+      <!-- <div class="my-fancy-container"
       matTooltip="Your current liabilities increased by: {{0 - acctsSummary.totalCurrentLiabilities - acctsSummary.totalAvgMonthLiabilities | currency }}">
 
           <div class="account-text-value">{{0 - acctsSummary.totalCurrentLiabilities - acctsSummary.totalAvgMonthLiabilities | currency }}</div>
@@ -47,7 +60,7 @@
         </i>
 
         <span class="account-text-desc">Liabilities from Average</span>
-      </div>
+      </div> -->
     </div>
     <div class="col-xl-3 col-lg-3">
       <app-pstat

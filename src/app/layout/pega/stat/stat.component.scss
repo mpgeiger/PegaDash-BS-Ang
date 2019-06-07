@@ -2,6 +2,20 @@
   margin: 12px;
   border-radius: 8px;
 }
+.my-icon {
+  vertical-align: middle;
+  font-size: 40px;
+}
+
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-64 { font-size: 64px; }
+.material-icons.md-98 { font-size: 98px; }
+
+
+.material-icons {
+  line-height: 0.7;
+  vertical-align: text-top;
+}
 
 .pstat-display-title {
 	// TW font: 300 18px/30px Roboto,"Helvetica Neue",sans-serif;
@@ -10,7 +24,7 @@
 }
 .pstat-display-value {
   // TW font: 300 16px/30px Roboto,"Helvetica Neue",sans-serif;
-  font: 300 20px/26px "Open Sans","Helvetica Neue",sans-serif;	  
+  font: 300 20px/26px "Open Sans","Helvetica Neue",sans-serif;
   margin: 0 0 6px;
 }
 .asset {

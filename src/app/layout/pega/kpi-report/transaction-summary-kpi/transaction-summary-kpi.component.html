@@ -57,7 +57,7 @@
 
         <ng-container *ngIf="showTable">
         <!-- <ng-container> -->
-    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z1" width=100%>
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z1" width=100% matSortActive="TransactionAmount" matSortDirection="desc" matSortDisableClear>
         <!-- <table class="table"  > -->
         <ng-container matColumnDef="Country">
           <th mat-header-cell *matHeaderCellDef mat-sort-header style="text-align: start;"  class="th-left">Country</th>

@@ -76,16 +76,28 @@ export class TransactionSummaryKpiComponent implements OnInit {
     {
       pointBorderColor: 'black',
       backgroundColor: [
-        'rgba(47, 59, 84, 1)',
-        'rgba(147, 207, 222, 1)',
-        'rgba(123, 177, 180, 1)',
-        'rgba(139, 104, 67, 1)',
-        'rgba(18, 121, 127, 1)',
-        'rgba(39, 76, 94,1)',
-        'rgba(233,234,234,1)',
-        'rgba(40,75,96,0.7)',
-        'rgba(176,136,99,1)',
-        'rgba(151,131,99,0.4)'
+        'rgba(236, 237, 237 , 1)',
+        'rgba(68, 153, 170  , .2)',
+'rgba(105, 166, 162 , .8)',
+'rgba(21, 97, 103, 1)',
+'rgba(86, 100, 111  , 1)',
+        'rgba(209, 212, 212 , .7)',
+        'rgba(40, 56, 75 , 1)',
+        'rgba(23, 120, 126  , 1)',
+        'rgba(100, 178, 183 ,.8)',
+        'rgba(173, 185, 173 , 1)',
+        'rgba(48, 62, 83 , 1)',
+'rgba(215, 160, 151 , 1)'
+        // 'rgba(47, 59, 84, 1)',
+        // 'rgba(147, 207, 222, 1)',
+        // 'rgba(123, 177, 180, 1)',
+        // 'rgba(139, 104, 67, 1)',
+        // 'rgba(18, 121, 127, 1)',
+        // 'rgba(39, 76, 94,1)',
+        // 'rgba(233,234,234,1)',
+        // 'rgba(40,75,96,0.7)',
+        // 'rgba(176,136,99,1)',
+        // 'rgba(151,131,99,0.4)'
       ]
     }
   ];
@@ -184,12 +196,15 @@ export class TransactionSummaryKpiComponent implements OnInit {
       console.log('LIVE D_RelAccountList');
       this.getCases();
     }
+    // this.sortData({active: 'urgency', direction: 'dec'});
     // this.showLoading = true;
     // this.dataSource.sort = this.sort;
   }
   ngAfterViewInit() {
 
      this.dataSource.sort = this.sort;
+    //  this.sort.direction('dsc');
+    //  this.sort.active('urgency');
     //  this.sort.disableClear = true;
     // if (this.checkIfStubbed()) {
     //   console.log('STUBBED D_RelAccountList');

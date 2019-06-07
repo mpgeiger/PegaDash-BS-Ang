@@ -1,6 +1,7 @@
 <div class="card text-white bg-{{bgClass}}">
     <div class="card-header">
-        <div class="row">
+
+      <div class="row" class="row" *ngIf="type==='asset' || type=== 'liability'">
             <div class="col-3 col-xs-2">
                 <!-- <i class="fa {{icon}} fa-2x"></i> -->
                 <!-- <i class="asset"></i> -->
@@ -14,6 +15,21 @@
                 <!-- <mat-button class="md-icon-button logo"> -->
                     <!-- <img class="logo-image" src="path/to/your/file.png"> -->
                   <!-- </mat-button> -->
+            </div>
+            <div class="col-9 col-xs-10 text-right">
+                <!-- <div class="d-block huge">{{count}}</div> -->
+                <h4 class="pstat-display-title">{{label}}</h4>
+                <!-- <div class="d-block huge" ><h4 class="mat-display-1">{{label}}</h4></div> -->
+            </div>
+        </div>
+      <div class="row" *ngIf="type==='trend'" >
+            <div class="col-3 col-xs-2 text-left">
+                <!-- <i class="material-icons md-48" style="transform: rotate(0deg); color: red;">
+                    arrow_drop_down_circle
+                  </i> -->
+
+                    <i *ngIf="amount > 0"  class="material-icons md-48" style="transform: rotate(180deg); color: green;">{{icon}}</i>
+                    <i *ngIf="amount < 0" class="material-icons md-48" style="transform: rotate(0deg); color: red;">{{icon}}</i>
             </div>
             <div class="col-9 col-xs-10 text-right">
                 <!-- <div class="d-block huge">{{count}}</div> -->
