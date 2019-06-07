@@ -25,7 +25,7 @@ export class RciMashupComponent implements OnInit {
 
 @Component({
   selector: 'app-wire-recall-mashup',
-  templateUrl: './rci-mashup.component.html',
+  templateUrl: './wire-recall-mashup.component.html',
   styleUrls: ['./rci-mashup.component.scss']
 })
 
