@@ -4,7 +4,7 @@
 
 
 .th-left {
-
+  justify-content: left;
 }
 .th-right {
   direction: rtl;
@@ -27,6 +27,7 @@
 }
 td.mat-cell {
   vertical-align: middle !important;
+  line-height: 25px;
 }
 
 .mat-chip {
@@ -55,4 +56,9 @@ td.mat-cell {
 }
 .badge-gray-300 {
   background-color: $gray-300;
+}
+
+.case-details {
+  font-size: x-small;
+  font-weight: 700;
 }

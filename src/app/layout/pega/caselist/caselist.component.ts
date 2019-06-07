@@ -11,6 +11,7 @@ import { CaseService } from '../../../_services/case.service';
 import { PagerService } from '../../../_services/pager.service';
 import { SharedPegaDataService } from '../_services/sharedpegadata.service';
 import { Sort } from '@angular/material';
+// import * as moment from 'moment';
 import {MatTableDataSource, MatPaginator, MatSort} from '@angular/material';
 
 
@@ -45,12 +46,13 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
   // displayedColumns = ['pxRefObjectInsName', 'pyAssignmentStatus', 'pyLabel', 'pxUrgencyAssign'];
   // displayedColumns = ['ID', 'name', 'createTime', 'stage', 'status', 'createdBy'];
   displayedColumns = ['name', 'status', 'createTime', 'ID', 'urgency'];
+  // displayedColumns = ['name', 'status', 'lastUpdateTime', 'ID', 'urgency'];
   public dataSource = new MatTableDataSource<Cases>();
   sortedData: Cases[] = [];
   cases: Cases[] = [];
   headers: any;
   @Input() lpp: number;
-  public pageSize = 10;
+  public pageSize = 5;
 
 @ViewChild(MatPaginator) paginator: MatPaginator;
 @ViewChild(MatSort) sort: MatSort;
