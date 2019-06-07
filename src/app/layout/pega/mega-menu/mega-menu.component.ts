@@ -7,7 +7,7 @@ import { PagerService } from '../../../_services/pager.service';
 // import stubbedResults from '@ss/json/D_Interaction_Driver_I-826_SJ.json';
 // import stubbedResults from '@ss/json/D_Interaction_Driver_I-901__PW.json';
 import stubbedResults from '@ss/json/D_CustomerIntentTasks_min.json';
-import { ModalRCIContainerComponent, ModalRCIPegaComponent } from '../modal-container/modal-container.component';
+import { ModalRCIContainerComponent, ModalRCIPegaComponent  } from '../modal-container/modal-container.component';
 import {MatTableDataSource, MatSort, MatMenu} from '@angular/material';
 import { PegaVariablesPropertiesComponent } from '../../../shared-pega/pega-variables-properties/pega-variables-properties.component';
 import { FilterPipe } from './../_pipes/searchFilterPipe';

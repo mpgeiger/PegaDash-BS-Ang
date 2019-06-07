@@ -179,6 +179,7 @@ import {
    , RciCheckResultTableComponent
    , WelcomeComponent
    , WireRecallMashupComponent
+   , MegaMenuComponent
   //  , HeroParentComponent
     // , HeroChildComponent
   ]

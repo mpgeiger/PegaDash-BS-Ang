@@ -19,7 +19,9 @@ import { OpenNewCaseService } from '../../../_messages/opennewcase.service';
 
 
 import { Subscription } from 'rxjs';
+import { MegaMenuComponent } from '@ss/app/layout/pega/mega-menu/mega-menu.component';
 import { RciMashupComponent, WireRecallMashupComponent } from '../mashups/rci-mashup/rci-mashup.component';
+// import { MegaMenuComponent } from '../mega-menu/mega-menu.component.1';
 
 
 
@@ -290,6 +292,7 @@ export class ModalRCIPegaComponent implements OnInit {
   caseInstanceName = '';
 
   rciDialogRef: MatDialogRef<RciMashupComponent>;
+  megaMenuDialogRef: MatDialogRef<MegaMenuComponent>;
 
   // @Input()('master') masterName: string;
 
@@ -339,62 +342,29 @@ export class ModalRCIPegaComponent implements OnInit {
     this.rciDialogRef = this.dialog.open(WireRecallMashupComponent, dialogConfig);
   }
 
+  public openMegaMenuDialog() {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = false;
+
+    dialogConfig.width = '70%';
+    dialogConfig.minWidth = '650px';
+    dialogConfig.minHeight = '400px';
+    dialogConfig.maxWidth = '1000px';
+
+    // dialogConfig.data = {
+    //   id: 1,
+    //   title: 'Angular For Beginners',
+    //   masterName: 'FOOBAR'
+    // };
+
+    this.megaMenuDialogRef = this.dialog.open(MegaMenuComponent, dialogConfig);
+  }
+
+
 
   onNoClick(): void {
     this.dialog.closeAll();
   }
 }
-
-// @Component({
-//   selector: 'app-modal-wire-recall-pega-mashup',
-//   templateUrl: './modal-wireRecall-mashup.component.html',
-//   // templateUrl: './modal-container.componentMPG.html',
-//   styleUrls: ['./modal-container.component.scss']
-// })
-
-// export class ModalWireRecallComponent implements OnInit {
-
-//   constructor(
-//     private dialog: MatDialog
-//   ) { }
-//   @Input('master') masterName: string;
-
-//   caseInstanceName = '';
-
-//   rciDialogRef: MatDialogRef<WireRecallMashupComponent>;
-
-//   // @Input()('master') masterName: string;
-
-//   ngOnInit() {
-//     this.caseInstanceName = this.masterName;
-//     // console.log( ' ## ModalRCIContainerComponent-->' + this.masterName);
-//   }
-
-//   public openWireRecalMashupCaseDialog() {
-//     const dialogConfig = new MatDialogConfig();
-
-//     dialogConfig.disableClose = false;
-//     dialogConfig.autoFocus = false;
-
-//     dialogConfig.width = '70%';
-//     dialogConfig.minWidth = '650px';
-//     dialogConfig.minHeight = '400px';
-//     dialogConfig.maxWidth = '1000px';
-
-//     // dialogConfig.data = {
-//     //   id: 1,
-//     //   title: 'Angular For Beginners',
-//     //   masterName: 'FOOBAR'
-//     // };
-
-//     this.rciDialogRef = this.dialog.open(WireRecallMashupComponent, dialogConfig);
-//   }
-//   onNoClick(): void {
-//     this.dialog.closeAll();
-//   }
-// }
-
-// export class HeroChildComponent {
-//   // @Input() hero: Hero;
-//   @Input('master') masterName: string;
-// }

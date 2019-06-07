@@ -1,4 +1,4 @@
-
+import { MegaMenuComponent } from './../../pega/mega-menu/mega-menu.component';
 import { Component, OnInit, ViewEncapsulation, AfterViewInit, Input } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
@@ -6,9 +6,11 @@ import { CaseService, } from '../../../_services/case.service';
 import { OpenNewCaseService } from '../../../_messages/opennewcase.service';
 import stubbedResults from '@ss/json/CaseTypes.json';
 import { LoginComponent } from '../../../login/login.component';
+// import { ModalRCIPegaComponent } from '@ss/app/layout/pega/modal-container/modal-container.component';
 import { stringToKeyValue } from '@angular/flex-layout/extended/typings/style/style-transforms';
 // import { MegaMenuComponent } from '../../pega/mega-menu/mega-menu.component';
-
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { DialogDialog } from '../mega-menu-modal/mega-menu-modal.component';
 @Component({
     providers: [LoginComponent],
     selector: 'app-header',
@@ -29,15 +31,16 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     displayableCaseTypes$: Array<any>;
     // master = 'Master';
     master = 'Master';
-    // fileNameDialogRef: MatDialogRef<FileNameDialogComponent>;
 
-    // userName = '';
     constructor(
       private translate: TranslateService
       , public router: Router
       , private cservice: CaseService
       , private oncservice: OpenNewCaseService
       , private loginservice: LoginComponent
+      , public dialog: MatDialog
+      // , private megaMenu: ModalRCIPegaComponent
+
 
       // , private dialog: MatDialog
       ) {
@@ -54,7 +57,26 @@ export class HeaderComponent implements OnInit, AfterViewInit {
         });
     }
 
+    openDialog(): void {
 
+      const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = false;
+
+    dialogConfig.width = '70%';
+    dialogConfig.minWidth = '650px';
+    dialogConfig.minHeight = '400px';
+    dialogConfig.maxWidth = '1000px';
+
+    dialogConfig.data= { component: MegaMenuComponent };
+
+      const dialogRef = this.dialog.open(DialogDialog, dialogConfig);
+      // const dialogRef = this.dialog.open(DialogDialog, {
+      //   width: '250px',
+      //   data: { component: MegaMenuComponent }
+      // });
+    }
 
 
     ngOnInit() {
@@ -92,6 +114,21 @@ checkIfStubbed() {
     // this.dataSource.filterPredicate = this.createFilter();
     localStorage.setItem('CaseTypes', this.cases.length.toString());
   //  this.showLoading = false;
+  }
+
+  public openModalDialogForService(ev, action): void {
+    // this.mc.openCreateRciCaseDialog();
+    // console.log(this.componentName + 'RCI Clicked Create event-->' + action + '___caught-->' + JSON.stringify(ev) );
+    // if (action === 'Request Cheque Image') {
+
+
+      // this.rciMashup.openRciMashupCaseDialog();
+
+
+      // }
+    // if (action === 'Wire Recall') {
+    //   this.rciMashup.openWireRecalMashupCaseDialog();
+    // }
   }
 
     getCaseTypes() {
@@ -185,6 +222,14 @@ checkIfStubbed() {
 
 
  }
+ @Component({
+  selector: 'dynamic-comp',
+  template: `
+  <div>Dynamic component</div>`
+})
+export class DynamicComponent {
+
+}
 // export class HeroParentComponent {
 //   master = 'Master';
 // }

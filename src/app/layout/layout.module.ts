@@ -27,7 +27,7 @@ import { FromCamelCase } from './pega/_pipes/fromCamelCase';
 import { SecondaryNavComponent } from './components/secondary-nav/secondary-nav.component';
 // import { TransactionSummaryKpiComponent } from './pega/kpi-report/transaction-summary-kpi/transaction-summary-kpi.component';
 // import { FilterPipe } from './pega/_pipes/searchFilterPipe';
-
+import { DialogDialog } from '@ss/app/layout/components/mega-menu-modal/mega-menu-modal.component';
 
 @NgModule({
     imports: [
@@ -64,7 +64,9 @@ import { SecondaryNavComponent } from './components/secondary-nav/secondary-nav.
       , modalRCICaseType
       , NgbdModalContentNBA
       , NgbDatePipe
-      , FromCamelCase, SecondaryNavComponent
+      , FromCamelCase
+      , SecondaryNavComponent
+      , DialogDialog
 
       // , OpenTaskPageComponent
       // , RecentTreasurerCaseListComponent
@@ -81,7 +83,7 @@ import { SecondaryNavComponent } from './components/secondary-nav/secondary-nav.
     modalRCICaseType
 
     , NgbdModalContentNBA
-
+    , DialogDialog
   ],
 
   exports: [
@@ -91,7 +93,9 @@ import { SecondaryNavComponent } from './components/secondary-nav/secondary-nav.
   // , OpenTaskPageComponent
   FormsModule
   , ReactiveFormsModule
-  , OpenTaskPageModule, SecondaryNavComponent
+  , OpenTaskPageModule
+  , SecondaryNavComponent
+  , DialogDialog
   //  ReactiveFormsModule
 ]
   , schemas: [
