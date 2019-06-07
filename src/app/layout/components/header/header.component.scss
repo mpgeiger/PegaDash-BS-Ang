@@ -89,6 +89,8 @@
   .navbar {
 
     background-color: $topnav-background-color;
+    height:51px;        // TW force the header nav to 51px
+											  
 
     .navbar-brand {
       // MGP color: #fff;
