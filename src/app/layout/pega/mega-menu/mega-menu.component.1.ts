@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit, ViewEncapsulation, OnChanges, SimpleChanges} from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ViewEncapsulation, Output, EventEmitter} from '@angular/core';
 import { Subscription, Observable } from 'rxjs';
 import { HttpParams, HttpHeaders } from '@angular/common/http';
 
@@ -76,7 +76,7 @@ export class MegaMenuComponent implements OnInit {
   sortedDataActions: SSCaseActions[];
   searchedList: any;
   categoryVis: CategoryVis[];
-  changeCount: number = 0;
+
   headers: any;
   actions: SSCaseActions[] = [];
   constructor(
@@ -104,31 +104,6 @@ export class MegaMenuComponent implements OnInit {
 
   }
 
-//   ngOnChanges(changes: SimpleChanges) {
-//     for (const propName in changes) {
-//       const change = changes[propName];
-//       const curVal  = JSON.stringify(change.currentValue);
-//       const prevVal = JSON.stringify(change.previousValue);
-//       console.log(this.componentName + '  CHANGES   Prev Val-->' + prevVal + '____Current-->' + curVal);
-//     }
-//     //   if (curVal !== prevVal) {
-//     //     console.log(this.componentName + '\t\t NOT same!');
-//     //   }
-//     //      }
-
-//         //  const sc_totalCurrentAssets: SimpleChange = changes.totalCurrentAssets;
-
-//         //  console.log(' Simple Change ' + sc_totalCurrentAssets.currentValue + '-->' + this._totalCurrentAssets );
-//         //  this._totalCurrentAssets = sc_totalCurrentAssets.currentValue;
-
-
-
-//     // if (changes.currentValue) {
-//     //     this.totalCurrentAssets = chang;
-//     // }
-// }
-
-  // testForEmpty(cat): boolean {
   testForEmpty(cat): boolean {
 
     let result = false;
@@ -295,16 +270,6 @@ export class MegaMenuComponent implements OnInit {
     }
 
   }
-  // public doFilter = (value: string) => {
-  //   this.actions = value.trim().toLocaleLowerCase();
-  // }
-//   filter(value) {
-
-//     let action = value;
-//     this.actionsFiltered = this.actions
-//                                 .filter((book: Book) => book.storeId === storeId);
-//     this.bookList = this.bookFilteredList;
-// }
 
   clickedRCI() {
     console.log('RCI Clicked Create ');

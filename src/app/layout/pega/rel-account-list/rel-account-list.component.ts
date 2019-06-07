@@ -232,6 +232,8 @@ clearMessages(): void {
 
     this.as.setAccountList(this.accountSummary);
 
+    this.as.setUserDisplayName('Stella Turner');
+
     this.totalCurrentAssets = totCurrAsset;
     this.totalAvgMonthAssets = totAvgMonthAsset;
     this.totalCurrentLiabilities = totCurrLiab;

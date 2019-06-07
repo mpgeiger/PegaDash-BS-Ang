@@ -1,4 +1,6 @@
 @import '../../../Dashboard_Styles.scss';
+@import '../../../../styles/bootstrap/mixins/border-radius.scss';
+															 
 
 .fixed-top {
   margin-top: 50px;
@@ -8,21 +10,29 @@
   justify-content: flex-start;
   background-color: $bnyPrimary;
   z-index: 1029;
-  margin-top: 55px;
+  margin-top: 51px;
   .navbar-nav {
     background-color: $bnyPrimary;
-    padding-left: 25px;
+	padding-top: 2px;
+    overflow-y: hidden;
+    padding-left:25px;
   }
 
   .list-group-item {
    // TW background-color: $bnyPrimary;
     color: $topnav-item-color;
+	margin-right: 3px;
   }
-
+// Hover state
+  .list-group-item:hover {
+    background-color: rgba(0,0,0,.15);
+    @include border-top-radius($list-group-border-radius);
+  }
   // TW invert active menu item
   .list-group-item.router-link-active {
     background-color: white;
     color:  $bnyPrimary;
+    @include border-top-radius($list-group-border-radius);
   }
 
 }

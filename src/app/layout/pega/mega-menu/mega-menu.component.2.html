@@ -8,8 +8,7 @@
 <div class="container">
   <div layout="row"  fxLayout fxLayoutAlign="center center">
     <mat-form-field floatLabel="never" fxLayoutAlign="center center">
-      <!-- <input matInput type="text"  (keyup)="doFilter($event.target.value)" id="search" placeholder="Filter available Services"/> -->
-      <input matInput type="text" [(ngModel)]="queryString" id="search" placeholder="Filter available Services" (keyup)="testForEmpty(cat)"  />
+      <input matInput type="text" [(ngModel)]="queryString" id="search" placeholder="Filter available Services"/>
     </mat-form-field>
   </div>
   <div class="row">
@@ -23,14 +22,6 @@
         </div>
         <div class="text-left card-body megaMenu-card-body">
           <mat-action-list dense class="megaMenu-List">
-            <!-- <button
-              *ngFor="let action of cat.pxResults ; index as j;"
-              mat-list-item
-              class="megaMenu-List-Item"
-              (click)="
-                action.pyLabel === 'Request Cheque Image' || 'Request Check Image' ? openModalDialogForService($event, action.pyLabel) : nonFunctioningService($event, action.pyLabel)
-              "
-            > -->
             <button
               *ngFor="let action of cat.pxResults | FilterPipe: queryString; index as j;"
               mat-list-item
@@ -38,6 +29,7 @@
               (click)="
                 action.pyLabel === 'Request Cheque Image' || 'Request Check Image' ? openModalDialogForService($event, action.pyLabel) : nonFunctioningService($event, action.pyLabel)
               "
+
             >
               {{ action.pyLabel }} {{i}}-{{j}}
 
