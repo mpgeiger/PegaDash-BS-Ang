@@ -16,7 +16,10 @@
     <mat-icon svgIcon="trend-up"></mat-icon>
     </button> -->
     <!-- [icon]="'arrow_drop_down_circle'" -->
-    <div class="col-xl-3 col-lg-3">
+    <div class="col-xl-3 col-lg-3"
+    matTooltip=
+    "Your current assets have decreased by: {{acctsSummary.totalCurrentAssets - acctsSummary.totalAvgMonthAssets | currency }}"
+>
         <app-pstat [bgClass]="'gray-500'"
         [icon]="'trend-down'"
         [amount]="acctsSummary.totalCurrentAssets - acctsSummary.totalAvgMonthAssets"
@@ -24,7 +27,7 @@
         [type]="'trend'"><mat-progress-bar mode="buffer" ></mat-progress-bar></app-pstat>
       </div>
     <div class="col-xl-3 col-lg-6">
-      <app-pstat [bgClass]="'success'"
+       <app-pstat [bgClass]="'success'"
        [icon]="'fa-tasks'"
        [amount]="acctsSummary.totalAvgMonthAssets"
        [label]="'Avg Assets/Month'"
@@ -47,7 +50,8 @@
       <app-pstat [bgClass]="'warning'" [icon]="'fa-tasks'" [amount]="0 - acctsSummary.totalCurrentLiabilities" [label]="'Total Liabilities'"
       [type]="'liability'"> </app-pstat>
     </div>
-    <div class="col-xl-3 col-lg-3">
+    <div class="col-xl-3 col-lg-3"
+    matTooltip="Your current liabilities increased by: {{0 - acctsSummary.totalCurrentLiabilities - acctsSummary.totalAvgMonthLiabilities | currency }}">
 
         <app-pstat [bgClass]="'gray-500'"
         [icon]="'trend-up'"
