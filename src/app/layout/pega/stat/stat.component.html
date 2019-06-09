@@ -7,6 +7,8 @@
                 <!-- <i class="asset"></i> -->
                 <button mat-icon-button disabled >
                     <!-- <img class="logo-image logo-asset"  > -->
+
+
                     <img  *ngIf="type=='asset'" class="logo-image logo-asset" src="/assets/images/asset_icon.png" >
                     <img  *ngIf="type=='liability'" class="logo-image logo-asset" src="/assets/images/liability2_red.png" >
                     <!-- <img class="logo-image" src="/assets/images/asset_icon.png"> -->
@@ -27,10 +29,12 @@
                 <!-- <i class="material-icons md-48" style="transform: rotate(0deg); color: red;">
                     arrow_drop_down_circle
                   </i> -->
-                  <button mat-button>
+                  <ng-container *ngIf="amount">
+                  <button mat-button class="trend-default">
                       <mat-icon svgIcon="{{icon}}" [ngClass]="amount > 0 ? 'up' : 'down'" ></mat-icon>
                       <!-- <mat-icon *ngIf="amount < 0" svgIcon="trend-down" [ngClass]="mat-icon down" ></mat-icon> -->
                       </button>
+                      </ng-container>
                     <!-- <i *ngIf="amount > 0"  class="material-icons md-48" style="transform: rotate(180deg); color: green;">{{icon}}</i>
                     <i *ngIf="amount < 0" class="material-icons md-48" style="transform: rotate(0deg); color: red;">{{icon}}</i> -->
             </div>
