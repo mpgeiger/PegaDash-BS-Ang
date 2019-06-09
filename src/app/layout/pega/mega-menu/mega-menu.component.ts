@@ -176,7 +176,7 @@ export class MegaMenuComponent implements OnInit {
     const _prev = this.prevCat;
     this.prevCat = cat;
     const size = cat.pxResults.length;
-    console.log (' ### cat length-->' + size);
+    // console.log (' ### cat length-->' + size);
 
     if (size > 0) {
       return false;

@@ -65,11 +65,13 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     dialogConfig.autoFocus = false;
 
     dialogConfig.width = '70%';
-    dialogConfig.minWidth = '650px';
-    dialogConfig.minHeight = '400px';
+    dialogConfig.minWidth = '900px';
+    dialogConfig.minHeight = '700px';
+    dialogConfig.height = '700px';
     dialogConfig.maxWidth = '1000px';
+    dialogConfig.panelClass = 'megaMenu-modal-box';
 
-    dialogConfig.data= { component: MegaMenuComponent };
+    dialogConfig.data = { component: MegaMenuComponent };
 
       const dialogRef = this.dialog.open(DialogDialog, dialogConfig);
       // const dialogRef = this.dialog.open(DialogDialog, {

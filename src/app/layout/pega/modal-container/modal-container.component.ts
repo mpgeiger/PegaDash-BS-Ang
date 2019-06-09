@@ -308,6 +308,7 @@ export class ModalRCIPegaComponent implements OnInit {
     dialogConfig.autoFocus = false;
 
     dialogConfig.width = '70%';
+    dialogConfig.height = '650px';
     dialogConfig.minWidth = '650px';
     dialogConfig.minHeight = '400px';
     dialogConfig.maxWidth = '1000px';
@@ -329,6 +330,8 @@ export class ModalRCIPegaComponent implements OnInit {
     dialogConfig.autoFocus = false;
 
     dialogConfig.width = '70%';
+    dialogConfig.height = '650px';
+
     dialogConfig.minWidth = '650px';
     dialogConfig.minHeight = '400px';
     dialogConfig.maxWidth = '1000px';
@@ -342,25 +345,25 @@ export class ModalRCIPegaComponent implements OnInit {
     this.rciDialogRef = this.dialog.open(WireRecallMashupComponent, dialogConfig);
   }
 
-  public openMegaMenuDialog() {
-    const dialogConfig = new MatDialogConfig();
+  // public openMegaMenuDialog() {
+  //   const dialogConfig = new MatDialogConfig();
 
-    dialogConfig.disableClose = false;
-    dialogConfig.autoFocus = false;
+  //   dialogConfig.disableClose = false;
+  //   dialogConfig.autoFocus = false;
 
-    dialogConfig.width = '70%';
-    dialogConfig.minWidth = '650px';
-    dialogConfig.minHeight = '400px';
-    dialogConfig.maxWidth = '1000px';
+  //   dialogConfig.width = '70%';
+  //   dialogConfig.minWidth = '650px';
+  //   dialogConfig.minHeight = '400px';
+  //   dialogConfig.maxWidth = '1000px';
 
-    // dialogConfig.data = {
-    //   id: 1,
-    //   title: 'Angular For Beginners',
-    //   masterName: 'FOOBAR'
-    // };
+  //   // dialogConfig.data = {
+  //   //   id: 1,
+  //   //   title: 'Angular For Beginners',
+  //   //   masterName: 'FOOBAR'
+  //   // };
 
-    this.megaMenuDialogRef = this.dialog.open(MegaMenuComponent, dialogConfig);
-  }
+  //   this.megaMenuDialogRef = this.dialog.open(MegaMenuComponent, dialogConfig);
+  // }
 
 
 
