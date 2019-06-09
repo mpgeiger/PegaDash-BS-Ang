@@ -1,0 +1,70 @@
+<!-- <a mat-button [matMenuTriggerFor]="mpgMenu"  layout-align="end center" class="megaMenuNav" (click)="$event.stopPropagation();">
+              MPG Service<i class="material-icons">
+                  arrow_drop_down
+                  </i>
+            </a> -->
+
+<!-- <mat-menu #mpgMenu="matMenu" class="megaMenu"  [class.mat-elevation-z20] overlapTrigger="false" (click)="$event.stopPropagation();"> -->
+<div class="container">
+  <div layout="row"  fxLayout fxLayoutAlign="center center">
+    <mat-form-field floatLabel="never" fxLayoutAlign="center center">
+      <!-- <input matInput type="text"  (keyup)="doFilter($event.target.value)" id="search" placeholder="Filter available Services"/> -->
+      <!-- (keyup)="testForEmpty(cat)" -->
+      <input matInput type="text" [(ngModel)]="queryString" id="search" placeholder="Filter available Services" (change)="setEmptyCat(i,j);"  />
+    </mat-form-field>
+  </div>
+  <div class="row">
+    <!-- <div class="col-xl-3 col-lg-5 col-md-6" *ngFor="let cat of actions ; index as i" [ngClass]="{'d-none': step===testForEmpty(cat)}"> -->
+    <div class="col-xl-3 col-lg-5 col-md-6" *ngFor="let cat of actions ; index as i" [ngClass]="{'d-none': actions.pxResults.length == 0 }">
+      <!-- <div class="row" > -->
+      <!-- <div class="card megaMenu-card card-default"  > -->
+
+        <!-- <ng-container *ngFor="let action of cat.pxResults | FilterPipe: queryString; index as j;" (change)="setEmptyCat(i,j);"> -->
+        <ng-container *ngFor="let action of cat.pxResults | FilterPipe: queryString; index as j;" >
+
+          <div class="card megaMenu-card card-default" id="cat-{{i}}" *ngIf="testVis(i);" >
+
+           
+            <!-- <div class="card-header">
+                -- {{i}}--
+                  <span class="card-title">{{ cat.CategoryName }}</span>
+            </div> -->
+                <div class="text-left card-body megaMenu-card-body" >
+                  <mat-action-list dense class="megaMenu-List"  >
+                    <!-- <button
+                      *ngFor="let action of cat.pxResults ; index as j;"
+                      mat-list-item
+                      class="megaMenu-List-Item"
+                      (click)="
+                        action.pyLabel === 'Request Cheque Image' || 'Request Check Image' ? openModalDialogForService($event, action.pyLabel) : nonFunctioningService($event, action.pyLabel)
+                      "
+                    > -->
+                    <button
+
+                      mat-list-item
+                      class="megaMenu-List-Item"
+                      (click)="
+                        action.pyLabel === 'Request Cheque Image' || 'Request Check Image' ? openModalDialogForService($event, action.pyLabel) : nonFunctioningService($event, action.pyLabel)
+                      "
+                    >
+                      {{ action.pyLabel }} {{i}}-{{j}}
+
+                    </button>
+                  </mat-action-list>
+
+                </div>
+            </div>
+        </ng-container>
+
+
+      </div>
+      <!-- </div> -->
+    <!-- </div> -->
+  </div>
+</div>
+<!-- </mat-menu> -->
+<!-- (click)="action.pyLabel === 'Request Cheque Image' || 'Request Check Image' ? openModalDialogForService() : nonFunctioningService()" -->
+
+<!-- <button *ngFor="let action of cat.pxResults | searchFilter:'pyLabel':query" -->
+<!-- <button *ngFor="let action of cat.pxResults | searchFilter : query" -->
+<!-- <button *ngFor="let action of cat.pxResults" -->

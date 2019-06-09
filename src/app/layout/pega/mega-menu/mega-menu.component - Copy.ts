@@ -5,8 +5,8 @@ import { HttpParams, HttpHeaders } from '@angular/common/http';
 import { DatapageService } from '../../../_services/datapage.service';
 import { PagerService } from '../../../_services/pager.service';
 // import stubbedResults from '@ss/json/D_Interaction_Driver_I-826_SJ.json';
-// import stubbedResults from '@ss/json/D_Interaction_Driver_I-901__PW.json';
-import stubbedResults from '@ss/json/D_CustomerIntentTasks_min.json';
+//  import stubbedResults from '@ss/json/D_Interaction_Driver_I-901__PW.json';
+import stubbedResults from '@ss/json/MegaMenu.json';
 import { ModalRCIContainerComponent, ModalRCIPegaComponent  } from '../modal-container/modal-container.component';
 import {MatTableDataSource, MatSort, MatMenu} from '@angular/material';
 import { PegaVariablesPropertiesComponent } from '../../../shared-pega/pega-variables-properties/pega-variables-properties.component';
@@ -241,32 +241,35 @@ export class MegaMenuComponent implements OnInit {
     const keyToRemove = '';
 
     const stubbed: any = stubbedResults;
-    this.actions = Object.keys(this.getDriverCategories(stubbed)).map(it => this.getDriverCategories(stubbed)[it]);
-    for (const [key, value] of Object.entries(this.actions)) {
-      // if (value.CategoryName === 'Sales and Offers') {
-        console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
-      const pxResults: any = value.pxResults;
-      console.log(this.componentName + '  key --->' + JSON.stringify(key) + '_______ value-->' + JSON.stringify(value.CategoryName));
-      // console.log('    CategoryName=' + value.CategoryName + '___________ key:' + JSON.stringify(key));
-      // if (value.CategoryName === 'Sales and Offers') {
-      //   keyToRemove = JSON.stringify(key);
-      //   console.log('keyToRemove-->' + keyToRemove);
-      // }
-      console.log(' cat->' + value.CategoryName + '__index->' + JSON.stringify(key) + '___count->' + pxResults.length + '___visibility->' + true);
-      // myVis.indexCategory = parseInt(JSON.stringify(key));
+    console.log(this.componentName + ' stubbed-->' + stubbed);
+    this.actions = Object.keys(stubbed).map(it => stubbed[it]);
 
-      // myVis.countItems = pxResults.length;
-      // myVis.visibility = true;
-      // myVis.indexCategory = parseInt(JSON.stringify(key));
 
-      // myVis.countItems = pxResults.length;
-      // myVis.visibility = true;
+    // for (const [key, value] of Object.entries(this.actions)) {
+    //   // if (value.CategoryName === 'Sales and Offers') {
+    //     console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
+    //   const pxResults: any = value.pxResults;
+    //   console.log(this.componentName + '  key --->' + JSON.stringify(key) + '_______ value-->' + JSON.stringify(value.CategoryName));
+    //   // console.log('    CategoryName=' + value.CategoryName + '___________ key:' + JSON.stringify(key));
+    //   // if (value.CategoryName === 'Sales and Offers') {
+    //   //   keyToRemove = JSON.stringify(key);
+    //   //   console.log('keyToRemove-->' + keyToRemove);
+    //   // }
+    //   console.log(' cat->' + value.CategoryName + '__index->' + JSON.stringify(key) + '___count->' + pxResults.length + '___visibility->' + true);
+    //   // myVis.indexCategory = parseInt(JSON.stringify(key));
 
-      // console.log('   visCategory My Vis -->' + JSON.stringify(myVis));
-      // this.categoryVis.pop(myVis);
-      // this.categoryVis.pop(myVis);
-    }
-    console.log('   visCategory -->' + JSON.stringify(this.categoryVis));
+    //   // myVis.countItems = pxResults.length;
+    //   // myVis.visibility = true;
+    //   // myVis.indexCategory = parseInt(JSON.stringify(key));
+
+    //   // myVis.countItems = pxResults.length;
+    //   // myVis.visibility = true;
+
+    //   // console.log('   visCategory My Vis -->' + JSON.stringify(myVis));
+    //   // this.categoryVis.pop(myVis);
+    //   // this.categoryVis.pop(myVis);
+    // }
+    console.log('   visCategory -->' + JSON.stringify(this.actions));
     // this.cases = JSON.parse(response.body);
    // this.sortedData = this.cases.slice();
     // this.dataSource.data = this.cases as TreasurerCases[];
@@ -314,13 +317,27 @@ export class MegaMenuComponent implements OnInit {
 
   }
 
-  testVis(index): boolean {
-    // if (index === 1) {
-    //   return false;
-    // } else {
-    //   return true;
-    // }
-  return true;
+
+  mapToProp(data, prop) {
+    return data
+      .reduce((res, item) => Object
+        .assign(res, {
+          [item[prop]]: 1 + (res[item[prop]] || 0)
+        }), Object.create(null))
+    ;
+  }
+
+
+  // catCount(cat, data) {
+
+  // }
+  hideCatTest(index): boolean {
+     if (index >= 1) {
+       return true;
+     } else {
+       return false;
+     }
+
   }
 
    // This function will be called on every key press for input text box

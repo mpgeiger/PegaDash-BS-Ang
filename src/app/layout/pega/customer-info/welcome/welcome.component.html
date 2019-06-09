@@ -12,11 +12,15 @@
       [label]="'Total Assets'"
       [type]="'asset'"><mat-progress-bar mode="buffer" ></mat-progress-bar></app-pstat>
     </div>
+    <!-- <button mat-button>
+    <mat-icon svgIcon="trend-up"></mat-icon>
+    </button> -->
+    <!-- [icon]="'arrow_drop_down_circle'" -->
     <div class="col-xl-3 col-lg-3">
         <app-pstat [bgClass]="'gray-500'"
-        [icon]="'arrow_drop_down_circle'"
+        [icon]="'trend-down'"
         [amount]="acctsSummary.totalCurrentAssets - acctsSummary.totalAvgMonthAssets"
-        [label]="'Assets Trend/Months'"
+        [label]="'Assets Trend/month'"
         [type]="'trend'"><mat-progress-bar mode="buffer" ></mat-progress-bar></app-pstat>
       </div>
     <div class="col-xl-3 col-lg-6">
@@ -46,9 +50,9 @@
     <div class="col-xl-3 col-lg-3">
 
         <app-pstat [bgClass]="'gray-500'"
-        [icon]="'arrow_drop_down_circle'"
+        [icon]="'trend-up'"
         [amount]="0 - acctsSummary.totalCurrentLiabilities - acctsSummary.totalAvgMonthLiabilities"
-        [label]="'Liabilites Trend/Month'"
+        [label]="'Liabilities Trend/month'"
         [type]="'trend'"><mat-progress-bar mode="buffer" ></mat-progress-bar></app-pstat>
       <!-- </div> -->
       <!-- <div class="my-fancy-container"

@@ -1,0 +1,54 @@
+<!-- <a mat-button [matMenuTriggerFor]="mpgMenu"  layout-align="end center" class="megaMenuNav" (click)="$event.stopPropagation();">
+              MPG Service<i class="material-icons">
+                  arrow_drop_down
+                  </i>
+            </a> -->
+
+<!-- <mat-menu #mpgMenu="matMenu" class="megaMenu"  [class.mat-elevation-z20] overlapTrigger="false" (click)="$event.stopPropagation();"> -->
+    <div class="container">
+        <div layout="row"  fxLayout fxLayoutAlign="center center">
+          <mat-form-field floatLabel="never" fxLayoutAlign="center center">
+            <!-- <input matInput type="text"  (keyup)="doFilter($event.target.value)" id="search" placeholder="Filter available Services"/> -->
+            <!-- (keyup)="testForEmpty(cat)" -->
+            <input matInput type="text" [(ngModel)]="queryString" id="search" placeholder="Filter available Services"   />
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <!-- <div class="col-xl-3 col-lg-5 col-md-6" *ngFor="let cat of actions; index as i" [ngClass]="{'d-none': step===testForEmpty(cat)}">
+           [ngClass]="{'d-none': item.act_id > 0}"
+          -->
+          <!-- <div class="col-xl-3 col-lg-5 col-md-6" *ngFor="let item of actions | FilterPipe: queryString  ; index as i"  ngClass="{'d-none': item.act_id}" > -->
+          <div class="col-xl-3 col-lg-5 col-md-6" *ngFor="let item of actions | groupBy:'cat' | FilterPipe: queryString  ; index as i"  ngClass="{'d-none': item.act_id}" >
+
+
+            <!-- <ng-container *ngIf="item.act_id === 0"> -->
+              <div class="card megaMenu-card card-default" id="cat-{{i}}"  ngClass="{'d-none': item.act_id >=1  }"  >
+                <div class="card-header">
+                act_id-->{{item.act_id}} -- {{i}}--<span class="card-title">{{ item.cat }}</span>
+                </div>
+                <div class="text-left card-body megaMenu-card-body">
+                  <mat-action-list dense class="megaMenu-List">
+
+
+                      <ng-container *ngFor="let act of actions| FilterPipe: queryString; index as j">
+                        <ng-container *ngIf="act.cat_id === i">
+                  <button
+
+                    mat-list-item
+                    class="megaMenu-List-Item"
+                    (click)="
+                      action.pyLabel === 'Request Cheque Image' || 'Request Check Image' ? openModalDialogForService($event, action.pyLabel) : nonFunctioningService($event, action.pyLabel)
+                    ">
+                    <!-- {{ action.pyLabel }} {{i}}-{{j}} -->
+                    {{ act.action }}
+                  </button>
+                  </ng-container>
+                </ng-container>
+                  </mat-action-list >
+                </div>
+              </div>
+                  <!-- </ng-container> -->
+
+          </div>
+        </div>
+      </div>

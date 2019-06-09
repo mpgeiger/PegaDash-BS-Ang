@@ -5,6 +5,9 @@ import { Subscription, Observable } from 'rxjs';
 // import { RelAccountListComponent } from '@ss/app/shared-pega/shared-pega.module';
 import { StatComponent } from './../../../../shared/modules/stat/stat.component';
 import { AccountListService } from '@ss/app/layout/pega/_services/index';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material/icon';
+
 
 @Component({
   selector: 'app-welcome',
@@ -35,7 +38,9 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy  {
   constructor(
     // private al: RelAccountListComponent
     private as: AccountListService,
-    private changeDetectorRef: ChangeDetectorRef
+    private changeDetectorRef: ChangeDetectorRef,
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
   ) {
     this.subscription = this.as.getMessage().subscribe(message => {
       if (message) {
@@ -58,6 +63,22 @@ this.showLoading = false;
         this.messages = [];
       }
     });
+    this.matIconRegistry.addSvgIcon(
+      'trend-up',
+      '../../../../../assets/images/trending-up.svg'
+    );
+    this.matIconRegistry.addSvgIcon(
+      'trend-down',
+      '../../../../../assets/images/trending-down.svg'
+    );
+    this.matIconRegistry.addSvgIcon(
+      'trend-up',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../../assets/images/trending-up.svg')
+    );
+    this.matIconRegistry.addSvgIcon(
+      'trend-down',
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../../../../../assets/images/trending-down.svg')
+    );
 
 
 

@@ -27,9 +27,12 @@
                 <!-- <i class="material-icons md-48" style="transform: rotate(0deg); color: red;">
                     arrow_drop_down_circle
                   </i> -->
-
-                    <i *ngIf="amount > 0"  class="material-icons md-48" style="transform: rotate(180deg); color: green;">{{icon}}</i>
-                    <i *ngIf="amount < 0" class="material-icons md-48" style="transform: rotate(0deg); color: red;">{{icon}}</i>
+                  <button mat-button>
+                      <mat-icon svgIcon="{{icon}}" [ngClass]="amount > 0 ? 'up' : 'down'" ></mat-icon>
+                      <!-- <mat-icon *ngIf="amount < 0" svgIcon="trend-down" [ngClass]="mat-icon down" ></mat-icon> -->
+                      </button>
+                    <!-- <i *ngIf="amount > 0"  class="material-icons md-48" style="transform: rotate(180deg); color: green;">{{icon}}</i>
+                    <i *ngIf="amount < 0" class="material-icons md-48" style="transform: rotate(0deg); color: red;">{{icon}}</i> -->
             </div>
             <div class="col-9 col-xs-10 text-right">
                 <!-- <div class="d-block huge">{{count}}</div> -->

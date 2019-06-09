@@ -80,7 +80,7 @@ export class MegaMenuComponent implements OnInit {
   changeCount = 0;
   headers: any;
   actions: SSCaseActions[] = [];
-
+  
   _0_0 = false;
   _1_0 = false;
   _2_0 = false;
@@ -173,12 +173,12 @@ export class MegaMenuComponent implements OnInit {
   }
 
   setPrevCat(cat) {
-    const _prev = this.prevCat;
+    let _prev = this.prevCat;
     this.prevCat = cat;
-    const size = cat.pxResults.length;
+    let size = cat.pxResults.length;
     console.log (' ### cat length-->' + size);
 
-    if (size > 0) {
+    if (size > 0) { 
       return false;
     } else {
       return true;

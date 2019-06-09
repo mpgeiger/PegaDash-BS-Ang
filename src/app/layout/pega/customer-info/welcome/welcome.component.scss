@@ -9,6 +9,19 @@
   width: 100%;
   background-color: $bnyBackground;
 }
+.mat-icon{
+  height:48px !important;
+  width:48px !important;
+  font-size:48px !important;
+  border-radius: 45px;
+  .down {
+    background-color: red;
+  }
+  .up {
+    background-color: green;
+  }
+}
+
 
 .material-icons.md-48 { font-size: 48px; }
 .material-icons.md-64 { font-size: 64px; }
@@ -34,20 +47,20 @@
 
 .account-text-desc {
   display: block;
-/*	   
+/*
   font-family: "Courier-new";
   //  font-weight: bold;
     font-size: 1.2rem;
- */	
+ */
   font: 300 16px/26px Roboto,"Helvetica Neue",sans-serif;
 }
 .account-text-value {
   display: block;
-/*	   
+/*
   font-family: "Courier-new";
    font-weight: bold;
     font-size: 1.3rem;
-*/	
+*/
 	  font: 300 20px/26px "Open Sans","Helvetica Neue",sans-serif;
 }
 .my-icon {

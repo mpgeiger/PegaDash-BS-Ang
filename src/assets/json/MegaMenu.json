@@ -1,0 +1,218 @@
+[
+ {
+   "cat": "General",
+   "cat_id": 0,
+   "action": "Add Authorized User",
+   "act_id": 0
+ },
+ {
+   "cat": "General",
+   "cat_id": 0,
+   "action": "Co-Browsing Session",
+   "act_id": 1
+ },
+ {
+   "cat": "General",
+   "cat_id": 0,
+   "action": "Corporate Action Pay Date inquiry",
+   "act_id": 2
+ },
+ {
+   "cat": "General",
+   "cat_id": 0,
+   "action": "Credit Discrepancy",
+   "act_id": 3
+ },
+ {
+   "cat": "General",
+   "cat_id": 0,
+   "action": "File a Complaint",
+   "act_id": 4
+ },
+ {
+   "cat": "General",
+   "cat_id": 0,
+   "action": "Fraud Investigation",
+   "act_id": 5
+ },
+ {
+   "cat": "General",
+   "cat_id": 0,
+   "action": "General Service Request",
+   "act_id": 6
+ },
+ {
+   "cat": "General",
+   "cat_id": 0,
+   "action": "Log Sales Opportunity",
+   "act_id": 7
+ },
+ {
+   "cat": "General",
+   "cat_id": 0,
+   "action": "Payment Status Inquiry",
+   "act_id": 8
+ },
+ {
+   "cat": "General",
+   "cat_id": 0,
+   "action": "Product onboarding request",
+   "act_id": 9
+ },
+ {
+   "cat": "General",
+   "cat_id": 0,
+   "action": "Request Cheque Image",
+   "act_id": 10
+ },
+ {
+   "cat": "General",
+   "cat_id": 0,
+   "action": "Run report",
+   "act_id": 11
+ },
+ {
+   "cat": "General",
+   "cat_id": 0,
+   "action": "Sample",
+   "act_id": 12
+ },
+ {
+   "cat": "General",
+   "cat_id": 0,
+   "action": "Send Literature",
+   "act_id": 13
+ },
+ {
+   "cat": "General",
+   "cat_id": 0,
+   "action": "Trade Transaction Inquiry",
+   "act_id": 14
+ },
+ {
+   "cat": "General",
+   "cat_id": 0,
+   "action": "Wire Recall",
+   "act_id": 15
+ },
+ {
+   "cat": "General",
+   "cat_id": 0,
+   "action": "Wire Transaction Inquiry",
+   "act_id": 16
+ },
+ {
+   "cat": "Account",
+   "cat_id": 1,
+   "action": "Bill Pay Inquiry",
+   "act_id": 0
+ },
+ {
+   "cat": "Account",
+   "cat_id": 1,
+   "action": "Billing",
+   "act_id": 1
+ },
+ {
+   "cat": "Account",
+   "cat_id": 1,
+   "action": "Close Account",
+   "act_id": 2
+ },
+ {
+   "cat": "Account",
+   "cat_id": 1,
+   "action": "Fee Inquiry",
+   "act_id": 3
+ },
+ {
+   "cat": "Account",
+   "cat_id": 1,
+   "action": "Manage Entitlements",
+   "act_id": 4
+ },
+ {
+   "cat": "Account",
+   "cat_id": 1,
+   "action": "Request Checks",
+   "act_id": 5
+ },
+ {
+   "cat": "Account",
+   "cat_id": 1,
+   "action": "Statement Copy",
+   "act_id": 6
+ },
+ {
+   "cat": "Account",
+   "cat_id": 1,
+   "action": "Transaction Inquiry",
+   "act_id": 7
+ },
+ {
+   "cat": "Account",
+   "cat_id": 1,
+   "action": "Transfer",
+   "act_id": 8
+ },
+ {
+   "cat": "Account",
+   "cat_id": 1,
+   "action": "Waive Fee",
+   "act_id": 9
+ },
+ {
+   "cat": "Contact",
+   "cat_id": 2,
+   "action": "Capture Income and Expenditure",
+   "act_id": 0
+ },
+ {
+   "cat": "Contact",
+   "cat_id": 2,
+   "action": "Exercise Customer Data Rights",
+   "act_id": 1
+ },
+ {
+   "cat": "Contact",
+   "cat_id": 2,
+   "action": "Modify Account Links",
+   "act_id": 2
+ },
+ {
+   "cat": "Contact",
+   "cat_id": 2,
+   "action": "Update Contact Address",
+   "act_id": 3
+ },
+ {
+   "cat": "Contact",
+   "cat_id": 2,
+   "action": "Update Contact Communication Options",
+   "act_id": 4
+ },
+ {
+   "cat": "Contact",
+   "cat_id": 2,
+   "action": "Update Contact Profile",
+   "act_id": 5
+ },
+ {
+   "cat": "Organization",
+   "cat_id": 3,
+   "action": "Update Organization Address",
+   "act_id": 0
+ },
+ {
+   "cat": "Organization",
+   "cat_id": 3,
+   "action": "Update Organization Communication Details",
+   "act_id": 1
+ },
+ {
+   "cat": "Organization",
+   "cat_id": 3,
+   "action": "Update Organization Details",
+   "act_id": 2
+ }
+]

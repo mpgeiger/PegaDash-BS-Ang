@@ -25,7 +25,7 @@ export class FilterPipe implements PipeTransform {
           input = input.toLowerCase();
           return value.filter(function (el: any) {
               console.log('   in filter-->' + JSON.stringify(el) );
-              return el.pyLabel.toLowerCase().indexOf(input) > -1;
+              return el.action.toLowerCase().indexOf(input) > -1;
 
           });
           // return (value.pxResults.pyLabel(i => i.pyLabel.toLowerCase().indexOf(input.toLowerCase()) > -1));

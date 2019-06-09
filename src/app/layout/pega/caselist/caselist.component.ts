@@ -13,6 +13,7 @@ import { SharedPegaDataService } from '../_services/sharedpegadata.service';
 import { Sort } from '@angular/material';
 // import * as moment from 'moment';
 import {MatTableDataSource, MatPaginator, MatSort} from '@angular/material';
+import stubbedResults from '@ss/json/D_MPG_OpenCaseList.json';
 
 
 export interface Cases {
@@ -45,7 +46,7 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
   // cases: Array<any> = [];
   // displayedColumns = ['pxRefObjectInsName', 'pyAssignmentStatus', 'pyLabel', 'pxUrgencyAssign'];
   // displayedColumns = ['ID', 'name', 'createTime', 'stage', 'status', 'createdBy'];
-  displayedColumns = ['name', 'status', 'createTime', 'ID', 'urgency'];
+  displayedColumns = ['name', 'status', 'CompletionDate', 'ID'];
   // displayedColumns = ['name', 'status', 'lastUpdateTime', 'ID', 'urgency'];
   public dataSource = new MatTableDataSource<Cases>();
   sortedData: Cases[] = [];
@@ -91,40 +92,23 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
    // this.sortedData = this.cases.slice();
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-    this.getCases();
+    this.getStubbedCases();
   }
 
   getCases() {
     this.cService.cases().subscribe(
       response => {
-
-       // console.log(' get cases SERVICE-->' + JSON.stringify(response.body));
         const resSTR = JSON.stringify(this.getResults(response.body));
         const resJSON = JSON.parse(resSTR);
-       // console.log(' get cases  SERVICE-->', resJSON._body);
-        // this.unifiedtask$ = new MatTableDataSource<any>(this.getResults(response.body));
+
         this.headers = response.headers;
-        // this.unifiedtaskObject$ = JSON.parse(this.getResults(response.body));
         this.cases = Object.keys(this.getResults(response.body)).map(it => this.getResults(response.body)[it]);
         // this.cases = JSON.parse(response.body);
-
         this.filterByDate(10);
-
         localStorage.setItem('caselist', this.cases.length.toString());
         console.log(' IN CASELIST.COMPONENT  # CASES -->' + localStorage.getItem('caselist'));
-
-
-
         this.dataSource.data = this.cases as Cases[];
         this.showLoading = false;
-        // this.unifiedtask$.paginator = this.paginator;
-        // this.unifiedtask$.sort = this.sort;
-
-        // this.p_TotalNumberItems = this.cases.length;
-        // this.initPagingInfo();
-        // this.p_CurrentList = this.cases.slice(0, this.p_ItemsPerPage);
-        // initialize to page 1
-        // this.setPage(0);
 
       },
       err => {
@@ -133,6 +117,17 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
     );
   }
 
+  getStubbedCases() {
+        const stubbed: any = stubbedResults;
+
+        this.cases = Object.keys(this.getResults(stubbedResults)).map(it => this.getResults(stubbedResults)[it]);
+        // this.cases = JSON.parse(response.body);
+        this.filterByDate(10);
+        localStorage.setItem('caselist', this.cases.length.toString());
+        console.log(' IN CASELIST.COMPONENT  # CASES -->' + localStorage.getItem('caselist'));
+        this.dataSource.data = this.cases as Cases[];
+        this.showLoading = false;
+  }
   private filterByDate(days: number): any {
     const currentDate = new Date();
     const currentMonth = currentDate.getMonth() - 12;

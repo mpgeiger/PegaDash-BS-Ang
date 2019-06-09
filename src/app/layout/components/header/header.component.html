@@ -72,15 +72,15 @@
               </a> -->
               <!-- <button mat-raised-button (click)="openDialog()">New Service Menu</button> -->
               <a mat-button (click)="openDialog()"  layout-align="end center" class="megaMenuNav">
-                  New Service Menu<i class="material-icons">
+                   Services <i class="material-icons">
                       arrow_drop_down
                       </i>
                 </a>
-             <a mat-button [matMenuTriggerFor]="mpgMenu"  layout-align="end center" class="megaMenuNav">
+             <!-- <a mat-button [matMenuTriggerFor]="mpgMenu"  layout-align="end center" class="megaMenuNav">
               Services<i class="material-icons">
                   arrow_drop_down
                   </i>
-            </a>
+            </a> -->
             <mat-menu #mpgMenu="matMenu" class="megaMenu" #megaMenu  [class.mat-elevation-z20] overlapTrigger="false">
                 <!-- //  MPG Event to prevent closing the MENU -->
                 <!-- <form (click)="stopPropagation($event)">  -->
