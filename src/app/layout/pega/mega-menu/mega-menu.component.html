@@ -6,8 +6,8 @@
 
 <!-- <mat-menu #mpgMenu="matMenu" class="megaMenu"  [class.mat-elevation-z20] overlapTrigger="false" (click)="$event.stopPropagation();"> -->
     <div class="container">
-        <div layout="row"  fxLayout fxLayoutAlign="center center">
-          <mat-form-field floatLabel="never" fxLayoutAlign="center center">
+        <div class="row" fxLayout="row"  fxLayout fxLayoutAlign="end center" style="justify-content: flex-end;">
+          <mat-form-field floatLabel="never">
             <!-- <input matInput type="text"  (keyup)="doFilter($event.target.value)" id="search" placeholder="Filter available Services"/> -->
             <!-- (keyup)="testForEmpty(cat)" -->
             <input matInput type="text" [(ngModel)]="queryString" id="search" placeholder="Filter available Services"   />
