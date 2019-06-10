@@ -1,4 +1,5 @@
-// s
+@import '../../../Dashboard_Styles.scss';
+
 
 .mat-column-AccountNumber {
   flex: 0 0 95px;
@@ -21,4 +22,14 @@
   }
   .td-right {
     text-align: right;
+  }
+  .th-filter {
+    border: none;
+  }
+  .tr-th-filter {
+    border-top: none;
+    border-bottom: none;
+    background-color: $gray-200;
+    border-radius: 8px;
+
   }

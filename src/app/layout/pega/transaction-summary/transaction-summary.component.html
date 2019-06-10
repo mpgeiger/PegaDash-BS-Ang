@@ -1,12 +1,72 @@
-<div fxLayout fxLayoutAlign="center center">
-    <mat-form-field >
-      <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
-    </mat-form-field>
-  </div>
+<!-- s -->
   <div class="row">
     <div class="col-12">
 <!-- <div *ngIf="!showLoading"> -->
       <table class="table table-hover" mat-table [dataSource]="dataSource" matSort  matSortActive="TransactionPostDate" matSortDirection="desc" matSortDisableClear >
+
+        <ng-container matColumnDef="fAccNum">
+              <th mat-header-cell *matHeaderCellDef class="th-filter">
+                <mat-form-field floatLabel="never">
+                  <mat-label>Search</mat-label>
+                  <input matInput class="form-field" [formControl]="accNumFilter" />
+                </mat-form-field>
+              </th>
+          </ng-container>
+
+
+          <ng-container matColumnDef="fTransDesc">
+              <th mat-header-cell *matHeaderCellDef class="th-filter">
+                <mat-form-field floatLabel="never">
+                  <mat-label>Search</mat-label>
+                  <input matInput class="form-field" [formControl]="transDescFilter" />
+                </mat-form-field>
+              </th>
+          </ng-container>
+          <ng-container matColumnDef="fTransCode">
+              <th mat-header-cell *matHeaderCellDef class="th-filter">
+                <mat-form-field floatLabel="never">
+                  <mat-label>Search</mat-label>
+                  <input matInput class="form-field" [formControl]="transCodeFilter" />
+                </mat-form-field>
+              </th>
+          </ng-container>
+          <ng-container matColumnDef="fTransErr">
+              <th mat-header-cell *matHeaderCellDef class="th-filter">
+                <mat-form-field floatLabel="never">
+                  <mat-label>Search</mat-label>
+                  <input matInput class="form-field" [formControl]="transErrorFilter" />
+                </mat-form-field>
+              </th>
+          </ng-container>
+          <ng-container matColumnDef="fCurrency">
+              <th mat-header-cell *matHeaderCellDef class="th-filter">
+                <mat-form-field floatLabel="never">
+                  <mat-label>Search</mat-label>
+                  <input matInput class="form-field" [formControl]="currencyFilter" />
+                </mat-form-field>
+              </th>
+          </ng-container>
+          <ng-container matColumnDef="fTransPostDate">
+              <th mat-header-cell *matHeaderCellDef class="th-filter">
+                <!-- <mat-form-field floatLabel="never">
+                  <mat-label>Search</mat-label>
+                  <input matInput class="form-field" [formControl]="transPostDateFilter" />
+                </mat-form-field> -->
+              </th>
+          </ng-container>
+          <ng-container matColumnDef="fTransAmount" [style.text-align]="right">
+              <th mat-header-cell *matHeaderCellDef style="text-align: right !important;" class="th-filter">
+                <mat-form-field class="filter" floatLabel="never" style="text-align: right !important;">
+                  <mat-label>Search</mat-label>
+                  <input matInput class="form-field" [formControl]="transAmountFilter" [style.text-align]="right" />
+                </mat-form-field>
+              </th>
+          </ng-container>
+
+
+
+
+
       <!-- <table class="table"  > -->
         <ng-container matColumnDef="AccountNumber">
           <th mat-header-cell *matHeaderCellDef  mat-sort-header class="th-lg"> Acct # </th>
@@ -35,7 +95,7 @@
 
         <ng-container matColumnDef="TransactionPostDate">
           <th mat-header-cell *matHeaderCellDef mat-sort-header > Post Date </th>
-          <td mat-cell *matCellDef="let element"> {{element.TransactionPostDate | date : 'shortDate' }} </td>
+          <td mat-cell *matCellDef="let element"> {{element.TransactionPostDate | date : 'MM/dd/yyyy' }} </td>
         </ng-container>
 
         <ng-container matColumnDef="TransactionAmount">
@@ -44,7 +104,7 @@
           <td mat-cell *matCellDef="let element" style="text-align: right;"> {{element.TransactionAmount | currency: element.Currency :'symbol-narrow' : '1.2-2' }} </td>
         </ng-container>
 
-
+        <tr mat-header-row *matHeaderRowDef="displayedFilters;sticky: true" class="tr-th-filter"></tr>
         <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
