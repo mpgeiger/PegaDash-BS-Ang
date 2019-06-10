@@ -13,7 +13,7 @@ export interface UserInfo {
   providedIn: 'root'
 })
 export class AccountListService {
-serviceName = 'AccountListService';
+serviceName = 'account-list.service';
 private subject = new Subject<any>();
 private accountsSummary = new Subject<any>();
 private userInfo = new Subject<UserInfo>();
@@ -23,7 +23,7 @@ private displayName = new Subject<any>();
 
 sendMessage(message: string) {
   this.subject.next({ text: message });
-  console.log('__' + this.serviceName + ' Sending--> ' + message);
+  console.log('__' + this.serviceName + ' Sending--> ' + JSON.stringify(message));
 }
 
 clearMessages() {
@@ -54,12 +54,12 @@ setAccountList(accList: object) {
 
      setUserDisplayName(name) {
        this.displayName.next({displayName: name});
-       console.log('__' + this.serviceName + ' SET displayName--> ' + this.displayName);
+       console.log('__ ' + this.serviceName + ' SET UserDisplayName--> ' + this.displayName);
 
       }
 
       getUserDisplayName(): Observable<any> {
-        console.log('__' + this.serviceName + ' GET displayName--> ' + this.displayName.asObservable());
+        console.log('__ ' + this.serviceName + ' GET UserDisplayName--> ');
 
         return this.displayName.asObservable();
      }

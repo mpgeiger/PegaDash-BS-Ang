@@ -80,9 +80,9 @@ export class LoginComponent implements OnInit {
               localStorage.setItem('userWorkGroup', operator.pyWorkGroup);
               localStorage.setItem('userWorkBaskets', JSON.stringify(operator.pyWorkBasketList));
               localStorage.setItem('userEmailAddress', operator.pyAddresses.Email.pyEmailAddress);
-              console.log( this.componentName + ' LS --> userName -->' + localStorage.getItem('userName'));
-              console.log( this.componentName + ' LS --> displayUserName -->' + localStorage.getItem('displayUserName'));
-              console.log( this.componentName + ' LS -- lastAccess-->' + localStorage.getItem('lastAccess'));
+              // console.log( this.componentName + ' LS --> userName -->' + localStorage.getItem('userName'));
+              // console.log( this.componentName + ' LS --> displayUserName -->' + localStorage.getItem('displayUserName'));
+              // console.log( this.componentName + ' LS -- lastAccess-->' + localStorage.getItem('lastAccess'));
 
               // this.glsservice.sendMessage('LoggedIn');
               // console.log('Logged In-->', operator.pyUserName);
@@ -97,23 +97,23 @@ export class LoginComponent implements OnInit {
 
 
             operatorParams.set('EmailID', localStorage.getItem('userEmailAddress'));
-            this.dservice.getDataPage('D_CustomerSummary', operatorParams).subscribe(
-              response => {
-                console.log(' begin D_CustomerSummary');
-                // const customerSummaryResult: any = response.body;
-                const customerSummary: any = this.getResults(response.body);
-                localStorage.setItem('CifNbr', customerSummary.CifNbr);
+            // this.dservice.getDataPage('D_CustomerSummary', operatorParams).subscribe(
+            //   response => {
+            //     console.log(' begin D_CustomerSummary');
+            //     // const customerSummaryResult: any = response.body;
+            //     const customerSummary: any = this.getResults(response.body);
+            //     localStorage.setItem('CifNbr', customerSummary.CifNbr);
 
-                this.glsservice.sendMessage('LoggedIn');
-                console.log('end D_CustomerSummary');
-              // console.log('Logged In-->', operator.pyUserName);
-            },
-            err => {
-              const sError = 'Errors getting data page: ' + err.message;
-              console.log(' Login INSIDE error-->\n' + sError);
-              // let snackBarRef = this.snackBar.open(sError, 'Ok');
-            }
-            );
+            //     this.glsservice.sendMessage('LoggedIn');
+            //     console.log('end D_CustomerSummary');
+            //   // console.log('Logged In-->', operator.pyUserName);
+            // },
+            // err => {
+            //   const sError = 'Errors getting data page: ' + err.message;
+            //   console.log(' Login INSIDE error-->\n' + sError);
+            //   // let snackBarRef = this.snackBar.open(sError, 'Ok');
+            // }
+            // );
 
 
             this.router.navigate(['summary-page']);

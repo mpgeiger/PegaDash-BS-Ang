@@ -4,46 +4,86 @@
     <div class="row">
       <div class="col">
         <div class="card card-default">
-          <div class="card-header"><i class="fa fa-tasks"></i> Mega Menu</div>
-          <!-- Intentionally Blank -->
-          <app-mega-menu></app-mega-menu>
-          <!-- <app-modal-container-work-item></app-modal-container-work-item> -->
+          <div class="card-header">
+            <i class="fa fa-tasks"></i>
+            <span class="card-title">Transaction Summary</span>
+          </div>
+          <div class="text-center card-body">
+            <!-- <app-transaction-summary></app-transaction-summary> -->
+            <app-transaction-summary></app-transaction-summary>
 
+          </div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <!-- <div class="card card-default">
+        <div class="card card-default">
+          <div class="card-header">
+            <i class="fa fa-tasks"></i>
+            <span class="card-title">Case List Summary </span>
+          </div>
+          <div class="text-center card-body">
+            <!-- <app-transaction-summary></app-transaction-summary> -->
+            <app-caselist></app-caselist>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card card-default">
+          <div class="card-header">
+            <i class="fa fa-tasks"></i>Open Work by Type
+            <span class="badge  badge-pill badge-danger" ngModel="utCount">{{ D_RecentTreasurerCases$ }}</span>
+          </div>
+          <app-open-by-work-type></app-open-by-work-type>
+        </div>
+        <!-- /.card -->
+      </div>
+      <div class="col-lg-4">
+        <div class="card card-default">
+          <div class="card-header">
+            <i class="fa fa-tasks"></i>Transaction Summary
+            <span class="badge  badge-pill badge-danger" ngModel="utCount">{{ D_RecentTreasurerCases$ }}</span>
+          </div>
+          <app-transaction-summary-kpi></app-transaction-summary-kpi>
+        </div>
+        <!-- /.card -->
+      </div>
+      <div class="col-lg-4">
+        <div class="card card-default">
+          <div class="card-header">
+            <i class="fa fa-tasks"></i>Recent Interactions
+            <span class="badge  badge-pill badge-danger" ngModel="utCount">{{ D_RecentTreasurerCases$ }}</span>
+          </div>
+          <app-email-by-category></app-email-by-category>
+          <!-- <app-recent-interactions></app-recent-interactions> -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- <div class="card card-default">
           <div class="card-header"><i class="fa fa-tasks"></i>Mashup</div>
           <div style="min-height: 800px;">
               <app-rci-mashup></app-rci-mashup>
           </div>
         </div> -->
-
-
-        <div class="card card-default" >
-            <div class="card-header"><i class="fa fa-tasks"></i>
-              <span class="card-title">Case List Summary </span>
-            </div>
-            <div class="text-center card-body">
-                Intentionally Blank
-                <!-- <app-transaction-summary></app-transaction-summary> -->
-                <app-caselist></app-caselist>
-              </div>
-          </div>
+    </div>
+    <div class="row">
+      <div class="col">
         <div class="card card-default">
-            <div class="card-header"><i class="fa fa-tasks"></i>
-              <span class="card-title">app-recentTreasurerCaseList</span>
-            </div>
-            <div class="text-center card-body">
-                Intentionally Blank
-              <!-- <app-modal-rci-pega-mashup></app-modal-rci-pega-mashup> -->
-              Purposely hidden for now
-              <app-recentTreasurerCaseList></app-recentTreasurerCaseList>
-                <!-- <app-rci-mashup></app-rci-mashup> -->
-              </div>
+          <div class="card-header">
+            <i class="fa fa-tasks"></i>
+            <span class="card-title">app-recentTreasurerCaseList</span>
           </div>
+          <div class="text-center card-body">
+            Intentionally Blank
+            <!-- <app-modal-rci-pega-mashup></app-modal-rci-pega-mashup> -->
+            Purposely hidden for now
+            <app-recentTreasurerCaseList></app-recentTreasurerCaseList>
+            <!-- <app-rci-mashup></app-rci-mashup> -->
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -88,7 +128,7 @@
             <i class="fa fa-tasks"></i> Unified Task List
             <span class="badge  badge-pill badge-danger" ngModel="utCount">{{ D_RecentTreasurerCases$ }}</span>
           </div>
-Intentionally Blank
+          Intentionally Blank
           <!-- <app-unifiedtask></app-unifiedtask> -->
         </div>
         <!-- /.card -->
@@ -96,3 +136,8 @@ Intentionally Blank
     </div>
   </div>
 </div>
+<!-- <div class="card card-default">
+          <div class="card-header"><i class="fa fa-tasks"></i> Mega Menu</div>
+          <app-mega-menu></app-mega-menu>
+        </div> -->
+<!-- <app-modal-container-work-item></app-modal-container-work-item> -->

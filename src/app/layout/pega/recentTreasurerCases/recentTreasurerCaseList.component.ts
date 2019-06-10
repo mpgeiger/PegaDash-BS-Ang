@@ -80,7 +80,6 @@ export class RecentTreasurerCaseListComponent implements OnInit, AfterViewInit  
 
   ngOnInit() {
     this.dataSource.sort = this.sort;
-    this.sort.disableClear = true;
 
     this.dataSource.paginator = this.paginator;
     if (this.checkIfStubbed()) {

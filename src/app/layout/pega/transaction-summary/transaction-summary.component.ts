@@ -94,16 +94,11 @@ export class TransactionSummaryComponent implements OnInit, AfterViewInit {
       this.getCases();
     }
 
-    // this.dataSource.sort = this.sort;
-    // this.sort.disableClear = true;
-
-    // this.dataSource.paginator = this.paginator;
   }
 
 
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
-    this.sort.disableClear = true;
 
     this.dataSource.paginator = this.paginator;
     // this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);

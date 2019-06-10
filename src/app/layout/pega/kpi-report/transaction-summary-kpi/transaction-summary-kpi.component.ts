@@ -205,7 +205,6 @@ export class TransactionSummaryKpiComponent implements OnInit {
      this.dataSource.sort = this.sort;
     //  this.sort.direction('dsc');
     //  this.sort.active('urgency');
-    //  this.sort.disableClear = true;
     // if (this.checkIfStubbed()) {
     //   console.log('STUBBED D_RelAccountList');
     //   this.getStubbedCases();
@@ -237,8 +236,7 @@ export class TransactionSummaryKpiComponent implements OnInit {
     // this.parseDataForPieChart(this.types);
     // this.parseDataForBarChart(this.types);
     this.pieChartType = 'pie';
-    // this.dataSource.sort = this.sort;
-    // this.sort.disableClear = true;
+
     this.showLoading = false;
     // console.log('count of STUBBED D_RelAccountList-->  ', localStorage.getItem('D_RelAccountList'));
 

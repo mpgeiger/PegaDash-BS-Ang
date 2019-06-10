@@ -27,8 +27,8 @@ export interface ChequeInfo {
 export class RciCheckResultTableComponent implements OnInit {
   componentName = 'rci-check-result-table.component';
 
-  @Input('recName') myRecName:string;
-  @Input('checkAm') myCheckAm:number;
+  @Input('recName') myRecName: string;
+  @Input('checkAm') myCheckAm: number;
 
   message: any;
   subscription: Subscription;
@@ -145,7 +145,6 @@ filterValues = {
     this.dataSource.sort = this.sort;
     this.dataSource.filterPredicate = this.createFilter();
 
-    // this.sort.disableClear = true;
     // this.dataSource.paginator = this.paginator;
     if (this.checkIfStubbed()) {
 

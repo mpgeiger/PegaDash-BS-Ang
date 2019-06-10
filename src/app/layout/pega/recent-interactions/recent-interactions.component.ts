@@ -77,7 +77,6 @@ export class RecentInteractionsComponent implements OnInit {
 
     // console.log('LIVE D_RecentTreasurerCases ngAfterViewInit--> ' + JSON.stringify(this.dataSource.data));
     // this.dataSource.paginator = this.paginator;
-    // this.sort.disableClear = true;
   }
   checkIfStubbed() {
     const useStubStr = localStorage.getItem('useStubbedData');

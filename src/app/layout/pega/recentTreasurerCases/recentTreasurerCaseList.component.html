@@ -9,7 +9,7 @@
 
 <div class="row">
   <div class="col-12">
-    <table class="table" mat-table [dataSource]="dataSource" matSort >
+    <table class="table" mat-table [dataSource]="dataSource" matSort Name matSortActive="pxUpdateDateTime" matSortDirection="desc" matSortDisableClear>
     <!-- <table class="table"  > -->
       <ng-container matColumnDef="pyID">
         <th mat-header-cell *matHeaderCellDef  mat-sort-header> ID </th>

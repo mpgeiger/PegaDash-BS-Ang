@@ -1,65 +1,105 @@
-
 <div fxLayout fxLayoutAlign="center center" class="fields-container">
-  <mat-form-field>
-      <!-- <ng-template #textarea ngProjectAs="[matInput]"> -->
+  <!--   <mat-form-field>
     <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
-    <!-- </ng-template> -->
-  </mat-form-field>
+  </mat-form-field> -->
 </div>
 <div class="row">
   <div class="col-12">
-    <table class="table" mat-table [dataSource]="dataSource"
-    matSort
-    matSortActive="urgency"
-    matSortDirection="desc"
-    matSortDisableClear
-    >
-    <!-- <table class="table"  > -->
+    <table class="table" mat-table [dataSource]="dataSource" matSort matSortActive="urgency" matSortDirection="desc" matSortDisableClear>
+      <!-- <table class="table"  > -->
+      <ng-container matColumnDef="fName">
+        <th mat-header-cell *matHeaderCellDef class="th-filter">
+          <mat-form-field floatLabel="never">
+            <mat-label>Search</mat-label>
+            <input matInput class="form-field" [formControl]="nameFilter" />
+          </mat-form-field>
+        </th>
+        <!-- <td mat-cell *matCellDef="let element" class="td-left">
+          <div>{{ element.name }}</div>
+          <span class="case-details">Updated: {{ element.CreatedDate | date: 'MM/dd/yyyy' }}</span>
+        </td> -->
+      </ng-container>
+
+      <ng-container matColumnDef="fStatus">
+        <th mat-header-cell *matHeaderCellDef class="th-filter">
+          <mat-form-field class="filter" floatLabel="never" [style.text-align]="right">
+            <mat-label>Status</mat-label>
+            <mat-select matNativeControl ng-model="formControl" [formControl]="statusFilter">
+                <mat-option value="" selected>All</mat-option>
+                <mat-option value="new">New</mat-option>
+                <mat-option value="open">Open</mat-option>
+                <mat-option value="pending">Pending</mat-option>
+              </mat-select>
+            <!-- <input matInput [formControl]="statusFilter" /> -->
+          </mat-form-field>
+        </th>
+        <!-- <td mat-cell *matCellDef="let element" class="td-right">{{ element.status }}</td> -->
+      </ng-container>
+
+      <ng-container matColumnDef="fCompletionDate">
+        <th mat-header-cell *matHeaderCellDef class="th-filter"></th>
+        <!-- <td mat-cell *matCellDef="let element" class="td-right">{{ element.CompletionDate | date: 'MM/dd/yyyy' }}</td> -->
+      </ng-container>
+
+      <ng-container matColumnDef="fID" [style.text-align]="right">
+        <th mat-header-cell *matHeaderCellDef style="text-align: right !important;" class="th-filter">
+          <mat-form-field class="filter" floatLabel="never" style="text-align: right !important;">
+            <mat-label>Search</mat-label>
+            <input matInput [formControl]="idFilter" [style.text-align]="right" />
+          </mat-form-field>
+        </th>
+        <!-- <td mat-cell *matCellDef="let element" class="td-right">{{ element.ID | parseIdFromCase }}</td> -->
+      </ng-container> -->
+
+
       <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef  mat-sort-header class="th-left">Name</th>
+        <th mat-header-cell *matHeaderCellDef [style.text-align]="left" mat-sort-header class="th-left">
+          Name
+        </th>
         <td mat-cell *matCellDef="let element" class="td-left">
-          <div>{{element.name}}</div>
-          <span class="case-details">Updated:  {{element.CreatedDate | date:'MM/dd/yyyy'}}</span>
-          <!-- <div>created:  {{element.createTime || amTimeAgo }}</div> -->
-        </td>
-      </ng-container>
-
-      <ng-container matColumnDef="status">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header matSortStart="status" class="th-left">Status</th>
-        <td mat-cell *matCellDef="let element" class="td-left"> {{element.status}} </td>
-      </ng-container>
-
-      <!-- <ng-container matColumnDef="lastUpdateTime">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header matSortStart="lastUpdateTime" class="th-right">Updated</th>
-        <td mat-cell *matCellDef="let element" class="td-right"> {{element.lastUpdateTime | date:'MM/dd/yyyy'}} </td>
-      </ng-container> -->
-
-      <ng-container matColumnDef="CompletionDate">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header matSortStart="desc" class="th-right">Completion by</th>
-        <td mat-cell *matCellDef="let element" class="td-right"> {{element.CompletionDate | date:'MM/dd/yyyy'}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="ID">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header  class="th-right">ID</th>
-        <td mat-cell *matCellDef="let element" class="td-right"> {{element.ID | parseIdFromCase}} </td>
-      </ng-container>
-
-      <!-- <ng-container matColumnDef="urgency">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header class="th-right" >Urgency</th>
-        <td mat-cell *matCellDef="let element" class="td-right">
-            <span [class]='getColor(element.urgency)'>
-                <span *ngIf="element.urgency">{{element.urgency}}</span>
-                <span *ngIf="!element.urgency">No SLA</span>
-            </span>
+            <div>{{ element.name }}</div>
+            <span class="case-details">Updated: {{ element.CreatedDate | date: 'MM/dd/yyyy' }}</span>
+            <!-- <span class="case-details">Updated: {{ element.CreatedDate }}</span> -->
           </td>
-      </ng-container> -->
+      </ng-container>
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef [style.text-align]="left" mat-sort-header class="th-left">
+          Status
+        </th>
+        <td mat-cell *matCellDef="let element" class="td-left"> {{element.status}} </td>
 
+      </ng-container>
+      <ng-container matColumnDef="CompletionDate">
+        <th mat-header-cell *matHeaderCellDef [style.text-align]="right" mat-sort-header matSortStart="desc" class="th-right">
+          Completion Date
+        </th>
+        <td mat-cell *matCellDef="let element" class="td-right"> {{element.CompletionDate | date:'MM/dd/yyyy'}} </td>
+        <!-- <td mat-cell *matCellDef="let element" class="td-right"> {{element.CompletionDate }} </td> -->
+
+      </ng-container>
+      <!-- Header row second group -->
+      <ng-container matColumnDef="ID">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="th-right">
+          ID
+        </th>
+        <td mat-cell *matCellDef="let element" class="td-right"> {{element.ID | parseIdFromCase}} </td>
+
+      </ng-container>
+
+      <!-- <tr mat-header-row *matHeaderRowDef="['fName', 'fStatus', 'fCompletionDate', 'fID']"></tr> -->
+      <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> -->
+      <!-- <tr mat-header-row *matHeaderRowDef="['name', 'status', 'CompletionDate', 'ID']"></!-->
+      -->
+      <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> -->
+      <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr> -->
+
+      <tr mat-header-row *matHeaderRowDef="['fName', 'fStatus', 'fCompletionDate', 'fID']" class="tr-th-filter"></tr>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
+
     <mat-progress-bar mode="buffer" *ngIf="showLoading"></mat-progress-bar>
 
     <mat-paginator [pageSize]="7" [pageSizeOptions]="[2, 5, 10, 20]"></mat-paginator>
-
   </div>
 </div>

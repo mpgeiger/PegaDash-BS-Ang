@@ -79,8 +79,10 @@
               <mat-progress-bar mode="buffer" *ngIf="loggingInLoading"></mat-progress-bar>
 
                 <div class="form-group button-container">
+                    <button mat-raised-button color (click)="doLogin()">Login</button>
+
                   <!-- <a class="btn rounded-btn" (click)="attemptLogin()">{{ 'Log in' | translate }}</a> -->
-                  <a class="btn rounded-btn" type="submit" (keyup.enter)="doLogin()" (click)="doLogin()">{{ 'Log in' | translate }}</a>
+                  <!-- <a class="btn rounded-btn" type="submit" (keyup.enter)="doLogin()" (click)="doLogin()">{{ 'Log in' | translate }}</a> -->
                 </div>
                 <!--
               <ul class="links-list">

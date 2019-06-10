@@ -32,158 +32,223 @@
 }
 
 :host {
-    display: block;
+  display: block;
 }
+
 :body {
-  font-family: Arial,Helvetica,sans-serif !important;
-  color: #262626!important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  color: #262626 !important;
   background-color: #fafafa !important;
 }
+
 .login-page {
-  color: #262626!important;
+  color: #262626 !important;
   background-color: #fafafa !important;
 
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: auto;
-    background: $topnav-background-color;
-    text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  background: $topnav-background-color;
+  text-align: center;
+  // MPG color: #fff;
+  color: $login-page-color;
+  padding: 3em;
+
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 500px white inset;
+  }
+
+
+  .col-lg-4 {
+    padding: 0;
+  }
+
+  .input-lg {
+    height: 46px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 0;
+    // background-color: darken($topnav-background-color, 5%); ;
+  }
+
+  .input-underline {
+    background: 0 0;
+    border: none;
+    box-shadow: none;
+    // MPG border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 2px solid $login-page-border-colors;
     // MPG color: #fff;
     color: $login-page-color;
-    padding: 3em;
-    input:-webkit-autofill {
-      -webkit-box-shadow: 0 0 0 500px white inset;
+    border-radius: 0;
   }
 
-
-    .col-lg-4 {
-        padding: 0;
-    }
-    .input-lg {
-        height: 46px;
-        padding: 10px 16px;
-        font-size: 18px;
-        line-height: 1.3333333;
-        border-radius: 0;
-       // background-color: darken($topnav-background-color, 5%); ;
-    }
-    .input-underline {
-        background: 0 0;
-        border: none;
-        box-shadow: none;
-        // MPG border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-        border-bottom: 2px solid $login-page-border-colors;
-        // MPG color: #fff;
-        color: $login-page-color;
-        border-radius: 0;
-    }
-    .input-underline:focus {
-        // MPG border-bottom: 2px solid #fff;
-        border-bottom: 2px solid $login-page-color;
-        box-shadow: none;
-    }
-    .input-underline:active {
-      // MPG border-bottom: 2px solid #fff;
-      border-bottom: 2px solid $login-page-color;
-      box-shadow: none;
-      background-color: lighten( $login-page-border-colors,50%);
+  .input-underline:focus {
+    // MPG border-bottom: 2px solid #fff;
+    border-bottom: 2px solid $login-page-color;
+    box-shadow: none;
   }
-    // .rounded-btn {
-    //     -webkit-border-radius: 50px;
-    //     border-radius: 50px;
-    //     // MPG color: rgba(255, 255, 255, 0.8);
-    //     color: $login-page-rounded-btn;
-    //     background: $topnav-background-color;
-    //     // MPG border: 2px solid rgba(255, 255, 255, 0.8);
-    //     border: 2px solid  $login-page-border-colors;
-    //     font-size: 18px;
-    //     line-height: 40px;
-    //     padding: 0 25px;
+
+  .input-underline:active {
+    // MPG border-bottom: 2px solid #fff;
+    border-bottom: 2px solid $login-page-color;
+    box-shadow: none;
+    background-color: lighten($login-page-border-colors, 50%);
+  }
+
+  // .rounded-btn {
+  //     -webkit-border-radius: 50px;
+  //     border-radius: 50px;
+  //     // MPG color: rgba(255, 255, 255, 0.8);
+  //     color: $login-page-rounded-btn;
+  //     background: $topnav-background-color;
+  //     // MPG border: 2px solid rgba(255, 255, 255, 0.8);
+  //     border: 2px solid  $login-page-border-colors;
+  //     font-size: 18px;
+  //     line-height: 40px;
+  //     padding: 0 25px;
+  // }
+  .rounded-btn {
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    // MPG color: rgba(255, 255, 255, 0.8);
+    color: $login-page-rounded-btn;
+    // background: $topnav-background-color;
+    background: #fff;
+    // MPG border: 2px solid rgba(255, 255, 255, 0.8);
+    border: 2px solid $login-page-border-colors;
+    font-size: 14px;
+    line-height: 25px;
+    padding: 0 15px;
+
+    // &:hover,
+    // &:focus,
+    // &:active,
+    // &:visited {
+    //   // MPG color: rgba(255, 255, 255, 1);
+    //   // MPG border: 2px solid rgba(255, 255, 255, 1);
+    //   border-radius: 50px;
+    //   color: $login-page-rounded-btn-visited;
+    //   border: 3px solid $login-page-rounded-btn-visited;
+    //   outline: none;
+    //   background-color: lighten($login-page-rounded-btn-visited, 95%)
     // }
-    .rounded-btn {
-      -webkit-border-radius: 50px;
-      border-radius: 50px;
-      // MPG color: rgba(255, 255, 255, 0.8);
-      color: $login-page-rounded-btn;
-      // background: $topnav-background-color;
-      background: #fff;
-      // MPG border: 2px solid rgba(255, 255, 255, 0.8);
-      border: 2px solid  $login-page-border-colors;
-      font-size: 14px;
-      line-height: 25px;
-      padding: 0 15px;
+
   }
-    .rounded-btn:hover,
-    .rounded-btn:focus,
-    .rounded-btn:active,
-    .rounded-btn:visited {
-        // MPG color: rgba(255, 255, 255, 1);
-        // MPG border: 2px solid rgba(255, 255, 255, 1);
-        color: $login-page-rounded-btn-visited;
-        border: 3px solid $login-page-rounded-btn-visited;
-        outline: none;
-        background-color: lighten($login-page-rounded-btn-visited,95%)
+
+  .rounded-btn:hover,
+  .rounded-btn:focus,
+  .rounded-btn:active,
+  .rounded-btn:visited {
+    // MPG color: rgba(255, 255, 255, 1);
+    // MPG border: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 50px;
+    color: green;
+    border: 3px solid $login-page-rounded-btn-visited;
+    outline: none;
+    background-color: lighten($login-page-rounded-btn-visited, 95%)
+  }
+
+  h1 {
+    font-weight: 300;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 36px;
+
+    small {
+      // MPG color: rgba(255, 255, 255, 0.7);
+      color: $login-page-h1;
+    }
+  }
+
+  .form-content:active {
+    // background-color:green !important;
+  }
+
+
+  .form-group {
+    padding: 8px 0;
+
+    input::-webkit-input-placeholder {
+      // MPG color: rgba(255, 255, 255, 0.6) !important;
+      color: $login-page-form-group !important;
     }
 
-    h1 {
-        font-weight: 300;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        font-size: 36px;
-        small {
-            // MPG color: rgba(255, 255, 255, 0.7);
-            color: $login-page-h1;
-        }
-    }
-    .form-content:active{
-      // background-color:green !important;
+    input:-moz-placeholder {
+      /* Firefox 18- */
+      // MPG color: rgba(255, 255, 255, 0.6) !important;
+      color: $login-page-form-group !important;
     }
 
-
-    .form-group {
-        padding: 8px 0;
-        input::-webkit-input-placeholder {
-            // MPG color: rgba(255, 255, 255, 0.6) !important;
-            color: $login-page-form-group !important;
-        }
-
-        input:-moz-placeholder {
-            /* Firefox 18- */
-            // MPG color: rgba(255, 255, 255, 0.6) !important;
-            color: $login-page-form-group !important;
-        }
-
-        input::-moz-placeholder {
-            /* Firefox 19+ */
-             // MPG color: rgba(255, 255, 255, 0.6) !important;
-             color: $login-page-form-group !important;
-        }
-
-        input:-ms-input-placeholder {
-             // MPG color: rgba(255, 255, 255, 0.6) !important;
-             color: $login-page-form-group !important;
-        }
-
-    }
-    .form-content {
-        padding: 40px 0;
-    }
-    .user-avatar {
-        -webkit-border-radius: 50%;
-        border-radius: 50%;
-        // MPG border: 2px solid #fff;
-        border: 2px solid lighten($login-page-color, 80%);
-
+    input::-moz-placeholder {
+      /* Firefox 19+ */
+      // MPG color: rgba(255, 255, 255, 0.6) !important;
+      color: $login-page-form-group !important;
     }
 
-    img {
-      padding: 10px;
+    input:-ms-input-placeholder {
+      // MPG color: rgba(255, 255, 255, 0.6) !important;
+      color: $login-page-form-group !important;
     }
+
+  }
+
+  .form-content {
+    padding: 40px 0;
+  }
+
+  .user-avatar {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    // MPG border: 2px solid #fff;
+    border: 2px solid lighten($login-page-color, 80%);
+
+  }
+
+  img {
+    padding: 10px;
+  }
 
 
 
 
 }
+.login-page .rounded-btn:hover {
+  border-radius: 50px;
+  // color: $login-page-rounded-btn-visited;
+  color: white;
+  border: 3px solid $login-page-rounded-btn-visited;
+  outline: none;
+  // background-color: lighten($login-page-rounded-btn-visited, 95%)
+  background-color: red;
+}
+.login-page .rounded-btn:focus {
+  border-radius: 50px;
+  // color: $login-page-rounded-btn-visited;
+  color: white;
+  border: 3px solid $login-page-rounded-btn-visited;
+  outline: none;
+  // background-color: lighten($login-page-rounded-btn-visited, 95%)
+  background-color: green;
+}
+.login-page .rounded-btn:active {
+  border-radius: 50px;
+  // color: $login-page-rounded-btn-visited;
+  color: white;
+  border: 3px solid $login-page-rounded-btn-visited;
+  outline: none;
+  // background-color: lighten($login-page-rounded-btn-visited, 95%)
+  background-color: blue;
+}
+// .rounded-btn:active {
+//   // MPG color: rgba(255, 255, 255, 1);
+//   // MPG border: 2px solid rgba(255, 255, 255, 1);
+//   border-radius: 50px;
+//   color: $login-page-rounded-btn-visited;
+//   border: 3px solid $login-page-rounded-btn-visited;
+//   outline: none;
+//   background-color: lighten($login-page-rounded-btn-visited, 95%)
+// }

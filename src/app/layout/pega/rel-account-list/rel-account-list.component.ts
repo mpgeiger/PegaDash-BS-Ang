@@ -102,7 +102,6 @@ export class RelAccountListComponent implements OnInit {
     // this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
     // this.sortedData = this.cases.slice();
     this.dataSource.sort = this.sort;
-    // this.sort.disableClear = true;
     this.dataSource.paginator = this.paginator;
 
   }
@@ -112,6 +111,8 @@ export class RelAccountListComponent implements OnInit {
     let useStub = false;
     // useStub = true;
     useStub = (useStubStr === 'true');
+
+    useStub = true;
     return useStub;
   }
   getStubbedCases() {

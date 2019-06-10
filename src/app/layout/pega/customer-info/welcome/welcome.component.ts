@@ -1,7 +1,7 @@
 // import { RelAccountListComponent } from './../../rel-account-list/rel-account-list.component';
 // import { StatComponent } from './../../../../shared/modules/stat/stat.component';
 import { Component, OnInit, Input, OnDestroy, OnChanges, AfterViewInit, SimpleChanges, ChangeDetectionStrategy, ChangeDetectorRef, SimpleChange } from '@angular/core';
-import { Subscription, Observable } from 'rxjs';
+import { Subscription } from 'rxjs';
 // import { RelAccountListComponent } from '@ss/app/shared-pega/shared-pega.module';
 import { StatComponent } from './../../../../shared/modules/stat/stat.component';
 import { AccountListService } from '@ss/app/layout/pega/_services/index';
@@ -42,16 +42,31 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy  {
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer
   ) {
-    this.subscription = this.as.getMessage().subscribe(message => {
+
+    this.subscriptionDisplayName = this.as.getUserDisplayName().subscribe( message => {
       if (message) {
         this.messages.push(message);
-        console.log(this.componentName + ' GETTING message-->' + JSON.stringify(message));
 
+        this.userInfo = message;
+
+        console.log(this.componentName + ' getUserDisplayName _displayName -->' + JSON.stringify(this.userInfo));
       } else {
         // clear messages when empty message received
         this.messages = [];
       }
     });
+
+
+    // this.subscription = this.as.getMessage().subscribe(message => {
+    //   if (message) {
+    //     this.messages.push(message);
+    //     console.log(this.componentName + ' GETTING message-->' + JSON.stringify(message));
+
+    //   } else {
+    //     // clear messages when empty message received
+    //     this.messages = [];
+    //   }
+    // });
     this.subscription = this.as.getAccountList().subscribe(message => {
       if (message) {
         this.messages.push(message);
@@ -85,8 +100,8 @@ this.showLoading = false;
 
   }
 
- displayUserName = '';
-mpgTest = {};
+//  displayUserName = '';
+// mpgTest = {};
 
 
   ngOnInit() {
@@ -98,18 +113,6 @@ mpgTest = {};
   }
   ngAfterViewInit(): void {
 
-    this.subscriptionDisplayName = this.as.getUserDisplayName().subscribe( message => {
-      if (message) {
-        this.messages.push(message);
-
-        this.userInfo = message;
-
-        console.log(this.componentName + ' GETTING ACCOUNT SUMMARY _displayName -->' + JSON.stringify(this.userInfo));
-      } else {
-        // clear messages when empty message received
-        this.messages = [];
-      }
-    });
 
   }
 

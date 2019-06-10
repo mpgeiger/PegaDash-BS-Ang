@@ -103,9 +103,10 @@
 
       &:hover {
         // MPG color: #fff;
-        color: darken($topnav-item-color, 80%);
+        color: darken($topnav-item-color, 10%);
+        // color: white;
         // color: #000;
-        background: darken($topnav-background-color, 5%);
+        background: lighten($topnav-background-color, 5%);
       }
     }
 

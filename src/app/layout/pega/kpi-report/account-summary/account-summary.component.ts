@@ -148,7 +148,6 @@ export class AccountSummaryComponent implements OnInit {
   ngAfterViewInit() {
 
     // this.dataSource.sort = this.sort;
-    // this.sort.disableClear = true;
     // if (this.checkIfStubbed()) {
     //   console.log('STUBBED D_RelAccountList');
     //   this.getStubbedCases();

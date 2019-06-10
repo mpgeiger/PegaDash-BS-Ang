@@ -16,9 +16,9 @@ export class LayoutComponent implements OnInit {
   constructor() { }
   nameLayout = new FormControl('');
   ngOnInit() {
-    console.log(this.componentName + ' LS --> userName -->' + localStorage.getItem('userName'));
-    console.log(this.componentName + ' LS --> displayUserName -->' + localStorage.getItem('displayUserName'));
-    console.log(this.componentName + ' LS -- lastAccess-->' + localStorage.getItem('lastAccess'));
+   // console.log(this.componentName + ' LS --> userName -->' + localStorage.getItem('userName'));
+   // console.log(this.componentName + ' LS --> displayUserName -->' + localStorage.getItem('displayUserName'));
+   // console.log(this.componentName + ' LS -- lastAccess-->' + localStorage.getItem('lastAccess'));
 
   }
 

@@ -187,6 +187,7 @@ itemTextValue: string;
     const useStubStr = localStorage.getItem('useStubbedData');
     let useStub = false;
     useStub = (useStubStr === 'true');
+    useStub = true;
     return useStub;
   }
 

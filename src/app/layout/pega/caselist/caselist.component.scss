@@ -9,11 +9,22 @@
 .th-right {
   direction: rtl;
 }
+
 .th-center {
   justify-content: center;
   .mat-sort-header-container {
     justify-content: center;
   }
+}
+.th-filter {
+  border: none;
+}
+.tr-th-filter {
+  border-top: none;
+  border-bottom: none;
+  background-color: $gray-200;
+  border-radius: 8px;
+
 }
 
 .td-left {

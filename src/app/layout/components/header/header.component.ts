@@ -1,16 +1,20 @@
 import { MegaMenuComponent } from './../../pega/mega-menu/mega-menu.component';
 import { Component, OnInit, ViewEncapsulation, AfterViewInit, Input } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { CaseService, } from '../../../_services/case.service';
 import { OpenNewCaseService } from '../../../_messages/opennewcase.service';
 import stubbedResults from '@ss/json/CaseTypes.json';
 import { LoginComponent } from '../../../login/login.component';
+
 // import { ModalRCIPegaComponent } from '@ss/app/layout/pega/modal-container/modal-container.component';
 import { stringToKeyValue } from '@angular/flex-layout/extended/typings/style/style-transforms';
 // import { MegaMenuComponent } from '../../pega/mega-menu/mega-menu.component';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { DialogDialog } from '../mega-menu-modal/mega-menu-modal.component';
+import { AccountListService } from '@ss/app/layout/pega/_services/index';
+
 @Component({
     providers: [LoginComponent],
     selector: 'app-header',
@@ -22,7 +26,13 @@ import { DialogDialog } from '../mega-menu-modal/mega-menu-modal.component';
 export class HeaderComponent implements OnInit, AfterViewInit {
   componentName = 'header.component';
   pegaService = 'NA';
-  @Input() displayUserName: string;
+
+  // subscription: Subscription;
+  subscriptionDisplayName: Subscription;
+  messages: any[] = [];
+  userInfo = {};
+
+  // @Input() displayUserName: string;
 
     public pushRightClass: string;
     cases: any = [];
@@ -39,6 +49,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
       , private oncservice: OpenNewCaseService
       , private loginservice: LoginComponent
       , public dialog: MatDialog
+      , private as: AccountListService
+
       // , private megaMenu: ModalRCIPegaComponent
 
 
@@ -46,15 +58,30 @@ export class HeaderComponent implements OnInit, AfterViewInit {
       ) {
 
 
-        this.router.events.subscribe(val => {
-            if (
-                val instanceof NavigationEnd &&
-                window.innerWidth <= 4992 &&
-                this.isToggled()
-            ) {
-                // this.toggleSidebar();
-            }
+        // this.router.events.subscribe(val => {
+        //     if (
+        //         val instanceof NavigationEnd &&
+        //         window.innerWidth <= 4992 &&
+        //         this.isToggled()
+        //     ) {
+        //         // this.toggleSidebar();
+        //     }
+        // });
+        this.subscriptionDisplayName = this.as.getUserDisplayName().subscribe( message => {
+          if (message) {
+            this.messages.push(message);
+
+            this.userInfo = message;
+
+            console.log(this.componentName + ' getUserDisplayName _displayName -->' + JSON.stringify(this.userInfo));
+          } else {
+            // clear messages when empty message received
+            this.messages = [];
+          }
         });
+        //this.loginservice.loginLoadingStop();
+
+
     }
 
     openDialog(): void {
@@ -94,8 +121,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
         // }
 
     }
-    ngAfterViewInit() {
-      this.loginservice.loginLoadingStop();
+    ngAfterViewInit(): void {
+
     }
 
 checkIfStubbed() {

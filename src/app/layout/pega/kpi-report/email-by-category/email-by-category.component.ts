@@ -145,8 +145,6 @@ export class EmailByCategoryComponent implements OnInit {
   ngOnInit() {
     this.showLoading = true;
     this.dataSource.sort = this.sort;
-    this.sort.disableClear = true;
-
   }
 
   ngAfterViewInit() {

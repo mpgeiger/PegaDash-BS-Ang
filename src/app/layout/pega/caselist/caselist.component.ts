@@ -11,9 +11,11 @@ import { CaseService } from '../../../_services/case.service';
 import { PagerService } from '../../../_services/pager.service';
 import { SharedPegaDataService } from '../_services/sharedpegadata.service';
 import { Sort } from '@angular/material';
+import { FormControl } from '@angular/forms';
 // import * as moment from 'moment';
 import {MatTableDataSource, MatPaginator, MatSort} from '@angular/material';
 import stubbedResults from '@ss/json/D_MPG_OpenCaseList.json';
+import { filter } from 'rxjs/operators';
 
 
 export interface Cases {
@@ -23,7 +25,8 @@ export interface Cases {
   stage: string;
   status: string;
   createdBy: string;
-  createTime: string;
+  CreatedDate: Date;
+  CompletionDate: Date;
   // lastUpdatedBy: string;
   pxObjClass: string;
   urgency: string;
@@ -37,23 +40,32 @@ export interface Cases {
   styleUrls: ['./caselist.component.scss']
 })
 export class CaselistComponent implements OnInit, AfterViewInit  {
-  componentName = 'caselist.component';
+
 
   message: any;
   subscription: Subscription;
   showLoading = true;
 
-  // cases: Array<any> = [];
-  // displayedColumns = ['pxRefObjectInsName', 'pyAssignmentStatus', 'pyLabel', 'pxUrgencyAssign'];
-  // displayedColumns = ['ID', 'name', 'createTime', 'stage', 'status', 'createdBy'];
   displayedColumns = ['name', 'status', 'CompletionDate', 'ID'];
-  // displayedColumns = ['name', 'status', 'lastUpdateTime', 'ID', 'urgency'];
+
   public dataSource = new MatTableDataSource<Cases>();
   sortedData: Cases[] = [];
   cases: Cases[] = [];
   headers: any;
   @Input() lpp: number;
   public pageSize = 5;
+
+  nameFilter = new FormControl('');
+  statusFilter = new FormControl('');
+  completionDateFilter = new FormControl('');
+  idFilter = new FormControl('');
+  // columnsToDisplay = ['name', 'status', 'favouriteColour', 'pet'];
+  filterValues = {
+    fName: '',
+    fStatus: '',
+    CompletionDate: '',
+    fID: ''
+  };
 
 @ViewChild(MatPaginator) paginator: MatPaginator;
 @ViewChild(MatSort) sort: MatSort;
@@ -67,11 +79,39 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
     private pagerService: PagerService,
     public _pegaDataService: SharedPegaDataService
   ) {
+
     // this.getCases();
     // this.sortedData = this.cases.slice();
   }
-
+  componentName = 'caselist.component';
   ngOnInit() {
+    this.getStubbedCases();
+    // this.nameFilter.valueChanges.subscribe(name => {
+    //       this.filterValues.name = name;
+    //       this.dataSource.filter = JSON.stringify(this.filterValues);
+    //     }
+    //   );
+
+      this.nameFilter.valueChanges.subscribe((nameFilterValue) => {
+        this.filterValues['fName'] = nameFilterValue;
+        this.dataSource.filter = JSON.stringify(this.filterValues);
+      });
+
+    // this.completionDateFilter.valueChanges
+    //   .subscribe(
+    //     CompletionDate => {
+    //       this.filterValues.CompletionDate = CompletionDate;
+    //       this.dataSource.filter = JSON.stringify(this.filterValues);
+    //     }
+    //   );
+    this.statusFilter.valueChanges.subscribe((statusFilterValue) => {
+      this.filterValues['fStatus'] = statusFilterValue;
+      this.dataSource.filter = JSON.stringify(this.filterValues);
+    });
+    this.idFilter.valueChanges.subscribe((idFilterValue) => {
+      this.filterValues['fID'] = idFilterValue;
+      this.dataSource.filter = JSON.stringify(this.filterValues);
+    });
 
     console.log(' LPP -->' + this.lpp);
     if (this.lpp === null || typeof this.lpp === 'undefined') {
@@ -79,10 +119,32 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
    } else {
      this.pageSize = this.lpp;
     }
-    // this.sortData();
+    this.dataSource.data = this.cases;
+    this.dataSource.filterPredicate = this.createFilter();
+    //  this.sortData();
     // this.dataSource = this.cases;
    // this.ngAfterViewInit();
   }
+  createFilter(): (data: any, filter: string) => boolean {
+
+    const filterFunction = function(data, filter): boolean {
+      console.log(' filterString -->' + filter);
+      const searchTerms = JSON.parse(filter);
+      // console.log(' name -->' + filter.['fName']);
+      // filter.fName = toLowerCase(filter.fName);
+      searchTerms.fName = searchTerms.fName.toLowerCase();
+      searchTerms.fID = searchTerms.fID.toLowerCase();
+      console.log('PARSED filterString -->' + JSON.stringify(searchTerms));
+      // console.log(this.componentName + ' filterData -->' + JSON.stringify(data));
+      return data.name.toLowerCase().indexOf(searchTerms.fName) !== -1
+        // // && data.CompletionDate.toString().toLowerCase().indexOf(searchTerms.CompletionDate) !== -1
+        && data.status.toLowerCase().indexOf(searchTerms.fStatus) !== -1
+        && data.ID.toLowerCase().indexOf(searchTerms.fID) !== -1
+        ;
+    };
+    return filterFunction;
+  }
+
 
   ngAfterViewInit(): void {
    // this.dataSource.sort = this.sort;
@@ -92,7 +154,7 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
    // this.sortedData = this.cases.slice();
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-    this.getStubbedCases();
+    // this.getStubbedCases();
   }
 
   getCases() {
@@ -138,7 +200,7 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
 
 
     this.cases = this.cases.filter((item: any) => {
-      const sDate = new Date(item.createTime);
+      const sDate = new Date(item.CreatedDate);
       let test = false;
 
 

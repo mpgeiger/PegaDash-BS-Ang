@@ -2,7 +2,7 @@
   "pxObjClass": "Pega-API-CaseManagement",
   "cases":[
     {
-      "CreatedDate": "2019-06-12T00:00:00.000Z",
+      "CreatedDate": "06-09-2019",
       "createTime": "#NUM!",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1247",
       "lastUpdatedBy": "Stella Turner",
@@ -11,10 +11,10 @@
       "status": "Open",
       "stage": "#NAME?",
       "urgency": 20,
-      "CompletionDate": "2019-06-13T00:00:00.000Z"
+      "CompletionDate": "06-10-2019"
     },
     {
-      "CreatedDate": "2019-06-12T00:00:00.000Z",
+      "CreatedDate": "06-08-2019",
       "createTime": "#NUM!",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1248",
       "lastUpdatedBy": "Stella Turner",
@@ -23,10 +23,10 @@
       "status": "Open",
       "stage": "",
       "urgency": 20,
-      "CompletionDate": "2019-06-13T00:00:00.000Z"
+      "CompletionDate": "06-09-2019"
     },
     {
-      "CreatedDate": "2019-06-12T00:00:00.000Z",
+      "CreatedDate": "06-12-2019",
       "createTime": "#NUM!",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1254",
       "lastUpdatedBy": "Stella Turner",
@@ -35,10 +35,10 @@
       "status": "Open",
       "stage": "",
       "urgency": 20,
-      "CompletionDate": "2019-06-13T00:00:00.000Z"
+      "CompletionDate": "06-13-2019"
     },
     {
-      "CreatedDate": "2019-06-11T00:00:00.000Z",
+      "CreatedDate": "06-10-2019",
       "createTime": "#NUM!",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1282",
       "lastUpdatedBy": "Stella Turner",
@@ -47,10 +47,10 @@
       "status": "Open",
       "stage": "",
       "urgency": 20,
-      "CompletionDate": "2019-06-12T00:00:00.000Z"
+      "CompletionDate": "06-11-2019"
     },
     {
-      "CreatedDate": "2019-06-08T00:00:00.000Z",
+      "CreatedDate": "06-10-2019",
       "createTime": "#NUM!",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1288",
       "lastUpdatedBy": "Stella Turner",
@@ -59,10 +59,10 @@
       "status": "Open",
       "stage": "",
       "urgency": 20,
-      "CompletionDate": "2019-06-09T00:00:00.000Z"
+      "CompletionDate": "06-11-2019"
     },
     {
-      "CreatedDate": "2019-06-07T00:00:00.000Z",
+      "CreatedDate": "06-09-2019",
       "createTime": "#NUM!",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1290",
       "lastUpdatedBy": "Stella Turner",
@@ -71,11 +71,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 20,
-      "CompletionDate": "2019-06-08T00:00:00.000Z"
+      "CompletionDate": "06-10-2019"
     },
     {
-      "CreatedDate": "2019-06-07T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-12-2019",
+      "createTime": "2019-06-03T15:44:22.292Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-3140",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-06-03T15:47:12.037Z",
@@ -83,11 +83,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-08T00:00:00.000Z"
+      "CompletionDate": "06-13-2019"
     },
     {
-      "CreatedDate": "2019-06-10T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-08-2019",
+      "createTime": "2019-06-03T16:46:40.084Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-3158",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-06-03T16:49:14.672Z",
@@ -95,11 +95,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-11T00:00:00.000Z"
+      "CompletionDate": "06-09-2019"
     },
     {
-      "CreatedDate": "2019-06-09T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-08-2019",
+      "createTime": "2019-06-03T16:47:27.104Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-3160",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-06-03T16:50:14.785Z",
@@ -107,11 +107,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-10T00:00:00.000Z"
+      "CompletionDate": "06-09-2019"
     },
     {
-      "CreatedDate": "2019-06-07T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-12-2019",
+      "createTime": "2019-06-03T17:01:28.644Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-3161",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-06-03T17:04:15.110Z",
@@ -119,11 +119,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-08T00:00:00.000Z"
+      "CompletionDate": "06-13-2019"
     },
     {
-      "CreatedDate": "2019-06-07T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-08-2019",
+      "createTime": "2019-06-04T00:39:23.022Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-3248",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-06-04T00:42:09.691Z",
@@ -131,11 +131,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-08T00:00:00.000Z"
+      "CompletionDate": "06-09-2019"
     },
     {
-      "CreatedDate": "2019-06-07T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-09-2019",
+      "createTime": "2019-06-04T00:52:39.924Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-3258",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-06-04T00:55:40.684Z",
@@ -143,11 +143,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-08T00:00:00.000Z"
+      "CompletionDate": "06-10-2019"
     },
     {
-      "CreatedDate": "2019-06-11T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-11-2019",
+      "createTime": "2019-06-04T01:05:06.637Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-3268",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-06-04T01:07:41.712Z",
@@ -155,11 +155,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-12T00:00:00.000Z"
+      "CompletionDate": "06-12-2019"
     },
     {
-      "CreatedDate": "2019-06-08T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-08-2019",
+      "createTime": "2019-06-04T01:07:47.290Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-3275",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-06-04T01:10:42.230Z",
@@ -167,11 +167,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-09T00:00:00.000Z"
+      "CompletionDate": "06-09-2019"
     },
     {
-      "CreatedDate": "2019-06-09T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-10-2019",
+      "createTime": "2019-06-04T01:13:41.024Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-3286",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-06-04T01:16:13.189Z",
@@ -179,11 +179,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-10T00:00:00.000Z"
+      "CompletionDate": "06-11-2019"
     },
     {
-      "CreatedDate": "2019-06-08T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-09-2019",
+      "createTime": "2019-06-04T01:20:07.093Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-3293",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-06-04T01:22:43.809Z",
@@ -191,10 +191,10 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-09T00:00:00.000Z"
+      "CompletionDate": "06-10-2019"
     },
     {
-      "CreatedDate": "2019-06-07T00:00:00.000Z",
+      "CreatedDate": "06-11-2019",
       "createTime": "#NUM!",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1253",
       "lastUpdatedBy": "Stella Turner",
@@ -203,10 +203,10 @@
       "status": "Open",
       "stage": "",
       "urgency": 20,
-      "CompletionDate": "2019-06-08T00:00:00.000Z"
+      "CompletionDate": "06-12-2019"
     },
     {
-      "CreatedDate": "2019-06-09T00:00:00.000Z",
+      "CreatedDate": "06-08-2019",
       "createTime": "#NUM!",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1285",
       "lastUpdatedBy": "Stella Turner",
@@ -215,10 +215,10 @@
       "status": "Open",
       "stage": "",
       "urgency": 20,
-      "CompletionDate": "2019-06-10T00:00:00.000Z"
+      "CompletionDate": "06-09-2019"
     },
     {
-      "CreatedDate": "2019-06-08T00:00:00.000Z",
+      "CreatedDate": "06-09-2019",
       "createTime": "#NUM!",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1286",
       "lastUpdatedBy": "Stella Turner",
@@ -227,11 +227,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 20,
-      "CompletionDate": "2019-06-09T00:00:00.000Z"
+      "CompletionDate": "06-10-2019"
     },
     {
-      "CreatedDate": "2019-06-12T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-07-2019",
+      "createTime": "2019-05-03T20:10:31.913Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1302",
       "lastUpdatedBy": "Stella Turner",
       "lastUpdateTime": "2019-05-03T20:10:37.964Z",
@@ -239,10 +239,10 @@
       "status": "Open",
       "stage": "",
       "urgency": 20,
-      "CompletionDate": "2019-06-13T00:00:00.000Z"
+      "CompletionDate": "06-08-2019"
     },
     {
-      "CreatedDate": "2019-06-09T00:00:00.000Z",
+      "CreatedDate": "06-11-2019",
       "createTime": "#NUM!",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1278",
       "lastUpdatedBy": "Stella Turner",
@@ -251,11 +251,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 20,
-      "CompletionDate": "2019-06-10T00:00:00.000Z"
+      "CompletionDate": "06-12-2019"
     },
     {
-      "CreatedDate": "2019-06-11T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-09-2019",
+      "createTime": "2019-05-29T15:17:50.494Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-2531",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-29T15:20:51.694Z",
@@ -263,11 +263,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-12T00:00:00.000Z"
+      "CompletionDate": "06-10-2019"
     },
     {
-      "CreatedDate": "2019-06-08T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-11-2019",
+      "createTime": "2019-05-29T15:41:46.882Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-2547",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-29T15:44:23.094Z",
@@ -275,11 +275,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-09T00:00:00.000Z"
+      "CompletionDate": "06-12-2019"
     },
     {
-      "CreatedDate": "2019-06-09T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-08-2019",
+      "createTime": "2019-05-29T21:02:46.598Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-2579",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-29T21:05:23.139Z",
@@ -287,11 +287,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-10T00:00:00.000Z"
+      "CompletionDate": "06-09-2019"
     },
     {
-      "CreatedDate": "2019-06-12T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-09-2019",
+      "createTime": "2019-05-29T21:04:13.894Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-2581",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-29T21:06:53.365Z",
@@ -299,11 +299,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-13T00:00:00.000Z"
+      "CompletionDate": "06-10-2019"
     },
     {
-      "CreatedDate": "2019-06-10T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-07-2019",
+      "createTime": "2019-05-30T14:23:54.788Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-2684",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-30T14:26:45.548Z",
@@ -311,11 +311,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-11T00:00:00.000Z"
+      "CompletionDate": "06-08-2019"
     },
     {
-      "CreatedDate": "2019-06-08T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-12-2019",
+      "createTime": "2019-05-30T14:43:17.492Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-2692",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-30T14:46:17.271Z",
@@ -323,11 +323,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-09T00:00:00.000Z"
+      "CompletionDate": "06-13-2019"
     },
     {
-      "CreatedDate": "2019-06-08T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-10-2019",
+      "createTime": "2019-05-30T16:09:27.299Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-2708",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-30T16:12:21.778Z",
@@ -335,11 +335,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-09T00:00:00.000Z"
+      "CompletionDate": "06-11-2019"
     },
     {
-      "CreatedDate": "2019-06-10T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-11-2019",
+      "createTime": "2019-05-30T19:13:39.962Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-2722",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-30T19:16:26.830Z",
@@ -347,11 +347,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-11T00:00:00.000Z"
+      "CompletionDate": "06-12-2019"
     },
     {
-      "CreatedDate": "2019-06-10T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-12-2019",
+      "createTime": "2019-05-30T19:13:41.316Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-2723",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-30T19:16:26.853Z",
@@ -359,11 +359,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-11T00:00:00.000Z"
+      "CompletionDate": "06-13-2019"
     },
     {
-      "CreatedDate": "2019-06-08T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-12-2019",
+      "createTime": "2019-05-30T19:33:42.642Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-2732",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-30T19:36:28.363Z",
@@ -371,11 +371,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-09T00:00:00.000Z"
+      "CompletionDate": "06-13-2019"
     },
     {
-      "CreatedDate": "2019-06-08T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-10-2019",
+      "createTime": "2019-05-30T20:11:28.387Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-2771",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-30T20:14:03.379Z",
@@ -383,11 +383,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-09T00:00:00.000Z"
+      "CompletionDate": "06-11-2019"
     },
     {
-      "CreatedDate": "2019-06-11T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-10-2019",
+      "createTime": "2019-05-30T20:12:00.389Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-2772",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-30T20:15:03.618Z",
@@ -395,11 +395,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-12T00:00:00.000Z"
+      "CompletionDate": "06-11-2019"
     },
     {
-      "CreatedDate": "2019-06-08T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-12-2019",
+      "createTime": "2019-05-30T20:19:55.471Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-2791",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-30T20:22:35.346Z",
@@ -407,11 +407,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-09T00:00:00.000Z"
+      "CompletionDate": "06-13-2019"
     },
     {
-      "CreatedDate": "2019-06-07T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-09-2019",
+      "createTime": "2019-05-30T20:24:20.584Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-2799",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-30T20:27:06.475Z",
@@ -419,11 +419,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-08T00:00:00.000Z"
+      "CompletionDate": "06-10-2019"
     },
     {
-      "CreatedDate": "2019-06-10T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-10-2019",
+      "createTime": "2019-05-30T20:43:12.367Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-2810",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-30T20:46:09.212Z",
@@ -431,11 +431,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-11T00:00:00.000Z"
+      "CompletionDate": "06-11-2019"
     },
     {
-      "CreatedDate": "2019-06-11T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-08-2019",
+      "createTime": "2019-05-30T20:47:21.946Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-2815",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-30T20:50:09.767Z",
@@ -443,11 +443,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-12T00:00:00.000Z"
+      "CompletionDate": "06-09-2019"
     },
     {
-      "CreatedDate": "2019-06-07T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-08-2019",
+      "createTime": "2019-05-03T21:10:02.428Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1355",
       "lastUpdatedBy": "Stella Turner",
       "lastUpdateTime": "2019-05-03T21:10:06.714Z",
@@ -455,11 +455,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 20,
-      "CompletionDate": "2019-06-08T00:00:00.000Z"
+      "CompletionDate": "06-09-2019"
     },
     {
-      "CreatedDate": "2019-06-12T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-10-2019",
+      "createTime": "2019-05-03T21:22:29.779Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1359",
       "lastUpdatedBy": "Stella Turner",
       "lastUpdateTime": "2019-05-03T21:22:35.285Z",
@@ -467,11 +467,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 20,
-      "CompletionDate": "2019-06-13T00:00:00.000Z"
+      "CompletionDate": "06-11-2019"
     },
     {
-      "CreatedDate": "2019-06-12T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-09-2019",
+      "createTime": "2019-05-06T13:15:55.473Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1396",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-06T13:18:42.604Z",
@@ -479,11 +479,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 50,
-      "CompletionDate": "2019-06-13T00:00:00.000Z"
+      "CompletionDate": "06-10-2019"
     },
     {
-      "CreatedDate": "2019-06-09T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-09-2019",
+      "createTime": "2019-05-03T20:15:02.021Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1312",
       "lastUpdatedBy": "Stella Turner",
       "lastUpdateTime": "2019-05-03T20:15:05.826Z",
@@ -491,11 +491,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 20,
-      "CompletionDate": "2019-06-10T00:00:00.000Z"
+      "CompletionDate": "06-10-2019"
     },
     {
-      "CreatedDate": "2019-06-07T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-09-2019",
+      "createTime": "2019-05-03T20:17:56.790Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1314",
       "lastUpdatedBy": "Stella Turner",
       "lastUpdateTime": "2019-05-03T20:18:00.976Z",
@@ -503,11 +503,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 20,
-      "CompletionDate": "2019-06-08T00:00:00.000Z"
+      "CompletionDate": "06-10-2019"
     },
     {
-      "CreatedDate": "2019-06-10T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-09-2019",
+      "createTime": "2019-05-03T20:56:15.558Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1333",
       "lastUpdatedBy": "Stella Turner",
       "lastUpdateTime": "2019-05-03T20:56:18.379Z",
@@ -515,11 +515,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 20,
-      "CompletionDate": "2019-06-11T00:00:00.000Z"
+      "CompletionDate": "06-10-2019"
     },
     {
-      "CreatedDate": "2019-06-11T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-07-2019",
+      "createTime": "2019-05-03T21:09:01.152Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1346",
       "lastUpdatedBy": "Stella Turner",
       "lastUpdateTime": "2019-05-03T21:09:03.830Z",
@@ -527,11 +527,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 20,
-      "CompletionDate": "2019-06-12T00:00:00.000Z"
+      "CompletionDate": "06-08-2019"
     },
     {
-      "CreatedDate": "2019-06-07T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-07-2019",
+      "createTime": "2019-05-03T21:09:05.031Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1347",
       "lastUpdatedBy": "Stella Turner",
       "lastUpdateTime": "2019-05-03T21:09:09.121Z",
@@ -539,11 +539,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 20,
-      "CompletionDate": "2019-06-08T00:00:00.000Z"
+      "CompletionDate": "06-08-2019"
     },
     {
-      "CreatedDate": "2019-06-07T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-07-2019",
+      "createTime": "2019-05-03T21:09:52.789Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1354",
       "lastUpdatedBy": "Stella Turner",
       "lastUpdateTime": "2019-05-03T21:10:00.909Z",
@@ -551,11 +551,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 20,
-      "CompletionDate": "2019-06-08T00:00:00.000Z"
+      "CompletionDate": "06-08-2019"
     },
     {
-      "CreatedDate": "2019-06-08T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-09-2019",
+      "createTime": "2019-05-03T21:22:09.083Z",
       "ID": "PEGACPMFS-WORK-INTERACTION I-1356",
       "lastUpdatedBy": "Stella Turner",
       "lastUpdateTime": "2019-05-03T21:22:14.996Z",
@@ -563,11 +563,11 @@
       "status": "Open",
       "stage": "",
       "urgency": 20,
-      "CompletionDate": "2019-06-09T00:00:00.000Z"
+      "CompletionDate": "06-10-2019"
     },
     {
-      "CreatedDate": "2019-06-10T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-11-2019",
+      "createTime": "2019-04-30T15:51:40.267Z",
       "ID": "PEGACPMFS-WORK B-20",
       "lastUpdatedBy": "Stella Turner",
       "lastUpdateTime": "2019-04-30T15:51:40.310Z",
@@ -575,11 +575,11 @@
       "status": "New",
       "stage": "Cash Balance",
       "urgency": 10,
-      "CompletionDate": "2019-06-11T00:00:00.000Z"
+      "CompletionDate": "06-12-2019"
     },
     {
-      "CreatedDate": "2019-06-12T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-11-2019",
+      "createTime": "2019-05-13T20:08:59.993Z",
       "ID": "PEGACPMFS-WORK B-21",
       "lastUpdatedBy": "Stella Turner",
       "lastUpdateTime": "2019-05-13T20:09:00.178Z",
@@ -587,11 +587,11 @@
       "status": "New",
       "stage": "Cash Balance",
       "urgency": 10,
-      "CompletionDate": "2019-06-13T00:00:00.000Z"
+      "CompletionDate": "06-12-2019"
     },
     {
-      "CreatedDate": "2019-06-07T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-09-2019",
+      "createTime": "2019-04-30T16:50:10.556Z",
       "ID": "PEGACPMFS-WORK S-1580",
       "lastUpdatedBy": "Stella Turner",
       "lastUpdateTime": "2019-04-30T16:50:10.574Z",
@@ -599,11 +599,11 @@
       "status": "New",
       "stage": "",
       "urgency": null,
-      "CompletionDate": "2019-06-08T00:00:00.000Z"
+      "CompletionDate": "06-10-2019"
     },
     {
-      "CreatedDate": "2019-06-07T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-10-2019",
+      "createTime": "2019-05-03T11:39:37.630Z",
       "ID": "PEGACPMFS-WORK S-1640",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-03T11:59:44.303Z",
@@ -611,11 +611,11 @@
       "status": "Open",
       "stage": "Collect",
       "urgency": 100,
-      "CompletionDate": "2019-06-08T00:00:00.000Z"
+      "CompletionDate": "06-11-2019"
     },
     {
-      "CreatedDate": "2019-06-07T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-11-2019",
+      "createTime": "2019-05-07T21:40:20.442Z",
       "ID": "PEGACPMFS-WORK S-1658",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-07T22:25:29.712Z",
@@ -623,11 +623,11 @@
       "status": "Open",
       "stage": "Collect",
       "urgency": 100,
-      "CompletionDate": "2019-06-08T00:00:00.000Z"
+      "CompletionDate": "06-12-2019"
     },
     {
-      "CreatedDate": "2019-06-08T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-08-2019",
+      "createTime": "2019-05-07T21:41:41.973Z",
       "ID": "PEGACPMFS-WORK S-1659",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-07T22:01:58.032Z",
@@ -635,11 +635,11 @@
       "status": "Open",
       "stage": "Collect",
       "urgency": 100,
-      "CompletionDate": "2019-06-09T00:00:00.000Z"
+      "CompletionDate": "06-09-2019"
     },
     {
-      "CreatedDate": "2019-06-11T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-11-2019",
+      "createTime": "2019-05-07T21:54:36.464Z",
       "ID": "PEGACPMFS-WORK S-1663",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-07T22:14:58.895Z",
@@ -647,11 +647,11 @@
       "status": "Open",
       "stage": "Collect",
       "urgency": 100,
-      "CompletionDate": "2019-06-12T00:00:00.000Z"
+      "CompletionDate": "06-12-2019"
     },
     {
-      "CreatedDate": "2019-06-09T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-12-2019",
+      "createTime": "2019-05-07T21:55:55.910Z",
       "ID": "PEGACPMFS-WORK S-1664",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-07T22:15:59.119Z",
@@ -659,11 +659,11 @@
       "status": "Open",
       "stage": "Collect",
       "urgency": 100,
-      "CompletionDate": "2019-06-10T00:00:00.000Z"
+      "CompletionDate": "06-13-2019"
     },
     {
-      "CreatedDate": "2019-06-11T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-08-2019",
+      "createTime": "2019-05-07T22:01:09.453Z",
       "ID": "PEGACPMFS-WORK S-1668",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-07T22:21:29.378Z",
@@ -671,11 +671,11 @@
       "status": "Open",
       "stage": "Collect",
       "urgency": 100,
-      "CompletionDate": "2019-06-12T00:00:00.000Z"
+      "CompletionDate": "06-09-2019"
     },
     {
-      "CreatedDate": "2019-06-08T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-12-2019",
+      "createTime": "2019-05-20T07:10:39.049Z",
       "ID": "PEGACPMFS-WORK RCI-159",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-20T07:40:41.958Z",
@@ -683,11 +683,11 @@
       "status": "Open",
       "stage": "Collect Cheque Details",
       "urgency": 100,
-      "CompletionDate": "2019-06-09T00:00:00.000Z"
+      "CompletionDate": "06-13-2019"
     },
     {
-      "CreatedDate": "2019-06-08T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-11-2019",
+      "createTime": "2019-05-20T07:17:37.017Z",
       "ID": "PEGACPMFS-WORK RCI-162",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-20T07:37:41.689Z",
@@ -695,11 +695,11 @@
       "status": "Open",
       "stage": "Collect Cheque Details",
       "urgency": 100,
-      "CompletionDate": "2019-06-09T00:00:00.000Z"
+      "CompletionDate": "06-12-2019"
     },
     {
-      "CreatedDate": "2019-06-08T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-09-2019",
+      "createTime": "2019-05-21T12:22:52.149Z",
       "ID": "PEGACPMFS-WORK RCI-189",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-21T13:08:17.701Z",
@@ -707,11 +707,11 @@
       "status": "Open",
       "stage": "Collect Cheque Details",
       "urgency": 100,
-      "CompletionDate": "2019-06-09T00:00:00.000Z"
+      "CompletionDate": "06-10-2019"
     },
     {
-      "CreatedDate": "2019-06-08T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-07-2019",
+      "createTime": "2019-05-21T15:42:45.176Z",
       "ID": "PEGACPMFS-WORK RCI-200",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-21T16:27:55.119Z",
@@ -719,11 +719,11 @@
       "status": "Open",
       "stage": "Collect Cheque Details",
       "urgency": 100,
-      "CompletionDate": "2019-06-09T00:00:00.000Z"
+      "CompletionDate": "06-08-2019"
     },
     {
-      "CreatedDate": "2019-06-10T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-08-2019",
+      "createTime": "2019-05-21T16:08:14.086Z",
       "ID": "PEGACPMFS-WORK RCI-203",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-21T16:53:26.650Z",
@@ -731,11 +731,11 @@
       "status": "Open",
       "stage": "Collect Cheque Details",
       "urgency": 100,
-      "CompletionDate": "2019-06-11T00:00:00.000Z"
+      "CompletionDate": "06-09-2019"
     },
     {
-      "CreatedDate": "2019-06-10T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-07-2019",
+      "createTime": "2019-05-21T16:26:08.191Z",
       "ID": "PEGACPMFS-WORK RCI-205",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-21T17:11:28.178Z",
@@ -743,11 +743,11 @@
       "status": "Open",
       "stage": "Collect Cheque Details",
       "urgency": 100,
-      "CompletionDate": "2019-06-11T00:00:00.000Z"
+      "CompletionDate": "06-08-2019"
     },
     {
-      "CreatedDate": "2019-06-07T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-10-2019",
+      "createTime": "2019-05-21T17:25:00.463Z",
       "ID": "PEGACPMFS-WORK RCI-214",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-21T17:45:29.851Z",
@@ -755,11 +755,11 @@
       "status": "Open",
       "stage": "Collect Cheque Details",
       "urgency": 100,
-      "CompletionDate": "2019-06-08T00:00:00.000Z"
+      "CompletionDate": "06-11-2019"
     },
     {
-      "CreatedDate": "2019-06-10T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-11-2019",
+      "createTime": "2019-05-21T17:56:38.505Z",
       "ID": "PEGACPMFS-WORK RCI-227",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-05-21T18:42:04.064Z",
@@ -767,11 +767,11 @@
       "status": "Open",
       "stage": "Collect Cheque Details",
       "urgency": 100,
-      "CompletionDate": "2019-06-11T00:00:00.000Z"
+      "CompletionDate": "06-12-2019"
     },
     {
-      "CreatedDate": "2019-06-09T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-08-2019",
+      "createTime": "2019-06-06T14:24:08.882Z",
       "ID": "PEGACPMFS-WORK S-2327",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-06-06T14:44:21.593Z",
@@ -779,11 +779,11 @@
       "status": "Open",
       "stage": "Collect Cheque Details",
       "urgency": 100,
-      "CompletionDate": "2019-06-10T00:00:00.000Z"
+      "CompletionDate": "06-09-2019"
     },
     {
-      "CreatedDate": "2019-06-07T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-11-2019",
+      "createTime": "2019-06-06T14:27:28.993Z",
       "ID": "PEGACPMFS-WORK S-2332",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-06-06T14:47:51.963Z",
@@ -791,11 +791,11 @@
       "status": "Open",
       "stage": "Collect Cheque Details",
       "urgency": 100,
-      "CompletionDate": "2019-06-08T00:00:00.000Z"
+      "CompletionDate": "06-12-2019"
     },
     {
-      "CreatedDate": "2019-06-09T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-11-2019",
+      "createTime": "2019-06-06T14:30:14.680Z",
       "ID": "PEGACPMFS-WORK S-2335",
       "lastUpdatedBy": "Agent(System-Queue-ServiceLevel.ProcessEvent)",
       "lastUpdateTime": "2019-06-06T15:15:23.785Z",
@@ -803,11 +803,11 @@
       "status": "Open",
       "stage": "Collect Cheque Details",
       "urgency": 100,
-      "CompletionDate": "2019-06-10T00:00:00.000Z"
+      "CompletionDate": "06-12-2019"
     },
     {
-      "CreatedDate": "2019-06-11T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-10-2019",
+      "createTime": "2019-04-30T15:51:14.538Z",
       "ID": "PEGACPMFS-WORK T-47",
       "lastUpdatedBy": "Stella Turner",
       "lastUpdateTime": "2019-04-30T15:51:14.596Z",
@@ -815,11 +815,11 @@
       "status": "New",
       "stage": "Get Transaction Information",
       "urgency": 10,
-      "CompletionDate": "2019-06-12T00:00:00.000Z"
+      "CompletionDate": "06-11-2019"
     },
     {
-      "CreatedDate": "2019-06-12T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-12-2019",
+      "createTime": "2019-06-07T20:56:01.517Z",
       "ID": "PEGACPMFS-WORK S-2526",
       "lastUpdatedBy": "Stella Turner",
       "lastUpdateTime": "2019-06-07T20:56:01.564Z",
@@ -827,11 +827,11 @@
       "status": "New",
       "stage": "Collect Request",
       "urgency": 10,
-      "CompletionDate": "2019-06-13T00:00:00.000Z"
+      "CompletionDate": "06-13-2019"
     },
     {
-      "CreatedDate": "2019-06-10T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-12-2019",
+      "createTime": "2019-06-07T18:08:11.597Z",
       "ID": "PEGACPMFS-WORK S-2506",
       "lastUpdatedBy": "Stella Turner",
       "lastUpdateTime": "2019-06-07T18:08:11.714Z",
@@ -839,11 +839,11 @@
       "status": "New",
       "stage": "Collect Request",
       "urgency": 10,
-      "CompletionDate": "2019-06-11T00:00:00.000Z"
+      "CompletionDate": "06-13-2019"
     },
     {
-      "CreatedDate": "2019-06-08T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-12-2019",
+      "createTime": "2019-06-07T19:17:05.773Z",
       "ID": "PEGACPMFS-WORK S-2511",
       "lastUpdatedBy": "Stella Turner",
       "lastUpdateTime": "2019-06-07T19:17:05.828Z",
@@ -851,11 +851,11 @@
       "status": "New",
       "stage": "Collect Request",
       "urgency": 10,
-      "CompletionDate": "2019-06-09T00:00:00.000Z"
+      "CompletionDate": "06-13-2019"
     },
     {
-      "CreatedDate": "2019-06-08T00:00:00.000Z",
-      "createTime": "#NUM!",
+      "CreatedDate": "06-12-2019",
+      "createTime": "2019-06-07T20:26:53.673Z",
       "ID": "PEGACPMFS-WORK S-2520",
       "lastUpdatedBy": "Stella Turner",
       "lastUpdateTime": "2019-06-07T20:26:53.708Z",
@@ -863,7 +863,7 @@
       "status": "New",
       "stage": "Collect Request",
       "urgency": 10,
-      "CompletionDate": "2019-06-09T00:00:00.000Z"
+      "CompletionDate": "06-13-2019"
     }
    ]
 }
