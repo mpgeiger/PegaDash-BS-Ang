@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { AnonymousSubject } from 'rxjs/internal/Subject';
 
 
 export interface UserInfo {
@@ -12,13 +13,15 @@ export interface UserInfo {
 @Injectable({
   providedIn: 'root'
 })
-export class AccountListService {
-serviceName = 'account-list.service';
+
+
+export class PegaSessionService {
+serviceName = 'pega-session.service';
 private subject = new Subject<any>();
 private accountsSummary = new Subject<any>();
 private userInfo = new Subject<UserInfo>();
-
 private displayName = new Subject<any>();
+private rgbaColorPalette = new Subject<any>();
 
 
 sendMessage(message: string) {
@@ -63,19 +66,16 @@ setAccountList(accList: object) {
 
         return this.displayName.asObservable();
      }
-  // constructor() { }
-  //  data = {'foo': 'bar',
-  // 'ding': 'dat'};
 
-  // setAccountList(option, value) {
-  //   console.log('__' + this.serviceName + ' SET--> ' + option + '--' + value);
-  //   //  debugger;
-  //   // this.data = option + '---' + value;
-  //  }
 
-  //  getAccountList() {
-  //   console.log('__' + this.serviceName + ' GET--> ' + JSON.stringify(this.data));
+     setRgbColorPalette(oPaletteArray: Array<any>) {
+       console.log(this.serviceName + ' ### setRgbColorPalette ->' + oPaletteArray);
+       this.rgbaColorPalette.next({colors: oPaletteArray});
+      }
 
-  //    return this.data;
-  //  }
+      getRgbColorPalette():  Observable<any> {
+        console.log(this.serviceName + ' ### getRgbColorPalette ->' + JSON.stringify(this.rgbaColorPalette));
+       return this.rgbaColorPalette.asObservable();
+     }
+
 }

@@ -70,6 +70,11 @@ Recent Interactions    D_InteractionHistory    app-recent-interactions
 
 
 
+####Cleanup
+const loginUserName = localStorage.getItem('username');
+
+
+
 <!-- 
 Useful links/sites;
 

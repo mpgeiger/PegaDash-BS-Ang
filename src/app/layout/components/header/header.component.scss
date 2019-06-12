@@ -92,9 +92,18 @@
     height:51px;        // TW force the header nav to 51px
 
 
+    border-bottom: 2px solid;
+    border-color: $customerPalette1;
+
     .navbar-brand {
       // MGP color: #fff;
       color: $topnav-item-color;
+      .nav-logo-image {
+        height: 40px;
+        vertical-align: text-bottom;
+        margin-top: 12px;
+        margin-bottom: 5px;
+      }
     }
 
     .nav-item>a {

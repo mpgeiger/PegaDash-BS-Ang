@@ -11,6 +11,7 @@ import { ChartType, ChartOptions, ChartDataSets } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 import { SingleDataSet, Label, MultiDataSet, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
 import stubbedResults from '@ss/json/D_TransactionSummaryInternational_KPI.json';
+import { PegaVariablesPropertiesComponent } from '@ss/app/shared-pega/pega-variables-properties/pega-variables-properties.component';
 // import stubbedResultsSummary from '@ss/json/D_TransactionSummaryInternational_KPI';
 export interface TransactionSummaryKPI {
   Currency: string;
@@ -58,6 +59,8 @@ export class TransactionSummaryKpiComponent implements OnInit {
   //     '# Entries'
   // ];
   // public pieChartLabels: Label[] = [];
+
+  chartColors = this.pv.rgbaPalette;
   public pieChartLabels: Label[] =  [ 'China', 'Hong Kong', 'Singapore', 'UAE', 'USA'];
   // public pieChartData: SingleDataSet = [];
   public pieChartData: SingleDataSet = [ 5634553, 534535, 43453540, 2434233, 32332323];
@@ -75,30 +78,7 @@ export class TransactionSummaryKpiComponent implements OnInit {
   public pieColors = [
     {
       pointBorderColor: 'black',
-      backgroundColor: [
-        'rgba(236, 237, 237 , 1)',
-        'rgba(68, 153, 170  , .2)',
-'rgba(105, 166, 162 , .8)',
-'rgba(21, 97, 103, 1)',
-'rgba(86, 100, 111  , 1)',
-        'rgba(209, 212, 212 , .7)',
-        'rgba(40, 56, 75 , 1)',
-        'rgba(23, 120, 126  , 1)',
-        'rgba(100, 178, 183 ,.8)',
-        'rgba(173, 185, 173 , 1)',
-        'rgba(48, 62, 83 , 1)',
-'rgba(215, 160, 151 , 1)'
-        // 'rgba(47, 59, 84, 1)',
-        // 'rgba(147, 207, 222, 1)',
-        // 'rgba(123, 177, 180, 1)',
-        // 'rgba(139, 104, 67, 1)',
-        // 'rgba(18, 121, 127, 1)',
-        // 'rgba(39, 76, 94,1)',
-        // 'rgba(233,234,234,1)',
-        // 'rgba(40,75,96,0.7)',
-        // 'rgba(176,136,99,1)',
-        // 'rgba(151,131,99,0.4)'
-      ]
+      backgroundColor: this.chartColors
     }
   ];
 
@@ -168,7 +148,8 @@ export class TransactionSummaryKpiComponent implements OnInit {
   public showTable = false;
 
   constructor(
-    private datapage: DatapageService
+    private datapage: DatapageService,
+    private pv: PegaVariablesPropertiesComponent
     ) {
       // monkeyPatchChartJsTooltip();
       // monkeyPatchChartJsLegend();

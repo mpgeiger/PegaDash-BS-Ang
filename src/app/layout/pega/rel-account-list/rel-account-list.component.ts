@@ -7,7 +7,7 @@ import { FormControl } from '@angular/forms';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
 import stubbedResults from '@ss/json/D_RelAccountList.json';
 import { TooltipPosition } from '@angular/material';
-import { AccountListService } from '@ss/app/layout/pega/_services/index';
+import { PegaSessionService } from '@ss/app/layout/pega/_services/index';
 
 export interface RelAccount {
   AccountBalance: number;
@@ -81,15 +81,15 @@ export class RelAccountListComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   constructor(
     private datapage: DatapageService,
-    private as: AccountListService
+    private as: PegaSessionService
   ) { }
 
   ngOnInit() {
     if (this.checkIfStubbed()) {
-      console.log(this.componentName + ' -- STUBBED ' + this.pegaService);
+      //console.log(this.componentName + ' -- STUBBED ' + this.pegaService);
       this.getStubbedCases();
     } else {
-      console.log(this.componentName + ' -- LIVE ' + this.pegaService);
+      //console.log(this.componentName + ' -- LIVE ' + this.pegaService);
       // this.getCases();
       this.getCases();
     }
@@ -213,18 +213,14 @@ clearMessages(): void {
       // const result = currentBal - monthBal;
 
       const trend = this.computeTrend(currentBal, avgMonthBal, element.ApplDescType);
-      // if (result > 0) {
-      //   trend = 1;
-      // } else if ( result < 0 ) {
-      //   trend = -1;
-      // }
+
       element.AccountTrend = trend;
       // console.log('trans -->' + result + ' = ' +  currentBal + ' - ' + monthBal + ' = ' + result + '   trend -->' + element.AccountTrend);
     });
-    console.log('total assets -->' + totCurrAsset);
-    console.log('total liab   -->' + totCurrLiab);
-    console.log('total avg assets -->' + totAvgMonthAsset);
-    console.log('total avgt liab  -->' + totAvgMonthLiab);
+    // console.log('total assets -->' + totCurrAsset);
+    // console.log('total liab   -->' + totCurrLiab);
+    // console.log('total avg assets -->' + totAvgMonthAsset);
+    // console.log('total avgt liab  -->' + totAvgMonthLiab);
 
     this.accountSummary.totalCurrentAssets = totCurrAsset;
     this.accountSummary.totalCurrentLiabilities = totCurrLiab;

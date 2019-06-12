@@ -20,7 +20,10 @@
 
 
 div.text-center.card-body.nba {
-  background-image: url('/assets/images/getty_sunset.jpg');
+  // background-image: url('/assets/images/getty_sunset.jpg');
+  background-image: url('/assets/images/mufg_NBO_1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .nba{

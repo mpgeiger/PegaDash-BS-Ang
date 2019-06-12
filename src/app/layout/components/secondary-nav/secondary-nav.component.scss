@@ -8,30 +8,34 @@
 
 .secondary-navbar {
   justify-content: flex-start;
-  background-color: $bnyPrimary;
+  background-color: $secondary-nav-background-color;
   z-index: 1029;
   margin-top: 51px;
   .navbar-nav {
-    background-color: $bnyPrimary;
+    background-color: $secondary-nav-background-color;
+    color: $secondary-item-color;
 	padding-top: 2px;
     overflow-y: hidden;
     padding-left:25px;
   }
 
   .list-group-item {
-   // TW background-color: $bnyPrimary;
+   // TW background-color: $customerPrimary;
     color: $topnav-item-color;
 	margin-right: 3px;
   }
 // Hover state
   .list-group-item:hover {
-    background-color: rgba(0,0,0,.15);
+    background-color:  lighten($customerNavPalette, 50%);
+    // background-color: rgba(0,0,0,.15);
     @include border-top-radius($list-group-border-radius);
   }
   // TW invert active menu item
   .list-group-item.router-link-active {
     background-color: white;
-    color:  $bnyPrimary;
+
+    // color:  $customerPrimary;
+    color:  $secondary-active-item-color;
     @include border-top-radius($list-group-border-radius);
   }
 

@@ -159,9 +159,7 @@ export class MegaMenuComponent implements OnInit {
 
 
      resultCount = Object.keys(cat).length;
-    // console.log(this.componentName + '   megamenu-->' + JSON.stringify(cat));
-    // console.log(this.componentName + '   megamenu-->' + JSON.stringify(_cat.length));
-    // console.log(this.componentName + '   megamenu-->' cat.CategoryName + ' = ' + resultCount);
+     // console.log(this.componentName + '   megamenu-->' cat.CategoryName + ' = ' + resultCount);
 
     if (resultCount = 0) {
       result = true;
@@ -202,7 +200,7 @@ export class MegaMenuComponent implements OnInit {
 //   this._3_0 = false;
 // }
   setEmptyCat(i, j) {
-    console.log( ' setEmptyCat i-' + i + '__ j-' + j );
+   // console.log( ' setEmptyCat i-' + i + '__ j-' + j );
     // if (j = 0) {
     //   return true;
     // } else {
@@ -244,15 +242,13 @@ export class MegaMenuComponent implements OnInit {
     this.actions = Object.keys(this.getDriverCategories(stubbed)).map(it => this.getDriverCategories(stubbed)[it]);
     for (const [key, value] of Object.entries(this.actions)) {
       // if (value.CategoryName === 'Sales and Offers') {
-        console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
+      //  console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
       const pxResults: any = value.pxResults;
-      console.log(this.componentName + '  key --->' + JSON.stringify(key) + '_______ value-->' + JSON.stringify(value.CategoryName));
       // console.log('    CategoryName=' + value.CategoryName + '___________ key:' + JSON.stringify(key));
       // if (value.CategoryName === 'Sales and Offers') {
       //   keyToRemove = JSON.stringify(key);
       //   console.log('keyToRemove-->' + keyToRemove);
       // }
-      console.log(' cat->' + value.CategoryName + '__index->' + JSON.stringify(key) + '___count->' + pxResults.length + '___visibility->' + true);
       // myVis.indexCategory = parseInt(JSON.stringify(key));
 
       // myVis.countItems = pxResults.length;
@@ -266,7 +262,6 @@ export class MegaMenuComponent implements OnInit {
       // this.categoryVis.pop(myVis);
       // this.categoryVis.pop(myVis);
     }
-    console.log('   visCategory -->' + JSON.stringify(this.categoryVis));
     // this.cases = JSON.parse(response.body);
    // this.sortedData = this.cases.slice();
     // this.dataSource.data = this.cases as TreasurerCases[];
@@ -288,7 +283,7 @@ export class MegaMenuComponent implements OnInit {
         let i = 0;
         for (const [key, value] of Object.entries(this.actions)) {
           // if (value.CategoryName === 'Sales and Offers') {
-          console.log(this.componentName + '  key --->' + JSON.stringify(key) + '_______ value-->' + JSON.stringify(value.CategoryName));
+          // console.log(this.componentName + '  key --->' + JSON.stringify(key) + '_______ value-->' + JSON.stringify(value.CategoryName));
           // console.log('    CategoryName=' + value.CategoryName + '___________ key:' + JSON.stringify(key));
           // if (value.CategoryName === 'Sales and Offers') {
           //   keyToRemove = JSON.stringify(key);

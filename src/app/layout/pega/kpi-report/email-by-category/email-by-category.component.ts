@@ -10,6 +10,7 @@ import { DatapageService } from '../../../../_services/datapage.service';
 import { ChartType, ChartOptions, ChartDataSets } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
+import { PegaVariablesPropertiesComponent } from '@ss/app/shared-pega/pega-variables-properties/pega-variables-properties.component';
 import stubbedResults from '@ss/json/D_GetEmailsByCategory.json';
 
 
@@ -23,7 +24,8 @@ import stubbedResults from '@ss/json/D_GetEmailsByCategory.json';
 export class EmailByCategoryComponent implements OnInit {
 
   constructor(
-    private datapage: DatapageService
+    private datapage: DatapageService,
+    private pv: PegaVariablesPropertiesComponent
   ) {
   }
 
@@ -46,6 +48,7 @@ export class EmailByCategoryComponent implements OnInit {
     pxIndexCount: ''
   };
 
+  chartColors = this.pv.rgbaPalette;
 
   // PIE Chart Settings
   //   public pieChartLabels: Label[] = [
@@ -67,20 +70,21 @@ export class EmailByCategoryComponent implements OnInit {
   public pieColors = [
     {
       pointBorderColor: 'black',
-      backgroundColor: [
-        'rgba(236, 237, 237 , 1)',
-        'rgba(68, 153, 170  , .2)',
-'rgba(105, 166, 162 , .8)',
-'rgba(21, 97, 103, 1)',
-'rgba(86, 100, 111  , 1)',
-        'rgba(209, 212, 212 , .7)',
-        'rgba(40, 56, 75 , 1)',
-        'rgba(23, 120, 126  , 1)',
-        'rgba(100, 178, 183 ,.8)',
-        'rgba(173, 185, 173 , 1)',
-        'rgba(48, 62, 83 , 1)',
-'rgba(215, 160, 151 , 1)'
-      ]
+      backgroundColor: this.chartColors
+//        [
+//         'rgba(236, 237, 237 , 1)',
+//         'rgba(68, 153, 170  , .2)',
+// 'rgba(105, 166, 162 , .8)',
+// 'rgba(21, 97, 103, 1)',
+// 'rgba(86, 100, 111  , 1)',
+//         'rgba(209, 212, 212 , .7)',
+//         'rgba(40, 56, 75 , 1)',
+//         'rgba(23, 120, 126  , 1)',
+//         'rgba(100, 178, 183 ,.8)',
+//         'rgba(173, 185, 173 , 1)',
+//         'rgba(48, 62, 83 , 1)',
+// 'rgba(215, 160, 151 , 1)'
+//       ]
     }
   ];
 

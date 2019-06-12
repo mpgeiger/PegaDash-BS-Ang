@@ -2,13 +2,11 @@
 @import "./../styles/bootstrap/variables";
 // $topnav-background-color: red;
 // $topnav-background-color: #2D3B4F;
-$topnav-background-color: #2d3a51;
 // $topnav-background-color: #FFF;
 // $topnav-item-color: #83744c;
-$topnav-item-color: #fff;
 
 .megaMenu-modal-box >
-  mat-dialog-container {
+mat-dialog-container {
   display: block;
   padding: 24px;
   border-radius: 4px;
@@ -28,26 +26,35 @@ $topnav-item-color: #fff;
 
 
 
-  //
-  //  MPG BNY COLORS VALS
-
-  $bnyPrimary:   #1e9a98 !important !default;
-  $bnyDarkGray:  #4f4c4d !default;
-  $bnyLightGray: #a7a5a6 !default;
-  $bnyBronze:    #b07e25 !default;
-  $bnyGold:      #a49668 !default;
-  $bnyBackground: #f2f2f2 !default;
-  // TW $bnyBackground: #a7a5a6 !default;
-
-  $light:         $bnyLightGray !default;
-  $dark:          $bnyDarkGray!default;
+//
+//  MPG Customer COLORS VALS
+$customerNavPalette: #e60000;
+$topnav-background-color: #fff;
+$topnav-item-color: #5a5a5a;
+$topnav-active-item-color: #5a5a5a;
 
 
-  $primary:       $bnyPrimary !default;
-  $secondary:     $bnyBronze !default;
-  $tertiary:      $bnyGold !default;
+$secondary-nav-background-color: #fff;
+$secondary-item-color: #5a5a5a;
+$secondary-active-item-color: $customerNavPalette;
 
-  $blue:    $bnyPrimary !default;
+  $customerPrimary:   #fff !important !default;
+  $customerDarkGray:  #4f4c4d !default;
+  $customerLightGray: #a7a5a6 !default;
+  $customerPalette1:    #e60000 !default;
+  $customerPalette2:      #a49668 !default;
+  $customerBackground: #f2f2f2 !default;
+  // TW $customerBackground: #a7a5a6 !default;
+
+  $light:         $customerLightGray !default;
+  $dark:          $customerDarkGray!default;
+
+
+  $primary:       $customerPrimary !default;
+  $secondary:     $customerPalette1 !default;
+  $tertiary:      $customerPalette2 !default;
+
+  $blue:    $customerPrimary !default;
 
 
 $login-page-color: #222;

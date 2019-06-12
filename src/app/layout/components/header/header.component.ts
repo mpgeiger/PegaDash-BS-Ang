@@ -13,7 +13,7 @@ import { stringToKeyValue } from '@angular/flex-layout/extended/typings/style/st
 // import { MegaMenuComponent } from '../../pega/mega-menu/mega-menu.component';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { DialogDialog } from '../mega-menu-modal/mega-menu-modal.component';
-import { AccountListService } from '@ss/app/layout/pega/_services/index';
+import { PegaSessionService } from '@ss/app/layout/pega/_services/index';
 
 @Component({
     providers: [LoginComponent],
@@ -49,7 +49,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
       , private oncservice: OpenNewCaseService
       , private loginservice: LoginComponent
       , public dialog: MatDialog
-      , private as: AccountListService
+      , private as: PegaSessionService
 
       // , private megaMenu: ModalRCIPegaComponent
 

@@ -1,3 +1,4 @@
+import { Subscription } from 'rxjs';
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { routerTransition } from '../../../router.animations';
 
@@ -14,7 +15,10 @@ import { DatapageService } from '../../../_services/datapage.service';
 import { ChartType, ChartOptions, ChartDataSets } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
+
 import stubbedResults from '@ss/json/D_OpenByWorkType.json';
+import { PegaVariablesPropertiesComponent } from '@ss/app/shared-pega/pega-variables-properties/pega-variables-properties.component';
+import { PegaSessionService } from '@ss/app/layout/pega/_services/pega-session.service';
 
 export interface OpenWorkType {
   pxObjClass: string;
@@ -33,7 +37,12 @@ export class OpenByWorkTypeComponent implements OnInit, AfterViewInit {
 
   constructor(
     private datapage: DatapageService,
+    private pv: PegaVariablesPropertiesComponent,
+    private ps: PegaSessionService
   ) { }
+
+  subscription: Subscription;
+
   componentName = 'open-work-by-work-type.component';
   message: any;
   // subscription: Subscription;
@@ -53,6 +62,10 @@ export class OpenByWorkTypeComponent implements OnInit, AfterViewInit {
     ResultCount1: '',
     StringVal1: ''
   };
+  // chartColors = this.pv.rgbaPalette;
+  chartColors: Object[] = this.pv.rgbaPalette;
+  // chartColors: this.pv.rgbaPalette;
+
 
 //   for chart parsing
 itemNumberValue: number;
@@ -80,18 +93,19 @@ itemTextValue: string;
   public pieColors = [
     {
       pointBorderColor: 'black',
-      backgroundColor: [
-        'rgba(47, 59, 84, 1)',
-        'rgba(147, 207, 222, 1)',
-        'rgba(123, 177, 180, 1)',
-        'rgba(139, 104, 67, 1)',
-        'rgba(18, 121, 127, 1)',
-        'rgba(39, 76, 94,1)',
-        'rgba(233,234,234,1)',
-        'rgba(40,75,96,0.7)',
-        'rgba(176,136,99,1)',
-        'rgba(151,131,99,0.4)'
-      ]
+      backgroundColor: this.chartColors
+      //  [
+      //   'rgba(47, 59, 84, 1)',
+      //   'rgba(147, 207, 222, 1)',
+      //   'rgba(123, 177, 180, 1)',
+      //   'rgba(139, 104, 67, 1)',
+      //   'rgba(18, 121, 127, 1)',
+      //   'rgba(39, 76, 94,1)',
+      //   'rgba(233,234,234,1)',
+      //   'rgba(40,75,96,0.7)',
+      //   'rgba(176,136,99,1)',
+      //   'rgba(151,131,99,0.4)'
+      // ]
       // backgroundColor: [
       //   'rgba(110, 114, 20, 1)',
       //   'rgba(118, 183, 172, 1)',
@@ -158,8 +172,25 @@ itemTextValue: string;
   public chartHovered(e: any): void {
     // console.log(e);
   }
-
+  messages: any[] = [];
   ngOnInit() {
+
+    // this.subscription = this.ps.getRgbColorPalette().subscribe(
+    //   message => {
+    //     if (message) {
+    //       this.messages.push(message);
+    //       // console.log(this.componentName + ' GETTING ACCOUNT SUMMARY message-->' + JSON.stringify(message));
+    //       this.chartColors = message;
+    //     console.log(this.componentName + 'getRgbColorPalette  message-->' + JSON.stringify(message) );
+    //     this.chartColors = message;
+    //     console.log(this.componentName + 'getRgbColorPalette  chartColors-->' + JSON.stringify(this.chartColors));
+    //     // this.getRecent(message.caseID);
+    //     //this.handleUnsubscribe();
+    //     }
+    //   }
+    // );
+
+    // console.log(this.componentName + ' COLOR Palette-->' + JSON.stringify(this.chartColors));
     // this.getCases();
     this.dataSource.sort = this.sort;
     // this.sort.disableClear = true;

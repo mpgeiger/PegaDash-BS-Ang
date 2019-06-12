@@ -1,3 +1,4 @@
+import { PegaVariablesPropertiesComponent } from './../shared-pega/pega-variables-properties/pega-variables-properties.component';
 
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -13,12 +14,23 @@ export class LayoutComponent implements OnInit {
   collapedSideBar: boolean;
   displayUserName = localStorage.getItem('displayUserName');
 
-  constructor() { }
+  constructor(
+    private ps: PegaVariablesPropertiesComponent
+  ) { }
   nameLayout = new FormControl('');
+  OnInit() {
+   this.ps.buildRgbaPalette();
+  }
   ngOnInit() {
+    this.ps.buildRgbaPalette();
+
    // console.log(this.componentName + ' LS --> userName -->' + localStorage.getItem('userName'));
    // console.log(this.componentName + ' LS --> displayUserName -->' + localStorage.getItem('displayUserName'));
    // console.log(this.componentName + ' LS -- lastAccess-->' + localStorage.getItem('lastAccess'));
+
+  //  this.ps.hexToRGBa('#225522');
+  //  this.ps.hexToRGBa('#542254');
+  //  this.ps.buildRgbaPalette();
 
   }
 

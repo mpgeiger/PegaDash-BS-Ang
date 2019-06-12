@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { AccountlistService } from './accountlist.service';
+import { PegaSessionService } from './accountlist.service';
 
-describe('AccountlistService', () => {
+describe('PegaSessionService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AccountlistService]
+      providers: [PegaSessionService]
     });
   });
 
-  it('should be created', inject([AccountlistService], (service: AccountlistService) => {
+  it('should be created', inject([PegaSessionService], (service: PegaSessionService) => {
     expect(service).toBeTruthy();
   }));
 });

@@ -9,7 +9,7 @@ import { UserService } from '../_services/user.service';
 import { GetLoginStatusService } from '../_messages/getloginstatus.service';
 import { DatapageService } from '../_services/datapage.service';
 import { interval } from 'rxjs/internal/observable/interval';
-import { AccountListService } from '@ss/app/layout/pega/_services/index';
+import { PegaSessionService } from '@ss/app/layout/pega/_services/index';
 
 // import { MatSnackBar } from '@angular/material';
 
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     private uservice: UserService,
     private glsservice: GetLoginStatusService,
     private dservice: DatapageService,
-    private as: AccountListService,
+    private as: PegaSessionService,
     // private snackBar: MatSnackBar,
     public router: Router
   ) {}

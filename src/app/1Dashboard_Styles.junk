@@ -8,17 +8,17 @@ $topnav-item-color: #fff;
   //
   //  MPG BNY COLORS VALS
 
-  $bnyPrimary:   #1e9a98 !important !default;
-  // $bnyPrimary:   #1A7383 !important !default;
-  $bnyDarkGray:  #4f4c4d !default;
-  $bnyLightGray: #a7a5a6 !default;
-  $bnyBronze:    #b07e25 !default;
-  $bnyGold:      #a49668 !default;
-  // $bnyPrimary:   #9C906F !default;
-  // $bnyDarkGray:  #4f4c4d !default;
-  // $bnyLightGray: #a7a5a6 !default;
-  // $bnyBronze:    #b07e25 !default;
-  // $bnyGold:      #a49668 !default;
+  $customerPrimary:   #1e9a98 !important !default;
+  // $customerPrimary:   #1A7383 !important !default;
+  $customerDarkGray:  #4f4c4d !default;
+  $customerLightGray: #a7a5a6 !default;
+  $customerPalette1:    #b07e25 !default;
+  $customerPalette2:      #a49668 !default;
+  // $customerPrimary:   #9C906F !default;
+  // $customerDarkGray:  #4f4c4d !default;
+  // $customerLightGray: #a7a5a6 !default;
+  // $customerPalette1:    #b07e25 !default;
+  // $customerPalette2:      #a49668 !default;
 
 $login-page-color: #222;
 $login-page-h1: rgba(10,10,10, 0.7);

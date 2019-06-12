@@ -50,13 +50,13 @@ $grays: map-merge((
   $cyan:    #17a2b8 !default;
 
   //
-  //  MPG BNY COLORS VALS
+  //  MPG Customer COLORS VALS
 
-  // $bnyPrimary:   #9C906F !default;
-  // $bnyDarkGray:  #4f4c4d !default;
-  // $bnyLightGray: #a7a5a6 !default;
-  // $bnyBronze:    #b07e25 !default;
-  // $bnyGold:      #a49668 !default;
+  // $customerPrimary:   #9C906F !default;
+  // $customerDarkGray:  #4f4c4d !default;
+  // $customerLightGray: #a7a5a6 !default;
+  // $customerPalette1:    #b07e25 !default;
+  // $customerPalette2:      #a49668 !default;
 
 $colors: () !default;
 $colors: map-merge((
@@ -74,11 +74,11 @@ $colors: map-merge((
   "gray":       $gray-600,
   "gray-dark":  $gray-800,
 
-  // "bnyPrimary": $bnyPrimary,
-  // "bnyDarkGray": $bnyDarkGray,
-  // "bnyLightGray": $bnyLightGray,
-  // "bnyBronze": $bnyBronze,
-  // "bnyGold": $bnyGold
+  // "customerPrimary": $customerPrimary,
+  // "customerDarkGray": $customerDarkGray,
+  // "customerLightGray": $customerLightGray,
+  // "customerPalette1": $customerPalette1,
+  // "customerPalette2": $customerPalette2
 
 ), $colors);
 
@@ -92,15 +92,15 @@ $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
 
 
-// $primary:       $bnyGold !default;
-// $secondary:     $bnyBronze !default;
-// $tertiary:      $bnyGold !default;
+// $primary:       $customerPalette2 !default;
+// $secondary:     $customerPalette1 !default;
+// $tertiary:      $customerPalette2 !default;
 // $success:       $green !default;
 // $info:          $cyan !default;
 // $warning:       $yellow !default;
 // $danger:        $red !default;
-// $light:         $bnyLightGray !default;
-// $dark:          $bnyDarkGray!default;
+// $light:         $customerLightGray !default;
+// $dark:          $customerDarkGray!default;
 // $primary:       $blue !default;
 // $secondary:     $gray-600 !default;
 // $success:       $green !default;
