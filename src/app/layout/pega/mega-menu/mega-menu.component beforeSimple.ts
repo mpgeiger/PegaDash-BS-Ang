@@ -9,7 +9,9 @@ import { PagerService } from '../../../_services/pager.service';
 import stubbedResults from '@ss/json/D_CustomerIntentTasks_min.json';
 import { ModalRCIContainerComponent, ModalRCIPegaComponent  } from '../modal-container/modal-container.component';
 import {MatTableDataSource, MatSort, MatMenu} from '@angular/material';
-import { PegaVariablesPropertiesComponent } from '../../../shared-pega/pega-variables-properties/pega-variables-properties.component';
+
+import { PegaVariablesPropertiesComponent } from '@ss/pega-shared/pega-variables-properties.component';
+
 import { FilterPipe } from './../_pipes/searchFilterPipe';
 
 export interface SSCaseTypePxResults {
@@ -80,7 +82,7 @@ export class MegaMenuComponent implements OnInit {
   changeCount = 0;
   headers: any;
   actions: SSCaseActions[] = [];
-  
+
   _0_0 = false;
   _1_0 = false;
   _2_0 = false;
@@ -178,7 +180,7 @@ export class MegaMenuComponent implements OnInit {
     let size = cat.pxResults.length;
     console.log (' ### cat length-->' + size);
 
-    if (size > 0) { 
+    if (size > 0) {
       return false;
     } else {
       return true;

@@ -17,7 +17,7 @@ import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
 
 import stubbedResults from '@ss/json/D_OpenByWorkType.json';
-import { PegaVariablesPropertiesComponent } from '@ss/app/shared-pega/pega-variables-properties/pega-variables-properties.component';
+import { PegaVariablesPropertiesComponent } from '@ss/app/shared-pega/pega-variables-properties.component';
 import { PegaSessionService } from '@ss/app/layout/pega/_services/pega-session.service';
 
 export interface OpenWorkType {

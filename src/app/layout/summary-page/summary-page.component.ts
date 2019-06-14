@@ -3,7 +3,11 @@ import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { FormGroup, FormControl } from '@angular/forms';
-import { PegaVariablesPropertiesComponent } from './../../shared-pega/pega-variables-properties/pega-variables-properties.component';
+
+import { PegaVariablesPropertiesComponent } from '@ss/pega-shared/pega-variables-properties.component';
+
+import { PegaSessionService } from '@ss/app/layout/pega/_services/index';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-summary-page',
@@ -14,10 +18,12 @@ import { PegaVariablesPropertiesComponent } from './../../shared-pega/pega-varia
 export class SummaryPageComponent implements OnInit {
   componentName = 'summary-page.component';
   userName = '';
-  displayUserName = '';
-  lastAccess = '';
+  displayUserName = 'displayUserName placeholder';
+  lastAccess = 'lastAccess placeholder';
 
-
+  subscriptionUserAttributes: Subscription;
+  messages: any[] = [];
+  userAttributes: any[] = [];
   // totalCurrentLiabilities: number = Number(localStorage.getItem('totalCurrentLiabilities'));
   // totalAvgMonthLiabilities = Number(localStorage.getItem('totalAvgMonthLiabilities'));
   // totalCurrentAssets = Number(localStorage.getItem('totalCurrentAssets'));
@@ -30,7 +36,8 @@ export class SummaryPageComponent implements OnInit {
   // localStorage.setItem('totalAvgMonthAssets', totAvgMonthAsset.toString());
 
   constructor(
-    private pega: PegaVariablesPropertiesComponent
+    private pv: PegaVariablesPropertiesComponent,
+    private ps: PegaSessionService
   ) { }
 
 
@@ -49,6 +56,7 @@ export class SummaryPageComponent implements OnInit {
 
   // ngOnInit() {}
   ngOnInit() {
+    // this.getUserAttr();
     // this.customer_Abbreviation = this.pega.pega_Customer_Abbreviation;
     // this.userName = localStorage.getItem('userName');
     // this.userName = localStorage.getItem('userName');
@@ -73,11 +81,25 @@ export class SummaryPageComponent implements OnInit {
     // this.totalAvgMonthAssets = Number(localStorage.getItem('totalAvgMonthAssets'));
 
   }
+  // getUserAttr() {
+
+  //   this.subscriptionUserAttributes = this.ps.getUserAttributes().subscribe( message => {
+  //     if (message) {
+  //       this.messages.push(message);
+  //       this.userAttributes = message;
+  //       console.log(this.componentName + ' getUserAttributes _userAttributes -->' + JSON.stringify(this.userAttributes));
+  //     } else {
+  //       // clear messages when empty message received
+  //       this.messages = [];
+  //     }
+  //   });
+  // }
 
   ngAfterViewInit(): void {
     // Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
     // Add 'implements AfterViewInit' to the class.
 
+    console.log(this.componentName + ' ngOnInit PegaVariablesPropertiesComponent--' + JSON.stringify(this.pv.userAttributes));
 
 
 

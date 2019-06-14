@@ -13,7 +13,10 @@ import { LoginComponent } from './login.component';
 import { AppMaterialModule } from '../app-material/app-material.module';
 
 @NgModule({
-    declarations: [LoginComponent],
+    declarations: [
+      LoginComponent
+      // , PegaVariablesPropertiesComponent
+    ],
     imports: [
 
       FormsModule,
@@ -22,6 +25,8 @@ import { AppMaterialModule } from '../app-material/app-material.module';
         TranslateModule,
         LoginRoutingModule,
         AppMaterialModule
+        ],
+        exports: [
         ]
 //         , exports: [
 //  HttpParams

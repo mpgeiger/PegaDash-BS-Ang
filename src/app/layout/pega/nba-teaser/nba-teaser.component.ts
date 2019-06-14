@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-// import { PegaVariablesPropertiesComponent } from '../../../shared-pega/pega-variables-properties/pega-variables-properties.component';
 
 @Component({
   selector: 'app-nba-teaser',

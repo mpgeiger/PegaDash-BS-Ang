@@ -73,13 +73,13 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
             this.userInfo = message;
 
-            console.log(this.componentName + ' getUserDisplayName _displayName -->' + JSON.stringify(this.userInfo));
+           // console.log(this.componentName + ' getUserDisplayName _displayName -->' + JSON.stringify(this.userInfo));
           } else {
             // clear messages when empty message received
             this.messages = [];
           }
         });
-        //this.loginservice.loginLoadingStop();
+        // this.loginservice.loginLoadingStop();
 
 
     }

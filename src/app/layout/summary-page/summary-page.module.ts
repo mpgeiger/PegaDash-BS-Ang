@@ -12,6 +12,7 @@ import { SummaryPageComponent } from './summary-page.component';
 // import { RecentTreasurerCaseListComponent } from '../pega/recentTreasurerCases/recentTreasurerCaseList.component';
 // import { UnifiedtasklistComponent } from '../../shared/pegaComponents/unifiedtasklist/unifiedtasklist.component';
 //  import { ReactiveFormsModule } from '@angular/forms';
+
 import {
   TimelineComponent,
   NotificationComponent,
@@ -25,9 +26,6 @@ import {
 // import { RecentTreasurerCaseListComponent } from '../pega';
 //  import { RecentTreasurerCaseListComponent } from '../pega';
 import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
-// import { PegaVariablesPropertiesComponent } from './../../shared-pega/pega-variables-properties/pega-variables-properties.component';
-
-
 // import { FileNameDialogComponent } from '../pega';
 // import { AppMaterialModule } from './../../app-material/app-material.module';
 

@@ -10,7 +10,7 @@ import { DatapageService } from '../../../../_services/datapage.service';
 import { ChartType, ChartOptions, ChartDataSets } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
-import { PegaVariablesPropertiesComponent } from '@ss/app/shared-pega/pega-variables-properties/pega-variables-properties.component';
+import { PegaVariablesPropertiesComponent } from '@ss/app/shared-pega/pega-variables-properties.component';
 import stubbedResults from '@ss/json/D_GetEmailsByCategory.json';
 
 

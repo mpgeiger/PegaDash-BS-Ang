@@ -11,7 +11,7 @@ import { ChartType, ChartOptions, ChartDataSets } from 'chart.js';
 import * as pluginDataLabels from 'chartjs-plugin-datalabels';
 import { SingleDataSet, Label, MultiDataSet, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
 import stubbedResults from '@ss/json/D_TransactionSummaryInternational_KPI.json';
-import { PegaVariablesPropertiesComponent } from '@ss/app/shared-pega/pega-variables-properties/pega-variables-properties.component';
+import { PegaVariablesPropertiesComponent } from '@ss/app/shared-pega/pega-variables-properties.component';
 // import stubbedResultsSummary from '@ss/json/D_TransactionSummaryInternational_KPI';
 export interface TransactionSummaryKPI {
   Currency: string;

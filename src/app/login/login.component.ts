@@ -10,9 +10,17 @@ import { GetLoginStatusService } from '../_messages/getloginstatus.service';
 import { DatapageService } from '../_services/datapage.service';
 import { interval } from 'rxjs/internal/observable/interval';
 import { PegaSessionService } from '@ss/app/layout/pega/_services/index';
-
+import { PegaVariablesPropertiesComponent } from '@ss/app/shared-pega/pega-variables-properties.component';
+// import { UserAttributeTypeType } from '@ss/app/layout/pega/_services/index';
 // import { MatSnackBar } from '@angular/material';
-
+// export interface UserAttributes {
+//   name: number | string;
+//   value: number | string;
+// }
+export interface UserAttributeType {
+  name: string;
+  value: number | string;
+}
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -28,11 +36,16 @@ export class LoginComponent implements OnInit {
   loginData: any = {};
   loggingInLoading = false;
 
+  luUserAttributes: UserAttributeType[] = [];
+
+
+
   constructor(
     private uservice: UserService,
     private glsservice: GetLoginStatusService,
     private dservice: DatapageService,
-    private as: PegaSessionService,
+    private ps: PegaSessionService,
+    private pv: PegaVariablesPropertiesComponent,
     // private snackBar: MatSnackBar,
     public router: Router
   ) {}
@@ -43,12 +56,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     // userName = "tech.cableco";
-    // userPassword = "pega";
+    // userPpssword = "pega";
 
   }
 
   doLogin() {
-    // delay, so on change for password value can get in
+    // delay, so on change for ppssword value can get in
     this.loggingInLoading = true;
     const timer = interval(500).subscribe(() => {
       this.attemptLogin();
@@ -57,6 +70,9 @@ export class LoginComponent implements OnInit {
   }
 
   attemptLogin() {
+    const needAttrs = ['displayUserName', 'lastAccess', 'userEmailAddres', 'userFullName', 'userEmailAddres', 'userFullName', 'userAccessGroup', 'userWorkGroup', 'userWorkBaskets', 'userEmailAddress'];
+
+    this.luUserAttributes = [];
 
     this.uservice.login(this.loginData.userName, this.loginData.password).subscribe(
       response => {
@@ -71,22 +87,21 @@ export class LoginComponent implements OnInit {
               // localStorage.setItem('username', this.loginData.userName);
               // console.log(' in nbs-offer-component username-->' + this.loginData.userName);
 
-              this.as.setUserDisplayName(operator.pyUserName);
+              this.ps.setUserDisplayName(operator.pyUserName);
 
-              localStorage.setItem('displayUserName', operator.pyUserName);
-              localStorage.setItem('lastAccess', operator.pyLastSignon);
-              localStorage.setItem('userFullName', operator.pyUserName);
-              localStorage.setItem('userAccessGroup', operator.pyAccessGroup);
-              localStorage.setItem('userWorkGroup', operator.pyWorkGroup);
-              localStorage.setItem('userWorkBaskets', JSON.stringify(operator.pyWorkBasketList));
-              localStorage.setItem('userEmailAddress', operator.pyAddresses.Email.pyEmailAddress);
-              // console.log( this.componentName + ' LS --> userName -->' + localStorage.getItem('userName'));
-              // console.log( this.componentName + ' LS --> displayUserName -->' + localStorage.getItem('displayUserName'));
-              // console.log( this.componentName + ' LS -- lastAccess-->' + localStorage.getItem('lastAccess'));
+              this.luUserAttributes.push(this.pv.createUserAttributeObject('displayUserName', operator.pyUserName));
+              this.luUserAttributes.push(this.pv.createUserAttributeObject('lastAccess', operator.pyLastSignon ));
+              this.luUserAttributes.push(this.pv.createUserAttributeObject('userEmailAddress', operator.pyAddresses.Email.pyEmailAddress ));
+              this.luUserAttributes.push(this.pv.createUserAttributeObject('userFullName', operator.pyUserName ));
+              this.luUserAttributes.push(this.pv.createUserAttributeObject('userAccessGroup', operator.pyAccessGroup ));
+              this.luUserAttributes.push(this.pv.createUserAttributeObject('userWorkGroup', operator.pyWorkGroup ));
 
-              // this.glsservice.sendMessage('LoggedIn');
-              // console.log('Logged In-->', operator.pyUserName);
-              // this.router.navigate(['summary-page']);
+              console.log(this.componentName + '  __luUserAttributes' + JSON.stringify(this.luUserAttributes));
+              this.ps.setUserAttributesByArray(this.luUserAttributes);
+
+              //this.ps.addUserAttribute('userWorkGroup', 'MY TEST CHANGE UPDATE');
+              // this.ps.setUserAttributes(this.luUserAttributes);
+
             },
             err => {
               const sError = 'Errors getting data page: ' + err.message;
@@ -96,7 +111,7 @@ export class LoginComponent implements OnInit {
             );
 
 
-            operatorParams.set('EmailID', localStorage.getItem('userEmailAddress'));
+            // operatorParams.set('EmailID', localStorage.getItem('userEmailAddress'));
             // this.dservice.getDataPage('D_CustomerSummary', operatorParams).subscribe(
             //   response => {
             //     console.log(' begin D_CustomerSummary');

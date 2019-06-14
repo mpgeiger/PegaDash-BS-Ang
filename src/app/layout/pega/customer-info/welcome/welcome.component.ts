@@ -3,11 +3,15 @@
 import { Component, OnInit, Input, OnDestroy, OnChanges, AfterViewInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 // import { RelAccountListComponent } from '@ss/app/shared-pega/shared-pega.module';
-import { StatComponent } from './../../../../shared/modules/stat/stat.component';
+// import { StatComponent } from './../../../../shared/modules/stat/stat.component';
 import { PegaSessionService } from '@ss/app/layout/pega/_services/index';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 
+export interface UserAttributeTypeType {
+  name: string;
+  value: string | number;
+}
 
 @Component({
   selector: 'app-welcome',
@@ -17,6 +21,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy  {
   subscription: Subscription;
   subscriptionDisplayName: Subscription;
+  subscriptionUserAttributes: Subscription;
 
   componentName = 'customer-info/welcome.component';
   @Input('FullName') fullName: string;
@@ -30,40 +35,41 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy  {
   private _totalCurrentAssets: number;
 
   messages: any[] = [];
+  messagesAU: any[] = [];
   acctsSummary = {};
+
+
+//  displayUserName = '';
+// mpgTest = {};
+
+  foobar: string | number  = '';
+  foobar2: string | number  = '';
+
+  userAttributes: UserAttributeTypeType[] = [];
+
   userInfo = {};
   showLoading = false;
 
   constructor(
     // private al: RelAccountListComponent
-    private as: PegaSessionService,
+    private ps: PegaSessionService,
     // private changeDetectorRef: ChangeDetectorRef,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer
   ) {
 
-    this.subscriptionDisplayName = this.as.getUserDisplayName().subscribe( message => {
-      if (message) {
-        this.messages.push(message);
-        this.userInfo = message;
-        // console.log(this.componentName + ' getUserDisplayName _displayName -->' + JSON.stringify(this.userInfo));
-      } else {
-        // clear messages when empty message received
-        this.messages = [];
-      }
-    });
+    // this.subscriptionDisplayName = this.ps.getUserDisplayName().subscribe( message => {
+    //   if (message) {
+    //     this.messages.push(message);
+    //     this.userInfo = message;
+    //     // console.log(this.componentName + ' getUserDisplayName _displayName -->' + JSON.stringify(this.userInfo));
+    //   } else {
+    //     // clear messages when empty message received
+    //     this.messages = [];
+    //   }
+    // });
 
-    this.subscription = this.as.getAccountList().subscribe(message => {
-      if (message) {
-        this.messages.push(message);
-        // console.log(this.componentName + ' GETTING ACCOUNT SUMMARY message-->' + JSON.stringify(message));
-this.acctsSummary = message;
-this.showLoading = false;
-      } else {
-        // clear messages when empty message received
-        this.messages = [];
-      }
-    });
+
     this.matIconRegistry.addSvgIcon(
       'trend-up',
       '../../../../../assets/images/trending-up.svg'
@@ -86,20 +92,84 @@ this.showLoading = false;
 
   }
 
-//  displayUserName = '';
-// mpgTest = {};
-
 
   ngOnInit() {
-    //console.log(' welcome.component lastAccess-->' + this.lastAccess);
+    this.getAccountsSummary();
+    this.getUserAttributes();
+
+
+    // console.log(' welcome.component lastAccess-->' + this.lastAccess);
     // this.showLoading = true;
     // setInterval(() => {
     //   this.changeDetectorRef.markForCheck();
     // }, 5000);
   }
+
+
   ngAfterViewInit(): void {
+    let u1 = {} as UserAttributeTypeType;
+    let u2 = {} as UserAttributeTypeType;
+
+    u1 = this.getUserAttr('userFullName');
+    u2 = this.getUserAttr('lastAccess');
+    console.log(this.componentName + ' getUserAttributes  ngOnInit getUserAttr Value--lastAccess___' + JSON.stringify(u2));
+    // console.log(this.componentName + ' getUserAttributes  ngOnInit getUserAttr Value--lastAccess___' + u2.value);
+
+    // this.getUserAttr('userFullName');
+    // this.getUserAttr('lastAccess');
+  }
+
+  getAccountsSummary() {
+    this.subscription = this.ps.getAccountList().subscribe(message => {
+      if (message) {
+        this.messages.push(message);
+
+        // console.log(this.componentName + ' GETTING ACCOUNT SUMMARY message-->' + JSON.stringify(message));
+        this.acctsSummary = message;
+        this.showLoading = false;
+      } else {
+        // clear messages when empty message received
+        this.messages = [];
+      }
+    });
+  }
+
+  getUserAttributes() {
+const u1 = {} as UserAttributeTypeType;
+const u2 = {} as UserAttributeTypeType;
+    this.subscriptionUserAttributes = this.ps.getUserAttributes().subscribe( message => {
+        if (message) {
+          this.messagesAU.push(message);
+          this.userAttributes = message;
+         console.log(this.componentName + ' getUserAttributes _displayName -->' + JSON.stringify(this.userAttributes));
+
+        } else {
+          // clear messages when empty message received
+          this.messagesAU = [];
+        }
+
+        this.foobar = this.getUserAttr('displayUserName').value;
+        this.foobar2 = this.getUserAttr('lastAccess').value;
+console.log(this.componentName + 'foobar-->' + this.foobar);
+console.log(this.componentName + 'lastAccess-->' + this.foobar2);
+        // u1 = this.getUserAttr('userFullName');
+        // u2 = this.getUserAttr('lastAccess');
+
+        // console.log(this.componentName + ' getUserAttributes userFullName -->' +  JSON.stringify(u1));
+        // console.log(this.componentName + ' getUserAttributes _lastAccess -->' +  JSON.stringify(u2)  );
+        // /console.log(this.componentName + ' getUserAttributes _lastAccess -->' +  JSON.stringify(u2) + '___' + u2.value );
+      });
 
 
+  }
+
+  getUserAttr(nameValue: string): UserAttributeTypeType {
+    const item1 = this.userAttributes.find(i => {
+      return i.name === nameValue;
+    });
+    // console.log(this.componentName + ' getUserAttributes getUserAttr--' + nameValue + '___' + JSON.stringify(item1));
+    // console.log(this.componentName + ' getUserAttributes getUserAttr Value--' + nameValue + '___' + item1);
+    return item1;
   }
 
 

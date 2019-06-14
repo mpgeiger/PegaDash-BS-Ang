@@ -18,7 +18,6 @@ import { SafeHtml, SafeStyle, SafeUrl } from '../layout/pega/_pipes/safe';
 import { WelcomeComponent } from '../layout/pega/customer-info/welcome/welcome.component';
 // import { PStatModule } from '../layout/pega/stat/stat.module';
 import { FilterPipe } from '../layout/pega/_pipes/searchFilterPipe';
-import { PegaVariablesPropertiesComponent } from './pega-variables-properties/pega-variables-properties.component';
 import { ParseIdFromCase } from '@ss/app/layout/pega';
 
 import {
@@ -69,7 +68,7 @@ import {
   ],
   providers: [
     // CaselistComponent
-    PegaVariablesPropertiesComponent
+    // PegaVariablesPropertiesComponent
   ],
   declarations: [
     AccountSummaryComponent
@@ -94,7 +93,7 @@ import {
     , OpenByWorkTypeComponent
     , ParseIdFromCase
     , PegaPieChartComponent
-    , PegaVariablesPropertiesComponent
+    // , PegaVariablesPropertiesComponent
     , PStatComponent
     , RecentInteractionsComponent
     , RecentTreasurerCaseListComponent
@@ -141,7 +140,7 @@ import {
     , OpenByWorkTypeComponent
     , ParseIdFromCase
     , PegaPieChartComponent
-    , PegaVariablesPropertiesComponent
+    // , PegaVariablesPropertiesComponent
     , PStatComponent
     , RecentInteractionsComponent
     , RecentTreasurerCaseListComponent
