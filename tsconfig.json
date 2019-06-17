@@ -26,7 +26,7 @@
       "@ss/app/*": ["src/app/*"],
       "@ss/json/*": ["src/assets/json/*"],
       "@ss/pega-shared/*": ["src/app/shared-pega/*"],
-      "@ss/pega-layout/*": ["src/app/layout/pega"]
+      "@ss/pega-layout/*": ["src/app/layout/pega/*"]
         },
     "resolveJsonModule": true,
     "esModuleInterop": true,
