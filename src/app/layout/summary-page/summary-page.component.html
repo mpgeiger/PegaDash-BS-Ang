@@ -2,7 +2,9 @@
 
   <div class="row center">
       <div class="col-12 center">
-    <app-welcome [FullName]="displayUserName" [LastAccess]="lastAccess"
+        {{oUserAttributes.displayUserName}}
+    <app-welcome [FullName]="oUserAttributes.displayUserName"
+    [LastAccess]="oUserAttributes.lastAccess"
     [totalCurrentAssets]="totalCurrentAssets"
     [totalCurrentLiabilities]="totalCurrentLiabilities"
     [totalAvgMonthAssets]="totalAvgMonthAssets"

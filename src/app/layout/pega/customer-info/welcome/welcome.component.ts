@@ -8,7 +8,7 @@ import { PegaSessionService } from '@ss/app/layout/pega/_services/index';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 
-export interface UserAttributeTypeType {
+ interface UserAttributeTypeType {
   name: string;
   value: string | number;
 }
@@ -95,6 +95,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy  {
 
   ngOnInit() {
     this.getAccountsSummary();
+
     this.getUserAttributes();
 
 

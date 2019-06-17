@@ -4,7 +4,7 @@ import { AnonymousSubject } from 'rxjs/internal/Subject';
 import { checkBinding } from '@angular/core/src/view/util';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
-export interface UserAttributeType {
+ interface UserAttributeType {
   name:  string;
   value: number | string;
 }

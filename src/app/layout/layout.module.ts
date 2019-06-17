@@ -25,6 +25,8 @@ import { SharedPegaModule } from '../shared-pega/shared-pega.module';
 import { AppMaterialModule  } from '../app-material/app-material.module';
 import { FromCamelCase } from './pega/_pipes/fromCamelCase';
 import { SecondaryNavComponent } from './components/secondary-nav/secondary-nav.component';
+// import { DOperatorIDService } from '@ss/pega-layout/_services/service-d_operatorId.service';
+
 // import { TransactionSummaryKpiComponent } from './pega/kpi-report/transaction-summary-kpi/transaction-summary-kpi.component';
 // import { FilterPipe } from './pega/_pipes/searchFilterPipe';
 import { DialogDialog } from '@ss/app/layout/components/mega-menu-modal/mega-menu-modal.component';
@@ -68,6 +70,7 @@ import { DialogDialog } from '@ss/app/layout/components/mega-menu-modal/mega-men
       , SecondaryNavComponent
       , DialogDialog
 
+      // , DOperatorIDService
       // , OpenTaskPageComponent
       // , RecentTreasurerCaseListComponent
       // , PaginationComponent
@@ -78,6 +81,8 @@ import { DialogDialog } from '@ss/app/layout/components/mega-menu-modal/mega-men
   ],
   providers: [
     SharedPegaDataService
+
+    // , DOperatorIDService
   ],
   entryComponents: [
     modalRCICaseType
@@ -92,6 +97,7 @@ import { DialogDialog } from '@ss/app/layout/components/mega-menu-modal/mega-men
   // , RecentTreasurerCaseListComponent
   // , OpenTaskPageComponent
   FormsModule
+  // , DOperatorIDService
   , ReactiveFormsModule
   , OpenTaskPageModule
   , SecondaryNavComponent

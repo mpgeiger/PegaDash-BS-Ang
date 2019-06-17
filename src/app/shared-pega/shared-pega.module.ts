@@ -1,7 +1,8 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { NbaTeaserComponent } from './../layout/pega/nba-teaser/nba-teaser.component';
-import { NbaCaptureResponseComponent } from './../layout/pega/nba-capture-response/nba-capture-response.component';
+
+import { NbaCaptureResponseComponent } from '@ss/pega-layout/nba-capture-response/nba-capture-response.component';
 // import { ModalComponent } from './../layout/bs-component/components/modal/modal.component';
 // import { OpenAssignmentService } from './../_messages/openassignment.service';
 
@@ -169,6 +170,7 @@ import {
   //  FileNameDialogComponent
   //  , ModalContainerComponent
     ModalRCIContainerComponent
+
     // , PegaVariablesPropertiesComponent
    , RciMashupComponent
    , ModalRCIPegaComponent

@@ -17,7 +17,7 @@ import { PegaVariablesPropertiesComponent } from '@ss/app/shared-pega/pega-varia
 //   name: number | string;
 //   value: number | string;
 // }
-export interface UserAttributeType {
+interface UserAttributeType {
   name: string;
   value: number | string;
 }
@@ -99,7 +99,7 @@ export class LoginComponent implements OnInit {
               console.log(this.componentName + '  __luUserAttributes' + JSON.stringify(this.luUserAttributes));
               this.ps.setUserAttributesByArray(this.luUserAttributes);
 
-              //this.ps.addUserAttribute('userWorkGroup', 'MY TEST CHANGE UPDATE');
+              // this.ps.addUserAttribute('userWorkGroup', 'MY TEST CHANGE UPDATE');
               // this.ps.setUserAttributes(this.luUserAttributes);
 
             },
