@@ -27,7 +27,7 @@ export class DatapageService {
     dataHeaders = dataHeaders.append('Content-Type', 'application/json');
     // dataHeaders = dataHeaders.append('Origin', 'http://bny.pegatsdemo.com:8080/');
 
-    // dataHeaders = dataHeaders.append('Access-Control-Allow-Origin', 'http://localhost:4200');
+    // dataHeaders = dataHeaders.append('Access-Control-Allow-Origin', 'http://82fsserviceexcellence.pegatsdemo.com:4200');
 
     // results = this.http.get(this.dataPageUrl + "/" + id, { observe: 'response', params: dpParams, headers: dataHeaders});
 

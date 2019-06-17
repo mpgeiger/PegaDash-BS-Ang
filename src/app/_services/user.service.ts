@@ -24,7 +24,7 @@ export class UserService {
     const authParams = new HttpParams();
     let authHeaders = new HttpHeaders();
     authHeaders = authHeaders.append('Authorization', 'Basic ' + encodedUser);
-    // authHeaders = authHeaders.append('Access-Control-Allow-Origin',  'http://localhost:4200');
+    // authHeaders = authHeaders.append('Access-Control-Allow-Origin',  'http://82fsserviceexcellence.pegatsdemo.com:4200');
     // authHeaders = authHeaders.append('Access-Control-Allow-Headers', '*');
     // authHeaders = authHeaders.append('Origin', '*');
     // authHeaders = authHeaders.append('Origin', 'http://bny.pegatsdemo.com:8080/');
