@@ -38,7 +38,9 @@ $grays: map-merge((
   ), $grays);
 
   // $blue:    #007bff !default;
-  $blue:    #1A7383 !default;
+  // $blue:    #1A7383 !default;
+  $customerButton:    #e60000 !default;
+  $blue:    lighten($customerButton, 20%) !default;
   $indigo:  #6610f2 !default;
   $purple:  #6f42c1 !default;
   $pink:    #e83e8c !default;
