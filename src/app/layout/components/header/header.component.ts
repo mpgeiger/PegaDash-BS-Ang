@@ -209,9 +209,9 @@ checkIfStubbed() {
     }
     openDemoConfig() {
       // this.router.navigateByUrl("https://www.google.com");
-      // window.location.href="http://bny.pegatsdemo.com:8800/config";
-      // window.open('http://admin:pegasys@bny.pegatsdemo.com:8800/config', '_blank');
-      // window.open('http://bny.pegatsdemo.com:8800/config', '_blank');
+      // window.location.href="http://82fsserviceexcellence.pegatsdemo.com:8800/config";
+      // window.open('http://admin:pegasys@82fsserviceexcellence.pegatsdemo.com:8800/config', '_blank');
+      // window.open('http://82fsserviceexcellence.pegatsdemo.com:8800/config', '_blank');
       window.open('http://82fsserviceexcellence.pegatsdemo.com:8800/config', '_blank');
   }
 
