@@ -1,0 +1,23 @@
+/* FINANCIAL SERVICES */
+
+header,
+.product-icon,
+.secondary-options .front-option::after,
+.benefits li::after {
+ background-color: #2d3a51;
+}
+
+.front header,
+.offer-hero header {
+	background-image: url('../img/hero-1.jpg');
+	background-position: 50% 100%;
+ }
+ 
+ .front.logged-in header {
+	background-image: url('../img/hero-2.jpg');
+ }
+ 
+ 
+.form > header {
+ background-image: url('../img/hero-2.jpg');
+}

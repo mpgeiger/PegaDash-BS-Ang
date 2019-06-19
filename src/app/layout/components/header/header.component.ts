@@ -254,8 +254,7 @@ checkIfStubbed() {
  }
  @Component({
   selector: 'dynamic-comp',
-  template: `
-  <div>Dynamic component</div>`
+  template: '<div>Dynamic component</div>'
 })
 export class DynamicComponent {
 

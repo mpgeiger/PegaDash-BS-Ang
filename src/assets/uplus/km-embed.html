@@ -1,0 +1,93 @@
+<!--TADIS: Jan/9/2019 12.02PM Please add Date/Time and file update details for each change -->
+<!--TADIS: Jan/9/2019 12.02PM added comments at the top -->
+
+<!DOCTYPE html>
+<html class="embedded-content">
+<head>
+
+
+	<title>Knowledge Center</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800" rel="stylesheet" />
+	<link rel="stylesheet" href="../css/global.css" />
+	<link rel="stylesheet" href="css/bank.css" />
+	<link rel="stylesheet" href="bank.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="../js/util.js"></script>
+	<script src="js/verticalUtil.js"></script>
+
+<script>
+	$(document).ready(function(){
+		if (window.addEventListener){
+			addEventListener("message", postLoad, false);
+		} else {
+			attachEvent("onmessage", postLoad);
+		}
+	});
+
+	function postLoad(event){
+		try {
+			var message = JSON.parse(event.data);
+		} catch(e) {
+			console.log("Error parsing posted message: " + e.message);
+			return;
+		}
+		if (message.message && message.message.payload.name == "loaded" && message.message.src == "PegaGadgetIfr") {
+			/* if there is a vertical-specific callback function, run it */
+			if (typeof verticalKMCallback == "function") {
+				verticalKMCallback();
+			}
+		}
+	}
+</script>
+
+</head>
+<body class="embedded-content">
+<article>
+<!-- ********************** Begin Pega content ********************** -->
+<!-- <script src='http://10.60.215.179:9080/prweb?pyActivity=pzIncludeMashupScripts'></script> -->
+<script src='http://82fsserviceexcellence.pegatsdemo.com:9080/prweb?pyActivity=pzIncludeMashupScripts'></script>
+<div  id="PegaGadget" data-pega-gadgetname ='PegaGadget' style="height:100vh"
+data-pega-action ='display'
+data-pega-action-param-classname='Data-Portal'
+data-pega-action-param-harnessname='KMHelpSitePortal'
+data-pega-action-param-model=''
+data-pega-isdeferloaded='false'
+data-pega-applicationname='CSFSSelfService'
+data-pega-threadname='PegaGadget'
+data-pega-systemid='pega'
+data-pega-resizetype='stretch'
+data-pega-url='http://82fsserviceexcellence.pegatsdemo.com/prweb'
+data-pega-redirectguests='true'>
+</div>
+</article>
+<script>
+function getTheCookie(cname) {
+      var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+  var pegaAParamObj = {};
+  pegaAParamObj.UserIdentifier=getTheCookie("username");
+  pegaAParamObj.Password="aW5zdGFsbDEyMzQ1IQ==";
+  pegaAParamObj.pzSkinName="KMHelpPortalSkin";
+  pegaAParamObj.username = pegaAParamObj.UserIdentifier;
+  document.getElementById("PegaGadget").setAttribute("data-pega-action-param-parameters", JSON.stringify(pegaAParamObj)+"");
+
+/* if there is a vertical-specific initialization function, run it */
+if (typeof verticalKMInit == "function") {
+  verticalKMInit(pegaAParamObj);
+}
+
+</script>
+</body>
+</html>

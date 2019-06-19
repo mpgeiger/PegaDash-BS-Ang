@@ -1,0 +1,164 @@
+<!--TADIS: Jan/9/2019 12.02PM Please add Date/Time and file update details for each change -->
+<!--TADIS: Jan/9/2019 12.02PM added comments at the top -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1, width=device-width">
+	<title>Welcome to U+ Bank!</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800" rel="stylesheet" />
+	<link rel="stylesheet" href="../css/global.css" />
+	<link rel="stylesheet" href="css/bank.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="../js/util.js"></script>
+	<script src ='../js/WCBPegaHelper.js'></script>
+    <script>
+       var serverURL = PegaCSWSS.MashupURL;
+       var mashupScript = document.createElement('script');
+       mashupScript.src = serverURL + "?pyActivity=pzIncludeMashupScripts";
+       document.getElementsByTagName('script')[0].parentNode.appendChild(mashupScript);
+    </script> 
+
+
+<link rel="stylesheet" type="text/css" href="PegaStyles.css?nocache=20190107T093459.730GMT">
+    <script src ='../js/WCBPegaHelperExtension.js'></script>
+    <link rel="stylesheet" type="text/css" href="../css/WCBPegaStyles.css">
+</head>
+<body class="front">
+<header class="front flex flex-col flex-mid-align">
+	<nav class="wrap header flex flex-mid-align">
+		<ul class="flex flex-mid-align">
+			<li><a href="#"><img class="logo" src="img/logo_nxn_lg.png" alt="BNY" /></a></li>
+			<li><a href="#">Banking</a></li>
+			<li><a href="#">Credit cards</a></li>
+			<li><a href="#">Loans</a></li>
+			<li><a href="#">Investment</a></li>
+		</ul>
+		<div class="login flex-align-r">
+			<button class="launch-login">Log in</button>
+			<div class="overlay hidden flex flex-col ">
+				<div class="field flex flex-col username">
+                                        <select name="username" id="userSelect">
+                                        </select>
+					<label>User name</label>
+				</div>
+				<div class="field flex flex-col password">
+					<input type="password" value="install12345!"/>
+					<label>Password</label>
+				</div>
+				<button class="sign-in">Sign in</button>
+				<a href="#">Trouble logging in</a>
+				<a href="#">Create new account</a>
+			</div>
+		</div>
+	</nav>
+	<div class="wrap hero-wrap flex flex-col">
+		<div>
+			<h1 class="hero">Set goals, <span>save more.</span></h1>
+			<button>Learn more</button>
+		</div>
+	</div>
+</header>
+<main>
+    <div class="wrap options primary-options">
+		<section class="front-option" >
+			<a id="BannerClick0" href="#">
+			<img id="BannerAd0" class="option" src="" alt="" /></a>
+			<h2 id="BannerAd0Title" class="option-header"></h2>
+			<p id="BannerAd0Desc"></p>
+			<a id="BannerLink0" class="decorated" href="#">Learn more</a>
+			
+		</section>
+		<section class="front-option">
+			<a id="BannerClick1" href="#">
+			<img id="BannerAd1" class="option" src="" alt="" /> </a>
+			<h2 id="BannerAd1Title" class="option-header"></h2>
+			<p id="BannerAd1Desc"></p>
+			<a id="BannerLink1" class="decorated" href="#">Learn more</a>
+			
+		</section>
+		<section class="front-option">
+			<a id="BannerClick2" href="#">
+			<img id="BannerAd2" class="option" src="" alt="" /></a>
+			<h2 id="BannerAd2Title" class="option-header"></h2>
+			<p id="BannerAd2Desc"></p>
+			<a id="BannerLink2" class="decorated" href="#">Learn more</a>
+			
+		</section>
+	</div>
+	<div class="secondary-options">
+		<div class="wrap options">
+			<section class="front-option contact-us">
+				<h2 class="option-header">We're here to help.</h2>
+				<p>Banking has never been easier.</p>
+				<a class="decorated" href="#">Contact us</a>
+			</section>
+			<section class="front-option paperless">
+				<h2 class="option-header">Go paperless</h2>
+				<p>A safe and secure way to stay organized.</p>
+				<a class="decorated" href="#">Learn more</a>
+			</section>
+		</div>
+	</div>
+</main>
+<div id="configurePanel" style="display:none; margin-left:40px;">
+</div>
+<footer>
+	<div class="wrap flex">
+		<nav>
+			<ul class="flex">
+				<li>About us</li>
+				<li>Reviews</li>
+				<li>Privacy</li>
+				<li>Terms &amp; Conditions</li>
+				<li><span style="cursor:pointer" onclick='document.getElementById("configurePanel").style.display="block"; window.scrollTo(0, 9999)'>Configure</span></li>
+			</ul>
+		</nav>
+		<p class="flex-align-r copyright">&copy; 2018 Pegasystems</p>
+	</div>
+</footer>
+
+<script src="../js/realtimecontainerscript.js"></script>
+  <script src="../js/PegaInsert.js"></script>
+<script>
+
+//DEMO
+    $(document).ready(function(){
+		//setCookie("CustomerID", "PEGASAFS-WORK-CONTACT CON-705", 30);
+		//setCookie("username", "ali.mohammed.mail.07@gmail.com", 30);
+		NBAM('index.html', 'TopOffers');		
+		updateMKTID();
+
+		var baWelcome = document.getElementById("WelcomeMessage");
+      if (baWelcome) {
+        var theMessage = "Welcome back " + sessionStorage.getItem('firstName');
+        baWelcome.innerText = theMessage;
+      
+      }
+	    
+    })
+
+function updateMKTID()
+{
+	$("#txt_UID").empty();
+      $("#txt_UID").append(getCookie("MKTID"));
+
+}
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) {
+            var MKTID =  c.substring(name.length, c.length);            
+	    return MKTID ;
+        }
+    }
+    return "";
+}
+</script>
+
+</body>
+</html>

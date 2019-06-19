@@ -1,3 +1,4 @@
+
 // import { RelAccountListComponent } from './../../rel-account-list/rel-account-list.component';
 // import { StatComponent } from './../../../../shared/modules/stat/stat.component';
 import { Component, OnInit, Input, OnDestroy, OnChanges, AfterViewInit } from '@angular/core';
@@ -7,11 +8,14 @@ import { Subscription } from 'rxjs';
 import { PegaSessionService } from '@ss/app/layout/pega/_services/index';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
+import { IoUserAttribute, IaUserAttributes } from '@ss/pega-layout/_interfaces';
 
- interface UserAttributeTypeType {
-  name: string;
-  value: string | number;
-}
+
+
+//  interface UserAttributeTypeType {
+//   name: string;
+//   value: string | number;
+// }
 
 @Component({
   selector: 'app-welcome',
@@ -45,7 +49,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy  {
   foobar: string | number  = '';
   foobar2: string | number  = '';
 
-  userAttributes: UserAttributeTypeType[] = [];
+  userAttributes: IaUserAttributes[] = [];
 
   userInfo = {};
   showLoading = false;
@@ -108,12 +112,12 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy  {
 
 
   ngAfterViewInit(): void {
-    let u1 = {} as UserAttributeTypeType;
-    let u2 = {} as UserAttributeTypeType;
+    // const u1 = {} as IoUserAttribute;
+    // const u2 = {} as IoUserAttribute;
 
-    u1 = this.getUserAttr('userFullName');
-    u2 = this.getUserAttr('lastAccess');
-    console.log(this.componentName + ' getUserAttributes  ngOnInit getUserAttr Value--lastAccess___' + JSON.stringify(u2));
+    // u1 = this.getUserAttr('userFullName');
+    // u2 = this.getUserAttr('lastAccess');
+    // console.log(this.componentName + ' getUserAttributes  ngOnInit getUserAttr Value--lastAccess___' + JSON.stringify(u2));
     // console.log(this.componentName + ' getUserAttributes  ngOnInit getUserAttr Value--lastAccess___' + u2.value);
 
     // this.getUserAttr('userFullName');
@@ -136,42 +140,42 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy  {
   }
 
   getUserAttributes() {
-const u1 = {} as UserAttributeTypeType;
-const u2 = {} as UserAttributeTypeType;
-    this.subscriptionUserAttributes = this.ps.getUserAttributes().subscribe( message => {
-        if (message) {
-          this.messagesAU.push(message);
-          this.userAttributes = message;
-         console.log(this.componentName + ' getUserAttributes _displayName -->' + JSON.stringify(this.userAttributes));
+// const u1 = {} as IoUserAttribute;
+// const u2 = {} as IoUserAttribute;
+//     this.subscriptionUserAttributes = this.ps.getUserAttributes().subscribe( message => {
+//         if (message) {
+//           this.messagesAU.push(message);
+//           this.userAttributes = message;
+//          console.log(this.componentName + ' getUserAttributes _displayName -->' + JSON.stringify(this.userAttributes));
 
-        } else {
-          // clear messages when empty message received
-          this.messagesAU = [];
-        }
+//         } else {
+//           // clear messages when empty message received
+//           this.messagesAU = [];
+//         }
 
-        this.foobar = this.getUserAttr('displayUserName').value;
-        this.foobar2 = this.getUserAttr('lastAccess').value;
-console.log(this.componentName + 'foobar-->' + this.foobar);
-console.log(this.componentName + 'lastAccess-->' + this.foobar2);
+//         this.foobar = this.getUserAttr('displayUserName').value;
+//         this.foobar2 = this.getUserAttr('lastAccess').value;
+// console.log(this.componentName + 'foobar-->' + this.foobar);
+// console.log(this.componentName + 'lastAccess-->' + this.foobar2);
         // u1 = this.getUserAttr('userFullName');
         // u2 = this.getUserAttr('lastAccess');
 
         // console.log(this.componentName + ' getUserAttributes userFullName -->' +  JSON.stringify(u1));
         // console.log(this.componentName + ' getUserAttributes _lastAccess -->' +  JSON.stringify(u2)  );
         // /console.log(this.componentName + ' getUserAttributes _lastAccess -->' +  JSON.stringify(u2) + '___' + u2.value );
-      });
+      // })
 
 
   }
 
-  getUserAttr(nameValue: string): UserAttributeTypeType {
-    const item1 = this.userAttributes.find(i => {
-      return i.name === nameValue;
-    });
-    // console.log(this.componentName + ' getUserAttributes getUserAttr--' + nameValue + '___' + JSON.stringify(item1));
-    // console.log(this.componentName + ' getUserAttributes getUserAttr Value--' + nameValue + '___' + item1);
-    return item1;
-  }
+  // getUserAttr(nameValue: string): IoUserAttribute {
+  //   const item1 = this.userAttributes.find(i => {
+  //     return i.name === nameValue;
+  //   });
+  //   // console.log(this.componentName + ' getUserAttributes getUserAttr--' + nameValue + '___' + JSON.stringify(item1));
+  //   // console.log(this.componentName + ' getUserAttributes getUserAttr Value--' + nameValue + '___' + item1);
+  //   return item1;
+  // }
 
 
 ngOnDestroy() {

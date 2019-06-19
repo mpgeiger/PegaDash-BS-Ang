@@ -18,14 +18,14 @@ var $ = require('jquery');
   // fireflyChatAPI.token = "58d8d51d41c53d0000da4067";
 // fireflyChatAPI.cobrowseAPIKey="58d3c9aa21365a993bb0fed3";
 
-  // fireflyChatAPI.serverHostUrl = "https://bny.pegatsdemo.com:8043";
-  // fireflyChatAPI.assetHostUrl = "https://bny.pegatsdemo.com:8043";
+  // fireflyChatAPI.serverHostUrl = "https://82fsserviceexcellence.pegatsdemo.com:8043";
+  // fireflyChatAPI.assetHostUrl = "https://82fsserviceexcellence.pegatsdemo.com:8043";
   // fireflyChatAPI.publishSettingsToS3 = false;
-  // fireflyChatAPI.s3HostUrl = "https://bny.pegatsdemo.com:8043";
+  // fireflyChatAPI.s3HostUrl = "https://82fsserviceexcellence.pegatsdemo.com:8043";
 
   // var script = document.createElement("script");
   // script.type = "text/javascript";
-  // script.src = "https://bny.pegatsdemo.com:8043/scripts/loaders/chatLoader.js";/   script.async = true;
+  // script.src = "https://82fsserviceexcellence.pegatsdemo.com:8043/scripts/loaders/chatLoader.js";/   script.async = true;
   // var firstScript = document.getElementsByTagName("script")[0];
   // firstScript.parentNode.insertBefore(script, firstScript);
  //})();
@@ -56,8 +56,8 @@ $(document).ready(function(){
   var script = document.createElement("script");
   script.type = "text/javascript";
   fireflyAPI.token = "58d3c9aa21365a993bb0fed3";
-	fireflyAPI.serverHostUrl = "https://bny.pegatsdemo.com:8043/co"
-  script.src = "https://bny.pegatsdemo.com:8043/co/cobrowse/loadScripts";
+	fireflyAPI.serverHostUrl = "https://82fsserviceexcellence.pegatsdemo.com:8043/co"
+  script.src = "https://82fsserviceexcellence.pegatsdemo.com:8043/co/cobrowse/loadScripts";
   script.async = true;
 
 	// script.type = "text/javascript";
@@ -247,8 +247,8 @@ function handleMissedMessages() {
 /* minimize advisor utilities - end */
 
 $(function() {
-$( 'body' ).append("<div id='OnlineHelp' data-pega-gadgetname ='OnlineHelp' data-pega-action ='createNewWork' data-pega-action-param-classname ='' data-pega-action-param-flowname ='' data-pega-action-param-model ='' data-pega-applicationname ='BNYService' data-pega-isdeferloaded ='true' data-pega-threadname ='CSAdvisor' data-pega-systemid ='pega' data-pega-resizetype ='fixed' data-pega-url ='https://bny.pegatsdemo.com/prweb/PRChat' data-pega-action-param-parameters ='' data-pega-redirectguests='true' data-pega-event-onclose ='hideinline'></div>");
-$( 'body' ).append("<div style='display:none; height:80px; padding-top:14px; padding-left:20px;' id='Preview' data-pega-gadgetname ='PreviewGadget' data-pega-isdeferloaded ='true' data-pega-action ='display' data-pega-action-param-classname ='PegaCS-OnlineHelp-Triage-WebChatbot'  data-pega-harnessname ='Preview' data-pega-applicationname ='BNYService' data-pega-threadname ='Preview' data-pega-systemid ='pega' data-pega-resizetype ='fixed' data-pega-event-onclose ='' data-pega-url ='https://bny.pegatsdemo.com/prweb/PRChat' data-pega-action-param-parameters=''></div>");
+$( 'body' ).append("<div id='OnlineHelp' data-pega-gadgetname ='OnlineHelp' data-pega-action ='createNewWork' data-pega-action-param-classname ='' data-pega-action-param-flowname ='' data-pega-action-param-model ='' data-pega-applicationname ='BNYService' data-pega-isdeferloaded ='true' data-pega-threadname ='CSAdvisor' data-pega-systemid ='pega' data-pega-resizetype ='fixed' data-pega-url ='https://82fsserviceexcellence.pegatsdemo.com/prweb/PRChat' data-pega-action-param-parameters ='' data-pega-redirectguests='true' data-pega-event-onclose ='hideinline'></div>");
+$( 'body' ).append("<div style='display:none; height:80px; padding-top:14px; padding-left:20px;' id='Preview' data-pega-gadgetname ='PreviewGadget' data-pega-isdeferloaded ='true' data-pega-action ='display' data-pega-action-param-classname ='PegaCS-OnlineHelp-Triage-WebChatbot'  data-pega-harnessname ='Preview' data-pega-applicationname ='BNYService' data-pega-threadname ='Preview' data-pega-systemid ='pega' data-pega-resizetype ='fixed' data-pega-event-onclose ='' data-pega-url ='https://82fsserviceexcellence.pegatsdemo.com/prweb/PRChat' data-pega-action-param-parameters=''></div>");
 });
 //static-content-hash-trigger-YUI
 /***********************************************************************************************************************

@@ -20,6 +20,7 @@ import { WelcomeComponent } from '../layout/pega/customer-info/welcome/welcome.c
 // import { PStatModule } from '../layout/pega/stat/stat.module';
 import { FilterPipe } from '../layout/pega/_pipes/searchFilterPipe';
 import { ParseIdFromCase } from '@ss/app/layout/pega';
+import { IoUserAttribute, IoUserAttributes } from '@ss/pega-layout/_interfaces';
 
 import {
      AccountSummaryComponent
@@ -83,6 +84,7 @@ import {
     , FilterPipe
     , HomePageComponent
     , InCorrAutoReplyTrendComponent
+
     // , ChartDataLabels
     // , ModalContainerComponent
     , ModalRCIContainerComponent
@@ -93,6 +95,7 @@ import {
     , NbaTeaserComponent
     , OpenByWorkTypeComponent
     , ParseIdFromCase
+    // , PegaInterfaces
     , PegaPieChartComponent
     // , PegaVariablesPropertiesComponent
     , PStatComponent
@@ -170,7 +173,6 @@ import {
   //  FileNameDialogComponent
   //  , ModalContainerComponent
     ModalRCIContainerComponent
-
     // , PegaVariablesPropertiesComponent
    , RciMashupComponent
    , ModalRCIPegaComponent

@@ -1,4 +1,5 @@
 
+
 import { ServerErrorComponent } from './../../server-error/server-error.component';
 import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
 
@@ -6,8 +7,8 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { FormGroup, FormControl } from '@angular/forms';
 
-import { PegaVariablesPropertiesComponent, UserAttributes } from '@ss/pega-shared/pega-variables-properties.component';
-
+import { PegaVariablesPropertiesComponent,  } from '@ss/pega-shared/pega-variables-properties.component';
+import { IoUserAttribute, IoUserAttributes, IaUserAttributes } from '@ss/pega-layout/_interfaces';
 import { PegaSessionService } from '@ss/app/layout/pega/_services/index';
 // import { DOperatorIDService } from '@ss/pega-layout/_services/service-d_operatorId.service';
 import { DOperatorIDService } from '../../layout/pega/_services/service-d_operatorId.service';
@@ -47,7 +48,7 @@ export class SummaryPageComponent implements OnInit {
   subscriptionUserAttributes: Subscription;
   messages: any[] = [];
   oUserAttributes: any = {};
-  userAttributesObject = {} as UserAttributes;
+  userAttributesObject = {} as IoUserAttributes;
   allData$: Observable<{}>;
   allData: {};
 
@@ -90,7 +91,7 @@ export class SummaryPageComponent implements OnInit {
         fooUserAttributes = res;
 
         fooNV = this.pv.convertArray2Object(fooUserAttributes);
-        //this.oUserAttributes = res[1];
+        // this.oUserAttributes = res[1];
         this.oUserAttributes = this.pv.convertArray2Object(fooUserAttributes);
         console.log(this.componentName + '___subscribeToDataService-fooNV-' + JSON.stringify(fooNV));
         console.log(this.componentName + '___subscribeToDataService-foo-' + JSON.stringify(fooUserAttributes));
