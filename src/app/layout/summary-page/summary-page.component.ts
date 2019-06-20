@@ -46,9 +46,13 @@ export class SummaryPageComponent implements OnInit {
   lastAccess = 'lastAccess placeholder';
 
   subscriptionUserAttributes: Subscription;
+  getUserAttrsSubscription: Subscription;
+  getUserAttrs: any;
+
   messages: any[] = [];
-  oUserAttributes: any = {};
+  oUserAttributes = {};
   userAttributesObject = {} as IoUserAttributes;
+
   allData$: Observable<{}>;
   allData: {};
 
@@ -84,23 +88,57 @@ export class SummaryPageComponent implements OnInit {
     this.allData = this.d_OpId.subscribeToDataService();
     this.allData$ = this.d_OpId.subscribeToDataService();
     // foo = this.allData$.json();
-    let fooUserAttributes: any = {};
-    let fooNV: any = {};
+    // let fooUserAttributes: any = {};
+    // let fooNV: any = {};
 
-    this.ps.getUserAttributes().subscribe((res: {}) => {
-        fooUserAttributes = res;
+    console.log(this.componentName + ' testing for empty oUserAttributes--' + (JSON.stringify(this.oUserAttributes) === '{}'));
+    if ( JSON.stringify(this.oUserAttributes) === '{}' ) {
+    this.getUserAttrsSubscription =  this.ps.getUserAttributes().subscribe((message: {}) => {
 
-        fooNV = this.pv.convertArray2Object(fooUserAttributes);
+      this.getUserAttrs = message;
+
+      if (message) {
+        this.oUserAttributes = this.pv.convertArray2Object(this.getUserAttrs);
+      }
+      // console.log(this.componentName + '___subscribeToDataService-fooNV-' + JSON.stringify(fooNV));
+     // console.log(this.componentName + '___subscribeToDataService-foo-' + JSON.stringify(fooUserAttributes));
+      console.log(this.componentName + '___subscribeToDataService-oUserAttributes-' + JSON.stringify(this.oUserAttributes));
+
+       // fooUserAttributes = res;
+
+
+        // fooNV = this.pv.convertArray2Object(fooUserAttributes);
         // this.oUserAttributes = res[1];
-        this.oUserAttributes = this.pv.convertArray2Object(fooUserAttributes);
-        console.log(this.componentName + '___subscribeToDataService-fooNV-' + JSON.stringify(fooNV));
-        console.log(this.componentName + '___subscribeToDataService-foo-' + JSON.stringify(fooUserAttributes));
-        console.log(this.componentName + '___subscribeToDataService-oUserAttributes-' + JSON.stringify(this.oUserAttributes));
+        // this.oUserAttributes = this.pv.convertArray2Object(fooUserAttributes);
+       // console.log(this.componentName + '___subscribeToDataService-fooNV-' + JSON.stringify(fooNV));
+       // console.log(this.componentName + '___subscribeToDataService-foo-' + JSON.stringify(fooUserAttributes));
+       // console.log(this.componentName + '___subscribeToDataService-oUserAttributes-' + JSON.stringify(this.oUserAttributes));
     });
 
     console.log(this.componentName + '___subscribeToDataService--' + JSON.stringify(this.allData));
     console.log(this.componentName + '___subscribeToDataService$$$$--' + JSON.stringify(this.allData$));
+     }
+    // if ( JSON.stringify(this.oUserAttributes) === '{}' ) {
+    // this.ps.getUserAttributes().subscribe((res: {}) => {
+
+    //   this.getUserAttrs = message
+
+    //     fooUserAttributes = res;
+
+
+    //     fooNV = this.pv.convertArray2Object(fooUserAttributes);
+    //     // this.oUserAttributes = res[1];
+    //     this.oUserAttributes = this.pv.convertArray2Object(fooUserAttributes);
+    //     console.log(this.componentName + '___subscribeToDataService-fooNV-' + JSON.stringify(fooNV));
+    //     console.log(this.componentName + '___subscribeToDataService-foo-' + JSON.stringify(fooUserAttributes));
+    //     console.log(this.componentName + '___subscribeToDataService-oUserAttributes-' + JSON.stringify(this.oUserAttributes));
+    // });
+
+    // console.log(this.componentName + '___subscribeToDataService--' + JSON.stringify(this.allData));
+    // console.log(this.componentName + '___subscribeToDataService$$$$--' + JSON.stringify(this.allData$));
+    // }
   }
+
 
   // getSub(): any {
   //   this.subscription = this.ps.getAccountList().subscribe(message => {
