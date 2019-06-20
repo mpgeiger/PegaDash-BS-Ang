@@ -7,14 +7,16 @@ function preparePegaAParams(gadgetName) {
   */
   pegaAParamObj.AppName="WebChatbot";
 	pegaAParamObj.HelpConfigurationName="BNY Swift";
- 	pegaAParamObj.ContactId="7103716326";
+ 	// pegaAParamObj.ContactId="7103716326";
+ 	// pegaAParamObj.ContactId="9912347485";
+ 	pegaAParamObj.ContactId="7103716305";
  	// pegaAParamObj.ContactId="7103716305";
     // pegaAParamObj.AccountNumber="1029311";
    //  pegaAParamObj.AccountNumber="1029311";
   //  pegaAParamObj.ContactId="7103716326";
   //  pegaAParamObj.AccountNumber="1029329";
 
-	pegaAParamObj.AccountNumber="1029329";
+	pegaAParamObj.AccountNumber="1029311";
 	pegaAParamObj.username=getCookie("UserName");
   	pegaAParamObj.Site="Swift";
 	pegaAParamObj.pzSkinName="OnlineHelp";
@@ -48,11 +50,13 @@ function getCookie(cname) {
 
 /* Set cookies. To be overwritten locally */
   // setCookie("ContactID", "7103716305", 30);
-  setCookie("ContactID", "7103716326", 30);
+  // setCookie("ContactID", "7103716326", 30);
+  // setCookie("ContactID", "9912347485", 30);
+  setCookie("ContactID", "7103716305", 30);
   //setCookie("AccountNumber","1029311", 30);
   // setCookie("ContactID", "7103716326", 30);
 //  setCookie("AccountNumber","9999999975", 30);
 //  setCookie("AccountNumber","1029329", 30);
   // setCookie("AccountNumber","9998765431", 30);
-  setCookie("AccountNumber","1029329", 30);
+  setCookie("AccountNumber","1029311", 30);
   setCookie("UserName","Shea Parker", 30);
