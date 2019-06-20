@@ -23,10 +23,15 @@ interface UserAttributeType {
 }
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
+  templateUrl: './login_MUFG_Min.html',
+  // templateUrl: './login.component.html',
   styleUrls: [
-    './nxn-loginpage.scss',
-    './login.component.scss'
+    // './login_MUFG_Min_files/bootstrap.css',
+    // './login_MUFG_Min_files/main.css',
+    // './login_MUFG_Min_files/okta-sign-in.css',
+    './login_MUFG_Min_files/OktaSkin.css'
+    // './nxn-loginpage.scss',
+    // './login.component.scss'
               ],
   animations: [routerTransition()]
 })
