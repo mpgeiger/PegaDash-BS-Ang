@@ -1,3 +1,4 @@
+import { GetuserattributesService } from './../../../.history/src/app/layout/pega/_messages/getuserattributes.service_20190620190101';
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -11,6 +12,8 @@ import { DatapageService } from '../_services/datapage.service';
 import { interval } from 'rxjs/internal/observable/interval';
 import { PegaSessionService } from '@ss/app/layout/pega/_services/index';
 import { PegaVariablesPropertiesComponent } from '@ss/app/shared-pega/pega-variables-properties.component';
+
+
 // import { UserAttributeTypeType } from '@ss/app/layout/pega/_services/index';
 // import { MatSnackBar } from '@angular/material';
 // export interface UserAttributes {
@@ -53,7 +56,7 @@ export class LoginComponent implements OnInit {
     private pv: PegaVariablesPropertiesComponent,
     // private snackBar: MatSnackBar,
     public router: Router
-  ) {}
+      ) {}
 
   name = new FormControl('');
   pxTextInputControl = new FormControl('', null);
@@ -103,6 +106,8 @@ export class LoginComponent implements OnInit {
 
               console.log(this.componentName + '  __luUserAttributes' + JSON.stringify(this.luUserAttributes));
               this.ps.setUserAttributesByArray(this.luUserAttributes);
+
+
 
               // this.ps.addUserAttribute('userWorkGroup', 'MY TEST CHANGE UPDATE');
               // this.ps.setUserAttributes(this.luUserAttributes);

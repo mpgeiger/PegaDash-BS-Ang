@@ -1,8 +1,4 @@
 
-
-import { ServerErrorComponent } from './../../server-error/server-error.component';
-import { SharedPegaModule } from './../../shared-pega/shared-pega.module';
-
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -13,6 +9,7 @@ import { PegaSessionService } from '@ss/app/layout/pega/_services/index';
 // import { DOperatorIDService } from '@ss/pega-layout/_services/service-d_operatorId.service';
 import { DOperatorIDService } from '../../layout/pega/_services/service-d_operatorId.service';
 import { Subscription, Observable, BehaviorSubject } from 'rxjs';
+import { GetUserAttributesService } from '@ss/pega-layout/_messages/getuserattributes.service';
 
 // @JsonProperty('value') _value:
 // interface ObsRespValue {
@@ -38,7 +35,8 @@ export class SummaryPageComponent implements OnInit {
   constructor(
     private pv: PegaVariablesPropertiesComponent,
     private ps: PegaSessionService,
-    private d_OpId: DOperatorIDService
+    private d_OpId: DOperatorIDService,
+    private guaservice: GetUserAttributesService
   ) { }
   componentName = 'summary-page.component';
   userName = '';
@@ -91,16 +89,18 @@ export class SummaryPageComponent implements OnInit {
     // let fooUserAttributes: any = {};
     // let fooNV: any = {};
 
-    console.log(this.componentName + ' testing for empty oUserAttributes--' + (JSON.stringify(this.oUserAttributes) === '{}'));
-    if ( JSON.stringify(this.oUserAttributes) === '{}' ) {
-    this.getUserAttrsSubscription =  this.ps.getUserAttributes().subscribe((message: {}) => {
+    // console.log(this.componentName + ' testing for empty oUserAttributes--' + (JSON.stringify(this.oUserAttributes) === '{}'));
+    // if ( JSON.stringify(this.oUserAttributes) === '{}' ) {
+//    this.getUserAttrsSubscription =  this.guaservice.getMessage().subscribe((message: {}) => {
+//      console.log(this.componentName + '___subscribeToDataService-message' + JSON.stringify(message));/
+//
+//      this.getUserAttrs = message;
 
-      this.getUserAttrs = message;
-
-      if (message) {
-        this.oUserAttributes = this.pv.convertArray2Object(this.getUserAttrs);
-      }
-      // console.log(this.componentName + '___subscribeToDataService-fooNV-' + JSON.stringify(fooNV));
+//      if (message) {
+//        this.oUserAttributes = this.pv.convertArray2Object(this.getUserAttrs.userAttributes);
+//      }
+     // console.log(this.componentName + '___subscribeToDataService-foo-' + JSON.stringify(fooUserAttributes));
+     // console.log(this.componentName + '___subscribeToDataService-foo-' + JSON.stringify(fooUserAttributes));
      // console.log(this.componentName + '___subscribeToDataService-foo-' + JSON.stringify(fooUserAttributes));
       console.log(this.componentName + '___subscribeToDataService-oUserAttributes-' + JSON.stringify(this.oUserAttributes));
 
@@ -113,11 +113,11 @@ export class SummaryPageComponent implements OnInit {
        // console.log(this.componentName + '___subscribeToDataService-fooNV-' + JSON.stringify(fooNV));
        // console.log(this.componentName + '___subscribeToDataService-foo-' + JSON.stringify(fooUserAttributes));
        // console.log(this.componentName + '___subscribeToDataService-oUserAttributes-' + JSON.stringify(this.oUserAttributes));
-    });
+//    });
 
-    console.log(this.componentName + '___subscribeToDataService--' + JSON.stringify(this.allData));
-    console.log(this.componentName + '___subscribeToDataService$$$$--' + JSON.stringify(this.allData$));
-     }
+//    console.log(this.componentName + '___subscribeToDataService--' + JSON.stringify(this.allData));
+//    console.log(this.componentName + '___subscribeToDataService$$$$--' + JSON.stringify(this.allData$));
+    //  }
     // if ( JSON.stringify(this.oUserAttributes) === '{}' ) {
     // this.ps.getUserAttributes().subscribe((res: {}) => {
 
@@ -137,6 +137,8 @@ export class SummaryPageComponent implements OnInit {
     // console.log(this.componentName + '___subscribeToDataService--' + JSON.stringify(this.allData));
     // console.log(this.componentName + '___subscribeToDataService$$$$--' + JSON.stringify(this.allData$));
     // }
+    console.log(this.componentName + ' RAW getUserAttrs ___subscribeToDataService-' + JSON.stringify(this.getUserAttrs));
+
   }
 
 

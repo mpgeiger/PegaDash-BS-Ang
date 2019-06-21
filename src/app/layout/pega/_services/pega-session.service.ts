@@ -3,6 +3,7 @@ import { Observable, Subject } from 'rxjs';
 import { AnonymousSubject } from 'rxjs/internal/Subject';
 import { checkBinding } from '@angular/core/src/view/util';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { GetUserAttributesService } from '@ss/pega-layout/_messages/getuserattributes.service';
 
  interface UserAttributeType {
   name:  string;
@@ -34,6 +35,9 @@ export class PegaSessionService {
   private displayName = new Subject<any>();
   private rgbaColorPalette = new Subject<any>();
 
+  constructor(
+    private gUA: GetUserAttributesService
+  ) {}
   uniqueAttr(name: string, value: string | number, arr): boolean {
       if ( arr.some(e => e.name === name)) {
         console.log('$$$ EXISTS_' + name + 'in array-->' + JSON.stringify(arr) );
@@ -65,7 +69,11 @@ export class PegaSessionService {
       if (this.uniqueAttr(name, value, this._userAttributes)) {
         this._userAttributes.push(element);
       }
+      this.gUA.sendMessage(this._userAttributes);
+
     });
+
+
 
     console.log('__' + this.serviceName + ' this._userAttributes--'  + JSON.stringify(this._userAttributes));
     this.userAttributes.next(this._userAttributes);
@@ -87,6 +95,7 @@ export class PegaSessionService {
     const result = Array.from(this._userAttributes.reduce((m, t) => m.set(t.name, t), new Map()).values());
 
 
+    // return this.userAttributes.asObservable();
     return this.userAttributes.asObservable();
   }
 
