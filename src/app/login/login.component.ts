@@ -105,6 +105,9 @@ export class LoginComponent implements OnInit {
               console.log(this.componentName + '  __luUserAttributes' + JSON.stringify(this.luUserAttributes));
               this.ps.setUserAttributesByArray(this.luUserAttributes);
 
+              localStorage.setItem('userEmailAddress', operator.pyAddresses.Email.pyEmailAddress);
+              // localStorage.setItem('CifNbr', customerSummary.CifNbr);
+              localStorage.setItem('CifNbr', '7103716305');
 
 
               // this.ps.addUserAttribute('userWorkGroup', 'MY TEST CHANGE UPDATE');
