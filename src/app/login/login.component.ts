@@ -106,7 +106,7 @@ export class LoginComponent implements OnInit {
               this.ps.setUserAttributesByArray(this.luUserAttributes);
 
               localStorage.setItem('userEmailAddress', operator.pyAddresses.Email.pyEmailAddress);
-              // localStorage.setItem('CifNbr', customerSummary.CifNbr);
+              // localStorage.setItem('CifNbr', customerSummary.CifNbr);  ////
               localStorage.setItem('CifNbr', '7103716305');
 
 
