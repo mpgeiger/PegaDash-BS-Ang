@@ -1,5 +1,3 @@
-import { GetuserattributesService } from './../../../.history/src/app/layout/pega/_messages/getuserattributes.service_20190620190101';
-
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
