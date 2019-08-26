@@ -1,11 +1,9 @@
 <p> WORKING ON WORK ITEM</p>
-
- <!-- <div class="progress-box" *ngIf="isProgress">
+<div class="progress-box" *ngIf="isProgress">
   <mat-spinner class="progress-spinner"></mat-spinner>
-</div> -->
+</div>
 
 
-<mat-card class="workitempanel-card" style="margin:0.5em; padding: 10px 10px 20px 10px;">
 <mat-card class="workitempanel-card" *ngIf="isLoaded" style="margin:0.5em; padding: 10px 10px 20px 10px;">
   <mat-card-header>
       <div class="pega-workitem-header">
@@ -38,15 +36,11 @@
   <mat-card-content>
 
     <div class="pega-workitem-main" *ngIf="!isNewPage">
-        ngIf="!isNewPage"
       <div class="pega-workitem-item" style="width: 70%" >
          <div style="padding: 5px;">
-          <!-- <app-topview #topview *ngIf="!isPage"></app-topview> -->
-          <app-topview #topview></app-topview>
-          currentCaseID$ --
-          <!-- <app-page *ngIf="isPage" [pageID]="currentPageID$" [caseID]="currentCaseID$" ></app-page> -->
-          <app-page  [pageID]="currentPageID$" [caseID]="currentCaseID$" ></app-page>
-        </div>
+          <app-topview #topview *ngIf="!isPage"></app-topview>
+          <app-page *ngIf="isPage" [pageID]="currentPageID$" [caseID]="currentCaseID$" ></app-page>
+          </div>
       </div>
       <div class="pega-workitem-details" style="width: 30%">
         <div style="padding: 5px;">
@@ -56,13 +50,8 @@
 
     </div>
     <div class="pega-workitem-main" *ngIf="isNewPage">
-        ngIf="isNewPage"
       <div class="pega-workitem-item" style="width: 100%">
-        app-toppage
-        currentCaseID$ -- XXX
-
         <app-toppage #toppage></app-toppage>
-        after toppage
       </div>
     </div>
 

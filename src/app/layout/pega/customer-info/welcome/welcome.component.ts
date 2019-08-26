@@ -23,9 +23,9 @@ import { IoUserAttribute, IaUserAttributes } from '@ss/pega-layout/_interfaces';
   styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy  {
-  subscription: Subscription;
+  subscAccountSummary: Subscription;
   subscriptionDisplayName: Subscription;
-  subscriptionUserAttributes: Subscription;
+  subscUserAttributes: Subscription;
 
   componentName = 'customer-info/welcome.component';
   @Input('FullName') fullName: string;
@@ -49,7 +49,8 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy  {
   foobar: string | number  = '';
   foobar2: string | number  = '';
 
-  userAttributes: IaUserAttributes[] = [];
+  _a_userAttributes: IaUserAttributes[] = [];
+  userAttributes = {};
 
   userInfo = {};
   showLoading = false;
@@ -98,6 +99,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy  {
 
 
   ngOnInit() {
+
     this.getAccountsSummary();
 
     this.getUserAttributes();
@@ -106,12 +108,14 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy  {
     // console.log(' welcome.component lastAccess-->' + this.lastAccess);
     // this.showLoading = true;
     // setInterval(() => {
-    //   this.changeDetectorRef.markForCheck();
-    // }, 5000);
-  }
+      //   this.changeDetectorRef.markForCheck();
+      // }, 5000);
+    }
 
 
-  ngAfterViewInit(): void {
+    ngAfterViewInit(): void {
+      console.log(this.componentName + ' @Inputs Fullname--' + this.fullName);
+      console.log(this.componentName + ' @Inputs LastAccess--' + this.lastAccess);
     // const u1 = {} as IoUserAttribute;
     // const u2 = {} as IoUserAttribute;
 
@@ -125,11 +129,11 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy  {
   }
 
   getAccountsSummary() {
-    this.subscription = this.ps.getAccountList().subscribe(message => {
+    this.subscAccountSummary = this.ps.getAccountList().subscribe(message => {
       if (message) {
         this.messages.push(message);
 
-        // console.log(this.componentName + ' GETTING ACCOUNT SUMMARY message-->' + JSON.stringify(message));
+       console.log(this.componentName + ' GETTING ACCOUNT SUMMARY message-->' + JSON.stringify(message));
         this.acctsSummary = message;
         this.showLoading = false;
       } else {
@@ -140,6 +144,23 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy  {
   }
 
   getUserAttributes() {
+    console.log(this.componentName + 'entered GETTINGUSER OBJECT ATTRIBUTES SUMMARY message-->');
+    this.subscUserAttributes = this.ps.getUserAttributesObject().subscribe(message => {
+
+
+      if (message) {
+        this.messages.push(message);
+
+       console.log(this.componentName + ' GETTINGUSER OBJECT ATTRIBUTES SUMMARY message-->' + JSON.stringify(message));
+        this.userInfo = message;
+        // this._o_UserAttributes = message;
+        this.showLoading = false;
+      } else {
+        // clear messages when empty message received
+        this.messages = [];
+      }
+    });
+
 // const u1 = {} as IoUserAttribute;
 // const u2 = {} as IoUserAttribute;
 //     this.subscriptionUserAttributes = this.ps.getUserAttributes().subscribe( message => {
@@ -180,7 +201,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit, OnDestroy  {
 
 ngOnDestroy() {
   // unsubscribe to ensure no memory leaks
-  this.subscription.unsubscribe();
+  this.subscAccountSummary.unsubscribe();
 }
 
 }

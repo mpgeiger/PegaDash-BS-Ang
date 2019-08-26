@@ -9,7 +9,7 @@ import { PegaSessionService } from '@ss/app/layout/pega/_services/index';
 // import { DOperatorIDService } from '@ss/pega-layout/_services/service-d_operatorId.service';
 import { DOperatorIDService } from '../../layout/pega/_services/service-d_operatorId.service';
 import { Subscription, Observable, BehaviorSubject } from 'rxjs';
-import { GetUserAttributesService } from '@ss/pega-layout/_messages/getuserattributes.service';
+import { GetUserAttributesArrayService, GetUserAttributesObjectService } from '@ss/app/layout/pega/_messages/getuserattributes.service';
 
 // @JsonProperty('value') _value:
 // interface ObsRespValue {
@@ -36,7 +36,8 @@ export class SummaryPageComponent implements OnInit {
     private pv: PegaVariablesPropertiesComponent,
     private ps: PegaSessionService,
     private d_OpId: DOperatorIDService,
-    private guaservice: GetUserAttributesService
+    private gUA_Array: GetUserAttributesArrayService,
+    private gUA_Object: GetUserAttributesObjectService
   ) { }
   componentName = 'summary-page.component';
   userName = '';
@@ -82,27 +83,30 @@ export class SummaryPageComponent implements OnInit {
     // this.userAttributesObject = this.pv.userAttributesObject;
     // console.log(this.componentName + ' this.pv.userAttributesObject  ngOnInit ___' + JSON.stringify(this.userAttributesObject));
 
-    this.d_OpId.initializeDataService();
+    // this.d_OpId.initializeDataService();
     this.allData = this.d_OpId.subscribeToDataService();
     this.allData$ = this.d_OpId.subscribeToDataService();
+    console.log(this.componentName + '___subscribeToDataService this.d_OpId.initializeDataService()--' + JSON.stringify(this.allData$));
     // foo = this.allData$.json();
     // let fooUserAttributes: any = {};
     // let fooNV: any = {};
 
     // console.log(this.componentName + ' testing for empty oUserAttributes--' + (JSON.stringify(this.oUserAttributes) === '{}'));
     // if ( JSON.stringify(this.oUserAttributes) === '{}' ) {
-//    this.getUserAttrsSubscription =  this.guaservice.getMessage().subscribe((message: {}) => {
-//      console.log(this.componentName + '___subscribeToDataService-message' + JSON.stringify(message));/
+    this.getUserAttrsSubscription =  this.gUA_Object.getMessage().subscribe((message: {}) => {
+//      console.log(this.componentName + '___subscribeToDataService-message' + JSON.stringify(message));
 //
-//      this.getUserAttrs = message;
+     this.getUserAttrs = message;
 
-//      if (message) {
-//        this.oUserAttributes = this.pv.convertArray2Object(this.getUserAttrs.userAttributes);
-//      }
+      if (message) {
+        // this.oUserAttributes = this.pv.convertArray2Object(this.getUserAttrs.userAttributes);
+        this.oUserAttributes = this.getUserAttrs;
+     }
      // console.log(this.componentName + '___subscribeToDataService-foo-' + JSON.stringify(fooUserAttributes));
      // console.log(this.componentName + '___subscribeToDataService-foo-' + JSON.stringify(fooUserAttributes));
      // console.log(this.componentName + '___subscribeToDataService-foo-' + JSON.stringify(fooUserAttributes));
       console.log(this.componentName + '___subscribeToDataService-oUserAttributes-' + JSON.stringify(this.oUserAttributes));
+    });
 
        // fooUserAttributes = res;
 
@@ -113,9 +117,8 @@ export class SummaryPageComponent implements OnInit {
        // console.log(this.componentName + '___subscribeToDataService-fooNV-' + JSON.stringify(fooNV));
        // console.log(this.componentName + '___subscribeToDataService-foo-' + JSON.stringify(fooUserAttributes));
        // console.log(this.componentName + '___subscribeToDataService-oUserAttributes-' + JSON.stringify(this.oUserAttributes));
-//    });
 
-//    console.log(this.componentName + '___subscribeToDataService--' + JSON.stringify(this.allData));
+   console.log(this.componentName + '___subscribeToDataService-oUserAttributes OUTSIDE guaservice--' + JSON.stringify(this.oUserAttributes));
 //    console.log(this.componentName + '___subscribeToDataService$$$$--' + JSON.stringify(this.allData$));
     //  }
     // if ( JSON.stringify(this.oUserAttributes) === '{}' ) {
@@ -134,7 +137,6 @@ export class SummaryPageComponent implements OnInit {
     //     console.log(this.componentName + '___subscribeToDataService-oUserAttributes-' + JSON.stringify(this.oUserAttributes));
     // });
 
-    // console.log(this.componentName + '___subscribeToDataService--' + JSON.stringify(this.allData));
     // console.log(this.componentName + '___subscribeToDataService$$$$--' + JSON.stringify(this.allData$));
     // }
     console.log(this.componentName + ' RAW getUserAttrs ___subscribeToDataService-' + JSON.stringify(this.getUserAttrs));
@@ -161,27 +163,7 @@ export class SummaryPageComponent implements OnInit {
   // }
 
 
-  ngAfterViewInit(): void {
-    // Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-    // Add 'implements AfterViewInit' to the class.
-
-    // console.log(this.componentName + ' ngOnInit PegaVariablesPropertiesComponent--' + JSON.stringify(this.pv.userAttributes));
-
-
-  }
-  // getSubscribeToDataService() {
-  //   this.subscription = this.ps.getAccountList().subscribe(message => {
-  //     if (message) {
-  //       this.messages.push(message);
-
-  //       // console.log(this.componentName + ' GETTING ACCOUNT SUMMARY message-->' + JSON.stringify(message));
-  //       this.acctsSummary = message;
-  //       this.showLoading = false;
-  //     } else {
-  //       // clear messages when empty message received
-  //       this.messages = [];
-  //     }
-  //   });
+  // ngAfterViewInit(): void {
   // }
 
 

@@ -27,6 +27,7 @@ import {
    , CaselistComponent
   // , FileNameDialogComponent
   // , ModalContainerComponent
+  , CasedetailsComponent
   , CreateCustomRCIcaseComponent
   , EmailByCategoryComponent
   , HomePageComponent
@@ -75,6 +76,7 @@ import {
   declarations: [
     AccountSummaryComponent
    , CaselistComponent
+   , CasedetailsComponent
     // , FileNameDialogComponent
     // , ModalContainerComponent
     , MegaMenuComponent
@@ -103,6 +105,7 @@ import {
     , RecentTreasurerCaseListComponent
     , RciMashupComponent
     , RciCheckResultTableComponent
+
     , RelAccountListComponent
     , StatusRecentTreasurerComponent
     , TransactionSummaryComponent
@@ -123,6 +126,7 @@ import {
   exports: [
     AccountSummaryComponent
    , CaselistComponent
+   , CasedetailsComponent
       , CreateCustomRCIcaseComponent
      , EmailByCategoryComponent
       , HomePageComponent
@@ -168,6 +172,8 @@ import {
     , SafeUrl
     // , HeroParentComponent
     // , HeroChildComponent
+
+
   ],
   entryComponents: [
   //  FileNameDialogComponent
@@ -183,6 +189,7 @@ import {
    , WelcomeComponent
    , WireRecallMashupComponent
    , MegaMenuComponent
+   , PWorkItemComponent
   //  , HeroParentComponent
     // , HeroChildComponent
   ]

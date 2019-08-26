@@ -1,3 +1,6 @@
+TOPPAGE.COMPONENT
+
+{{ groups$ | json }}
 <div *ngIf="showPage">
   <form [formGroup]="fg" name="workItem">
       <app-group [groups]="groups$" [formGroup]="fg"></app-group>

@@ -34,6 +34,7 @@ export class DOperatorIDService {
   constructor(
     private uservice: UserService,
     private dservice: DatapageService,
+
     // private ps: PegaSessionService,
     // private pv: PegaVariablesPropertiesComponent,
     // private snackBar: MatSnackBar,
@@ -52,10 +53,11 @@ export class DOperatorIDService {
         .subscribe(
           allData => {
             this.allData = allData.body;
-            console.log(this.serviceName + '  this.dservice.getDataPage' + JSON.stringify(this.allData));
+            console.log(this.serviceName + 'INITIALIZE  this.dservice.getDataPage\n\n--' + JSON.stringify(this.allData));
             // this.allData = allData.body;
             // allData = {'slskdf': '123', 'lskfdsdjf': '567567576'};
-            this.allData$.next(Object.assign(this.allData));
+            // this.allData$.next(Object.assign(this.allData));
+            this.allData$.next(this.allData);
           },
           error => console.log('Error subscribing to DataService: ' + error)
         );
@@ -78,6 +80,9 @@ export class DOperatorIDService {
   }
 
   subscribeToDataService(): Observable<{}> {
+    console.log(this.serviceName + ' subscribeToDataService this.dservice.getDataPage\n\n--' + JSON.stringify(this.allData));
+
+
     return this.allData$.asObservable();
   }
 

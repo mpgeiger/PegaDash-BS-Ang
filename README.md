@@ -69,6 +69,17 @@ Recent Interactions    D_InteractionHistory    app-recent-interactions
 |  $bnyGold:      |#a49668 |
 
 
+**Customize for Customer**
+Config the Name of the customer 
+
+_file: **src\app\shared-pega\pega-variables-properties.component.ts**_
+
+```
+  // Enter customer abbreviation to display on Headers or Card Titles
+  // MPG
+  pega_Customer_Abbreviation = 'U+ Bank IS';
+  pega_NBA_Advice_Header = 'U+ Bank Investor Services';
+  ```
 
 ####Cleanup
 const loginUserName = localStorage.getItem('username');

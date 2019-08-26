@@ -3,7 +3,7 @@ import { GetPageService } from '../../_messages/getpage.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { GetGroupsService } from '../../_messages/getgroups.service';
-import * as _ from "lodash";
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-toppage',
@@ -18,47 +18,47 @@ export class ToppageComponent implements OnInit {
   groups$: any;
   subscription: Subscription;
   showPage: boolean = false;
-  caseID: string = "";
+  caseID: string = '';
 
   fg: FormGroup;
 
 
   constructor(private fb: FormBuilder,
-    private gpservice: GetPageService, 
-    private ggservice: GetGroupsService, 
-    private cd: ChangeDetectorRef) { 
+    private gpservice: GetPageService,
+    private ggservice: GetGroupsService,
+    private cd: ChangeDetectorRef) {
 
       this.fg = fb.group({ hideRequired: false});
 
 
       this.showPage = false;
       this.subscription = this.gpservice.getMessage().subscribe(message => {
-  
+
         this.message = message;
         this.topName = message.name;
         this.page = message.page;
-  
-        if (this.caseID === "") {
+
+        if (this.caseID === '') {
           this.caseID = this.message.caseID;
         }
-  
-       
+
+
         if (this.message.caseID === this.caseID) {
           this.showPage = true;
-  
+
           this.groups$ = this.page.groups;
-  
+
           //this.ggservice.sendMessage(this.view.groups);
-  
+
           /*
-  
+
           var myResult: Array<any> = new Array();
           this.customFilter(this.view.groups, myResult);
-  
+
           this.addFieldsToFormGroup(myResult);
          */
         }
-  
+
       });
 
     }
@@ -76,7 +76,7 @@ export class ToppageComponent implements OnInit {
         result.push(object);
 
     for(var i=0;i<Object.keys(object).length;i++){
-        if(typeof object[Object.keys(object)[i]]=="object"){
+        if(typeof object[Object.keys(object)[i]]=='object'){
             this.customFilter(object[Object.keys(object)[i]],result);
         }
     }
@@ -101,7 +101,7 @@ export class ToppageComponent implements OnInit {
       control => {
           control.markAsTouched();
       }
-    )   
+    )
   }
 
 

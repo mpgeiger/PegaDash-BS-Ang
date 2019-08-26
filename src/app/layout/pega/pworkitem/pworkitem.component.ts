@@ -1,30 +1,30 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
-import { routerTransition } from '../../../router.animations';
+import { routerTransition } from '@ss/app/router.animations';
 // import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { Subscription, Observable, of } from 'rxjs';
-import { GetAssignmentService } from '../../../_messages/getassignment.service';
-import { GetViewService } from '../../../_messages/getview.service';
-import { GetPageService } from '../../../_messages/getpage.service';
-import { GetChangesService } from '../../../_messages/getchanges.service';
-import { AssignmentService } from '../../../_services/assignment.service';
-import { CaseService } from '../../../_services/case.service';
-import { CloseWorkService } from '../../../_messages/closework.service';
+import { GetAssignmentService } from '@ss/app/_messages/getassignment.service';
+import { GetViewService } from '@ss/app/_messages/getview.service';
+import { GetPageService } from '@ss/app/_messages/getpage.service';
+import { GetChangesService } from '@ss/app/_messages/getchanges.service';
+import { AssignmentService } from '@ss/app/_services/assignment.service';
+import { CaseService } from '@ss/app/_services/case.service';
+import { CloseWorkService } from '@ss/app/_messages/closework.service';
 import { ChangeDetectorRef } from '@angular/core';
 import { interval } from 'rxjs/internal/observable/interval';
-import { TopviewComponent } from '../../../_subcomponents/topview/topview.component';
-import { ReferenceHelper } from '../../../_helpers/reference-helper';
-import { PegaErrors } from '../../../_constants/PegaErrors';
+import { TopviewComponent } from '@ss/app/_subcomponents/topview/topview.component';
+import { ReferenceHelper } from '@ss/app/_helpers/reference-helper';
+import { PegaErrors } from '@ss/app/_constants/PegaErrors';
 // import { MatSnackBar } from '@angular/material';
-import { GetActionsService } from '../../../_messages/getactions.service';
-import { RefreshWorkListService } from '../../../_messages/refreshworklist.service';
-import { RefreshCaseService } from '../../../_messages/refreshcase.service';
-import { RefreshAssignmentService } from '../../../_messages/refreshassignment.service';
-import { GetNewCaseService } from '../../../_messages/getnewcase.service';
-import { ToppageComponent } from '../../../_subcomponents/toppage/toppage.component';
-import { RenameTabService } from '../../../_messages/renametab.service';
-import { OpenAssignmentService } from '../../../_messages/openassignment.service';
-import { GetRecentService } from '../../../_messages/getrecent.service';
-import { GetCaseService } from '../../../_messages/getcase.service';
+import { GetActionsService } from '@ss/app/_messages/getactions.service';
+import { RefreshWorkListService } from '@ss/app/_messages/refreshworklist.service';
+import { RefreshCaseService } from '@ss/app/_messages/refreshcase.service';
+import { RefreshAssignmentService } from '@ss/app/_messages/refreshassignment.service';
+import { GetNewCaseService } from '@ss/app/_messages/getnewcase.service';
+import { ToppageComponent } from '@ss/app/_subcomponents/toppage/toppage.component';
+import { RenameTabService } from '@ss/app/_messages/renametab.service';
+import { OpenAssignmentService } from '@ss/app/_messages/openassignment.service';
+import { GetRecentService } from '@ss/app/_messages/getrecent.service';
+import { GetCaseService } from '@ss/app/_messages/getcase.service';
 @Component({
     selector: 'app-pworkitem',
     templateUrl: './pworkitem.component.html',
@@ -32,7 +32,7 @@ import { GetCaseService } from '../../../_messages/getcase.service';
     animations: [routerTransition()]
 })
 export class PWorkItemComponent implements OnInit {
-   
+
 //
 // app-workitem is the component that does the most work
 // it registers for a lot of messages from other components and handles them
@@ -47,7 +47,7 @@ export class PWorkItemComponent implements OnInit {
 
   message: any;
   subscription: Subscription;
-  
+
   changeMessage: any;
   changeSubscription: Subscription;
 
@@ -108,8 +108,8 @@ export class PWorkItemComponent implements OnInit {
 
   constructor(private aservice: AssignmentService,
     private cservice: CaseService,
-    private gaservice: GetAssignmentService, 
-    private cdref: ChangeDetectorRef, 
+    private gaservice: GetAssignmentService,
+    private cdref: ChangeDetectorRef,
     private gvservice: GetViewService,
     private gpservice: GetPageService,
     private gchservice: GetChangesService,
@@ -126,7 +126,7 @@ export class PWorkItemComponent implements OnInit {
     private grservice: GetRecentService,
     private gcservice: GetCaseService) {
 
-    this.subscription = this.gaservice.getMessage().subscribe(message => { 
+    this.subscription = this.gaservice.getMessage().subscribe(message => {
       this.message = message;
       this.currentCaseName = this.message.caseID;
 
@@ -135,32 +135,32 @@ export class PWorkItemComponent implements OnInit {
       this.handleUnsubscribe();
     });
 
-    this.changeSubscription = this.gchservice.getMessage().subscribe(message => { 
+    this.changeSubscription = this.gchservice.getMessage().subscribe(message => {
       this.changeMessage = message;
 
       this.updateState(this.changeMessage.ref, this.changeMessage.value, this.changeMessage.caseID);
     });
 
-    this.actionSubscription = this.gactionsservice.getMessage().subscribe(message => { 
+    this.actionSubscription = this.gactionsservice.getMessage().subscribe(message => {
       this.actionMessage = message;
 
       this.handleFormActions(this.actionMessage.actionName, this.actionMessage.action, this.actionMessage.caseID);
     });
 
-    this.refreshAssignmentSubscription = this.raservice.getMessage().subscribe(message => { 
+    this.refreshAssignmentSubscription = this.raservice.getMessage().subscribe(message => {
       this.refreshAssignmentMessage = message;
 
       this.handleRefreshAssignmentActions(this.refreshAssignmentMessage.action, this.refreshAssignmentMessage.data);
     });
 
-    this.getNewCaseSubscription = this.gncservice.getMessage().subscribe(message => { 
+    this.getNewCaseSubscription = this.gncservice.getMessage().subscribe(message => {
       this.getNewCaseMessage = message;
 
       this.getNewCase(message.caseID);
 
       this.handleUnsubscribe();
     });
-    
+
     this.getRecentSubscription = this.grservice.getMessage().subscribe(
       message => {
         this.getRecentMessage = message;
@@ -178,7 +178,7 @@ export class PWorkItemComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+
 
   }
 
@@ -188,7 +188,7 @@ export class PWorkItemComponent implements OnInit {
     this.getNewCaseSubscription.unsubscribe();
     this.getRecentSubscription.unsubscribe();
     this.actionSubscription.unsubscribe();
-    
+
   }
 
 
@@ -209,7 +209,7 @@ export class PWorkItemComponent implements OnInit {
     if (caseID === this.currentCaseID$) {
 
       switch(sAction){
-        case "refresh": 
+        case "refresh":
           this.refreshView(this.state, oAction);
           break;
         case 'postValue':
@@ -225,7 +225,7 @@ export class PWorkItemComponent implements OnInit {
           }
 
           break;
-        case "takeAction": 
+        case "takeAction":
           this.takeAction(oAction.actionProcess.actionName);
           break;
         case 'setValue':

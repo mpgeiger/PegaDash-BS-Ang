@@ -27,10 +27,12 @@ export interface Cases {
   createdBy: string;
   CreatedDate: Date;
   CompletionDate: Date;
+  createTime: Date;
+  lastUpdateTime: Date;
   // lastUpdatedBy: string;
   pxObjClass: string;
   urgency: string;
-  lastUpdateTime: string;
+  // lastUpdateTime: string;
   lastUpdatedBy: string;
 }
 
@@ -40,13 +42,15 @@ export interface Cases {
   styleUrls: ['./caselist.component.scss']
 })
 export class CaselistComponent implements OnInit, AfterViewInit  {
+  componentName = 'caselist.component';
+  pegaService = 'cases list';
 
 
   message: any;
   subscription: Subscription;
   showLoading = true;
 
-  displayedColumns = ['name', 'status', 'CompletionDate', 'ID'];
+
 
   public dataSource = new MatTableDataSource<Cases>();
   sortedData: Cases[] = [];
@@ -54,6 +58,8 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
   headers: any;
   @Input() lpp: number;
   public pageSize = 5;
+
+  displayedColumns = [];
 
   nameFilter = new FormControl('');
   statusFilter = new FormControl('');
@@ -83,9 +89,31 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
     // this.getCases();
     // this.sortedData = this.cases.slice();
   }
-  componentName = 'caselist.component';
+
+
+  checkIfStubbed() {
+    const useStubStr = localStorage.getItem('useStubbedData');
+
+    let useStub = false;
+    useStub = (useStubStr === 'true');
+   // useStub = true;
+    // console.log(' STUBBED DATA-->' + useStub);
+    return useStub;
+  }
+
   ngOnInit() {
-    this.getStubbedCases();
+
+    if (this.checkIfStubbed()) {
+      console.log(this.componentName + ' -- STUBBED ' + this.pegaService);
+        this.displayedColumns = ['name', 'status', 'CompletionDate', 'ID'];
+       this.getStubbedCases();
+      } else {
+        console.log(this.componentName + ' -- LIVE ' + this.pegaService);
+        this.displayedColumns = ['name', 'status', 'lastUpdateTime', 'ID'];
+      // this.getCases();
+      this.getCases();
+    }
+
     // this.nameFilter.valueChanges.subscribe(name => {
     //       this.filterValues.name = name;
     //       this.dataSource.filter = JSON.stringify(this.filterValues);
@@ -128,13 +156,13 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
   createFilter(): (data: any, filter: string) => boolean {
 
     const filterFunction = function(data, filter): boolean {
-      console.log(' filterString -->' + filter);
+      // console.log(' filterString -->' + filter);
       const searchTerms = JSON.parse(filter);
       // console.log(' name -->' + filter.['fName']);
       // filter.fName = toLowerCase(filter.fName);
       searchTerms.fName = searchTerms.fName.toLowerCase();
       searchTerms.fID = searchTerms.fID.toLowerCase();
-      console.log('PARSED filterString -->' + JSON.stringify(searchTerms));
+      // console.log('PARSED filterString -->' + JSON.stringify(searchTerms));
       // console.log(this.componentName + ' filterData -->' + JSON.stringify(data));
       return data.name.toLowerCase().indexOf(searchTerms.fName) !== -1
         // // && data.CompletionDate.toString().toLowerCase().indexOf(searchTerms.CompletionDate) !== -1
@@ -161,12 +189,17 @@ export class CaselistComponent implements OnInit, AfterViewInit  {
     this.cService.cases().subscribe(
       response => {
         const resSTR = JSON.stringify(this.getResults(response.body));
-        const resJSON = JSON.parse(resSTR);
+        const resp = this.getResults(response.body);
+        console.log(this.componentName + ' getCases()  RESP--' + JSON.stringify(resp));
+
+
 
         this.headers = response.headers;
-        this.cases = Object.keys(this.getResults(response.body)).map(it => this.getResults(response.body)[it]);
+        this.cases = Object.keys(resp).map(it => resp[it]);
+        console.log(this.componentName + ' getCases()  this.cases --' + JSON.stringify(this.cases));
+
         // this.cases = JSON.parse(response.body);
-        this.filterByDate(10);
+        // this.filterByDate(10);
         localStorage.setItem('caselist', this.cases.length.toString());
         console.log(' IN CASELIST.COMPONENT  # CASES -->' + localStorage.getItem('caselist'));
         this.dataSource.data = this.cases as Cases[];

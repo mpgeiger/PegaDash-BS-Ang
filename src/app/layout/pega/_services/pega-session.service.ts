@@ -3,12 +3,24 @@ import { Observable, Subject } from 'rxjs';
 import { AnonymousSubject } from 'rxjs/internal/Subject';
 import { checkBinding } from '@angular/core/src/view/util';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-import { GetUserAttributesService } from '@ss/pega-layout/_messages/getuserattributes.service';
+import { GetUserAttributesArrayService, GetUserAttributesObjectService } from '@ss/app/layout/pega/_messages/getuserattributes.service';
+import { PegaVariablesPropertiesComponent,  } from '@ss/pega-shared/pega-variables-properties.component';
+
 
  interface UserAttributeType {
   name:  string;
   value: number | string;
 }
+
+interface UserAttributesObject {
+  displayUserName:    string;
+  lastAccess:         Date;
+  userEmailAddress:   string;
+  userFullName:       string;
+  userAccessGroup:    string;
+  userWorkGroup:      string;
+}
+
 
 // export interface UserInfo {
 //   loginName: string;
@@ -25,18 +37,21 @@ import { GetUserAttributesService } from '@ss/pega-layout/_messages/getuserattri
 export class PegaSessionService {
   serviceName = 'pega-session.service';
 
-  _userAttributes: UserAttributeType[] = [];
+  _userAttributes_Array: UserAttributeType[] = [];
+  _userAttributes_Object = {};
   // luUserAttributes: UserAttributeType[] = [];
 
   private subject = new Subject<any>();
   private accountsSummary = new Subject<any>();
-  private userAttributes = new Subject<any>();
+  private userAttributes_Array = new Subject<any>();
+  private userAttributes_Object = new Subject<any>();
   // private userInfo = new Subject<UserInfo>();
   private displayName = new Subject<any>();
   private rgbaColorPalette = new Subject<any>();
 
   constructor(
-    private gUA: GetUserAttributesService
+    private gUA_Array: GetUserAttributesArrayService,
+    private gUA_Object: GetUserAttributesObjectService
   ) {}
   uniqueAttr(name: string, value: string | number, arr): boolean {
       if ( arr.some(e => e.name === name)) {
@@ -53,7 +68,7 @@ export class PegaSessionService {
   }
 
   updateUserAttributeValue (updateName: string, updateValue:  string | number) {
-     this._userAttributes.find(item => item.name === updateName).value = updateValue;
+     this._userAttributes_Array.find(item => item.name === updateName).value = updateValue;
      console.log(this.serviceName + '###  updateUserAttributeValue' + updateName + 'to value-->' + updateValue );
 
   }
@@ -66,38 +81,75 @@ export class PegaSessionService {
       const name = element.name;
       const value = element.value;
       console.log('__' + this.serviceName + ' setUserAttributesByArray--' + name);
-      if (this.uniqueAttr(name, value, this._userAttributes)) {
-        this._userAttributes.push(element);
+      if (this.uniqueAttr(name, value, this._userAttributes_Array)) {
+        this._userAttributes_Array.push(element);
       }
-      this.gUA.sendMessage(this._userAttributes);
+      // this.gUA_Array.sendMessage(this._userAttributes_Array);
+      // this.gUA_Object.sendMessage(this._userAttributes_Array);
 
     });
 
+    // Set BOTH a Usedr Attribute ARRAY and Object -- just because it is eashier to use different formats depending on the component.
+    this._userAttributes_Object = this.convertArray2Object(this._userAttributes_Array);
+
+    console.log(this.serviceName + '  JUST CREATED the UA Object plain--> ' + this._userAttributes_Object);
+    console.log(this.serviceName + '  JUST CREATED the UA Object--> ' + JSON.stringify(this._userAttributes_Object));
+    console.log(this.serviceName + '  JUST CREATED the UA Array--> ' + JSON.stringify(this._userAttributes_Array));
 
 
-    console.log('__' + this.serviceName + ' this._userAttributes--'  + JSON.stringify(this._userAttributes));
-    this.userAttributes.next(this._userAttributes);
+    this.gUA_Array.sendMessage(this._userAttributes_Array);
+    this.gUA_Object.sendMessage(this._userAttributes_Object);
+
+
+    console.log('__' + this.serviceName + ' this._userAttributes_Array--'  + JSON.stringify(this._userAttributes_Array));
+    this.userAttributes_Object.next(this.userAttributes_Object);
+    this.userAttributes_Array.next(this._userAttributes_Array);
+  }
+
+  private convertArray2Object(arr: any[]): {} {
+    const attrs: any = {};
+    // const attrs = {} as IoUserAttributes;
+    arr.forEach(element => {
+      attrs[element.name] = element.value;
+    });
+    // console.log(this.serviceName + ' convertArray2Object -->' + JSON.stringify(attrs));
+    return attrs;
+    // this.userAttributesObject = attrs;
   }
 
   addUserAttribute(name: string, value: number | string ) {
     const attr = {'name': name, 'value' : value};
-    if (this.uniqueAttr(name, value, this._userAttributes)) {
+    if (this.uniqueAttr(name, value, this._userAttributes_Array)) {
       // console.log('__' + this.serviceName + ' addUserAttribute__>' + name + '____' + JSON.stringify(attr));
-      this._userAttributes.push(attr);
+      this._userAttributes_Array.push(attr);
     }
-    this.userAttributes.next(this._userAttributes);
+    this.userAttributes_Array.next(this._userAttributes_Array);
     // console.log('__' + this.serviceName + ' addUserAttribute__Object --> ' + JSON.stringify(this.userAttributes));
   }
 
-  getUserAttributes(): Observable<any> {
+  getUserAttributesArray(): Observable<any> {
     // MPG wheen running in DEV mode in Angular the services get run twice which results in an "irritatining"
     //    result of duplicate elements in the array.    Here I am simply removing before returning the array
-    const result = Array.from(this._userAttributes.reduce((m, t) => m.set(t.name, t), new Map()).values());
-
-
+    const result = Array.from(this._userAttributes_Array.reduce((m, t) => m.set(t.name, t), new Map()).values());
     // return this.userAttributes.asObservable();
-    return this.userAttributes.asObservable();
+    // return this.userAttributes.asObservable();
+    // return this.userAttributes_Array;
+    return this.userAttributes_Array;
   }
+
+
+  getUserAttributesObject(): Observable<any> {
+    // MPG wheen running in DEV mode in Angular the services get run twice which results in an "irritatining"
+    //    result of duplicate elements in the array.    Here I am simply removing before returning the array
+    const result = Array.from(this._userAttributes_Array.reduce((m, t) => m.set(t.name, t), new Map()).values());
+    this._userAttributes_Object = this.convertArray2Object(result);
+    // return this.userAttributes.asObservable();
+    // return this.userAttributes.asObservable();
+   console.log('__' + this.serviceName + ' getUserAttributesObject --> ' + JSON.stringify(this._userAttributes_Object));
+
+    return this.userAttributes_Object;
+  }
+
 
   sendMessage(message: string) {
     this.subject.next({ text: message });
@@ -137,7 +189,8 @@ export class PegaSessionService {
 
   getUserDisplayName(): Observable<any> {
     // console.log('__ ' + this.serviceName + ' GET UserDisplayName--> ');
-    return this.displayName.asObservable();
+    // return this.displayName.asObservable();
+    return this.displayName;
   }
 
 

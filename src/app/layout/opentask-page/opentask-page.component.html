@@ -3,22 +3,41 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <div class="card card-default">
+          <div class="card card-default"  >
+              <div class="card-header">
+                <i class="fa fa-tasks"></i>
+                <span class="card-title">Work Item Button</span>
+              </div>
+              <div class="text-center card-body">
+                <!-- <app-transaction-summary></app-transaction-summary> -->
+                <button (click)="onClick()">WorkItem Case</button>
+
+              </div>
+            </div>
+        <div class="card card-default"  >
+          <div class="card-header">
+            <i class="fa fa-tasks"></i>
+            <span class="card-title">Work Item</span>
+          </div>
+          <div class="text-center card-body">
+            <!-- <app-transaction-summary></app-transaction-summary> -->
+            <app-pworkitem></app-pworkitem>
+          </div>
+        </div>
+        <!-- <div class="card card-default" *ngIf=openAll >
           <div class="card-header">
             <i class="fa fa-tasks"></i>
             <span class="card-title">Transaction Summary</span>
           </div>
           <div class="text-center card-body">
-            <!-- <app-transaction-summary></app-transaction-summary> -->
             <app-transaction-summary></app-transaction-summary>
-
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="row">
       <div class="col">
-        <div class="card card-default">
+        <div class="card card-default" *ngIf=openAll>
           <div class="card-header">
             <i class="fa fa-tasks"></i>
             <span class="card-title">Case List Summary </span>
@@ -32,30 +51,30 @@
     </div>
     <div class="row">
       <div class="col-lg-4">
-        <div class="card card-default">
+        <div class="card card-default" *ngIf=openAll>
           <div class="card-header">
             <i class="fa fa-tasks"></i>Open Work by Type
-            <span class="badge  badge-pill badge-danger" ngModel="utCount">{{ D_RecentTreasurerCases$ }}</span>
+            <span class="badge  badge-pill badge-danger" ngModel="utCount">{{ D_RecentTreasurerCases }}</span>
           </div>
           <app-open-by-work-type></app-open-by-work-type>
         </div>
         <!-- /.card -->
       </div>
       <div class="col-lg-4">
-        <div class="card card-default">
+        <div class="card card-default" *ngIf=openAll>
           <div class="card-header">
             <i class="fa fa-tasks"></i>Transaction Summary
-            <span class="badge  badge-pill badge-danger" ngModel="utCount">{{ D_RecentTreasurerCases$ }}</span>
+            <span class="badge  badge-pill badge-danger" ngModel="utCount">{{ D_RecentTreasurerCases }}</span>
           </div>
           <app-transaction-summary-kpi></app-transaction-summary-kpi>
         </div>
         <!-- /.card -->
       </div>
       <div class="col-lg-4">
-        <div class="card card-default">
+        <div class="card card-default" *ngIf=openAll>
           <div class="card-header">
             <i class="fa fa-tasks"></i>Recent Interactions
-            <span class="badge  badge-pill badge-danger" ngModel="utCount">{{ D_RecentTreasurerCases$ }}</span>
+            <span class="badge  badge-pill badge-danger" ngModel="utCount">{{ D_RecentTreasurerCases }}</span>
           </div>
           <app-email-by-category></app-email-by-category>
           <!-- <app-recent-interactions></app-recent-interactions> -->
@@ -71,7 +90,7 @@
     </div>
     <div class="row">
       <div class="col">
-        <div class="card card-default">
+        <div class="card card-default" *ngIf=openAll>
           <div class="card-header">
             <i class="fa fa-tasks"></i>
             <span class="card-title">app-recentTreasurerCaseList</span>
@@ -88,7 +107,7 @@
     </div>
     <div class="row">
       <div class="col-lg-8">
-        <div class="card card-default">
+        <div class="card card-default" *ngIf=openAll>
           <div class="card-header">
             <i class="fa fa-tasks"></i> Account List <span class="badge  badge-pill badge-danger">{{ cases$ }}</span>
           </div>
@@ -100,10 +119,10 @@
       </div>
 
       <div class="col-lg-4">
-        <div class="card card-default">
+        <div class="card card-default" *ngIf=openAll>
           <div class="card-header">
             <i class="fa fa-tasks"></i> Recent Treasurer
-            <span class="badge  badge-pill badge-danger" ngModel="utCount">{{ D_RecentTreasurerCases$ }}</span>
+            <span class="badge  badge-pill badge-danger" ngModel="utCount">{{ D_RecentTreasurerCases }}</span>
           </div>
         </div>
         <!-- /.card -->
@@ -111,7 +130,7 @@
     </div>
     <div class="row">
       <div class="col-lg-8">
-        <div class="card card-default">
+        <div class="card card-default" *ngIf=openAll>
           <div class="card-header">
             <i class="fa fa-tasks"></i> Case List <span class="badge  badge-pill badge-danger">{{ cases$ }}</span>
           </div>
@@ -123,10 +142,10 @@
       </div>
 
       <div class="col-lg-4">
-        <div class="card card-default">
+        <div class="card card-default" *ngIf=openAll>
           <div class="card-header">
             <i class="fa fa-tasks"></i> Unified Task List
-            <span class="badge  badge-pill badge-danger" ngModel="utCount">{{ D_RecentTreasurerCases$ }}</span>
+            <span class="badge  badge-pill badge-danger" ngModel="utCount">{{ D_RecentTreasurerCases }}</span>
           </div>
           Intentionally Blank
           <!-- <app-unifiedtask></app-unifiedtask> -->

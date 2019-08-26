@@ -10,6 +10,7 @@ import { DatapageService } from '../_services/datapage.service';
 import { interval } from 'rxjs/internal/observable/interval';
 import { PegaSessionService } from '@ss/app/layout/pega/_services/index';
 import { PegaVariablesPropertiesComponent } from '@ss/app/shared-pega/pega-variables-properties.component';
+import { DOperatorIDService } from '@ss/app/layout/pega/_services/service-d_operatorId.service';
 
 
 // import { UserAttributeTypeType } from '@ss/app/layout/pega/_services/index';
@@ -24,13 +25,14 @@ interface UserAttributeType {
 }
 @Component({
   selector: 'app-login',
-  templateUrl: './login_MUFG_Min.html',
+  // templateUrl: './login_MUFG_Min.html',
+  templateUrl: './login_Dashboard_Min.html',
   // templateUrl: './login.component.html',
   styleUrls: [
     // './login_MUFG_Min_files/bootstrap.css',
     // './login_MUFG_Min_files/main.css',
     // './login_MUFG_Min_files/okta-sign-in.css',
-    './login_MUFG_Min_files/OktaSkin.css'
+    './login_Dashboard_Min_files/OktaSkin.css'
     // './nxn-loginpage.scss',
     // './login.component.scss'
               ],
@@ -52,6 +54,8 @@ export class LoginComponent implements OnInit {
     private dservice: DatapageService,
     private ps: PegaSessionService,
     private pv: PegaVariablesPropertiesComponent,
+    private d_OpId: DOperatorIDService,
+
     // private snackBar: MatSnackBar,
     public router: Router
       ) {}
@@ -108,8 +112,7 @@ export class LoginComponent implements OnInit {
               localStorage.setItem('userEmailAddress', operator.pyAddresses.Email.pyEmailAddress);
               // localStorage.setItem('CifNbr', customerSummary.CifNbr);  ////
               localStorage.setItem('CifNbr', '7103716305');
-
-
+              this.d_OpId.initializeDataService();
               // this.ps.addUserAttribute('userWorkGroup', 'MY TEST CHANGE UPDATE');
               // this.ps.setUserAttributes(this.luUserAttributes);
 

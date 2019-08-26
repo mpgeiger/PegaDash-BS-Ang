@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 // MPG Angular added /dashboard for TOMCAT and base-href
 import {APP_BASE_HREF} from '@angular/common';
 import { PegaVariablesPropertiesComponent } from '@ss/app/shared-pega/pega-variables-properties.component';
+import { ReferenceHelper } from '@ss/app/_helpers/reference-helper';
 
 
 // import { HomeAccountsPageModule } from './layout/pega/home-accounts-page/home-accounts-page.module';
@@ -48,6 +49,7 @@ import { PegaVariablesPropertiesComponent } from '@ss/app/shared-pega/pega-varia
     providers: [
       AuthGuard
       , PegaVariablesPropertiesComponent
+      , ReferenceHelper
       // MPG Angular added /dashboard for TOMCAT and base-href
     , {provide: APP_BASE_HREF, useValue: '/dashboard'}],
     bootstrap: [AppComponent]

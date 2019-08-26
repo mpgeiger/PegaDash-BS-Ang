@@ -33,8 +33,9 @@ export class PegaVariablesPropertiesComponent implements OnInit {
   userAttributesObject = {} as IoUserAttribute;
 
   // Enter customer abbreviation to display on Headers or Card Titles
-  pega_Customer_Abbreviation = 'MUFG Investor Services';
-  pega_NBA_Advice_Header = 'MUFG Investor Services';
+  // MPG
+  pega_Customer_Abbreviation = 'U+ Bank Investor Services';
+  pega_NBA_Advice_Header = 'U+ Bank Investor Services';
 
   hexColors = ['#e1615d', '#e93d3c', '#576786', '#5c605c', '#8c8985', '#5c646a', '#787d7f', '#79797f', '#bce6e8', '#a6acb7', '#565e52', '#222d28', '#192021', '#e83d3c', '#a6392d', '#e0c684', '#f8dba5', '#ffe7bf', '#e9362a', '#ea382b', '#e8372f', '#861f21', '#6d7773', '#727e81', '#5f6b7a', '#be171b', '#cf2527', '#c21a20', '#6f7d85', '#525762', '#777369', '#444856', '#394554', '#818d9b', '#6b5661', '#b1a39f', '#80747b', '#1e252e'];
 
@@ -63,7 +64,7 @@ export class PegaVariablesPropertiesComponent implements OnInit {
 
   public getUserAttr() {
 
-    this.subscriptionUserAttributes = this.ps.getUserAttributes().subscribe(message => {
+    this.subscriptionUserAttributes = this.ps.getUserAttributesArray().subscribe(message => {
       if (message) {
         this.messages.push(message);
         this.userAttributes = message;
@@ -82,9 +83,9 @@ export class PegaVariablesPropertiesComponent implements OnInit {
 
   public oGetUserAttributes() {
     const attrs = {} as IoUserAttribute;
-const ua: IaUserAttributes = this.userAttributes;
+    const ua: IaUserAttributes = this.userAttributes;
 
-    ua.forEach( element => {
+    ua.forEach(element => {
       attrs[element.name] = element.value;
     });
     // console.log(this.componentName + ' oGetUserAttributes -->' + JSON.stringify(attrs));
